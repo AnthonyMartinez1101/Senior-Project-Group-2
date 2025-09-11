@@ -640,7 +640,19 @@ PrefabInstance:
     - target: {fileID: 912664362259318835, guid: 5ba90a45e3179584a853b1b0e3498d53, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 349663752}
+      objectReference: {fileID: 349663754}
+    - target: {fileID: 912664362259318835, guid: 5ba90a45e3179584a853b1b0e3498d53, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 912664362259318835, guid: 5ba90a45e3179584a853b1b0e3498d53, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 912664362259318835, guid: 5ba90a45e3179584a853b1b0e3498d53, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1393178087550716790, guid: 5ba90a45e3179584a853b1b0e3498d53, type: 3}
       propertyPath: m_Name
       value: EXIT
