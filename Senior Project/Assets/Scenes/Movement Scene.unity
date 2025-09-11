@@ -119,6 +119,43 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &220996688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4645647776465574587, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+  m_PrefabInstance: {fileID: 4346377004549986062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &220996693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220996688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineBrain
+  ShowDebugText: 0
+  ShowCameraFrustum: 1
+  IgnoreTimeScale: 0
+  WorldUpOverride: {fileID: 0}
+  ChannelMask: -1
+  UpdateMethod: 2
+  BlendUpdateMethod: 1
+  LensModeOverride:
+    Enabled: 0
+    DefaultMode: 2
+  DefaultBlend:
+    Style: 1
+    Time: 2
+    CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  CustomBlends: {fileID: 0}
 --- !u!1001 &4346377004549986062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130,6 +167,14 @@ PrefabInstance:
     - target: {fileID: 4157428561065368004, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
       propertyPath: m_Name
       value: Movement Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710665256544975365, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: far clip plane
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710665256544975365, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: orthographic size
+      value: 6.96
       objectReference: {fileID: 0}
     - target: {fileID: 7407808421788639730, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -171,10 +216,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8323178235284317554, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8323178235284317554, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6600001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8323178235284317554, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4645647776465574587, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 220996693}
   m_SourcePrefab: {fileID: 100100000, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
