@@ -23,11 +23,11 @@ public class SpriteScript : MonoBehaviour
     void Update()
     {
         //Checking if the rigidbody is moving left or right and flipping the sprite accordingly
-        if (rb.linearVelocity.x > 0.15f)
+        if (rb.linearVelocity.x > 0.1f)
         {
             playerSprite.flipX = false;
         }
-        else if(rb.linearVelocity.x < 0.15f)
+        else if(rb.linearVelocity.x < -0.1f)
         {
             playerSprite.flipX = true;
         }
