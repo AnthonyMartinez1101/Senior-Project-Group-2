@@ -5,10 +5,17 @@ public class MovementScript : MonoBehaviour
 {
     //Speed and rigidbody of player
     public float speed = 5f;
+    public float dashSpeed = 20f;
+    public float dashDuration = 0.2f;
+
+    private bool isDashing = false;
+    private float dashTimer;
+    private Vector2 direction;
     private Rigidbody2D rb;
 
     //Creating an action to detect movement input
     InputAction moveAction;
+    InputAction dashAction;
 
     //Called when the script is made
     private void Start()
@@ -18,16 +25,39 @@ public class MovementScript : MonoBehaviour
 
         //Assigns moveAction to detect movement input
         moveAction = InputSystem.actions.FindAction("Move");
+
+        // Detects a dash input when spacebar is pressed
+        dashAction = InputSystem.actions.FindAction("Dash");
     }
 
 
     //Called at a fixed rate (not dependent on frame rate)
     private void FixedUpdate()
     {
-        //Saves the value of movement input as a vector
-        Vector2 moveValue = moveAction.ReadValue<Vector2>();
-
-        //Applies movement to the rigidbody
-        rb.linearVelocity = new Vector2(moveValue.x * speed, moveValue.y * speed);
+        if(isDashing)
+        {
+            rb.velocity = direction * dashSpeed;
+            dashTimer -= Time.fixedDeltaTime;
+            if (dashTimer <= 0.0f)
+            {
+                isDashing = false;
+            }
+        }
+        else
+        {
+            Vector2 moveValue = moveAction.ReadValue<Vector2>();
+            direction = moveValue.normalized;
+            rb.velocity = direction * speed;
+            if(dashAction.triggered)
+            {
+                Dash();
+            }
+        }
     }   
+
+    private void Dash()
+    {
+        isDashing = true;
+        dashTimer = dashDuration;
+    }
 }
