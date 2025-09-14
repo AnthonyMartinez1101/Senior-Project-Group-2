@@ -36,7 +36,7 @@ public class MovementScript : MonoBehaviour
     {
         if(isDashing)
         {
-            rb.velocity = direction * dashSpeed;
+            rb.linearVelocity = direction * dashSpeed;
             dashTimer -= Time.fixedDeltaTime;
             if (dashTimer <= 0.0f)
             {
@@ -47,7 +47,7 @@ public class MovementScript : MonoBehaviour
         {
             Vector2 moveValue = moveAction.ReadValue<Vector2>();
             direction = moveValue.normalized;
-            rb.velocity = direction * speed;
+            rb.linearVelocity = direction * speed;
             if(dashAction.triggered)
             {
                 Dash();
