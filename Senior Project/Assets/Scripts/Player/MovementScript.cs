@@ -31,6 +31,14 @@ public class MovementScript : MonoBehaviour
         dashAction = InputSystem.actions.FindAction("Dash");
     }
 
+    void Update()
+    {
+        if (dashAction.WasPressedThisFrame())
+        {
+            Dash();
+        }
+    }
+
 
     //Called at a fixed rate (not dependent on frame rate)
     private void FixedUpdate()
@@ -50,10 +58,6 @@ public class MovementScript : MonoBehaviour
             Vector2 moveValue = moveAction.ReadValue<Vector2>();
             direction = moveValue.normalized;
             rb.linearVelocity = direction * speed;
-            if (dashAction.triggered)
-            {
-                Dash();
-            }
             if (dashCooldownTimer > 0f)
             {
                 dashCooldownTimer -= Time.fixedDeltaTime;

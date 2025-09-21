@@ -164,6 +164,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2116418075606382726, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4157428561065368004, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
       propertyPath: m_Name
       value: Movement Scene
@@ -175,6 +179,10 @@ PrefabInstance:
     - target: {fileID: 4710665256544975365, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
       propertyPath: orthographic size
       value: 6.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 6552947144090988948, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7407808421788639730, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
       propertyPath: m_LocalPosition.x
