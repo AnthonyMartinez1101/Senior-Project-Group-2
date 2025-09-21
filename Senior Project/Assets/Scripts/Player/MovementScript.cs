@@ -7,15 +7,16 @@ public class MovementScript : MonoBehaviour
     public float speed = 5f;
     public float dashSpeed = 20f;
     public float dashDuration = 0.2f;
+    public float dashCooldown = 1f;
 
     private bool isDashing = false;
-    private float dashTimer;
+    private float dashTimer = 0f;
+    private float dashCooldownTimer = 0f;
     private Vector2 direction;
-    private Rigidbody2D rb;
 
-    //Creating an action to detect movement input
-    InputAction moveAction;
-    InputAction dashAction;
+    private Rigidbody2D rb;
+    InputAction moveAction; // Detect WASD
+    InputAction dashAction; // Detect dash button
 
     //Called when the script is made
     private void Start()
@@ -34,13 +35,14 @@ public class MovementScript : MonoBehaviour
     //Called at a fixed rate (not dependent on frame rate)
     private void FixedUpdate()
     {
-        if(isDashing)
+        if (isDashing)
         {
             rb.linearVelocity = direction * dashSpeed;
             dashTimer -= Time.fixedDeltaTime;
-            if (dashTimer <= 0.0f)
+            if (dashTimer <= 0f)
             {
                 isDashing = false;
+                dashCooldownTimer = dashCooldown;
             }
         }
         else
@@ -48,16 +50,23 @@ public class MovementScript : MonoBehaviour
             Vector2 moveValue = moveAction.ReadValue<Vector2>();
             direction = moveValue.normalized;
             rb.linearVelocity = direction * speed;
-            if(dashAction.triggered)
+            if (dashAction.triggered)
             {
                 Dash();
             }
+            if (dashCooldownTimer > 0f)
+            {
+                dashCooldownTimer -= Time.fixedDeltaTime;
+            }
         }
-    }   
+    }
 
     private void Dash()
     {
-        isDashing = true;
-        dashTimer = dashDuration;
+        if (!isDashing && dashCooldownTimer <= 0f && direction != Vector2.zero)
+        {
+            isDashing = true;
+            dashTimer = dashDuration;
+        }
     }
 }
