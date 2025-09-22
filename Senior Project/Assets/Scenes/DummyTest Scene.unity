@@ -164,9 +164,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2081155953875444975, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081155953875444975, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955543126656929706, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3955543126656929706, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.64
+      objectReference: {fileID: 0}
     - target: {fileID: 4157428561065368004, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
       propertyPath: m_Name
       value: Movement Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4645647776465574587, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: m_Name
+      value: Follow Camera
       objectReference: {fileID: 0}
     - target: {fileID: 4710665256544975365, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
       propertyPath: far clip plane
@@ -175,6 +195,10 @@ PrefabInstance:
     - target: {fileID: 4710665256544975365, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
       propertyPath: orthographic size
       value: 6.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812045306106845198, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: maxHealth
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7407808421788639730, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -228,8 +252,19 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    - target: {fileID: 9162820558179034695, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162820558179034695, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.34
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5226791271825064306, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 7577269593226124685, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+    - {fileID: 742680682643921237, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4645647776465574587, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
