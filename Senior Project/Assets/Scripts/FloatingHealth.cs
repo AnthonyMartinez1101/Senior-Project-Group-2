@@ -12,9 +12,6 @@ public class FloatingHealth : MonoBehaviour
     {
         if (!slider) slider = GetComponentInChildren<Slider>();
         if (!cam) cam = Camera.main;
-
-        //Default offset which fixes the health bar position
-        offset = new Vector3(0, -0.3f, 0);
     }
 
     // Update is called once per frame
