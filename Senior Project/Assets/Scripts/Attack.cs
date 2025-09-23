@@ -50,7 +50,7 @@ public class Attack : MonoBehaviour
             shootTimer = 0.0f;
             GameObject b = Instantiate(bullet, aim.position, aim.rotation);
             b.GetComponent<Rigidbody2D>().AddForce(-aim.up * bulletForce, ForceMode2D.Impulse);
-            Destroy(b, 5.0f);
+            Destroy(b, 2.0f);
         }
         else
         {
