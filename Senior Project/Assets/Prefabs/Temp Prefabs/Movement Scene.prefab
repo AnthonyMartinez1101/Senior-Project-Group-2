@@ -706,6 +706,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7407808421788639730}
     m_Modifications:
+    - target: {fileID: 985691600227820410, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985691600227820410, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3856083966642808465, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_Name
       value: Temp Enemy (3)
@@ -834,6 +842,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7407808421788639730}
     m_Modifications:
+    - target: {fileID: 985691600227820410, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985691600227820410, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3856083966642808465, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_Name
       value: Temp Enemy
@@ -900,6 +916,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7407808421788639730}
     m_Modifications:
+    - target: {fileID: 985691600227820410, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985691600227820410, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3856083966642808465, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_Name
       value: Temp Enemy (2)
@@ -962,6 +986,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7407808421788639730}
     m_Modifications:
+    - target: {fileID: 985691600227820410, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 985691600227820410, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3856083966642808465, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_Name
       value: Temp Enemy (1)
