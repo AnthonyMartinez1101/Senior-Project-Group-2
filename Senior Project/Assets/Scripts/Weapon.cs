@@ -8,15 +8,17 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Player")) return;
+
         Enemy enemy = collision.GetComponent<Enemy>();
         if(enemy != null)
         {
             enemy.TakeDamage(damage);
+        }
 
-            if(weaponType == WeaponType.Bullet)
-            {
-                Destroy(gameObject);
-            }
+        if (weaponType == WeaponType.Bullet)
+        {
+            Destroy(gameObject);
         }
     }
 }

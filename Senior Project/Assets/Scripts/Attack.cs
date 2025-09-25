@@ -6,9 +6,6 @@ using UnityEngine.InputSystem;
 public class Attack : MonoBehaviour
 {
     public GameObject Melee;
-    bool isAttacking = false;
-    float atkDuration = 0.3f;
-    float atkTimer = 0.0f;
 
     InputAction meleeAction;
     InputAction shootAction;
@@ -19,18 +16,21 @@ public class Attack : MonoBehaviour
     float shootCooldown = 0.25f;
     float shootTimer = 0.5f;
 
+    //The script which is in the Melee child object
+    private SlashMove slashMove;
+
     void Start()
     {
         meleeAction = InputSystem.actions.FindAction("Attack");
         shootAction = InputSystem.actions.FindAction("Attack 2");
 
-        Melee.SetActive(false);
+        slashMove = Melee.GetComponent<SlashMove>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        checkTimer();
+        //checkTimer();
         shootTimer += Time.deltaTime;
 
         if (meleeAction.WasPressedThisFrame())
@@ -60,24 +60,9 @@ public class Attack : MonoBehaviour
 
     void OnAttack()
     {
-        if(!isAttacking)
+        if(!slashMove.IsSlashing())
         {
-            Melee.SetActive(true);
-            isAttacking = true;
-        }
-    }
-
-    void checkTimer()
-    {
-        if(isAttacking)
-        {
-            atkTimer += Time.deltaTime;
-            if(atkTimer >= atkDuration)
-            {
-                Melee.SetActive(false);
-                isAttacking = false;
-                atkTimer = 0.0f;
-            }
+            slashMove.ActivateSlash();
         }
     }
 }
