@@ -18,6 +18,7 @@ public class Weapon : MonoBehaviour
 
         if (weaponType == WeaponType.Bullet)
         {
+            Debug.Log("Bullet destroyed by: " + collision.name);
             Destroy(gameObject);
         }
     }

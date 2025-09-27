@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class EnemyFollow : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    private Transform target;
     NavMeshAgent agent;
 
 
@@ -15,9 +15,15 @@ public class EnemyFollow : MonoBehaviour
         agent.updateUpAxis = false;
     }
 
+
     // Update is called once per frame
     void Update()
     {
         agent.SetDestination(target.position);
+    }
+
+    public void SetTarget(Transform t)
+    {
+        target = t;
     }
 }

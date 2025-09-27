@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 1355945276976772172}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.52, y: -2.75, z: 0}
-  m_LocalScale: {x: 1, y: 4.5, z: 1}
+  m_LocalPosition: {x: 3.52, y: -3.71, z: 0}
+  m_LocalScale: {x: 1, y: 6.51, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3635840994535104089}
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70f94840a4c060142b324e14e4bf5a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
-  damage: 3
+  damage: 5
   weaponType: 0
 --- !u!1 &1622276834273140997
 GameObject:
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa13b51b786bbe418a4acbca16e4523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlashMove
-  moveSpeed: 5
+  moveSpeed: 12
 --- !u!1 &1760016382332637093
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +476,8 @@ MonoBehaviour:
   Melee: {fileID: 1622276834273140997}
   aim: {fileID: 5872699842340807751}
   bullet: {fileID: 5689616905070151574, guid: f1d495c7ebcb14e4ba2a8e5488dbc3cf, type: 3}
-  bulletForce: 20
+  bulletForce: 30
+  noShootCooldown: 0
 --- !u!114 &6856090393530145210
 MonoBehaviour:
   m_ObjectHideFlags: 0

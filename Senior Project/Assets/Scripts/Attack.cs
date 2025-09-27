@@ -16,6 +16,8 @@ public class Attack : MonoBehaviour
     float shootCooldown = 0.25f;
     float shootTimer = 0.5f;
 
+    public bool noShootCooldown = false;
+
     //The script which is in the Melee child object
     private SlashMove slashMove;
 
@@ -45,7 +47,7 @@ public class Attack : MonoBehaviour
 
     void OnShoot()
     {
-        if(shootTimer > shootCooldown)
+        if(shootTimer > shootCooldown || noShootCooldown)
         {
             shootTimer = 0.0f;
             GameObject b = Instantiate(bullet, aim.position, aim.rotation);
