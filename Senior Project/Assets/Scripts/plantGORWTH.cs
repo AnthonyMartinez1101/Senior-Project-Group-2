@@ -11,12 +11,6 @@ public class plantGORWTH : MonoBehaviour
         InvokeRepeating("Growth", growthTimer, growthTimer);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Growth()
     {
         if(stage  != maxStage)

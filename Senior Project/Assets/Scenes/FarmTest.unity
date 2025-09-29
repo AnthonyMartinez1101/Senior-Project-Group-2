@@ -129,11 +129,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 985691600227820410, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 985691600227820410, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1174446262185264830, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_LocalScale.x
@@ -158,6 +158,18 @@ PrefabInstance:
     - target: {fileID: 3856083966642808465, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_Name
       value: Dead_Corn
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856083966642808465, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212951703823783188, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_Value
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212951703823783188, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_MaxValue
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7512332853697978173, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_Size.x
@@ -334,11 +346,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 985691600227820410, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 985691600227820410, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1174446262185264830, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_LocalScale.x
@@ -363,6 +375,18 @@ PrefabInstance:
     - target: {fileID: 3856083966642808465, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_Name
       value: CORN
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856083966642808465, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212951703823783188, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_Value
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212951703823783188, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_MaxValue
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7512332853697978173, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_Size.x
@@ -533,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e9035456a99f54c8dd10c4897ac5a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::plantGORWTH
-  growthTimer: 5
+  growthTimer: 8
   maxStage: 3
 --- !u!1001 &1528115533
 PrefabInstance:
@@ -736,11 +760,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 985691600227820410, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 985691600227820410, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1174446262185264830, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_LocalScale.x
@@ -765,6 +789,18 @@ PrefabInstance:
     - target: {fileID: 3856083966642808465, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_Name
       value: Seed_Corn
+      objectReference: {fileID: 0}
+    - target: {fileID: 3856083966642808465, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212951703823783188, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_Value
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212951703823783188, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
+      propertyPath: m_MaxValue
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7512332853697978173, guid: 10bc5a040f4d8bb40916b6990837347e, type: 3}
       propertyPath: m_Size.x
