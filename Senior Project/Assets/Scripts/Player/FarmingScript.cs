@@ -1,16 +1,30 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FarmingScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    InputAction interactButton;
+
+
+    private void Start()
     {
-        
+        interactButton = InputSystem.actions.FindAction("Interact");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (interactButton.WasPressedThisFrame())
+        {
+            Vector3Int playerPosition = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
+
+            if (GameManager.instance.tileManager.IsInteractable(playerPosition))
+            {
+                Debug.Log("Tile is interactable");
+            }
+            else
+            {
+                Debug.Log("Tile is not interactable");
+            }
+        }
     }
 }
