@@ -607,6 +607,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5317037701703448420, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: seed
+      value: 
+      objectReference: {fileID: 1649596230}
+    - target: {fileID: 5317037701703448420, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
+      propertyPath: plantParentObject
+      value: 
+      objectReference: {fileID: 1242576349}
     - target: {fileID: 6717696334226163909, guid: 29b3755dd6f960640bd61f15a352fde1, type: 3}
       propertyPath: BoundingShape2D
       value: 

@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps;
 
 public class FarmingScript : MonoBehaviour
 {
     InputAction interactButton;
 
+    public GameObject seed;
+    public Transform plantParentObject;
 
     private void Start()
     {
@@ -19,12 +22,18 @@ public class FarmingScript : MonoBehaviour
 
             if (GameManager.instance.tileManager.IsInteractable(playerPosition))
             {
-                Debug.Log("Tile is interactable");
+                Vector3 spawnPos = GameManager.instance.tileManager.interactableMap.GetCellCenterWorld(playerPosition);
+                plantSeed(spawnPos);
             }
             else
             {
-                Debug.Log("Tile is not interactable");
+                // Play sound maybe?
             }
         }
+    }
+
+    void plantSeed(Vector3 pos)
+    {
+        Instantiate(seed, pos, Quaternion.identity, plantParentObject);
     }
 }
