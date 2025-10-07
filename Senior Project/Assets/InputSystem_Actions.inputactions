@@ -106,7 +106,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Switch",
+                    "name": "Toggle",
                     "type": "Button",
                     "id": "5841a899-96d7-4397-8bb2-61163430a116",
                     "expectedControlType": "",
@@ -503,23 +503,23 @@
                 },
                 {
                     "name": "",
-                    "id": "2e65c6eb-82d1-4337-9ac8-bca590c30399",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Switch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "455f5753-15e1-41dc-b8b6-05d9fa429a59",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Attack 2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "612bef1f-2799-4ce0-88cf-12b445bb5980",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Toggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

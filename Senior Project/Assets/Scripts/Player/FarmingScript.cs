@@ -12,6 +12,7 @@ public class FarmingScript : MonoBehaviour
     private void Start()
     {
         interactButton = InputSystem.actions.FindAction("Interact");
+        seed.SetActive(true);
     }
 
     void Update()

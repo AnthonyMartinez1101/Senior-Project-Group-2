@@ -9,19 +9,19 @@ public class AimScript : MonoBehaviour
     Vector2 playerDir;
 
     private bool useMouse = true;
-    InputAction switchInput;
+    InputAction toggleInput;
 
 
     private void Start()
     {
-        switchInput = InputSystem.actions.FindAction("Switch");
+        toggleInput = InputSystem.actions.FindAction("Toggle");
     }
 
     // Update is called once per frame
     void Update()
     {
-        //PRESS E TO SWITCH
-        if(switchInput.WasPressedThisFrame()) 
+        //PRESS T TO TOGGLE
+        if(toggleInput.WasPressedThisFrame()) 
         {
             useMouse = !useMouse;
         }
