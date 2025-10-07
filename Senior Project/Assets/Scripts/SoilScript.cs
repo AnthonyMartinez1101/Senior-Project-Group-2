@@ -1,71 +1,122 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SoilScript : MonoBehaviour
 {
-    //float waterLevel;
-    //bool isPlanted;
+    private float waterLevel = 0f;
+    private bool isPlanted = false;
 
-    //float plantGrowth;
-    //float maxPlantGrowth = 10f;
+    public float plantGrowth = 0f;
+    public float maxPlantGrowth = 10f;
 
+    public float radius = 2f;
+    public Transform playerPos;
 
+    private FloatingHealth plantHealth;
+    public float maxHealth = 15f;
+    public float currentHealth = 15f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    InputAction waterButton;
+    InputAction plantButton;
+
     void Start()
     {
-        
+        waterButton = InputSystem.actions.FindAction("Water");
+        plantButton = InputSystem.actions.FindAction("Plant");
+
+        if (!plantHealth)
+        {
+            plantHealth = GetComponent<FloatingHealth>();
+        }
+        if (plantHealth)
+        {
+            plantHealth.SetMax();
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        /*
-        //Water logic
-        if(player is near && player waters)
-        {
-            waterLevel = 10f;
-            set soil color to dark
-        }
+        float distance = Vector3.Distance(transform.position, playerPos.position);
+        bool playerIsNear = distance <= radius;
 
-        //Plant logic
-        if(player is near && player plants && !isPlanted)
+        // Interacting logic
+        if (playerIsNear)
         {
-            isPlanted = true;
-            plantGrowth = 0f;
-        }
-
-
-        //Water logic
-        if(waterLevel > 0f)
-        {
-          waterLevel -= Time.deltaTime;
-         soil color gets brighter
-        }
-        
-
-        //Plant logic
-        if(isPlanted && waterLevel > 0f)
-        {
-            plantGrowth += Time.deltaTime;
-            if(plantGrowth > 5)
+            // if watered
+            if (waterButton.WasPressedThisFrame())
             {
-                sprite = biggerStage;
+                waterLevel = 10f;
+                // set soil color to dark
             }
-
-           if(plantGrowth >= 10)
+            if (plantButton.WasPressedThisFrame() && !isPlanted)
             {
-                sparklesSprite set active;
+                // if planted
+                if (!isPlanted)
+                {
+                    // remove seed from inventory
+                    isPlanted = true;
+                    plantGrowth = 0f;
+                    // place plant sprite
+                }
+                // if harvested
+                if (plantGrowth >= maxPlantGrowth && isPlanted)
+                {
+                    resetSoil();
+                }
             }
         }
 
+        // Water diagetic health
+        if (waterLevel > 0f)
+        {
+            waterLevel -= Time.deltaTime;
+            // soil gets brighter
+        }
+        if (waterLevel <= 0f && isPlanted)
+        {
+            currentHealth -= Time.deltaTime;
+            if (plantHealth)
+            {
+                plantHealth.UpdateHealth(currentHealth, maxHealth);
+            }
+        }
 
+        // Plant growth logic
+        if (isPlanted && waterLevel > 0f)
+        {
+            if (plantGrowth < maxPlantGrowth)
+            {
+                plantGrowth += Time.deltaTime;
+                // increase plant size
+            }
+            if (plantGrowth >= maxPlantGrowth)
+            {
+                // show sparkles when done
+            }
+        }
 
+        // Trampled logic
+        // if (zombie touches soil && isPlanted)
+        //{
+        //    currentHealth -= 2f;
+        //}
 
+        // Plant death
+        if (isPlanted && currentHealth <= 0f)
+        {
+            resetSoil();
+        }
+    }
 
-
-
-
-         
-         */
+    void resetSoil()
+    {
+        isPlanted = false;
+        plantGrowth = 0f;
+        currentHealth = maxHealth;
+        if (plantHealth)
+        {
+            plantHealth.SetMax();
+        }
+        // reset soil color & plant
     }
 }

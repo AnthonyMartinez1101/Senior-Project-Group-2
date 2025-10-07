@@ -450,6 +450,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8418310b72101b4280c619cefbbf94a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoilScript
+  plantGrowth: 0
+  maxPlantGrowth: 10
+  radius: 2
+  playerPos: {fileID: 1774197665}
+  maxHealth: 15
+  currentHealth: 15
 --- !u!114 &1399105020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,6 +528,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+--- !u!4 &1774197665 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7814202438860295599, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+  m_PrefabInstance: {fileID: 1774197664}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
