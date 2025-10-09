@@ -16,8 +16,11 @@ public class SoilScript : MonoBehaviour
     public float maxHealth = 15f;
     public float currentHealth = 15f;
 
+    public GameObject fullyWatered; //png of watered plant
+
     InputAction waterButton;
     InputAction plantButton;
+
 
     void Start()
     {
@@ -31,6 +34,10 @@ public class SoilScript : MonoBehaviour
         if (plantHealth)
         {
             plantHealth.SetMax();
+        }
+        if(fullyWatered)
+        {
+            fullyWatered.SetActive(false);
         }
     }
 
@@ -56,6 +63,11 @@ public class SoilScript : MonoBehaviour
                     // remove seed from inventory
                     isPlanted = true;
                     plantGrowth = 0f;
+                    
+                    if(fullyWatered)
+                    {
+                        fullyWatered.SetActive(false);
+                    }
                     // place plant sprite
                 }
                 // if harvested
@@ -92,6 +104,10 @@ public class SoilScript : MonoBehaviour
             if (plantGrowth >= maxPlantGrowth)
             {
                 // show sparkles when done
+                if(fullyWatered && fullyWatered == null)
+                {
+                    fullyWatered = Instantiate(fullyWatered, transform.position, Quaternion.identity);
+                }
             }
         }
 
@@ -116,6 +132,10 @@ public class SoilScript : MonoBehaviour
         if (plantHealth)
         {
             plantHealth.SetMax();
+        }
+        if(fullyWatered)
+        {
+            fullyWatered.SetActive(false);
         }
         // reset soil color & plant
     }
