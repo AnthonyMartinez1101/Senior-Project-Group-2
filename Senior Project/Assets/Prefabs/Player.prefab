@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 6493144471492509595}
   - component: {fileID: 1125482792520486096}
   - component: {fileID: 6856090393530145210}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -477,6 +477,7 @@ MonoBehaviour:
   aim: {fileID: 5872699842340807751}
   bullet: {fileID: 5689616905070151574, guid: f1d495c7ebcb14e4ba2a8e5488dbc3cf, type: 3}
   bulletForce: 30
+  shootCooldown: 0.1
   noShootCooldown: 0
 --- !u!114 &6856090393530145210
 MonoBehaviour:
@@ -490,6 +491,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e86a7486ab04654290ea2fef5c0be53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  seed: {fileID: 0}
+  plantParentObject: {fileID: 0}
 --- !u!1 &5000908664961898390
 GameObject:
   m_ObjectHideFlags: 0

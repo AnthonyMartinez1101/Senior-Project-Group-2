@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -12,27 +13,51 @@ public class EnemySpawner : MonoBehaviour
     private float spawnRate = 3f;
     private int wave = 1;
 
+    private float worldTimer = 0f; 
+    public TMP_Text worldTimerText;
+    private bool isDay = true;
+
     private void Update()
     {
-        timer -= Time.deltaTime;
-        spawnRate -= Time.deltaTime;
+        worldTimer += Time.deltaTime;
 
-        if (timer <= 0)
+        if (worldTimer <= 15f)
         {
-            for (int i = wave * 2; i > 0; i--)
+            worldTimerText.text = "Day";
+            isDay = true;
+        }
+        else if (worldTimer <= 40f)
+        {
+            worldTimerText.text = "Night";
+            isDay = false;
+        }
+        else
+        {
+            worldTimer = 0f;
+        }
+
+        if (!isDay)
+        {
+            timer -= Time.deltaTime;
+            spawnRate -= Time.deltaTime;
+
+
+            if (timer <= 0)
+            {
+                for (int i = wave * 2; i > 0; i--)
+                {
+                    Spawn();
+                }
+                wave++;
+                timer = 10f + wave;
+            }
+
+            if (spawnRate <= 0)
             {
                 Spawn();
+                spawnRate = 1f;
             }
-            wave++;
-            timer = 10f + wave;
         }
-        
-        if(spawnRate <= 0)
-        {
-            Spawn();
-            spawnRate = 1f;
-        }
-
     }
 
     private void Spawn()
@@ -49,5 +74,10 @@ public class EnemySpawner : MonoBehaviour
         //var enemy = Instantiate(enemyPrefab[randNum]).GetComponent<EnemyFollow>();
         var enemy = Instantiate(enemyPrefab[randNum], currentSpawn.position, currentSpawn.rotation).GetComponent<EnemyFollow>();
         enemy.SetTarget(player);
+
+        Enemy e = enemy.GetComponent<Enemy>();
+        e.SetSpawner(this);
     }
+
+    public bool IsDay() { return isDay; }
 }

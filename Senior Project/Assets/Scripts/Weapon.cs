@@ -8,7 +8,7 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) return;
+        if (collision.CompareTag("Player") || collision.CompareTag("NoBulletCollision")) return;
 
         Enemy enemy = collision.GetComponent<Enemy>();
         if(enemy != null)

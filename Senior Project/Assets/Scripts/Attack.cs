@@ -13,7 +13,7 @@ public class Attack : MonoBehaviour
     public Transform aim;
     public GameObject bullet;
     public float bulletForce = 10f;
-    float shootCooldown = 0.25f;
+    public float shootCooldown = 0.25f;
     float shootTimer = 0.5f;
 
     public bool noShootCooldown = false;
