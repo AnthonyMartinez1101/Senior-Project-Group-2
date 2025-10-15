@@ -13,6 +13,7 @@ public class SlashMove : MonoBehaviour
 
     void Awake()
     {
+        //Assigns the objects
         slashCollider = transform.Find("Slash").gameObject;
         pointA = transform.Find("PointA");
         pointB = transform.Find("PointB");
@@ -27,9 +28,11 @@ public class SlashMove : MonoBehaviour
     {
         if(slash)
         {
+            //Moves the collider from point A to point B
             slashCollider.transform.position = Vector3.MoveTowards(slashCollider.transform.position, pointB.position, moveSpeed * Time.deltaTime);
 
-            if(slashCollider.transform.position == pointB.position)
+            //Once collider reaches point B, disable it and stop slashing
+            if (slashCollider.transform.position == pointB.position)
             {
                 slashCollider.SetActive(false);
                 slash = false;
@@ -39,6 +42,7 @@ public class SlashMove : MonoBehaviour
 
     public void ActivateSlash()
     {
+        //Activates the collider and sets its position to point A
         slashCollider.SetActive(true);
         slashCollider.transform.position = pointA.position;
         slash = true;

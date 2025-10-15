@@ -29,10 +29,12 @@ public class AimScript : MonoBehaviour
         //If mouse mode is selected (Only apply if mouse is being used)
         if (useMouse && Mouse.current != null)
         {
+            //Gets mouse position on the scree and converts it to world position
             Vector3 screen = Mouse.current.position.ReadValue();
             Vector3 world = Camera.main.ScreenToWorldPoint(screen);
             world.z = aim.position.z;
 
+            //Sets the aim's up direction to point towards the mouse position
             Vector2 dir = (world - aim.position).normalized;
             aim.up = -dir;
         }
