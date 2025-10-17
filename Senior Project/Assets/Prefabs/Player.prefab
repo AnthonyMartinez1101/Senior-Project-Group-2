@@ -229,9 +229,10 @@ GameObject:
   - component: {fileID: 7526973262378442605}
   - component: {fileID: 1916500946425368033}
   - component: {fileID: 8803167819044735584}
+  - component: {fileID: 4923560966000343244}
   - component: {fileID: 6493144471492509595}
   - component: {fileID: 1125482792520486096}
-  - component: {fileID: 6856090393530145210}
+  - component: {fileID: 6813988684076241257}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -447,6 +448,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384707f90e5770440a17081379caec9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &4923560966000343244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760016382332637093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ee8ce10c7b18a47b3f6219c09703c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractScript
 --- !u!114 &6493144471492509595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,7 +492,7 @@ MonoBehaviour:
   bulletForce: 30
   shootCooldown: 0.1
   noShootCooldown: 0
---- !u!114 &6856090393530145210
+--- !u!114 &6813988684076241257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -488,11 +501,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1760016382332637093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e86a7486ab04654290ea2fef5c0be53, type: 3}
+  m_Script: {fileID: 11500000, guid: 5452bf0b85de5bf49a29e5b08fcd9cbe, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
-  seed: {fileID: 0}
-  plantParentObject: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::InventorySystem
+  inventoryItems:
+  - item: {fileID: 0}
+    count: 0
+  - item: {fileID: 0}
+    count: 0
+  inventoryDisplay: {fileID: 0}
 --- !u!1 &5000908664961898390
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,9 +720,10 @@ GameObject:
   - component: {fileID: 1192038209061004611}
   - component: {fileID: 4451800773964450250}
   - component: {fileID: 955362444939710171}
+  - component: {fileID: 7109040869451099673}
   m_Layer: 0
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -795,3 +813,40 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_SortAtRoot: 0
+--- !u!70 &7109040869451099673
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860768882636533363}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.1, y: 0.1}
+  m_Direction: 0

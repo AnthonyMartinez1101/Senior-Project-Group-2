@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
     {
         worldTimer += Time.deltaTime;
 
-        if (worldTimer <= 15f)
+        if (worldTimer <= 40f)
         {
             worldTimerText.text = "Day";
             isDay = true;

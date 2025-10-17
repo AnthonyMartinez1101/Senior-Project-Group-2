@@ -34,18 +34,9 @@ public class Attack : MonoBehaviour
     {
         //checkTimer();
         shootTimer += Time.deltaTime;
-
-        if (meleeAction.WasPressedThisFrame())
-        {
-            OnAttack();
-        }
-        if(shootAction.WasPressedThisFrame())
-        {
-            OnShoot();
-        }
     }
 
-    void OnShoot()
+    public void OnShoot()
     {
         if(shootTimer > shootCooldown || noShootCooldown)
         {
@@ -60,7 +51,7 @@ public class Attack : MonoBehaviour
         }
     }
 
-    void OnAttack()
+    public void OnMelee()
     {
         if(!slashMove.IsSlashing())
         {
