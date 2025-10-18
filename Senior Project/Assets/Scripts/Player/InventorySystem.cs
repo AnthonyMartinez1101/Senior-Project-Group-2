@@ -71,7 +71,7 @@ public class InventorySystem : MonoBehaviour
         UpdateDisplayText();
     }
 
-    void UpdateDisplayText()
+    public void UpdateDisplayText()
     {
         if (inventoryItems.Count == 0)
         {
@@ -91,5 +91,10 @@ public class InventorySystem : MonoBehaviour
     public Item GetCurrentItem()
     {
         return inventoryItems[inventoryIndex].item;
+    }
+
+    public int GetCurrentItemCount()
+    {
+        return inventoryItems[inventoryIndex].count;
     }
 }

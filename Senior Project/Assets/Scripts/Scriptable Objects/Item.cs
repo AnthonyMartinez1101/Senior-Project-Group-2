@@ -27,6 +27,10 @@ public class Item : ScriptableObject
     [Tooltip("A plant scriptable object")]
     public PlantItem plant;
 
+    [Header("--If Item Type Produce--")]
+    [Tooltip("Health regen when eating produce")]
+    public float healAmount;
+
     [Header("--If Item Type Weapon--")]
     [Tooltip("A weapon type")]
     //public WeaponItem weapon;
@@ -41,6 +45,7 @@ public class Item : ScriptableObject
 
     //~~~~EDITOR EASE OF USE~~~~//
     private PlantItem savedPlant;
+    private float savedHealAmount;
     private WeaponType savedWeaponType;
 
     //Runs only in the editor
@@ -61,7 +66,24 @@ public class Item : ScriptableObject
             plant = savedPlant; //Will re-add the original plant after switching itemType back to seed
         }
 
-        if(itemType != ItemType.Weapon)
+
+
+        if(itemType != ItemType.Produce)
+        {
+            healAmount = 0f; // makes healAmount 0 when itemType is not produce (since any other type doesn't need a heal amount)
+        }
+        if(healAmount != 0f)
+        {
+            savedHealAmount = healAmount; //Saves the healAmount so that changing itemType doesn't permanently delete the assigned healAmount
+        }
+        if(itemType == ItemType.Produce)
+        {
+            healAmount = savedHealAmount; //Will re-add the original healAmount after switching itemType back to produce
+        }
+
+
+
+        if (itemType != ItemType.Weapon)
         {
             weaponType = WeaponType.None; // makes weaponType None when itemType is not weapon (since any other type doesn't need a weapon type)
         }

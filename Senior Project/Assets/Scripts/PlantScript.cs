@@ -60,10 +60,19 @@ public class PlantScript : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            TakeDamage(2f);
+        }
+    }
+
+
     private void Heal(float dt)
     {
-        //Heal at twice the speed of damage
-        currentHealth += dt * 2;
+        //Heal at triple the speed of damage
+        currentHealth += dt * 3;
         if (currentHealth > plantHealth) currentHealth = plantHealth;
         if (healthBar) healthBar.UpdateHealth(currentHealth, plantHealth);
     }
@@ -76,5 +85,10 @@ public class PlantScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public bool IsFullyGrown()
+    {
+        return currentGrowth >= plantInfo.growthTime;
     }
 }

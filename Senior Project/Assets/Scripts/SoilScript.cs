@@ -20,9 +20,16 @@ public class SoilScript : MonoBehaviour
     }
     private void Update()
     {
-        if (waterLevel > 0f && currentPlant != null)
+        if (currentPlant != null && !currentPlant.IsFullyGrown())
         {
-            currentPlant.TickGrowth(Time.deltaTime);
+            if (waterLevel > 0f)
+            {
+                currentPlant.TickGrowth(Time.deltaTime);
+            }
+            else if (waterLevel < 0f)
+            {
+                currentPlant.TakeDamage(Time.deltaTime);
+            }
         }
         waterLevel -= Time.deltaTime;
     }

@@ -12,6 +12,8 @@ public class InteractScript : MonoBehaviour
 
     private SoilScript currentSoil;
 
+    private PlayerHealth playerHealth;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +21,8 @@ public class InteractScript : MonoBehaviour
         attack = GetComponent<Attack>();
 
         interactAction = InputSystem.actions.FindAction("Interact");
+        
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -35,6 +39,7 @@ public class InteractScript : MonoBehaviour
         currentSoil = newSoil;
     }
 
+    // Handle interaction based on current item type when interact button is pressed
     private void Interact()
     {
         currentItem = inventorySystem.GetCurrentItem();
@@ -50,7 +55,7 @@ public class InteractScript : MonoBehaviour
                 break;
 
             case ItemType.Produce:
-                Debug.Log("Using produce");
+                EatProduce();
                 break;
 
             case ItemType.WaterCan:
@@ -63,22 +68,37 @@ public class InteractScript : MonoBehaviour
         }
     }
 
+    //Eat produce only if you have produce in hand and are not at max health
+    private void EatProduce()
+    {
+        if(inventorySystem.GetCurrentItemCount() > 0 && !playerHealth.IsMaxHealth())
+        {
+            playerHealth.Heal(currentItem.healAmount);
+            inventorySystem.SubtractItem();
+            inventorySystem.UpdateDisplayText();
+        }
+    }
+
+    //Plant seed only if soil is highlighted and you have seeds in inventory
     private void PlantSeed()
     {
-        if (currentSoil.IsHighlighted())
+        if (currentSoil != null && currentSoil.IsHighlighted() && inventorySystem.GetCurrentItemCount() > 0)
         {
             if (currentSoil.Plant(currentItem))
             {
                 inventorySystem.SubtractItem();
+                inventorySystem.UpdateDisplayText();
             }
         }
     }
 
+    // Water soil only if soil is highlighted
     private void WaterSoil()
     {
-        if(currentSoil.IsHighlighted()) currentSoil.Water();
+        if(currentSoil != null && currentSoil.IsHighlighted()) currentSoil.Water();
     }
 
+    // Perform attack based on weapon type
     private void DoAttack()
     {
         switch(currentItem.weaponType)

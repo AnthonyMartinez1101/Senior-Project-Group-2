@@ -10,10 +10,17 @@ public class Weapon : MonoBehaviour
     {
         if (collision.CompareTag("Player") || collision.CompareTag("NoBulletCollision") || collision.CompareTag("Interact")) return;
 
+        
         Enemy enemy = collision.GetComponent<Enemy>();
         if(enemy != null)
         {
             enemy.TakeDamage(damage);
+        }
+
+        PlantScript plantScript = collision.GetComponent<PlantScript>();
+        if (plantScript != null)
+        {
+            plantScript.TakeDamage(damage);
         }
 
         if (weaponType == WeaponType.Bullet)

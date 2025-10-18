@@ -19,7 +19,10 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(target.position);
+        if (target != null)
+        {
+            agent.SetDestination(target.position);
+        }
     }
 
     public void SetTarget(Transform t)

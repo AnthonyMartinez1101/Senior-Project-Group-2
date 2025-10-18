@@ -21,12 +21,12 @@ public class EnemySpawner : MonoBehaviour
     {
         worldTimer += Time.deltaTime;
 
-        if (worldTimer <= 40f)
+        if (worldTimer <= 30f)
         {
             worldTimerText.text = "Day";
             isDay = true;
         }
-        else if (worldTimer <= 40f)
+        else if (worldTimer <= 80f)
         {
             worldTimerText.text = "Night";
             isDay = false;

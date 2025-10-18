@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6740605699736260126}
   - component: {fileID: 864589029240462298}
   - component: {fileID: 3033162572284980776}
+  - component: {fileID: 2759985065565571604}
   m_Layer: 0
   m_Name: PlantActor
   m_TagString: Untagged
@@ -92,7 +93,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &3033162572284980776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +106,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5950ba0892fbf9140a3268f8c7c12f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantScript
+--- !u!61 &2759985065565571604
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3729801971907865267}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5452592, y: 0.12661234}
+    oldSize: {x: 20.48, y: 20.48}
+    newSize: {x: 20.48, y: 20.48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 4.52, y: 2.88}
+  m_EdgeRadius: 0
 --- !u!1 &8439195869774959516
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +358,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 6740605699736260126}
+    - target: {fileID: 4650680659613107702, guid: c640191a004defb4fb35dad3ab2e3ca4, type: 3}
+      propertyPath: offset.y
+      value: -0.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
