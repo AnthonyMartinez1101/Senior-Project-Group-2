@@ -29,4 +29,9 @@ public class EnemyFollow : MonoBehaviour
     {
         target = t;
     }
+
+    public Transform GetTarget()
+    {
+        return target;
+    }
 }

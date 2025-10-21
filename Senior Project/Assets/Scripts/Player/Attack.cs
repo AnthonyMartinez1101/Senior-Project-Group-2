@@ -41,7 +41,8 @@ public class Attack : MonoBehaviour
         if(shootTimer > shootCooldown || noShootCooldown)
         {
             shootTimer = 0.0f;
-            GameObject b = Instantiate(bullet, aim.position, aim.rotation);
+            Quaternion rot = aim.rotation * Quaternion.Euler(0f, 0f, -90f);
+            GameObject b = Instantiate(bullet, aim.position, rot);
             b.GetComponent<Rigidbody2D>().AddForce(-aim.up * bulletForce, ForceMode2D.Impulse);
             Destroy(b, 2.0f);
         }

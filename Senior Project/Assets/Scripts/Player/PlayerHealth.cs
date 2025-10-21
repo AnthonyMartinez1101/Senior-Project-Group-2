@@ -7,9 +7,6 @@ public class PlayerHealth : MonoBehaviour
 
     private FloatingHealth healthBar;
 
-    private bool enemyColliding;
-
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,17 +14,6 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         if (!healthBar) healthBar = GetComponentInChildren<FloatingHealth>();
         if (healthBar) healthBar.SetMax();
-
-        enemyColliding = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(enemyColliding)
-        {
-            TakeDamage(3f * Time.deltaTime);
-        }
     }
 
     public void Heal(float healAmount)
@@ -48,21 +34,6 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy"))
-        {
-            enemyColliding = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy"))
-        {
-            enemyColliding = false;
-        }
-    }
 
     public bool IsMaxHealth()
     {

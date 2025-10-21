@@ -4367,6 +4367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cad8e33c61db4e4f83543b99596d3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  autoSaveTimer: 10
 --- !u!4 &404758539
 Transform:
   m_ObjectHideFlags: 0
@@ -12273,6 +12274,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1125482792520486096, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: bulletForce
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 1760016382332637093, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: m_Name
       value: Player
