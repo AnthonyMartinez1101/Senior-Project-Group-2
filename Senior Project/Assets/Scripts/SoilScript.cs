@@ -20,18 +20,21 @@ public class SoilScript : MonoBehaviour
     }
     private void Update()
     {
-        if (currentPlant != null && !currentPlant.IsFullyGrown())
+        if(GameManager.Instance.IsDay())
         {
-            if (waterLevel > 0f)
+            if (currentPlant != null && !currentPlant.IsFullyGrown())
             {
-                currentPlant.TickGrowth(Time.deltaTime);
+                if (waterLevel > 0f)
+                {
+                    currentPlant.TickGrowth(Time.deltaTime);
+                }
+                else if (waterLevel < 0f)
+                {
+                    currentPlant.TakeWaterDamage(Time.deltaTime);
+                }
             }
-            else if (waterLevel < 0f)
-            {
-                currentPlant.TakeWaterDamage(Time.deltaTime);
-            }
+            waterLevel -= Time.deltaTime;
         }
-        waterLevel -= Time.deltaTime;
     }
 
     public void Water()

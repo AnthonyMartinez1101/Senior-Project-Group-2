@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public InventorySystem inventorySystem;
 
+    public EnemySpawner enemySpawner;
+
     private void Awake()
     {
         gameData = SaveScript.LoadGame();
@@ -32,6 +34,16 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("GameManager: InventorySystem reference (from player) is not set.");
         }
+    }
+
+    public bool IsDay() 
+    {
+        if (enemySpawner != null)
+        {
+            return enemySpawner.IsDay();
+        }
+        Debug.LogWarning("GameManager: EnemySpawner reference is not set.");
+        return true; // Default to day if enemySpawner is not set
     }
 
     public void AddToInventory(Item item)
