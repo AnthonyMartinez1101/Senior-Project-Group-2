@@ -10,4 +10,10 @@ public class PlantItem : ScriptableObject
 
     [Header("Sprites ~ Stage 1 - Stage 2 - Stage 3")]
     public Sprite[] growStages = new Sprite[3];
+
+    [Header("Produce Plant Item")]
+    public Item produce;
+
+    [Header("Seed Item")]
+    public Item seed;
 }

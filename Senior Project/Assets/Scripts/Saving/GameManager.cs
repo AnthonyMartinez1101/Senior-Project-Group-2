@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameData gameData;
     public float autoSaveTimer = 10f;
 
+    public InventorySystem inventorySystem;
+
     private void Awake()
     {
         gameData = SaveScript.LoadGame();
@@ -25,6 +27,18 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
             return;
+        }
+        if(inventorySystem == null)
+        {
+            Debug.LogWarning("GameManager: InventorySystem reference (from player) is not set.");
+        }
+    }
+
+    public void AddToInventory(Item item)
+    {
+        if (inventorySystem != null)
+        {
+            inventorySystem.AddItem(item);
         }
     }
 

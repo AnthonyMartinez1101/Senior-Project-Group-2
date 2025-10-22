@@ -8,6 +8,8 @@ TagManager:
   - Interact
   - Enemy
   - Plant
+  - Sickle
+  - Bullet
   layers:
   - Default
   - TransparentFX

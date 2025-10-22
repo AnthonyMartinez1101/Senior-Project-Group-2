@@ -11,7 +11,7 @@ public class SoilScript : MonoBehaviour
 
     private float waterLevel = 0f;
 
-    private InteractScript interactScript;
+    //private InteractScript interactScript;
 
     private void Start()
     {
@@ -28,7 +28,7 @@ public class SoilScript : MonoBehaviour
             }
             else if (waterLevel < 0f)
             {
-                currentPlant.TakeDamage(Time.deltaTime);
+                currentPlant.TakeWaterDamage(Time.deltaTime);
             }
         }
         waterLevel -= Time.deltaTime;

@@ -83,6 +83,26 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
+    public void AddItem(Item newItem)
+    {
+        if(newItem == null) return;
+
+        //Check if item already exists in inventory
+        foreach (ItemStack stack in inventoryItems)
+        {
+            if (stack.item == newItem)
+            {
+                stack.count++;
+                UpdateDisplayText();
+                return;
+            }
+        }
+
+        // Otherwise add a new stack
+        inventoryItems.Add(new ItemStack { item = newItem, count = 1 });
+        UpdateDisplayText();
+    }
+
     public void SubtractItem()
     {
         inventoryItems[inventoryIndex].count--;

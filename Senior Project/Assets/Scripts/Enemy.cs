@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
 
     private PlayerHealth playerHealth;
 
+    [SerializeField] Item randomItemDrop;
+
+
 
     //Damage per second taken during the day
     private float dps;
@@ -48,6 +51,18 @@ public class Enemy : MonoBehaviour
         if(healthBar) healthBar.UpdateHealth(health, maxHealth);
         if (health <= 0)
         {
+            int randNum = Random.Range(0, 100);
+            if(randNum == 1 && randomItemDrop != null) GameManager.Instance.AddToInventory(randomItemDrop);
+            Destroy(gameObject);
+        }
+    }
+
+    private void DayDamage(float damageAmount)
+    {
+        health -= damageAmount;
+        if (healthBar) healthBar.UpdateHealth(health, maxHealth);
+        if (health <= 0)
+        {
             Destroy(gameObject);
         }
     }
@@ -58,7 +73,7 @@ public class Enemy : MonoBehaviour
         //If day, take damage
         if (spawner.IsDay())
         {
-            TakeDamage(dps * Time.deltaTime);
+            DayDamage(dps * Time.deltaTime);
         }
 
         //While colliding with player, deal constant damage over time

@@ -14,6 +14,8 @@ public class PlantScript : MonoBehaviour
     private float currentHealth;
     private FloatingHealth healthBar;
 
+    private Collider2D lastCollidedWith;
+
 
 
 
@@ -60,14 +62,6 @@ public class PlantScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy"))
-        {
-            TakeDamage(2f);
-        }
-    }
-
 
     private void Heal(float dt)
     {
@@ -83,6 +77,31 @@ public class PlantScript : MonoBehaviour
         if (healthBar) healthBar.UpdateHealth(currentHealth, plantHealth);
         if (currentHealth <= 0)
         {
+            if (lastCollidedWith != null && lastCollidedWith.CompareTag("Sickle"))
+            {
+                if(plantInfo.produce != null && plantInfo.seed != null)
+                {
+                    GameManager.Instance.AddToInventory(plantInfo.seed);
+                    if(IsFullyGrown())
+                    {
+                        GameManager.Instance.AddToInventory(plantInfo.produce);
+                    }
+                }
+                else
+                {
+                    Debug.Log("PlantScript: PlantItem produce or seed is null. Cannot add to inventory.");
+                } 
+            }
+            Destroy(gameObject);
+        }
+    }
+
+    public void TakeWaterDamage(float damageAmount)
+    {
+        currentHealth -= damageAmount;
+        if (healthBar) healthBar.UpdateHealth(currentHealth, plantHealth);
+        if (currentHealth <= 0)
+        {
             Destroy(gameObject);
         }
     }
@@ -90,5 +109,10 @@ public class PlantScript : MonoBehaviour
     public bool IsFullyGrown()
     {
         return currentGrowth >= plantInfo.growthTime;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        lastCollidedWith = collision;
     }
 }

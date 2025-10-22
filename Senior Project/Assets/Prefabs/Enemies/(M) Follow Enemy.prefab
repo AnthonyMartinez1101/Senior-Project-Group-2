@@ -109,6 +109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   health: 0
   maxHealth: 5
+  dayBurnTime: 5
+  randomItemDrop: {fileID: 11400000, guid: 5e96b6d07fb4cb440be11f9354ce5e97, type: 2}
 --- !u!114 &5300578624398878722
 MonoBehaviour:
   m_ObjectHideFlags: 0
