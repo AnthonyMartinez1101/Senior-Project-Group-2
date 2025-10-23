@@ -4369,6 +4369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   autoSaveTimer: 10
   inventorySystem: {fileID: 1892174187}
+  enemySpawner: {fileID: 1939432098}
 --- !u!4 &404758539
 Transform:
   m_ObjectHideFlags: 0
@@ -16971,6 +16972,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1939432098 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+  m_PrefabInstance: {fileID: 605723352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255c53af7b42f8d40ac081a5db737207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1945070503
 GameObject:
   m_ObjectHideFlags: 0
