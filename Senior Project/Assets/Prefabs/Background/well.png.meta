@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 0567611216fad3b44ad69573a64b8099
+guid: 4a01a60da42d0054dbe687f746d4eea9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -942062848596079709
-    second: Untitled_Artwork(5)_0
+      213: -3402816046540829602
+    second: well_0
+  - first:
+      213: -5044530906930852461
+    second: well_1
+  - first:
+      213: 2372595863849475
+    second: well_2
+  - first:
+      213: 1699960396436162000
+    second: well_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled_Artwork(5)_0
+      name: well_0
       rect:
         serializedVersion: 2
-        x: 274
-        y: 392
-        width: 2081
-        height: 805
+        x: 216
+        y: 857
+        width: 16
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3ab865994de1de2f0800000000000000
-      internalID: -942062848596079709
+      spriteID: e5c4fe5a5d4c6c0d0800000000000000
+      internalID: -3402816046540829602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: well_1
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 23
+        width: 926
+        height: 1057
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39d48e10ed93ef9b0800000000000000
+      internalID: -5044530906930852461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: well_2
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 857
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30a09a50ddd680000800000000000000
+      internalID: 2372595863849475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: well_3
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 5
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d54fc949f8779710800000000000000
+      internalID: 1699960396436162000
       vertices: []
       indices: 
       edges: []
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Untitled_Artwork(5)_0: -942062848596079709
+      well_0: -3402816046540829602
+      well_1: -5044530906930852461
+      well_2: 2372595863849475
+      well_3: 1699960396436162000
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
