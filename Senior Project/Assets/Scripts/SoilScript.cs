@@ -11,12 +11,24 @@ public class SoilScript : MonoBehaviour
 
     private float waterLevel = 0f;
 
+    private GameObject waterDroplet; //Child object in soil representing water droplet
+
     //private InteractScript interactScript;
 
     private void Start()
     {
         highlighted = transform.GetChild(0).gameObject;
         highlighted.SetActive(false);
+
+        waterDroplet = transform.GetChild(1).gameObject;
+        if (waterDroplet != null)
+        {
+            waterDroplet.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("Water droplet object not found as child of soil.");
+        }
     }
     private void Update()
     {
@@ -24,6 +36,7 @@ public class SoilScript : MonoBehaviour
         {
             if (currentPlant != null && !currentPlant.IsFullyGrown())
             {
+                //Growing logic
                 if (waterLevel > 0f)
                 {
                     currentPlant.TickGrowth(Time.deltaTime);
@@ -32,9 +45,45 @@ public class SoilScript : MonoBehaviour
                 {
                     currentPlant.TakeWaterDamage(Time.deltaTime);
                 }
+
+                //Water droplet logic
+                if(waterLevel > 4f)
+                {
+                    waterDroplet.SetActive(false);
+                }
+                else if (waterLevel > 0f)
+                {
+                    waterDroplet.SetActive(true);
+                    DropletFullAlpha();
+                }
+                else
+                {
+                    waterDroplet.SetActive(true);
+                    BlinkDroplet();
+                }
             }
             waterLevel -= Time.deltaTime;
         }
+        else
+        {
+            waterDroplet.SetActive(false);
+        }
+    }
+
+    private void DropletFullAlpha()
+    {
+        Color color = waterDroplet.GetComponent<SpriteRenderer>().color;
+        color.a = 1f;
+        waterDroplet.GetComponent<SpriteRenderer>().color = color;
+    }
+
+    private void BlinkDroplet()
+    {
+        float blinkSpeed = 6f;
+        float alpha = (Mathf.Sin(Time.time * blinkSpeed) + 1f) / 2f; //Oscillates between 0 and 1
+        Color color = waterDroplet.GetComponent<SpriteRenderer>().color;
+        color.a = alpha;
+        waterDroplet.GetComponent<SpriteRenderer>().color = color;
     }
 
     public void Water()
