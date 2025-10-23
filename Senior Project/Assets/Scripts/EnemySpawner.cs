@@ -14,7 +14,8 @@ public class EnemySpawner : MonoBehaviour
     private int wave = 1;
 
     private float worldTimer = 0f; 
-    public TMP_Text worldTimerText;
+    public GameObject dayText;
+    public GameObject nightText;
     private bool isDay = true;
 
     private void Update()
@@ -23,12 +24,16 @@ public class EnemySpawner : MonoBehaviour
 
         if (worldTimer <= 60f)
         {
-            worldTimerText.text = "Day";
+            //Activate day text
+            dayText.SetActive(true);
+            nightText.SetActive(false);
             isDay = true;
         }
         else if (worldTimer <= 100f)
         {
-            worldTimerText.text = "Night";
+            //Activate night text
+            dayText.SetActive(false);
+            nightText.SetActive(true);
             isDay = false;
         }
         else

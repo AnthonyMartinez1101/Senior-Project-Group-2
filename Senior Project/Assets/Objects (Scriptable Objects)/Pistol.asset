@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93a86dbcae4149a46be4292fd556dfb8, type: 3}
-  m_Name: Sicky
+  m_Name: Pistol
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Sicky
+  itemName: Pistol
   icon: {fileID: 0}
   itemType: 1
   plant: {fileID: 0}
+  healAmount: 0
   weaponType: 1

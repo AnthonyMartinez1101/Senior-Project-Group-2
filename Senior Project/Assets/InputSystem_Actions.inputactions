@@ -34,6 +34,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Sythe",
+                    "type": "Button",
+                    "id": "c3704c21-df25-4a3e-b79a-9bfd40d9ed1d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Water",
                     "type": "Button",
                     "id": "e99ef878-5adf-4355-81b8-d93d11a4ef3b",
@@ -560,6 +569,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5613b58c-5aa0-4a7b-a5f6-ed45d96c61e0",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Sythe",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -12,8 +12,7 @@ public enum ItemType
 public enum WeaponType
 {
     None,
-    Sicky,
-    Gun
+    Pistol
 }
 
 [CreateAssetMenu(fileName = "NewItem", menuName = "Item", order = -500)]

@@ -7,8 +7,7 @@ public class Attack : MonoBehaviour
 {
     public GameObject Melee;
 
-    InputAction meleeAction;
-    InputAction shootAction;
+    InputAction sytheAction;
 
     public Transform aim;
     public GameObject bullet;
@@ -23,8 +22,7 @@ public class Attack : MonoBehaviour
 
     void Start()
     {
-        meleeAction = InputSystem.actions.FindAction("Attack");
-        shootAction = InputSystem.actions.FindAction("Attack 2");
+        sytheAction = InputSystem.actions.FindAction("Sythe");
 
         slashMove = Melee.GetComponent<SlashMove>();
     }
@@ -32,8 +30,12 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //checkTimer();
         shootTimer += Time.deltaTime;
+
+        if(sytheAction.WasPressedThisFrame())
+        {
+            OnMelee();
+        }
     }
 
     public void OnShoot()
@@ -52,7 +54,7 @@ public class Attack : MonoBehaviour
         }
     }
 
-    public void OnMelee()
+    private void OnMelee()
     {
         if(!slashMove.IsSlashing())
         {

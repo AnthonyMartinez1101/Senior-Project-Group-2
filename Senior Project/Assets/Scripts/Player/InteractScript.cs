@@ -103,11 +103,7 @@ public class InteractScript : MonoBehaviour
     {
         switch(currentItem.weaponType)
         {
-            case WeaponType.Sicky:
-                attack.OnMelee();
-                break;
-
-            case WeaponType.Gun:
+            case WeaponType.Pistol:
                 attack.OnShoot();
                 break;
 
