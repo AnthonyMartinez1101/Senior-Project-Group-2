@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static bool loadOnStart = false;
     public static GameManager Instance;
     public static GameData gameData;
-    public float autoSaveTimer = 10f;
+    public float autoSaveTimer = 10f; // Change to total time in a day/night cycle later
 
     public InventorySystem inventorySystem;
 
@@ -20,6 +20,12 @@ public class GameManager : MonoBehaviour
             gameData = SaveScript.LoadGame();
             if (gameData != null)
             {
+                LoadData(gameData);
+            }
+            else
+            {
+                Debug.Log("No save data found. Starting new game.");
+                gameData = new GameData();
                 LoadData(gameData);
             }
         }
@@ -66,9 +72,13 @@ public class GameManager : MonoBehaviour
 
     public void RestartScene()
     {
+        // // Load game from previous save
+        // gameData = SaveScript.LoadGame();
+        // LoadData(gameData);
         StartCoroutine(WaitAndRestart());
     }
 
+    // Won't need this later
     //Waits for 3 seconds before restarting the scene
     IEnumerator WaitAndRestart()
     {
