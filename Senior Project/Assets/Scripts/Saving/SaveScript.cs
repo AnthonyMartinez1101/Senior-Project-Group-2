@@ -21,4 +21,13 @@ public static class SaveScript
         }
         return null;
     }
+
+    public static void DeleteSave()
+    {
+        string path = Application.persistentDataPath + "/gameData.json";
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+        }
+    }
 }

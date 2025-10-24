@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static bool loadOnStart = false;
     public static GameManager Instance;
     public static GameData gameData;
     public float autoSaveTimer = 10f;
@@ -14,11 +15,20 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        gameData = SaveScript.LoadGame();
-        if (gameData != null)
+        if (loadOnStart)
         {
+            gameData = SaveScript.LoadGame();
+            if (gameData != null)
+            {
+                LoadData(gameData);
+            }
+        }
+        else
+        {
+            gameData = new GameData();
             LoadData(gameData);
         }
+
         if (Instance == null)
         {
             Instance = this;
