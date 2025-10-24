@@ -1,5 +1,8 @@
 using UnityEngine;
+
+#if UNITY_EDITOR
 using static UnityEngine.InputManagerEntry;
+#endif
 
 public enum ItemType
 {
