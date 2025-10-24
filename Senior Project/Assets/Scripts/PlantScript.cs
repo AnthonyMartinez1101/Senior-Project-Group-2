@@ -89,6 +89,13 @@ public class PlantScript : MonoBehaviour
                     if(IsFullyGrown())
                     {
                         GameManager.Instance.AddToInventory(plantInfo.produce);
+
+                        //25% chance to get an extra seed when harvesting fully grown crop
+                        int rand = Random.Range(0, 4);
+                        if(rand == 0)
+                        {
+                            GameManager.Instance.AddToInventory(plantInfo.seed);
+                        }
                     }
                 }
                 else

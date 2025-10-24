@@ -34,34 +34,41 @@ public class SoilScript : MonoBehaviour
     {
         if(GameManager.Instance.IsDay())
         {
-            if (currentPlant != null && !currentPlant.IsFullyGrown())
+            if (currentPlant != null)
             {
-                //Growing logic
-                if (waterLevel > 0f)
+                if (!currentPlant.IsFullyGrown())
                 {
-                    currentPlant.TickGrowth(Time.deltaTime);
-                }
-                else if (waterLevel < 0f)
-                {
-                    currentPlant.TakeWaterDamage(Time.deltaTime);
-                }
+                    //Growing logic
+                    if (waterLevel > 0f)
+                    {
+                        currentPlant.TickGrowth(Time.deltaTime);
+                    }
+                    else if (waterLevel < 0f)
+                    {
+                        currentPlant.TakeWaterDamage(Time.deltaTime);
+                    }
 
-                //Water droplet logic
-                if(waterLevel > 4f)
-                {
+                    //Water droplet logic
+                    if (waterLevel > 4f)
+                    {
+                        waterDroplet.SetActive(false);
+                    }
+                    else if (waterLevel > 0f)
+                    {
+                        waterDroplet.SetActive(true);
+                        DropletFullAlpha();
+                    }
+                    else
+                    {
+                        waterDroplet.SetActive(true);
+                        BlinkDroplet();
+                    }
+                }
+                else {                  
                     waterDroplet.SetActive(false);
                 }
-                else if (waterLevel > 0f)
-                {
-                    waterDroplet.SetActive(true);
-                    DropletFullAlpha();
-                }
-                else
-                {
-                    waterDroplet.SetActive(true);
-                    BlinkDroplet();
-                }
             }
+            LightenSoil();
             waterLevel -= Time.deltaTime;
         }
         else
@@ -77,6 +84,24 @@ public class SoilScript : MonoBehaviour
         waterDroplet.GetComponent<SpriteRenderer>().color = color;
     }
 
+    private void DarkenSoil()
+    {
+        Color color = GetComponent<SpriteRenderer>().color;
+        color.r = 0.5f;
+        color.g = 0.25f;
+        color.b = 0.1f;
+        GetComponent<SpriteRenderer>().color = color;
+    }
+
+    private void LightenSoil()
+    {
+        float t = Mathf.Clamp01(waterLevel / 10f); // Normalize water level to [0,1]
+        Color dryColor = new Color(1f, 1f, 1f); // Light dry soil color
+        Color wetColor = new Color(0.4f, 0.2f, 0.1f); // Dark wet soil color
+        Color blendedColor = Color.Lerp(dryColor, wetColor, t);
+        GetComponent<SpriteRenderer>().color = blendedColor;
+    }
+
     private void BlinkDroplet()
     {
         float blinkSpeed = 6f;
@@ -89,6 +114,7 @@ public class SoilScript : MonoBehaviour
     public void Water()
     {
         waterLevel = 10f;
+        DarkenSoil();
     }
 
     public bool Plant(Item item)
