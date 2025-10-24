@@ -14,6 +14,8 @@ public class InteractScript : MonoBehaviour
 
     private PlayerHealth playerHealth;
 
+    private bool nearRefill;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +25,8 @@ public class InteractScript : MonoBehaviour
         interactAction = InputSystem.actions.FindAction("Interact");
         
         playerHealth = GetComponent<PlayerHealth>();
+
+        nearRefill = false;
     }
 
     // Update is called once per frame
@@ -59,7 +63,7 @@ public class InteractScript : MonoBehaviour
                 break;
 
             case ItemType.WaterCan:
-                WaterSoil();
+                TryWater();
                 break;
 
             default:
@@ -75,7 +79,6 @@ public class InteractScript : MonoBehaviour
         {
             playerHealth.Heal(currentItem.healAmount);
             inventorySystem.SubtractItem();
-            inventorySystem.UpdateDisplayText();
         }
     }
 
@@ -87,15 +90,23 @@ public class InteractScript : MonoBehaviour
             if (currentSoil.Plant(currentItem))
             {
                 inventorySystem.SubtractItem();
-                inventorySystem.UpdateDisplayText();
             }
         }
     }
 
     // Water soil only if soil is highlighted
-    private void WaterSoil()
+    private void TryWater()
     {
-        if(currentSoil != null && currentSoil.IsHighlighted()) currentSoil.Water();
+        if(nearRefill)
+        {
+            inventorySystem.RefillWater();
+            return;
+        }
+        if (currentSoil != null && currentSoil.IsHighlighted() && inventorySystem.GetCurrentItemCount() > 0)
+        {
+            currentSoil.Water();
+            inventorySystem.SubtractItem();
+        }
     }
 
     // Perform attack based on weapon type
@@ -110,6 +121,22 @@ public class InteractScript : MonoBehaviour
             default:
                 Debug.Log("No valid weapon type to attack with.");
                 break;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Refill"))
+        {
+            nearRefill = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Refill"))
+        {
+            nearRefill = false;
         }
     }
 }

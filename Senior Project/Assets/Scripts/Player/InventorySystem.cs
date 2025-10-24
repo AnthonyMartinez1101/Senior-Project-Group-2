@@ -103,9 +103,23 @@ public class InventorySystem : MonoBehaviour
         UpdateDisplayText();
     }
 
+    public void RefillWater()
+    {
+        foreach (ItemStack stack in inventoryItems)
+        {
+            if (stack.item != null && stack.item.itemType == ItemType.WaterCan)
+            {
+                stack.count = 5;
+                UpdateDisplayText();
+                return;
+            }
+        }
+    }
+
     public void SubtractItem()
     {
         inventoryItems[inventoryIndex].count--;
+        UpdateDisplayText();
     }
 
     public Item GetCurrentItem()
