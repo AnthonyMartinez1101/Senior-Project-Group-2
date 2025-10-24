@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 806f9f7fb8b31ba488eba2eb04646e65
+guid: 3c34a60c2828be6478b156faba69436d
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -14,6 +14,12 @@ TextureImporter:
   - first:
       213: -6403662320405031775
     second: Corn Stage 1_3
+  - first:
+      213: -6364470643569721846
+    second: Corn Stage 1_4
+  - first:
+      213: 105457102859230896
+    second: Corn Stage 1_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -55,12 +61,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.6165423, y: 0.34159312}
-  spritePixelsToUnits: 300
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -81,32 +87,6 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: iOS
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -132,7 +112,20 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WindowsStoreApps
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -151,10 +144,10 @@ TextureImporter:
       name: Corn Stage 1_0
       rect:
         serializedVersion: 2
-        x: 940
-        y: 774
-        width: 279
-        height: 376
+        x: 1103
+        y: 1443
+        width: 39
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,10 +166,10 @@ TextureImporter:
       name: Corn Stage 1_1
       rect:
         serializedVersion: 2
-        x: 1441
-        y: 742
-        width: 295
-        height: 405
+        x: 1200
+        y: 1502
+        width: 23
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,10 +188,10 @@ TextureImporter:
       name: Corn Stage 1_2
       rect:
         serializedVersion: 2
-        x: 617
-        y: 423
-        width: 421
-        height: 347
+        x: 1037
+        y: 1267
+        width: 6
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +210,10 @@ TextureImporter:
       name: Corn Stage 1_3
       rect:
         serializedVersion: 2
-        x: 1182
-        y: 188
-        width: 297
-        height: 507
+        x: 619
+        y: 1143
+        width: 137
+        height: 74
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -235,12 +228,56 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Corn Stage 1_4
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 1158
+        width: 8
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0eff9a8babdca7a0800000000000000
+      internalID: -6364470643569721846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corn Stage 1_5
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 188
+        width: 759
+        height: 708
+      alignment: 9
+      pivot: {x: 0.45991704, y: 0.10968651}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0be57f22da8a67100800000000000000
+      internalID: 105457102859230896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: e2836c862436eca46a711f932047c9ae
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -253,6 +290,8 @@ TextureImporter:
       Corn Stage 1_1: -2114783533664414464
       Corn Stage 1_2: -9042821844905118423
       Corn Stage 1_3: -6403662320405031775
+      Corn Stage 1_4: -6364470643569721846
+      Corn Stage 1_5: 105457102859230896
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

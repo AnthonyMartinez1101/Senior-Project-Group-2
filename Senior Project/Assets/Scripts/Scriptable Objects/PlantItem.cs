@@ -8,8 +8,8 @@ public class PlantItem : ScriptableObject
     public string plantName;
     public float growthTime;
 
-    [Header("Sprites ~ Stage 1 - Stage 2 - Stage 3")]
-    public Sprite[] growStages = new Sprite[3];
+    [Header("Seeds ~ Stage 1 - Stage 2 - Stage 3")]
+    public Sprite[] growStages = new Sprite[4];
 
     [Header("Produce Plant Item")]
     public Item produce;

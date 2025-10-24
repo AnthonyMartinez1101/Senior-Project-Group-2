@@ -52,10 +52,14 @@ public class PlantScript : MonoBehaviour
 
             if (growthPercent >= 1f)
             {
-                spriteRenderer.sprite = plantInfo.growStages[2];
+                spriteRenderer.sprite = plantInfo.growStages[3];
                 sparkles.SetActive(true);
             }
-            else if (growthPercent >= 0.5f)
+            else if (growthPercent >= 0.66f)
+            {
+                spriteRenderer.sprite = plantInfo.growStages[2];
+            }
+            else if (growthPercent >= 0.33f)
             {
                 spriteRenderer.sprite = plantInfo.growStages[1];
             }

@@ -3,7 +3,7 @@ using UnityEngine;
 public class SpriteScript : MonoBehaviour
 {
     //Players sprite renderer duh
-    private SpriteRenderer playerSprite;
+    private SpriteRenderer sprite;
 
     //Rigidbody to detect movement
     private Rigidbody2D rb;
@@ -13,7 +13,7 @@ public class SpriteScript : MonoBehaviour
     void Start()
     {
         //Assigning sprite renderer to playerSprite
-        playerSprite = GetComponent<SpriteRenderer>();
+        sprite = GetComponent<SpriteRenderer>();
 
         //Assigning rigidbody to rb
         rb = GetComponent<Rigidbody2D>();
@@ -25,11 +25,11 @@ public class SpriteScript : MonoBehaviour
         //Checking if the rigidbody is moving left or right and flipping the sprite accordingly
         if (rb.linearVelocity.x > 0.1f)
         {
-            playerSprite.flipX = false;
+            sprite.flipX = false;
         }
         else if(rb.linearVelocity.x < -0.1f)
         {
-            playerSprite.flipX = true;
+            sprite.flipX = true;
         }
     }
 }
