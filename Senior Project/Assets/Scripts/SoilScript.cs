@@ -64,9 +64,14 @@ public class SoilScript : MonoBehaviour
                         BlinkDroplet();
                     }
                 }
-                else {                  
+                else 
+                {                  
                     waterDroplet.SetActive(false);
                 }
+            }
+            else
+            {
+                waterDroplet.SetActive(false);
             }
             LightenSoil();
             waterLevel -= Time.deltaTime;
