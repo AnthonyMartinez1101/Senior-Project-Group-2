@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,9 +10,12 @@ public class GameManager : MonoBehaviour
     public static GameData gameData;
     public float autoSaveTimer = 10f; // Change to total time in a day/night cycle later
 
-    public InventorySystem inventorySystem;
+    public GameObject player;
+    private InventorySystem inventorySystem;
 
     public EnemySpawner enemySpawner;
+
+    public GameObject environmentForEnemies;
 
     private void Awake()
     {
@@ -46,9 +50,23 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        if(inventorySystem == null)
+        inventorySystem = player.GetComponent<InventorySystem>();
+        if (player == null)
         {
-            Debug.LogWarning("GameManager: InventorySystem reference (from player) is not set.");
+            Debug.LogWarning("GameManager: Player reference is not set.");
+        }
+        else if(inventorySystem == null)
+        {
+            Debug.LogWarning("GameManager: InventorySystem component not found on player.");
+        }
+
+        if(environmentForEnemies != null)
+        {
+            environmentForEnemies.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("GameManager: EnvironmentForEnemies reference is not set.");
         }
     }
 
@@ -92,7 +110,6 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(autoSaveTimer);
-            GameObject player = GameObject.FindWithTag("Player");
             if (player != null)
             {
                 SaveScript.SaveGame(player);
@@ -102,7 +119,6 @@ public class GameManager : MonoBehaviour
 
     private void LoadData(GameData data)
     {
-        GameObject player = GameObject.FindWithTag("Player");
         if (player != null)
         {
             player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
