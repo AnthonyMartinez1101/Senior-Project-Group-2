@@ -7,13 +7,10 @@ namespace WorldTime
     {
         private Light2D _light;
 
-        [SerializeField]
-        private WorldTime _worldTime;
+        [SerializeField] private WorldTime _worldTime;
+        [SerializeField] private Gradient _gradient;
 
-        [SerializeField]
-        private Gradient _gradient;
-
-        private void Awake() // Use Awake to ensure Light2D is initialized before subscribing to events
+        private void Awake()
         {
             _light = GetComponent<Light2D>();
             _worldTime.WorldTimeChanged += OnWorldTimeChanged;
@@ -24,14 +21,9 @@ namespace WorldTime
             _worldTime.WorldTimeChanged -= OnWorldTimeChanged;
         }
 
-        private void OnWorldTimeChanged(object sender, System.TimeSpan newTime) // Event handler to update light color based on time
+        private void OnWorldTimeChanged(object sender, System.TimeSpan _)
         {
-            _light.color = _gradient.Evaluate(PercentOfDay(newTime));
-        }
-
-        private float PercentOfDay(System.TimeSpan timeSpan) // Calculate the percentage of the day that has passed
-        {
-            return (float)timeSpan.TotalMinutes % WorldTimeConstant.MinutesInDay / WorldTimeConstant.MinutesInDay;
+            _light.color = _gradient.Evaluate(_worldTime.NormalizedCycle);
         }
     }
 }
