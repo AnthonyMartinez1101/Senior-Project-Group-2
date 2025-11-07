@@ -1,4 +1,5 @@
 using UnityEngine;
+using WorldTime;
 
 public class Enemy : MonoBehaviour
 {
@@ -6,7 +7,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float dayBurnTime = 5f;
     private FloatingHealth healthBar;
 
-    private EnemySpawner spawner; //Temp for now to determine Day and Night (WILL REPLACE WITH WORLD CLOCK)
+    [SerializeField] private WorldTime.WorldTime worldTime;
 
     private bool inPlayerRange;
 
@@ -40,10 +41,6 @@ public class Enemy : MonoBehaviour
         dps = maxHealth / dayBurnTime;
     }
 
-    public void SetSpawner(EnemySpawner newSpawner)
-    {
-        spawner = newSpawner;
-    }
 
     public void TakeDamage(float damageAmount)
     {
@@ -71,7 +68,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         //If day, take damage
-        if (spawner.IsDay())
+        if (worldTime.CurrentPhase == Phase.Day)
         {
             DayDamage(dps * Time.deltaTime);
         }
@@ -108,5 +105,10 @@ public class Enemy : MonoBehaviour
         {
             inPlayerRange = false;
         }
+    }
+
+    public void SetWorldTime(WorldTime.WorldTime wt)
+    {
+        worldTime = wt;
     }
 }

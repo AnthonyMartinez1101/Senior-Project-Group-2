@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WorldTime;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
     public EnemySpawner enemySpawner;
 
     public GameObject environmentForEnemies;
+
+    [SerializeField] private WorldTime.WorldTime worldTime;
 
     private void Awake()
     {
@@ -72,12 +75,12 @@ public class GameManager : MonoBehaviour
 
     public bool IsDay() 
     {
-        if (enemySpawner != null)
+        if (worldTime != null)
         {
-            return enemySpawner.IsDay();
+            return worldTime.CurrentPhase == Phase.Day;
         }
-        Debug.LogWarning("GameManager: EnemySpawner reference is not set.");
-        return true; // Default to day if enemySpawner is not set
+        Debug.LogWarning("GameManager: WorldTime reference is not set.");
+        return true; // Default to day if worldTime is not set
     }
 
     public void AddToInventory(Item item)

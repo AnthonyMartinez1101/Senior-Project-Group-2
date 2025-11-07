@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using WorldTime;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -13,38 +14,20 @@ public class EnemySpawner : MonoBehaviour
     private float spawnRate = 3f;
     private int wave = 1;
 
-    private float worldTimer = 0f; 
-    public GameObject dayText;
-    public GameObject nightText;
-    public GameObject nightShade;
-    private bool isDay = true;
+    [SerializeField] private WorldTime.WorldTime worldTime;
+
+    //private float worldTimer = 0f; 
+    //private bool isDay = true;
 
     private void Update()
     {
-        worldTimer += Time.deltaTime;
-
-        if (worldTimer <= 50f)
+        if(worldTime == null)
         {
-            //Activate day text
-            dayText.SetActive(true);
-            nightText.SetActive(false);
-            nightShade.SetActive(false);
-            isDay = true;
-        }
-        else if (worldTimer <= 95f)
-        {
-            //Activate night text
-            dayText.SetActive(false);
-            nightText.SetActive(true);
-            nightShade.SetActive(true);
-            isDay = false;
-        }
-        else
-        {
-            worldTimer = 0f;
+            Debug.LogWarning("EnemySpawner: WorldTime reference is not set.");
+            return;
         }
 
-        if (!isDay)
+        if (worldTime.CurrentPhase == Phase.Night)
         {
             timer -= Time.deltaTime;
             spawnRate -= Time.deltaTime;
@@ -84,8 +67,6 @@ public class EnemySpawner : MonoBehaviour
         enemy.SetTarget(player);
 
         Enemy e = enemy.GetComponent<Enemy>();
-        e.SetSpawner(this);
+        e.SetWorldTime(worldTime);
     }
-
-    public bool IsDay() { return isDay; }
 }

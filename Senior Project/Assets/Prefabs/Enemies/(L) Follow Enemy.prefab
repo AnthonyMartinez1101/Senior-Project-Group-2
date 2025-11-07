@@ -112,6 +112,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 30
   dayBurnTime: 5
+  worldTime: {fileID: 0}
   randomItemDrop: {fileID: 11400000, guid: 5e96b6d07fb4cb440be11f9354ce5e97, type: 2}
 --- !u!114 &5300578624398878722
 MonoBehaviour:
@@ -177,7 +178,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
