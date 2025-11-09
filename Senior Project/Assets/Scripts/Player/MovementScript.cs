@@ -18,6 +18,8 @@ public class MovementScript : MonoBehaviour
     InputAction moveAction; // Detect WASD
     InputAction dashAction; // Detect dash button
 
+    private Attack attackScript;
+
     //Called when the script is made
     private void Start()
     {
@@ -29,6 +31,8 @@ public class MovementScript : MonoBehaviour
 
         // Detects a dash input when spacebar is pressed
         dashAction = InputSystem.actions.FindAction("Dash");
+
+        attackScript = GetComponent<Attack>();
     }
 
     void Update()
@@ -57,7 +61,10 @@ public class MovementScript : MonoBehaviour
         {
             Vector2 moveValue = moveAction.ReadValue<Vector2>();
             direction = moveValue.normalized;
-            rb.linearVelocity = direction * speed;
+            if(!attackScript.IsMeleeing()) rb.linearVelocity = direction * speed;
+            else rb.linearVelocity = direction * (speed / 2f);
+
+
             if (dashCooldownTimer > 0f)
             {
                 dashCooldownTimer -= Time.fixedDeltaTime;

@@ -6,7 +6,6 @@ public class SlashMove : MonoBehaviour
     private Transform pointA;
     private Transform pointB;
 
-    private bool slash;
 
 
     public float moveSpeed = 1f;
@@ -18,35 +17,21 @@ public class SlashMove : MonoBehaviour
         pointA = transform.Find("PointA");
         pointB = transform.Find("PointB");
 
-        slashCollider.SetActive(false);
-
-        slash = false;
+        slashCollider.SetActive(true);
+        slashCollider.transform.position = pointA.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(slash)
-        {
-            //Moves the collider from point A to point B
-            slashCollider.transform.position = Vector3.MoveTowards(slashCollider.transform.position, pointB.position, moveSpeed * Time.deltaTime);
+        //Moves the collider from point A to point B
+        slashCollider.transform.position = Vector3.MoveTowards(slashCollider.transform.position, pointB.position, moveSpeed * Time.deltaTime);
 
-            //Once collider reaches point B, disable it and stop slashing
-            if (slashCollider.transform.position == pointB.position)
-            {
-                slashCollider.SetActive(false);
-                slash = false;
-            }
+        //Once collider reaches point B, disable it and stop slashing
+        if (slashCollider.transform.position == pointB.position)
+        {
+            Destroy(gameObject);
         }
     }
 
-    public void ActivateSlash()
-    {
-        //Activates the collider and sets its position to point A
-        slashCollider.SetActive(true);
-        slashCollider.transform.position = pointA.position;
-        slash = true;
-    }
-
-    public bool IsSlashing() { return slash; }
 }

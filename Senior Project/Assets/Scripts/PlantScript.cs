@@ -14,7 +14,7 @@ public class PlantScript : MonoBehaviour
     private float currentHealth;
     private FloatingHealth healthBar;
 
-    private Collider2D lastCollidedWith;
+    private bool lastCollidedWithSickle = false;
 
 
 
@@ -81,7 +81,7 @@ public class PlantScript : MonoBehaviour
         if (healthBar) healthBar.UpdateHealth(currentHealth, plantHealth);
         if (currentHealth <= 0)
         {
-            if (lastCollidedWith != null && lastCollidedWith.CompareTag("Sickle"))
+            if (lastCollidedWithSickle)
             {
                 if(plantInfo.produce != null && plantInfo.seed != null)
                 {
@@ -124,6 +124,6 @@ public class PlantScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        lastCollidedWith = collision;
+        if(!collision.CompareTag("Player")) lastCollidedWithSickle = collision.CompareTag("Sickle");
     }
 }

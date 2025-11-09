@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class Attack : MonoBehaviour
 {
     public GameObject Melee;
+    private GameObject currentMelee;
 
     InputAction sytheAction;
 
@@ -56,9 +57,14 @@ public class Attack : MonoBehaviour
 
     private void OnMelee()
     {
-        if(!slashMove.IsSlashing())
+        if(currentMelee == null)
         {
-            slashMove.ActivateSlash();
+            currentMelee = Instantiate(Melee, aim.position, aim.rotation);
         }
+    }
+
+    public bool IsMeleeing()
+    {
+        return currentMelee != null;
     }
 }
