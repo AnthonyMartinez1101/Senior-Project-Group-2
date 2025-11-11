@@ -7,13 +7,15 @@ public class Enemy : MonoBehaviour
     [SerializeField] float dayBurnTime = 5f;
     private FloatingHealth healthBar;
 
-    [SerializeField] private WorldTime.WorldTime worldTime;
+    private WorldTime.WorldTime worldTime;
 
     private bool inPlayerRange;
 
     private PlayerHealth playerHealth;
 
     [SerializeField] Item randomItemDrop;
+
+    private DamageFlash damageFlash;
 
 
 
@@ -39,11 +41,14 @@ public class Enemy : MonoBehaviour
         }
 
         dps = maxHealth / dayBurnTime;
+
+        damageFlash = GetComponent<DamageFlash>();
     }
 
 
     public void TakeDamage(float damageAmount)
     {
+        if(damageFlash) damageFlash.FlashOnDamage();
         health -= damageAmount;
         if(healthBar) healthBar.UpdateHealth(health, maxHealth);
         if (health <= 0)
