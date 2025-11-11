@@ -77,7 +77,7 @@ public class PlantScript : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
-        currentHealth -= damageAmount;
+        currentHealth -= damageAmount * 3f;
         if (healthBar) healthBar.UpdateHealth(currentHealth, plantHealth);
         if (currentHealth <= 0)
         {
@@ -85,16 +85,16 @@ public class PlantScript : MonoBehaviour
             {
                 if(plantInfo.produce != null && plantInfo.seed != null)
                 {
-                    GameManager.Instance.AddToInventory(plantInfo.seed);
-                    if(IsFullyGrown())
+                    ItemDropFactory.Instance.SpawnItem(plantInfo.seed, transform.position);
+                    if (IsFullyGrown())
                     {
-                        GameManager.Instance.AddToInventory(plantInfo.produce);
+                        ItemDropFactory.Instance.SpawnItem(plantInfo.produce, transform.position);
 
                         //25% chance to get an extra seed when harvesting fully grown crop
                         int rand = Random.Range(0, 4);
                         if(rand == 0)
                         {
-                            GameManager.Instance.AddToInventory(plantInfo.seed);
+                            ItemDropFactory.Instance.SpawnItem(plantInfo.seed, transform.position);
                         }
                     }
                 }

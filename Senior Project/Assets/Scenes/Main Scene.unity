@@ -2051,6 +2051,7 @@ MonoBehaviour:
   enemySpawner: {fileID: 1939432098}
   environmentForEnemies: {fileID: 983484239}
   worldTime: {fileID: 799218943}
+  noSprite: {fileID: 21300000, guid: 38933b6046d4a7442ad2d30d3fb8041c, type: 3}
 --- !u!4 &404758539
 Transform:
   m_ObjectHideFlags: 0
@@ -3068,6 +3069,14 @@ PrefabInstance:
       propertyPath: worldTimerText
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: enemyPrefab.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: 'enemyPrefab.Array.data[0]'
+      value: 
+      objectReference: {fileID: 4919924452173266357, guid: baae0eec0eef3df4b9ed03ac81567578, type: 3}
     - target: {fileID: 4371163993892418023, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33
@@ -3978,7 +3987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 029318ae0860f0f40bced8cffb4d70fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldTime.WorldTime
-  dayLength: 5
+  dayLength: 180
   nightLength: 120
   transitionLength: 5
 --- !u!1 &837405657
@@ -5568,6 +5577,7 @@ Transform:
   - {fileID: 1408963360}
   - {fileID: 605723353}
   - {fileID: 799218942}
+  - {fileID: 1876562268}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1012402313
@@ -9564,6 +9574,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6796658591490799035, guid: f9b05a5b336cf3a40be750189fc607b6, type: 3}
   m_PrefabInstance: {fileID: 842275290}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1876562267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1876562268}
+  - component: {fileID: 1876562269}
+  m_Layer: 0
+  m_Name: Item Drop Factory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1876562268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876562267}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1010887127}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1876562269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876562267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ad5f776ce4fab844874c010807be27c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  itemDropPrefab: {fileID: 6311631902464708414, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+  randomDropItems:
+  - {fileID: 11400000, guid: 5e96b6d07fb4cb440be11f9354ce5e97, type: 2}
+  - {fileID: 11400000, guid: 522ac46dd97cd3f4b88fc3cc130c0c35, type: 2}
 --- !u!1001 &1879455981
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -56,11 +56,7 @@ public class EnemySpawner : MonoBehaviour
         int randNum = Random.Range(0, 10);
         Transform currentSpawn = spawnPoints[randNum];
 
-        randNum = Random.Range(0, 10);
-
-        if (randNum >= 0 && randNum <= 5) randNum = 0;
-        else if (randNum >= 6 && randNum <= 8) randNum = 1;
-        else if (randNum == 9) randNum = 2;
+        randNum = Random.Range(0, enemyPrefab.Count);
 
         //var enemy = Instantiate(enemyPrefab[randNum]).GetComponent<EnemyFollow>();
         var enemy = Instantiate(enemyPrefab[randNum], currentSpawn.position, currentSpawn.rotation).GetComponent<EnemyFollow>();

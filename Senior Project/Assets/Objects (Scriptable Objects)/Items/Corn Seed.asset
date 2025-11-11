@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93a86dbcae4149a46be4292fd556dfb8, type: 3}
-  m_Name: Corn Produce
+  m_Name: Corn Seed
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Corn
-  icon: {fileID: 0}
-  itemType: 2
-  plant: {fileID: 0}
-  healAmount: 5
+  itemName: Corn Seed
+  icon: {fileID: 21300000, guid: 806f9f7fb8b31ba488eba2eb04646e65, type: 3}
+  itemType: 0
+  plant: {fileID: 11400000, guid: 47027ee3d9cad3245b41a942274bfdfa, type: 2}
+  healAmount: 0
   weaponType: 0

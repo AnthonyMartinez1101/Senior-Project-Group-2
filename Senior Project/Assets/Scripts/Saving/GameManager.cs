@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private WorldTime.WorldTime worldTime;
 
+    [SerializeField] private Sprite noSprite;
+
     private void Awake()
     {
         if (loadOnStart)
@@ -126,5 +128,10 @@ public class GameManager : MonoBehaviour
         {
             player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
         }
+    }
+    
+    public Sprite NoSprite()
+    {
+        return noSprite;
     }
 }

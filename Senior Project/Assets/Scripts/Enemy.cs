@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             int randNum = Random.Range(0, 100);
-            if(randNum == 1 && randomItemDrop != null) GameManager.Instance.AddToInventory(randomItemDrop);
+            if(randNum == 1 && randomItemDrop != null) ItemDropFactory.Instance.SpawnItem(randomItemDrop, transform.position);
             Destroy(gameObject);
         }
     }

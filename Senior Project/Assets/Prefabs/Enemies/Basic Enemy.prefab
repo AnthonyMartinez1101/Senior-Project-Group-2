@@ -14,10 +14,11 @@ GameObject:
   - component: {fileID: 5300578624398878722}
   - component: {fileID: 2626675716937913172}
   - component: {fileID: 4389687231625084924}
-  - component: {fileID: 5471310121163860849}
-  - component: {fileID: -3579241612104113549}
+  - component: {fileID: -4167811138355576547}
+  - component: {fileID: -9138899320092202058}
+  - component: {fileID: -1098666403636228051}
   m_Layer: 7
-  m_Name: (L) Follow Enemy
+  m_Name: Basic Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.2, y: -7.5, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6066058637631993105}
@@ -110,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   health: 0
-  maxHealth: 30
+  maxHealth: 5
   dayBurnTime: 5
   worldTime: {fileID: 0}
   randomItemDrop: {fileID: 11400000, guid: 5e96b6d07fb4cb440be11f9354ce5e97, type: 2}
@@ -136,7 +137,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -183,8 +184,8 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.32
---- !u!95 &5471310121163860849
+  m_Radius: 0.33
+--- !u!95 &-4167811138355576547
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -206,7 +207,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-3579241612104113549
+--- !u!114 &-9138899320092202058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,6 +219,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d919ee3bebbfc344fb83edd3753aa147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpriteFlip
+--- !u!50 &-1098666403636228051
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919924452173266357}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1001 &7639959224156971477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -344,7 +372,7 @@ PrefabInstance:
       objectReference: {fileID: 1038906810405869249}
     - target: {fileID: 4650680659613107702, guid: c640191a004defb4fb35dad3ab2e3ca4, type: 3}
       propertyPath: offset.y
-      value: -1.5
+      value: -0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
