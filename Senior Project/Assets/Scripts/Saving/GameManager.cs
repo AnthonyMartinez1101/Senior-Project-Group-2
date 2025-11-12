@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Sprite noSprite;
 
+    public CameraShake FollowCamera;
+
     private void Awake()
     {
         if (loadOnStart)
@@ -73,6 +75,16 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("GameManager: EnvironmentForEnemies reference is not set.");
         }
+
+        if(FollowCamera == null)
+        {
+            Debug.LogWarning("GameManager: Main Camera reference is not set.");
+        }
+    }
+
+    public void CameraShake(float intensity, float duration)
+    {
+        FollowCamera.ShakeCamera(intensity, duration);
     }
 
     public bool IsDay() 

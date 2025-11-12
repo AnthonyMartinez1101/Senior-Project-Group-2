@@ -30,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
+        GameManager.Instance.CameraShake(damageAmount + 3f, 0.2f);
         if (damageFlash) damageFlash.FlashOnDamage();
         currentHealth -= damageAmount;
         if (healthBar) healthBar.UpdateHealth(currentHealth, maxHealth);
