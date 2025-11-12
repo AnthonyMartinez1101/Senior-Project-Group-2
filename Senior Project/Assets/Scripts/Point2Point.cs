@@ -10,7 +10,7 @@ public class Point2Point : MonoBehaviour
 
     private Transform[] points;
     private int currentPointIndex = 0;
-    private bool isStopped;
+    //private bool isStopped; not being used
 
     void Start()
     {
@@ -40,10 +40,10 @@ public class Point2Point : MonoBehaviour
 
     IEnumerator PauseAtPoint()
     {
-        isStopped = true;
+        //isStopped = true;
         yield return new WaitForSeconds(pause);
 
         currentPointIndex = loop ? (currentPointIndex + 1)% points.Length : Mathf.Min(currentPointIndex + 1, points.Length - 1);
-        isStopped = false;
+        //isStopped = false;
     }
 }

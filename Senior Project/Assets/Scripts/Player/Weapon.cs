@@ -3,6 +3,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public float damage = 1;
+    public float knockbackForce = 5f;
     public enum WeaponType { Melee, Bullet }
     public WeaponType weaponType;
 
@@ -14,6 +15,8 @@ public class Weapon : MonoBehaviour
         if(enemy != null)
         {
             enemy.TakeDamage(damage);
+
+            if(collision.GetComponent<Knockback>()) collision.GetComponent<Knockback>().ApplyKnockback(transform, knockbackForce);
         }
 
             PlantScript plantScript = collision.GetComponent<PlantScript>();

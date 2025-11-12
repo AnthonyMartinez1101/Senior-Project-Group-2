@@ -20,6 +20,8 @@ public class MovementScript : MonoBehaviour
 
     private Attack attackScript;
 
+    private Knockback knockback;
+
     //Called when the script is made
     private void Start()
     {
@@ -33,6 +35,8 @@ public class MovementScript : MonoBehaviour
         dashAction = InputSystem.actions.FindAction("Dash");
 
         attackScript = GetComponent<Attack>();
+
+        knockback = GetComponent<Knockback>();
     }
 
     void Update()
@@ -57,7 +61,7 @@ public class MovementScript : MonoBehaviour
                 dashCooldownTimer = dashCooldown;
             }
         }
-        else
+        else if(!knockback.IsKnockbackActive())
         {
             Vector2 moveValue = moveAction.ReadValue<Vector2>();
             direction = moveValue.normalized;

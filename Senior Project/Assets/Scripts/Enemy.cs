@@ -6,16 +6,21 @@ public class Enemy : MonoBehaviour
     [SerializeField] float health, maxHealth = 5f;
     [SerializeField] float dayBurnTime = 5f;
     private FloatingHealth healthBar;
+    [SerializeField] private float dealDamage;
+    [SerializeField] private float knockbackForce;
 
     private WorldTime.WorldTime worldTime;
 
     private bool inPlayerRange;
 
     private PlayerHealth playerHealth;
+    private Knockback playerKnockback;
 
     [SerializeField] Item randomItemDrop;
 
     private DamageFlash damageFlash;
+
+    private float hitCooldown = 1.5f;
 
 
 
@@ -38,6 +43,7 @@ public class Enemy : MonoBehaviour
         if(player)
         {
             playerHealth = player.GetComponent<PlayerHealth>();
+            playerKnockback = player.GetComponent<Knockback>();
         }
 
         dps = maxHealth / dayBurnTime;
@@ -72,6 +78,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hitCooldown -= Time.deltaTime;
+
         //If day, take damage
         if (worldTime.CurrentPhase == Phase.Day)
         {
@@ -79,9 +87,11 @@ public class Enemy : MonoBehaviour
         }
 
         //While colliding with player, deal constant damage over time
-        if (inPlayerRange)
+        if (inPlayerRange && hitCooldown < 0f)
         {
-            playerHealth.TakeDamage((maxHealth / 5f) * Time.deltaTime);
+            playerHealth.TakeDamage(dealDamage);
+            playerKnockback.ApplyKnockback(transform, knockbackForce);
+            hitCooldown = 1.5f;
         }
     }
 

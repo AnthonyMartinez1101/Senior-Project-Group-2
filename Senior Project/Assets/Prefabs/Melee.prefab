@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   damage: 2
+  knockbackForce: 15
   weaponType: 0
 --- !u!95 &6947063508600643050
 Animator:

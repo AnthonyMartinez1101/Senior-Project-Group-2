@@ -322,4 +322,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   damage: 1
+  knockbackForce: 7
   weaponType: 1

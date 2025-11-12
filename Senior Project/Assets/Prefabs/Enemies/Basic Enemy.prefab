@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5300578624398878722}
   - component: {fileID: -9138899320092202058}
   - component: {fileID: 6815267652703427686}
+  - component: {fileID: 5958624832879524155}
   m_Layer: 7
   m_Name: Basic Enemy
   m_TagString: Enemy
@@ -221,7 +222,8 @@ MonoBehaviour:
   health: 0
   maxHealth: 5
   dayBurnTime: 5
-  worldTime: {fileID: 0}
+  dealDamage: 1
+  knockbackForce: 20
   randomItemDrop: {fileID: 11400000, guid: 5e96b6d07fb4cb440be11f9354ce5e97, type: 2}
 --- !u!114 &5300578624398878722
 MonoBehaviour:
@@ -261,6 +263,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   flashColor: {r: 1, g: 1, b: 1, a: 1}
   flashTime: 0.2
+--- !u!114 &5958624832879524155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919924452173266357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f834d13e758aff34e9cca645a90bdc7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Knockback
 --- !u!1001 &7639959224156971477
 PrefabInstance:
   m_ObjectHideFlags: 0
