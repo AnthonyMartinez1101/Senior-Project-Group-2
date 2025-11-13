@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class PlantScript : MonoBehaviour
 {
-    private PlantItem plantInfo;
+    public PlantItem plantInfo;
 
-    private float currentGrowth = 0f;
+    public float currentGrowth = 0f;
 
     private SpriteRenderer spriteRenderer;
 
     private GameObject sparkles;
 
     private float plantHealth = 20f; 
-    private float currentHealth;
+    public float currentHealth;
     private FloatingHealth healthBar;
 
     private bool lastCollidedWithSickle = false;

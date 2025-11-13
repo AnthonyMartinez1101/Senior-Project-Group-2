@@ -7,9 +7,9 @@ public class SoilScript : MonoBehaviour
     private GameObject highlighted; //Highlight child object
     public PlantScript plantActor; //Plant Actor prefab
 
-    private PlantScript currentPlant; //Current plant instance
+    public PlantScript currentPlant; //Current plant instance
 
-    private float waterLevel = 0f;
+    public float waterLevel = 0f;
 
     private GameObject waterDroplet; //Child object in soil representing water droplet
 

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a86dbcae4149a46be4292fd556dfb8, type: 3}
+  m_Name: Corn Seed
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: Corn Seed
+  icon: {fileID: 21300000, guid: 806f9f7fb8b31ba488eba2eb04646e65, type: 3}
+  itemType: 0
+  plant: {fileID: 11400000, guid: 47027ee3d9cad3245b41a942274bfdfa, type: 2}
+  healAmount: 0
+  weaponType: 0
