@@ -6,13 +6,15 @@ public class MainMenu : MonoBehaviour
     {
         SaveScript.DeleteSave();
         GameManager.loadOnStart = false;
-        SceneManager.LoadSceneAsync("Demo V1");
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadSceneAsync(nextSceneIndex);
     }
 
     public void LoadButton()
     {
         GameManager.loadOnStart = true;
-        SceneManager.LoadSceneAsync("Demo V1");
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        SceneManager.LoadSceneAsync(nextSceneIndex);
     }   
 
     public void QuitButton()

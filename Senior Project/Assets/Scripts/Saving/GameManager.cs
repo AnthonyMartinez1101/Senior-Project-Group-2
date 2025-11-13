@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using WorldTime;
+using static Unity.Cinemachine.CinemachineSplineRoll;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,27 +26,26 @@ public class GameManager : MonoBehaviour
 
     public CameraShake FollowCamera;
 
+    private Dictionary<string, Item> itemLookup = new Dictionary<string, Item>();
+
     private void Awake()
     {
+        BuildItemLookup();
+        gameData = new GameData();
+        if (player != null)
+        {
+            inventorySystem = player.GetComponent<InventorySystem>();
+        }
         if (loadOnStart)
         {
             gameData = SaveScript.LoadGame();
-            if (gameData != null)
-            {
-                LoadData(gameData);
-            }
-            else
+            if (gameData == null)
             {
                 Debug.Log("No save data found. Starting new game.");
                 gameData = new GameData();
-                LoadData(gameData);
             }
         }
-        else
-        {
-            gameData = new GameData();
-            LoadData(gameData);
-        }
+        LoadData(gameData);
 
         if (Instance == null)
         {
@@ -127,11 +128,35 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(autoSaveTimer);
-            if (player != null)
+            if (player)
             {
                 SaveScript.SaveGame(player);
+                Debug.Log("Game auto-saved.");
             }
         }
+    }
+
+    private void BuildItemLookup()
+    {
+        Item[] items = Resources.LoadAll<Item>("Objects (Scriptable Objects)/Items");
+        foreach (var item in items)
+        {
+            itemLookup[item.itemName] = item;
+            Debug.Log($"Loaded item: {item.itemName}");
+        }
+    }
+
+    private SoilScript FindSoil(float[] pos)
+    {
+        Vector3 position = new Vector3(pos[0], pos[1], pos[2]);
+        foreach (var soil in FindObjectsByType<SoilScript>(FindObjectsSortMode.None))
+        {
+            if (Vector3.Distance(soil.transform.position, position) < 0.1f)
+            {
+                return soil;
+            }
+        }
+        return null;
     }
 
     private void LoadData(GameData data)
@@ -139,6 +164,59 @@ public class GameManager : MonoBehaviour
         if (player != null)
         {
             player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
+            
+            player.GetComponent<PlayerHealth>().currentHealth = data.health;
+
+            if (data.inventory != null)
+            {
+                Debug.Log("clearing inventory and loading items");
+                inventorySystem.inventoryItems.Clear();
+                foreach (var invItem in data.inventory)
+                {
+                    Debug.Log($"Trying to load item: {invItem.itemName}");
+                    if (itemLookup.TryGetValue(invItem.itemName, out Item item))
+                    {
+                        inventorySystem.inventoryItems.Add(new ItemStack
+                        {
+                            item = item,
+                            count = invItem.count
+                        });
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"GameManager: Item '{invItem.itemName}' not found.");
+                    }
+                }
+                inventorySystem.UpdateDisplayText();
+            }
+
+            if (data.soils != null)
+            {
+                foreach (var soilPlot in data.soils)
+                {
+                    SoilScript soil = FindSoil(soilPlot.position);
+                    if (soil != null)
+                    {
+                        soil.waterLevel = soilPlot.waterLevel;
+                        if (soilPlot.plant != null)
+                        {
+                            PlantItem plantItem = Resources.Load<PlantItem>("Objects (Scriptable Objects)/Plants/" + soilPlot.plant.plantName);
+                            if (plantItem != null)
+                            {
+                                PlantScript plant = Instantiate(soil.plantActor, soil.transform.position, Quaternion.identity, soil.transform);
+                                plant.Create(plantItem);
+                                plant.currentGrowth = soilPlot.plant.growth;
+                                plant.currentHealth = soilPlot.plant.health;
+                                soil.currentPlant = plant;
+                            }
+                            else
+                            {
+                                Debug.LogWarning($"PlantItem '{soilPlot.plant.plantName}' not found.");
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     
