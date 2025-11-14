@@ -70,7 +70,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -84,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -185,265 +185,309 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled_Artwork (3)_0
+      name: farmer_0
       rect:
         serializedVersion: 2
-        x: 73
-        y: 867
-        width: 347
-        height: 527
-      alignment: 9
-      pivot: {x: 0.49999997, y: 0.07085174}
+        x: 141
+        y: 2612
+        width: 684
+        height: 1042
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 423d9fe0500cc4500800000000000000
-      internalID: 381891196378272548
+      spriteID: 2053dd5b9f97f42468060786677ff0d6
+      internalID: -1258476933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork (3)_1
+      name: farmer_1
       rect:
         serializedVersion: 2
-        x: 463
-        y: 867
-        width: 349
-        height: 527
-      alignment: 9
-      pivot: {x: 0.5194522, y: 0.07811157}
+        x: 915
+        y: 2612
+        width: 687
+        height: 1042
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f3b60fd8b0cd4fc50800000000000000
-      internalID: 6698220487990864703
+      spriteID: 13c7e37fc6e372342acf9408582ed483
+      internalID: 1949129590
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork (3)_2
+      name: farmer_2
       rect:
         serializedVersion: 2
-        x: 858
-        y: 866
-        width: 364
-        height: 528
-      alignment: 9
-      pivot: {x: 0.5046628, y: 0.07248156}
+        x: 1695
+        y: 2612
+        width: 720
+        height: 1042
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8c8a9c6ea0efa4500800000000000000
-      internalID: 381396441241331912
+      spriteID: 05ae1739dc744ed42b48f7f498849ac2
+      internalID: 1176300678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork (3)_3
+      name: farmer_3
       rect:
         serializedVersion: 2
-        x: 1270
-        y: 867
-        width: 339
-        height: 527
-      alignment: 9
-      pivot: {x: 0.48498067, y: 0.068449825}
+        x: 2512
+        y: 2612
+        width: 667
+        height: 1042
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: edd662f2753de7880800000000000000
-      internalID: -8611213066079146530
+      spriteID: a23343e5d17db9943b0002f4d6728e67
+      internalID: 225309549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork (3)_4
+      name: farmer_4
       rect:
         serializedVersion: 2
-        x: 244
-        y: 253
-        width: 334
-        height: 526
-      alignment: 9
-      pivot: {x: 0.5050815, y: 0.05794934}
+        x: 480
+        y: 1401
+        width: 658
+        height: 1042
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1c888775039b8a2e0800000000000000
-      internalID: -2114236407773361983
+      spriteID: 777e8ce94f8cac34eb24ddb75b19b8ef
+      internalID: -962554404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork (3)_5
+      name: farmer_5
       rect:
         serializedVersion: 2
-        x: 636
-        y: 253
-        width: 321
-        height: 526
-      alignment: 9
-      pivot: {x: 0.51057446, y: 0.09344245}
+        x: 1257
+        y: 1400
+        width: 631
+        height: 1039
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d58a5f69f2b701ec0800000000000000
-      internalID: -3598240657942665123
+      spriteID: 7fbd4fe6abb488d43b8faa0ea370024a
+      internalID: -554034868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork (3)_6
+      name: farmer_7
       rect:
         serializedVersion: 2
-        x: 1009
-        y: 253
-        width: 339
-        height: 526
-      alignment: 9
-      pivot: {x: 0.489987, y: 0.09666913}
+        x: 2007
+        y: 1400
+        width: 654
+        height: 1039
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9e414481fbf73f200800000000000000
-      internalID: 212654066139141353
+      spriteID: 9b5ed80f012cd3643ba1f7c8108b50f2
+      internalID: -251108261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork (3)_7
+      name: farmer_8
       rect:
         serializedVersion: 2
-        x: 1015
-        y: 331
-        width: 16
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 2745
+        y: 1400
+        width: 643
+        height: 1039
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5549cdff42754e250800000000000000
-      internalID: 5972994822223205461
+      spriteID: f6fb26016f950b7409777f8f5ab11610
+      internalID: -1956096536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork (3)_8
+      name: farmer_9
       rect:
         serializedVersion: 2
-        x: 1348
-        y: 338
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 3501
+        y: 1400
+        width: 659
+        height: 1039
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fd314c1cfd85ff1e0800000000000000
-      internalID: -2161911578062744609
+      spriteID: e79af20630eb7ce4ea6231e8d9c45882
+      internalID: -1423155234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork (3)_9
+      name: farmer_10
       rect:
         serializedVersion: 2
-        x: 1389
-        y: 253
-        width: 325
-        height: 527
-      alignment: 9
-      pivot: {x: 0.4843337, y: 0.10065502}
+        x: 4262
+        y: 1400
+        width: 649
+        height: 1039
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4655c1a41d19b2c10800000000000000
-      internalID: 2029876385138103652
+      spriteID: 4e8b2185faee28743bb254f70f82d8e9
+      internalID: 780889516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork (3)_10
+      name: farmer_13
       rect:
         serializedVersion: 2
-        x: 1775
-        y: 253
-        width: 335
-        height: 527
-      alignment: 9
-      pivot: {x: 0.48296225, y: 0.051890597}
+        x: 1874
+        y: 131
+        width: 668
+        height: 1043
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5c1398b68d34c4dc0800000000000000
-      internalID: -3653470600908164667
+      spriteID: b6ffaee8b37cc514781106f6832c25ed
+      internalID: 503458783
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork (3)_11
+      name: farmer_14
       rect:
         serializedVersion: 2
-        x: 2155
-        y: 253
-        width: 329
-        height: 527
-      alignment: 9
-      pivot: {x: 0.5021691, y: 0.05865965}
+        x: 2638
+        y: 131
+        width: 720
+        height: 1043
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 87c8c8a8528d89d60800000000000000
-      internalID: 7897299602344021112
+      spriteID: 3bff5cd87fa97864fa542e76d3f52b83
+      internalID: -1298815298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_15
+      rect:
+        serializedVersion: 2
+        x: 3452
+        y: 131
+        width: 687
+        height: 1043
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7de7ea83443cd4688739ed9cd80685
+      internalID: -2041356132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farmer_16
+      rect:
+        serializedVersion: 2
+        x: 4216
+        y: 131
+        width: 683
+        height: 1043
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42055fc781ee1f342bd3e466f49eab76
+      internalID: 125502553
       vertices: []
       indices: 
       edges: []
@@ -460,20 +504,27 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":210.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Untitled_Artwork (3)_0: 381891196378272548
-      Untitled_Artwork (3)_1: 6698220487990864703
-      Untitled_Artwork (3)_10: -3653470600908164667
-      Untitled_Artwork (3)_11: 7897299602344021112
-      Untitled_Artwork (3)_2: 381396441241331912
-      Untitled_Artwork (3)_3: -8611213066079146530
-      Untitled_Artwork (3)_4: -2114236407773361983
-      Untitled_Artwork (3)_5: -3598240657942665123
-      Untitled_Artwork (3)_6: 212654066139141353
-      Untitled_Artwork (3)_7: 5972994822223205461
-      Untitled_Artwork (3)_8: -2161911578062744609
-      Untitled_Artwork (3)_9: 2029876385138103652
+      farmer_0: -1258476933
+      farmer_1: 1949129590
+      farmer_10: 780889516
+      farmer_11: -907276546
+      farmer_12: 1267766210
+      farmer_13: 503458783
+      farmer_14: -1298815298
+      farmer_15: -2041356132
+      farmer_16: 125502553
+      farmer_2: 1176300678
+      farmer_3: 225309549
+      farmer_4: -962554404
+      farmer_5: -554034868
+      farmer_6: -1578111816
+      farmer_7: -251108261
+      farmer_8: -1956096536
+      farmer_9: -1423155234
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
