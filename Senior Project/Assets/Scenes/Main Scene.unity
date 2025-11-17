@@ -2077,7 +2077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cad8e33c61db4e4f83543b99596d3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  autoSaveTimer: 10
+  autoSaveTimer: 310
   player: {fileID: 1291469836}
   enemySpawner: {fileID: 1939432098}
   environmentForEnemies: {fileID: 983484239}
@@ -4019,7 +4019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 029318ae0860f0f40bced8cffb4d70fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldTime.WorldTime
-  dayLength: 1
+  dayLength: 180
   nightLength: 120
   transitionLength: 5
 --- !u!1 &837405657
@@ -7174,6 +7174,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 657201656}
     m_Modifications:
+    - target: {fileID: 431447372046555940, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 431447372046555940, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: m_Color.b
       value: 1
