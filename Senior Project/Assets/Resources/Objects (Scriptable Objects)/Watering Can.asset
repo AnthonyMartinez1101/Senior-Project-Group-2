@@ -15,5 +15,7 @@ MonoBehaviour:
   itemName: Watering Can
   icon: {fileID: 0}
   itemType: 3
+  isConsumable: 0
   plant: {fileID: 0}
+  healAmount: 0
   weaponType: 0

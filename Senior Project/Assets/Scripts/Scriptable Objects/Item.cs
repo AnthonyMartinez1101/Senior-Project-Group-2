@@ -24,6 +24,10 @@ public class Item : ScriptableObject
     public string itemName;
     public Sprite icon;
     public ItemType itemType;
+    
+    [Header("ITEM BEHAVIOR")]
+    [Tooltip("If true, this item disappears when count reaches 0. If false, it stays in inventory (like a watering can).")]
+    public bool isConsumable = true;
 
     [Header("--If Item Type Seed--")]
     [Tooltip("A plant scriptable object")]

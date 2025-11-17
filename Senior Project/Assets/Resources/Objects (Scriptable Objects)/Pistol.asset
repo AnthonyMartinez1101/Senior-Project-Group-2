@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Pistol
-  icon: {fileID: 0}
+  icon: {fileID: 3216517179481781467, guid: 01bca7ee036b188488b333104ed2e039, type: 3}
   itemType: 1
+  isConsumable: 0
   plant: {fileID: 0}
   healAmount: 0
   weaponType: 1
