@@ -19,7 +19,7 @@ public class InventorySystem : MonoBehaviour
 {
     [Header("ENSURE ELEMENTS ARE NOT NULL")]
     public List<ItemStack> inventoryItems = new List<ItemStack>(1); //List of items in inventory
-    public TMP_Text inventoryDisplay;
+    //public TMP_Text inventoryDisplay;
 
     [Header("HOTBAR UI REFERENCES")]
     [SerializeField] private List<Image> slotBackgrounds = new List<Image>();
@@ -231,19 +231,19 @@ public class InventorySystem : MonoBehaviour
         }
 
         // Update the display text for currently held item
-        if (inventoryItems == null || inventoryItems.Count == 0)
-        {
-            if (inventoryDisplay != null) inventoryDisplay.text = "\nHolding no items";
-        }
-        else
-        {
-            ItemStack current = inventoryItems[inventoryIndex];
-            if (inventoryDisplay != null)
-                inventoryDisplay.text = "Holding: " + (current.item != null ? current.item.itemName : "(none)") + "\nCount: " + current.count;
+        //if (inventoryItems == null || inventoryItems.Count == 0)
+        //{
+        //    if (inventoryDisplay != null) inventoryDisplay.text = "\nHolding no items";
+        //}
+        //else
+        //{
+        //    ItemStack current = inventoryItems[inventoryIndex];
+        //    if (inventoryDisplay != null)
+        //        inventoryDisplay.text = "Holding: " + (current.item != null ? current.item.itemName : "(none)") + "\nCount: " + current.count;
             
-            // Invoke event when held item changes
-            OnHeldItemChanged.Invoke(current);
-        }
+        //    // Invoke event when held item changes
+        //    OnHeldItemChanged.Invoke(current);
+        //}
         
         // Debug: Log current inventory state
         if (inventoryItems != null && inventoryItems.Count > 0)

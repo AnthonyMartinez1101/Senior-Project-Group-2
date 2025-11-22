@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93a86dbcae4149a46be4292fd556dfb8, type: 3}
-  m_Name: Pistol
+  m_Name: Watering Can
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Pistol
-  icon: {fileID: 0}
-  itemType: 1
+  itemName: Watering Can
+  icon: {fileID: 8846147940971733678, guid: 52345a572ee9c90468cba7a29a79a913, type: 3}
+  itemType: 3
+  isConsumable: 0
   plant: {fileID: 0}
   healAmount: 0
-  weaponType: 1
+  weaponType: 0

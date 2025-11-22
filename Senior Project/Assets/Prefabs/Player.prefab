@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 5092246524528975356}
   - component: {fileID: 2604845234361256722}
   - component: {fileID: 9146414210816531384}
+  - component: {fileID: 4818613811270646137}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -40,7 +41,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.59349465, y: 0.34607732, z: 0}
-  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
+  m_LocalScale: {x: 0.47323927, y: 0.47323927, z: 0.47323927}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5872699842340807751}
@@ -284,7 +285,7 @@ MonoBehaviour:
   Melee: {fileID: 8105967814657914450, guid: 7c83e28d75c813e48a8885a639ca62a3, type: 3}
   aim: {fileID: 5872699842340807751}
   bullet: {fileID: 5689616905070151574, guid: f1d495c7ebcb14e4ba2a8e5488dbc3cf, type: 3}
-  bulletForce: 30
+  bulletForce: 40
   shootCooldown: 0.1
   noShootCooldown: 0
 --- !u!114 &6813988684076241257
@@ -300,10 +301,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySystem
   inventoryItems:
-  - item: {fileID: 0}
-    count: 0
-  - item: {fileID: 0}
-    count: 0
+  - item: {fileID: 11400000, guid: c6c271632cc84ea46bd4d17af2ac8ccb, type: 2}
+    count: 1
+  - item: {fileID: 11400000, guid: bf3c7c4a28fac864b9af577c894fd0b7, type: 2}
+    count: 5
+  - item: {fileID: 11400000, guid: 5e96b6d07fb4cb440be11f9354ce5e97, type: 2}
+    count: 3
+  - item: {fileID: 11400000, guid: 522ac46dd97cd3f4b88fc3cc130c0c35, type: 2}
+    count: 1
   inventoryDisplay: {fileID: 0}
   slotBackgrounds: []
   slotCounts: []
@@ -311,6 +316,14 @@ MonoBehaviour:
   normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   emptySlotSprite: {fileID: 0}
   slotIcons: []
+  hotbarSize: 10
+  allowNumberKeySelection: 1
+  OnHotbarSlotChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHeldItemChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5092246524528975356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +364,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f834d13e758aff34e9cca645a90bdc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Knockback
+--- !u!114 &4818613811270646137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760016382332637093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a362fc90f767e42953117558c93bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HotbarUIManager
+  inventorySystem: {fileID: 6813988684076241257}
+  hotbarContainer: {fileID: 0}
+  useSlotAnimations: 1
+  selectionAnimationDuration: 0.1
+  selectionScale: 1.1
 --- !u!1 &5000908664961898390
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +529,7 @@ GameObject:
   - component: {fileID: 4451800773964450250}
   - component: {fileID: 955362444939710171}
   - component: {fileID: 7109040869451099673}
+  - component: {fileID: 3152602500909440154}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Interact
@@ -628,6 +659,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.97}
   m_Size: {x: 0.64, y: 2.18}
   m_Direction: 0
+--- !u!114 &3152602500909440154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860768882636533363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1804495978c258a46aa95d983529b95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &6026584725319094144
 PrefabInstance:
   m_ObjectHideFlags: 0

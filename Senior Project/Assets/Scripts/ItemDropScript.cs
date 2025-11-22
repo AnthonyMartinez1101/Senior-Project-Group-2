@@ -7,8 +7,9 @@ public class ItemDropScript : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private SpriteRenderer shadowSpriteRenderer;
 
-    [SerializeField] private Rigidbody2D rb;
+    private Rigidbody2D rb;
 
+    public Item itemInfo;
     private Item item;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,6 +17,11 @@ public class ItemDropScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(ItemTimer());
+
+        if (itemInfo != null)
+        {
+            CreateItemDrop(itemInfo);
+        }
     }
 
     IEnumerator ItemTimer()

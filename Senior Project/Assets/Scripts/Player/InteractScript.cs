@@ -48,6 +48,8 @@ public class InteractScript : MonoBehaviour
     {
         currentItem = inventorySystem.GetCurrentItem();
 
+        if (currentItem == null) return;
+
         switch(currentItem.itemType)
         {
             case ItemType.Seed:

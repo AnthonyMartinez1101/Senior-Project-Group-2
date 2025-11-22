@@ -31,9 +31,9 @@ public class HotbarDiagnostic : MonoBehaviour
         
         // Find components if not assigned
         if (inventorySystem == null)
-            inventorySystem = FindObjectOfType<InventorySystem>();
+            inventorySystem = FindFirstObjectByType<InventorySystem>();
         if (uiCanvas == null)
-            uiCanvas = FindObjectOfType<Canvas>();
+            uiCanvas = FindFirstObjectByType<Canvas>();
         
         if (inventorySystem == null)
         {

@@ -47,7 +47,7 @@ public class HotbarUIManager : MonoBehaviour
             inventorySystem = GetComponent<InventorySystem>();
             if (inventorySystem == null)
             {
-                inventorySystem = FindObjectOfType<InventorySystem>();
+                inventorySystem = FindFirstObjectByType<InventorySystem>();
             }
         }
         
@@ -60,7 +60,7 @@ public class HotbarUIManager : MonoBehaviour
         // Auto-find Hotbar container if not assigned
         if (hotbarContainer == null)
         {
-            Canvas canvas = FindObjectOfType<Canvas>();
+            Canvas canvas = FindFirstObjectByType<Canvas>();
             if (canvas != null)
             {
                 hotbarContainer = canvas.transform.Find("Hotbar");
@@ -92,7 +92,7 @@ public class HotbarUIManager : MonoBehaviour
     {
         if (hotbarContainer == null)
         {
-            Debug.LogError("HotbarUIManager: Hotbar container is null!");
+            //Debug.LogError("HotbarUIManager: Hotbar container is null!");
             return;
         }
 
@@ -102,7 +102,7 @@ public class HotbarUIManager : MonoBehaviour
         int slotIndex = 0;
         int successfulSlots = 0;
         
-        Debug.Log($"HotbarUIManager: Found {hotbarContainer.childCount} potential slot objects");
+        //Debug.Log($"HotbarUIManager: Found {hotbarContainer.childCount} potential slot objects");
         
         // Iterate through each child of the hotbar container
         foreach (Transform slotTransform in hotbarContainer)
@@ -132,23 +132,23 @@ public class HotbarUIManager : MonoBehaviour
             {
                 inventorySystem.AddHotbarSlot(background, count, icon);
                 successfulSlots++;
-                Debug.Log($"✓ Linked Hotbar Slot {slotIndex + 1}: '{slotTransform.name}'");
+                //Debug.Log($"✓ Linked Hotbar Slot {slotIndex + 1}: '{slotTransform.name}'");
                 slotIndex++;
             }
             else
             {
-                Debug.LogWarning($"✗ Slot '{slotTransform.name}' missing components - Background: {background != null}, Icon: {icon != null}, Count: {count != null}");
+                //Debug.LogWarning($"✗ Slot '{slotTransform.name}' missing components - Background: {background != null}, Icon: {icon != null}, Count: {count != null}");
             }
         }
         
         if (successfulSlots == 0)
         {
-            Debug.LogError("HotbarUIManager: No valid hotbar slots found! Check your UI hierarchy structure.");
-            Debug.Log("Expected structure:\n  Canvas\n    └─ Hotbar (or similar name)\n        ├─ Slot_1 (with Image component)\n        │   ├─ Icon (Image)\n        │   └─ Count (TextMeshPro)\n        ├─ Slot_2\n        ...");
+            //Debug.LogError("HotbarUIManager: No valid hotbar slots found! Check your UI hierarchy structure.");
+            //Debug.Log("Expected structure:\n  Canvas\n    └─ Hotbar (or similar name)\n        ├─ Slot_1 (with Image component)\n        │   ├─ Icon (Image)\n        │   └─ Count (TextMeshPro)\n        ├─ Slot_2\n        ...");
             return;
         }
         
-        Debug.Log($"HotbarUIManager: Successfully linked {successfulSlots} hotbar slots");
+        //Debug.Log($"HotbarUIManager: Successfully linked {successfulSlots} hotbar slots");
         inventorySystem.UpdateDisplayText();
     }
     
@@ -157,7 +157,7 @@ public class HotbarUIManager : MonoBehaviour
     /// </summary>
     private void OnSlotChanged(int newSlot)
     {
-        Debug.Log($"Hotbar Slot Changed: {newSlot + 1}");
+        //Debug.Log($"Hotbar Slot Changed: {newSlot + 1}");
         
         if (useSlotAnimations && hotbarContainer != null && newSlot >= 0 && newSlot < hotbarContainer.childCount)
         {
@@ -176,7 +176,7 @@ public class HotbarUIManager : MonoBehaviour
     {
         if (newItem != null && newItem.item != null)
         {
-            Debug.Log($"Item Changed: {newItem.item.itemName} (Count: {newItem.count})");
+            //Debug.Log($"Item Changed: {newItem.item.itemName} (Count: {newItem.count})");
         }
     }
     
@@ -244,26 +244,26 @@ public class HotbarUIManager : MonoBehaviour
     /// </summary>
     public void DebugHotbarSetup()
     {
-        Debug.Log("\n========== HOTBAR DEBUG INFO ==========");
+        //Debug.Log("\n========== HOTBAR DEBUG INFO ==========");
         
         if (inventorySystem == null)
         {
-            Debug.LogError("❌ InventorySystem is NULL");
+            //Debug.LogError("❌ InventorySystem is NULL");
             return;
         }
         
-        Debug.Log($"✓ InventorySystem found");
-        Debug.Log($"  - Inventory Items: {inventorySystem.inventoryItems.Count}");
-        Debug.Log($"  - Current Index: {inventorySystem.GetCurrentHotbarSlot()}");
-        Debug.Log($"  - Hotbar Size Setting: {inventorySystem.hotbarSize}");
+        //Debug.Log($"✓ InventorySystem found");
+        //Debug.Log($"  - Inventory Items: {inventorySystem.inventoryItems.Count}");
+        //Debug.Log($"  - Current Index: {inventorySystem.GetCurrentHotbarSlot()}");
+        //Debug.Log($"  - Hotbar Size Setting: {inventorySystem.hotbarSize}");
         
         if (hotbarContainer == null)
         {
-            Debug.LogError("❌ Hotbar Container is NULL - UI not connected!");
+            //Debug.LogError("❌ Hotbar Container is NULL - UI not connected!");
             return;
         }
         
-        Debug.Log($"✓ Hotbar Container found: '{hotbarContainer.name}'");
+        //Debug.Log($"✓ Hotbar Container found: '{hotbarContainer.name}'");
         
         // Check if slot lists are populated
         var slotBackgroundsField = typeof(InventorySystem).GetField("slotBackgrounds", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
@@ -276,15 +276,15 @@ public class HotbarUIManager : MonoBehaviour
             var icons = slotIconsField.GetValue(inventorySystem) as List<Image>;
             var counts = slotCountsField.GetValue(inventorySystem) as List<TMP_Text>;
             
-            Debug.Log($"  - Slot Backgrounds Linked: {backgrounds?.Count ?? 0}");
-            Debug.Log($"  - Slot Icons Linked: {icons?.Count ?? 0}");
-            Debug.Log($"  - Slot Counts Linked: {counts?.Count ?? 0}");
+            //Debug.Log($"  - Slot Backgrounds Linked: {backgrounds?.Count ?? 0}");
+            //Debug.Log($"  - Slot Icons Linked: {icons?.Count ?? 0}");
+            //Debug.Log($"  - Slot Counts Linked: {counts?.Count ?? 0}");
             
-            if (backgrounds?.Count == 0)
-                Debug.LogWarning("⚠️ WARNING: No slots are linked to the InventorySystem!");
+            //if (backgrounds?.Count == 0)
+                //Debug.LogWarning("⚠️ WARNING: No slots are linked to the InventorySystem!");
         }
         
-        Debug.Log("\n========== INVENTORY CONTENTS ==========");
+        //Debug.Log("\n========== INVENTORY CONTENTS ==========");
         for (int i = 0; i < inventorySystem.inventoryItems.Count; i++)
         {
             var stack = inventorySystem.inventoryItems[i];
@@ -292,14 +292,14 @@ public class HotbarUIManager : MonoBehaviour
             {
                 bool hasIcon = stack.item.icon != null;
                 string marker = i == inventorySystem.GetCurrentHotbarSlot() ? ">>>" : "   ";
-                Debug.Log($"{marker} Slot {i}: {stack.item.itemName} x{stack.count} {(hasIcon ? "✓ Has Icon" : "❌ NO ICON")}");
+                //Debug.Log($"{marker} Slot {i}: {stack.item.itemName} x{stack.count} {(hasIcon ? "✓ Has Icon" : "❌ NO ICON")}");
             }
             else
             {
-                Debug.Log($"    Slot {i}: (empty)");
+                //Debug.Log($"    Slot {i}: (empty)");
             }
         }
         
-        Debug.Log("========== END DEBUG ==========\n");
+        //Debug.Log("========== END DEBUG ==========\n");
     }
 }
