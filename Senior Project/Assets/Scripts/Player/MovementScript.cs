@@ -22,6 +22,8 @@ public class MovementScript : MonoBehaviour
 
     private Knockback knockback;
 
+    [SerializeField] private ShopScript shop;
+
     //Called when the script is made
     private void Start()
     {
@@ -37,20 +39,34 @@ public class MovementScript : MonoBehaviour
         attackScript = GetComponent<Attack>();
 
         knockback = GetComponent<Knockback>();
+
+        if(shop == null)
+        {
+            Debug.Log("MovementScript: Shop not assigned in inspector, searching for ShopScript.");
+            shop = FindObjectOfType<ShopScript>();
+        }
     }
 
     void Update()
     {
-        if (dashAction.WasPressedThisFrame())
+        if (dashAction.WasPressedThisFrame() && !CheckShop())
         {
             Dash();
         }
     }
 
+    
+
 
     //Called at a fixed rate (not dependent on frame rate)
     private void FixedUpdate()
     {
+        if(CheckShop()) 
+        {
+            rb.linearVelocity = Vector2.zero;
+            return; 
+        }
+
         if (isDashing)
         {
             rb.linearVelocity = direction * dashSpeed;
@@ -61,11 +77,11 @@ public class MovementScript : MonoBehaviour
                 dashCooldownTimer = dashCooldown;
             }
         }
-        else if(!knockback.IsKnockbackActive())
+        else if (!knockback.IsKnockbackActive())
         {
             Vector2 moveValue = moveAction.ReadValue<Vector2>();
             direction = moveValue.normalized;
-            if(!attackScript.IsMeleeing()) rb.linearVelocity = direction * speed;
+            if (!attackScript.IsMeleeing()) rb.linearVelocity = direction * speed;
             else rb.linearVelocity = direction * (speed / 2f);
 
 
@@ -83,5 +99,10 @@ public class MovementScript : MonoBehaviour
             isDashing = true;
             dashTimer = dashDuration;
         }
+    }
+
+    private bool CheckShop()
+    {
+        return shop != null && shop.IsShopInUse();
     }
 }

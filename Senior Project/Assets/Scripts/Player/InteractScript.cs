@@ -16,6 +16,8 @@ public class InteractScript : MonoBehaviour
 
     private bool nearRefill;
 
+    [SerializeField] private ShopScript shop;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,12 +29,18 @@ public class InteractScript : MonoBehaviour
         playerHealth = GetComponent<PlayerHealth>();
 
         nearRefill = false;
+
+        if (shop == null)
+        {
+            Debug.Log("InteractScript: Shop not assigned in inspector, searching for ShopScript.");
+            shop = FindObjectOfType<ShopScript>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(interactAction.WasPressedThisFrame())
+        if(interactAction.WasPressedThisFrame() && shop != null && !shop.IsShopInUse())
         {
             Interact();
         }

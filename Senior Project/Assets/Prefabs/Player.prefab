@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 2604845234361256722}
   - component: {fileID: 9146414210816531384}
   - component: {fileID: 4818613811270646137}
+  - component: {fileID: 6456442887413956636}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -228,6 +229,7 @@ MonoBehaviour:
   dashSpeed: 20
   dashDuration: 0.2
   dashCooldown: 1
+  shop: {fileID: 0}
 --- !u!114 &8803167819044735584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,16 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5452bf0b85de5bf49a29e5b08fcd9cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventorySystem
-  inventoryItems:
-  - item: {fileID: 11400000, guid: c6c271632cc84ea46bd4d17af2ac8ccb, type: 2}
-    count: 1
-  - item: {fileID: 11400000, guid: bf3c7c4a28fac864b9af577c894fd0b7, type: 2}
-    count: 5
-  - item: {fileID: 11400000, guid: 5e96b6d07fb4cb440be11f9354ce5e97, type: 2}
-    count: 3
-  - item: {fileID: 11400000, guid: 522ac46dd97cd3f4b88fc3cc130c0c35, type: 2}
-    count: 1
-  inventoryDisplay: {fileID: 0}
+  inventoryItems: []
   slotBackgrounds: []
   slotCounts: []
   selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -338,6 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   maxHealth: 20
   currentHealth: 0
+  shop: {fileID: 0}
 --- !u!114 &2604845234361256722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,6 +375,20 @@ MonoBehaviour:
   useSlotAnimations: 1
   selectionAnimationDuration: 0.1
   selectionScale: 1.1
+--- !u!114 &6456442887413956636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760016382332637093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd17143c844d0054291a57741444b8a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  coinCount: 5
+  coinCountText: {fileID: 0}
 --- !u!1 &5000908664961898390
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +538,7 @@ GameObject:
   - component: {fileID: 955362444939710171}
   - component: {fileID: 7109040869451099673}
   - component: {fileID: 3152602500909440154}
+  - component: {fileID: 4278782391037053289}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Interact
@@ -660,6 +669,18 @@ CapsuleCollider2D:
   m_Size: {x: 0.64, y: 2.18}
   m_Direction: 0
 --- !u!114 &3152602500909440154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860768882636533363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1804495978c258a46aa95d983529b95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!114 &4278782391037053289
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

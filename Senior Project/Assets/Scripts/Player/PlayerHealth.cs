@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
 
     private DamageFlash damageFlash;
 
+    [SerializeField] private ShopScript shop;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,6 +20,12 @@ public class PlayerHealth : MonoBehaviour
         if (healthBar) healthBar.SetMax();
 
         damageFlash = GetComponent<DamageFlash>();
+
+        if (shop == null)
+        {
+            Debug.Log("PlayerHealth: Shop not assigned in inspector, searching for ShopScript.");
+            shop = FindObjectOfType<ShopScript>();
+        }
     }
 
     public void Heal(float healAmount)
@@ -30,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
+        shop.CloseShop();
         GameManager.Instance.CameraShake(damageAmount + 3f, 0.2f);
         if (damageFlash) damageFlash.FlashOnDamage();
         currentHealth -= damageAmount;
