@@ -85,7 +85,6 @@ public class PlantScript : MonoBehaviour
             {
                 if(plantInfo.produce != null && plantInfo.seed != null)
                 {
-                    ItemDropFactory.Instance.SpawnItem(plantInfo.seed, transform.position);
                     if (IsFullyGrown())
                     {
                         ItemDropFactory.Instance.SpawnItem(plantInfo.produce, transform.position);
@@ -97,10 +96,14 @@ public class PlantScript : MonoBehaviour
                             ItemDropFactory.Instance.SpawnItem(plantInfo.seed, transform.position);
                         }
                     }
+                    else
+                    {
+                        ItemDropFactory.Instance.SpawnItem(plantInfo.seed, transform.position);
+                    }
                 }
                 else
                 {
-                    Debug.Log("PlantScript: PlantItem produce or seed is null. Cannot add to inventory.");
+                    Debug.Log("PlantScript: PlantItem produce or seed is null. Cannot drop item.");
                 } 
             }
             Destroy(gameObject);

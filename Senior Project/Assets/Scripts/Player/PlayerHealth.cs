@@ -23,8 +23,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (shop == null)
         {
-            Debug.Log("PlayerHealth: Shop not assigned in inspector, searching for ShopScript.");
-            shop = FindObjectOfType<ShopScript>();
+            Debug.Log("PlayerHealth: Shop not assigned in inspector");
         }
     }
 

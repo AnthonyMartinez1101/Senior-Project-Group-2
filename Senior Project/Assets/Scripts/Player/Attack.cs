@@ -7,6 +7,8 @@ public class Attack : MonoBehaviour
 {
     public GameObject Melee;
     private GameObject currentMelee;
+    public float meleeCooldown = 0.25f;
+    private float meleeTimer = 0.25f;
 
     InputAction sytheAction;
 
@@ -31,6 +33,7 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        meleeTimer -= Time.deltaTime;
         shootTimer += Time.deltaTime;
 
         if(sytheAction.WasPressedThisFrame())
@@ -57,9 +60,10 @@ public class Attack : MonoBehaviour
 
     private void OnMelee()
     {
-        if(currentMelee == null)
+        if(currentMelee == null && meleeTimer < 0)
         {
             currentMelee = Instantiate(Melee, aim.position, aim.rotation);
+            meleeTimer = meleeCooldown;
         }
     }
 

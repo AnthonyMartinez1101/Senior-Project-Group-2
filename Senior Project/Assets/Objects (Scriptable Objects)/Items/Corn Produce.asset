@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Corn Produce
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Corn
-  icon: {fileID: 21300000, guid: 89e94751070b86044b479654c060ad3c, type: 3}
+  icon: {fileID: 6146782616825927046, guid: 966a340b24d41d946a589257f8142b4f, type: 3}
   itemType: 2
+  isConsumable: 1
   plant: {fileID: 0}
   healAmount: 5
   weaponType: 0

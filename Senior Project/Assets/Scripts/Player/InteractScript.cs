@@ -32,8 +32,7 @@ public class InteractScript : MonoBehaviour
 
         if (shop == null)
         {
-            Debug.Log("InteractScript: Shop not assigned in inspector, searching for ShopScript.");
-            shop = FindObjectOfType<ShopScript>();
+            Debug.Log("InteractScript: Shop not assigned in inspector");
         }
     }
 

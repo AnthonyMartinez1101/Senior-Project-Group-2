@@ -254,7 +254,7 @@ public class InventorySystem : MonoBehaviour
                 {
                     bool hasIcon = inventoryItems[i].item.icon != null;
                     string slotMarker = i == inventoryIndex ? ">>>" : "   ";
-                    Debug.Log($"[Hotbar {slotMarker}] Slot {i}: {inventoryItems[i].item.itemName} x{inventoryItems[i].count} | Icon: {(hasIcon ? "✓" : "❌")}");
+                    //Debug.Log($"[Hotbar {slotMarker}] Slot {i}: {inventoryItems[i].item.itemName} x{inventoryItems[i].count} | Icon: {(hasIcon ? "✓" : "❌")}");
                 }
             }
         }

@@ -42,8 +42,7 @@ public class MovementScript : MonoBehaviour
 
         if(shop == null)
         {
-            Debug.Log("MovementScript: Shop not assigned in inspector, searching for ShopScript.");
-            shop = FindObjectOfType<ShopScript>();
+            Debug.Log("MovementScript: Shop not assigned in inspector");
         }
     }
 
