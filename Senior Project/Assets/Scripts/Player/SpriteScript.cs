@@ -47,9 +47,10 @@ public class SpriteScript : MonoBehaviour
         animator.SetBool("isWalkingLeft", false);
         animator.SetBool("isWalkingRight", false);
         animator.SetBool("isWalkingUp", false);
+        animator.SetBool("isWalkingDown", false);
 
         //If not moving
-        if(rb.linearVelocity == zeroVector)
+        if (rb.linearVelocity == zeroVector)
         {
             switch(direction)
             {
