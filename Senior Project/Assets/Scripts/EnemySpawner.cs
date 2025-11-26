@@ -14,20 +14,20 @@ public class EnemySpawner : MonoBehaviour
     private float spawnRate = 3f;
     private int wave = 1;
 
-    [SerializeField] private WorldTime.WorldTime worldTime;
+    [SerializeField] private WorldClock worldClock;
 
     //private float worldTimer = 0f; 
     //private bool isDay = true;
 
     private void Update()
     {
-        if(worldTime == null)
+        if(worldClock == null)
         {
             Debug.LogWarning("EnemySpawner: WorldTime reference is not set.");
             return;
         }
 
-        if (worldTime.CurrentPhase == Phase.Night)
+        if (worldClock.CurrentPhase == DayPhase.Night)
         {
             timer -= Time.deltaTime;
             spawnRate -= Time.deltaTime;
@@ -63,6 +63,6 @@ public class EnemySpawner : MonoBehaviour
         enemy.SetTarget(player);
 
         Enemy e = enemy.GetComponent<Enemy>();
-        e.SetWorldTime(worldTime);
+        e.SetWorldTime(worldClock);
     }
 }

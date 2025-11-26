@@ -25,6 +25,8 @@ public class ShopScript : MonoBehaviour
 
     public PlayerWallet playerWallet;
 
+    private bool foundItem = false;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -123,14 +125,15 @@ public class ShopScript : MonoBehaviour
     }
     private void OrderItem(string orderName)
     {
+        foundItem = false;
         for (int i = 0; i < sellableItems.Count; i++)
         {
             if (sellableItems[i].itemName == orderName)
             {
                 ItemDropFactory.Instance.SpawnItem(sellableItems[i], itemDropOff.position);
-                break;
+                foundItem = true;
             }
         }
-        Debug.Log("Cannot find item: " + orderName);
+        if(!foundItem) Debug.Log("Cannot find item: " + orderName);
     }
 }

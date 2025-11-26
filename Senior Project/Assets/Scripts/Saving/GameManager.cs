@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject environmentForEnemies;
 
-    [SerializeField] private WorldTime.WorldTime worldTime;
+    [SerializeField] private WorldClock worldClock;
 
     [SerializeField] private Sprite noSprite;
 
@@ -90,9 +90,9 @@ public class GameManager : MonoBehaviour
 
     public bool IsDay() 
     {
-        if (worldTime != null)
+        if (worldClock != null)
         {
-            return worldTime.CurrentPhase == Phase.Day;
+            return worldClock.CurrentPhase == DayPhase.Day;
         }
         Debug.LogWarning("GameManager: WorldTime reference is not set.");
         return true; // Default to day if worldTime is not set

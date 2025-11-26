@@ -1,15 +1,17 @@
+using System.Collections;
 using UnityEngine;
 using WorldTime;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] float health, maxHealth = 5f;
-    [SerializeField] float dayBurnTime = 5f;
+    [SerializeField] float dayBurnRate = 1f;
+    [SerializeField] float dayBurnDamage = 1f;
     private FloatingHealth healthBar;
     [SerializeField] private float dealDamage;
     [SerializeField] private float knockbackForce;
 
-    private WorldTime.WorldTime worldTime;
+    private WorldClock worldClock;
 
     private bool inPlayerRange;
 
@@ -22,10 +24,9 @@ public class Enemy : MonoBehaviour
 
     private float hitCooldown = 1.5f;
 
+    bool startBurning = false;
 
 
-    //Damage per second taken during the day
-    private float dps;
 
 
     private void Start()
@@ -46,7 +47,6 @@ public class Enemy : MonoBehaviour
             playerKnockback = player.GetComponent<Knockback>();
         }
 
-        dps = maxHealth / dayBurnTime;
 
         damageFlash = GetComponent<DamageFlash>();
     }
@@ -65,13 +65,19 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void DayDamage(float damageAmount)
+    IEnumerator DayDamage(float initialWait)
     {
-        health -= damageAmount;
-        if (healthBar) healthBar.UpdateHealth(health, maxHealth);
-        if (health <= 0)
+        yield return new WaitForSeconds(initialWait);
+        while (true)
         {
-            Destroy(gameObject);
+            if (damageFlash) damageFlash.FlashOnDamage();
+            health -= dayBurnDamage;
+            if (healthBar) healthBar.UpdateHealth(health, maxHealth);
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+            yield return new WaitForSeconds(dayBurnRate);
         }
     }
 
@@ -81,9 +87,14 @@ public class Enemy : MonoBehaviour
         hitCooldown -= Time.deltaTime;
 
         //If day, take damage
-        if (worldTime.CurrentPhase == Phase.Day)
+        if (worldClock.CurrentPhase == DayPhase.Day)
         {
-            DayDamage(dps * Time.deltaTime);
+            if(!startBurning)
+            {
+                startBurning = true;
+                float randNum = Random.Range(0f, 1f);
+                StartCoroutine(DayDamage(randNum));
+            }
         }
 
         //While colliding with player, deal constant damage over time
@@ -122,8 +133,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void SetWorldTime(WorldTime.WorldTime wt)
+    public void SetWorldTime(WorldClock wt)
     {
-        worldTime = wt;
+        worldClock = wt;
     }
 }

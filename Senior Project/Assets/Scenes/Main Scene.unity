@@ -2791,7 +2791,7 @@ MonoBehaviour:
   player: {fileID: 1291469836}
   enemySpawner: {fileID: 1939432098}
   environmentForEnemies: {fileID: 983484239}
-  worldTime: {fileID: 799218943}
+  worldClock: {fileID: 799218943}
   noSprite: {fileID: 21300000, guid: 38933b6046d4a7442ad2d30d3fb8041c, type: 3}
   FollowCamera: {fileID: 157321354}
 --- !u!4 &404758539
@@ -4088,11 +4088,15 @@ PrefabInstance:
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: worldTime
       value: 
-      objectReference: {fileID: 799218943}
+      objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: nightShade
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: worldClock
+      value: 
+      objectReference: {fileID: 799218943}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: worldTimerText
       value: 
@@ -5012,12 +5016,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 799218941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 029318ae0860f0f40bced8cffb4d70fb, type: 3}
+  m_Script: {fileID: 11500000, guid: f0db605fd1beebe4e8d424f6af49ff76, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WorldTime.WorldTime
+  m_EditorClassIdentifier: Assembly-CSharp::WorldClock
   dayLength: 180
   nightLength: 120
   transitionLength: 5
+  worldClockLight: {fileID: 1053561209}
+  displayText: {fileID: 961366086}
 --- !u!1 &837405657
 GameObject:
   m_ObjectHideFlags: 0
@@ -6208,7 +6214,6 @@ GameObject:
   - component: {fileID: 961366084}
   - component: {fileID: 961366087}
   - component: {fileID: 961366086}
-  - component: {fileID: 961366085}
   m_Layer: 5
   m_Name: Time Text
   m_TagString: Untagged
@@ -6235,19 +6240,6 @@ RectTransform:
   m_AnchoredPosition: {x: 902, y: 432}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &961366085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 961366083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10be8fc4c618e6d438aed0abf0de6691, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WorldTime.WorldTimeDisplay
-  _worldTime: {fileID: 799218943}
 --- !u!114 &961366086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7240,7 +7232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1053561206}
   - component: {fileID: 1053561208}
-  - component: {fileID: 1053561207}
+  - component: {fileID: 1053561209}
   m_Layer: 0
   m_Name: Global Light 2D
   m_TagString: Untagged
@@ -7263,49 +7255,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 521747956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1053561207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053561205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 892c96ab39828c84c9a3521f5bc270c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WorldTime.WorldLight
-  _worldTime: {fileID: 799218943}
-  _gradient:
-    serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 1, g: 0.73754126, b: 0.33490568, a: 0}
-    key3: {r: 1, g: 0.7372549, b: 0.33333334, a: 0}
-    key4: {r: 0.28978285, g: 0.49733004, b: 0.8301887, a: 0}
-    key5: {r: 0.2901961, g: 0.49803925, b: 0.8313726, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 25369
-    ctime2: 36526
-    ctime3: 38050
-    ctime4: 39059
-    ctime5: 64957
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 2
-    m_ColorSpace: -1
-    m_NumColorKeys: 6
-    m_NumAlphaKeys: 2
 --- !u!114 &1053561208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7358,6 +7307,49 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &1053561209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053561205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb6d594eb859464ba69f6222fd8952a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldClockLight
+  worldClock: {fileID: 799218943}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 1, g: 0.7372549, b: 0.33333334, a: 0}
+    key3: {r: 1, g: 0.7562215, b: 0.3814574, a: 0}
+    key4: {r: 0.2901961, g: 0.49803925, b: 0.8313726, a: 0}
+    key5: {r: 0.2901961, g: 0.49803925, b: 0.8313726, a: 0}
+    key6: {r: 1, g: 1, b: 1, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 21843
+    ctime2: 29491
+    ctime3: 32768
+    ctime4: 39321
+    ctime5: 58982
+    ctime6: 65535
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 7
+    m_NumAlphaKeys: 2
 --- !u!4 &1084929881 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 951365163498361168, guid: 69925a4421cb23d44ac9f3257024dd19, type: 3}
