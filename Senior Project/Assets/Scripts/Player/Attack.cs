@@ -58,6 +58,11 @@ public class Attack : MonoBehaviour
         }
     }
 
+    public void OnThrowGrenade()
+    {
+
+    }
+
     private void OnMelee()
     {
         if(currentMelee == null && meleeTimer < 0)

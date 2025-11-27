@@ -127,6 +127,14 @@ public class InteractScript : MonoBehaviour
                 attack.OnShoot();
                 break;
 
+            case WeaponType.Grenade:
+                if (inventorySystem.GetCurrentItemCount() > 0)
+                {
+                    inventorySystem.SubtractItem();
+                    attack.OnThrowGrenade();
+                }
+                break;
+
             default:
                 Debug.Log("No valid weapon type to attack with.");
                 break;
