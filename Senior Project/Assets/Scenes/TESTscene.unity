@@ -8723,6 +8723,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8803167819044735584, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: upIdle
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803167819044735584, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: downIdle
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803167819044735584, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: leftIdle
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803167819044735584, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: rightIdle
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803167819044735584, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Assembly-CSharp::SpriteScript
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

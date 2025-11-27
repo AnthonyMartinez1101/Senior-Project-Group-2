@@ -1,103 +1,35 @@
 using UnityEngine;
-using System.Collections;
+using UnityEngine.InputSystem;
 
 public class SpriteScript : MonoBehaviour
 {
     private Animator animator;
-
-    [SerializeField] private Sprite downIdle;
-    [SerializeField] private Sprite upIdle;
-    [SerializeField] private Sprite leftIdle;
-    [SerializeField] private Sprite rightIdle;
-
-    Vector2 zeroVector = new Vector2(0, 0);
-
-
-    //Rigidbody to detect movement
     private Rigidbody2D rb;
+    private PlayerInput playerInput;
 
-    enum Direction
+    private Vector2 moveInput;
+
+    void Awake()
     {
-        LEFT,
-        RIGHT,
-        UP,
-        DOWN
-    }
-
-    private Direction direction;
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-        //Assigning rigidbody to rb
+        playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
-
-        //Assigning animator
         animator = GetComponent<Animator>();
 
-        direction = Direction.DOWN;
+        playerInput.actions["Move"].performed += OnMove;
+        playerInput.actions["Move"].canceled += OnMove;
     }
 
-    // Update is called once per frame
-    void Update()
-    {   
-        //reset animations
-        animator.SetBool("isWalkingLeft", false);
-        animator.SetBool("isWalkingRight", false);
-        animator.SetBool("isWalkingUp", false);
-        animator.SetBool("isWalkingDown", false);
+    private void OnMove(InputAction.CallbackContext input)
+    {
+        moveInput = input.ReadValue<Vector2>();
+    }
 
-        //If not moving
-        if (rb.linearVelocity == zeroVector)
-        {
-            switch(direction)
-            {
-                case Direction.LEFT:
-                    animator.SetBool("isIdleLeft", true);
-                    break;
-                case Direction.RIGHT:
-                    animator.SetBool("isIdleRight", true);
-                    break;
-                case Direction.UP:
-                    animator.SetBool("isIdleUp", true);
-                    break;
-                case Direction.DOWN:
-                    animator.SetBool("isIdleDown", true);
-                    break;
-            }
-        }
-        else 
-        {
-        //reset animations
-        animator.SetBool("isIdleLeft", false);
-        animator.SetBool("isIdleRight", false);
-        animator.SetBool("isIdleUp", false);
-        animator.SetBool("isIdleDown", false); //add transition from down to idle 
+    void FixedUpdate()
+    {
+        rb.linearVelocity = moveInput * 5f; // your move speed
 
-        //Checking if the rigidbody is moving left or right and flipping the sprite accordingly
-            if (rb.linearVelocity.x > 0.1f)
-            {
-                direction = Direction.RIGHT;
-                animator.SetBool("isWalkingRight", true);
-            }
-            else if(rb.linearVelocity.x < -0.1f)
-            {
-                direction = Direction.LEFT;
-                animator.SetBool("isWalkingLeft", true);
-            }
-            else if(rb.linearVelocity.y > 0.1f)
-            {
-                direction = Direction.UP;
-                animator.SetBool("isWalkingUp", true);
-            }
-            else if(rb.linearVelocity.y < -0.1f)
-            {
-                direction = Direction.DOWN;
-                animator.SetBool("isWalkingDown", true);
-            }
-
-        }
+        animator.SetFloat("moveX", moveInput.x);
+        animator.SetFloat("moveY", moveInput.y);
+   
     }
 }
