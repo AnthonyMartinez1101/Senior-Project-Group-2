@@ -5080,7 +5080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0db605fd1beebe4e8d424f6af49ff76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldClock
-  dayLength: 180
+  dayLength: 10
   nightLength: 120
   transitionLength: 5
   worldClockLight: {fileID: 1053561209}
@@ -8696,6 +8696,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 657201656}
     m_Modifications:
+    - target: {fileID: 1125482792520486096, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: grenade
+      value: 
+      objectReference: {fileID: 3093272852940364067, guid: 8cb7b66176c06d847a4abc882d811ac3, type: 3}
     - target: {fileID: 1125482792520486096, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: meleeCooldown
       value: 0.5

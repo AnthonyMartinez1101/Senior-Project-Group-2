@@ -1,11 +1,23 @@
+using System.Collections;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
     public float damage = 1;
     public float knockbackForce = 5f;
-    public enum WeaponType { Melee, Bullet }
+    public enum WeaponType { Melee, Bullet, Grenade }
     public WeaponType weaponType;
+
+    public float explosionTimer = 2.5f;
+    public Collider2D explosionRadius;
+
+    void Start()
+    {
+        if (weaponType == WeaponType.Grenade)
+        {
+            StartCoroutine(Explode(explosionTimer));
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,7 +31,7 @@ public class Weapon : MonoBehaviour
             if(collision.GetComponent<Knockback>()) collision.GetComponent<Knockback>().ApplyKnockback(transform, knockbackForce);
         }
 
-            PlantScript plantScript = collision.GetComponent<PlantScript>();
+        PlantScript plantScript = collision.GetComponent<PlantScript>();
         if (plantScript != null)
         {
             plantScript.TakeDamage(damage);
@@ -30,5 +42,12 @@ public class Weapon : MonoBehaviour
             Debug.Log("Bullet destroyed by: " + collision.name);
             Destroy(gameObject);
         }
+    }
+
+    private IEnumerator Explode(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        explosionRadius.enabled = true;
+        Destroy(gameObject, 0.1f);
     }
 }

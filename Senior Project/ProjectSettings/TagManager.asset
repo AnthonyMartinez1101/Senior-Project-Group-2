@@ -11,6 +11,7 @@ TagManager:
   - Sickle
   - Bullet
   - Refill
+  - Grenade
   layers:
   - Default
   - TransparentFX
