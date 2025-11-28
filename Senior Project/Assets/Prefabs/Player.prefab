@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
   m_Actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -210,7 +210,19 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8803167819044735584}
+        m_TargetAssemblyTypeName: SpriteScript, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 351f2ccd-1f9f-44bf-9bec-d62ac5c5f408
     m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
@@ -347,10 +359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384707f90e5770440a17081379caec9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  downIdle: {fileID: -1956096536, guid: db88ee4c87c806145a955f3f4cc5a8c4, type: 3}
-  upIdle: {fileID: -962554404, guid: db88ee4c87c806145a955f3f4cc5a8c4, type: 3}
-  leftIdle: {fileID: 503458783, guid: db88ee4c87c806145a955f3f4cc5a8c4, type: 3}
-  rightIdle: {fileID: 225309549, guid: db88ee4c87c806145a955f3f4cc5a8c4, type: 3}
 --- !u!114 &4923560966000343244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +404,11 @@ MonoBehaviour:
   bullet: {fileID: 5689616905070151574, guid: f1d495c7ebcb14e4ba2a8e5488dbc3cf, type: 3}
   bulletForce: 40
   shootCooldown: 0.1
+  grenade: {fileID: 0}
+  throwForce: 10
+  throwCooldown: 0.5
+  airTime: 0.5
+  explosionTimer: 2
   noShootCooldown: 0
 --- !u!114 &6813988684076241257
 MonoBehaviour:

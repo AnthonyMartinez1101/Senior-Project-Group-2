@@ -2791,7 +2791,7 @@ MonoBehaviour:
   player: {fileID: 1291469836}
   enemySpawner: {fileID: 1939432098}
   environmentForEnemies: {fileID: 983484239}
-  worldTime: {fileID: 799218943}
+  worldClock: {fileID: 0}
   noSprite: {fileID: 21300000, guid: 38933b6046d4a7442ad2d30d3fb8041c, type: 3}
   FollowCamera: {fileID: 157321354}
 --- !u!4 &404758539
@@ -8655,6 +8655,38 @@ PrefabInstance:
       propertyPath: shop
       value: 
       objectReference: {fileID: 1014007743}
+    - target: {fileID: 2763287403774370185, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763287403774370185, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763287403774370185, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763287403774370185, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1892174196}
+    - target: {fileID: 2763287403774370185, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763287403774370185, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMove
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763287403774370185, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SpriteScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2763287403774370185, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4818613811270646137, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: hotbarContainer
       value: 
@@ -8675,6 +8707,14 @@ PrefabInstance:
       propertyPath: coinCountText
       value: 
       objectReference: {fileID: 1387028229}
+    - target: {fileID: 7814202438860295599, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4732393
+      objectReference: {fileID: 0}
+    - target: {fileID: 7814202438860295599, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4732393
+      objectReference: {fileID: 0}
     - target: {fileID: 7814202438860295599, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.23438
@@ -11756,6 +11796,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd17143c844d0054291a57741444b8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &1892174196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8803167819044735584, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+  m_PrefabInstance: {fileID: 1291469835}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291469836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 384707f90e5770440a17081379caec9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpriteScript
 --- !u!1 &1900157683
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,27 +9,29 @@ public class SpriteScript : MonoBehaviour
 
     private Vector2 moveInput;
 
-    void Awake()
+    void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
-        playerInput.actions["Move"].performed += OnMove;
-        playerInput.actions["Move"].canceled += OnMove;
     }
-
-    private void OnMove(InputAction.CallbackContext input)
-    {
-        moveInput = input.ReadValue<Vector2>();
-    }
-
-    void FixedUpdate()
+    void Update()
     {
         rb.linearVelocity = moveInput * 5f; // your move speed
-
+    }
+    public void OnMove(InputAction.CallbackContext input)
+    {   
+        animator.SetBool("isWalking", true);
+        if (input.canceled)
+        {
+            animator.SetBool("isWalking", false);
+            animator.SetFloat("lastX", moveInput.x);
+            animator.SetFloat("lastY", moveInput.y);
+        }
+        moveInput = input.ReadValue<Vector2>();
         animator.SetFloat("moveX", moveInput.x);
         animator.SetFloat("moveY", moveInput.y);
-   
     }
+
+
 }
