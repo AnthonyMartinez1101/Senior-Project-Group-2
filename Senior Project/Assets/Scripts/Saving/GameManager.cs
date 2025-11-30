@@ -94,7 +94,15 @@ public class GameManager : MonoBehaviour
         {
             return worldClock.CurrentPhase == DayPhase.Day;
         }
-        Debug.LogWarning("GameManager: WorldTime reference is not set.");
+        else
+        {
+            worldClock = FindFirstObjectByType<WorldClock>();
+            if (worldClock == null)
+            {
+                Debug.LogWarning("GameManager: WorldClock reference is not found.");
+            }
+
+        }
         return true; // Default to day if worldTime is not set
     }
 
@@ -108,19 +116,21 @@ public class GameManager : MonoBehaviour
 
     public void RestartScene()
     {
-        // // Load game from previous save
-        // gameData = SaveScript.LoadGame();
-        // LoadData(gameData);
+        // Load game from previous save
         StartCoroutine(WaitAndRestart());
     }
 
-    // Won't need this later
     //Waits for 3 seconds before restarting the scene
     IEnumerator WaitAndRestart()
     {
         yield return new WaitForSeconds(3f);
-        Scene current = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(current.buildIndex);
+        worldClock.ResetDay();
+        foreach (var enemy in FindObjectsByType<Enemy>(FindObjectsSortMode.None))
+        {
+            Destroy(enemy.gameObject);
+        }
+        player.GetComponent<PlayerHealth>().RevivePlayer();
+        LoadData(gameData);
     }
 
     private IEnumerator AutoSave()

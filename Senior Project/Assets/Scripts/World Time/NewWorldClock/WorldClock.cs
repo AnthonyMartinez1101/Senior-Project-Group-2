@@ -109,4 +109,12 @@ public class WorldClock : MonoBehaviour
     {
         return (dayLength - preciseTime) / dayLength;
     }
+
+    public void ResetDay()
+    {
+        CurrentPhase = DayPhase.Day;
+        currentTime = dayLength;
+        preciseTime = dayLength;
+        SwitchLight();
+    }
 }
