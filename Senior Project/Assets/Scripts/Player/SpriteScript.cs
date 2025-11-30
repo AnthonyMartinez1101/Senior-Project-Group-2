@@ -15,10 +15,10 @@ public class SpriteScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
-    void Update()
-    {
-        rb.linearVelocity = moveInput * 5f; // your move speed
-    }
+    //void Update()
+    //{
+    //    rb.linearVelocity = moveInput * 5f; // your move speed
+    //}
     public void OnMove(InputAction.CallbackContext input)
     {   
         animator.SetBool("isWalking", true);

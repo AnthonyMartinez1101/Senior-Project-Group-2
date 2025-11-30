@@ -18,12 +18,16 @@ public class WorldClock : MonoBehaviour
     [Header("Hold at 0:00 after phase switch (seconds)")]
     [SerializeField] private float transitionLength = 5f;    // stays showing 0:00
 
+    
+
     private float currentTime;
     private float preciseTime;
 
     public DayPhase CurrentPhase { get; private set; } = DayPhase.Day;
 
-    private bool pauseTimer = false;
+    [Header("Other attributes:")]
+    [SerializeField] private bool pauseTimer = false;
+    [SerializeField] private bool _2xTickSpeed = false;
 
     public WorldClockLight worldClockLight;
 
@@ -57,7 +61,8 @@ public class WorldClock : MonoBehaviour
             }
             else
             {
-                yield return new WaitForSeconds(1f);
+                if (_2xTickSpeed) yield return new WaitForSeconds(0.5f);
+                else yield return new WaitForSeconds(1f);
                 currentTime -= 1f;
 
                 if (currentTime == 0f)
