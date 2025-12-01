@@ -16,8 +16,18 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] private WorldClock worldClock;
 
+    public GameObject EnemyEnvironment;
+
     //private float worldTimer = 0f; 
     //private bool isDay = true;
+
+    private void Start()
+    {
+        if (EnemyEnvironment != null)
+        {
+            EnemyEnvironment.SetActive(true);
+        }
+    }
 
     private void Update()
     {

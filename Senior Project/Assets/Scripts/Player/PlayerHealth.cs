@@ -45,7 +45,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             GameManager.Instance.RestartScene();
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
@@ -53,12 +53,5 @@ public class PlayerHealth : MonoBehaviour
     public bool IsMaxHealth()
     {
         return currentHealth >= maxHealth;
-    }
-
-    public void RevivePlayer()
-    {
-        currentHealth = maxHealth;
-        healthBar.UpdateHealth(currentHealth, maxHealth);
-        gameObject.SetActive(true);
     }
 }

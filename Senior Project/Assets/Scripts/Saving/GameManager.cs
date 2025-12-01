@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     public EnemySpawner enemySpawner;
 
-    public GameObject environmentForEnemies;
+    //public GameObject environmentForEnemies;
 
     [SerializeField] private WorldClock worldClock;
 
@@ -68,14 +68,6 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("GameManager: InventorySystem component not found on player.");
         }
 
-        if(environmentForEnemies != null)
-        {
-            environmentForEnemies.SetActive(true);
-        }
-        else
-        {
-            Debug.LogWarning("GameManager: EnvironmentForEnemies reference is not set.");
-        }
 
         if(FollowCamera == null)
         {
@@ -124,13 +116,7 @@ public class GameManager : MonoBehaviour
     IEnumerator WaitAndRestart()
     {
         yield return new WaitForSeconds(3f);
-        worldClock.ResetDay();
-        foreach (var enemy in FindObjectsByType<Enemy>(FindObjectsSortMode.None))
-        {
-            Destroy(enemy.gameObject);
-        }
-        player.GetComponent<PlayerHealth>().RevivePlayer();
-        LoadData(gameData);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private IEnumerator AutoSave()

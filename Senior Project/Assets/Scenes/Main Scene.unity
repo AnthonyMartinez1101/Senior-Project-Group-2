@@ -2838,7 +2838,6 @@ MonoBehaviour:
   autoSaveTimer: 310
   player: {fileID: 1291469836}
   enemySpawner: {fileID: 1939432098}
-  environmentForEnemies: {fileID: 983484239}
   worldClock: {fileID: 799218943}
   noSprite: {fileID: 21300000, guid: 38933b6046d4a7442ad2d30d3fb8041c, type: 3}
   FollowCamera: {fileID: 157321354}
@@ -4170,6 +4169,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: EnemyEnvironment
+      value: 
+      objectReference: {fileID: 983484239}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: enemyPrefab.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -5111,7 +5114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0db605fd1beebe4e8d424f6af49ff76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldClock
-  dayLength: 10
+  dayLength: 1
   nightLength: 120
   transitionLength: 5
   pauseTimer: 0
