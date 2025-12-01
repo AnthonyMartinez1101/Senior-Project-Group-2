@@ -13,8 +13,10 @@ public class Attack : MonoBehaviour
     InputAction sytheAction;
 
     public Transform aim;
+    public GameObject shootFlash;
     public GameObject bullet;
     public float bulletForce = 10f;
+    public float bulletYOffset = 0.0f;
     public float shootCooldown = 0.25f;
     float shootTimer = 0.5f;
 
@@ -26,6 +28,8 @@ public class Attack : MonoBehaviour
     public float explosionTimer = 2f;
 
     public bool noShootCooldown = false;
+
+    
 
     //The script which is in the Melee child object
     private SlashMove slashMove;
@@ -56,8 +60,11 @@ public class Attack : MonoBehaviour
         {
             shootTimer = 0.0f;
             Quaternion rot = aim.rotation * Quaternion.Euler(0f, 0f, -90f);
-            GameObject b = Instantiate(bullet, aim.position, rot);
+            Vector3 bulletSpawn = aim.position + new Vector3(0f, bulletYOffset, 0f);
+            GameObject b = Instantiate(bullet, bulletSpawn, rot);
+            Instantiate(shootFlash, bulletSpawn, rot);
             b.GetComponent<Rigidbody2D>().AddForce(-aim.up * bulletForce, ForceMode2D.Impulse);
+            GameManager.Instance.CameraShake(1f, 0.1f);
             Destroy(b, 2.0f);
         }
         else

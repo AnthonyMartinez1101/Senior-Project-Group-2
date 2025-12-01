@@ -101,7 +101,7 @@ public class ShopScript : MonoBehaviour
     }
     public void OrderPistol()
     {
-        if(CheckPrice(100)) OrderItem("Pistol");
+        if(CheckPrice(1)) OrderItem("Pistol");
     }
     public void OrderPistolSeed()
     {
