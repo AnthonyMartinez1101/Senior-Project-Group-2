@@ -43,12 +43,9 @@ public class Item : ScriptableObject
     //public WeaponItem weapon;
     public WeaponType weaponType;
 
-
-
-
-
-
-
+    [Header("--Economy--")]
+    [Tooltip("Amount of coins player receives when selling one unit of this item")]
+    public int sellPrice = 0;
 
     //~~~~EDITOR EASE OF USE~~~~//
     private PlantItem savedPlant;

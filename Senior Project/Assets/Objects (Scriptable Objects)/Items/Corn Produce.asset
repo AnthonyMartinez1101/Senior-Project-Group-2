@@ -19,3 +19,4 @@ MonoBehaviour:
   plant: {fileID: 0}
   healAmount: 5
   weaponType: 0
+  sellPrice: 5

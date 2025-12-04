@@ -76,6 +76,13 @@ public class ShopScript : MonoBehaviour
         {
             spriteRenderer.sprite = highlightedShopSprite;
             isPlayerNearby = true;
+
+            // Try to set nearbyShop on player's inventory so right-click can sell
+            InventorySystem inv = other.GetComponent<InventorySystem>();
+            if (inv != null)
+            {
+                inv.nearbyShop = this;
+            }
         }
     }
 
@@ -85,6 +92,13 @@ public class ShopScript : MonoBehaviour
         {
             spriteRenderer.sprite = shopSprite;
             isPlayerNearby = false;
+
+            // Clear nearbyShop reference on player
+            InventorySystem inv = other.GetComponent<InventorySystem>();
+            if (inv != null && inv.nearbyShop == this)
+            {
+                inv.nearbyShop = null;
+            }
         }
     }
 
@@ -139,5 +153,43 @@ public class ShopScript : MonoBehaviour
             }
         }
         if(!foundItem) Debug.Log("Cannot find item: " + orderName);
+    }
+
+    // Sell item from player's inventory when shop is open
+    public bool SellItemFromInventory(InventorySystem inventory, int slotIndex)
+    {
+        if (!IsShopInUse())
+        {
+            Debug.Log("Shop is not open. Cannot sell items.");
+            return false;
+        }
+
+        if (inventory == null)
+        {
+            Debug.LogError("SellItemFromInventory: inventory reference is null");
+            return false;
+        }
+
+        Item itemToSell = inventory.GetItemAtSlot(slotIndex);
+        int itemCount = inventory.GetItemCountAtSlot(slotIndex);
+
+        if (itemToSell == null || itemCount <= 0)
+        {
+            Debug.Log("No item in selected slot to sell.");
+            return false;
+        }
+
+        if (itemToSell.sellPrice <= 0)
+        {
+            Debug.Log("Item cannot be sold or has no sell price: " + itemToSell.itemName);
+            return false;
+        }
+
+        // Add coins to player's wallet and remove one from inventory
+        playerWallet.AddCoins(itemToSell.sellPrice);
+        inventory.SubtractItemAtSlot(slotIndex, 1);
+
+        Debug.Log("Sold 1 x " + itemToSell.itemName + " for " + itemToSell.sellPrice + " coins.");
+        return true;
     }
 }

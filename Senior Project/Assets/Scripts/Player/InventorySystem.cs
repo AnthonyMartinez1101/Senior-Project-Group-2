@@ -36,12 +36,16 @@ public class InventorySystem : MonoBehaviour
 
     private InputAction scrollAction;
     private InputAction numberKeysAction;
+    private InputAction rightClickAction;
 
     private int inventoryIndex = 0;
     
     // Event called when hotbar selection changes
     [HideInInspector] public UnityEvent<int> OnHotbarSlotChanged = new UnityEvent<int>();
     [HideInInspector] public UnityEvent<ItemStack> OnHeldItemChanged = new UnityEvent<ItemStack>();
+
+    // Reference to the shop in scene (optional)
+    public ShopScript nearbyShop;
 
     // Ensure the current index is valid for the inventory list
     private void EnsureValidIndex()
@@ -85,6 +89,7 @@ public class InventorySystem : MonoBehaviour
     void Start()
     {
         scrollAction = InputSystem.actions.FindAction("Scroll");
+        rightClickAction = InputSystem.actions.FindAction("RightClick");
         EnsureValidIndex();
         UpdateDisplayText();
     }
@@ -110,6 +115,16 @@ public class InventorySystem : MonoBehaviour
         if (allowNumberKeySelection)
         {
             HandleNumberKeySelection();
+        }
+
+        // Check for right click to sell when in shop
+        if (rightClickAction != null && rightClickAction.WasPressedThisFrame())
+        {
+            // If a shop is nearby and open, sell currently selected slot
+            if (nearbyShop != null && nearbyShop.IsShopInUse())
+            {
+                nearbyShop.SellItemFromInventory(this, inventoryIndex);
+            }
         }
     }
     
