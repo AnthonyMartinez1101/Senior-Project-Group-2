@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Grenade
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Grenade
-  icon: {fileID: -2300750535016658289, guid: c6c8eaef00b2d7c44b289c8ad8f2ca8b, type: 3}
+  icon: {fileID: -3528658577719538422, guid: 29d1b4547d29d334d8bad4a503324948, type: 3}
   itemType: 1
   isConsumable: 1
   plant: {fileID: 0}
