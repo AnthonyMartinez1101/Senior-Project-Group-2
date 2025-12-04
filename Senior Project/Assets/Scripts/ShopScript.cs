@@ -107,6 +107,10 @@ public class ShopScript : MonoBehaviour
     {
         if (CheckPrice(10)) OrderItem("Pistol Seed");
     }
+    public void OrderGrenade()
+    {
+        if (CheckPrice(10)) OrderItem("Grenade");
+    }
 
 
     //Handles pricing and ordering items
