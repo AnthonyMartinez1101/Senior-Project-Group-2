@@ -11,12 +11,16 @@ public class Weapon : MonoBehaviour
     public float explosionTimer = 2.5f;
     public Collider2D explosionRadius;
 
+    private Animator animator;
+
     void Start()
     {
+        animator = GetComponent<Animator>();
         if (weaponType == WeaponType.Grenade)
         {
             StartCoroutine(Explode(explosionTimer));
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,6 +50,7 @@ public class Weapon : MonoBehaviour
 
     private IEnumerator Explode(float delay)
     {
+        animator.Play("Boom");
         yield return new WaitForSeconds(delay);
         explosionRadius.enabled = true;
         Destroy(gameObject, 0.1f);
