@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Pistol Seed
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Pistol Seed
-  icon: {fileID: 21300000, guid: 806f9f7fb8b31ba488eba2eb04646e65, type: 3}
+  icon: {fileID: 5458068338698902111, guid: 3bf32ca6b12b71a468064c1a067f26b1, type: 3}
   itemType: 0
   isConsumable: 1
   plant: {fileID: 11400000, guid: b5a3fcff44c3fc44fbf0600d0ab338c5, type: 2}
   healAmount: 0
   weaponType: 0
+  sellPrice: 0

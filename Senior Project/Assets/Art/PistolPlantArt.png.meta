@@ -1,10 +1,28 @@
 fileFormatVersion: 2
-guid: c5b35951cffe756449a47046ba0a0a7e
+guid: 3bf32ca6b12b71a468064c1a067f26b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9106275301997704921
-    second: Untitled_Artwork(1)_0
+      213: -1334657401724317879
+    second: PistolPlantArt_0
+  - first:
+      213: -6044228937346753048
+    second: PistolPlantArt_1
+  - first:
+      213: -2233336245581425073
+    second: PistolPlantArt_2
+  - first:
+      213: -7380364414410610922
+    second: PistolPlantArt_3
+  - first:
+      213: -4590102593255295897
+    second: PistolPlantArt_4
+  - first:
+      213: -4908314937253206422
+    second: PistolPlantArt_5
+  - first:
+      213: 5458068338698902111
+    second: PistolPlantArt_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +144,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled_Artwork(1)_0
+      name: PistolPlantArt_0
       rect:
         serializedVersion: 2
-        x: 59
-        y: 0
-        width: 1802
-        height: 1080
+        x: 187
+        y: 2202
+        width: 203
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +159,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 72983852cd200a180800000000000000
-      internalID: -9106275301997704921
+      spriteID: 94f40691a285a7de0800000000000000
+      internalID: -1334657401724317879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PistolPlantArt_3
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 2170
+        width: 133
+        height: 166
+      alignment: 9
+      pivot: {x: 0.521058, y: 0.10983828}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6172f1efaada39990800000000000000
+      internalID: -7380364414410610922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PistolPlantArt_4
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 2141
+        width: 231
+        height: 310
+      alignment: 9
+      pivot: {x: 0.47864985, y: 0.09032809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7643b66c20eac40c0800000000000000
+      internalID: -4590102593255295897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PistolPlantArt_5
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 1622
+        width: 365
+        height: 409
+      alignment: 9
+      pivot: {x: 0.48842254, y: 0.09498771}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a666747e19922ebb0800000000000000
+      internalID: -4908314937253206422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PistolPlantArt_6
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 1772
+        width: 198
+        height: 216
+      alignment: 9
+      pivot: {x: 0.4914631, y: 0.10872565}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5a54f76c34febb40800000000000000
+      internalID: 5458068338698902111
       vertices: []
       indices: 
       edges: []
@@ -151,7 +257,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 0db79d359cf34f84389fe5193d6147fe
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +267,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Untitled_Artwork(1)_0: -9106275301997704921
+      PistolPlantArt_0: -1334657401724317879
+      PistolPlantArt_1: -6044228937346753048
+      PistolPlantArt_2: -2233336245581425073
+      PistolPlantArt_3: -7380364414410610922
+      PistolPlantArt_4: -4590102593255295897
+      PistolPlantArt_5: -4908314937253206422
+      PistolPlantArt_6: 5458068338698902111
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

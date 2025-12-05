@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using WorldTime;
 using static Unity.Cinemachine.CinemachineSplineRoll;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +30,9 @@ public class GameManager : MonoBehaviour
 
     private Dictionary<string, Item> itemLookup = new Dictionary<string, Item>();
 
+    public GameObject pauseMenu;
+    InputAction pauseAction;
+
     private void Awake()
     {
         BuildItemLookup();
@@ -50,7 +55,7 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
             StartCoroutine(AutoSave());
         }
         else
@@ -73,6 +78,44 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("GameManager: Main Camera reference is not set.");
         }
+
+
+        pauseAction = InputSystem.actions.FindAction("Pause");
+    }
+
+    void Update()
+    { 
+        if(pauseAction.WasPressedThisFrame())
+        {
+            if (pauseMenu.activeSelf)
+            {
+                pauseMenu.SetActive(false);
+                Time.timeScale = 1f; // Resume game
+            }
+            else
+            {
+                pauseMenu.SetActive(true);
+                Time.timeScale = 0f; // Pause game
+            }
+        }
+    }
+
+    public void ResumeGame()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f; 
+    }
+
+    public void RestartButton()
+    {
+        ResumeGame();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     public void CameraShake(float intensity, float duration)

@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     private float spawnRate = 3f;
     private int wave = 1;
 
-    [SerializeField] private WorldClock worldClock;
+    public WorldClock worldClock;
 
     public GameObject EnemyEnvironment;
 

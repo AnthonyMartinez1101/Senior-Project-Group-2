@@ -115,7 +115,7 @@ public class ShopScript : MonoBehaviour
     }
     public void OrderPistol()
     {
-        if(CheckPrice(1)) OrderItem("Pistol");
+        if(CheckPrice(100)) OrderItem("Pistol");
     }
     public void OrderPistolSeed()
     {
@@ -123,7 +123,7 @@ public class ShopScript : MonoBehaviour
     }
     public void OrderGrenade()
     {
-        if (CheckPrice(10)) OrderItem("Grenade");
+        if (CheckPrice(20)) OrderItem("Grenade");
     }
 
 

@@ -127,6 +127,6 @@ public class PlantScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!collision.CompareTag("Player")) lastCollidedWithSickle = collision.CompareTag("Sickle");
+        if(!collision.CompareTag("Player") && !collision.CompareTag("Interact")) lastCollidedWithSickle = collision.CompareTag("Sickle");
     }
 }
