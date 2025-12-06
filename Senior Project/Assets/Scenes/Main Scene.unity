@@ -2851,11 +2851,11 @@ Transform:
   m_GameObject: {fileID: 404758537}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.0474, y: -2.47223, z: 0}
+  m_LocalPosition: {x: -3.88302, y: -1.33691, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1010887127}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &405559454 stripped
 Transform:
@@ -5658,8 +5658,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0db605fd1beebe4e8d424f6af49ff76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldClock
-  dayLength: 120
-  nightLength: 60
+  dayLength: 20
+  nightLength: 3
   transitionLength: 5
   pauseTimer: 0
   _2xTickSpeed: 0
@@ -7341,6 +7341,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 404758539}
   - {fileID: 1408963360}
   - {fileID: 605723353}
   - {fileID: 799218942}
@@ -8147,12 +8148,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldClockLight
   worldClock: {fileID: 799218943}
-  gradient:
+  springGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
     key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 1, g: 0.7372549, b: 0.33333334, a: 0}
     key3: {r: 1, g: 0.7562215, b: 0.3814574, a: 0}
+    key4: {r: 0.2901961, g: 0.49803925, b: 0.8313726, a: 0}
+    key5: {r: 0.2901961, g: 0.49803925, b: 0.8313726, a: 0}
+    key6: {r: 1, g: 0.6862745, b: 0.6784314, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 21843
+    ctime2: 29491
+    ctime3: 32768
+    ctime4: 39321
+    ctime5: 58982
+    ctime6: 65535
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 7
+    m_NumAlphaKeys: 2
+  summerGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0.6862745, b: 0.6784314, a: 1}
+    key1: {r: 1, g: 0.6862745, b: 0.6784314, a: 1}
+    key2: {r: 0.7686275, g: 0.57254905, b: 0.49803925, a: 0}
+    key3: {r: 0.7686275, g: 0.57254905, b: 0.49803925, a: 0}
+    key4: {r: 0.2901961, g: 0.49803925, b: 0.8313726, a: 0}
+    key5: {r: 0.2901961, g: 0.49803925, b: 0.8313726, a: 0}
+    key6: {r: 1, g: 0.5568628, b: 0.16470589, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 21843
+    ctime2: 29491
+    ctime3: 32768
+    ctime4: 39321
+    ctime5: 58982
+    ctime6: 65535
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 7
+    m_NumAlphaKeys: 2
+  fallGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0.5559012, b: 0.16509432, a: 1}
+    key1: {r: 1, g: 0.5568628, b: 0.16470589, a: 1}
+    key2: {r: 0.7877358, g: 0.49621764, b: 0.24152279, a: 0}
+    key3: {r: 0.78823537, g: 0.49803925, b: 0.24313727, a: 0}
+    key4: {r: 0.2901961, g: 0.49803925, b: 0.8313726, a: 0}
+    key5: {r: 0.2901961, g: 0.49803925, b: 0.8313726, a: 0}
+    key6: {r: 0.6666667, g: 0.7686275, b: 1, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 21843
+    ctime2: 29491
+    ctime3: 32768
+    ctime4: 39321
+    ctime5: 58982
+    ctime6: 65535
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 7
+    m_NumAlphaKeys: 2
+  winterGradient:
+    serializedVersion: 2
+    key0: {r: 0.6666667, g: 0.7686275, b: 1, a: 1}
+    key1: {r: 0.6666667, g: 0.7686275, b: 1, a: 1}
+    key2: {r: 0.27058825, g: 0.61960787, b: 1, a: 0}
+    key3: {r: 0.27058825, g: 0.61960787, b: 1, a: 0}
     key4: {r: 0.2901961, g: 0.49803925, b: 0.8313726, a: 0}
     key5: {r: 0.2901961, g: 0.49803925, b: 0.8313726, a: 0}
     key6: {r: 1, g: 1, b: 1, a: 0}
@@ -15488,5 +15579,4 @@ SceneRoots:
   - {fileID: 2070921058}
   - {fileID: 1010887127}
   - {fileID: 1919519684}
-  - {fileID: 404758539}
   - {fileID: 1528170141}

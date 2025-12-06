@@ -9,6 +9,15 @@ public enum DayPhase
     Night
 }
 
+public enum SeasonPhase
+{
+    Spring,
+    Summer,
+    Fall,
+    Winter
+}
+
+
 public class WorldClock : MonoBehaviour
 {
     [Header("Phase display lengths (seconds)")]
@@ -18,12 +27,13 @@ public class WorldClock : MonoBehaviour
     [Header("Hold at 0:00 after phase switch (seconds)")]
     [SerializeField] private float transitionLength = 5f;    // stays showing 0:00
 
-    
+
 
     private float currentTime;
     private float preciseTime;
 
     public DayPhase CurrentPhase { get; private set; } = DayPhase.Day;
+    public SeasonPhase CurrentSeason { get; private set; } = SeasonPhase.Spring;
 
     [Header("Other attributes:")]
     [SerializeField] private bool pauseTimer = false;
@@ -40,6 +50,8 @@ public class WorldClock : MonoBehaviour
         StartCoroutine(TickTime());
 
         preciseTime = dayLength;
+
+        Debug.Log("Current Season: " + CurrentSeason.ToString());
     }
 
     void Update()
@@ -51,7 +63,7 @@ public class WorldClock : MonoBehaviour
         preciseTime -= Time.deltaTime;
     }
 
-    IEnumerator TickTime() 
+    IEnumerator TickTime()
     {
         while (true)
         {
@@ -92,7 +104,16 @@ public class WorldClock : MonoBehaviour
             CurrentPhase = DayPhase.Day;
             currentTime = dayLength;
             preciseTime = dayLength;
+            IterateSeason();
         }
+    }
+
+    public void IterateSeason()
+    {
+        int nextSeason = ((int)CurrentSeason + 1) % 4;
+        CurrentSeason = (SeasonPhase)nextSeason;
+        worldClockLight.SetGradient();
+        Debug.Log("Current Season: " + CurrentSeason.ToString());
     }
 
     public void PauseTimer()

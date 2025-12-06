@@ -1,13 +1,21 @@
+using NUnit.Framework;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using System.Collections.Generic;
+
 
 public class WorldClockLight : MonoBehaviour
 {
     private Light2D worldLight;
 
     [SerializeField] private WorldClock worldClock;
-    [SerializeField] private Gradient gradient;
+    [SerializeField] private Gradient springGradient;
+    [SerializeField] private Gradient summerGradient;
+    [SerializeField] private Gradient fallGradient;
+    [SerializeField] private Gradient winterGradient;
+
+    private Gradient currentGradient;
 
     private bool transitionLight = false;
 
@@ -16,6 +24,7 @@ public class WorldClockLight : MonoBehaviour
     private void Awake()
     {
         worldLight = GetComponent<Light2D>();
+        currentGradient = springGradient;
     }
 
     // Update is called once per frame
@@ -25,20 +34,20 @@ public class WorldClockLight : MonoBehaviour
         {
             if (worldClock != null && worldClock.CurrentPhase == DayPhase.Day)
             {
-                worldLight.color = gradient.Evaluate(worldClock.PercentageOfDay() / 2f);
+                worldLight.color = currentGradient.Evaluate(worldClock.PercentageOfDay() / 2f);
             }
         }
         else
         {
-            if(transitionDuration >= 0)
+            if (transitionDuration >= 0)
             {
-                if(worldClock.CurrentPhase == DayPhase.Day)
+                if (worldClock.CurrentPhase == DayPhase.Day)
                 {
-                    worldLight.color = gradient.Evaluate(0.6f - ((transitionDuration / 5f) /10f));
+                    worldLight.color = currentGradient.Evaluate(0.6f - ((transitionDuration / 5f) / 10f));
                 }
                 else
                 {
-                    worldLight.color = gradient.Evaluate(1f - ((transitionDuration / 5f) / 10f));
+                    worldLight.color = currentGradient.Evaluate(1f - ((transitionDuration / 5f) / 10f));
                 }
                 transitionDuration -= Time.deltaTime;
             }
@@ -54,5 +63,24 @@ public class WorldClockLight : MonoBehaviour
     public void TransitionLight()
     {
         transitionLight = true;
+    }
+
+    public void SetGradient()
+    {
+        switch (worldClock.CurrentSeason)
+        {
+            case SeasonPhase.Spring:
+                currentGradient = springGradient;
+                break;
+            case SeasonPhase.Summer:
+                currentGradient = summerGradient;
+                break;
+            case SeasonPhase.Fall:
+                currentGradient = fallGradient;
+                break;
+            case SeasonPhase.Winter:
+                currentGradient = winterGradient;
+                break;
+        }
     }
 }
