@@ -86,8 +86,12 @@ public class InteractScript : MonoBehaviour
     {
         if(inventorySystem.GetCurrentItemCount() > 0 && !playerHealth.IsMaxHealth())
         {
-            playerHealth.Heal(currentItem.healAmount);
-            inventorySystem.SubtractItem();
+            var produceData = currentItem.extraItemData as ProduceData;
+            if (produceData != null)
+            {
+                playerHealth.Heal(produceData.healAmount);
+                inventorySystem.SubtractItem();
+            }
         }
     }
 
@@ -121,7 +125,10 @@ public class InteractScript : MonoBehaviour
     // Perform attack based on weapon type
     private void DoAttack()
     {
-        switch(currentItem.weaponType)
+        var weaponData = currentItem.extraItemData as WeaponData;
+        if (weaponData == null) return;
+
+        switch (weaponData.weaponType)
         {
             case WeaponType.Pistol:
                 attack.OnShoot();

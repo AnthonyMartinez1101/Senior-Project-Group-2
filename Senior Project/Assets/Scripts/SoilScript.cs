@@ -124,11 +124,14 @@ public class SoilScript : MonoBehaviour
 
     public bool Plant(Item item)
     {
+        var seedData = item.extraItemData as SeedData;
+        if (seedData == null) return false; //Invalid seed data 
+
         if (currentPlant != null) return false; //Already planted
-        if (item == null || item.itemType != ItemType.Seed || item.plant == null) return false; //Invalid plant item 
+        if (item == null || item.itemType != ItemType.Seed || seedData.plant == null) return false; //Invalid plant item 
 
         currentPlant = Instantiate(plantActor, transform.position, Quaternion.identity, transform);
-        currentPlant.Create(item.plant);
+        currentPlant.Create(seedData.plant);
 
         return true;
     }
