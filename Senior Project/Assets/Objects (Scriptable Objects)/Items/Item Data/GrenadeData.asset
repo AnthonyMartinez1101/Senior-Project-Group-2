@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e972dca9262582d4c80407a3c5d4b954, type: 3}
   m_Name: GrenadeData
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
-  weaponType: 0
+  weaponType: 1

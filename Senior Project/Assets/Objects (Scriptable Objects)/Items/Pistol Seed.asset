@@ -16,7 +16,7 @@ MonoBehaviour:
   icon: {fileID: 5458068338698902111, guid: 3bf32ca6b12b71a468064c1a067f26b1, type: 3}
   itemType: 0
   isConsumable: 1
-  plant: {fileID: 11400000, guid: b5a3fcff44c3fc44fbf0600d0ab338c5, type: 2}
-  healAmount: 0
-  weaponType: 0
-  sellPrice: 0
+  stackable: 1
+  sellPrice: 10
+  buyPrice: 10
+  extraItemData: {fileID: 11400000, guid: 32efc523c5e8b6940a67c5170f806582, type: 2}

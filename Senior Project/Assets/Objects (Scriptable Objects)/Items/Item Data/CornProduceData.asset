@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce0c8a3d01504446bed7861616fdf9b, type: 3}
   m_Name: CornProduceData
   m_EditorClassIdentifier: Assembly-CSharp::ProduceData
-  healAmount: 0
+  healAmount: 2
