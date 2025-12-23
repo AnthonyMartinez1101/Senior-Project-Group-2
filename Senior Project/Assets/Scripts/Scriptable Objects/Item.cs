@@ -20,7 +20,7 @@ public class Item : ScriptableObject
     [Header("ITEM BEHAVIOR")]
     [Tooltip("If true, this item disappears when count reaches 0. If false, it stays in inventory (like a watering can).")]
     public bool isConsumable = true;
-    public bool stackable = true;
+    public bool isStackable = true;
 
     [Header("--Economy--")]
     [Tooltip("Amount of coins player receives when selling one unit of this item")]

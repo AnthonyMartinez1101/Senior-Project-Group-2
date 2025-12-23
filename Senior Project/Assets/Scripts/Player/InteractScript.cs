@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class InteractScript : MonoBehaviour
 {
-    private InventorySystem inventorySystem;
+    private Inventory inventorySystem;
     private Attack attack;
 
     InputAction interactAction;
@@ -21,7 +21,7 @@ public class InteractScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        inventorySystem = GetComponent<InventorySystem>();
+        inventorySystem = GetComponent<Inventory>();
         attack = GetComponent<Attack>();
 
         interactAction = InputSystem.actions.FindAction("Interact");
@@ -118,7 +118,7 @@ public class InteractScript : MonoBehaviour
         if (currentSoil != null && currentSoil.IsHighlighted() && inventorySystem.GetCurrentItemCount() > 0)
         {
             currentSoil.Water();
-            inventorySystem.SubtractItem();
+            inventorySystem.UseWater();
         }
     }
 

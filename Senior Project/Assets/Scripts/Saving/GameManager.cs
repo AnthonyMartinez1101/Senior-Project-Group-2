@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public float autoSaveTimer = 10f; // Change to total time in a day/night cycle later
 
     public GameObject player;
-    private InventorySystem inventorySystem;
+    private Inventory inventorySystem;
 
     public EnemySpawner enemySpawner;
 
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         gameData = new GameData();
         if (player != null)
         {
-            inventorySystem = player.GetComponent<InventorySystem>();
+            inventorySystem = player.GetComponent<Inventory>();
         }
         if (loadOnStart)
         {
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        inventorySystem = player.GetComponent<InventorySystem>();
+        inventorySystem = player.GetComponent<Inventory>();
         if (player == null)
         {
             Debug.LogWarning("GameManager: Player reference is not set.");
@@ -209,16 +209,16 @@ public class GameManager : MonoBehaviour
             if (data.inventory != null)
             {
                 Debug.Log("clearing inventory and loading items");
-                inventorySystem.inventoryItems.Clear();
+                inventorySystem.slots.Clear();
                 foreach (var invItem in data.inventory)
                 {
                     Debug.Log($"Trying to load item: {invItem.itemName}");
                     if (itemLookup.TryGetValue(invItem.itemName, out Item item))
                     {
-                        inventorySystem.inventoryItems.Add(new ItemStack
+                        inventorySystem.slots.Add(new Slot
                         {
                             item = item,
-                            count = invItem.count
+                            amount = invItem.count
                         });
                     }
                     else
@@ -226,7 +226,7 @@ public class GameManager : MonoBehaviour
                         Debug.LogWarning($"GameManager: Item '{invItem.itemName}' not found.");
                     }
                 }
-                inventorySystem.UpdateDisplayText();
+                inventorySystem.RefreshUI();
             }
 
             if (data.soils != null)

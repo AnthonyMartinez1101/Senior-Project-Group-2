@@ -19,13 +19,12 @@ GameObject:
   - component: {fileID: 4923560966000343244}
   - component: {fileID: 6493144471492509595}
   - component: {fileID: 1125482792520486096}
-  - component: {fileID: 6813988684076241257}
   - component: {fileID: 5092246524528975356}
   - component: {fileID: 2604845234361256722}
   - component: {fileID: 9146414210816531384}
-  - component: {fileID: 4818613811270646137}
   - component: {fileID: 6456442887413956636}
   - component: {fileID: 8607328476864150349}
+  - component: {fileID: 5051370478408548760}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -399,44 +398,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Attack
   Melee: {fileID: 8105967814657914450, guid: 7c83e28d75c813e48a8885a639ca62a3, type: 3}
-  meleeCooldown: 0.25
+  meleeCooldown: 0.5
   aim: {fileID: 5872699842340807751}
+  shootFlash: {fileID: 9012221840318577508, guid: d0bf5a0bd8454d94980fe91f69ce4582, type: 3}
   bullet: {fileID: 5689616905070151574, guid: f1d495c7ebcb14e4ba2a8e5488dbc3cf, type: 3}
-  bulletForce: 40
+  bulletForce: 60
+  bulletYOffset: 0.7
   shootCooldown: 0.1
-  grenade: {fileID: 0}
+  grenade: {fileID: 3093272852940364067, guid: 8cb7b66176c06d847a4abc882d811ac3, type: 3}
   throwForce: 10
   throwCooldown: 0.5
   airTime: 0.5
   explosionTimer: 2
   noShootCooldown: 0
---- !u!114 &6813988684076241257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760016382332637093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5452bf0b85de5bf49a29e5b08fcd9cbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventorySystem
-  inventoryItems: []
-  slotBackgrounds: []
-  slotCounts: []
-  selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  normalColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  emptySlotSprite: {fileID: 0}
-  slotIcons: []
-  hotbarSize: 10
-  allowNumberKeySelection: 1
-  OnHotbarSlotChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHeldItemChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &5092246524528975356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,23 +452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f834d13e758aff34e9cca645a90bdc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Knockback
---- !u!114 &4818613811270646137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1760016382332637093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a362fc90f767e42953117558c93bd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HotbarUIManager
-  inventorySystem: {fileID: 6813988684076241257}
-  hotbarContainer: {fileID: 0}
-  useSlotAnimations: 1
-  selectionAnimationDuration: 0.1
-  selectionScale: 1.1
 --- !u!114 &6456442887413956636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,7 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd17143c844d0054291a57741444b8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  coinCount: 5
+  coinCount: 10
   coinCountText: {fileID: 0}
 --- !u!95 &8607328476864150349
 Animator:
@@ -531,6 +488,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5051370478408548760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760016382332637093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bafafff023f12fc41ab8ba7980f1784c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventory
+  maxStackSize: 32
+  hotbar: {fileID: 0}
 --- !u!1 &5000908664961898390
 GameObject:
   m_ObjectHideFlags: 0
