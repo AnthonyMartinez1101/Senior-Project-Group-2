@@ -93,6 +93,7 @@ public class Inventory : MonoBehaviour
     private bool TryToAddItem(Item newItem)
     {
         bool added = false;
+        int changedIndex = -1;
 
         var bucketData = newItem.extraItemData as BucketData;
 
@@ -108,6 +109,7 @@ public class Inventory : MonoBehaviour
                 {
                     slot.amount++;
                     added = true;
+                    changedIndex = slots.IndexOf(slot);
                     break;
                 }
             }
@@ -124,6 +126,7 @@ public class Inventory : MonoBehaviour
                 {
                     slot.item = newItem;
                     slot.amount = 1;
+                    changedIndex = slots.IndexOf(slot);
                     if (bucketData != null) slot.waterAmount = bucketData.maxWater;
                     added = true;
                     break;
@@ -131,6 +134,12 @@ public class Inventory : MonoBehaviour
             }
         }
         RefreshUI();
+
+        if(added && changedIndex != -1)
+        {
+            hotbar.BobIcon(changedIndex);
+        }
+
         return added;  
     }
 

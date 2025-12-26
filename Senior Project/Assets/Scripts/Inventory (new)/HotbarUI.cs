@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 public class HotbarUI : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class HotbarUI : MonoBehaviour
         {
             slotUIs.Add(slotUIScript);
         }
+    }
+
+    public void BobIcon(int index)
+    {
+        if(index < 0 || index >= slotUIs.Count) return;
+        slotUIs[index].Bob();
     }
 
     public void UpdateUI(List<Slot> slots, int currentlySelected)

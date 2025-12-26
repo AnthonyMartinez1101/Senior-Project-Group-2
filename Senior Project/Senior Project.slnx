@@ -63,6 +63,7 @@
   <Project Path="NavMeshPlus.csproj" />
   <Project Path="Unity.AI.Navigation.Editor.csproj" />
   <Project Path="Unity.AppUI.MVVM.csproj" />
+  <Project Path="Assembly-CSharp-firstpass.csproj" />
   <Project Path="Unity.AI.Generators.UI.csproj" />
   <Project Path="Unity.AI.Assistant.Agent.Dynamic.Extension.Editor.csproj" />
   <Project Path="Unity.AppUI.Navigation.csproj" />
