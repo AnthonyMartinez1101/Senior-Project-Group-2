@@ -181,4 +181,14 @@ public class Inventory : MonoBehaviour
     {
         hotbar.UpdateUI(slots, currentSlotIndex);
     }
+
+    //Selects a new slot by index
+    public void SelectSlotIndex(int newIndex)
+    {
+        if (newIndex >= 0 && newIndex < slotCount)
+        {
+            currentSlotIndex = newIndex;
+            RefreshUI();
+        }
+    }
 }
