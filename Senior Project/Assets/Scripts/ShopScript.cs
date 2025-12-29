@@ -18,14 +18,12 @@ public class ShopScript : MonoBehaviour
 
     [SerializeField] private GameObject shopUI; // Reference to the shop UI GameObject
 
-    //List of items the shop sells
-    public List<Item> sellableItems = new List<Item>();
-
     public Transform itemDropOff;
 
-    public PlayerWallet playerWallet;
+    public GameObject player;
+    private PlayerWallet playerWallet;
+    private Inventory inventory;
 
-    private bool foundItem = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,7 +34,14 @@ public class ShopScript : MonoBehaviour
 
         openShopAction = InputSystem.actions.FindAction("OpenShop");
 
-        if(playerWallet == null)
+        if(player == null)
+        {
+            player = GameManager.Instance.player;
+        }
+        playerWallet = player.GetComponent<PlayerWallet>();
+        inventory = player.GetComponent<Inventory>();
+
+        if (playerWallet == null)
         {
             Debug.LogError("ShopScript: PlayerWallet reference not set");
         }
@@ -143,6 +148,28 @@ public class ShopScript : MonoBehaviour
         {
             Debug.Log("Not enough coins to complete purchase");
             return false;
+        }
+    }
+
+    public void SellItem()
+    {
+        Item currentItem = inventory.GetCurrentItem();
+        if(currentItem != null)
+        {
+            int sellPrice = currentItem.sellPrice;
+            if(sellPrice > 0)
+            {
+                playerWallet.AddCoins(sellPrice);
+                inventory.SubtractItem();
+            }
+            else
+            {
+                Debug.Log("Item cannot be sold: " + currentItem.itemName);
+            }
+        }
+        else
+        {
+            Debug.Log("No item selected.");
         }
     }
 
