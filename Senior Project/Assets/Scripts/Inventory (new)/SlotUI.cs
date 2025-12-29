@@ -10,12 +10,15 @@ public class SlotUI : MonoBehaviour
     public Image itemIcon;
     public TMP_Text itemAmountText;
 
+    public WaterMeter waterMeter;
+
     void Start()
     {
         background.color = Color.gray;
         itemIcon.sprite = null;
         itemIcon.enabled = false;
         itemAmountText.text = "";
+        waterMeter.enabled = false;
     }
 
 

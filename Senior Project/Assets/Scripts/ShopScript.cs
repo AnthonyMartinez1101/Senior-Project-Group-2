@@ -107,23 +107,27 @@ public class ShopScript : MonoBehaviour
         return isShopInUse; 
     }
 
+    public void BuyItem(Item item)
+    {
+        //Check if item is null
+        if(item == null)
+        {
+            Debug.LogWarning("BuyItem: item is null");
+            return;
+        }
 
-    //Order functions for buttons in the shop UI
-    public void OrderCorn()
-    {
-        if(CheckPrice(1)) OrderItem("Corn Seed");
-    }
-    public void OrderPistol()
-    {
-        if(CheckPrice(100)) OrderItem("Pistol");
-    }
-    public void OrderPistolSeed()
-    {
-        if (CheckPrice(10)) OrderItem("Pistol Seed");
-    }
-    public void OrderGrenade()
-    {
-        if (CheckPrice(20)) OrderItem("Grenade");
+        //Get item price
+        int price = item.buyPrice;
+
+        //Check if item is sellable
+        if (price <= 0)
+        {
+            Debug.LogWarning("Item cannot be sold: " + item.itemName);
+            return;
+        }
+
+        //Check if player has enough coins and spawn item if they do
+        if (CheckPrice(price)) ItemDropFactory.Instance.SpawnItem(item, itemDropOff.position);
     }
 
 
@@ -140,19 +144,6 @@ public class ShopScript : MonoBehaviour
             Debug.Log("Not enough coins to complete purchase");
             return false;
         }
-    }
-    private void OrderItem(string orderName)
-    {
-        foundItem = false;
-        for (int i = 0; i < sellableItems.Count; i++)
-        {
-            if (sellableItems[i].itemName == orderName)
-            {
-                ItemDropFactory.Instance.SpawnItem(sellableItems[i], itemDropOff.position);
-                foundItem = true;
-            }
-        }
-        if(!foundItem) Debug.Log("Cannot find item: " + orderName);
     }
 
     // Sell item from player's inventory when shop is open

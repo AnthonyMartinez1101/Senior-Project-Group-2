@@ -1,6 +1,5 @@
-using UnityEngine;
 using System.Collections.Generic;
-using System.ComponentModel;
+using UnityEngine;
 
 public class HotbarUI : MonoBehaviour
 {
@@ -26,46 +25,80 @@ public class HotbarUI : MonoBehaviour
 
     public void UpdateUI(List<Slot> slots, int currentlySelected)
     {
+        //For each slot UI...
         for (int i = 0; i < slotUIs.Count; i++)
         {
-            // Highlight slot if currently selected
+            //Highlight slot if currently selected
             if (i == currentlySelected) slotUIs[i].background.color = Color.yellow;
             else slotUIs[i].background.color = Color.gray;
 
-            //If slot has item, set item icon
-            if (slots[i].item != null)
-            {
-                slotUIs[i].itemIcon.enabled = true;
-                //If item is not water can, set normal item icon
-                if (slots[i].item.itemType != ItemType.WaterCan) slotUIs[i].itemIcon.sprite = slots[i].item.icon;
+            //Resets UI first
+            slotUIs[i].itemIcon.sprite = null;
+            slotUIs[i].itemIcon.enabled = false;
+            slotUIs[i].itemAmountText.text = "";
 
-                //If item is water can...
-                else
-                {
-                    //..get bucket info
-                    var bucketData = slots[i].item.extraItemData as BucketData;
-                    if (bucketData != null)
-                    {
-                        //...set icon based on water amount
-                        if (slots[i].waterAmount > 0) slotUIs[i].itemIcon.sprite = bucketData.fullSprite;
-                        else slotUIs[i].itemIcon.sprite = bucketData.emptySprite;
-                    }
-                    //...if no bucket data, just set normal item icon
-                    else slotUIs[i].itemIcon.sprite = slots[i].item.icon;
-                }
+            //Hide water meter UI by default
+            if (slotUIs[i].waterMeter != null) slotUIs[i].waterMeter.gameObject.SetActive(false);
+
+            //If slot is empty, continue to next iteration
+            if (slots[i].item == null) continue;    
+
+            //If slot has item, set item icon
+            slotUIs[i].itemIcon.enabled = true;
+
+            //If item is not water can, set normal item icon
+            if (slots[i].item.itemType != ItemType.WaterCan)
+            {
+                slotUIs[i].itemIcon.sprite = slots[i].item.icon;
             }
-            //If slot is empty, remove item icon
+
+            //If item is water can...
             else
             {
-                slotUIs[i].itemIcon.sprite = null;
-                slotUIs[i].itemIcon.enabled = false;
+                //...get bucket info
+                var bucketData = slots[i].item.extraItemData as BucketData;
+
+                //If bucket data exists...
+                if (bucketData != null)
+                {
+                    //...set icon based on water amount
+                    if (slots[i].waterAmount > 0) slotUIs[i].itemIcon.sprite = bucketData.fullSprite;
+                    else slotUIs[i].itemIcon.sprite = bucketData.emptySprite;
+
+                    //...enable and update water meter
+                    if (slotUIs[i].waterMeter != null)
+                    {
+                        slotUIs[i].waterMeter.gameObject.SetActive(true);
+                        slotUIs[i].waterMeter.SetMaxWater(bucketData.maxWater);
+                        slotUIs[i].waterMeter.SetWater(slots[i].waterAmount);
+                    }
+                }
+                //...if no bucket data, just set normal item icon
+                else
+                {
+                    slotUIs[i].itemIcon.sprite = slots[i].item.icon;
+                }
             }
 
-
-            
-            if (slots[i].amount <= 0 || !slots[i].item.isStackable) slotUIs[i].itemAmountText.text = "";
-            else if (slots[i].item.itemType == ItemType.WaterCan) slotUIs[i].itemAmountText.text = "x" + slots[i].waterAmount.ToString();
-            else slotUIs[i].itemAmountText.text = "x" + slots[i].amount.ToString();
+            //Stack count text (only for stackable, non-watercan items)
+            if (slots[i].item.itemType != ItemType.WaterCan)
+            {
+                if (slots[i].item.isStackable)
+                {
+                    if (slots[i].amount > 1)
+                    {
+                        slotUIs[i].itemAmountText.text = slots[i].amount.ToString();
+                    }
+                    else
+                    {
+                        slotUIs[i].itemAmountText.text = "";
+                    }
+                }
+                else
+                {
+                    slotUIs[i].itemAmountText.text = "";
+                }
+            }
         }
     }
 }
