@@ -16,4 +16,11 @@ public class PlantItem : ScriptableObject
 
     [Header("Seed Item")]
     public Item seed;
+
+    [Header("Range Of Random Produce Drops")]
+    public int minDrop = 1;
+    public int maxDrop = 1;
+
+    [Header("% Chance To Drop Seed On Harvest (0-100)")]
+    public int seedChance = 0;
 }

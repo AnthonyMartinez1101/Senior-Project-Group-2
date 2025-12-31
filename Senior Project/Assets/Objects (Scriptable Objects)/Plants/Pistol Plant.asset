@@ -21,3 +21,6 @@ MonoBehaviour:
   - {fileID: -4908314937253206422, guid: 3bf32ca6b12b71a468064c1a067f26b1, type: 3}
   produce: {fileID: 11400000, guid: 9c04c90b16f74c742801a46bfd208c61, type: 2}
   seed: {fileID: 11400000, guid: cfd2902bfeee56e47ac1e10f79490292, type: 2}
+  minDrop: 1
+  maxDrop: 1
+  seedChance: 0

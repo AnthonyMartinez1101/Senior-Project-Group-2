@@ -131,7 +131,7 @@ public class InteractScript : MonoBehaviour
         switch (weaponData.weaponType)
         {
             case WeaponType.Pistol:
-                attack.OnShoot();
+                Shoot();
                 break;
 
             case WeaponType.Grenade:
@@ -146,6 +146,11 @@ public class InteractScript : MonoBehaviour
                 Debug.Log("No valid weapon type to attack with.");
                 break;
         }
+    }
+
+    private void Shoot()
+    {
+        if(inventorySystem.CheckAndUseBullets()) attack.OnShoot();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

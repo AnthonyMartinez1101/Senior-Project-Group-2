@@ -87,18 +87,11 @@ public class PlantScript : MonoBehaviour
                 {
                     if (IsFullyGrown())
                     {
-                        ItemDropFactory.Instance.SpawnItem(plantInfo.produce, transform.position);
-
-                        //25% chance to get an extra seed when harvesting fully grown crop
-                        int rand = Random.Range(0, 4);
-                        if(rand == 0)
-                        {
-                            ItemDropFactory.Instance.SpawnItem(plantInfo.seed, transform.position);
-                        }
+                        DropProduce();
                     }
                     else
                     {
-                        ItemDropFactory.Instance.SpawnItem(plantInfo.seed, transform.position);
+                        DropSeed();
                     }
                 }
                 else
@@ -108,6 +101,39 @@ public class PlantScript : MonoBehaviour
             }
             Destroy(gameObject);
         }
+    }
+
+    private void DropProduce()
+    {
+        //Default amount to drop
+        int dropAmount = 1;
+
+        //Get range of produce drops and set drop amount to random value
+        int min = plantInfo.minDrop;
+        int max = plantInfo.maxDrop;
+        if (min <= max) dropAmount = Random.Range(min, max + 1);
+
+        for(int i = 0; i < dropAmount; i++)
+        {
+            ItemDropFactory.Instance.SpawnItem(plantInfo.produce, transform.position);
+        }
+
+        TryToDropSeed();
+    }
+
+    private void TryToDropSeed()
+    {
+        int seedDropChance = plantInfo.seedChance;
+        int rand = Random.Range(1, 101); //Random number between 1 and 100
+        if (rand <= seedDropChance)
+        {
+            DropSeed();
+        }
+    }
+
+    private void DropSeed()
+    {
+        ItemDropFactory.Instance.SpawnItem(plantInfo.seed, transform.position);
     }
 
     public void TakeWaterDamage(float damageAmount)

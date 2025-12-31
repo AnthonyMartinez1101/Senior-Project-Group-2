@@ -160,7 +160,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &1751348439627913848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +193,7 @@ MonoBehaviour:
   slider: {fileID: 5367617452555847534}
   target: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
+  canvasGroup: {fileID: 0}
 --- !u!1 &1657621256984433493
 GameObject:
   m_ObjectHideFlags: 0

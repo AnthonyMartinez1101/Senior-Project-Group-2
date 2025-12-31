@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a86dbcae4149a46be4292fd556dfb8, type: 3}
+  m_Name: Bullet Seed
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: Bullet Seed
+  icon: {fileID: -1375541957888328854, guid: f341ec7ab72d8f840813c50e925f1de5, type: 3}
+  itemType: 0
+  isConsumable: 1
+  isStackable: 1
+  sellPrice: 3
+  buyPrice: 3
+  extraItemData: {fileID: 11400000, guid: 4f1a039ea0ca6a94da12398cb5bca75f, type: 2}

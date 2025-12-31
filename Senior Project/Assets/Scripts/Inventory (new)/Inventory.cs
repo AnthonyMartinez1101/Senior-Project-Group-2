@@ -154,6 +154,24 @@ public class Inventory : MonoBehaviour
         RefreshUI();
     }
 
+    public bool CheckAndUseBullets()
+    {
+        for(int i = 0; i < slotCount; i++)
+        {
+            if(!slots[i].IsEmpty() && slots[i].item.itemType == ItemType.Bullet)
+            {
+                slots[i].amount--;
+                if (slots[i].amount <= 0)
+                {
+                    slots[i].Clear();
+                }
+                RefreshUI();
+                return true;
+            }
+        }
+        return false;
+    }
+
     //Refill water in watering can
     public void RefillWater()
     {

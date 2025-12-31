@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18521cb7a8f5ae747902efa002e0964f, type: 3}
+  m_Name: BulletPlant
+  m_EditorClassIdentifier: Assembly-CSharp::PlantItem
+  plantName: Bullet Plant
+  growthTime: 20
+  growStages:
+  - {fileID: -6553267808990695143, guid: f341ec7ab72d8f840813c50e925f1de5, type: 3}
+  - {fileID: 7331247586126021786, guid: f341ec7ab72d8f840813c50e925f1de5, type: 3}
+  - {fileID: 5163382082164183617, guid: f341ec7ab72d8f840813c50e925f1de5, type: 3}
+  - {fileID: 5035938571206110684, guid: f341ec7ab72d8f840813c50e925f1de5, type: 3}
+  produce: {fileID: 11400000, guid: cfddc6c02ec43bc47809159c66ec67c9, type: 2}
+  seed: {fileID: 11400000, guid: ae85c18583574cd4d9d0ba68d02ff8b1, type: 2}
+  minDrop: 5
+  maxDrop: 10
+  seedChance: 10
