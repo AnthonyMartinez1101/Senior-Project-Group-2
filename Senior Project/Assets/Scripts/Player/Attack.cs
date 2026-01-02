@@ -22,13 +22,10 @@ public class Attack : MonoBehaviour
 
     public GameObject grenade;
     public float throwForce = 10f;
-    public float throwCooldown = 0.5f;
-    float throwTimer = 1f;
     public float airTime = 0.5f;
     public float explosionTimer = 2f;
 
     public bool noShootCooldown = false;
-
     
 
     //The script which is in the Melee child object
@@ -46,8 +43,6 @@ public class Attack : MonoBehaviour
     {
         meleeTimer -= Time.deltaTime;
         shootTimer += Time.deltaTime;
-        throwTimer += Time.deltaTime;
-
         if (sytheAction.WasPressedThisFrame())
         {
             OnMelee();
@@ -73,22 +68,13 @@ public class Attack : MonoBehaviour
         }
     }
 
-    public void OnThrowGrenade()
+    public void OnThrowGrenade(float force)
     {
-        // planting grenade for now
-        if (throwTimer > throwCooldown || noShootCooldown)
-        {
-            throwTimer = 0.0f;
-            Quaternion rot = aim.rotation * Quaternion.Euler(0f, 0f, -90f);
-            GameObject g = Instantiate(grenade, aim.position, rot);
-            Rigidbody2D rb = g.GetComponent<Rigidbody2D>();
-            rb.AddForce(-aim.up * throwForce, ForceMode2D.Impulse);
-            StartCoroutine(FlyingGrenade(rb));
-        }
-        else
-        {
-            throwTimer += Time.deltaTime;
-        }
+        Quaternion rot = aim.rotation * Quaternion.Euler(0f, 0f, -90f);
+        GameObject g = Instantiate(grenade, aim.position, rot);
+        Rigidbody2D rb = g.GetComponent<Rigidbody2D>();
+        rb.AddForce(-aim.up * force * 20, ForceMode2D.Impulse);
+        StartCoroutine(FlyingGrenade(rb));
     }
 
     private IEnumerator FlyingGrenade(Rigidbody2D rb)

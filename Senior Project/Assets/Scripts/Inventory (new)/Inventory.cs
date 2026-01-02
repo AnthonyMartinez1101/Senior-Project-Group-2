@@ -62,8 +62,8 @@ public class Inventory : MonoBehaviour
         {
             //Checks scroll wheel input
             Vector2 scrollInput = scrollAction.ReadValue<Vector2>();
-            if (scrollInput.y > 0.01f) currentSlotIndex = (currentSlotIndex + 1) % slotCount;
-            else if (scrollInput.y < -0.01f) currentSlotIndex = (currentSlotIndex - 1 + slotCount) % slotCount;
+            if (scrollInput.y > 0.01f) currentSlotIndex = (currentSlotIndex - 1 + slotCount) % slotCount;
+            else if (scrollInput.y < -0.01f) currentSlotIndex = (currentSlotIndex + 1) % slotCount;
             RefreshUI();
         }
     }

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class FloatingHealth : MonoBehaviour
 {
-    [SerializeField] private Slider slider;
+    [SerializeField] public Slider slider;
     [SerializeField] private Transform target;
     [SerializeField] private Vector3 offset;
     [SerializeField] private CanvasGroup canvasGroup; // used to fade/hide UI without disabling it
@@ -14,7 +14,6 @@ public class FloatingHealth : MonoBehaviour
 
     void Awake()
     {
-        if (!slider) slider = GetComponentInChildren<Slider>(true);
         if (!canvasGroup)
         {
             canvasGroup = GetComponent<CanvasGroup>();
@@ -49,13 +48,11 @@ public class FloatingHealth : MonoBehaviour
         bool isFull = (1f - slider.value) <= FullEpsilon;
         if (isFull)
         {
-            canvasGroup.alpha = 0f; // hide
+            slider.gameObject.SetActive(false);
         }
         else
         {
-            canvasGroup.alpha = 1f; // show
+            slider.gameObject.SetActive(true);
         }
-
-
     }
 }

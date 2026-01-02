@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class InteractScript : MonoBehaviour
 {
@@ -18,6 +19,11 @@ public class InteractScript : MonoBehaviour
 
     [SerializeField] private ShopScript shop;
 
+    private bool isThrowing = false;
+    private float maxChargeTime = 2.0f;
+    private float chargeTime = 0.0f;
+    public Slider grenadeSlider;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,20 +34,50 @@ public class InteractScript : MonoBehaviour
         
         playerHealth = GetComponent<PlayerHealth>();
 
-        nearRefill = false;
+        nearRefill = false; 
 
         if (shop == null)
         {
             Debug.Log("InteractScript: Shop not assigned in inspector");
+        }
+
+        if (grenadeSlider != null)
+        {
+            grenadeSlider.maxValue = maxChargeTime;
+            grenadeSlider.gameObject.SetActive(false);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(interactAction.WasPressedThisFrame() && shop != null && !shop.IsShopInUse())
+        if (interactAction.WasPressedThisFrame() && shop != null && !shop.IsShopInUse())
         {
+            currentItem = inventorySystem.GetCurrentItem();
+            if (currentItem != null && currentItem.itemType == ItemType.Weapon)
+            {
+                var weaponData = currentItem.extraItemData as WeaponData;
+                if (weaponData != null && weaponData.weaponType == WeaponType.Grenade)
+                {
+                    grenadeSlider.gameObject.SetActive(true);
+                    grenadeSlider.value = 0.0f;
+                    isThrowing = true;
+                    chargeTime = Time.time;
+                    return;
+                }
+            }
             Interact();
+        }
+        if (isThrowing)
+        {
+            float currentCharge = Mathf.Min(Time.time - chargeTime, maxChargeTime);
+            grenadeSlider.value = currentCharge;
+            if (interactAction.WasReleasedThisFrame())
+            {
+                isThrowing = false;
+                grenadeSlider.gameObject.SetActive(false);
+                Interact();
+            }
         }
     }
 
@@ -53,8 +89,6 @@ public class InteractScript : MonoBehaviour
     // Handle interaction based on current item type when interact button is pressed
     private void Interact()
     {
-        currentItem = inventorySystem.GetCurrentItem();
-
         if (currentItem == null) return;
 
         switch(currentItem.itemType)
@@ -138,7 +172,8 @@ public class InteractScript : MonoBehaviour
                 if (inventorySystem.GetCurrentItemCount() > 0)
                 {
                     inventorySystem.SubtractItem();
-                    attack.OnThrowGrenade();
+                    attack.OnThrowGrenade(Mathf.Min(Time.time - chargeTime, maxChargeTime));
+                    chargeTime = 0.0f;
                 }
                 break;
 
