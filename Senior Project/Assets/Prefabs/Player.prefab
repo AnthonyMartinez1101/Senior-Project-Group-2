@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 923335079560586713}
   m_Layer: 6
   m_Name: Item Magnet
-  m_TagString: Untagged
+  m_TagString: NoBulletCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -734,6 +734,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38cf41a42e612cc47b4b82eb32609aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  magnetPullSpeed: 5
+  accelerationRate: 0.1
 --- !u!1 &5000908664961898390
 GameObject:
   m_ObjectHideFlags: 0

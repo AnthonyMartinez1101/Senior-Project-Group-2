@@ -98,9 +98,6 @@ public class Inventory : MonoBehaviour
         bool added = false;
         int changedIndex = -1;
 
-        var bucketData = newItem.extraItemData as BucketData;
-
-
         // Check for stackable items first
         if (newItem.isStackable)
         {
@@ -130,7 +127,6 @@ public class Inventory : MonoBehaviour
                     slot.item = newItem;
                     slot.amount = 1;
                     changedIndex = slots.IndexOf(slot);
-                    if (bucketData != null) slot.waterAmount = bucketData.maxWater;
                     added = true;
                     break;
                 }
