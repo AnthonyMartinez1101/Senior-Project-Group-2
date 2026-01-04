@@ -50,7 +50,8 @@ public class Weapon : MonoBehaviour
 
     private IEnumerator Explode(float delay)
     {
-        animator.Play("Boom");
+        //This was throwing a warning and it doesn't seem to do anything so I'm commenting it out
+        //animator.Play("Boom");
         yield return new WaitForSeconds(delay);
         explosionRadius.enabled = true;
         Destroy(gameObject, 0.1f);

@@ -87,7 +87,7 @@ public class Enemy : MonoBehaviour
         hitCooldown -= Time.deltaTime;
 
         //If day, take damage
-        if (worldClock.CurrentPhase == DayPhase.Day)
+        if (worldClock.IsDay())
         {
             if(!startBurning)
             {

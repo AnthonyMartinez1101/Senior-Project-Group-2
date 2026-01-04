@@ -13,6 +13,8 @@ public class SoilScript : MonoBehaviour
 
     private GameObject waterDroplet; //Child object in soil representing water droplet
 
+    public WorldClock worldClock;
+
     //private InteractScript interactScript;
 
     private void Start()
@@ -32,7 +34,7 @@ public class SoilScript : MonoBehaviour
     }
     private void Update()
     {
-        if(GameManager.Instance.IsDay())
+        if(worldClock.IsDay())
         {
             if (currentPlant != null)
             {

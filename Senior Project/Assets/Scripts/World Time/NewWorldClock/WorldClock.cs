@@ -153,4 +153,14 @@ public class WorldClock : MonoBehaviour
         preciseTime = dayLength;
         SwitchLight();
     }
+
+    public bool IsDay()
+    {
+        return CurrentPhase == DayPhase.Day;
+    }
+
+    public bool IsNight()
+    {
+        return CurrentPhase == DayPhase.Night;
+    }
 }

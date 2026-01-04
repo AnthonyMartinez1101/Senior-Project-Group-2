@@ -16,21 +16,10 @@ public class EnemySpawner : MonoBehaviour
 
     public WorldClock worldClock;
 
-    public GameObject EnemyEnvironment;
     public Transform EnemyCollection;
 
     public bool InTutorial = false;
 
-    //private float worldTimer = 0f; 
-    //private bool isDay = true;
-
-    private void Start()
-    {
-        if (EnemyEnvironment != null)
-        {
-            EnemyEnvironment.SetActive(true);
-        }
-    }
 
     private void Update()
     {
@@ -40,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
             return;
         }
 
-        if (worldClock.CurrentPhase == DayPhase.Night && !InTutorial)
+        if (worldClock.IsNight() && !InTutorial)
         {
             timer -= Time.deltaTime;
             spawnRate -= Time.deltaTime;

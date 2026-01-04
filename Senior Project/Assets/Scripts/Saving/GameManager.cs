@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     InputAction pauseAction;
 
+    [SerializeField] private Transform chickenHidePosition;
+
+
     private void Awake()
     {
         BuildItemLookup();
@@ -129,7 +132,7 @@ public class GameManager : MonoBehaviour
     {
         if (worldClock != null)
         {
-            return worldClock.CurrentPhase == DayPhase.Day;
+            return worldClock.IsDay();
         }
         else
         {
@@ -264,5 +267,15 @@ public class GameManager : MonoBehaviour
     public Sprite NoSprite()
     {
         return noSprite;
+    }
+
+    public WorldClock GetWorldClock()
+    {
+        return worldClock;
+    }
+
+    public Transform GetChickenHidePosition()
+    {
+        return chickenHidePosition;
     }
 }

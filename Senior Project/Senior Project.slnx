@@ -30,8 +30,8 @@
   <Project Path="NavMeshPlusEditor.csproj" />
   <Project Path="Unity.InferenceEngine.csproj" />
   <Project Path="Unity.2D.Animation.Editor.csproj" />
-  <Project Path="Unity.Searcher.Editor.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Unity.Searcher.Editor.csproj" />
   <Project Path="Unity.AI.Generators.Redux.csproj" />
   <Project Path="Unity.AI.Sound.csproj" />
   <Project Path="Unity.2D.SpriteShape.Runtime.csproj" />
