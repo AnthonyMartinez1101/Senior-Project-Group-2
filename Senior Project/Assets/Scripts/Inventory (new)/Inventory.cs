@@ -75,8 +75,11 @@ public class Inventory : MonoBehaviour
 
     public int GetCurrentItemCount()
     {
-        if (slots[currentSlotIndex].item.itemType == ItemType.WaterCan) return slots[currentSlotIndex].waterAmount;
-        else return slots[currentSlotIndex].amount;
+        var slot = slots[currentSlotIndex];
+        if(slot.item == null) return 0;
+
+        if(slot.item.itemType == ItemType.WaterCan) return slot.waterAmount;
+        return slot.amount;
     }
 
     //Call when item is picked up

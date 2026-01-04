@@ -173,6 +173,31 @@ public class ShopScript : MonoBehaviour
         }
     }
 
+    public void SellAllItems()
+    {
+        Item currentItem = inventory.GetCurrentItem();
+        if (currentItem != null)
+        {
+            int sellPrice = currentItem.sellPrice;
+            if (sellPrice > 0)
+            {
+                while(inventory.GetCurrentItemCount() > 0)
+                {
+                    playerWallet.AddCoins(sellPrice);
+                    inventory.SubtractItem();
+                }
+            }
+            else
+            {
+                Debug.Log("Item cannot be sold: " + currentItem.itemName);
+            }
+        }
+        else
+        {
+            Debug.Log("No item selected.");
+        }
+    }
+
     // Sell item from player's inventory when shop is open
     public bool SellItemFromInventory(InventorySystem inventory, int slotIndex)
     {
