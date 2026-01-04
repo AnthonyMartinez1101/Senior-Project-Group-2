@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3318986860788267025}
   - component: {fileID: 478850663006574093}
   - component: {fileID: 6379451600396961583}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle Enemy Nav
   m_TagString: Untagged
   m_Icon: {fileID: 0}
