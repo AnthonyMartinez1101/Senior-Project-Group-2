@@ -23,4 +23,7 @@ public class PlantItem : ScriptableObject
 
     [Header("% Chance To Drop Seed On Harvest (0-100)")]
     public int seedChance = 0;
+
+    [Header("Can Plant Die to Dehydration")]
+    public bool canDry = true;
 }
