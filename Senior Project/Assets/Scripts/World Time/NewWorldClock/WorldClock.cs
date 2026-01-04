@@ -43,6 +43,8 @@ public class WorldClock : MonoBehaviour
 
     [SerializeField] private TMP_Text displayText;
 
+    public bool inTutorialMode = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -52,6 +54,13 @@ public class WorldClock : MonoBehaviour
         preciseTime = dayLength;
 
         Debug.Log("Current Season: " + CurrentSeason.ToString());
+
+        if (inTutorialMode)
+        {
+            CurrentPhase = DayPhase.Night;
+            PauseTimer();
+            worldClockLight.nightLight();
+        }
     }
 
     void Update()
@@ -79,12 +88,17 @@ public class WorldClock : MonoBehaviour
 
                 if (currentTime == 0f)
                 {
-                    SwitchLight();
-                    yield return new WaitForSeconds(transitionLength);
-                    SwitchPhase();
+                    StartCoroutine(TimeChange());
                 }
             }
         }
+    }
+
+    public IEnumerator TimeChange()
+    {
+        SwitchLight();
+        yield return new WaitForSeconds(transitionLength);
+        SwitchPhase();
     }
 
     void SwitchLight()
@@ -104,7 +118,8 @@ public class WorldClock : MonoBehaviour
             CurrentPhase = DayPhase.Day;
             currentTime = dayLength;
             preciseTime = dayLength;
-            IterateSeason();
+            if (!inTutorialMode)
+                IterateSeason();
         }
     }
 

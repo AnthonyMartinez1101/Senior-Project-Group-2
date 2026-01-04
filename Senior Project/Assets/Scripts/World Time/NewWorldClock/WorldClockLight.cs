@@ -65,6 +65,7 @@ public class WorldClockLight : MonoBehaviour
         transitionLight = true;
     }
 
+
     public void SetGradient()
     {
         switch (worldClock.CurrentSeason)
@@ -82,5 +83,13 @@ public class WorldClockLight : MonoBehaviour
                 currentGradient = winterGradient;
                 break;
         }
+    }
+
+    // Use during tutorial to set light to dark immediately
+    public void nightLight()
+    {
+        transitionLight = false;
+        transitionDuration = 5f;
+        worldLight.color = currentGradient.Evaluate(0.7f);
     }
 }

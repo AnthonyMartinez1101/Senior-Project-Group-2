@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private ShopScript shop;
 
+    public bool isInvincible = false;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
+        if (isInvincible) return;
         shop.CloseShop();
         GameManager.Instance.CameraShake(damageAmount + 3f, 0.2f);
         if (damageFlash) damageFlash.FlashOnDamage();

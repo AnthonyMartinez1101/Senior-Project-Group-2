@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     public static bool loadOnStart = false;
     public static GameManager Instance;
     public static GameData gameData;
-    public float autoSaveTimer = 10f; // Change to total time in a day/night cycle later
+    public float autoSaveTimer = 10f;
+    public bool canSave = true;
 
     public GameObject player;
     private Inventory inventorySystem;
@@ -56,7 +57,8 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             //DontDestroyOnLoad(gameObject);
-            StartCoroutine(AutoSave());
+            if (canSave)
+                StartCoroutine(AutoSave());
         }
         else
         {

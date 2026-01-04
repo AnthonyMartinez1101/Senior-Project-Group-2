@@ -20,6 +20,7 @@ public class ItemDropScript : MonoBehaviour
     private float pullSpeed;
     private float accelerationRate;
 
+    public bool canDespawn = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
