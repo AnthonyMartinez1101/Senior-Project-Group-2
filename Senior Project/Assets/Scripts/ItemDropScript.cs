@@ -12,6 +12,15 @@ public class ItemDropScript : MonoBehaviour
     public Item itemInfo;
     private Item item;
 
+    private bool canPull = false;
+
+    private bool hasTarget = false;
+    private Transform targetPos;
+
+    private float pullSpeed;
+    private float accelerationRate;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -80,6 +89,36 @@ public class ItemDropScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.AddForce(-rb.linearVelocity * 3f, ForceMode2D.Force);
+        if (!canPull)
+        {
+            rb.AddForce(-rb.linearVelocity * 3f, ForceMode2D.Force);
+            if(rb.linearVelocity.magnitude < 0.1f)
+            {
+                rb.linearVelocity = Vector2.zero;
+                canPull = true;
+            }
+        }
+        else
+        {
+            if (hasTarget)
+            {
+                Vector2 targetDir = ((Vector2)targetPos.position - rb.position).normalized;
+                rb.linearVelocity = targetDir * pullSpeed;
+                pullSpeed += pullSpeed * accelerationRate; // Accelerate pull speed
+            }
+        }
+    }
+
+    public void SetTarget(Transform target, float speed, float acc)
+    { 
+        targetPos = target;
+        pullSpeed = speed;
+        accelerationRate = acc;
+        hasTarget = true;
+    }
+
+    public void ClearTarget()
+    {
+        hasTarget = false;
     }
 }

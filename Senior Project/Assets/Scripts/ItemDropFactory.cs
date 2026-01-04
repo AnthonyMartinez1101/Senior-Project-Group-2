@@ -28,7 +28,7 @@ public class ItemDropFactory : MonoBehaviour
         itemDrop.GetComponent<ItemDropScript>().CreateItemDrop(item);
 
         Rigidbody2D rb = itemDrop.GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(0.5f, 1.5f)).normalized * Random.Range(2f, 5f), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * Random.Range(1f, 4f), ForceMode2D.Impulse);
     }
 
     public void PlayerDropItem(Item item, Vector3 pos)
@@ -37,7 +37,7 @@ public class ItemDropFactory : MonoBehaviour
         itemDrop.GetComponent<CircleCollider2D>().enabled = false; // Disable collider to prevent immediate re-pickup
         itemDrop.GetComponent<ItemDropScript>().CreateItemDrop(item);
         Rigidbody2D rb = itemDrop.GetComponent<Rigidbody2D>();
-        rb.AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(0.5f, 1.5f)).normalized * Random.Range(2f, 5f), ForceMode2D.Impulse);
+        rb.AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * Random.Range(2f, 4f), ForceMode2D.Impulse);
         StartCoroutine(WaitToEnable(itemDrop));
     }
 
