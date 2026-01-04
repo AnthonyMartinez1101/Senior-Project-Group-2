@@ -26,7 +26,10 @@ public class ItemDropScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        StartCoroutine(ItemTimer());
+        if (canDespawn)
+        {
+            StartCoroutine(ItemTimer());
+        }
 
         if (itemInfo != null)
         {
