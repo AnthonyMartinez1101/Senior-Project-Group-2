@@ -20,7 +20,6 @@ public class EnemySpawner : MonoBehaviour
     public Transform EnemyCollection;
 
     public bool InTutorial = false;
-    public int TutorialEnemyCount = 3;
 
     //private float worldTimer = 0f; 
     //private bool isDay = true;
@@ -30,10 +29,6 @@ public class EnemySpawner : MonoBehaviour
         if (EnemyEnvironment != null)
         {
             EnemyEnvironment.SetActive(true);
-        }
-        if (InTutorial)
-        {
-            EnemyTutorial();
         }
     }
 
@@ -67,14 +62,9 @@ public class EnemySpawner : MonoBehaviour
                 spawnRate = 1f;
             }
         }
-
-        if (InTutorial)
-        {
-            ClearedTutorialCheck();
-        }
     }
 
-    private void Spawn()
+    public void Spawn()
     {
         int randNum = Random.Range(0, 10);
         Transform currentSpawn = spawnPoints[randNum];
@@ -87,23 +77,5 @@ public class EnemySpawner : MonoBehaviour
 
         Enemy e = enemy.GetComponent<Enemy>();
         e.SetWorldTime(worldClock);
-    }
-
-    private void EnemyTutorial()
-    {
-        for (int i = 0; i < TutorialEnemyCount; i++)
-        {
-            Spawn();
-        }
-    }
-
-    private void ClearedTutorialCheck()
-    {
-        if (EnemyCollection.childCount == 0)
-        {
-            Debug.Log("Changing to day");
-            InTutorial = false;
-            StartCoroutine(worldClock.TimeChange());
-        }
     }
 }
