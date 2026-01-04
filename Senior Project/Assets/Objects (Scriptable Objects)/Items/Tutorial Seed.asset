@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a86dbcae4149a46be4292fd556dfb8, type: 3}
+  m_Name: Tutorial Seed
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: Corn Seed
+  icon: {fileID: 3766885766661273901, guid: 966a340b24d41d946a589257f8142b4f, type: 3}
+  itemType: 0
+  isConsumable: 1
+  stackable: 1
+  sellPrice: 1
+  buyPrice: 1
+  extraItemData: {fileID: 11400000, guid: 5a900ad5f6e79f44d84d34c892c7fbef, type: 2}
