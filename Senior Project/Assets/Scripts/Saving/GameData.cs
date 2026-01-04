@@ -34,11 +34,11 @@ public class GameData
         health = player.GetComponent<PlayerHealth>().currentHealth;
 
         inventory = new List<InventoryItem>();
-        foreach (var itemStack in player.GetComponent<InventorySystem>().inventoryItems)
+        foreach (var slot in player.GetComponent<Inventory>().slots)
         {
-            if (!itemStack.IsEmpty)
+            if (!slot.IsEmpty())
             {
-                inventory.Add(new InventoryItem(itemStack.item.itemName, itemStack.count));
+                inventory.Add(new InventoryItem(slot.item.itemName, slot.amount));
             }
         }
 

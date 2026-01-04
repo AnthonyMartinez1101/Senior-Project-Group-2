@@ -3529,7 +3529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cad8e33c61db4e4f83543b99596d3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  autoSaveTimer: 190
+  autoSaveTimer: 310
   player: {fileID: 1291469836}
   enemySpawner: {fileID: 1939432098}
   worldClock: {fileID: 799218943}
