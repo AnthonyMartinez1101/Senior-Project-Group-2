@@ -26,6 +26,7 @@ public class InteractScript : MonoBehaviour
 
     public bool canPlant = true;
     public bool canWater = true;
+    public bool canEat = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -121,7 +122,8 @@ public class InteractScript : MonoBehaviour
     //Eat produce only if you have produce in hand and are not at max health
     private void EatProduce()
     {
-        if(inventorySystem.GetCurrentItemCount() > 0 && !playerHealth.IsMaxHealth())
+        if(!canEat) return;
+        if (inventorySystem.GetCurrentItemCount() > 0 && !playerHealth.IsMaxHealth())
         {
             var produceData = currentItem.extraItemData as ProduceData;
             if (produceData != null)

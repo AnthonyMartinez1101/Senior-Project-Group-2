@@ -39,6 +39,7 @@ public class TutorialScript : MonoBehaviour
         // Lock mechanics here
         player.GetComponent<InteractScript>().canPlant = false;
         player.GetComponent<InteractScript>().canWater = false;
+        player.GetComponent<InteractScript>().canEat = false;
         player.GetComponent<PlayerHealth>().isInvincible = true;
         player.GetComponent<PlayerHealth>().SetHealth(15f);
         CanCollectItems(false);
@@ -78,6 +79,9 @@ public class TutorialScript : MonoBehaviour
 
         yield return StartCoroutine(HarvestCropsStage());
         Debug.Log("Harvest crops complete");
+
+        yield return StartCoroutine(CollectProduceStage());
+        Debug.Log("Collect produce complete");
 
         yield return StartCoroutine(EatFoodStage());
         Debug.Log("Eat food complete");
@@ -244,7 +248,7 @@ public class TutorialScript : MonoBehaviour
     // Progress when all crops are killed/harvested
     private IEnumerator HarvestCropsStage()
     {
-        ui.UpdateUI("Harvest your grown crops with your scythe", false);
+        ui.UpdateUI("Harvest your fully grown crops with your scythe", false);
 
         bool cropsHarvested = false;
         while (!cropsHarvested)
@@ -258,10 +262,31 @@ public class TutorialScript : MonoBehaviour
         yield return StartCoroutine(SetCheck());
     }
 
+    // Progress when all produce is picked up
+    private IEnumerator CollectProduceStage()
+    {
+        ui.UpdateUI("Pick up dropped produce", false);
+
+        bool itemsPickedUp = false;
+
+        while (!itemsPickedUp)
+        {
+            if (GroundItemCollection.childCount == 0)
+            {
+                itemsPickedUp = true;
+            }
+            yield return null;
+        }
+        yield return StartCoroutine(SetCheck());
+    }
+
+
     // Progress when food is eaten from inventory (would like to rewrite later)
     private IEnumerator EatFoodStage()
     {
         ui.UpdateUI("Eat food to regain health", false);
+
+        player.GetComponent<InteractScript>().canEat = true;
 
         bool foodEaten = false;
         while (!foodEaten)
@@ -279,7 +304,7 @@ public class TutorialScript : MonoBehaviour
     // Progress when all produce is sold
     private IEnumerator SellItemsStage()
     {
-        ui.UpdateUI("Go to the shop and press E to sell your harvested crops", false);
+        ui.UpdateUI("Go to the shop, press E, and sell your harvested crops", false);
 
         bool itemsSold = false;
         shop.interactable = true;

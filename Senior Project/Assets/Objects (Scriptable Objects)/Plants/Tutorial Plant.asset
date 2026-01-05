@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18521cb7a8f5ae747902efa002e0964f, type: 3}
   m_Name: Tutorial Plant
   m_EditorClassIdentifier: Assembly-CSharp::PlantItem
-  plantName: Corn Plant
+  plantName: Tutorial Plant
   growthTime: 15
   growStages:
   - {fileID: 21300000, guid: 806f9f7fb8b31ba488eba2eb04646e65, type: 3}

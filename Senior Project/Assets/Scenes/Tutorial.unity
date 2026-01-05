@@ -1834,8 +1834,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 90.3, y: 100}
+  m_AnchoredPosition: {x: 6.735, y: 0}
+  m_SizeDelta: {x: 103.77, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &197303789
 MonoBehaviour:
@@ -1857,7 +1857,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7675826601332790545, guid: 1f001a631e4f841489fbdd9debf86244, type: 3}
+  m_Sprite: {fileID: -1846366679292940804, guid: 5c66b3df1b8a1a84eb5729d7cadbea82, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7549,8 +7549,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   sprites:
-  - {fileID: 3613574830588223258, guid: 929246eb71a92e644931bb1e4a438d71, type: 3}
-  - {fileID: -6660595908490633054, guid: 929246eb71a92e644931bb1e4a438d71, type: 3}
+  - {fileID: -9049677492591734716, guid: 5c66b3df1b8a1a84eb5729d7cadbea82, type: 3}
+  - {fileID: 6347821849099485803, guid: 5c66b3df1b8a1a84eb5729d7cadbea82, type: 3}
   checkmark: {fileID: 2089335769}
   instructionText: {fileID: 1551973098}
 --- !u!1001 &871945784
@@ -9340,7 +9340,7 @@ MonoBehaviour:
   shopUI: {fileID: 1158130222}
   itemDropOff: {fileID: 2006895195}
   player: {fileID: 1291469836}
-  enabled: 1
+  interactable: 1
 --- !u!61 &1014007744
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12551,7 +12551,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 488.5009, y: 4.8448}
+  m_AnchoredPosition: {x: 488.5009, y: 25}
   m_SizeDelta: {x: 859.7618, y: 144.932}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1387028229

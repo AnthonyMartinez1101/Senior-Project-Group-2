@@ -16,6 +16,8 @@ public class PlantScript : MonoBehaviour
 
     private bool lastCollidedWithSickle = false;
 
+    private bool tutorialMode = false;
+
 
 
 
@@ -35,6 +37,8 @@ public class PlantScript : MonoBehaviour
 
         if (!healthBar) healthBar = GetComponentInChildren<FloatingHealth>();
         if (healthBar) healthBar.SetMax();
+
+        if(newPlantInfo.plantName == "Tutorial Plant") tutorialMode = true;
     }
 
     // Update is called once per frame
@@ -77,6 +81,8 @@ public class PlantScript : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
+        if (tutorialMode && !IsFullyGrown()) return;
+
         currentHealth -= damageAmount * 3f;
         if (healthBar) healthBar.UpdateHealth(currentHealth, plantHealth);
         if (currentHealth <= 0)
@@ -115,7 +121,8 @@ public class PlantScript : MonoBehaviour
 
         for(int i = 0; i < dropAmount; i++)
         {
-            ItemDropFactory.Instance.SpawnItem(plantInfo.produce, transform.position, expires: true);
+            bool expires = !tutorialMode;
+            ItemDropFactory.Instance.SpawnItem(plantInfo.produce, transform.position, expires);
         }
 
         TryToDropSeed();
