@@ -24,6 +24,9 @@ public class InteractScript : MonoBehaviour
     private float chargeTime = 0.0f;
     public Slider grenadeSlider;
 
+    public bool canPlant = true;
+    public bool canWater = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -132,6 +135,7 @@ public class InteractScript : MonoBehaviour
     //Plant seed only if soil is highlighted and you have seeds in inventory
     private void PlantSeed()
     {
+        if(!canPlant) return;
         if (currentSoil != null && currentSoil.IsHighlighted() && inventorySystem.GetCurrentItemCount() > 0)
         {
             if (currentSoil.Plant(currentItem))
@@ -144,7 +148,8 @@ public class InteractScript : MonoBehaviour
     // Water soil only if soil is highlighted
     private void TryWater()
     {
-        if(nearRefill)
+        if(!canWater) return;
+        if (nearRefill)
         {
             inventorySystem.RefillWater();
             return;

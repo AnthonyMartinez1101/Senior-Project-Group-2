@@ -21,6 +21,7 @@ public class ItemDropScript : MonoBehaviour
     private float accelerationRate;
 
     public bool canDespawn = true;
+    public bool canBeCollected = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -84,7 +85,8 @@ public class ItemDropScript : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        if (!canBeCollected) return;
+        if (collision.CompareTag("Player"))
         {
             GameManager.Instance.AddToInventory(item);
             Destroy(gameObject);
@@ -115,7 +117,7 @@ public class ItemDropScript : MonoBehaviour
 
     public void SetTarget(Transform target, float speed, float acc)
     {   
-        if(!hasTarget)
+        if(!hasTarget && canPull)
         {
             targetPos = target;
             pullSpeed = speed;

@@ -11652,22 +11652,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 657201656}
     m_Modifications:
-    - target: {fileID: 923335079560586713, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
-      propertyPath: magnetPullSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 923335079560586713, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
-      propertyPath: accelerationRate
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1523579780444477276, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1523579780444477276, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1760016382332637093, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -11676,14 +11660,6 @@ PrefabInstance:
       propertyPath: shop
       value: 
       objectReference: {fileID: 1014007743}
-    - target: {fileID: 4769215983854124319, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4769215983854124319, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4923560966000343244, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: shop
       value: 
@@ -11696,10 +11672,6 @@ PrefabInstance:
       propertyPath: shop
       value: 
       objectReference: {fileID: 1014007743}
-    - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
-      propertyPath: coinCount
-      value: 100000
-      objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCountText
       value: 
@@ -15709,6 +15681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   itemDropPrefab: {fileID: 6311631902464708414, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+  GroundItemCollection: {fileID: 0}
   randomDropItems:
   - {fileID: 11400000, guid: 7d42225e9a8f651459e31a0ae1a4bf12, type: 2}
   - {fileID: 11400000, guid: a65eda591d7ee5545a93551ce17a8fa2, type: 2}

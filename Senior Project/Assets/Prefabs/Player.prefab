@@ -523,6 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractScript
   shop: {fileID: 0}
   grenadeSlider: {fileID: 7804490505299487114}
+  canPlant: 1
 --- !u!114 &6493144471492509595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,6 +578,7 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 0
   shop: {fileID: 0}
+  isInvincible: 0
 --- !u!114 &2604845234361256722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -615,7 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd17143c844d0054291a57741444b8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  coinCount: 100
+  coinCount: 100000
   coinCountText: {fileID: 0}
 --- !u!95 &8607328476864150349
 Animator:
@@ -734,8 +736,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38cf41a42e612cc47b4b82eb32609aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  magnetPullSpeed: 5
-  accelerationRate: 0.1
+  magnetPullSpeed: 2
+  accelerationRate: 0.2
 --- !u!1 &5000908664961898390
 GameObject:
   m_ObjectHideFlags: 0

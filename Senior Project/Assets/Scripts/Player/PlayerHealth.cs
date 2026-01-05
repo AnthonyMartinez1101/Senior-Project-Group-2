@@ -52,6 +52,12 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void SetHealth(float newHealth)
+    {
+        currentHealth = newHealth;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+        if (healthBar) healthBar.UpdateHealth(currentHealth, maxHealth);
+    }
 
     public bool IsMaxHealth()
     {

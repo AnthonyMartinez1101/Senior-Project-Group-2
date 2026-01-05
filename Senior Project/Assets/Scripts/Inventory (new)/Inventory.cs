@@ -221,4 +221,19 @@ public class Inventory : MonoBehaviour
         }
         return false;
     }
+
+    public bool IsWaterBucketEmpty()
+    {
+        for(int i = 0; i < slotCount; i++)
+        {
+            if (!slots[i].IsEmpty() && slots[i].item.itemType == ItemType.WaterCan)
+            {
+                if (slots[i].waterAmount > 0)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }
