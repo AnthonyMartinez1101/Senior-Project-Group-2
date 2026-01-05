@@ -46,13 +46,6 @@ public class FloatingHealth : MonoBehaviour
     private void RefreshVisibility()
     {
         bool isFull = (1f - slider.value) <= FullEpsilon;
-        if (isFull)
-        {
-            slider.gameObject.SetActive(false);
-        }
-        else
-        {
-            slider.gameObject.SetActive(true);
-        }
+        canvasGroup.alpha = isFull ? 0f : 1f;
     }
 }

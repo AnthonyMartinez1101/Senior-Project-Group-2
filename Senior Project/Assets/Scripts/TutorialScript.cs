@@ -195,7 +195,7 @@ public class TutorialScript : MonoBehaviour
     // Progress when seeds leave inventory
     private IEnumerator PlantCropsStage()
     {
-        ui.UpdateUI("Plant the seeds in your inventory", false);
+        ui.UpdateUI("Plant the seeds", false);
 
         bool cropsPlanted = false;
         player.GetComponent<InteractScript>().canPlant = true;

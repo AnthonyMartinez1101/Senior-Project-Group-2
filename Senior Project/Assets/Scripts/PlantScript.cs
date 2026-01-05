@@ -89,7 +89,7 @@ public class PlantScript : MonoBehaviour
         {
             if (lastCollidedWithSickle)
             {
-                if(plantInfo.produce != null && plantInfo.seed != null)
+                if (plantInfo.produce != null && plantInfo.seed != null)
                 {
                     if (IsFullyGrown())
                     {
@@ -103,7 +103,7 @@ public class PlantScript : MonoBehaviour
                 else
                 {
                     Debug.Log("PlantScript: PlantItem produce or seed is null. Cannot drop item.");
-                } 
+                }
             }
             Destroy(gameObject);
         }
@@ -163,6 +163,14 @@ public class PlantScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!collision.CompareTag("Player") && !collision.CompareTag("Interact")) lastCollidedWithSickle = collision.CompareTag("Sickle");
+        if(CheckCollision(collision)) lastCollidedWithSickle = collision.CompareTag("Sickle");
+    }
+
+    //Check collision if it doesn't interact with the following
+    private bool CheckCollision(Collider2D collision)
+    {
+        return (!collision.CompareTag("Player") 
+            && !collision.CompareTag("Interact")
+            && !collision.CompareTag("NoBulletCollision"));
     }
 }

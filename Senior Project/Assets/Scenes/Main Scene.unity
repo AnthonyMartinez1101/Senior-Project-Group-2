@@ -9269,6 +9269,7 @@ MonoBehaviour:
   shopUI: {fileID: 1158130222}
   itemDropOff: {fileID: 2006895195}
   player: {fileID: 1291469836}
+  interactable: 1
 --- !u!61 &1014007744
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11672,6 +11673,10 @@ PrefabInstance:
       propertyPath: shop
       value: 
       objectReference: {fileID: 1014007743}
+    - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: coinCount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCountText
       value: 
