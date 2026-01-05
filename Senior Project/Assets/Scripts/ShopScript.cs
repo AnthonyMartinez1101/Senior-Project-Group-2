@@ -24,7 +24,7 @@ public class ShopScript : MonoBehaviour
     private PlayerWallet playerWallet;
     private Inventory inventory;
 
-
+    public bool interactable = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,7 +50,7 @@ public class ShopScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isPlayerNearby && openShopAction.WasPressedThisFrame()) //E key to toggle shop
+        if(isPlayerNearby && openShopAction.WasPressedThisFrame() && interactable) //E key to toggle shop
         {
             if (!isShopInUse)
             {

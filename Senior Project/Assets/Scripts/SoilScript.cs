@@ -157,6 +157,11 @@ public class SoilScript : MonoBehaviour
     {
         return highlighted.activeSelf;
     }
+
+    public bool isWatered()
+    {
+        return waterLevel > 0f;
+    }
 }
 
     //COMMENTED OUT FOR NEW IMPLEMENTATION

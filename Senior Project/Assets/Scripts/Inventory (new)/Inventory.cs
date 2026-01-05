@@ -210,16 +210,16 @@ public class Inventory : MonoBehaviour
     }
 
     // Return true if item is found in inventory
-    public bool SearchForItem(Item itemToFind)
+    public int SearchForItem(Item itemToFind)
     {
         for (int i = 0; i < slotCount; i++)
         {
             if (!slots[i].IsEmpty() && slots[i].item == itemToFind)
             {
-                return true;
+                return slots[i].amount;
             }
         }
-        return false;
+        return 0;
     }
 
     public bool IsWaterBucketEmpty()

@@ -7,7 +7,7 @@ public class TutorialScript : MonoBehaviour
     InputAction WASD;
     InputAction Space;
 
-    InputAction sythe;
+    InputAction scythe;
 
     public GameObject player;
 
@@ -21,16 +21,20 @@ public class TutorialScript : MonoBehaviour
     public Inventory inv;
     public Item seed;
 
-    public TutorialUI ui;
+    public SoilManager soilManager;
 
-    
+    public Item food;
+
+    public ShopScript shop;
+
+    public TutorialUI ui;
 
     private void Start()
     {
         WASD = InputSystem.actions.FindAction("Move");
         Space = InputSystem.actions.FindAction("Dash");
 
-        sythe = InputSystem.actions.FindAction("Sythe");
+        scythe = InputSystem.actions.FindAction("Scythe");
 
         // Lock mechanics here
         player.GetComponent<InteractScript>().canPlant = false;
@@ -38,6 +42,7 @@ public class TutorialScript : MonoBehaviour
         player.GetComponent<PlayerHealth>().isInvincible = true;
         player.GetComponent<PlayerHealth>().SetHealth(15f);
         CanCollectItems(false);
+        shop.interactable = false;
 
         ui.UpdateUI("Use WASD to move around", false);
 
@@ -53,8 +58,8 @@ public class TutorialScript : MonoBehaviour
         yield return StartCoroutine(DashStage());
         Debug.Log("Dash complete");
 
-        yield return StartCoroutine(SytheStage());
-        Debug.Log("Sythe complete");
+        yield return StartCoroutine(ScytheStage());
+        Debug.Log("Scythe complete");
 
         yield return StartCoroutine(NightFightStage());
         Debug.Log("Night fight complete");
@@ -79,12 +84,13 @@ public class TutorialScript : MonoBehaviour
 
         yield return StartCoroutine(SellItemsStage());
         Debug.Log("Sell items complete");
-        Debug.Log("Tutorial complete, continuing to main game");
-        // Tutorial complete, swap scenes
-    }
 
-    // Side note: Need to lock some mechanics such as shop (unlock when ready), and premature plant slicing
-    // Prevent player from skipping ahead (lock planting, water filling, harvesting, eating, selling until tutorial reaches that stage)
+        ui.UpdateUI("Tutorial Complete!", true);
+        Debug.Log("Tutorial complete, continuing to main game");
+
+        yield return new WaitForSeconds(3f);
+        // Tutorial complete, swap scenes (use fade to black?)
+    }
 
     // Wait for WASD and Space to be pressed
     private IEnumerator MovementStage()
@@ -120,17 +126,17 @@ public class TutorialScript : MonoBehaviour
         yield return StartCoroutine(SetCheck());
     }
 
-    //Wait for sythe to be used
-    private IEnumerator SytheStage()
+    //Wait for scythe to be used
+    private IEnumerator ScytheStage()
     {
-        ui.UpdateUI("Right click to use Sythe", false);
+        ui.UpdateUI("Right click to use Scythe", false);
 
-        bool sytheUsed = false;
-        while (!sytheUsed)
+        bool scytheUsed = false;
+        while (!scytheUsed)
         {
-            if (sythe.WasPressedThisFrame())
+            if (scythe.WasPressedThisFrame())
             {
-                sytheUsed = true;
+                scytheUsed = true;
             }
             yield return null;
         }
@@ -140,7 +146,7 @@ public class TutorialScript : MonoBehaviour
     // Spawn enemies and wait for them to be defeated
     private IEnumerator NightFightStage()
     {
-        ui.UpdateUI("Defeat Enemies with the Sythe!", false);
+        ui.UpdateUI("Defeat Enemies with the Scythe!", false);
 
         bool enemiesDefeated = false;
         for (int i = 0; i < EnemyCount; i++)
@@ -191,7 +197,7 @@ public class TutorialScript : MonoBehaviour
         player.GetComponent<InteractScript>().canPlant = true;
         while (!cropsPlanted)
         {
-            if (inv.SearchForItem(seed) == false)
+            if (inv.SearchForItem(seed) == 0)
             {
                 cropsPlanted = true;
             }
@@ -218,24 +224,74 @@ public class TutorialScript : MonoBehaviour
         yield return StartCoroutine(SetCheck());
     }
 
+    // Progress when all crops are watered
     private IEnumerator WaterCropsStage()
     {
-        yield return null;
+        ui.UpdateUI("Water your planted crops", false);
+
+        bool cropsWatered = false;
+        while (!cropsWatered)
+        {
+            if (soilManager.PlantsWatered() == 3)
+            {
+                cropsWatered = true;
+            }
+            yield return null;
+        }
+        yield return StartCoroutine(SetCheck());
     }
 
+    // Progress when all crops are killed/harvested
     private IEnumerator HarvestCropsStage()
     {
-        yield return null;
+        ui.UpdateUI("Harvest your grown crops with your scythe", false);
+
+        bool cropsHarvested = false;
+        while (!cropsHarvested)
+        {
+            if (soilManager.TotalPlants() == 0)
+            {
+                cropsHarvested = true;
+            }
+            yield return null;
+        }
+        yield return StartCoroutine(SetCheck());
     }
 
+    // Progress when food is eaten from inventory (would like to rewrite later)
     private IEnumerator EatFoodStage()
     {
-        yield return null;
+        ui.UpdateUI("Eat food to regain health", false);
+
+        bool foodEaten = false;
+        while (!foodEaten)
+        {
+            if (inv.SearchForItem(food) == 2)
+            {
+                player.GetComponent<PlayerHealth>().SetMaxHealth();
+                foodEaten = true;
+            }
+            yield return null;
+        }
+        yield return StartCoroutine(SetCheck());
     }
 
+    // Progress when all produce is sold
     private IEnumerator SellItemsStage()
     {
-        yield return null;
+        ui.UpdateUI("Go to the shop and press E to sell your harvested crops", false);
+
+        bool itemsSold = false;
+        shop.interactable = true;
+        while (!itemsSold)
+        {
+            if (inv.SearchForItem(food) == 0)
+            {
+                itemsSold = true;
+            }
+            yield return null;
+        }
+        yield return StartCoroutine(SetCheck());
     }
 
     private void CanCollectItems(bool flag)
@@ -250,6 +306,6 @@ public class TutorialScript : MonoBehaviour
     private IEnumerator SetCheck()
     {
         ui.Checkmark(true);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
     }
 }

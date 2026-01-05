@@ -6054,6 +6054,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 609909472}
+  - component: {fileID: 609909473}
   m_Layer: 0
   m_Name: Soils
   m_TagString: Untagged
@@ -6078,6 +6079,18 @@ Transform:
   - {fileID: 944397178}
   m_Father: {fileID: 2070921058}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &609909473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609909471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ad16c0e37d20e4f9545f074d794eac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &633682770
 GameObject:
   m_ObjectHideFlags: 0
@@ -8918,6 +8931,9 @@ MonoBehaviour:
   GroundItemCollection: {fileID: 1382911109}
   inv: {fileID: 1892174187}
   seed: {fileID: 11400000, guid: e0d426fa455f2aa4ebb0cf0b7a5ec73b, type: 2}
+  soilManager: {fileID: 609909473}
+  food: {fileID: 11400000, guid: 71f4e37754459d14f9098d2de759b3bb, type: 2}
+  shop: {fileID: 1014007743}
   ui: {fileID: 866857475}
 --- !u!4 &964837476
 Transform:
@@ -9324,6 +9340,7 @@ MonoBehaviour:
   shopUI: {fileID: 1158130222}
   itemDropOff: {fileID: 2006895195}
   player: {fileID: 1291469836}
+  enabled: 1
 --- !u!61 &1014007744
 BoxCollider2D:
   m_ObjectHideFlags: 0

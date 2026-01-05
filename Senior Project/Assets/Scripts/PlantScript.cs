@@ -138,11 +138,14 @@ public class PlantScript : MonoBehaviour
 
     public void TakeWaterDamage(float damageAmount)
     {
-        currentHealth -= damageAmount;
-        if (healthBar) healthBar.UpdateHealth(currentHealth, plantHealth);
-        if (currentHealth <= 0)
+        if (plantInfo.canDry)
         {
-            Destroy(gameObject);
+            currentHealth -= damageAmount;
+            if (healthBar) healthBar.UpdateHealth(currentHealth, plantHealth);
+            if (currentHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

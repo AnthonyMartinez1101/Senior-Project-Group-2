@@ -34,7 +34,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Sythe",
+                    "name": "Scythe",
                     "type": "Button",
                     "id": "c3704c21-df25-4a3e-b79a-9bfd40d9ed1d",
                     "expectedControlType": "",
@@ -597,7 +597,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Sythe",
+                    "action": "Scythe",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

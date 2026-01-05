@@ -10,7 +10,7 @@ public class Attack : MonoBehaviour
     public float meleeCooldown = 0.25f;
     private float meleeTimer = 0.25f;
 
-    InputAction sytheAction;
+    InputAction scytheAction;
 
     public Transform aim;
     public GameObject shootFlash;
@@ -33,7 +33,7 @@ public class Attack : MonoBehaviour
 
     void Start()
     {
-        sytheAction = InputSystem.actions.FindAction("Sythe");
+        scytheAction = InputSystem.actions.FindAction("Scythe");
 
         slashMove = Melee.GetComponent<SlashMove>();
     }
@@ -43,7 +43,7 @@ public class Attack : MonoBehaviour
     {
         meleeTimer -= Time.deltaTime;
         shootTimer += Time.deltaTime;
-        if (sytheAction.WasPressedThisFrame())
+        if (scytheAction.WasPressedThisFrame())
         {
             OnMelee();
         }
