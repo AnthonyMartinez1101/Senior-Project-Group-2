@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using WorldTime;
 
@@ -10,6 +11,7 @@ public class Enemy : MonoBehaviour
     private FloatingHealth healthBar;
     [SerializeField] private float dealDamage;
     [SerializeField] private float knockbackForce;
+    [SerializeField] private int dropChance = 1;
 
     private WorldClock worldClock;
 
@@ -19,6 +21,7 @@ public class Enemy : MonoBehaviour
     private Knockback playerKnockback;
 
     [SerializeField] Item randomItemDrop;
+    [SerializeField] bool dropExpires = true;
 
     private DamageFlash damageFlash;
 
@@ -60,7 +63,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             int randNum = Random.Range(0, 100);
-            if(randNum == 1 && randomItemDrop != null) ItemDropFactory.Instance.SpawnItem(randomItemDrop, transform.position);
+            if(randNum <= dropChance && randomItemDrop != null) ItemDropFactory.Instance.SpawnItem(randomItemDrop, transform.position, dropExpires);
             Destroy(gameObject);
         }
     }

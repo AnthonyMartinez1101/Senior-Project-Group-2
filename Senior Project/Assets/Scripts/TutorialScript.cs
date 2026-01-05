@@ -12,16 +12,24 @@ public class TutorialScript : MonoBehaviour
     public Transform EnemyCollection;
     public WorldClock worldClock;
 
+    public Transform GroundItemCollection;
+
+    public Inventory inv;
+    public Item seed;
+
     private void Start()
     {
         WASD = InputSystem.actions.FindAction("Move");
         Space = InputSystem.actions.FindAction("Dash");
+
+        // Lock mechanics here
 
         StartCoroutine(TutorialSequence());
     }
 
     private IEnumerator TutorialSequence()
     {
+        Debug.Log("Starting tutorial");
         yield return StartCoroutine(MovementStage());
         Debug.Log("Movement complete");
         yield return StartCoroutine(NightFightStage());
@@ -45,11 +53,13 @@ public class TutorialScript : MonoBehaviour
     }
 
     // Side note: Need to lock some mechanics such as shop (unlock when ready), and premature plant slicing
+    // Prevent player from skipping ahead (lock planting, water filling, harvesting, eating, selling until tutorial reaches that stage)
 
     // Wait for WASD and Space to be pressed
     private IEnumerator MovementStage()
     {
         bool w = false, a = false, s = false, d = false, space = false;
+        // Problem where each input needs to be pressed seperately (sorta)
         while (!(w && a && s && d && space))
         {
             if (WASD.WasPressedThisFrame())
@@ -74,7 +84,7 @@ public class TutorialScript : MonoBehaviour
         bool enemiesDefeated = false;
         for (int i = 0; i < EnemyCount; i++)
         {
-            spawner.Spawn();
+            spawner.Spawn(spawner.enemyPrefab[1]);
         }
         while (!enemiesDefeated)
         {
@@ -87,19 +97,44 @@ public class TutorialScript : MonoBehaviour
         }
     }
 
+    // Wait for item pickup from zombies and water bucket at well
     private IEnumerator PickupItemsStage()
     {
-        yield return null;
+        bool itemsPickedUp = false;
+        // Enable item pickup or spawn water bucket or something else
+        while (!itemsPickedUp)
+        {
+            if (GroundItemCollection.childCount == 0)
+            {
+                itemsPickedUp = true;
+            }
+            yield return null;
+        }
     }
 
+    // Progress when seeds leave inventory
     private IEnumerator PlantCropsStage()
     {
-        yield return null;
+        bool cropsPlanted = false;
+        while (!cropsPlanted)
+        {
+            if (inv.SearchForItem(seed) == false)
+            {
+                cropsPlanted = true;
+            }
+            yield return null;
+        }
     }
 
+    // Progress when water bucket is filled or when well is interacted with
     private IEnumerator FillBucketStage()
     {
-        yield return null;
+        bool wellInteraction = false;
+        while (!wellInteraction)
+        {
+
+            yield return null;
+        }
     }
 
     private IEnumerator WaterCropsStage()

@@ -208,4 +208,17 @@ public class Inventory : MonoBehaviour
             RefreshUI();
         }
     }
+
+    // Return true if item is found in inventory
+    public bool SearchForItem(Item itemToFind)
+    {
+        for (int i = 0; i < slotCount; i++)
+        {
+            if (!slots[i].IsEmpty() && slots[i].item == itemToFind)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

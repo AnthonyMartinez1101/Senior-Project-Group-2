@@ -132,7 +132,7 @@ public class ShopScript : MonoBehaviour
         }
 
         //Check if player has enough coins and spawn item if they do
-        if (CheckPrice(price)) ItemDropFactory.Instance.SpawnItem(item, itemDropOff.position);
+        if (CheckPrice(price)) ItemDropFactory.Instance.SpawnItem(item, itemDropOff.position, expires: true);
     }
 
 

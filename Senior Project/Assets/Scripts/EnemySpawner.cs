@@ -39,7 +39,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 for (int i = wave * 2; i > 0; i--)
                 {
-                    Spawn();
+                    Spawn(enemyPrefab[0]);
                 }
                 wave++;
                 timer = 10f + wave;
@@ -47,13 +47,13 @@ public class EnemySpawner : MonoBehaviour
 
             if (spawnRate <= 0)
             {
-                Spawn();
+                Spawn(enemyPrefab[0]);
                 spawnRate = 1f;
             }
         }
     }
 
-    public void Spawn()
+    public void Spawn(GameObject enemyObject)
     {
         int randNum = Random.Range(0, 10);
         Transform currentSpawn = spawnPoints[randNum];
@@ -61,7 +61,7 @@ public class EnemySpawner : MonoBehaviour
         randNum = Random.Range(0, enemyPrefab.Count);
 
         //var enemy = Instantiate(enemyPrefab[randNum]).GetComponent<EnemyFollow>();
-        var enemy = Instantiate(enemyPrefab[randNum], currentSpawn.position, currentSpawn.rotation, EnemyCollection).GetComponent<EnemyFollow>();
+        var enemy = Instantiate(enemyObject, currentSpawn.position, currentSpawn.rotation, EnemyCollection).GetComponent<EnemyFollow>();
         enemy.SetTarget(player);
 
         Enemy e = enemy.GetComponent<Enemy>();

@@ -6,6 +6,8 @@ public class ItemDropFactory : MonoBehaviour
     public static ItemDropFactory Instance;
     public GameObject itemDropPrefab;
 
+    public Transform GroundItemCollection;
+
     [SerializeField] private Item[] randomDropItems;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,10 +24,15 @@ public class ItemDropFactory : MonoBehaviour
         }
     }
 
-    public void SpawnItem(Item item, Vector3 pos)
+    public void SpawnItem(Item item, Vector3 pos, bool expires)
     {
-        GameObject itemDrop = Instantiate(itemDropPrefab, pos, Quaternion.identity);
+        GameObject itemDrop = Instantiate(itemDropPrefab, pos, Quaternion.identity, GroundItemCollection);
         itemDrop.GetComponent<ItemDropScript>().CreateItemDrop(item);
+        
+        if (!expires)
+        {
+            itemDrop.GetComponent<ItemDropScript>().canDespawn = false;
+        }
 
         Rigidbody2D rb = itemDrop.GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * Random.Range(1f, 4f), ForceMode2D.Impulse);
@@ -33,7 +40,7 @@ public class ItemDropFactory : MonoBehaviour
 
     public void PlayerDropItem(Item item, Vector3 pos)
     {
-        GameObject itemDrop = Instantiate(itemDropPrefab, pos, Quaternion.identity);
+        GameObject itemDrop = Instantiate(itemDropPrefab, pos, Quaternion.identity, GroundItemCollection);
         itemDrop.GetComponent<CircleCollider2D>().enabled = false; // Disable collider to prevent immediate re-pickup
         itemDrop.GetComponent<ItemDropScript>().CreateItemDrop(item);
         Rigidbody2D rb = itemDrop.GetComponent<Rigidbody2D>();
@@ -50,7 +57,7 @@ public class ItemDropFactory : MonoBehaviour
     public void SpawnRandomItem(Item item, Vector3 pos)
     {
         int randIndex = Random.Range(0, randomDropItems.Length);
-        GameObject itemDrop = Instantiate(itemDropPrefab, pos, Quaternion.identity);
+        GameObject itemDrop = Instantiate(itemDropPrefab, pos, Quaternion.identity, GroundItemCollection);
         itemDrop.GetComponent<ItemDropScript>().CreateItemDrop(randomDropItems[randIndex]);
 
         Rigidbody2D rb = itemDrop.GetComponent<Rigidbody2D>();
