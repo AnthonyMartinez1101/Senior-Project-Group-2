@@ -19,9 +19,10 @@ public class ChickenWander : MonoBehaviour
     public float minWaitTime = 1f;
     public float maxWaitTime = 5f;
 
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer chickenSprite;
+    public SpriteRenderer shadowSprite;
 
-    
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,7 +32,6 @@ public class ChickenWander : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
 
         if(hidePosition == null) hidePosition = GameManager.Instance.GetChickenHidePosition();
         if(worldClock == null) worldClock = GameManager.Instance.GetWorldClock();
@@ -53,9 +53,11 @@ public class ChickenWander : MonoBehaviour
 
                 yield return new WaitUntil(() => !agent.pathPending && (!hidePosition || agent.remainingDistance <= 2.5f || agent.pathStatus != NavMeshPathStatus.PathComplete));
 
-                spriteRenderer.enabled = false;
+                chickenSprite.enabled = false;
+                shadowSprite.enabled = false;
                 yield return new WaitUntil(() => worldClock.IsDay());
-                spriteRenderer.enabled = true;
+                chickenSprite.enabled = true;
+                shadowSprite.enabled = true;
 
                 yield return null;
                 continue;
