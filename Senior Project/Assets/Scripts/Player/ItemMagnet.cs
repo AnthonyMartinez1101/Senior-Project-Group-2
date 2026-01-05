@@ -12,13 +12,4 @@ public class ItemMagnet : MonoBehaviour
             pullItem.SetTarget(transform.parent, magnetPullSpeed, accelerationRate);
         }
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.TryGetComponent<ItemDropScript>(out ItemDropScript pullItem))
-        {
-            pullItem.ClearTarget();
-        }
-
-    }
 }

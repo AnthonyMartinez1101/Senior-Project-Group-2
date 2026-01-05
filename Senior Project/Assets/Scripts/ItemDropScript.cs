@@ -114,15 +114,13 @@ public class ItemDropScript : MonoBehaviour
     }
 
     public void SetTarget(Transform target, float speed, float acc)
-    { 
-        targetPos = target;
-        pullSpeed = speed;
-        accelerationRate = acc;
-        hasTarget = true;
-    }
-
-    public void ClearTarget()
-    {
-        hasTarget = false;
+    {   
+        if(!hasTarget)
+        {
+            targetPos = target;
+            pullSpeed = speed;
+            accelerationRate = acc;
+            hasTarget = true;
+        }
     }
 }
