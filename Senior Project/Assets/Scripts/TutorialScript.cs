@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class TutorialScript : MonoBehaviour
 {
@@ -41,7 +42,7 @@ public class TutorialScript : MonoBehaviour
         player.GetComponent<InteractScript>().canWater = false;
         player.GetComponent<InteractScript>().canEat = false;
         player.GetComponent<PlayerHealth>().isInvincible = true;
-        player.GetComponent<PlayerHealth>().SetHealth(15f);
+        //player.GetComponent<PlayerHealth>().SetHealth(15f);
         CanCollectItems(false);
         shop.interactable = false;
 
@@ -94,6 +95,7 @@ public class TutorialScript : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
         // Tutorial complete, swap scenes (use fade to black?)
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     // Wait for WASD and Space to be pressed

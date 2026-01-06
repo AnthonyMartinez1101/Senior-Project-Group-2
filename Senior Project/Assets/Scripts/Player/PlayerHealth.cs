@@ -4,6 +4,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 20f;
     public float currentHealth;
+    public float startHealth = 20f;
 
     private FloatingHealth healthBar;
 
@@ -17,9 +18,11 @@ public class PlayerHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth = startHealth;
         if (!healthBar) healthBar = GetComponentInChildren<FloatingHealth>();
-        if (healthBar) healthBar.SetMax();
+
+        if (healthBar && currentHealth == maxHealth) healthBar.SetMax();
+        else healthBar.UpdateHealth(currentHealth, maxHealth);
 
         damageFlash = GetComponent<DamageFlash>();
 

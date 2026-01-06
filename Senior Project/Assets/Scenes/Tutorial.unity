@@ -11777,8 +11777,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1014007743}
     - target: {fileID: 5092246524528975356, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: startHealth
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092246524528975356, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: isInvincible
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092246524528975356, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: currentHealth
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCount
