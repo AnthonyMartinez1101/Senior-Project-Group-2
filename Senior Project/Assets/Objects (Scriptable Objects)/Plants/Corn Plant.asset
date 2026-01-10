@@ -15,12 +15,13 @@ MonoBehaviour:
   plantName: Corn Plant
   growthTime: 20
   growStages:
-  - {fileID: 21300000, guid: 806f9f7fb8b31ba488eba2eb04646e65, type: 3}
-  - {fileID: 105457102859230896, guid: 3c34a60c2828be6478b156faba69436d, type: 3}
-  - {fileID: 21300000, guid: 8f9b57cdbcf2c5245ba13d911b6e49ab, type: 3}
-  - {fileID: 21300000, guid: 3021dc87b0f516843a4cde08f8a28fbc, type: 3}
+  - {fileID: -5672623778664467425, guid: 726c4575dc9899e438dbac031542f863, type: 3}
+  - {fileID: -2035428738516297807, guid: 726c4575dc9899e438dbac031542f863, type: 3}
+  - {fileID: -3665902485383732164, guid: 726c4575dc9899e438dbac031542f863, type: 3}
+  - {fileID: 2899441650435199170, guid: 726c4575dc9899e438dbac031542f863, type: 3}
   produce: {fileID: 11400000, guid: a65eda591d7ee5545a93551ce17a8fa2, type: 2}
   seed: {fileID: 11400000, guid: 7d42225e9a8f651459e31a0ae1a4bf12, type: 2}
   minDrop: 1
   maxDrop: 3
   seedChance: 25
+  canDry: 1

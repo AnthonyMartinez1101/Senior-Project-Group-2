@@ -15,12 +15,13 @@ MonoBehaviour:
   plantName: Pistol Plant
   growthTime: 50
   growStages:
-  - {fileID: -1334657401724317879, guid: 3bf32ca6b12b71a468064c1a067f26b1, type: 3}
-  - {fileID: -7380364414410610922, guid: 3bf32ca6b12b71a468064c1a067f26b1, type: 3}
-  - {fileID: -4590102593255295897, guid: 3bf32ca6b12b71a468064c1a067f26b1, type: 3}
-  - {fileID: -4908314937253206422, guid: 3bf32ca6b12b71a468064c1a067f26b1, type: 3}
+  - {fileID: 1352955200029874055, guid: 726c4575dc9899e438dbac031542f863, type: 3}
+  - {fileID: -4881008103234269068, guid: 726c4575dc9899e438dbac031542f863, type: 3}
+  - {fileID: -1268064389544249124, guid: 726c4575dc9899e438dbac031542f863, type: 3}
+  - {fileID: -7391759607893831176, guid: 726c4575dc9899e438dbac031542f863, type: 3}
   produce: {fileID: 11400000, guid: 9c04c90b16f74c742801a46bfd208c61, type: 2}
   seed: {fileID: 11400000, guid: cfd2902bfeee56e47ac1e10f79490292, type: 2}
   minDrop: 1
   maxDrop: 1
   seedChance: 0
+  canDry: 1

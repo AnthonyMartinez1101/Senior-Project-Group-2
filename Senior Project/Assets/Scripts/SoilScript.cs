@@ -15,14 +15,19 @@ public class SoilScript : MonoBehaviour
 
     public WorldClock worldClock;
 
+    private SpriteRenderer sr;
+    public Color dryColor;
+    public Color wetColor;
+
     //private InteractScript interactScript;
 
     private void Start()
     {
-        highlighted = transform.GetChild(0).gameObject;
+        sr = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        highlighted = transform.GetChild(1).gameObject;
         highlighted.SetActive(false);
 
-        waterDroplet = transform.GetChild(1).gameObject;
+        waterDroplet = transform.GetChild(2).gameObject;
         if (waterDroplet != null)
         {
             waterDroplet.SetActive(false);
@@ -93,20 +98,15 @@ public class SoilScript : MonoBehaviour
 
     private void DarkenSoil()
     {
-        Color color = GetComponent<SpriteRenderer>().color;
-        color.r = 0.5f;
-        color.g = 0.25f;
-        color.b = 0.1f;
-        GetComponent<SpriteRenderer>().color = color;
+        
+        sr.color = wetColor;
     }
 
     private void LightenSoil()
     {
         float t = Mathf.Clamp01(waterLevel / 10f); // Normalize water level to [0,1]
-        Color dryColor = new Color(1f, 1f, 1f); // Light dry soil color
-        Color wetColor = new Color(0.4f, 0.2f, 0.1f); // Dark wet soil color
         Color blendedColor = Color.Lerp(dryColor, wetColor, t);
-        GetComponent<SpriteRenderer>().color = blendedColor;
+        sr.color = blendedColor;
     }
 
     private void BlinkDroplet()
