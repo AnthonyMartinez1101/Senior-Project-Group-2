@@ -181,11 +181,13 @@ public class ShopScript : MonoBehaviour
             int sellPrice = currentItem.sellPrice;
             if (sellPrice > 0)
             {
+                int totalPrice = 0;
                 while(inventory.GetCurrentItemCount() > 0)
                 {
-                    playerWallet.AddCoins(sellPrice);
+                    totalPrice += sellPrice;
                     inventory.SubtractItem();
                 }
+                playerWallet.AddCoins(totalPrice);
             }
             else
             {
