@@ -1,0 +1,345 @@
+fileFormatVersion: 2
+guid: 7239c7e0a205f5b42a755b96afbd0ad2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1791783992758969951
+    second: grenade_0
+  - first:
+      213: 6684807367922081582
+    second: grenade_1
+  - first:
+      213: 6141437812032878971
+    second: grenade_2
+  - first:
+      213: -3783317816302460112
+    second: grenade_3
+  - first:
+      213: -3596555748983286330
+    second: grenade_4
+  - first:
+      213: -5646118831210363065
+    second: grenade_5
+  - first:
+      213: 6535940145868981278
+    second: grenade_6
+  - first:
+      213: 8140962829656943081
+    second: grenade_7
+  - first:
+      213: 1318251972627934957
+    second: grenade_8
+  - first:
+      213: 5678289051989611698
+    second: grenade_9
+  - first:
+      213: 2216757796158815257
+    second: grenade_10
+  - first:
+      213: 8611980258868681747
+    second: grenade_11
+  - first:
+      213: 4247282853063362305
+    second: grenade_12
+  - first:
+      213: -5051582724238120380
+    second: grenade_13
+  - first:
+      213: 7413803047978326821
+    second: grenade_14
+  - first:
+      213: 7347976538716701718
+    second: grenade_15
+  - first:
+      213: -2067401303445862734
+    second: grenade_16
+  - first:
+      213: 1930280655798059152
+    second: grenade_17
+  - first:
+      213: -7333785908550424313
+    second: grenade_18
+  - first:
+      213: 2549196099824953285
+    second: grenade_19
+  - first:
+      213: 4821685141550273092
+    second: grenade_20
+  - first:
+      213: 8116118465569301742
+    second: grenade_21
+  - first:
+      213: 7321212653348668947
+    second: grenade_22
+  - first:
+      213: -3525564625214212623
+    second: grenade_23
+  - first:
+      213: 2387647236824416933
+    second: grenade_24
+  - first:
+      213: 5254695530434960659
+    second: grenade_25
+  - first:
+      213: -5106301627433180398
+    second: grenade_26
+  - first:
+      213: 5452043223323857915
+    second: grenade_27
+  - first:
+      213: 6139846609793570243
+    second: grenade_28
+  - first:
+      213: 5663813235759633667
+    second: grenade_29
+  - first:
+      213: -7491351936235326117
+    second: grenade_30
+  - first:
+      213: 186695269906882826
+    second: grenade_31
+  - first:
+      213: 2841557595613958918
+    second: grenade_32
+  - first:
+      213: -197712101260062915
+    second: grenade_33
+  - first:
+      213: 1848798913574395984
+    second: grenade_34
+  - first:
+      213: 5534336652838218886
+    second: grenade_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: grenade_0
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 971
+        width: 775
+        height: 576
+      alignment: 9
+      pivot: {x: 0.4999999, y: 0.21574825}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a9de5da3fd4227e0800000000000000
+      internalID: -1791783992758969951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenade_1
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 915
+        width: 730
+        height: 632
+      alignment: 9
+      pivot: {x: 0.4824774, y: 0.26522228}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2fd8ec22e435cc50800000000000000
+      internalID: 6684807367922081582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenade_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 122
+        width: 865
+        height: 662
+      alignment: 9
+      pivot: {x: 0.50295746, y: 0.21789528}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b793f5cb625ca3550800000000000000
+      internalID: 6141437812032878971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenade_3
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 183
+        width: 420
+        height: 468
+      alignment: 9
+      pivot: {x: 0.5060907, y: 0.06815589}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 033a2eead74fe7bc0800000000000000
+      internalID: -3783317816302460112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 106ea1390ce4418469bf77dbd74041e1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":1180.0,"y":820.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      grenade_0: -1791783992758969951
+      grenade_1: 6684807367922081582
+      grenade_2: 6141437812032878971
+      grenade_3: -3783317816302460112
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

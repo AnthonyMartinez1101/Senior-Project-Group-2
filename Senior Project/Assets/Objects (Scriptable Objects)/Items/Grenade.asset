@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Grenade
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Grenade
-  icon: {fileID: -3528658577719538422, guid: 29d1b4547d29d334d8bad4a503324948, type: 3}
+  icon: {fileID: 4376013995335929949, guid: 56cff47a5504cf74f8555a6720d4cc6d, type: 3}
   itemType: 1
   isConsumable: 1
-  stackable: 1
+  isStackable: 1
   sellPrice: 10
   buyPrice: 20
   extraItemData: {fileID: 11400000, guid: 7a34aac0b891a21498b810bafb95d9b7, type: 2}

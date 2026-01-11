@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b54dd41692fa3c44bff67f17453c1a1, type: 3}
   m_Name: StarterBucketData
   m_EditorClassIdentifier: Assembly-CSharp::BucketData
-  fullSprite: {fileID: 8846147940971733678, guid: 52345a572ee9c90468cba7a29a79a913, type: 3}
-  emptySprite: {fileID: -2142570980755721494, guid: 52345a572ee9c90468cba7a29a79a913, type: 3}
+  fullSprite: {fileID: 4294288463120208907, guid: 56cff47a5504cf74f8555a6720d4cc6d, type: 3}
+  emptySprite: {fileID: 5840888126284220876, guid: 56cff47a5504cf74f8555a6720d4cc6d, type: 3}
   maxWater: 5

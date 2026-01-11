@@ -224,7 +224,7 @@ MonoBehaviour:
   dayBurnRate: 1
   dayBurnDamage: 0.5
   dealDamage: 0
-  knockbackForce: 20
+  knockbackForce: 15
   dropChance: 100
   randomItemDrop: {fileID: 11400000, guid: e0d426fa455f2aa4ebb0cf0b7a5ec73b, type: 2}
   dropExpires: 0

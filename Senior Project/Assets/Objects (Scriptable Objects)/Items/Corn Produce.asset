@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Corn Produce
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Corn
-  icon: {fileID: 6146782616825927046, guid: 966a340b24d41d946a589257f8142b4f, type: 3}
+  icon: {fileID: 3669190514868954580, guid: 56cff47a5504cf74f8555a6720d4cc6d, type: 3}
   itemType: 2
   isConsumable: 1
-  stackable: 1
+  isStackable: 1
   sellPrice: 5
   buyPrice: 0
   extraItemData: {fileID: 11400000, guid: 1ed970f5b28361645aa86d0868666dbe, type: 2}

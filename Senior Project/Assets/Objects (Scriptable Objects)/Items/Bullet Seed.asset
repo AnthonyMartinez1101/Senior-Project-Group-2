@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bullet Seed
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Bullet Seed
-  icon: {fileID: -1375541957888328854, guid: f341ec7ab72d8f840813c50e925f1de5, type: 3}
+  icon: {fileID: 3207030732477604542, guid: 56cff47a5504cf74f8555a6720d4cc6d, type: 3}
   itemType: 0
   isConsumable: 1
   isStackable: 1

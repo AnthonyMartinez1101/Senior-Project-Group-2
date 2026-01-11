@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial Seed
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Corn Seed
-  icon: {fileID: 3766885766661273901, guid: 966a340b24d41d946a589257f8142b4f, type: 3}
+  icon: {fileID: -8470754940202033951, guid: 56cff47a5504cf74f8555a6720d4cc6d, type: 3}
   itemType: 0
   isConsumable: 1
   isStackable: 1

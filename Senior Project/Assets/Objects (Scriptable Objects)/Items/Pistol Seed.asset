@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Pistol Seed
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Pistol Seed
-  icon: {fileID: 5458068338698902111, guid: 3bf32ca6b12b71a468064c1a067f26b1, type: 3}
+  icon: {fileID: 8944654717408009077, guid: 56cff47a5504cf74f8555a6720d4cc6d, type: 3}
   itemType: 0
   isConsumable: 1
-  stackable: 1
+  isStackable: 1
   sellPrice: 10
   buyPrice: 10
   extraItemData: {fileID: 11400000, guid: 32efc523c5e8b6940a67c5170f806582, type: 2}

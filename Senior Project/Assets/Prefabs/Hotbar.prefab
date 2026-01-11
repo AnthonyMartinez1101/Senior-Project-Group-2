@@ -3976,6 +3976,14 @@ PrefabInstance:
       value: Slot_1
       objectReference: {fileID: 0}
     - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
       value: 24.7
       objectReference: {fileID: 0}
@@ -4160,6 +4168,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot_4
       objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4507282075296112456, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_SizeDelta.x
       value: 52.39
@@ -4336,6 +4352,14 @@ PrefabInstance:
     - target: {fileID: 335362929130215706, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_Name
       value: Slot_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4507282075296112456, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4514,6 +4538,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot_10
       objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4507282075296112456, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_SizeDelta.x
       value: 52.39
@@ -4690,6 +4722,14 @@ PrefabInstance:
     - target: {fileID: 335362929130215706, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_Name
       value: Slot_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4507282075296112456, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4868,6 +4908,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot_6
       objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4507282075296112456, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_SizeDelta.x
       value: 52.39
@@ -5044,6 +5092,14 @@ PrefabInstance:
     - target: {fileID: 335362929130215706, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_Name
       value: Slot_9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4507282075296112456, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_SizeDelta.x
@@ -5222,6 +5278,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot_8
       objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4507282075296112456, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_SizeDelta.x
       value: 52.39
@@ -5399,6 +5463,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot_2
       objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4507282075296112456, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_SizeDelta.x
       value: 52.39
@@ -5575,6 +5647,14 @@ PrefabInstance:
     - target: {fileID: 335362929130215706, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_Name
       value: Slot_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028437687387326923, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4507282075296112456, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_SizeDelta.x
