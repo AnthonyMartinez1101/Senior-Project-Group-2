@@ -88,7 +88,7 @@ public class WorldClock : MonoBehaviour
 
                 if (currentTime == 0f)
                 {
-                    StartCoroutine(TimeChange());
+                    yield return StartCoroutine(TimeChange());
                 }
             }
         }

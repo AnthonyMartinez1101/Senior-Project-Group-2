@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bullet
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Bullet
-  icon: {fileID: 5812959648649587963, guid: 56cff47a5504cf74f8555a6720d4cc6d, type: 3}
+  icon: {fileID: 2208703988740019828, guid: 6e29931650b215e4fba30db5daa6021c, type: 3}
   itemType: 4
   isConsumable: 1
   isStackable: 1

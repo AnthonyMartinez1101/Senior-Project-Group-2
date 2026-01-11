@@ -7,9 +7,13 @@ public class DropBomb : MonoBehaviour
     public float dropTime = 60f;
     private float actualTimer = 0f;
 
+    private WorldClock worldClock;
+
     void Start()
     {
         actualTimer = dropTime;
+
+        if(worldClock == null) worldClock = GameManager.Instance.GetWorldClock();
     }
 
 
@@ -18,7 +22,7 @@ public class DropBomb : MonoBehaviour
     {
         actualTimer -= Time.deltaTime;
 
-        if (actualTimer <= 0f)
+        if (actualTimer <= 0f && worldClock.IsDay())
         {
             ItemDropFactory.Instance.SpawnItem(grenadeItem, transform.position, expires: true);
             actualTimer = dropTime; // Reset to desired interval

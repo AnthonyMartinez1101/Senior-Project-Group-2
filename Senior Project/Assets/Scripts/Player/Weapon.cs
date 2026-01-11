@@ -13,6 +13,9 @@ public class Weapon : MonoBehaviour
 
     private Animator animator;
 
+    public int bulletHitCount = 5;
+    private int bulletTotalHit = 0;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -31,6 +34,7 @@ public class Weapon : MonoBehaviour
         if(enemy != null)
         {
             enemy.TakeDamage(damage);
+            bulletTotalHit++;
 
             if(collision.GetComponent<Knockback>()) collision.GetComponent<Knockback>().ApplyKnockback(transform, knockbackForce);
         }
@@ -39,9 +43,10 @@ public class Weapon : MonoBehaviour
         if (plantScript != null)
         {
             plantScript.TakeDamage(damage);
+            bulletTotalHit++;
         }
 
-        if (weaponType == WeaponType.Bullet)
+        if (weaponType == WeaponType.Bullet && (bulletTotalHit == 0 || bulletTotalHit == bulletHitCount))
         {
             Debug.Log("Bullet destroyed by: " + collision.name);
             Destroy(gameObject);
