@@ -1,9 +1,6 @@
-using NUnit.Framework;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEngine.Timeline.DirectorControlPlayable;
+using UnityEngine.Events;
 
 public class ShopScript : MonoBehaviour
 {
@@ -23,7 +20,11 @@ public class ShopScript : MonoBehaviour
     private PlayerWallet playerWallet;
     private Inventory inventory;
 
+    private ShopUI shopUI;
+
     public bool interactable = true;
+
+    public UnityEvent ShopUsedEvent;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,6 +47,10 @@ public class ShopScript : MonoBehaviour
         {
             Debug.LogError("ShopScript: PlayerWallet reference not set");
         }
+
+        shopUI = shopScreen.GetComponent<ShopUI>();
+
+        InitShopUI();
     }
 
     // Update is called once per frame
@@ -68,8 +73,14 @@ public class ShopScript : MonoBehaviour
         }
     }
 
+    void InitShopUI()
+    {
+        shopUI.Init(inventory, playerWallet);
+    }
+
     void DisplayShop()
     {
+        ShopUsedEvent.Invoke();
         shopScreen.SetActive(true);
         isShopInUse = true;
     }
@@ -86,13 +97,6 @@ public class ShopScript : MonoBehaviour
         {
             spriteRenderer.enabled = true;
             isPlayerNearby = true;
-
-            // Try to set nearbyShop on player's inventory so right-click can sell
-            InventorySystem inv = other.GetComponent<InventorySystem>();
-            if (inv != null)
-            {
-                inv.nearbyShop = this;
-            }
         }
     }
 
@@ -102,13 +106,6 @@ public class ShopScript : MonoBehaviour
         {
             spriteRenderer.enabled = false;
             isPlayerNearby = false;
-
-            // Clear nearbyShop reference on player
-            InventorySystem inv = other.GetComponent<InventorySystem>();
-            if (inv != null && inv.nearbyShop == this)
-            {
-                inv.nearbyShop = null;
-            }
         }
     }
 
@@ -138,6 +135,8 @@ public class ShopScript : MonoBehaviour
 
         //Check if player has enough coins and spawn item if they do
         if (CheckPrice(price)) ItemDropFactory.Instance.SpawnItem(item, itemDropOff.position, expires: true);
+
+        ShopUsedEvent.Invoke();
     }
 
 
@@ -176,6 +175,8 @@ public class ShopScript : MonoBehaviour
         {
             Debug.Log("No item selected.");
         }
+
+        ShopUsedEvent.Invoke();
     }
 
     public void SellAllItems()
@@ -203,43 +204,7 @@ public class ShopScript : MonoBehaviour
         {
             Debug.Log("No item selected.");
         }
-    }
 
-    // Sell item from player's inventory when shop is open
-    public bool SellItemFromInventory(InventorySystem inventory, int slotIndex)
-    {
-        if (!IsShopInUse())
-        {
-            Debug.Log("Shop is not open. Cannot sell items.");
-            return false;
-        }
-
-        if (inventory == null)
-        {
-            Debug.LogError("SellItemFromInventory: inventory reference is null");
-            return false;
-        }
-
-        Item itemToSell = inventory.GetItemAtSlot(slotIndex);
-        int itemCount = inventory.GetItemCountAtSlot(slotIndex);
-
-        if (itemToSell == null || itemCount <= 0)
-        {
-            Debug.Log("No item in selected slot to sell.");
-            return false;
-        }
-
-        if (itemToSell.sellPrice <= 0)
-        {
-            Debug.Log("Item cannot be sold or has no sell price: " + itemToSell.itemName);
-            return false;
-        }
-
-        // Add coins to player's wallet and remove one from inventory
-        playerWallet.AddCoins(itemToSell.sellPrice);
-        inventory.SubtractItemAtSlot(slotIndex, 1);
-
-        Debug.Log("Sold 1 x " + itemToSell.itemName + " for " + itemToSell.sellPrice + " coins.");
-        return true;
+        ShopUsedEvent.Invoke();
     }
 }

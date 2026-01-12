@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 
 public class Slot
@@ -40,6 +41,8 @@ public class Inventory : MonoBehaviour
     //UI controller for hotbar
     public HotbarUI hotbar;
 
+    public UnityEvent InventoryChangeEvent;
+
     private void Awake()
     {
         //Creates and assigns the list of slots
@@ -64,11 +67,20 @@ public class Inventory : MonoBehaviour
 
     private void ScrollAction()
     {
+        bool updated = false;
         //Checks scroll wheel input
         Vector2 scrollInput = scrollAction.ReadValue<Vector2>();
-        if (scrollInput.y > 0.01f) currentSlotIndex = (currentSlotIndex - 1 + slotCount) % slotCount;
-        else if (scrollInput.y < -0.01f) currentSlotIndex = (currentSlotIndex + 1) % slotCount;
-        RefreshUI();
+        if (scrollInput.y > 0.01f)
+        {
+            currentSlotIndex = (currentSlotIndex - 1 + slotCount) % slotCount;
+            updated = true;
+        }
+        else if (scrollInput.y < -0.01f)
+        {
+            currentSlotIndex = (currentSlotIndex + 1) % slotCount;
+            updated = true;
+        }
+        if(updated) RefreshUI();
     }
 
     private void NumberKeySelection()
@@ -214,6 +226,7 @@ public class Inventory : MonoBehaviour
     public void RefreshUI()
     {
         hotbar.UpdateUI(slots, currentSlotIndex);
+        InventoryChangeEvent.Invoke();
     }
 
     //Selects a new slot by index

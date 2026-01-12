@@ -10,8 +10,8 @@ public class EnemySpawner : MonoBehaviour
     public List<Transform> spawnPoints; //Only works with 10 items in here
     public Transform player;
 
-    private float timer = 10f;
-    private float spawnRate = 3f;
+    private float timer = 15f;
+    private float spawnRate = 2f;
     private int wave = 1;
 
     public WorldClock worldClock;
@@ -42,13 +42,13 @@ public class EnemySpawner : MonoBehaviour
                     Spawn(enemyPrefab[0]);
                 }
                 wave++;
-                timer = 10f + wave;
+                timer = 15f;
             }
 
             if (spawnRate <= 0)
             {
                 Spawn(enemyPrefab[0]);
-                spawnRate = 1f;
+                spawnRate = 2f;
             }
         }
     }
