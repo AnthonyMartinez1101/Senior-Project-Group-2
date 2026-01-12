@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
 
     private Dictionary<string, Item> itemLookup = new Dictionary<string, Item>();
 
+    public ShopScript shop;
+
     public GameObject pauseMenu;
     InputAction pauseAction;
 
@@ -90,7 +92,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     { 
-        if(pauseAction.WasPressedThisFrame())
+        if(pauseAction.WasPressedThisFrame() && !shop.IsShopInUse())
         {
             if (pauseMenu.activeSelf)
             {

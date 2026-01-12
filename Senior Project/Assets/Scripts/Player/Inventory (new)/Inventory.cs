@@ -36,11 +36,9 @@ public class Inventory : MonoBehaviour
 
     //Detect scrolling
     InputAction scrollAction;
-    InputAction numberKeys;
 
     //UI controller for hotbar
     public HotbarUI hotbar;
-
 
     private void Awake()
     {
@@ -54,23 +52,37 @@ public class Inventory : MonoBehaviour
         scrollAction = InputSystem.actions.FindAction("Scroll");
         if(scrollAction == null) Debug.LogWarning("Scroll action not found in Input System");
 
-        //Set number keys action
-        numberKeys = InputSystem.actions.FindAction("Number Keys");
-        if(numberKeys == null) Debug.LogWarning("NumberKeys action not found in Input System");
-
         RefreshUI();
     }
 
     void Update()
     {
-        if (scrollAction != null)
-        {
-            //Checks scroll wheel input
-            Vector2 scrollInput = scrollAction.ReadValue<Vector2>();
-            if (scrollInput.y > 0.01f) currentSlotIndex = (currentSlotIndex - 1 + slotCount) % slotCount;
-            else if (scrollInput.y < -0.01f) currentSlotIndex = (currentSlotIndex + 1) % slotCount;
-            RefreshUI();
-        }
+        if (scrollAction != null) ScrollAction();
+        if (Keyboard.current != null) NumberKeySelection();
+    }
+
+
+    private void ScrollAction()
+    {
+        //Checks scroll wheel input
+        Vector2 scrollInput = scrollAction.ReadValue<Vector2>();
+        if (scrollInput.y > 0.01f) currentSlotIndex = (currentSlotIndex - 1 + slotCount) % slotCount;
+        else if (scrollInput.y < -0.01f) currentSlotIndex = (currentSlotIndex + 1) % slotCount;
+        RefreshUI();
+    }
+
+    private void NumberKeySelection()
+    {
+        if (Keyboard.current.digit1Key.wasPressedThisFrame) SelectSlotIndex(0);
+        else if (Keyboard.current.digit2Key.wasPressedThisFrame) SelectSlotIndex(1);
+        else if (Keyboard.current.digit3Key.wasPressedThisFrame) SelectSlotIndex(2);
+        else if (Keyboard.current.digit4Key.wasPressedThisFrame) SelectSlotIndex(3);
+        else if (Keyboard.current.digit5Key.wasPressedThisFrame) SelectSlotIndex(4);
+        else if (Keyboard.current.digit6Key.wasPressedThisFrame) SelectSlotIndex(5);
+        else if (Keyboard.current.digit7Key.wasPressedThisFrame) SelectSlotIndex(6);
+        else if (Keyboard.current.digit8Key.wasPressedThisFrame) SelectSlotIndex(7);
+        else if (Keyboard.current.digit9Key.wasPressedThisFrame) SelectSlotIndex(8);
+        else if (Keyboard.current.digit0Key.wasPressedThisFrame) SelectSlotIndex(9);
     }
 
     public Item GetCurrentItem()

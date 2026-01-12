@@ -1,22 +1,21 @@
 using NUnit.Framework;
-using UnityEngine;
-using UnityEngine.InputSystem;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using static UnityEngine.Timeline.DirectorControlPlayable;
 
 public class ShopScript : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
 
-    [SerializeField] private Sprite shopSprite;
-    [SerializeField] private Sprite highlightedShopSprite;
-
     bool isPlayerNearby = false;
     bool isShopInUse = false;
 
     InputAction openShopAction;
+    InputAction closeShopAction;
 
-    [SerializeField] private GameObject shopUI; // Reference to the shop UI GameObject
+    [SerializeField] private GameObject shopScreen; // Reference to the shop UI GameObject
 
     public Transform itemDropOff;
 
@@ -30,11 +29,13 @@ public class ShopScript : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = shopSprite;
+        spriteRenderer.enabled = false; 
 
         openShopAction = InputSystem.actions.FindAction("OpenShop");
 
-        if(player == null)
+        closeShopAction = InputSystem.actions.FindAction("Pause");
+
+        if (player == null)
         {
             player = GameManager.Instance.player;
         }
@@ -61,17 +62,21 @@ public class ShopScript : MonoBehaviour
                 CloseShop();
             }
         }
+        if(isShopInUse && closeShopAction.WasPressedThisFrame()) //Escape key to close shop
+        {
+            CloseShop();
+        }
     }
 
     void DisplayShop()
     {
-        shopUI.SetActive(true);
+        shopScreen.SetActive(true);
         isShopInUse = true;
     }
 
     public void CloseShop()
     {
-        shopUI.SetActive(false);
+        shopScreen.SetActive(false);
         isShopInUse = false;
     }
 
@@ -79,7 +84,7 @@ public class ShopScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            spriteRenderer.sprite = highlightedShopSprite;
+            spriteRenderer.enabled = true;
             isPlayerNearby = true;
 
             // Try to set nearbyShop on player's inventory so right-click can sell
@@ -95,7 +100,7 @@ public class ShopScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            spriteRenderer.sprite = shopSprite;
+            spriteRenderer.enabled = false;
             isPlayerNearby = false;
 
             // Clear nearbyShop reference on player
