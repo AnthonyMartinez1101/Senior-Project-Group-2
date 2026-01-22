@@ -3,17 +3,18 @@ using UnityEngine;
 
 public class DamageFlash : MonoBehaviour
 {
-    [SerializeField] private Color flashColor = Color.red;
+    [SerializeField] private Color damageColor = Color.red;
+    [SerializeField] private Color healColor = Color.green;
     [SerializeField] private float flashTime = 0.2f;
 
     private SpriteRenderer spriteRenderer;
-    private Material material;
+    private Color originalColor;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        material = spriteRenderer.material;
+        originalColor = spriteRenderer.color;
     }
 
     public void FlashOnDamage()
@@ -23,22 +24,20 @@ public class DamageFlash : MonoBehaviour
 
     private IEnumerator DamageFlasher()
     {
-        //material.SetColor("_FlashColor", flashColor);
-        //yield return new WaitForSeconds(0.2f);
-        material.SetColor("_FlashColor", Color.red);
+        spriteRenderer.color = damageColor;
 
-        float currentFlashAmount = 0f;
         float elapsedTime = 0f;
-
         while(elapsedTime < flashTime)
         {
             elapsedTime += Time.deltaTime;
+            float percentage = elapsedTime / flashTime;
 
-            currentFlashAmount = Mathf.Lerp(1f, 0f, (elapsedTime / flashTime));
-            material.SetFloat("_FlashAmount", currentFlashAmount);
+            spriteRenderer.color = Color.Lerp(damageColor, originalColor, percentage);
 
             yield return null;
         }
+
+        spriteRenderer.color = originalColor;
     }
 
     public void FlashOnHeal()
@@ -48,21 +47,20 @@ public class DamageFlash : MonoBehaviour
 
     private IEnumerator HealFlasher()
     {
-        //material.SetColor("_FlashColor", flashColor);
-        //yield return new WaitForSeconds(0.2f);
-        material.SetColor("_FlashColor", Color.green);
+        spriteRenderer.color = healColor;
 
-        float currentFlashAmount = 0f;
         float elapsedTime = 0f;
-
         while (elapsedTime < flashTime)
         {
             elapsedTime += Time.deltaTime;
 
-            currentFlashAmount = Mathf.Lerp(1f, 0f, (elapsedTime / flashTime));
-            material.SetFloat("_FlashAmount", currentFlashAmount);
+            float percentage = elapsedTime / flashTime;
+
+            spriteRenderer.color = Color.Lerp(healColor, originalColor, percentage);
 
             yield return null;
         }
+
+        spriteRenderer.color = originalColor;
     }
 }
