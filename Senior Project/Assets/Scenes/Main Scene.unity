@@ -4143,7 +4143,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.51218325, y: 0.31915772}
-    oldSize: {x: 6.0266666, y: 6.0733333}
+    oldSize: {x: 6.0276084, y: 6.0733333}
     newSize: {x: 7.5333333, y: 7.5916667}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -9694,7 +9694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0db605fd1beebe4e8d424f6af49ff76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldClock
-  dayLength: 180
+  dayLength: 10
   nightLength: 120
   transitionLength: 5
   pauseTimer: 0
@@ -15710,6 +15710,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 657201656}
     m_Modifications:
+    - target: {fileID: 431447372046555940, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431447372046555940, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 431447372046555940, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 431447372046555940, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 431447372046555940, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1760016382332637093, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -15727,41 +15747,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1702183988}
     - target: {fileID: 5051370478408548760, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
-      propertyPath: InventoryChangeEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5051370478408548760, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
-      propertyPath: InventoryChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5051370478408548760, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: InventoryChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1158130226}
-    - target: {fileID: 5051370478408548760, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
-      propertyPath: InventoryChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5051370478408548760, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
-      propertyPath: InventoryChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpdateShopUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 5051370478408548760, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
-      propertyPath: InventoryChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ShopUI, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5051370478408548760, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
-      propertyPath: InventoryChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 5092246524528975356, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: shop
       value: 
       objectReference: {fileID: 1014007743}
-    - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
-      propertyPath: coinCount
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCountText
       value: 
@@ -17452,7 +17444,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.49499863, y: 0.23154387}
-    oldSize: {x: 14.32, y: 15.473333}
+    oldSize: {x: 14.322238, y: 15.473332}
     newSize: {x: 21.48, y: 23.21}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -24864,14 +24856,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1082222006}
     m_Modifications:
-    - target: {fileID: 1061423778832810906, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
-      propertyPath: dropTime
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 1565588702850660632, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 3381215710479223797, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.165619
@@ -24924,10 +24908,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chicken
       objectReference: {fileID: 0}
-    - target: {fileID: 7342131087237646858, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -7442052964665986110, guid: 9a4e847deeda892429586fc1ef25583f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
