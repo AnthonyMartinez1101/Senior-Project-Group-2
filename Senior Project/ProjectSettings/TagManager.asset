@@ -12,6 +12,7 @@ TagManager:
   - Bullet
   - Refill
   - Grenade
+  - Shadow
   layers:
   - Default
   - TransparentFX
@@ -24,9 +25,9 @@ TagManager:
   - EnemyWalkable
   - ChickenWalkable
   - NavObstacle
-  - 
-  - 
-  - 
+  - LightingSystem
+  - 2DWater
+  - ModernShadows
   - 
   - 
   - 
@@ -46,11 +47,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Floor
+    uniqueID: 919352881
+    locked: 0
+  - name: Shadows
+    uniqueID: 2149237913
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 2149237913
+  - name: Buildings
+    uniqueID: 2212422411
     locked: 0
   m_RenderingLayers:
   - Default
