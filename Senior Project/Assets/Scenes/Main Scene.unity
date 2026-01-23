@@ -219,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6281469}
   - component: {fileID: 6281470}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 'House : shadow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8196,7 +8196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 597831911}
   - component: {fileID: 597831912}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 'Coop : shadow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9540,7 +9540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 718530204}
   - component: {fileID: 718530205}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 'Chicken Sprite : shadow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18896,7 +18896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1466432733}
   - component: {fileID: 1466432734}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 'Truck : shadow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19831,7 +19831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1543582365}
   - component: {fileID: 1543582366}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 'Chicken Sprite : shadow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21964,7 +21964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1694380977}
   - component: {fileID: 1694380978}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 'Player : shadow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25345,7 +25345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1955453076}
   - component: {fileID: 1955453077}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 'Well : shadow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
