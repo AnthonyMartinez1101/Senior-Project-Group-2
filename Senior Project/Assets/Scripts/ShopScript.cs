@@ -26,6 +26,8 @@ public class ShopScript : MonoBehaviour
 
     public UnityEvent ShopUsedEvent;
 
+    private ShopAudio shopAudio;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,6 +53,8 @@ public class ShopScript : MonoBehaviour
         shopUI = shopScreen.GetComponent<ShopUI>();
 
         InitShopUI();
+
+        shopAudio = GetComponent<ShopAudio>();
     }
 
     // Update is called once per frame
@@ -134,7 +138,12 @@ public class ShopScript : MonoBehaviour
         }
 
         //Check if player has enough coins and spawn item if they do
-        if (CheckPrice(price)) ItemDropFactory.Instance.SpawnItem(item, itemDropOff.position, expires: true);
+        if (CheckPrice(price))
+        {
+            ItemDropFactory.Instance.SpawnItem(item, itemDropOff.position, expires: true);
+            shopAudio.PlayBuyCoin();
+        }
+
 
         ShopUsedEvent.Invoke();
     }
@@ -165,6 +174,7 @@ public class ShopScript : MonoBehaviour
             {
                 playerWallet.AddCoins(sellPrice);
                 inventory.SubtractItem();
+                shopAudio.PlayBuyCoin();
             }
             else
             {
@@ -194,6 +204,7 @@ public class ShopScript : MonoBehaviour
                     inventory.SubtractItem();
                 }
                 playerWallet.AddCoins(totalPrice);
+                shopAudio.PlaySellCoin();
             }
             else
             {

@@ -25,6 +25,8 @@ public class DropBounce : MonoBehaviour
     Vector3 shadowBaseLocalPos;
     Vector3 shadowBaseScale;
 
+    private ItemDropAudio dropAudio;
+
 
     void Awake()
     {
@@ -37,11 +39,17 @@ public class DropBounce : MonoBehaviour
 
     }
 
+    void Start()
+    {
+        dropAudio = GetComponent<ItemDropAudio>();
+    }
+
 
     public void StartBounce() => StartCoroutine(Bounce(startHeight));
 
     IEnumerator Bounce(float height)
     {
+        height = Random.Range(height * 0.7f, height * 1.3f);
         float y = Mathf.Max(0f, height);
         float v = 0f;
 
@@ -58,6 +66,9 @@ public class DropBounce : MonoBehaviour
             if (y <= 0f)
             {
                 y = 0f;
+
+                dropAudio.PlayDropSound();
+
                 v = -v * restitution;
             }
 

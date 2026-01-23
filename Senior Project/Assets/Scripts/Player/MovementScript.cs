@@ -9,6 +9,9 @@ public class MovementScript : MonoBehaviour
     public float dashDuration = 0.2f;
     public float dashCooldown = 1f;
 
+    public float footStepTimer = 0.5f;
+    private float currentFootStepTimer = 0f;
+
     private bool isDashing = false;
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
@@ -23,6 +26,8 @@ public class MovementScript : MonoBehaviour
     private Knockback knockback;
 
     [SerializeField] private ShopScript shop;
+
+    private PlayerAudio playerAudio;
 
     //Called when the script is made
     private void Start()
@@ -44,6 +49,8 @@ public class MovementScript : MonoBehaviour
         {
             Debug.Log("MovementScript: Shop not assigned in inspector");
         }
+
+        playerAudio = GetComponent<PlayerAudio>();
     }
 
     void Update()
@@ -83,11 +90,18 @@ public class MovementScript : MonoBehaviour
             if (!attackScript.IsMeleeing()) rb.linearVelocity = direction * speed;
             else rb.linearVelocity = direction * (speed / 2f);
 
-
-            if (dashCooldownTimer > 0f)
+            if(moveValue != Vector2.zero && !isDashing)
             {
-                dashCooldownTimer -= Time.fixedDeltaTime;
+                currentFootStepTimer -= Time.fixedDeltaTime;
+                if(currentFootStepTimer <= 0f)
+                {
+                    playerAudio.PlayFootstep();
+                    currentFootStepTimer = footStepTimer;
+                }
             }
+            else currentFootStepTimer = 0;
+
+            if (dashCooldownTimer > 0f) dashCooldownTimer -= Time.fixedDeltaTime;
         }
     }
 

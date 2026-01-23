@@ -26,7 +26,9 @@ public class Attack : MonoBehaviour
     public float explosionTimer = 2f;
 
     public bool noShootCooldown = false;
-    
+
+    private PlayerAudio playerAudio;
+
 
     //The script which is in the Melee child object
     private SlashMove slashMove;
@@ -36,6 +38,8 @@ public class Attack : MonoBehaviour
         scytheAction = InputSystem.actions.FindAction("Scythe");
 
         slashMove = Melee.GetComponent<SlashMove>();
+
+        playerAudio = GetComponent<PlayerAudio>();
     }
 
     // Update is called once per frame
@@ -90,6 +94,7 @@ public class Attack : MonoBehaviour
         {
             currentMelee = Instantiate(Melee, aim.position, aim.rotation);
             meleeTimer = meleeCooldown;
+            playerAudio.PlayScytheSwing();
         }
     }
 

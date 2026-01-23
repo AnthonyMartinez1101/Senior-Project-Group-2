@@ -28,6 +28,8 @@ public class InteractScript : MonoBehaviour
     public bool canWater = true;
     public bool canEat = true;
 
+    private PlayerAudio playerAudio;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -50,6 +52,8 @@ public class InteractScript : MonoBehaviour
             grenadeSlider.maxValue = maxChargeTime;
             grenadeSlider.gameObject.SetActive(false);
         }
+
+        playerAudio = GetComponent<PlayerAudio>();
     }
 
     // Update is called once per frame
@@ -130,6 +134,7 @@ public class InteractScript : MonoBehaviour
             {
                 playerHealth.Heal(produceData.healAmount);
                 inventorySystem.SubtractItem();
+                playerAudio.PlayMunch();
             }
         }
     }
@@ -154,12 +159,14 @@ public class InteractScript : MonoBehaviour
         if (nearRefill)
         {
             inventorySystem.RefillWater();
+            playerAudio.PlayWaterRefill();
             return;
         }
         if (currentSoil != null && currentSoil.IsHighlighted() && inventorySystem.GetCurrentItemCount() > 0)
         {
             currentSoil.Water();
             inventorySystem.UseWater();
+            playerAudio.PlayWatering();
         }
     }
 

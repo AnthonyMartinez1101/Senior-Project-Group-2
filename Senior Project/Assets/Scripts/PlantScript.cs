@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlantScript : MonoBehaviour
@@ -127,6 +128,7 @@ public class PlantScript : MonoBehaviour
 
         TryToDropSeed();
     }
+
 
     private void TryToDropSeed()
     {

@@ -12669,6 +12669,8 @@ GameObject:
   - component: {fileID: 1014007746}
   - component: {fileID: 1014007745}
   - component: {fileID: 1014007743}
+  - component: {fileID: 1014007749}
+  - component: {fileID: 1014007748}
   m_Layer: 0
   m_Name: Shop
   m_TagString: NoBulletCollision
@@ -12827,6 +12829,125 @@ Transform:
   - {fileID: 2006895195}
   m_Father: {fileID: 1010887127}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1014007748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014007742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5abfaea1ac9574cb557204b8ebddd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  buyCoinClips:
+  - {fileID: 8300000, guid: a90e33d48800d334fba3b1e7761e6667, type: 3}
+  - {fileID: 8300000, guid: dff28c889bf00704c955288868630c64, type: 3}
+  - {fileID: 8300000, guid: 7f951c0fd91243741993cbde30a4ab0d, type: 3}
+  sellCoinClips:
+  - {fileID: 8300000, guid: 35c3328ee5a12a7439f348400ef10a43, type: 3}
+  - {fileID: 8300000, guid: 4cf3d735ce474634894b0f280f77b781, type: 3}
+  - {fileID: 8300000, guid: db51a4a3f3c35cf46ba777fbde288ed7, type: 3}
+  - {fileID: 8300000, guid: 5d6c3ae332d67b0419073e39f5dcc17a, type: 3}
+  buyCoinVolume: 0.3
+--- !u!82 &1014007749
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014007742}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1018895486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 951365163498361168, guid: 69925a4421cb23d44ac9f3257024dd19, type: 3}
@@ -15039,7 +15160,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 1485579134873330049, guid: f57a067f94b440540855d50d26331534, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 6.741053, y: 5.2666664}
@@ -15392,7 +15513,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.31, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1716991861}
@@ -15446,7 +15567,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: -1956096536, guid: db88ee4c87c806145a955f3f4cc5a8c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 3.215444, y: 5.195}
@@ -16198,6 +16319,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1716991861}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1760016382332637093, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 1892174203}
     - targetCorrespondingSourceObject: {fileID: 1760016382332637093, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1892174202}
@@ -21602,7 +21726,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 5447814045100458580, guid: f57a067f94b440540855d50d26331534, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 7.747877, y: 7.913333}
@@ -23861,6 +23985,62 @@ MonoBehaviour:
   customPivot: 0
   customPivotTransform: {fileID: 0}
   rebuildShadowsBF_2_0_1_v: 1
+--- !u!114 &1892174203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291469836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c900407996df630498f6f53469b754dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  footstepClips:
+  - {fileID: 8300000, guid: dcc5310bdb8129b499170b5666228439, type: 3}
+  - {fileID: 8300000, guid: 4f9b2609f9200964ea807971c0edf1f1, type: 3}
+  - {fileID: 8300000, guid: 67304bd958f55834bbbd6e1499cefecc, type: 3}
+  - {fileID: 8300000, guid: 04171ae4d9ce9fe4587a537a56f8ad6e, type: 3}
+  - {fileID: 8300000, guid: b0629e98f047cbf4e9eaaabe174cf283, type: 3}
+  scytheSwingClips:
+  - {fileID: 8300000, guid: b5ce60ff6758d3c4f89d4924293194ba, type: 3}
+  - {fileID: 8300000, guid: 4cdf63a3f687bc947ab401c7d3fa29f3, type: 3}
+  - {fileID: 8300000, guid: effbb1f36278c6048b3c5eeacc10a594, type: 3}
+  - {fileID: 8300000, guid: 30c64299b246da240954f35a262553b1, type: 3}
+  - {fileID: 8300000, guid: 231cb76c9d242dd4f9e93294449f0faf, type: 3}
+  munchClips:
+  - {fileID: 8300000, guid: 746913d05b6a0334ba83f702b16c1bb1, type: 3}
+  - {fileID: 8300000, guid: 621121bc5aa007f4896cad31eb863eb1, type: 3}
+  - {fileID: 8300000, guid: ceec23230ad30554aba710647e43ee29, type: 3}
+  - {fileID: 8300000, guid: c8a775c184ffe844f873e1d1800a5ad6, type: 3}
+  - {fileID: 8300000, guid: ddb0b2b503519e64f86fe0b8aac78033, type: 3}
+  wateringClips:
+  - {fileID: 8300000, guid: e083c796bf625c54bbf342c499d0a77d, type: 3}
+  - {fileID: 8300000, guid: 0a3c41c8235dfc4479cea9501f2ceb92, type: 3}
+  - {fileID: 8300000, guid: 9ed7541f4be05984d9289321f1067286, type: 3}
+  - {fileID: 8300000, guid: 86c4a6b9695422940b02e39921d34d54, type: 3}
+  - {fileID: 8300000, guid: 0b1d2ccb1b8f0b54487b634a4b5a608e, type: 3}
+  - {fileID: 8300000, guid: c586a412e1211374bbaf61ecccf54775, type: 3}
+  - {fileID: 8300000, guid: b69c206b7185a4e4486f52d6a77e09a2, type: 3}
+  waterRefillClips:
+  - {fileID: 8300000, guid: b506a3c9c932b1b49827cb89643f600f, type: 3}
+  - {fileID: 8300000, guid: 589c0c7f2f0d3aa43aee76c1eb4d11bf, type: 3}
+  inventoryPopClips:
+  - {fileID: 8300000, guid: 76172e661350e5a428833389ba41832b, type: 3}
+  - {fileID: 8300000, guid: 0a1153d4d2d298a4d815ab57fa0b5095, type: 3}
+  - {fileID: 8300000, guid: 027fcaa1be96fb34b9eab3c47252026e, type: 3}
+  - {fileID: 8300000, guid: 452bde8eedf8d8748980719eced5892d, type: 3}
+  - {fileID: 8300000, guid: 6734972b7c3000a42bb23d10433c3aa1, type: 3}
+  - {fileID: 8300000, guid: 71c18166cb819774eaec6c668ae980e9, type: 3}
+  - {fileID: 8300000, guid: 781cc11010ae4f34e9cf737334e36896, type: 3}
+  - {fileID: 8300000, guid: 140c7359e2b4939499a8f12ec3210133, type: 3}
+  footstepVolume: 0.1
+  scytheSwingVolume: 1
+  munchVolume: 0.5
+  wateringVolume: 0.5
+  waterRefillVolume: 0.2
+  inventoryPopVolume: 0.5
 --- !u!1001 &1892672692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24665,7 +24845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984926280}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.4472374, y: -0.23513311, z: 0.40157712, w: -0.7638239}
+  m_LocalRotation: {x: -0.44723737, y: -0.2351331, z: 0.40157712, w: -0.763824}
   m_LocalPosition: {x: -0.123809814, y: -0.11134672, z: 0.024502}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -25283,7 +25463,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 3942140735574528849, guid: f57a067f94b440540855d50d26331534, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 14.322238, y: 15.473332}
@@ -25600,7 +25780,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037612393}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 661698de9d0b9cf4e9520be9d6a1e69a, type: 3}
   m_Name: 
@@ -26292,7 +26472,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: -841071601281017420, guid: f57a067f94b440540855d50d26331534, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 6.0276084, y: 6.0733333}

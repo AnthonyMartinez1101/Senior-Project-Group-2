@@ -43,6 +43,8 @@ public class Inventory : MonoBehaviour
 
     public UnityEvent InventoryChangeEvent;
 
+    private PlayerAudio playerAudio;
+
     private void Awake()
     {
         //Creates and assigns the list of slots
@@ -56,6 +58,8 @@ public class Inventory : MonoBehaviour
         if(scrollAction == null) Debug.LogWarning("Scroll action not found in Input System");
 
         RefreshUI();
+
+        playerAudio = GetComponent<PlayerAudio>();
     }
 
     void Update()
@@ -120,6 +124,8 @@ public class Inventory : MonoBehaviour
             //If inventory full, re-drop item at player's position
             ItemDropFactory.Instance.PlayerDropItem(collectedItem, transform.position);
         }
+
+        playerAudio.PlayInventoryPop();
     }
 
     private bool TryToAddItem(Item newItem)
