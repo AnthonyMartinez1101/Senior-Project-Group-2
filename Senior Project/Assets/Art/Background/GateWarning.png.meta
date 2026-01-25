@@ -1,55 +1,52 @@
 fileFormatVersion: 2
-guid: f3f0bdfb2720a0d4ea6c8d48067feefc
+guid: a9fdb7366ef583b43b5c4ed81e584bab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8047580663154359737
-    second: GateWarning _0
+      213: -4725783094566292564
+    second: GateWarning_0
   - first:
-      213: 1043002003664431052
-    second: GateWarning _1
+      213: -3655467867573044679
+    second: GateWarning_1
   - first:
-      213: -4414228046007563541
-    second: GateWarning _2
+      213: -1291095363765319242
+    second: GateWarning_2
   - first:
-      213: 5386621729867710592
-    second: GateWarning _3
+      213: 7119033738642590962
+    second: GateWarning_3
   - first:
-      213: -5338603337895561804
-    second: GateWarning _4
+      213: -7696275574701716361
+    second: GateWarning_4
   - first:
-      213: -8172917842026227897
-    second: GateWarning _5
+      213: -4962128573883886343
+    second: GateWarning_5
   - first:
-      213: -7148057163636915496
-    second: GateWarning _6
+      213: -5191817551628596412
+    second: GateWarning_6
   - first:
-      213: 3867556597094266536
-    second: GateWarning _7
+      213: 4834265755755237182
+    second: GateWarning_7
   - first:
-      213: -5894785586646963027
-    second: GateWarning _8
+      213: -3856349797845675339
+    second: GateWarning_8
   - first:
-      213: 1185163628136562685
-    second: GateWarning _9
+      213: -6473417062057837797
+    second: GateWarning_9
   - first:
-      213: 7458166039263049074
-    second: GateWarning _10
+      213: 3092459799229020109
+    second: GateWarning_10
   - first:
-      213: -2489284111021924005
-    second: GateWarning _11
+      213: -4619859744566818263
+    second: GateWarning_11
   - first:
-      213: 5199570988004664685
-    second: GateWarning _12
+      213: 8329926572626655042
+    second: GateWarning_12
   - first:
-      213: 417776012447776250
-    second: GateWarning _13
+      213: -6493555305593403690
+    second: GateWarning_13
   - first:
-      213: -8738625404454834228
-    second: GateWarning _14
-  - first:
-      213: 2788327780012886508
-    second: GateWarning _15
+      213: 670805809708514380
+    second: GateWarning_14
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -82,7 +79,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -91,12 +88,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 600
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -120,7 +117,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -145,13 +142,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GateWarning _0
+      name: GateWarning_0
       rect:
         serializedVersion: 2
-        x: 378
-        y: 500
-        width: 46
-        height: 197
+        x: 206
+        y: 712
+        width: 62
+        height: 271
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +157,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 742c1675600415090800000000000000
-      internalID: -8047580663154359737
+      spriteID: ca374d25055aa6eb0800000000000000
+      internalID: -4725783094566292564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GateWarning _1
+      name: GateWarning_1
       rect:
         serializedVersion: 2
-        x: 601
-        y: 498
-        width: 271
-        height: 196
+        x: 369
+        y: 710
+        width: 515
+        height: 269
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cc76078dbcc797e00800000000000000
-      internalID: 1043002003664431052
+      spriteID: 93a3479875b254dc0800000000000000
+      internalID: -3655467867573044679
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GateWarning _2
+      name: GateWarning_2
       rect:
         serializedVersion: 2
-        x: 873
-        y: 493
-        width: 322
-        height: 204
+        x: 886
+        y: 702
+        width: 442
+        height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,20 +201,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bea0720daf28db2c0800000000000000
-      internalID: -4414228046007563541
+      spriteID: 6b94d9f6b9b151ee0800000000000000
+      internalID: -1291095363765319242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GateWarning _3
+      name: GateWarning_3
       rect:
         serializedVersion: 2
-        x: 1321
-        y: 691
-        width: 39
-        height: 54
+        x: 1502
+        y: 974
+        width: 53
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,20 +223,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0804a2c7cef11ca40800000000000000
-      internalID: 5386621729867710592
+      spriteID: 2fc00df8773ebc260800000000000000
+      internalID: 7119033738642590962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GateWarning _4
+      name: GateWarning_4
       rect:
         serializedVersion: 2
-        x: 1356
-        y: 500
-        width: 120
-        height: 191
+        x: 1550
+        y: 712
+        width: 164
+        height: 262
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4b53500ac8879e5b0800000000000000
-      internalID: -5338603337895561804
+      spriteID: 77c83643426513590800000000000000
+      internalID: -7696275574701716361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GateWarning _5
+      name: GateWarning_5
       rect:
         serializedVersion: 2
-        x: 497
-        y: 503
-        width: 106
-        height: 155
+        x: 1332
+        y: 711
+        width: 182
+        height: 210
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,20 +267,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 747139f4686f39e80800000000000000
-      internalID: -8172917842026227897
+      spriteID: 9f4d5df3a5af22bb0800000000000000
+      internalID: -4962128573883886343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GateWarning _6
+      name: GateWarning_6
       rect:
         serializedVersion: 2
-        x: 1198
-        y: 499
-        width: 132
-        height: 153
+        x: 299
+        y: 374
+        width: 573
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +289,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8d24c37b1effccc90800000000000000
-      internalID: -7148057163636915496
+      spriteID: 44b0a88b175f2f7b0800000000000000
+      internalID: -5191817551628596412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GateWarning _7
+      name: GateWarning_7
       rect:
         serializedVersion: 2
-        x: 83
-        y: 206
-        width: 417
-        height: 203
+        x: 855
+        y: 389
+        width: 180
+        height: 205
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,20 +311,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8a6b58edb325ca530800000000000000
-      internalID: 3867556597094266536
+      spriteID: e3f40a18713c61340800000000000000
+      internalID: 4834265755755237182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GateWarning _8
+      name: GateWarning_8
       rect:
         serializedVersion: 2
-        x: 488
-        y: 217
-        width: 131
-        height: 149
+        x: 1142
+        y: 374
+        width: 455
+        height: 282
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,20 +333,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: daca0d8adb3813ea0800000000000000
-      internalID: -5894785586646963027
+      spriteID: 5b252c96a4e7b7ac0800000000000000
+      internalID: -3856349797845675339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GateWarning _9
+      name: GateWarning_9
       rect:
         serializedVersion: 2
-        x: 696
-        y: 206
-        width: 331
-        height: 206
+        x: 1462
+        y: 430
+        width: 165
+        height: 174
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,20 +355,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dfffacf5a0c827010800000000000000
-      internalID: 1185163628136562685
+      spriteID: b1bf61dca7dc926a0800000000000000
+      internalID: -6473417062057837797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GateWarning _10
+      name: GateWarning_10
       rect:
         serializedVersion: 2
-        x: 929
-        y: 247
-        width: 120
-        height: 127
+        x: 461
+        y: 31
+        width: 459
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -380,20 +377,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 275f7266f7ab08760800000000000000
-      internalID: 7458166039263049074
+      spriteID: dc7b8378dcf9aea20800000000000000
+      internalID: 3092459799229020109
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GateWarning _11
+      name: GateWarning_11
       rect:
         serializedVersion: 2
-        x: 1109
-        y: 174
-        width: 334
-        height: 218
+        x: 923
+        y: 79
+        width: 290
+        height: 209
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -402,20 +399,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b51a3813a49447dd0800000000000000
-      internalID: -2489284111021924005
+      spriteID: 92ac7f41a06f2efb0800000000000000
+      internalID: -4619859744566818263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GateWarning _12
+      name: GateWarning_12
       rect:
         serializedVersion: 2
-        x: 1445
-        y: 209
-        width: 211
-        height: 152
+        x: 1213
+        y: 74
+        width: 66
+        height: 67
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,20 +421,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d65e17cd346982840800000000000000
-      internalID: 5199570988004664685
+      spriteID: 247bf7e7518d99370800000000000000
+      internalID: 8329926572626655042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GateWarning _13
+      name: GateWarning_13
       rect:
         serializedVersion: 2
-        x: 1656
-        y: 205
-        width: 48
-        height: 49
+        x: 1298
+        y: 68
+        width: 70
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,20 +443,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: afdf0a1e11d3cc500800000000000000
-      internalID: 417776012447776250
+      spriteID: 6d680c89ad142e5a0800000000000000
+      internalID: -6493555305593403690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GateWarning _14
+      name: GateWarning_14
       rect:
         serializedVersion: 2
-        x: 1718
-        y: 201
-        width: 51
-        height: 54
+        x: 1397
+        y: 63
+        width: 65
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -468,30 +465,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ccfe34e6e7a2ab680800000000000000
-      internalID: -8738625404454834228
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GateWarning _15
-      rect:
-        serializedVersion: 2
-        x: 1790
-        y: 197
-        width: 47
-        height: 56
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ce9850db75122b620800000000000000
-      internalID: 2788327780012886508
+      spriteID: c4cb1f0745e2f4900800000000000000
+      internalID: 670805809708514380
       vertices: []
       indices: 
       edges: []
@@ -500,7 +475,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -510,22 +485,21 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GateWarning _0: -8047580663154359737
-      GateWarning _1: 1043002003664431052
-      GateWarning _10: 7458166039263049074
-      GateWarning _11: -2489284111021924005
-      GateWarning _12: 5199570988004664685
-      GateWarning _13: 417776012447776250
-      GateWarning _14: -8738625404454834228
-      GateWarning _15: 2788327780012886508
-      GateWarning _2: -4414228046007563541
-      GateWarning _3: 5386621729867710592
-      GateWarning _4: -5338603337895561804
-      GateWarning _5: -8172917842026227897
-      GateWarning _6: -7148057163636915496
-      GateWarning _7: 3867556597094266536
-      GateWarning _8: -5894785586646963027
-      GateWarning _9: 1185163628136562685
+      GateWarning_0: -4725783094566292564
+      GateWarning_1: -3655467867573044679
+      GateWarning_10: 3092459799229020109
+      GateWarning_11: -4619859744566818263
+      GateWarning_12: 8329926572626655042
+      GateWarning_13: -6493555305593403690
+      GateWarning_14: 670805809708514380
+      GateWarning_2: -1291095363765319242
+      GateWarning_3: 7119033738642590962
+      GateWarning_4: -7696275574701716361
+      GateWarning_5: -4962128573883886343
+      GateWarning_6: -5191817551628596412
+      GateWarning_7: 4834265755755237182
+      GateWarning_8: -3856349797845675339
+      GateWarning_9: -6473417062057837797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
