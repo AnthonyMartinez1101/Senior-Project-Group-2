@@ -70,7 +70,7 @@ Material:
     - _afrigesTex: 0
     - _blurArea: 0
     - _blurStrength: 0
-    - _directional: 0
+    - _directional: 1
     - _enableBlur: 0
     - _fakeRefraction: 0
     - _falloff: 1

@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -9138899320092202058}
   - component: {fileID: 6815267652703427686}
   - component: {fileID: 5958624832879524155}
+  - component: {fileID: 4767834823982379062}
   m_Layer: 7
   m_Name: Tutorial Enemy
   m_TagString: Enemy
@@ -110,7 +111,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 9000435477072996212, guid: 076581e2f24919443a885e93ac2cc7db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -264,7 +265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5029656764e9b142b20c94c5261b97d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  healColor: {r: 0, g: 1, b: 0, a: 1}
   flashTime: 0.2
 --- !u!114 &5958624832879524155
 MonoBehaviour:
@@ -278,6 +280,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f834d13e758aff34e9cca645a90bdc7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Knockback
+--- !u!114 &4767834823982379062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919924452173266357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0ee38807031174fb28c10bd18be1f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Modern2D.StylizedShadowCaster2D
+  _shadowData:
+    shadow:
+      pivotOffset: {x: 0, y: 0}
+      shadowCaster: {fileID: 0}
+      shadow: {fileID: 0}
+      shadowPivot: {fileID: 0}
+      shadowSr: {fileID: 0}
+      shadowCasterSr: {fileID: 0}
+      pivotMode: 0
+      pivotObject: {fileID: 0}
+      flipX: 0
+      customShadowLayer: 0
+      shadowLayer: 
+      casterComponent: {fileID: 0}
+  flipShadowX:
+    _value: 0
+  _shadowColor:
+    _value: {r: 0, g: 0, b: 0, a: 0}
+  _shadowReflectiveness:
+    _value: 0
+  _shadowAlpha:
+    _value: 0
+  _shadowNarrowing:
+    _value: 0
+  _shadowFalloff:
+    _value: 0
+  _pivotOffsetX:
+    _value: 0
+  _pivotOffsetY:
+    _value: 0
+  customShadowLayer:
+    _value: 0
+  customShadowLayerName:
+    _value: 
+  extendedProperties: 0
+  overrideCustomPivot:
+    _value: 0
+  customPivot: 0
+  customPivotTransform: {fileID: 0}
+  rebuildShadowsBF_2_0_1_v: 1
 --- !u!1001 &7639959224156971477
 PrefabInstance:
   m_ObjectHideFlags: 0
