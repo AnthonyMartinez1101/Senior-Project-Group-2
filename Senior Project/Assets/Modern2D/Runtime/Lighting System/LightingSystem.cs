@@ -786,7 +786,7 @@ namespace Modern2D
 			Vector3 pos = shadow.shadowCaster.position;
 			lightpos = pos;
 
-			float angleR = LIGHT2DNOTFOUND;
+			//float angleR = LIGHT2DNOTFOUND;
 			float[] angles = new float[3];
             float[] inverseDistances = new float[3];
 

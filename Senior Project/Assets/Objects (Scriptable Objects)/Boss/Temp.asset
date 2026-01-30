@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0f6282636af6b49aa19cb77f575800, type: 3}
+  m_Name: Temp
+  m_EditorClassIdentifier: Assembly-CSharp::BossData
+  bossName: Temp
+  maxHealth: 100
+  attackRating: 5
+  knockbackForce: 0
+  hitCooldown: 2
+  phaseTwoThreshold: 0.5
+  phaseThreeThreshold: 0
+  rageMultiplier: 1.5
+  cooldownTime: 0.5
+  idleTime: 2
+  actions:
+  - {fileID: 11400000, guid: 1ebd5991c4a31df418239d8220852d6c, type: 2}
