@@ -5,7 +5,6 @@ using DG.Tweening;
 public class HopWhileMoving : MonoBehaviour
 {
     public Transform spriteTransform;
-    public Transform shadowTransform;
     public float hopHeight = 0.2f;
     public float hopDuration = 0.3f;
 
@@ -27,7 +26,6 @@ public class HopWhileMoving : MonoBehaviour
         agent.updateUpAxis = false;
 
         baseSpriteY = spriteTransform.localPosition.y;
-        baseShadowScale = shadowTransform.localScale;
     }
 
     void Update()
@@ -48,17 +46,10 @@ public class HopWhileMoving : MonoBehaviour
 
         // Kill any tweens on these transforms (prevents buildup)
         spriteTransform.DOKill();
-        shadowTransform.DOKill();
-
-        // Shrink shadow as the sprite moves up
-        shadowTransform.DOScale(baseShadowScale * 0.7f, hopDuration / 2f).SetEase(Ease.OutQuad);
 
         // Animate sprite upward
         spriteTransform.DOLocalMoveY(baseSpriteY + hopHeight, hopDuration / 2f).SetEase(Ease.OutQuad).OnComplete(() =>
             {
-                // Expand shadow as the sprite moves down
-                shadowTransform.DOScale(baseShadowScale, hopDuration / 2f).SetEase(Ease.InQuad);
-
                 // Animate sprite downward
                 spriteTransform.DOLocalMoveY(baseSpriteY, hopDuration / 2f).SetEase(Ease.InQuad).OnComplete(() =>
                     {

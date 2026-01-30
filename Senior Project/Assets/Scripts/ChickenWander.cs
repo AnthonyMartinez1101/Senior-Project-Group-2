@@ -20,7 +20,6 @@ public class ChickenWander : MonoBehaviour
     public float maxWaitTime = 5f;
 
     public SpriteRenderer chickenSprite;
-    public SpriteRenderer shadowSprite;
 
 
 
@@ -54,10 +53,8 @@ public class ChickenWander : MonoBehaviour
                 yield return new WaitUntil(() => !agent.pathPending && (!hidePosition || agent.remainingDistance <= 2.5f || agent.pathStatus != NavMeshPathStatus.PathComplete));
 
                 chickenSprite.enabled = false;
-                shadowSprite.enabled = false;
                 yield return new WaitUntil(() => worldClock.IsDay());
                 chickenSprite.enabled = true;
-                shadowSprite.enabled = true;
 
                 yield return null;
                 continue;

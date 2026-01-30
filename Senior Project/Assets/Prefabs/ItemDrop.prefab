@@ -463,4 +463,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eb6723445dea9a8488bbc03aa85cb8f5, type: 3}
   - {fileID: 8300000, guid: eb674943867176947ad75e88c41f324b, type: 3}
   - {fileID: 8300000, guid: 1d17d60af1104a24eaa4174048eda8c1, type: 3}
-  dropVolume: 1
+  dropVolume: 0.75

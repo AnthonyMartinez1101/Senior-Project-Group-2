@@ -1,7 +1,8 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
+using UnityEngine.Events;
+
 
 public enum DayPhase
 {
@@ -44,6 +45,8 @@ public class WorldClock : MonoBehaviour
     [SerializeField] private TMP_Text displayText;
 
     public bool inTutorialMode = false;
+
+    public UnityEvent DayChangeEvent;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -121,6 +124,7 @@ public class WorldClock : MonoBehaviour
             if (!inTutorialMode)
                 IterateSeason();
         }
+        DayChangeEvent.Invoke();
     }
 
     public void IterateSeason()

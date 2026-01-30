@@ -6,9 +6,15 @@ public class gateWarning : MonoBehaviour
 
     [SerializeField] private GameObject warningSign;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void Start()
     {
-        StartCoroutine(TextBox());
+        warningSign.GetComponent<SpriteRenderer>().enabled = false;     
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collision entered");
+        if (collision.collider.CompareTag("Player")) StartCoroutine(TextBox());
     }
 
     IEnumerator TextBox()

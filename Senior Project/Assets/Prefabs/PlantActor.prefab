@@ -86,7 +86,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -196,7 +196,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_SortAtRoot: 0
 --- !u!82 &2906679135578592827
 AudioSource:
@@ -315,7 +315,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 088665dd770e93349b0152b03c31b8a4, type: 3}
   - {fileID: 8300000, guid: dd7045e7680444e458684d252fc276f7, type: 3}
   - {fileID: 8300000, guid: 4e26ea6714d5c124c975be6eed1d73b3, type: 3}
-  rustlingVolume: 0.1
+  rustlingVolume: 0.05
 --- !u!1 &8439195869774959516
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +395,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 3365857472248335254, guid: 726c4575dc9899e438dbac031542f863, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
