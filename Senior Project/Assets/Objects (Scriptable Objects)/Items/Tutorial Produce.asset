@@ -17,6 +17,6 @@ MonoBehaviour:
   itemType: 2
   isConsumable: 1
   isStackable: 1
-  sellPrice: 5
+  sellPrice: 3
   buyPrice: 0
   extraItemData: {fileID: 11400000, guid: 1ed970f5b28361645aa86d0868666dbe, type: 2}

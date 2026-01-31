@@ -4,6 +4,7 @@
   <Project Path="Unity.AppUI.csproj" />
   <Project Path="Unity.2D.Aseprite.Editor.csproj" />
   <Project Path="Unity.AI.Assistant.Editor.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.AI.ModelSelector.csproj" />
   <Project Path="Unity.Mathematics.csproj" />
   <Project Path="Unity.Timeline.Editor.csproj" />
@@ -30,7 +31,6 @@
   <Project Path="NavMeshPlusEditor.csproj" />
   <Project Path="Unity.InferenceEngine.csproj" />
   <Project Path="Unity.2D.Animation.Editor.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
   <Project Path="Unity.Searcher.Editor.csproj" />
   <Project Path="Unity.AI.Generators.Redux.csproj" />
   <Project Path="Unity.AI.Sound.csproj" />
