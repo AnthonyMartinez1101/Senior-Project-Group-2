@@ -23,6 +23,11 @@ public class ItemDropScript : MonoBehaviour
     public bool canDespawn = true;
     public bool canBeCollected = true;
 
+
+
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,6 +37,7 @@ public class ItemDropScript : MonoBehaviour
             StartCoroutine(ItemTimer());
         }
 
+        // Initialize item if itemInfo is set in inspector
         if (itemInfo != null)
         {
             CreateItemDrop(itemInfo);

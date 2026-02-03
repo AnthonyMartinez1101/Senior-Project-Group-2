@@ -5216,7 +5216,7 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: eb7f4ab84f9046449b09af65d68e9f48, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: d027675b4dd9e9b4e9191898a6c19b26, type: 2}
 --- !u!4 &369426936 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 951365163498361168, guid: 69925a4421cb23d44ac9f3257024dd19, type: 3}
@@ -10452,7 +10452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0db605fd1beebe4e8d424f6af49ff76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldClock
-  dayLength: 180
+  dayLength: 1
   nightLength: 120
   transitionLength: 5
   pauseTimer: 0
@@ -17272,6 +17272,10 @@ PrefabInstance:
       propertyPath: shop
       value: 
       objectReference: {fileID: 1014007743}
+    - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: coinCount
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCountText
       value: 
@@ -27160,7 +27164,7 @@ MonoBehaviour:
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 2263a77f1d70739489d3c319164b0889, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 1d1a3d8e27c7c5c4ca9872aba321acd2, type: 2}
 --- !u!4 &2093918356
 Transform:
   m_ObjectHideFlags: 0

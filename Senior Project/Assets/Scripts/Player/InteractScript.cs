@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -61,6 +62,8 @@ public class InteractScript : MonoBehaviour
     {
         if (interactAction.WasPressedThisFrame() && shop != null && !shop.IsShopInUse())
         {
+            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
+
             currentItem = inventorySystem.GetCurrentItem();
             if (currentItem != null && currentItem.itemType == ItemType.Weapon)
             {
