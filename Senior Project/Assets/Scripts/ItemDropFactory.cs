@@ -48,12 +48,6 @@ public class ItemDropFactory : MonoBehaviour
         StartCoroutine(WaitToEnable(itemDrop));
     }
 
-    IEnumerator WaitToEnable(GameObject itemDrop)
-    {
-        yield return new WaitForSeconds(1f);
-        itemDrop.GetComponent<CircleCollider2D>().enabled = true;
-    }
-
     public void SpawnRandomItem(Item item, Vector3 pos)
     {
         int randIndex = Random.Range(0, randomDropItems.Length);
@@ -62,5 +56,11 @@ public class ItemDropFactory : MonoBehaviour
 
         Rigidbody2D rb = itemDrop.GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(0.5f, 1.5f)).normalized * Random.Range(2f, 5f), ForceMode2D.Impulse);
+    }
+
+    private IEnumerator WaitToEnable(GameObject itemDrop)
+    {
+        yield return new WaitForSeconds(1f);
+        itemDrop.GetComponent<CircleCollider2D>().enabled = true;
     }
 }
