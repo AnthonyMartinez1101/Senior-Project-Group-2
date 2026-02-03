@@ -123,7 +123,7 @@ public class PlantScript : MonoBehaviour
         for(int i = 0; i < dropAmount; i++)
         {
             bool expires = !tutorialMode;
-            ItemDropFactory.Instance.SpawnItem(plantInfo.produce, transform.position, expires);
+            ItemDropFactory.Instance.SpawnItem(plantInfo.produce, 0, transform.position, expires);
         }
 
         TryToDropSeed();
@@ -142,7 +142,7 @@ public class PlantScript : MonoBehaviour
 
     private void DropSeed()
     {
-        ItemDropFactory.Instance.SpawnItem(plantInfo.seed, transform.position, expires: true);
+        ItemDropFactory.Instance.SpawnItem(plantInfo.seed, 0, transform.position, expires: true);
     }
 
     public void TakeWaterDamage(float damageAmount)

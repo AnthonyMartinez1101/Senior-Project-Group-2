@@ -20,7 +20,7 @@ namespace Modern2D
         public static Dictionary<Transform, StylizedShadowCaster> GetAllCastersInTheScene()
         {
             Dictionary<Transform, StylizedShadowCaster> casters = new Dictionary<Transform, StylizedShadowCaster>();
-            foreach (var a in Transform.FindObjectsOfType<StylizedShadowCaster2D>())
+            foreach (var a in Transform.FindObjectsByType<StylizedShadowCaster2D>(0))
             {
                 LightingSystem.system.AddShadow(a.shadowData);
                 casters.Add(a.transform, a.shadowData.shadow);

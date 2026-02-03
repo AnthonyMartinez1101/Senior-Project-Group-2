@@ -24,7 +24,7 @@ public class ItemDropScript : MonoBehaviour
     public bool canBeCollected = true;
 
 
-
+    public int runtimeAmount = 0;
 
 
 
@@ -40,7 +40,7 @@ public class ItemDropScript : MonoBehaviour
         // Initialize item if itemInfo is set in inspector
         if (itemInfo != null)
         {
-            CreateItemDrop(itemInfo);
+            CreateItemDrop(itemInfo, runtimeAmount);
         }
     }
 
@@ -75,12 +75,20 @@ public class ItemDropScript : MonoBehaviour
         shadowSpriteRenderer.enabled = true;
     }
 
-    public void CreateItemDrop(Item itemInfo)
+    public void CreateItemDrop(Item itemInfo, int runtimeData)
     {
         item = itemInfo;
+        runtimeAmount = runtimeData;
 
         if (item.icon != null) spriteRenderer.sprite = item.icon;
         else spriteRenderer.sprite = GameManager.Instance.NoSprite();
+
+        var bucketData = item.extraItemData as BucketData;
+        if(bucketData != null)
+        {
+            if(runtimeAmount > 0) spriteRenderer.sprite = bucketData.fullSprite;
+            else spriteRenderer.sprite = bucketData.emptySprite;
+        }
 
         DropBounce dropBounce = GetComponent<DropBounce>();
         if (dropBounce != null)
@@ -94,7 +102,7 @@ public class ItemDropScript : MonoBehaviour
         if (!canBeCollected) return;
         if (collision.CompareTag("Player"))
         {
-            GameManager.Instance.AddToInventory(item);
+            GameManager.Instance.AddToInventory(item, runtimeAmount);
             Destroy(gameObject);
         }
     }

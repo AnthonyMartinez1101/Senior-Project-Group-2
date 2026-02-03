@@ -62,7 +62,7 @@ public class HotbarUI : MonoBehaviour
                 if (bucketData != null)
                 {
                     //...set icon based on water amount
-                    if (slots[i].waterAmount > 0) slotUIs[i].itemIcon.sprite = bucketData.fullSprite;
+                    if (slots[i].runtimeAmount > 0) slotUIs[i].itemIcon.sprite = bucketData.fullSprite;
                     else slotUIs[i].itemIcon.sprite = bucketData.emptySprite;
 
                     //...enable and update water meter
@@ -70,7 +70,7 @@ public class HotbarUI : MonoBehaviour
                     {
                         slotUIs[i].waterMeter.gameObject.SetActive(true);
                         slotUIs[i].waterMeter.SetMaxWater(bucketData.maxWater);
-                        slotUIs[i].waterMeter.SetWater(slots[i].waterAmount);
+                        slotUIs[i].waterMeter.SetWater(slots[i].runtimeAmount);
                     }
                 }
                 //...if no bucket data, just set normal item icon

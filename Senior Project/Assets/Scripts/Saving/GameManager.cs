@@ -148,11 +148,11 @@ public class GameManager : MonoBehaviour
         return true; // Default to day if worldTime is not set
     }
 
-    public void AddToInventory(Item item)
+    public void AddToInventory(Item item, int runtimeData)
     {
         if (inventorySystem != null)
         {
-            inventorySystem.AddItem(item);
+            inventorySystem.AddItem(item, runtimeData);
         }
     }
 

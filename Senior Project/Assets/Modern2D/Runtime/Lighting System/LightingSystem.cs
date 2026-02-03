@@ -391,7 +391,7 @@ namespace Modern2D
 		{
 			system.SetPivotCorrectionsDictionaries();
 
-            foreach (StylizedShadowCaster2D c in GameObject.FindObjectsOfType<StylizedShadowCaster2D>(true))
+            foreach (StylizedShadowCaster2D c in GameObject.FindObjectsByType<StylizedShadowCaster2D>(0))
             {
 
                 if (c.overrideCustomPivot.value == false)
@@ -402,7 +402,7 @@ namespace Modern2D
 				}
             }
 			extendedUpdateThisFrame = true;
-			UpdateShadows(Transform.FindObjectsOfType<StylizedShadowCaster2D>().ToDictionary(t => t.transform, t => t.shadowData.shadow));
+			UpdateShadows(Transform.FindObjectsByType<StylizedShadowCaster2D>(0).ToDictionary(t => t.transform, t => t.shadowData.shadow));
 		}
 
 		#endregion
@@ -869,14 +869,14 @@ namespace Modern2D
 			if (_2dLightsMask.value)
 			{
 		
-                lightsArr = FindObjectsOfType<Light2D>().Where(l => l.lightType == Light2D.LightType.Point).ToArray();
+                lightsArr = FindObjectsByType<Light2D>(0).Where(l => l.lightType == Light2D.LightType.Point).ToArray();
     
                 lightsArr = lightsArr.Where(l => l.gameObject.layer == _2dLightsLayer.value ).ToArray();
    
             }
 			else
 			{
-                lightsArr = FindObjectsOfType<Light2D>().Where(l => l.lightType == Light2D.LightType.Point).ToArray();
+                lightsArr = FindObjectsByType<Light2D>(0).Where(l => l.lightType == Light2D.LightType.Point).ToArray();
             }
 			
 			tranformsArr = new Transform[lightsArr.Length];

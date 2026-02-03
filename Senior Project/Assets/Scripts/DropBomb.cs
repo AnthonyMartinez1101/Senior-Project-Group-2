@@ -24,7 +24,7 @@ public class DropBomb : MonoBehaviour
 
         if (actualTimer <= 0f && worldClock.IsDay())
         {
-            ItemDropFactory.Instance.SpawnItem(grenadeItem, transform.position, expires: true);
+            ItemDropFactory.Instance.SpawnItem(grenadeItem, 0, transform.position, expires: true);
             actualTimer = dropTime; // Reset to desired interval
         }
     }

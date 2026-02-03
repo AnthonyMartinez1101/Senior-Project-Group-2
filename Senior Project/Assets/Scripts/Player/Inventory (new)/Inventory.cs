@@ -8,7 +8,7 @@ public class Slot
 {
     public Item item;
     public int amount;
-    public int waterAmount; //if item is water bucket
+    public int runtimeAmount; //If item needs runtime data (e.g. water can, gun mag)
 
     public bool IsEmpty()
     {
@@ -19,7 +19,7 @@ public class Slot
     {
         item = null;
         amount = 0;
-        waterAmount = 0;
+        runtimeAmount = 0;
     }
 }
 
@@ -37,6 +37,7 @@ public class Inventory : MonoBehaviour
 
     //Detect scrolling
     InputAction scrollAction;
+    InputAction dropItemAction;
 
     //UI controller for hotbar
     public HotbarUI hotbar;
@@ -57,6 +58,9 @@ public class Inventory : MonoBehaviour
         scrollAction = InputSystem.actions.FindAction("Scroll");
         if(scrollAction == null) Debug.LogWarning("Scroll action not found in Input System");
 
+        dropItemAction = InputSystem.actions.FindAction("Drop Item");
+        if (dropItemAction == null) Debug.LogWarning("Drop Item action not found in Input System");
+
         RefreshUI();
 
         playerAudio = GetComponent<PlayerAudio>();
@@ -66,6 +70,22 @@ public class Inventory : MonoBehaviour
     {
         if (scrollAction != null) ScrollAction();
         if (Keyboard.current != null) NumberKeySelection();
+        if (dropItemAction != null) DropItemCheck();
+    }
+
+    private void DropItemCheck()
+    {
+        if(dropItemAction.WasPerformedThisFrame())
+        {
+            Item currentItem = GetCurrentItem();
+            if (currentItem != null)
+            {
+                int runtimeData = slots[currentSlotIndex].runtimeAmount;
+
+                ItemDropFactory.Instance.PlayerDropItem(currentItem, runtimeData, transform.position);
+                SubtractItem();
+            }
+        }
     }
 
 
@@ -111,24 +131,24 @@ public class Inventory : MonoBehaviour
         var slot = slots[currentSlotIndex];
         if(slot.item == null) return 0;
 
-        if(slot.item.itemType == ItemType.WaterCan) return slot.waterAmount;
+        if(slot.item.itemType == ItemType.WaterCan) return slot.runtimeAmount;
         return slot.amount;
     }
 
     //Call when item is picked up
-    public void AddItem(Item collectedItem)
+    public void AddItem(Item collectedItem, int runtimeData)
     {
         //Try adding item to inventory
-        if (!TryToAddItem(collectedItem))
+        if (!TryToAddItem(collectedItem, runtimeData))
         {
             //If inventory full, re-drop item at player's position
-            ItemDropFactory.Instance.PlayerDropItem(collectedItem, transform.position);
+            ItemDropFactory.Instance.PlayerDropItem(collectedItem, runtimeData, transform.position);
         }
 
         playerAudio.PlayInventoryPop();
     }
 
-    private bool TryToAddItem(Item newItem)
+    private bool TryToAddItem(Item newItem, int runtimeData)
     {
         bool added = false;
         int changedIndex = -1;
@@ -161,6 +181,7 @@ public class Inventory : MonoBehaviour
                 {
                     slot.item = newItem;
                     slot.amount = 1;
+                    slot.runtimeAmount = runtimeData;
                     changedIndex = slots.IndexOf(slot);
                     added = true;
                     break;
@@ -212,7 +233,7 @@ public class Inventory : MonoBehaviour
         var waterData = slots[currentSlotIndex].item.extraItemData as BucketData;
         if(waterData != null)
         {
-            slots[currentSlotIndex].waterAmount = waterData.maxWater;
+            slots[currentSlotIndex].runtimeAmount = waterData.maxWater;
         }
         RefreshUI();
     }
@@ -220,9 +241,9 @@ public class Inventory : MonoBehaviour
     //Use water from watering can
     public void UseWater()
     {
-        if (slots[currentSlotIndex].waterAmount > 0)
+        if (slots[currentSlotIndex].runtimeAmount > 0)
         {
-            slots[currentSlotIndex].waterAmount--;
+            slots[currentSlotIndex].runtimeAmount--;
         }
         RefreshUI();
     }
@@ -264,7 +285,7 @@ public class Inventory : MonoBehaviour
         {
             if (!slots[i].IsEmpty() && slots[i].item.itemType == ItemType.WaterCan)
             {
-                if (slots[i].waterAmount > 0)
+                if (slots[i].runtimeAmount > 0)
                 {
                     return false;
                 }
