@@ -62,6 +62,7 @@ public class InteractScript : MonoBehaviour
     {
         if (interactAction.WasPressedThisFrame() && shop != null && !shop.IsShopInUse())
         {
+            //Return if pointer is over UI when clicked
             if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject()) return;
 
             currentItem = inventorySystem.GetCurrentItem();

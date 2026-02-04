@@ -26,9 +26,17 @@ public class Weapon : MonoBehaviour
         
     }
 
+    private bool Avoid(string tag)
+    {
+        return tag == "Player" || 
+               tag == "NoBulletCollision" || 
+               tag == "Interact" ||
+               tag == "Shadow";
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") || collision.CompareTag("NoBulletCollision") || collision.CompareTag("Interact")) return;
+        if (Avoid(collision.tag)) return;
 
         Enemy enemy = collision.GetComponent<Enemy>();
         if(enemy != null)

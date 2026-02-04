@@ -29,10 +29,8 @@ public class ItemDropFactory : MonoBehaviour
         GameObject itemDrop = Instantiate(itemDropPrefab, pos, Quaternion.identity, GroundItemCollection);
         itemDrop.GetComponent<ItemDropScript>().CreateItemDrop(item, runtimeVal);
         
-        if (!expires)
-        {
-            itemDrop.GetComponent<ItemDropScript>().canDespawn = false;
-        }
+        if (!expires) itemDrop.GetComponent<ItemDropScript>().canDespawn = false;
+        itemDrop.GetComponent<ItemDropScript>().canDespawn = (item.itemType != ItemType.WaterCan);
 
         Rigidbody2D rb = itemDrop.GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * Random.Range(1f, 4f), ForceMode2D.Impulse);
@@ -41,6 +39,7 @@ public class ItemDropFactory : MonoBehaviour
     public void PlayerDropItem(Item item, int runtimeVal, Vector3 pos)
     {
         GameObject itemDrop = Instantiate(itemDropPrefab, pos, Quaternion.identity, GroundItemCollection);
+        itemDrop.GetComponent<ItemDropScript>().canDespawn = (item.itemType != ItemType.WaterCan);
         itemDrop.GetComponent<CircleCollider2D>().enabled = false; // Disable collider to prevent immediate re-pickup
         itemDrop.GetComponent<ItemDropScript>().CreateItemDrop(item, runtimeVal);
         Rigidbody2D rb = itemDrop.GetComponent<Rigidbody2D>();

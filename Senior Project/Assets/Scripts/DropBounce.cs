@@ -37,10 +37,6 @@ public class DropBounce : MonoBehaviour
         shadowBaseLocalPos = shadowSprite.localPosition;
         shadowBaseScale = shadowSprite.localScale;
 
-    }
-
-    void Start()
-    {
         dropAudio = GetComponent<ItemDropAudio>();
     }
 

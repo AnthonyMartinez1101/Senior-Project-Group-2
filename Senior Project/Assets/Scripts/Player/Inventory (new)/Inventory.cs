@@ -88,6 +88,78 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void DropItemSlot(int slotIndex)
+    {
+        if(slotIndex < 0 || slotIndex >= slotCount) return;
+
+        Slot slot = slots[slotIndex];
+        if (slot.IsEmpty()) return;
+
+        for(int i = 0; i < slot.amount; i++)
+        {
+            ItemDropFactory.Instance.PlayerDropItem(slot.item, slot.runtimeAmount, transform.position);
+        }
+        slot.Clear();
+        RefreshUI();
+    }
+
+    //Will either combine items if same type, swap if different, or move if one is empty
+    public void CombineItems(int fromInd, int toInd)
+    {
+        if(fromInd < 0 || fromInd >= slotCount) return;
+        if(toInd < 0 || toInd >= slotCount) return;
+        if(fromInd == toInd) return;
+
+        Slot from = slots[fromInd];
+        Slot to = slots[toInd];
+
+        if (from.IsEmpty()) return;
+
+        //If to slot is empty, move item
+        if (to.IsEmpty())
+        {
+            to.item = from.item;
+            to.amount = from.amount;
+            to.runtimeAmount = from.runtimeAmount;
+            from.Clear();
+            RefreshUI();
+            return;
+        }
+
+        //If same item type and stackable, combine stacks
+        if (from.item == to.item && from.item.isStackable)
+        {
+            int totalAmount = from.amount + to.amount;
+            if (totalAmount <= maxStackSize)
+            {
+                to.amount = totalAmount;
+                from.Clear();
+            }
+            else
+            {
+                to.amount = maxStackSize;
+                from.amount = totalAmount - maxStackSize;
+            }
+            RefreshUI();
+            return;
+        }
+
+        //If different items, swap them
+        Item tempItem = to.item;
+        int tempAmount = to.amount;
+        int tempRuntime = to.runtimeAmount;
+
+        to.item = from.item;
+        to.amount = from.amount;
+        to.runtimeAmount = from.runtimeAmount;
+
+        from.item = tempItem;
+        from.amount = tempAmount;
+        from.runtimeAmount = tempRuntime;
+
+        RefreshUI();
+    }
+
 
     private void ScrollAction()
     {
