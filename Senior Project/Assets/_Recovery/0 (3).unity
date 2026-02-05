@@ -16419,31 +16419,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3564512396007761081, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3564512396007761081, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3564512396007761081, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1892174187}
     - target: {fileID: 3564512396007761081, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SellSlotClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 3564512396007761081, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Inventory, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3564512396007761081, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3564512396007761081, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5301927863707917583, guid: db05fac4dd78cb7418a6755f11a0cbb1, type: 3}
       propertyPath: m_Pivot.x

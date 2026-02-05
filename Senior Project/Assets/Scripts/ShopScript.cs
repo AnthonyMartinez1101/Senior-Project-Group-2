@@ -91,6 +91,7 @@ public class ShopScript : MonoBehaviour
 
     public void CloseShop()
     {
+        inventory.ReturnShopSlotToInv();
         shopScreen.SetActive(false);
         isShopInUse = false;
     }
@@ -166,14 +167,16 @@ public class ShopScript : MonoBehaviour
 
     public void SellItem()
     {
-        Item currentItem = inventory.GetCurrentItem();
-        if(currentItem != null)
+        Slot slot = inventory.GetSellSlot();
+        Item currentItem = slot.item;
+
+        if (currentItem != null)
         {
             int sellPrice = currentItem.sellPrice;
             if(sellPrice > 0)
             {
                 playerWallet.AddCoins(sellPrice);
-                inventory.SubtractItem();
+                inventory.SubtractSellSlot();
                 shopAudio.PlayBuyCoin();
             }
             else
@@ -191,17 +194,27 @@ public class ShopScript : MonoBehaviour
 
     public void SellAllItems()
     {
-        Item currentItem = inventory.GetCurrentItem();
+        Slot slot = inventory.GetSellSlot();
+        Item currentItem = slot.item;
+
         if (currentItem != null)
         {
             int sellPrice = currentItem.sellPrice;
             if (sellPrice > 0)
             {
                 int totalPrice = 0;
-                while(inventory.GetCurrentItemCount() > 0)
+                int breakpoint = 0;
+                while(slot.amount > 0)
                 {
                     totalPrice += sellPrice;
-                    inventory.SubtractItem();
+                    inventory.SubtractSellSlot();
+
+                    breakpoint++;
+                    if(breakpoint > 1000)
+                    {
+                        Debug.LogError("SellAllItems: Infinite loop detected");
+                        break;
+                    }
                 }
                 playerWallet.AddCoins(totalPrice);
                 shopAudio.PlaySellCoin();

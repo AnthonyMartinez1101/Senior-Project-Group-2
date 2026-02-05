@@ -35,6 +35,10 @@ public class Inventory : MonoBehaviour
     //Creating the actual array of slots to be the inventory
     public List<Slot> slots = new List<Slot>(slotCount);
 
+    //Shop sell slot will behave like a normal slot but not in inventory (will be accessed by index 10)
+    public Slot shopSellSlot = new Slot();
+
+
     //Detect scrolling
     InputAction scrollAction;
     InputAction dropItemAction;
@@ -53,6 +57,7 @@ public class Inventory : MonoBehaviour
         {
             slots.Add(new Slot());
         }
+
         
         //Set scroll action
         scrollAction = InputSystem.actions.FindAction("Scroll");
@@ -61,9 +66,15 @@ public class Inventory : MonoBehaviour
         dropItemAction = InputSystem.actions.FindAction("Drop Item");
         if (dropItemAction == null) Debug.LogWarning("Drop Item action not found in Input System");
 
-        RefreshUI();
+        
 
         playerAudio = GetComponent<PlayerAudio>();
+    }
+
+    private void Start()
+    {
+        RefreshUI();
+
     }
 
     void Update()
@@ -106,12 +117,18 @@ public class Inventory : MonoBehaviour
     //Will either combine items if same type, swap if different, or move if one is empty
     public void CombineItems(int fromInd, int toInd)
     {
-        if(fromInd < 0 || fromInd >= slotCount) return;
-        if(toInd < 0 || toInd >= slotCount) return;
+        if(fromInd < 0 || fromInd > slotCount) return;
+        if(toInd < 0 || toInd > slotCount) return;
         if(fromInd == toInd) return;
 
-        Slot from = slots[fromInd];
-        Slot to = slots[toInd];
+        Slot from, to;
+
+        if(fromInd == 10) from = shopSellSlot;
+        else from = slots[fromInd];
+
+        if(toInd == 10) to = shopSellSlot;
+        else to = slots[toInd];
+
 
         if (from.IsEmpty()) return;
 
@@ -205,6 +222,20 @@ public class Inventory : MonoBehaviour
 
         if(slot.item.itemType == ItemType.WaterCan) return slot.runtimeAmount;
         return slot.amount;
+    }
+
+    public void ReturnShopSlotToInv()
+    {
+        if(shopSellSlot.IsEmpty()) return;
+
+        //Try adding all items in slot back to inventory
+        for(int i = 0; i < shopSellSlot.amount; i++)
+        {
+            AddItem(shopSellSlot.item, shopSellSlot.runtimeAmount);
+        }
+
+        shopSellSlot.Clear();
+        RefreshUI();
     }
 
     //Call when item is picked up
@@ -324,8 +355,29 @@ public class Inventory : MonoBehaviour
     //Refreshes the hotbar UI
     public void RefreshUI()
     {
-        hotbar.UpdateUI(slots, currentSlotIndex);
+        hotbar.UpdateUI(slots, shopSellSlot, currentSlotIndex);
         InventoryChangeEvent.Invoke();
+    }
+
+    public Slot GetSellSlot()
+    {
+        return shopSellSlot;
+    }
+
+    public void SubtractSellSlot()
+    {
+        shopSellSlot.amount--;
+        if(shopSellSlot.amount <= 0)
+        {
+            shopSellSlot.Clear();
+        }
+        RefreshUI();
+    }
+
+    public void SellSlotClick()
+    {
+        if (shopSellSlot.IsEmpty()) CombineItems(currentSlotIndex, 10);
+        else ReturnShopSlotToInv();
     }
 
     //Selects a new slot by index

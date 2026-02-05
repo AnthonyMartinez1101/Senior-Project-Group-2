@@ -7,7 +7,6 @@ public class ShopUI : MonoBehaviour
 {
     public GameObject[] buttons;
 
-    public Image sellingIcon;
     public TMP_Text sellingAmount;
 
     private Inventory inventory;
@@ -32,14 +31,15 @@ public class ShopUI : MonoBehaviour
         UpdateSellingBox();
     }
 
+
     private void UpdateSellingBox()
     {
-        Item sellingItem = inventory.GetCurrentItem();
+        Slot sellSlot = inventory.GetSellSlot();
+        Item sellingItem = sellSlot.item;
 
         if (sellingItem == null)
         {
             sellingAmount.enabled = false;
-            sellingIcon.enabled = false;
             redBox.enabled = false;
             return;
         }
@@ -47,10 +47,7 @@ public class ShopUI : MonoBehaviour
         sellingAmount.enabled = true;
         sellingAmount.text = "x" + sellingItem.sellPrice.ToString();
 
-        sellingIcon.enabled = true;
-        sellingIcon.sprite = sellingItem.icon;
-
-        if(sellingItem.sellPrice <= 0) redBox.enabled = true;
+        if (sellingItem.sellPrice <= 0) redBox.enabled = true;
         else redBox.enabled = false;
     }
 
