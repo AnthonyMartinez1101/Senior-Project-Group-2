@@ -29,7 +29,7 @@ public class Follow : BossAction
         {
             while (elapsed < actionDuration)
             {
-                boss.agent.SetDestination(boss.player.position);
+                if(boss.player != null) boss.agent.SetDestination(boss.player.position);
                 boss.agent.speed = speed;
                 elapsed += Time.deltaTime;
                 yield return null;

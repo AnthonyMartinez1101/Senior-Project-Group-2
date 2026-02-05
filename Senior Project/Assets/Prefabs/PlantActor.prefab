@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3218581516146819131}
   - component: {fileID: 2906679135578592827}
   - component: {fileID: 3204769556961723971}
+  - component: {fileID: 6678859520737167798}
   m_Layer: 0
   m_Name: PlantActor
   m_TagString: Plant
@@ -316,6 +317,58 @@ MonoBehaviour:
   - {fileID: 8300000, guid: dd7045e7680444e458684d252fc276f7, type: 3}
   - {fileID: 8300000, guid: 4e26ea6714d5c124c975be6eed1d73b3, type: 3}
   rustlingVolume: 0.05
+--- !u!114 &6678859520737167798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3729801971907865267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0ee38807031174fb28c10bd18be1f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Modern2D.StylizedShadowCaster2D
+  _shadowData:
+    shadow:
+      pivotOffset: {x: 0, y: 0}
+      shadowCaster: {fileID: 0}
+      shadow: {fileID: 0}
+      shadowPivot: {fileID: 0}
+      shadowSr: {fileID: 0}
+      shadowCasterSr: {fileID: 0}
+      pivotMode: 0
+      pivotObject: {fileID: 0}
+      flipX: 0
+      customShadowLayer: 0
+      shadowLayer: 
+      casterComponent: {fileID: 0}
+  flipShadowX:
+    _value: 0
+  _shadowColor:
+    _value: {r: 0, g: 0, b: 0, a: 0}
+  _shadowReflectiveness:
+    _value: 0
+  _shadowAlpha:
+    _value: 0
+  _shadowNarrowing:
+    _value: 0
+  _shadowFalloff:
+    _value: 0
+  _pivotOffsetX:
+    _value: 0
+  _pivotOffsetY:
+    _value: 0
+  customShadowLayer:
+    _value: 0
+  customShadowLayerName:
+    _value: 
+  extendedProperties: 0
+  overrideCustomPivot:
+    _value: 0
+  customPivot: 0
+  customPivotTransform: {fileID: 0}
+  rebuildShadowsBF_2_0_1_v: 1
 --- !u!1 &8439195869774959516
 GameObject:
   m_ObjectHideFlags: 0

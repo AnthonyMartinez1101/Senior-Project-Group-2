@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18521cb7a8f5ae747902efa002e0964f, type: 3}
+  m_Name: AR Plant
+  m_EditorClassIdentifier: Assembly-CSharp::PlantItem
+  plantName: AR Plant
+  growthTime: 100
+  growStages:
+  - {fileID: -8106276931403383599, guid: e010b2a601e219e449cc489d02eff256, type: 3}
+  - {fileID: 4713428802404435667, guid: e010b2a601e219e449cc489d02eff256, type: 3}
+  - {fileID: 3352452779271347423, guid: e010b2a601e219e449cc489d02eff256, type: 3}
+  - {fileID: 750714939616699794, guid: e010b2a601e219e449cc489d02eff256, type: 3}
+  produce: {fileID: 11400000, guid: c573ff06af6d1c7409c66f0d5ddbb469, type: 2}
+  seed: {fileID: 11400000, guid: 0f12a64b19eedc247bc8ce8519af78bc, type: 2}
+  minDrop: 1
+  maxDrop: 1
+  seedChance: 0
+  canDry: 1

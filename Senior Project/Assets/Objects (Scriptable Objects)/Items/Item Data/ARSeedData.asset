@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e972dca9262582d4c80407a3c5d4b954, type: 3}
-  m_Name: GrenadeData
-  m_EditorClassIdentifier: Assembly-CSharp::WeaponData
-  weaponType: 3
+  m_Script: {fileID: 11500000, guid: eafb427026f77d74aa29315e3a065a2d, type: 3}
+  m_Name: ARSeedData
+  m_EditorClassIdentifier: Assembly-CSharp::SeedData
+  plant: {fileID: 11400000, guid: 95d5e10986d56394fa233bb12f928d10, type: 2}

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18521cb7a8f5ae747902efa002e0964f, type: 3}
+  m_Name: Shotgun Plant
+  m_EditorClassIdentifier: Assembly-CSharp::PlantItem
+  plantName: Shotgun Plant
+  growthTime: 180
+  growStages:
+  - {fileID: -818143551970659961, guid: e010b2a601e219e449cc489d02eff256, type: 3}
+  - {fileID: 6562735531013285346, guid: e010b2a601e219e449cc489d02eff256, type: 3}
+  - {fileID: -5363813860192407881, guid: e010b2a601e219e449cc489d02eff256, type: 3}
+  - {fileID: 1842934070376818468, guid: e010b2a601e219e449cc489d02eff256, type: 3}
+  produce: {fileID: 11400000, guid: d648f5d662a050e49b7fd985802a75ed, type: 2}
+  seed: {fileID: 11400000, guid: 87983b7867a43f14ca3aea7da29478bf, type: 2}
+  minDrop: 1
+  maxDrop: 1
+  seedChance: 0
+  canDry: 1
