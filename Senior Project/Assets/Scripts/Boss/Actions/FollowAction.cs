@@ -15,12 +15,25 @@ public class Follow : BossAction
     private IEnumerator FollowPlayer(BossScript boss)
     {
         float elapsed = 0f;
-        while (elapsed < actionDuration)
+        if (boss.phaseTwoActivated)
         {
-            boss.agent.SetDestination(boss.player.position);
-            boss.agent.speed = speed;
-            elapsed += Time.deltaTime;
-            yield return null;
+            while (elapsed < (actionDuration))
+            {
+                boss.agent.SetDestination(boss.player.position);
+                boss.agent.speed = speed * boss.data.rageMultiplier;
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+        }
+        else
+        {
+            while (elapsed < actionDuration)
+            {
+                boss.agent.SetDestination(boss.player.position);
+                boss.agent.speed = speed;
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
         }
         boss.agent.ResetPath();
     }

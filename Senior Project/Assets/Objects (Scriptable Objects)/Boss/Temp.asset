@@ -15,7 +15,7 @@ MonoBehaviour:
   bossName: Temp
   maxHealth: 100
   attackRating: 5
-  knockbackForce: 0
+  knockbackForce: 15
   hitCooldown: 2
   phaseTwoThreshold: 0.5
   phaseThreeThreshold: 0

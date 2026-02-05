@@ -13,6 +13,7 @@ TagManager:
   - Refill
   - Grenade
   - Shadow
+  - Boss
   layers:
   - Default
   - TransparentFX

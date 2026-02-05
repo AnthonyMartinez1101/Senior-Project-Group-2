@@ -47,6 +47,14 @@ public class Weapon : MonoBehaviour
             if(collision.GetComponent<Knockback>()) collision.GetComponent<Knockback>().ApplyKnockback(transform, knockbackForce);
         }
 
+        BossScript boss = collision.GetComponent<BossScript>();
+        if (boss != null)
+        {
+            boss.TakeDamage(damage);
+            bulletTotalHit++;
+            if (collision.GetComponent<Knockback>()) collision.GetComponent<Knockback>().ApplyKnockback(transform, knockbackForce);
+        }
+
         PlantScript plantScript = collision.GetComponent<PlantScript>();
         if (plantScript != null)
         {

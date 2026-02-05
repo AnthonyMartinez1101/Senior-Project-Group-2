@@ -23,6 +23,15 @@ public class BossScript : MonoBehaviour
 
     public Transform player;
     public NavMeshAgent agent;
+    private PlayerHealth playerHealth;
+    private Knockback playerKnockback;
+    public DamageFlash damageFlash;
+    private FloatingHealth healthBar;
+
+    private bool inPlayerRange = false;
+    private float hitCooldown = 1.5f;
+
+    public bool phaseTwoActivated = false;
 
     private void Start()
     {
@@ -31,13 +40,18 @@ public class BossScript : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerHealth = player.GetComponent<PlayerHealth>();
+        playerKnockback = player.GetComponent<Knockback>();
+
+        if (!healthBar) healthBar = GetComponentInChildren<FloatingHealth>();
+        if (healthBar) healthBar.SetMax();
     }
 
     private void Update()
     {
-        float hitCooldown = data.hitCooldown;
         hitCooldown -= Time.deltaTime;
 
         if (state == State.Idle && !isPerformingAction)
@@ -47,6 +61,13 @@ public class BossScript : MonoBehaviour
         if (currentHealth <= data.maxHealth * data.phaseTwoThreshold)
         {
             PhaseTwo();
+        }
+
+        if (inPlayerRange && hitCooldown <= 0f)
+        {
+            playerHealth.TakeDamage(data.attackRating);
+            playerKnockback.ApplyKnockback(transform, data.knockbackForce);
+            hitCooldown = data.hitCooldown;
         }
     }
 
@@ -72,6 +93,50 @@ public class BossScript : MonoBehaviour
     private void PhaseTwo()
     {
         // Increase speed, attack, etc.
+        data.attackRating *= data.rageMultiplier;
+        data.cooldownTime /= data.rageMultiplier;
+        data.idleTime /= data.rageMultiplier;
+        phaseTwoActivated = true;
+    }
 
+    public void TakeDamage(float damageAmount)
+    {
+        if (damageFlash) damageFlash.FlashOnDamage();
+        currentHealth -= damageAmount;
+        Debug.Log("Boss Health: " + currentHealth);
+        if (healthBar) healthBar.UpdateHealth(currentHealth, data.maxHealth);
+        if (currentHealth <= 0)
+        {
+            //int randNum = Random.Range(0, 100);
+            //if (randNum <= dropChance && randomItemDrop != null) ItemDropFactory.Instance.SpawnItem(randomItemDrop, 0, transform.position, dropExpires);
+            Destroy(gameObject);
+        }
+    }
+
+    //When colliding with something...
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //...if colliding with player, deal constant damage via bool 
+        if (collision.CompareTag("Player"))
+        {
+            inPlayerRange = true;
+        }
+
+        //...if colliding with plant, deal damage to plant once upon touching
+        if (collision.CompareTag("Plant"))
+        {
+            PlantScript plant = collision.GetComponent<PlantScript>();
+            plant.TakeDamage(1f);
+        }
+    }
+
+    //When no longer colliding with something...
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        //..if no longer colliding with player, stop dealing damage via bool 
+        if (collision.CompareTag("Player"))
+        {
+            inPlayerRange = false;
+        }
     }
 }
