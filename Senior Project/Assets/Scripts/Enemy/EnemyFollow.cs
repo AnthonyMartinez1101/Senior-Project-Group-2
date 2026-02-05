@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,7 +9,12 @@ public class EnemyFollow : MonoBehaviour
 
     private Knockback kb;
     private float currentSpeed;
+    public float startingTopSpeed = 3.5f;
+    public float maxTopSpeed = 5f;
 
+    [Range(0, 100)]
+    public int speedIncreasePercentage = 5;
+    public float timeToIncrease = 15f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +23,8 @@ public class EnemyFollow : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
         kb = GetComponent<Knockback>();
+
+        StartCoroutine(IncreaseSpeed());
     }
 
 
@@ -33,7 +41,17 @@ public class EnemyFollow : MonoBehaviour
         }
         agent.speed = currentSpeed;
 
-        currentSpeed = Mathf.Lerp(currentSpeed, 3.5f, Time.deltaTime * 1.5f);
+        currentSpeed = Mathf.Lerp(currentSpeed, startingTopSpeed, Time.deltaTime * 1.5f);
+    }
+
+    IEnumerator IncreaseSpeed()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(timeToIncrease);
+            startingTopSpeed *= 1 + (speedIncreasePercentage / 100f);
+            startingTopSpeed = Mathf.Min(startingTopSpeed, maxTopSpeed);
+        }
     }
 
     public void SetTarget(Transform t)

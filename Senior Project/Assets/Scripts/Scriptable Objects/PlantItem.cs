@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using UnityEngine;
 
 //Makes asset in the menu. -500 ensures it appears at the top
@@ -21,7 +20,8 @@ public class PlantItem : ScriptableObject
     public int minDrop = 1;
     public int maxDrop = 1;
 
-    [Header("% Chance To Drop Seed On Harvest (0-100)")]
+    [Header("% Chance To Drop Seed On Harvest")]
+    [Range(0, 100)] 
     public int seedChance = 0;
 
     [Header("Can Plant Die to Dehydration")]
