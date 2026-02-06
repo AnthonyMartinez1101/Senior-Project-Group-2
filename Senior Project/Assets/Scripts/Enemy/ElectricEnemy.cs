@@ -1,15 +1,64 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Linq;
 
 public class ElectricZombie2D : MonoBehaviour
 {
-    public float linkRange = 6f; // Max distance to connect electricity
-    public float damagePerSecond = 10f; // DPS when player touches arc
-    public LineRenderer linePrefab; // 2D LineRenderer prefab
+    public float linkRange = 6f;                // Max distance to connect electricity
+    public float damagePerSecond = 10f;         // DPS when player touches arc
+    public LineRenderer linePrefab;             // 2D LineRenderer prefab
 
     private static List<ElectricZombie2D> allZombies = new List<ElectricZombie2D>();
-    private Dictionary<ElectricZombie2D, LineRenderer> activeLinks = new Dictionary<ElectricZombie2D, LineRenderer>();
+
+    // Simple list storing pairs of other zombie and the shared LineRenderer
+    class LinkEntry
+    {
+        public ElectricZombie2D other;
+        public LineRenderer lr;
+    }
+
+    private List<LinkEntry> activeLinks = new List<LinkEntry>();
+
+    // Circle trigger used to detect nearby zombies
+    private CircleCollider2D rangeTrigger;
+
+    void OnValidate()
+    {
+        // Keep trigger radius in sync in editor when changed
+        if (rangeTrigger == null)
+            rangeTrigger = GetComponent<CircleCollider2D>();
+        if (rangeTrigger != null)
+            rangeTrigger.radius = linkRange;
+    }
+
+    void Awake()
+    {
+        // Ensure there is a Rigidbody2D so triggers generate events between zombies
+        var rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody2D>();
+            rb.bodyType = RigidbodyType2D.Kinematic; // keeps physics stable but allows trigger callbacks
+        }
+        else
+        {
+            // If present, prefer kinematic to avoid unwanted physics pushes
+            rb.bodyType = RigidbodyType2D.Kinematic;
+        }
+
+        // Ensure there is a CircleCollider2D set as trigger for proximity detection
+        rangeTrigger = GetComponent<CircleCollider2D>();
+        if (rangeTrigger == null)
+        {
+            rangeTrigger = gameObject.AddComponent<CircleCollider2D>();
+            rangeTrigger.isTrigger = true;
+        }
+        else
+        {
+            rangeTrigger.isTrigger = true;
+        }
+
+        rangeTrigger.radius = linkRange;
+    }
 
     void OnEnable()
     {
@@ -18,120 +67,162 @@ public class ElectricZombie2D : MonoBehaviour
 
     void OnDisable()
     {
-        // Clear links and notify other zombies before removing from list
+        // Remove all links we own/destroyed and clear list
         ClearLinks();
         allZombies.Remove(this);
     }
 
     void Update()
     {
+        // Keep radius in sync in case linkRange changed at runtime
+        if (rangeTrigger != null && rangeTrigger.radius != linkRange)
+            rangeTrigger.radius = linkRange;
+
         UpdateLinks();
+    }
+
+    void OnTriggerEnter2D(Collider2D otherCol)
+    {
+        // Called when another zombie enters our circle trigger
+        ElectricZombie2D other = otherCol.GetComponent<ElectricZombie2D>();
+        if (other == null || other == this) return;
+
+        // Only one of the two zombies should create the shared link to avoid duplicates
+        if (GetInstanceID() < other.GetInstanceID())
+        {
+            // Check not already linked
+            if (!HasLinkWith(other))
+            {
+                CreateLink(other);
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D otherCol)
+    {
+        ElectricZombie2D other = otherCol.GetComponent<ElectricZombie2D>();
+        if (other == null || other == this) return;
+
+        // If we own the link entry remove it
+        if (GetInstanceID() < other.GetInstanceID())
+        {
+            RemoveLink(other);
+        }
     }
 
     void UpdateLinks()
     {
-        // Iterate over a copy to avoid issues if list is modified during iteration
-        foreach (var other in allZombies.ToArray())
+        // Update positions of each active link and prune invalid ones
+        for (int i = activeLinks.Count - 1; i >= 0; i--)
         {
-            if (other == this) continue;
-
-            float dist = Vector2.Distance(transform.position, other.transform.position);
-
-            if (dist <= linkRange)
+            var entry = activeLinks[i];
+            if (entry == null || entry.other == null || entry.lr == null)
             {
-                // Only create a single shared link per pair. Designate the zombie with the lower instance ID as the owner/creator.
-                bool linkExists = activeLinks.ContainsKey(other) || other.activeLinks.ContainsKey(this);
-                if (!linkExists && GetInstanceID() < other.GetInstanceID())
-                {
-                    CreateLink(other);
-                }
+                // Clean up
+                if (entry != null && entry.lr != null)
+                    Destroy(entry.lr.gameObject);
+                activeLinks.RemoveAt(i);
+                continue;
             }
-            else
+
+            // If other moved out of range (in case linkRange was changed dynamically), remove link
+            float dist = Vector2.Distance(transform.position, entry.other.transform.position);
+            if (dist > linkRange)
             {
-                // If this side owns the link entry, remove it. If the other side owns it, the owner will remove it in its own Update.
-                if (activeLinks.ContainsKey(other))
-                {
-                    RemoveLink(other);
-                }
+                RemoveLink(entry.other);
+                continue;
             }
+
+            // Update line positions
+            entry.lr.SetPosition(0, transform.position);
+            entry.lr.SetPosition(1, entry.other.transform.position);
         }
+    }
 
-        // Update line positions for links this zombie knows about
-        foreach (var pair in activeLinks)
+    bool HasLinkWith(ElectricZombie2D other)
+    {
+        for (int i = 0; i < activeLinks.Count; i++)
         {
-            if (pair.Key == null || pair.Value == null) continue;
-            pair.Value.SetPosition(0, transform.position);
-            pair.Value.SetPosition(1, pair.Key.transform.position);
+            if (activeLinks[i].other == other) return true;
         }
+        return false;
     }
 
     void CreateLink(ElectricZombie2D other)
     {
-        // Instantiate the line renderer and configure it
-        LineRenderer lr = Instantiate(linePrefab);
+        if (linePrefab == null)
+        {
+            Debug.LogWarning("ElectricZombie2D: linePrefab not set. Cannot create visual arc.");
+            return;
+        }
+
+        // Instantiate the line renderer GameObject
+        LineRenderer lr = Instantiate(linePrefab, Vector3.zero, Quaternion.identity);
         lr.positionCount = 2;
         lr.useWorldSpace = true;
 
-        // Store the same LineRenderer reference on both zombies so it represents one shared arc
-        activeLinks[other] = lr;
-        other.activeLinks[this] = lr;
+        // Basic default widths if none set on prefab
+        if (lr.startWidth <= 0f) lr.startWidth = 0.05f;
+        if (lr.endWidth <= 0f) lr.endWidth = 0.05f;
 
-        // Add damage handler to the line object
-        ElectricArcDamage2D dmg = lr.gameObject.AddComponent<ElectricArcDamage2D>();
+        // Ensure it's rendered above sprites by default (adjust as needed)
+        var renderer = lr.GetComponent<Renderer>();
+        if (renderer != null)
+        {
+            try { renderer.sortingLayerName = "Default"; } catch { }
+            renderer.sortingOrder = 5;
+        }
+
+        // Parent the line to a neutral root to keep hierarchy clean
+        lr.transform.SetParent(null);
+
+        // Add damage behaviour (adds its own trigger collider)
+        ElectricArcDamage2D dmg = lr.gameObject.GetComponent<ElectricArcDamage2D>();
+        if (dmg == null) dmg = lr.gameObject.AddComponent<ElectricArcDamage2D>();
         dmg.zombieA = this;
         dmg.zombieB = other;
         dmg.damagePerSecond = damagePerSecond;
 
-        // Initialize positions immediately
+        // Setup initial positions
         lr.SetPosition(0, transform.position);
         lr.SetPosition(1, other.transform.position);
+
+        // Store link entry on our side. The other zombie will not create a duplicate because of the instance ID rule.
+        activeLinks.Add(new LinkEntry { other = other, lr = lr });
     }
 
     void RemoveLink(ElectricZombie2D other)
     {
-        if (!activeLinks.ContainsKey(other)) return;
-
-        LineRenderer lr = activeLinks[other];
-
-        // Only the owner (the creator) should destroy the shared LineRenderer to avoid double-destroy
-        if (GetInstanceID() < other.GetInstanceID())
+        for (int i = activeLinks.Count - 1; i >= 0; i--)
         {
-            if (lr != null)
-                Destroy(lr.gameObject);
-        }
-
-        activeLinks.Remove(other);
-
-        // Remove the back-reference on the other zombie if present
-        if (other != null && other.activeLinks.ContainsKey(this))
-        {
-            other.activeLinks.Remove(this);
+            if (activeLinks[i].other == other)
+            {
+                var lr = activeLinks[i].lr;
+                if (lr != null)
+                {
+                    Destroy(lr.gameObject);
+                }
+                activeLinks.RemoveAt(i);
+            }
         }
     }
 
     void ClearLinks()
     {
-        // Iterate a copy because we will modify dictionaries while iterating
-        foreach (var kv in activeLinks.ToList())
+        for (int i = 0; i < activeLinks.Count; i++)
         {
-            var other = kv.Key;
-            var lr = kv.Value;
-
-            // Owner destroys the shared GameObject
-            if (other != null && GetInstanceID() < other.GetInstanceID())
-            {
-                if (lr != null)
-                    Destroy(lr.gameObject);
-            }
-
-            // Remove the back-reference
-            if (other != null && other.activeLinks.ContainsKey(this))
-            {
-                other.activeLinks.Remove(this);
-            }
+            var entry = activeLinks[i];
+            if (entry != null && entry.lr != null)
+                Destroy(entry.lr.gameObject);
         }
-
         activeLinks.Clear();
+    }
+
+    // Draw the link range in editor for convenience
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.cyan * 0.6f;
+        Gizmos.DrawWireSphere(transform.position, linkRange);
     }
 }
 
@@ -146,14 +237,18 @@ public class ElectricArcDamage2D : MonoBehaviour
 
     void Start()
     {
-        col = gameObject.AddComponent<CapsuleCollider2D>();
+        // Ensure a CapsuleCollider2D exists and is a trigger. This collider must overlap the player's collider to deal damage.
+        col = gameObject.GetComponent<CapsuleCollider2D>();
+        if (col == null) col = gameObject.AddComponent<CapsuleCollider2D>();
         col.isTrigger = true;
         col.direction = CapsuleDirection2D.Horizontal;
+        col.offset = Vector2.zero;
     }
 
     void Update()
     {
-        if (zombieA == null || zombieB == null) return;
+        if (zombieA == null || zombieB == null)
+            return;
 
         Vector2 a = zombieA.transform.position;
         Vector2 b = zombieB.transform.position;
@@ -168,7 +263,8 @@ public class ElectricArcDamage2D : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
 
         // Thin collider along the arc
-        col.size = new Vector2(dist, 0.25f);
+        if (col != null)
+            col.size = new Vector2(dist, 0.25f);
     }
 
     void OnTriggerStay2D(Collider2D other)
