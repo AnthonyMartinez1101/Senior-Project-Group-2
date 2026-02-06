@@ -312,23 +312,28 @@ public class Inventory : MonoBehaviour
         RefreshUI();
     }
 
-    public bool CheckAndUseBullets()
+    public bool CheckAndUseBullets(int amountToUse)
     {
-        for(int i = 0; i < slotCount; i++)
+        for (int i = 0; i < slotCount; i++)
         {
-            if(!slots[i].IsEmpty() && slots[i].item.itemType == ItemType.Bullet)
+            if (!slots[i].IsEmpty() && slots[i].item.itemType == ItemType.Bullet)
             {
-                slots[i].amount--;
-                if (slots[i].amount <= 0)
+                if (slots[i].amount >= amountToUse)
                 {
-                    slots[i].Clear();
+                    slots[i].amount -= amountToUse;
+                    if (slots[i].amount <= 0)
+                    {
+                        slots[i].Clear();
+                    }
+                    RefreshUI();
+                    return true;
                 }
-                RefreshUI();
-                return true;
             }
         }
         return false;
     }
+
+
 
     //Refill water in watering can
     public void RefillWater()

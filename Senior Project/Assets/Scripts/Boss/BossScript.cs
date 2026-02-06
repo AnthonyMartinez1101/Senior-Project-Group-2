@@ -58,7 +58,7 @@ public class BossScript : MonoBehaviour
         {
             QueueAttack();
         }
-        if (currentHealth <= data.maxHealth * data.phaseTwoThreshold)
+        if (currentHealth <= data.maxHealth * data.phaseTwoThreshold && !phaseTwoActivated)
         {
             PhaseTwo();
         }

@@ -55,21 +55,39 @@ public class Attack : MonoBehaviour
 
     public void OnShoot()
     {
-        if(shootTimer > shootCooldown || noShootCooldown)
+        shootTimer = 0.0f;
+        Shoot();
+    }
+
+    public void OnShootBurst()
+    {
+        StartCoroutine(ShootBurst());
+    }
+
+    IEnumerator ShootBurst()
+    {
+        shootTimer = 0.0f;
+        for (int i = 0; i < 3; i++)
         {
-            shootTimer = 0.0f;
-            Quaternion rot = aim.rotation * Quaternion.Euler(0f, 0f, -90f);
-            Vector3 bulletSpawn = aim.position + new Vector3(0f, bulletYOffset, 0f);
-            GameObject b = Instantiate(bullet, bulletSpawn, rot);
-            Instantiate(shootFlash, bulletSpawn, rot);
-            b.GetComponent<Rigidbody2D>().AddForce(-aim.up * bulletForce, ForceMode2D.Impulse);
-            GameManager.Instance.CameraShake(1f, 0.1f);
-            Destroy(b, 2.0f);
+            Shoot();
+            yield return new WaitForSeconds(0.1f);
         }
-        else
-        {
-            shootTimer += Time.deltaTime;
-        }
+    }
+
+    private void Shoot()
+    {
+        Quaternion rot = aim.rotation * Quaternion.Euler(0f, 0f, -90f);
+        Vector3 bulletSpawn = aim.position + new Vector3(0f, bulletYOffset, 0f);
+        GameObject b = Instantiate(bullet, bulletSpawn, rot);
+        Instantiate(shootFlash, bulletSpawn, rot);
+        b.GetComponent<Rigidbody2D>().AddForce(-aim.up * bulletForce, ForceMode2D.Impulse);
+        GameManager.Instance.CameraShake(1f, 0.1f);
+        Destroy(b, 2.0f);
+    }
+
+    public bool CanShoot()
+    {
+        return shootTimer > shootCooldown || noShootCooldown;
     }
 
     public void OnThrowGrenade(float force)

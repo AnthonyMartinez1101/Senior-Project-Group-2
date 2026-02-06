@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public List<Transform> spawnPoints; //Only works with 10 items in here
     public Transform player;
 
-    private float timer = 15f;
+    private float timer = 30f;
     private float spawnRate = 2f;
     private int wave = 1;
 
@@ -42,7 +42,7 @@ public class EnemySpawner : MonoBehaviour
                     Spawn(enemyPrefab[0]);
                 }
                 wave++;
-                timer = 15f;
+                timer = 30f;
             }
 
             if (spawnRate <= 0)
