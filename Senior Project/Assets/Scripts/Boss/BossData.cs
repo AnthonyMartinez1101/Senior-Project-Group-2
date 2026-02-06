@@ -14,9 +14,9 @@ public class BossData : ScriptableObject
     public string bossName;
 
     [Header("Stats")]
-    public float maxHealth;
-    public float attackRating;
-    public float knockbackForce;
+    public float maxHealth = 300f;
+    public float attackRating = 5f;
+    public float knockbackForce = 15f;
     public float hitCooldown = 2.0f;
 
     [Header("Phases")]

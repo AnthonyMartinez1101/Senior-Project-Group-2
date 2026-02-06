@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Temp
   m_EditorClassIdentifier: Assembly-CSharp::BossData
   bossName: Temp
-  maxHealth: 100
+  maxHealth: 300
   attackRating: 5
   knockbackForce: 15
   hitCooldown: 2
