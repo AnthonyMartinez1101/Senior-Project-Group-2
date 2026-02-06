@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0f6282636af6b49aa19cb77f575800, type: 3}
+  m_Name: Ant
+  m_EditorClassIdentifier: Assembly-CSharp::BossData
+  bossName: 001
+  maxHealth: 100
+  attackRating: 15
+  knockbackForce: 5
+  hitCooldown: 2
+  phaseTwoThreshold: 0.5
+  phaseThreeThreshold: 0
+  rageMultiplier: 1.5
+  cooldownTime: 0.5
+  idleTime: 2
+  actions:
+  - {fileID: 11400000, guid: 1ebd5991c4a31df418239d8220852d6c, type: 2}
+  - {fileID: 11400000, guid: e64514f61cebb724bb5d6a1b26d18b9e, type: 2}
