@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Ant
   m_EditorClassIdentifier: Assembly-CSharp::BossData
   bossName: 001
-  maxHealth: 100
-  attackRating: 15
-  knockbackForce: 5
+  maxHealth: 300
+  attackRating: 4
+  knockbackForce: 15
   hitCooldown: 2
   phaseTwoThreshold: 0.5
   phaseThreeThreshold: 0

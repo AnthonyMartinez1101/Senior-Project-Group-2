@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Lunge
   m_EditorClassIdentifier: Assembly-CSharp::Lunge
   actionName: Lunge
-  actionDuration: 5
-  speed: 14
+  actionDuration: 3
+  lungeSpeed: 25
   backSpeed: 5
-  backDistance: 10
+  backDistance: 5
   ptwoRage: 1.5
   backDivider: 1.5

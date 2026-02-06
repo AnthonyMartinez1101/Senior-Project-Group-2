@@ -9974,9 +9974,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7770765713227256853, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 850333372}
+    - target: {fileID: 7770765713227256853, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: c7c1ab3bd1c220046955448e53b4d021, type: 2}
+    - target: {fileID: 7770765713227256853, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1892174185}
+    - target: {fileID: 7770765713227256853, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
+      propertyPath: damageFlash
+      value: 
+      objectReference: {fileID: 850333370}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14626,6 +14638,11 @@ MonoBehaviour:
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   healColor: {r: 0, g: 1, b: 0, a: 1}
   flashTime: 0.2
+--- !u!50 &850333372 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3171595051139043701, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
+  m_PrefabInstance: {fileID: 538313398}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &874560245
 GameObject:
   m_ObjectHideFlags: 0

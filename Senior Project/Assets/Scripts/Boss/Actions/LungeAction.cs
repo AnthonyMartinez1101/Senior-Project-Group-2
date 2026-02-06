@@ -4,69 +4,72 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Lunge", menuName = "Boss/Actions/Lunge")]
 public class Lunge : BossAction
 {
-    public float speed = 10f;
+    public float lungeSpeed = 10f;
     public float backSpeed = 5f;
     public float backDistance = 5f;
-    private bool isLunging = false;
     public float ptwoRage = 1.5f;
     public float backDivider = 1.5f;
 
     public override void ExecuteAction(BossScript boss)
     {
-        if (isLunging) return;
-        isLunging = true;
         boss.StartCoroutine(ShortJump(boss));  
-        
     }
 
     private IEnumerator ShortJump(BossScript boss)
     {
-        boss.agent.isStopped = true; 
-
         yield return boss.StartCoroutine(Back(boss));
         yield return boss.StartCoroutine(Forward(boss));
-        
-        boss.agent.isStopped = false; 
     }
 
     private IEnumerator Back(BossScript boss)
     {
-       Vector2 startPosition = boss.transform.position;
-       Vector2 player = boss.player.position;
-       Vector2 direction = (startPosition - player).normalized;
-       float backMod = backDistance;
-       if(boss.phaseTwoActivated)
-       {
-        backMod = backDistance / Mathf.Max(0.0001f, ptwoRage);
-       }
-       Vector2 backTartget = startPosition + direction * backMod;
+        Debug.Log("Jumping back!");
+        Vector2 startPosition = boss.transform.position;
+        Vector2 player = boss.player.position;
+        Vector2 direction = (startPosition - player).normalized;
+        float backMod = backDistance;
+        if (boss.phaseTwoActivated)
+        {
+            backMod = backDistance / Mathf.Max(0.0001f, ptwoRage);
+        }
+        Vector2 backTarget = startPosition + direction * backMod;
 
-       while(Vector2.Distance((Vector2)boss.transform.position, backTartget) > 0.05f)
-       {
-            Vector2 newPos = Vector2.MoveTowards(boss.transform.position, backTartget, backSpeed * Time.deltaTime);
-            boss.transform.position = new Vector3(newPos.x, newPos.y, boss.transform.position.z);
+        boss.agent.speed = backSpeed;
+        boss.agent.SetDestination(backTarget);
+
+        float backTime = 2f;
+        float elapsed = 0f;
+        while (Vector2.Distance((Vector2)boss.transform.position, backTarget) > 0.05f && elapsed < backTime)
+        {
+            elapsed += Time.deltaTime;
             yield return null;
-       }
-
+        }
+        boss.agent.ResetPath();
     }
 
     private IEnumerator Forward(BossScript boss)
     {
+        Debug.Log("Lunging forward!");
         Vector2 lungeTarget = boss.player.position;
-        float forwardMod = speed;
 
-        if(boss.phaseTwoActivated)
+        float ogAcceleration = boss.agent.acceleration;
+        boss.agent.acceleration = 100f;
+
+        if (boss.phaseTwoActivated)
         {
-            forwardMod = speed * ptwoRage;
+            boss.agent.acceleration = 120f;
+            boss.agent.speed = (lungeSpeed * ptwoRage);
         }
+        else boss.agent.speed = lungeSpeed;
+        boss.agent.SetDestination(lungeTarget);
 
         float time = 0f;
-        while(time < actionDuration)
+        while (time < actionDuration)
         {
             time += Time.deltaTime;
-            Vector2 newPos = Vector2.MoveTowards(boss.transform.position, lungeTarget, forwardMod * Time.deltaTime);
-            boss.transform.position = new Vector3(newPos.x, newPos.y, boss.transform.position.z);
             yield return null;
         }
+        boss.agent.ResetPath();
+        boss.agent.acceleration = ogAcceleration;
     }
 }

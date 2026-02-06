@@ -75,6 +75,7 @@ public class BossScript : MonoBehaviour
     {
         isPerformingAction = true;
         BossAction action = actions[Random.Range(0, actions.Count)];
+        Debug.Log("Boss is performing: " + action.name);
         StartCoroutine(PerformAction(action));
     }
 
