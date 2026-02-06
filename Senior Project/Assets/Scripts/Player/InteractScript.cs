@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -183,7 +184,15 @@ public class InteractScript : MonoBehaviour
         switch (weaponData.weaponType)
         {
             case WeaponType.Pistol:
-                Shoot();
+                ShootPistol();
+                break;
+
+            case WeaponType.AR:
+                ShootAR();
+                break;
+
+            case WeaponType.Shotgun:
+                ShootAR();
                 break;
 
             case WeaponType.Grenade:
@@ -201,9 +210,26 @@ public class InteractScript : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    private void ShootPistol()
     {
-        if(inventorySystem.CheckAndUseBullets()) attack.OnShoot();
+        if (attack.CanShoot())
+        {
+            if (inventorySystem.CheckAndUseBullets(1))
+            {
+                attack.OnShoot();
+            }
+        }
+    }
+
+    private void ShootAR()
+    {
+        if (attack.CanShoot())
+        {
+            if (inventorySystem.CheckAndUseBullets(3))
+            {
+                attack.OnShootBurst();
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
