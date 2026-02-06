@@ -1,3 +1,4 @@
+using Modern2D;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -48,6 +49,9 @@ public class WorldClock : MonoBehaviour
 
     public UnityEvent DayChangeEvent;
 
+    private LightingSystem lightingSystem;
+    private float shadowAlpha = 0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -64,6 +68,9 @@ public class WorldClock : MonoBehaviour
             PauseTimer();
             worldClockLight.nightLight();
         }
+
+        lightingSystem = LightingSystem.system;
+        shadowAlpha = lightingSystem._shadowAlpha;
     }
 
     void Update()
@@ -115,6 +122,7 @@ public class WorldClock : MonoBehaviour
         {
             CurrentPhase = DayPhase.Night;
             currentTime = nightLength;
+            lightingSystem._shadowAlpha.value = Mathf.Lerp(lightingSystem._shadowAlpha.value, 0, 0.5f);
         }
         else
         {
@@ -123,6 +131,7 @@ public class WorldClock : MonoBehaviour
             preciseTime = dayLength;
             if (!inTutorialMode)
                 IterateSeason();
+            lightingSystem._shadowAlpha.value = Mathf.Lerp(lightingSystem._shadowAlpha.value, shadowAlpha, 0.5f);
         }
         DayChangeEvent.Invoke();
     }
