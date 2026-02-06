@@ -18,7 +18,7 @@ public class Follow : BossAction
         while (elapsed < actionDuration)
         {
             elapsed += Time.deltaTime;
-            if (boss.player != null) boss.agent.SetDestination(boss.player.position);
+            boss.agent.SetDestination(boss.GetPlayerPosition());
             if (boss.phaseTwoActivated) boss.agent.speed = speed * boss.data.rageMultiplier;
             else boss.agent.speed = speed;
             yield return null;

@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossData
   bossName: 001
   maxHealth: 300
-  attackRating: 4
+  attackRating: 5
   knockbackForce: 15
   hitCooldown: 2
   phaseTwoThreshold: 0.5
   phaseThreeThreshold: 0
   rageMultiplier: 1.5
-  cooldownTime: 0.5
-  idleTime: 2
+  cooldownTime: 0.22222222
+  idleTime: 0.8888889
   actions:
   - {fileID: 11400000, guid: 1ebd5991c4a31df418239d8220852d6c, type: 2}
   - {fileID: 11400000, guid: e64514f61cebb724bb5d6a1b26d18b9e, type: 2}

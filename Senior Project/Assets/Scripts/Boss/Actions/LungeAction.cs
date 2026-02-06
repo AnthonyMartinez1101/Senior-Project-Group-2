@@ -32,7 +32,7 @@ public class Lunge : BossAction
         float elapsed = 0f;
         while (elapsed < backTime)
         {
-            player = boss.player.position;
+            player = boss.GetPlayerPosition();
             direction = (startPosition - player).normalized;
             backTarget = startPosition + direction * backDistance;
             boss.agent.SetDestination(backTarget);
@@ -45,7 +45,7 @@ public class Lunge : BossAction
     private IEnumerator Forward(BossScript boss)
     {
         Debug.Log("Lunging forward!");
-        Vector2 lungeTarget = boss.player.position;
+        Vector2 lungeTarget = boss.GetPlayerPosition();
 
         float ogAcceleration = boss.agent.acceleration;
         boss.agent.acceleration = 100f;

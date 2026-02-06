@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7770765713227256853}
   - component: {fileID: 9103856716093881941}
   - component: {fileID: 2423913854918513234}
-  - component: {fileID: 4983615375441441761}
   - component: {fileID: 3171595051139043701}
   - component: {fileID: 2737907656110861412}
+  - component: {fileID: 7349921054251946686}
+  - component: {fileID: 4900337350073920050}
   m_Layer: 7
   m_Name: Boss
   m_TagString: Enemy
@@ -53,6 +54,8 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 2658083d7eda5c84d9685ad7cde40578, type: 2}
   player: {fileID: 0}
   agent: {fileID: 2737907656110861412}
+  damageFlash: {fileID: 0}
+  phaseTwoActivated: 0
 --- !u!114 &9103856716093881941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +115,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 8926521825728871359, guid: b662552a791c6544baf5a2d38b39ab5c, type: 3}
+  m_Sprite: {fileID: -8321102221490951993, guid: 3bc0c1237a6e04c4096dc0566a3d4e9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,42 +126,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4983615375441441761
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3758422883315622073}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 3.5625
 --- !u!50 &3171595051139043701
 Rigidbody2D:
   serializedVersion: 5
@@ -208,6 +175,55 @@ NavMeshAgent:
   m_BaseOffset: 2.3125
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!70 &7349921054251946686
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3758422883315622073}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.64}
+  m_Size: {x: 5.11, y: 1.93}
+  m_Direction: 1
+--- !u!114 &4900337350073920050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3758422883315622073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d919ee3bebbfc344fb83edd3753aa147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyFaceFlip
 --- !u!1001 &5390489356214575120
 PrefabInstance:
   m_ObjectHideFlags: 0

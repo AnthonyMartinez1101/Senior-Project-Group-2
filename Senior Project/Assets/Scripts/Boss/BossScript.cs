@@ -79,6 +79,12 @@ public class BossScript : MonoBehaviour
         StartCoroutine(PerformAction(action));
     }
 
+    public Vector2 GetPlayerPosition()
+    {
+        if(player != null) return player.position;
+        else return Vector2.zero;
+    }
+
     private IEnumerator PerformAction(BossAction action)
     {
         yield return new WaitForSeconds(data.idleTime);

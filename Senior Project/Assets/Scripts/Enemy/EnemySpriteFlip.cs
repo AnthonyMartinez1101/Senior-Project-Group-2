@@ -7,6 +7,8 @@ public class EnemyFaceFlip : MonoBehaviour
     private SpriteRenderer sr;          // your sprite
     private float deadZone = 0.05f;     // ignore jitters
 
+    public bool flipX = false;
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -22,6 +24,10 @@ public class EnemyFaceFlip : MonoBehaviour
         Vector3 v = agent.velocity;           // actual current velocity
 
         float vx = v.x;
-        if (Mathf.Abs(vx) > deadZone) sr.flipX = vx < 0f;
+        if (Mathf.Abs(vx) > deadZone) 
+        { 
+            if(!flipX) sr.flipX = vx < 0f;
+            else sr.flipX = vx > 0f;
+        }
     }
 }
