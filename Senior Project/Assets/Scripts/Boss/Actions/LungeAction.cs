@@ -24,23 +24,18 @@ public class Lunge : BossAction
     private IEnumerator Back(BossScript boss)
     {
         Debug.Log("Jumping back!");
-        Vector2 startPosition = boss.transform.position;
-        Vector2 player = boss.player.position;
-        Vector2 direction = (startPosition - player).normalized;
-        float backMod = backDistance;
-        if (boss.phaseTwoActivated)
-        {
-            backMod = backDistance / Mathf.Max(0.0001f, ptwoRage);
-        }
-        Vector2 backTarget = startPosition + direction * backMod;
+        Vector2 player, direction, backTarget, startPosition;
+        startPosition = boss.transform.position;
 
         boss.agent.speed = backSpeed;
-        boss.agent.SetDestination(backTarget);
-
-        float backTime = 2f;
+        float backTime = 1.5f;
         float elapsed = 0f;
-        while (Vector2.Distance((Vector2)boss.transform.position, backTarget) > 0.05f && elapsed < backTime)
+        while (elapsed < backTime)
         {
+            player = boss.player.position;
+            direction = (startPosition - player).normalized;
+            backTarget = startPosition + direction * backDistance;
+            boss.agent.SetDestination(backTarget);
             elapsed += Time.deltaTime;
             yield return null;
         }
