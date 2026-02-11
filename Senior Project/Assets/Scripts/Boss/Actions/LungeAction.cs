@@ -9,6 +9,7 @@ public class Lunge : BossAction
     public float backDistance = 5f;
     public float ptwoRage = 1.5f;
     public float backDivider = 1.5f;
+    public float lungeOvershoot = 1.5f;
 
     public override void ExecuteAction(BossScript boss)
     {
@@ -17,8 +18,19 @@ public class Lunge : BossAction
 
     private IEnumerator ShortJump(BossScript boss)
     {
-        yield return boss.StartCoroutine(Back(boss));
+        if (boss.phaseTwoActivated)
+        {
         yield return boss.StartCoroutine(Forward(boss));
+        yield return boss.StartCoroutine(Forward(boss));
+        yield return boss.StartCoroutine(Forward(boss));
+        yield return boss.StartCoroutine(Forward(boss));
+        }
+        else
+        {
+        yield return boss.StartCoroutine(Back(boss));
+        yield return boss.StartCoroutine(Forward(boss));    
+        }
+ 
     }
 
     private IEnumerator Back(BossScript boss)
@@ -45,7 +57,9 @@ public class Lunge : BossAction
     private IEnumerator Forward(BossScript boss)
     {
         Debug.Log("Lunging forward!");
-        Vector2 lungeTarget = boss.GetPlayerPosition();
+        Vector2 playerPos = boss.GetPlayerPosition();
+        Vector2 direction = (playerPos - (Vector2)boss.transform.position).normalized;
+        Vector2 lungeTarget = playerPos + direction * lungeOvershoot;
 
         float ogAcceleration = boss.agent.acceleration;
         boss.agent.acceleration = 100f;
