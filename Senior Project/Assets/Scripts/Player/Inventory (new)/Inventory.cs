@@ -50,6 +50,8 @@ public class Inventory : MonoBehaviour
 
     private PlayerAudio playerAudio;
 
+    [HideInInspector] public bool HasSold;
+
     private void Awake()
     {
         //Creates and assigns the list of slots
@@ -377,6 +379,7 @@ public class Inventory : MonoBehaviour
             shopSellSlot.Clear();
         }
         RefreshUI();
+        HasSold = true;
     }
 
     public void SellSlotClick()

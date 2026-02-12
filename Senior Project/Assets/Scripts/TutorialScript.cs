@@ -30,6 +30,8 @@ public class TutorialScript : MonoBehaviour
 
     public TutorialUI ui;
 
+    public GameObject tutoritalEnemy;
+
     private void Start()
     {
         WASD = InputSystem.actions.FindAction("Move");
@@ -157,7 +159,7 @@ public class TutorialScript : MonoBehaviour
         bool enemiesDefeated = false;
         for (int i = 0; i < EnemyCount; i++)
         {
-            spawner.Spawn(spawner.enemyPrefab[1]);
+            spawner.Spawn(tutoritalEnemy);
         }
         while (!enemiesDefeated)
         {
@@ -308,14 +310,9 @@ public class TutorialScript : MonoBehaviour
     {
         ui.UpdateUI("Go to the shop, press E, and sell your harvested crops", false);
 
-        bool itemsSold = false;
         shop.interactable = true;
-        while (!itemsSold)
+        while (!inv.HasSold)
         {
-            if (inv.SearchForItem(food) == 0)
-            {
-                itemsSold = true;
-            }
             yield return null;
         }
         yield return StartCoroutine(SetCheck());

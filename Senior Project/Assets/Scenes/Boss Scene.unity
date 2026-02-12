@@ -26009,6 +26009,7 @@ Transform:
   - {fileID: 1064968841}
   - {fileID: 617063324}
   - {fileID: 1115332884}
+  - {fileID: 1694491049}
   - {fileID: 808837674}
   - {fileID: 1361298139}
   - {fileID: 1074404138}
@@ -29572,6 +29573,88 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HoverEnable
   nameBanner: {fileID: 1930015633}
+--- !u!1001 &1694491048
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1464488868}
+    m_Modifications:
+    - target: {fileID: 2294955276527702253, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2392322832669498339, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2392322832669498339, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 2392322832669498339, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2392322832669498339, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2392322832669498339, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2392322832669498339, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2392322832669498339, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2392322832669498339, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2392322832669498339, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2392322832669498339, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893017943797599352, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631521263454681435, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: itemInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: d648f5d662a050e49b7fd985802a75ed, type: 2}
+    - target: {fileID: 5631521263454681435, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: canDespawn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631521263454681435, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: runtimeAmount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6311631902464708414, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+      propertyPath: m_Name
+      value: ItemDrop (99)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+--- !u!4 &1694491049 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2392322832669498339, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
+  m_PrefabInstance: {fileID: 1694491048}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1696381439 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 951365163498361168, guid: 69925a4421cb23d44ac9f3257024dd19, type: 3}
