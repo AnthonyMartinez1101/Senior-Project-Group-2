@@ -31,7 +31,8 @@ public class Weapon : MonoBehaviour
         return tag == "Player" || 
                tag == "NoBulletCollision" || 
                tag == "Interact" ||
-               tag == "Shadow";
+               tag == "Shadow" ||
+               tag == "Bullet";
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

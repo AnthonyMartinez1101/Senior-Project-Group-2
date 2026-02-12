@@ -19884,6 +19884,10 @@ PrefabInstance:
       propertyPath: shootCooldown
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1125482792520486096, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: shotgunSpreadAngle
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1760016382332637093, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -19918,7 +19922,7 @@ PrefabInstance:
       objectReference: {fileID: 1014007743}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCount
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCountText
@@ -21213,7 +21217,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 404758538}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

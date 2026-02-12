@@ -192,7 +192,7 @@ public class InteractScript : MonoBehaviour
                 break;
 
             case WeaponType.Shotgun:
-                ShootAR();
+                ShootShotGun();
                 break;
 
             case WeaponType.Grenade:
@@ -228,6 +228,17 @@ public class InteractScript : MonoBehaviour
             if (inventorySystem.CheckAndUseBullets(3))
             {
                 attack.OnShootBurst();
+            }
+        }
+    }
+
+    private void ShootShotGun()
+    {
+        if (attack.CanShoot())
+        {
+            if (inventorySystem.CheckAndUseBullets(3))
+            {
+                attack.OnShootShotgun();
             }
         }
     }

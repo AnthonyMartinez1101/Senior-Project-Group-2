@@ -119,6 +119,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void GoToMainMenu()
+    {
+        ResumeGame();
+        SceneManager.LoadScene(0);
+    }
+
 
     public void QuitGame()
     {
