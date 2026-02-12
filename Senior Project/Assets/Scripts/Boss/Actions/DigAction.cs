@@ -7,10 +7,10 @@ public class Dig : BossAction
 
     public override void ExecuteAction(BossScript boss)
     {
-        boss.StartCoroutine(Dig(boss));  
+        boss.StartCoroutine(DigCoroutine(boss));  
     }
 
-    private IEnumerator Dig(BossScript boss)
+    private IEnumerator DigCoroutine(BossScript boss)
     {
         yield return null;
     }
