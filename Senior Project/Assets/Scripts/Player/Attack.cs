@@ -14,10 +14,11 @@ public class Attack : MonoBehaviour
 
     public Transform aim;
     public GameObject shootFlash;
-    public GameObject bullet;
+    public GameObject pistolBullet;
+    public GameObject ARBullet;
+    public GameObject shotgunBullet;
     public float bulletForce = 10f;
     public float bulletYOffset = 0.0f;
-    public float shootCooldown = 0.25f;
     float shootTimer = 0.5f;
 
     public GameObject grenade;
@@ -48,7 +49,7 @@ public class Attack : MonoBehaviour
     void Update()
     {
         meleeTimer -= Time.deltaTime;
-        shootTimer += Time.deltaTime;
+        shootTimer -= Time.deltaTime;
         if (scytheAction.WasPressedThisFrame())
         {
             OnMelee();
@@ -57,8 +58,8 @@ public class Attack : MonoBehaviour
 
     public void OnShoot()
     {
-        shootTimer = 0.0f;
-        Shoot();
+        shootTimer = 0.25f;
+        Shoot(pistolBullet);
     }
 
     public void OnShootBurst()
@@ -68,16 +69,16 @@ public class Attack : MonoBehaviour
 
     public void OnShootShotgun()
     {
-        shootTimer = 0.0f;
+        shootTimer = 1f;
         ShootShotgun();
     }
 
     IEnumerator ShootBurst()
     {
-        shootTimer = 0.0f;
+        shootTimer = 0.75f;
         for (int i = 0; i < 3; i++)
         {
-            Shoot();
+            Shoot(ARBullet);
             yield return new WaitForSeconds(0.1f);
         }
     }
@@ -91,7 +92,7 @@ public class Attack : MonoBehaviour
         for (int i = -1; i <= 1; i++)
         {
             Quaternion rot = baseRot * Quaternion.Euler(0f, 0f, i * shotgunSpreadAngle);
-            GameObject b = Instantiate(bullet, bulletSpawn, rot);
+            GameObject b = Instantiate(shotgunBullet, bulletSpawn, rot);
             Instantiate(shootFlash, bulletSpawn, rot);
 
             Vector2 dir = -((aim.rotation * Quaternion.Euler(0f, 0f, i * shotgunSpreadAngle)) * Vector3.up);
@@ -101,7 +102,7 @@ public class Attack : MonoBehaviour
         GameManager.Instance.CameraShake(1.5f, 0.1f);
     }
 
-    private void Shoot()
+    private void Shoot(GameObject bullet)
     {
         Quaternion rot = aim.rotation * Quaternion.Euler(0f, 0f, -90f);
         Vector3 bulletSpawn = aim.position + new Vector3(0f, bulletYOffset, 0f);
@@ -114,7 +115,7 @@ public class Attack : MonoBehaviour
 
     public bool CanShoot()
     {
-        return shootTimer > shootCooldown || noShootCooldown;
+        return shootTimer <= 0 || noShootCooldown;
     }
 
     public void OnThrowGrenade(float force)

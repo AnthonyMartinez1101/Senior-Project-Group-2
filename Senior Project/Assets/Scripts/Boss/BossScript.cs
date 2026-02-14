@@ -115,7 +115,7 @@ public class BossScript : MonoBehaviour
     {
         if (damageFlash) damageFlash.FlashOnDamage();
         currentHealth -= damageAmount;
-        Debug.Log("Boss Health: " + currentHealth);
+        //Debug.Log("Boss Health: " + currentHealth);
         if (healthBar) healthBar.UpdateHealth(currentHealth, data.maxHealth);
         if (currentHealth <= 0)
         {

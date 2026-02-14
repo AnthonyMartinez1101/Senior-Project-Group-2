@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 3076064094516845674}
   - component: {fileID: 2241106396947954339}
   m_Layer: 14
-  m_Name: Bullet
+  m_Name: Bullet Shotgun
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -529,7 +529,7 @@ MonoBehaviour:
   damage: 3
   knockbackForce: 7
   weaponType: 1
-  bulletDamageChange: 0
+  bulletType: 3
   explosionTimer: 2.5
   explosionRadius: {fileID: 0}
   bulletHitCount: 5

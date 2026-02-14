@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 988549393784226267}
   - component: {fileID: 351094926473005147}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: 'Boss : shadow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4780724850443443655}
   - component: {fileID: 7367309895901913522}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: 'Boss : shadowPivot'
   m_TagString: Shadow
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ Transform:
   m_GameObject: {fileID: 3263000376793771080}
   serializedVersion: 2
   m_LocalRotation: {x: -0.495385, y: -0.09951136, z: 0.16995263, w: -0.84605396}
-  m_LocalPosition: {x: 2.0372128, y: -0.055397034, z: 0}
+  m_LocalPosition: {x: 2.0372133, y: -0.055397034, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
