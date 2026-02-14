@@ -39,6 +39,7 @@ public class MusicScript : MonoBehaviour
 
     public void ToggleDay()
     {
+        StopAllCoroutines();
         isDayTime = !isDayTime;
         if (isDayTime) PlayDayMusic();
     }

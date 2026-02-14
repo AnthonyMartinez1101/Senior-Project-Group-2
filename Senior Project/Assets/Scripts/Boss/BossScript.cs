@@ -28,6 +28,8 @@ public class BossScript : MonoBehaviour
     public DamageFlash damageFlash;
     private FloatingHealth healthBar;
 
+    private float attackValue, cooldownAmount, idleAmount;
+
     private bool inPlayerRange = false;
     private float hitCooldown = 1.5f;
 
@@ -48,6 +50,10 @@ public class BossScript : MonoBehaviour
 
         if (!healthBar) healthBar = GetComponentInChildren<FloatingHealth>();
         if (healthBar) healthBar.SetMax();
+
+        attackValue = data.attackRating;
+        cooldownAmount = data.cooldownTime;
+        idleAmount = data.idleTime;
     }
 
     private void Update()
@@ -65,7 +71,7 @@ public class BossScript : MonoBehaviour
 
         if (inPlayerRange && hitCooldown <= 0f)
         {
-            playerHealth.TakeDamage(data.attackRating);
+            playerHealth.TakeDamage(attackValue);
             playerKnockback.ApplyKnockback(transform, data.knockbackForce);
             hitCooldown = data.hitCooldown;
         }
@@ -87,22 +93,21 @@ public class BossScript : MonoBehaviour
 
     private IEnumerator PerformAction(BossAction action)
     {
-        yield return new WaitForSeconds(data.idleTime);
+        yield return new WaitForSeconds(idleAmount);
         state = State.Attacking;
         action.ExecuteAction(this);
         yield return new WaitForSeconds(action.actionDuration);
         state = State.Cooldown;
-        yield return new WaitForSeconds(data.cooldownTime);
+        yield return new WaitForSeconds(cooldownAmount);
         state = State.Idle;
         isPerformingAction = false;
     }
 
     private void PhaseTwo()
     {
-        // Increase speed, attack, etc.
-        data.attackRating *= data.rageMultiplier;
-        data.cooldownTime /= data.rageMultiplier;
-        data.idleTime /= data.rageMultiplier;
+        attackValue *= data.rageMultiplier;
+        cooldownAmount /= data.rageMultiplier;
+        idleAmount /= data.rageMultiplier;
         phaseTwoActivated = true;
     }
 

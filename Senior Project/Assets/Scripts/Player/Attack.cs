@@ -87,15 +87,14 @@ public class Attack : MonoBehaviour
         Quaternion baseRot = aim.rotation * Quaternion.Euler(0f, 0f, -90f);
         Vector3 bulletSpawn = aim.position + new Vector3(0f, bulletYOffset, 0f);
 
-        float[] angles = { -shotgunSpreadAngle, 0f, shotgunSpreadAngle };   
 
-        for (int i = 0; i < angles.Length; i++)
+        for (int i = -1; i <= 1; i++)
         {
-            Quaternion rot = baseRot * Quaternion.Euler(0f, 0f, angles[i]);
+            Quaternion rot = baseRot * Quaternion.Euler(0f, 0f, i * shotgunSpreadAngle);
             GameObject b = Instantiate(bullet, bulletSpawn, rot);
             Instantiate(shootFlash, bulletSpawn, rot);
 
-            Vector2 dir = -((aim.rotation * Quaternion.Euler(0f, 0f, angles[i])) * Vector3.up);
+            Vector2 dir = -((aim.rotation * Quaternion.Euler(0f, 0f, i * shotgunSpreadAngle)) * Vector3.up);
             b.GetComponent<Rigidbody2D>().AddForce(dir * bulletForce, ForceMode2D.Impulse);
             Destroy(b, 2.0f);
         }

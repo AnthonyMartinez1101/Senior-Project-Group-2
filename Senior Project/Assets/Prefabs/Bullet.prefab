@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6470016410377411525}
   - component: {fileID: 3448664057911769172}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8954783173017588823}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3527636248045516874}
   - component: {fileID: 5830938319539631422}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 255225533749320293}
   - component: {fileID: 3076064094516845674}
   - component: {fileID: 2241106396947954339}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -529,8 +529,10 @@ MonoBehaviour:
   damage: 3
   knockbackForce: 7
   weaponType: 1
+  bulletDamageChange: 0
   explosionTimer: 2.5
   explosionRadius: {fileID: 0}
+  bulletHitCount: 5
 --- !u!1 &5736945479677493133
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6662271106631010728}
   - component: {fileID: 6225346015879437217}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Light (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8599507260815368150}
   - component: {fileID: 4682709581243711122}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -709,7 +711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4975500689950736962}
   - component: {fileID: 7305444710758286680}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

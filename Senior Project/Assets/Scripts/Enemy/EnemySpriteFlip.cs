@@ -5,7 +5,7 @@ public class EnemyFaceFlip : MonoBehaviour
 {
     private NavMeshAgent agent;  
     private SpriteRenderer sr;          // your sprite
-    private float deadZone = 0.05f;     // ignore jitters
+    [SerializeField] private float deadZone = 0.1f;     // ignore jitters
 
     public bool flipX = false;
 

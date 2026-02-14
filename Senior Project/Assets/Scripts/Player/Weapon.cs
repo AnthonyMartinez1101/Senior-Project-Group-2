@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
     public float knockbackForce = 5f;
     public enum WeaponType { Melee, Bullet, Grenade }
     public WeaponType weaponType;
+    public float bulletDamageChange = 0f;
 
     public float explosionTimer = 2.5f;
     public Collider2D explosionRadius;
@@ -28,11 +29,12 @@ public class Weapon : MonoBehaviour
 
     private bool Avoid(string tag)
     {
-        return tag == "Player" || 
-               tag == "NoBulletCollision" || 
+        //Strings of colliders to avoid if it sneaks past the layer mask
+        return tag == "Bullet" ||
+               tag == "Player" ||
+               tag == "NoBulletCollision" ||
                tag == "Interact" ||
-               tag == "Shadow" ||
-               tag == "Bullet";
+               tag == "Shadow";
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
