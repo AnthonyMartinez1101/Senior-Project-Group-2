@@ -56,7 +56,7 @@ public class Lunge : BossAction
 
     private IEnumerator Forward(BossScript boss)
     {
-        Debug.Log("Lunging forward!");
+        //Debug.Log("Lunging forward!");
         Vector2 playerPos = boss.GetPlayerPosition();
         Vector2 direction = (playerPos - (Vector2)boss.transform.position).normalized;
         Vector2 lungeTarget = playerPos + direction * lungeOvershoot;

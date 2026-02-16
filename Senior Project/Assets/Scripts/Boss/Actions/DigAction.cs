@@ -4,6 +4,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Dig", menuName = "Boss/Actions/Dig")]
 public class Dig : BossAction
 {
+    public Sprite warning;
+    public float disappearDuration = 1f;
+    public float flashDuration = 0.8f;
+    public int flashCount = 3;
+
 
     public override void ExecuteAction(BossScript boss)
     {
