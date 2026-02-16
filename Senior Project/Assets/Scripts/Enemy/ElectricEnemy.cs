@@ -3,9 +3,12 @@ using System.Collections.Generic;
 
 public class ElectricZombie2D : MonoBehaviour
 {
-    public float linkRange = 6f;                // Max distance to connect electricity
-    public float damagePerSecond = 10f;         // DPS when player touches arc
+    public float linkRange = 3f;                // Max distance to connect electricity
+    public float damagePerSecond = 5f;         // DPS when player touches arc
     public LineRenderer linePrefab;             // 2D LineRenderer prefab
+
+    // Maximum number of links this zombie may own (adjustable in inspector)
+    public int maxLinks = 2;
 
     private static List<ElectricZombie2D> allZombies = new List<ElectricZombie2D>();
 
@@ -90,8 +93,8 @@ public class ElectricZombie2D : MonoBehaviour
         // Only one of the two zombies should create the shared link to avoid duplicates
         if (GetInstanceID() < other.GetInstanceID())
         {
-            // Check not already linked
-            if (!HasLinkWith(other))
+            // Check not already linked and both sides can accept a new link
+            if (!HasLinkWith(other) && CanAcceptLink() && other.CanAcceptLink())
             {
                 CreateLink(other);
             }
@@ -148,8 +151,26 @@ public class ElectricZombie2D : MonoBehaviour
         return false;
     }
 
+    // Public helper so other instances can check if they can accept a new owned link
+    public bool CanAcceptLink()
+    {
+        return activeLinks.Count < maxLinks;
+    }
+
     void CreateLink(ElectricZombie2D other)
     {
+        // Double-check limits before creating
+        if (!CanAcceptLink())
+        {
+            Debug.LogWarning($"ElectricZombie2D: cannot create link, this zombie already has maxLinks ({maxLinks}).");
+            return;
+        }
+        if (!other.CanAcceptLink())
+        {
+            Debug.LogWarning($"ElectricZombie2D: cannot create link, other zombie reached its maxLinks ({other.maxLinks}).");
+            return;
+        }
+
         if (linePrefab == null)
         {
             Debug.LogWarning("ElectricZombie2D: linePrefab not set. Cannot create visual arc.");
