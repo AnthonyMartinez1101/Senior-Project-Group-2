@@ -5,11 +5,11 @@ using UnityEngine;
 public class Dig : BossAction
 {
     public Sprite warning;
+    private GameObject newRange;
     public float disappearDuration = 1f;
     public float flashDuration = 0.8f;
     public int flashCount = 3;
-
-
+    
     public override void ExecuteAction(BossScript boss)
     {
         boss.StartCoroutine(DigCoroutine(boss));  
@@ -98,6 +98,20 @@ public class Dig : BossAction
         {
           agent.enabled = true; 
         }
+
+        foreach(Transform child in boss.transform)
+        {
+            if(child.gameObject.CompareTag("AntColli"))
+            {
+                newRange = child.gameObject;
+                newRange.SetActive(true);
+            }
+        }
+        yield return new WaitForSeconds(0.1f); //keep the new range active for a short time
+            if(newRange != null)
+            {
+                newRange.SetActive(false);
+            }
 
         yield break;
     }
