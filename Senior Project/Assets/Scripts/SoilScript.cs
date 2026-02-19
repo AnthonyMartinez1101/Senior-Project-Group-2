@@ -133,9 +133,15 @@ public class SoilScript : MonoBehaviour
         if (item == null || item.itemType != ItemType.Seed || seedData.plant == null) return false; //Invalid plant item 
 
         currentPlant = Instantiate(plantActor, transform.position, Quaternion.identity, transform);
-        currentPlant.Create(seedData.plant);
+        currentPlant.Create(seedData.plant, this);
 
         return true;
+    }
+
+    public void NewPlant(PlantScript newPlantItem)
+    {
+        currentPlant = newPlantItem;
+        currentPlant.Create(newPlantItem.plantInfo, this);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

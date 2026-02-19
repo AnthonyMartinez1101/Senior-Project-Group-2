@@ -26,4 +26,7 @@ public class PlantItem : ScriptableObject
 
     [Header("Can Plant Die to Dehydration")]
     public bool canDry = true;
+
+    [Header("Object to create on Harvest")]
+    public GameObject objectOnHarvest;
 }

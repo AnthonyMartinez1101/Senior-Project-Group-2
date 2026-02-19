@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18521cb7a8f5ae747902efa002e0964f, type: 3}
   m_Name: Turret
   m_EditorClassIdentifier: Assembly-CSharp::PlantItem
-  plantName: 
-  growthTime: 0
+  plantName: Turret
+  growthTime: 9999
   growStages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -2102260859274290736, guid: e010b2a601e219e449cc489d02eff256, type: 3}
+  - {fileID: -2102260859274290736, guid: e010b2a601e219e449cc489d02eff256, type: 3}
+  - {fileID: -2102260859274290736, guid: e010b2a601e219e449cc489d02eff256, type: 3}
+  - {fileID: -2102260859274290736, guid: e010b2a601e219e449cc489d02eff256, type: 3}
   produce: {fileID: 0}
   seed: {fileID: 0}
   minDrop: 1
   maxDrop: 1
   seedChance: 0
-  canDry: 1
+  canDry: 0
