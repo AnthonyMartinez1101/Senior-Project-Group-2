@@ -37,9 +37,24 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync(nextSceneIndex);
     }
 
-    public void TestBossScene()
+    public void TestBossOne()
     {
         SceneManager.LoadSceneAsync(3);
+    }
+
+    public void TestBossTwo()
+    {
+        SceneManager.LoadSceneAsync(4);
+    }
+
+    public void TestBossThree()
+    {
+        SceneManager.LoadSceneAsync(5);
+    }
+
+    public void TestBossFour()
+    {
+        SceneManager.LoadSceneAsync(6);
     }
 
     public void BackToTitle()
