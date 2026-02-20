@@ -74,7 +74,17 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Avoid(collision.tag)) return;
+        ShieldAction shield = collision.GetComponent<ShieldAction>()
+                              ?? collision.GetComponentInParent<ShieldAction>()
+                              ?? collision.GetComponentInChildren<ShieldAction>();
+
+        if (shield == null && Avoid(collision.tag)) return;
+
+        if (shield != null)
+        {
+            shield.TakeDamage(damage);
+            bulletTotalHit++;
+        }
 
         Enemy enemy = collision.GetComponent<Enemy>();
         if(enemy != null)

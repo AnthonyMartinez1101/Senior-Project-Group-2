@@ -35,6 +35,10 @@ public class BossScript : MonoBehaviour
 
     public bool phaseTwoActivated = false;
 
+    // Flags for a shield state added.
+    public bool isShielded = false;
+    public bool hasUsedShield = false;
+
     private void Start()
     {
         currentHealth = data.maxHealth;
@@ -113,6 +117,12 @@ public class BossScript : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
+        // If shield is active, ignore/don't apply damage to boss and log for verification
+        if (isShielded)
+        {
+            return;
+        }
+
         if (damageFlash) damageFlash.FlashOnDamage();
         currentHealth -= damageAmount;
         //Debug.Log("Boss Health: " + currentHealth);
