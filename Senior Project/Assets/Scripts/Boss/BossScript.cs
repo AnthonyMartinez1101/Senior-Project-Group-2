@@ -14,6 +14,7 @@ public class BossScript : MonoBehaviour
     }
 
     public BossData data;
+    public SpriteRenderer spriteRenderer;
 
     private float currentHealth;
 
@@ -47,8 +48,7 @@ public class BossScript : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = player.GetComponent<PlayerHealth>();
         playerKnockback = player.GetComponent<Knockback>();
 
@@ -58,6 +58,8 @@ public class BossScript : MonoBehaviour
         attackValue = data.attackRating;
         cooldownAmount = data.cooldownTime;
         idleAmount = data.idleTime;
+
+        if (data.bossSprite != null) spriteRenderer.sprite = data.bossSprite;
     }
 
     private void Update()
@@ -113,12 +115,13 @@ public class BossScript : MonoBehaviour
         cooldownAmount /= data.rageMultiplier;
         idleAmount /= data.rageMultiplier;
         phaseTwoActivated = true;
+        if (data.altSprite != null) spriteRenderer.sprite = data.altSprite;
     }
 
     public void TakeDamage(float damageAmount)
     {
         // If shield is active, ignore/don't apply damage to boss and log for verification
-        if (isShielded)
+        if (isShielded | data.isInvincible)
         {
             return;
         }

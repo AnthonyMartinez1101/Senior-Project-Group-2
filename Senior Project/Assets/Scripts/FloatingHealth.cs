@@ -48,4 +48,9 @@ public class FloatingHealth : MonoBehaviour
         bool isFull = (1f - slider.value) <= FullEpsilon;
         canvasGroup.alpha = isFull ? 0f : 1f;
     }
+
+    public bool isHalf()
+    {
+        return slider.value <= 0.5f;
+    }
 }

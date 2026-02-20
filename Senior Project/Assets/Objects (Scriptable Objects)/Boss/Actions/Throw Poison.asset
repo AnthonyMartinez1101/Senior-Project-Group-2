@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad9c4e30565acc43be01c80cb2dff37, type: 3}
+  m_Name: Throw Poison
+  m_EditorClassIdentifier: Assembly-CSharp::ThrowPoisonAction
+  actionName: Throw Poison
+  actionDuration: 1
+  projectilePrefab: {fileID: 2437961067144117327, guid: 5befb3d70ddf9fd41ab6969a27ebad40, type: 3}
+  throwSpeed: 15
+  angleRange: 25

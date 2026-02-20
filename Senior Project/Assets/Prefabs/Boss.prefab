@@ -216,10 +216,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossScript
   data: {fileID: 11400000, guid: c7c1ab3bd1c220046955448e53b4d021, type: 2}
+  spriteRenderer: {fileID: 2423913854918513234}
   player: {fileID: 0}
   agent: {fileID: 2737907656110861412}
   damageFlash: {fileID: 4026702009449874235}
   phaseTwoActivated: 0
+  isShielded: 0
+  hasUsedShield: 0
 --- !u!114 &9103856716093881941
 MonoBehaviour:
   m_ObjectHideFlags: 0

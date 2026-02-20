@@ -12,12 +12,15 @@ public abstract class BossAction : ScriptableObject
 public class BossData : ScriptableObject
 {
     public string bossName;
+    public Sprite bossSprite;
+    public Sprite altSprite;
 
     [Header("Stats")]
     public float maxHealth = 300f;
     public float attackRating = 5f;
     public float knockbackForce = 15f;
     public float hitCooldown = 2.0f;
+    public bool isInvincible = false;
 
     [Header("Phases")]
     public float phaseTwoThreshold = 0.5f;

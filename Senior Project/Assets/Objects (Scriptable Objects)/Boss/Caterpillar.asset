@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0f6282636af6b49aa19cb77f575800, type: 3}
+  m_Name: Caterpillar
+  m_EditorClassIdentifier: Assembly-CSharp::BossData
+  bossName: Caterpillar
+  bossSprite: {fileID: -4071051187171467467, guid: dc11c94b002f1c84c9197e7483d34762, type: 3}
+  altSprite: {fileID: -20948411823446318, guid: 6e797d1cf854ddb4599b2ea644a202fd, type: 3}
+  maxHealth: 200
+  attackRating: 3.5
+  knockbackForce: 15
+  hitCooldown: 2
+  isInvincible: 0
+  phaseTwoThreshold: 0.5
+  phaseThreeThreshold: 0
+  rageMultiplier: 1.5
+  cooldownTime: 0.5
+  idleTime: 2
+  actions:
+  - {fileID: 11400000, guid: 1ebd5991c4a31df418239d8220852d6c, type: 2}
+  - {fileID: 11400000, guid: 8466d802b73854f4ca57ff18dc487b81, type: 2}
