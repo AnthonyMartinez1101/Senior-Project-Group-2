@@ -25,4 +25,4 @@ MonoBehaviour:
   maxDrop: 1
   seedChance: 0
   canDry: 1
-  objectOnHarvest: {fileID: 5370905403970759343, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
+  objectOnHarvest: {fileID: 3729801971907865267, guid: bfdbec1641e5c9b45a4b7b4bc873f508, type: 3}

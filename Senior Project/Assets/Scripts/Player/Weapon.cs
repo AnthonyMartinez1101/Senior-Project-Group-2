@@ -74,11 +74,9 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        ShieldAction shield = collision.GetComponent<ShieldAction>()
-                              ?? collision.GetComponentInParent<ShieldAction>()
-                              ?? collision.GetComponentInChildren<ShieldAction>();
+        if(Avoid(collision.tag)) return;
 
-        if (shield == null && Avoid(collision.tag)) return;
+        ShieldAction shield = collision.GetComponent<ShieldAction>() ?? collision.GetComponentInParent<ShieldAction>() ?? collision.GetComponentInChildren<ShieldAction>();
 
         if (shield != null)
         {
