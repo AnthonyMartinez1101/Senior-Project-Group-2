@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dig
   actionName: Dig
   actionDuration: 2
-  warning: {fileID: 21300000, guid: 38933b6046d4a7442ad2d30d3fb8041c, type: 3}
+  warning: {fileID: 21300000, guid: 24f01d96b15135e45bf6aaa1ae2fee81, type: 3}
   disappearDuration: 1
   flashDuration: 0.8
   flashCount: 3
