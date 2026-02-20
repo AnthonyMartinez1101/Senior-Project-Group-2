@@ -40,6 +40,8 @@ public class BossScript : MonoBehaviour
     public bool isShielded = false;
     public bool hasUsedShield = false;
 
+    private int poisonCount = 0;
+
     private void Start()
     {
         currentHealth = data.maxHealth;
@@ -80,6 +82,22 @@ public class BossScript : MonoBehaviour
             playerHealth.TakeDamage(attackValue);
             playerKnockback.ApplyKnockback(transform, data.knockbackForce);
             hitCooldown = data.hitCooldown;
+        }
+    }
+
+    public void ApplyPoison(int ticks)
+    {
+        poisonCount = ticks;
+        StartCoroutine(PoisonDamage());
+    }
+
+    IEnumerator PoisonDamage()
+    {
+        while (poisonCount > 0)
+        {
+            TakeDamage(1f);
+            poisonCount--;
+            yield return new WaitForSeconds(0.75f);
         }
     }
 
