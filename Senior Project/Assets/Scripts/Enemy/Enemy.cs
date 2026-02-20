@@ -29,6 +29,8 @@ public class Enemy : MonoBehaviour
 
     bool startBurning = false;
 
+    private int poisonCount = 0;
+
 
 
 
@@ -52,6 +54,22 @@ public class Enemy : MonoBehaviour
 
 
         damageFlash = GetComponent<DamageFlash>();
+    }
+
+    public void ApplyPoison(int ticks)
+    {
+        poisonCount = ticks;
+        StartCoroutine(PoisonDamage());
+    }
+
+    IEnumerator PoisonDamage()
+    {
+        while (poisonCount > 0)
+        {
+            TakeDamage(1f);
+            poisonCount--;
+            yield return new WaitForSeconds(0.75f);
+        }
     }
 
 

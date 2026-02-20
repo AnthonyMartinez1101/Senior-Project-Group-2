@@ -15,6 +15,7 @@ TagManager:
   - Shadow
   - Boss
   - AntColli
+  - TurretRange
   layers:
   - Default
   - TransparentFX

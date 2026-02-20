@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Turret Plant
   m_EditorClassIdentifier: Assembly-CSharp::PlantItem
   plantName: Turret Plant
-  growthTime: 80
+  growthTime: 5
   growStages:
   - {fileID: 8869333566321768476, guid: e010b2a601e219e449cc489d02eff256, type: 3}
   - {fileID: 8869333566321768476, guid: e010b2a601e219e449cc489d02eff256, type: 3}
