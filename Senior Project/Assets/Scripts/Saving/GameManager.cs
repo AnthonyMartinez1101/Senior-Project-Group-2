@@ -256,7 +256,7 @@ public class GameManager : MonoBehaviour
                             if (plantItem != null)
                             {
                                 PlantScript plant = Instantiate(soil.plantActor, soil.transform.position, Quaternion.identity, soil.transform);
-                                plant.Create(plantItem);
+                                plant.Create(plantItem, soil);
                                 plant.currentGrowth = soilPlot.plant.growth;
                                 plant.currentHealth = soilPlot.plant.health;
                                 soil.currentPlant = plant;

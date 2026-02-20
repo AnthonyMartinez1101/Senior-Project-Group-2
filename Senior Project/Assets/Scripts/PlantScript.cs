@@ -19,15 +19,18 @@ public class PlantScript : MonoBehaviour
 
     private bool tutorialMode = false;
 
+    private SoilScript connectedSoil;
+
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Create(PlantItem newPlantInfo)
+    public void Create(PlantItem newPlantInfo, SoilScript newSoil)
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         plantInfo = newPlantInfo;
+        connectedSoil = newSoil;
 
         spriteRenderer.sprite = plantInfo.growStages[0];
 
@@ -40,6 +43,16 @@ public class PlantScript : MonoBehaviour
         if (healthBar) healthBar.SetMax();
 
         if(newPlantInfo.plantName == "Tutorial Plant") tutorialMode = true;
+
+        StartCoroutine(TempColliderDis());
+    }
+
+    IEnumerator TempColliderDis()
+    { 
+        var col = GetComponent<Collider2D>();
+        col.enabled = false;
+        yield return new WaitForSeconds(0.2f);
+        col.enabled = true;
     }
 
     // Update is called once per frame
@@ -90,20 +103,23 @@ public class PlantScript : MonoBehaviour
         {
             if (lastCollidedWithSickle)
             {
-                if (plantInfo.produce != null && plantInfo.seed != null)
+                if (IsFullyGrown())
                 {
-                    if (IsFullyGrown())
+                    if(plantInfo.produce != null) DropProduce();
+                    else Debug.Log("PlantScript: PlantItem produce is null. Cannot drop produce.");
+
+                    if(plantInfo.objectOnHarvest != null)
                     {
-                        DropProduce();
-                    }
-                    else
-                    {
-                        DropSeed();
+                        var newObject = Instantiate(plantInfo.objectOnHarvest, transform.position, Quaternion.identity);
+
+                        var newPlant = newObject.GetComponent<PlantScript>();
+                        if (newPlant != null) connectedSoil.NewPlant(newPlant);
                     }
                 }
                 else
                 {
-                    Debug.Log("PlantScript: PlantItem produce or seed is null. Cannot drop item.");
+                    if(plantInfo.seed != null) DropSeed();
+                    else Debug.Log("PlantScript: PlantItem seed is null. Cannot drop seed.");
                 }
             }
             Destroy(gameObject);

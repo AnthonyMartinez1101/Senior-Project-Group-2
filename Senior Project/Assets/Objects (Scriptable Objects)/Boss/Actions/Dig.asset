@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d1a1a52d89192a4295cc2134f0f3acb, type: 3}
+  m_Name: Dig
+  m_EditorClassIdentifier: Assembly-CSharp::Dig
+  actionName: Dig
+  actionDuration: 2
+  warning: {fileID: 21300000, guid: 38933b6046d4a7442ad2d30d3fb8041c, type: 3}
+  disappearDuration: 1
+  flashDuration: 0.8
+  flashCount: 3

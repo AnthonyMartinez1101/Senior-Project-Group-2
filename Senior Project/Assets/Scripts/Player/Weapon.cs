@@ -8,6 +8,13 @@ public class Weapon : MonoBehaviour
     public enum WeaponType { Melee, Bullet, Grenade }
     public WeaponType weaponType;
 
+    public enum BulletType { NA, Pistol, AR, Shotgun };
+    public BulletType bulletType;
+
+    private float bulletDamageChange = 30f;
+
+    private float shotgunBulletWait = 0.012f;
+
     public float explosionTimer = 2.5f;
     public Collider2D explosionRadius;
 
@@ -23,16 +30,46 @@ public class Weapon : MonoBehaviour
         {
             StartCoroutine(Explode(explosionTimer));
         }
-        
+
+        if(bulletType == BulletType.Shotgun)
+        {
+            damage *= 3;
+        }
+
+    }
+
+    void Update()
+    {
+        if (bulletType == BulletType.NA) return;
+
+        switch(bulletType)
+        {
+            case BulletType.Pistol:
+                break;
+
+            case BulletType.AR:
+                damage += bulletDamageChange * Time.deltaTime;
+                damage = Mathf.Min(damage, 6);
+                break;
+
+            case BulletType.Shotgun:
+                shotgunBulletWait -= Time.deltaTime;
+                if(shotgunBulletWait <= 0)
+                {
+                    damage = 1f;
+                }
+                break;
+        }
     }
 
     private bool Avoid(string tag)
     {
-        return tag == "Player" || 
-               tag == "NoBulletCollision" || 
+        //Strings of colliders to avoid if it sneaks past the layer mask
+        return tag == "Bullet" ||
+               tag == "Player" ||
+               tag == "NoBulletCollision" ||
                tag == "Interact" ||
-               tag == "Shadow" ||
-               tag == "Bullet";
+               tag == "Shadow";
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -62,6 +99,7 @@ public class Weapon : MonoBehaviour
         if (boss != null)
         {
             boss.TakeDamage(damage);
+            Debug.Log("Bullet dealt: " + damage);
             bulletTotalHit++;
             if (collision.GetComponent<Knockback>()) collision.GetComponent<Knockback>().ApplyKnockback(transform, knockbackForce);
         }

@@ -133,9 +133,15 @@ public class SoilScript : MonoBehaviour
         if (item == null || item.itemType != ItemType.Seed || seedData.plant == null) return false; //Invalid plant item 
 
         currentPlant = Instantiate(plantActor, transform.position, Quaternion.identity, transform);
-        currentPlant.Create(seedData.plant);
+        currentPlant.Create(seedData.plant, this);
 
         return true;
+    }
+
+    public void NewPlant(PlantScript newPlantItem)
+    {
+        currentPlant = newPlantItem;
+        currentPlant.Create(newPlantItem.plantInfo, this);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -163,141 +169,3 @@ public class SoilScript : MonoBehaviour
         return waterLevel > 0f;
     }
 }
-
-    //COMMENTED OUT FOR NEW IMPLEMENTATION
-    //private float waterLevel = 0f;
-    //private bool isPlanted = false;
-
-    //public float plantGrowth = 0f;
-    //public float maxPlantGrowth = 10f;
-
-    //public float radius = 2f;
-    //public Transform playerPos;
-
-    //private FloatingHealth plantHealth;
-    //public float maxHealth = 15f;
-    //public float currentHealth = 15f;
-
-    //public GameObject fullyWatered; //png of watered plant
-
-    //InputAction waterButton;
-    //InputAction plantButton;
-
-
-    //void Start()
-    //{
-    //    waterButton = InputSystem.actions.FindAction("Water");
-    //    plantButton = InputSystem.actions.FindAction("Plant");
-
-    //    if (!plantHealth)
-    //    {
-    //        plantHealth = GetComponent<FloatingHealth>();
-    //    }
-    //    if (plantHealth)
-    //    {
-    //        plantHealth.SetMax();
-    //    }
-    //    if(fullyWatered)
-    //    {
-    //        fullyWatered.SetActive(false);
-    //    }
-    //}
-
-    //void Update()
-    //{
-    //    float distance = Vector3.Distance(transform.position, playerPos.position);
-    //    bool playerIsNear = distance <= radius;
-
-    //    // Interacting logic
-    //    if (playerIsNear)
-    //    {
-    //        // if watered
-    //        if (waterButton.WasPressedThisFrame())
-    //        {
-    //            waterLevel = 10f;
-    //            // set soil color to dark
-    //        }
-    //        if (plantButton.WasPressedThisFrame() && !isPlanted)
-    //        {
-    //            // if planted
-    //            if (!isPlanted)
-    //            {
-    //                // remove seed from inventory
-    //                isPlanted = true;
-    //                plantGrowth = 0f;
-                    
-    //                if(fullyWatered)
-    //                {
-    //                    fullyWatered.SetActive(false);
-    //                }
-    //                // place plant sprite
-    //            }
-    //            // if harvested
-    //            if (plantGrowth >= maxPlantGrowth && isPlanted)
-    //            {
-    //                resetSoil();
-    //            }
-    //        }
-    //    }
-
-    //    // Water diagetic health
-    //    if (waterLevel > 0f)
-    //    {
-    //        waterLevel -= Time.deltaTime;
-    //        // soil gets brighter
-    //    }
-    //    if (waterLevel <= 0f && isPlanted)
-    //    {
-    //        currentHealth -= Time.deltaTime;
-    //        if (plantHealth)
-    //        {
-    //            plantHealth.UpdateHealth(currentHealth, maxHealth);
-    //        }
-    //    }
-
-    //    // Plant growth logic
-    //    if (isPlanted && waterLevel > 0f)
-    //    {
-    //        if (plantGrowth < maxPlantGrowth)
-    //        {
-    //            plantGrowth += Time.deltaTime;
-    //            // increase plant size
-    //        }
-    //        if (plantGrowth >= maxPlantGrowth)
-    //        {
-    //            // show sparkles when done
-    //            if(fullyWatered && fullyWatered == null)
-    //            {
-    //                fullyWatered = Instantiate(fullyWatered, transform.position, Quaternion.identity);
-    //            }
-    //        }
-    //    }
-
-    //    // Trampled logic
-    //    // if (zombie touches soil && isPlanted)
-    //    //{
-    //    //    currentHealth -= 2f;
-    //    //}
-
-    //    // Plant death
-    //    if (isPlanted && currentHealth <= 0f)
-    //    {
-    //        resetSoil();
-    //    }
-    //}
-
-    //void resetSoil()
-    //{
-    //    isPlanted = false;
-    //    plantGrowth = 0f;
-    //    currentHealth = maxHealth;
-    //    if (plantHealth)
-    //    {
-    //        plantHealth.SetMax();
-    //    }
-    //    if(fullyWatered)
-    //    {
-    //        fullyWatered.SetActive(false);
-    //    }
-    //    // reset soil color & plant
-    //}

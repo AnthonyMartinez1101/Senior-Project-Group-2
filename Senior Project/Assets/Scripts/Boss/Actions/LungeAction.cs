@@ -13,7 +13,7 @@ public class Lunge : BossAction
 
     public override void ExecuteAction(BossScript boss)
     {
-        boss.StartCoroutine(ShortJump(boss));  
+        boss.StartCoroutine(ShortJump(boss));
     }
 
     private IEnumerator ShortJump(BossScript boss)
@@ -51,6 +51,7 @@ public class Lunge : BossAction
             elapsed += Time.deltaTime;
             yield return null;
         }
+
         boss.agent.ResetPath();
     }
 

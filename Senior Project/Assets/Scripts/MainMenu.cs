@@ -37,6 +37,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync(nextSceneIndex);
     }
 
+    public void TestBossScene()
+    {
+        SceneManager.LoadSceneAsync(3);
+    }
+
     public void BackToTitle()
     {
         TutorialScreen.SetActive(false);
