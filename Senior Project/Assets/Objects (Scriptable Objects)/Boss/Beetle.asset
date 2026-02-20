@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Beetle
   m_EditorClassIdentifier: Assembly-CSharp::BossData
   bossName: 67
-  maxHealth: 300
-  attackRating: 5
+  maxHealth: 150
+  attackRating: 11.25
   knockbackForce: 15
   hitCooldown: 2
   phaseTwoThreshold: 0.5
   phaseThreeThreshold: 0
   rageMultiplier: 1.5
-  cooldownTime: 0.22222222
-  idleTime: 0.8888889
+  cooldownTime: 0.09876543
+  idleTime: 0.39506173
   actions:
   - {fileID: 11400000, guid: 1ebd5991c4a31df418239d8220852d6c, type: 2}
-  - {fileID: 11400000, guid: 1ebd5991c4a31df418239d8220852d6c, type: 2}
+  - {fileID: 11400000, guid: bc35ec0310df4634c83188cd2e0127ea, type: 2}
