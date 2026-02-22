@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using System.Collections;
 
 
 public class Slot
@@ -51,6 +52,7 @@ public class Inventory : MonoBehaviour
     private PlayerAudio playerAudio;
 
     [HideInInspector] public bool HasSold;
+
 
     private void Awake()
     {
@@ -243,6 +245,8 @@ public class Inventory : MonoBehaviour
     //Call when item is picked up
     public void AddItem(Item collectedItem, int runtimeData)
     {
+        if(collectedItem == null) return;
+
         //Try adding item to inventory
         if (!TryToAddItem(collectedItem, runtimeData))
         {
@@ -425,4 +429,53 @@ public class Inventory : MonoBehaviour
         }
         return true;
     }
+
+    //Perform bucket upgrade
+    public void UpgradeBucket(Item[] upgrades)
+    {
+        StartCoroutine(PerformBucketUpgrade(upgrades));
+    }
+
+    IEnumerator PerformBucketUpgrade(Item[] upgrades)
+    { 
+        bool hasUpgraded = false;
+
+        //Keep checking until bucket gets upgraded
+        while (!hasUpgraded)
+        {
+            //Check all slots
+            foreach (var slot in slots)
+            {
+                //If slot has a watering can (bucket)
+                if (!slot.IsEmpty() && slot.item.itemType == ItemType.WaterCan)
+                {
+                    //Get its data
+                    var bucketData = slot.item.extraItemData as BucketData;
+                    if(bucketData != null)
+                    {
+                        //Check bucket's level
+                        int currentLevel = (int)bucketData.bucketLevel;
+
+                        //Upgrade level (maxing at 4)
+                        int nextLevel = Mathf.Min(currentLevel + 1, 4);
+
+                        int runtimeData = slot.runtimeAmount;
+
+                        //Apply upgrade
+                        slot.item = upgrades[nextLevel];
+                        slot.runtimeAmount = runtimeData;
+
+                        //End loop
+                        hasUpgraded = true;
+                    }
+                }
+            }
+
+            yield return null;
+        }
+        Debug.Log("Bucket upgraded!");
+        RefreshUI();
+    }
+
+
 }
