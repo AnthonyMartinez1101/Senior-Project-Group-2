@@ -473,7 +473,6 @@ public class Inventory : MonoBehaviour
 
             yield return null;
         }
-        Debug.Log("Bucket upgraded!");
         RefreshUI();
     }
 
