@@ -465,6 +465,9 @@ public class Inventory : MonoBehaviour
                         slot.item = upgrades[nextLevel];
                         slot.runtimeAmount = runtimeData;
 
+                        hotbar.BobIcon(slots.IndexOf(slot));
+                        playerAudio.PlayInventoryPop();
+
                         //End loop
                         hasUpgraded = true;
                     }

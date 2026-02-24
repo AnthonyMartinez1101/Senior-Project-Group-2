@@ -38,7 +38,7 @@ public class WorldClock : MonoBehaviour
     public SeasonPhase CurrentSeason { get; private set; } = SeasonPhase.Spring;
 
     [Header("Other attributes:")]
-    [SerializeField] private bool pauseTimer = false;
+    [SerializeField] bool pauseTimer = false;
     [SerializeField] private bool _2xTickSpeed = false;
 
     public WorldClockLight worldClockLight;
@@ -51,6 +51,8 @@ public class WorldClock : MonoBehaviour
 
     private LightingSystem lightingSystem;
     private float shadowAlpha = 0f;
+
+    private bool canSpawnBoss = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -98,6 +100,13 @@ public class WorldClock : MonoBehaviour
 
                 if (currentTime == 0f)
                 {
+                    if (CurrentPhase == DayPhase.Night)
+                    {
+                        PauseTimer();
+                        canSpawnBoss = true;
+
+                        yield return new WaitUntil(() => pauseTimer == false);
+                    }
                     yield return StartCoroutine(TimeChange());
                 }
             }
@@ -129,6 +138,9 @@ public class WorldClock : MonoBehaviour
             CurrentPhase = DayPhase.Day;
             currentTime = dayLength;
             preciseTime = dayLength;
+
+            canSpawnBoss = false;
+
             if (!inTutorialMode)
                 IterateSeason();
             lightingSystem._shadowAlpha.value = Mathf.Lerp(lightingSystem._shadowAlpha.value, shadowAlpha, 0.5f);
@@ -152,6 +164,16 @@ public class WorldClock : MonoBehaviour
     public void ResumeTimer()
     {
         pauseTimer = false;
+    }
+
+    public bool CanSpawnBoss()
+    {
+        return canSpawnBoss;
+    }
+
+    public void BossSpawned()
+    {
+        canSpawnBoss = false;
     }
 
     public float PercentageOfDay()

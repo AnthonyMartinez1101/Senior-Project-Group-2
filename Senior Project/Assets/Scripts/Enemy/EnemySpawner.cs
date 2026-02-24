@@ -1,70 +1,235 @@
 using UnityEngine;
 using System.Collections.Generic;
-using TMPro;
-using WorldTime;
+using System.Collections;
+
+//Definition of spawnable enemies
+[System.Serializable]
+public class SpawnableEnemy
+{
+    //Enemy prefab to spawn
+    public GameObject enemyPrefab;
+
+    //"Cost" of enemy
+    public int spawnCost;
+
+    //Probability of enemy spawning (1%-100%)
+    [Range(1, 100)]
+    public int spawnProbability;
+}
+
 
 public class EnemySpawner : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public List<GameObject> enemyPrefab; //Only works with 3 items in here
-    public List<Transform> spawnPoints; //Only works with 10 items in here
-    public Transform player;
+    //All enemies spawnable during the respective season
+    [Header("Set of Seasonal Enemies")]
+    public List<SpawnableEnemy> springEnemies;
+    public List<SpawnableEnemy> summerEnemies;
+    public List<SpawnableEnemy> fallEnemies;
+    public List<SpawnableEnemy> winterEnemies;
+    public List<GameObject> bosses;
+    private GameObject currentBoss;
+    private bool bossSpawned = false;
 
-    private float timer = 30f;
-    private float spawnRate = 2f;
-    private int wave = 1;
+    private List<SpawnableEnemy> currentEnemies = new List<SpawnableEnemy>();
+    private List<GameObject> enemiesToSpawn = new List<GameObject>();
 
-    public WorldClock worldClock;
 
-    public Transform EnemyCollection;
+    [Header("Randomized Enemy Spawn Points")]
+    public List<Transform> spawnPoints;
+    public Transform bossSpawnPoint;
 
-    public bool InTutorial = false;
 
+    [Header("Enemy References")]
+    public Transform player; //For enemies to target
+    public WorldClock worldClock; //For enemies to know when to burn
+    public Transform EnemyCollection; //For organization of spawned enemies in the hierarchy
+    
+
+    [Header("Spawn System")]
+    public float consistentSpawnRate = 5f; //Constant enemy spawn rate at all times during night
+
+    public float waveIntervals = 15f;
+    public float waveSpawnRate = 0.5f;
+
+
+    private float consistenSpawnTimer = 0f;
+
+    private float waveTimer = 0f;
+    private float waveSpawnTimer = 0f;
+
+    private int waveValue = 0;
+    private int wave = 0;
+
+
+    public bool InTutorial = false; //Tutorial mode, disabling spawning
 
     private void Update()
     {
-        if(worldClock == null)
+        if (!CheckReference()) return;
+
+        if (worldClock.CurrentPhase == DayPhase.Night)
         {
-            Debug.LogWarning("EnemySpawner: WorldTime reference is not set.");
-            return;
-        }
+            SpawnEnemies();
 
-        if (worldClock.IsNight() && !InTutorial)
-        {
-            timer -= Time.deltaTime;
-            spawnRate -= Time.deltaTime;
-
-
-            if (timer <= 0)
+            if (currentBoss == null && worldClock.CanSpawnBoss() && !bossSpawned)
             {
-                for (int i = wave * 2; i > 0; i--)
-                {
-                    Spawn(enemyPrefab[0]);
-                }
-                wave++;
-                timer = 30f;
-            }
+                int bossInd = (int)worldClock.CurrentSeason;
+                currentBoss = Instantiate(bosses[bossInd], bossSpawnPoint.position, bossSpawnPoint.rotation, EnemyCollection);
+                var bossFollow = currentBoss.GetComponent<EnemyFollow>();
+                if (bossFollow != null) bossFollow.SetTarget(player);   
 
-            if (spawnRate <= 0)
-            {
-                Spawn(enemyPrefab[0]);
-                spawnRate = 2f;
+                worldClock.BossSpawned();
+                bossSpawned = true;
+
+                waveTimer = 0f;
+                enemiesToSpawn.Clear();
+
+                StartCoroutine(CheckBoss());
             }
         }
     }
 
-    public void Spawn(GameObject enemyObject)
+    IEnumerator CheckBoss()
     {
-        int randNum = Random.Range(0, 10);
-        Transform currentSpawn = spawnPoints[randNum];
+        yield return new WaitUntil(() => currentBoss == null);
+        worldClock.ResumeTimer();
+    }
 
-        randNum = Random.Range(0, enemyPrefab.Count);
+    private void SpawnEnemies()
+    {
+        consistenSpawnTimer -= Time.deltaTime;
+        waveTimer -= Time.deltaTime;
 
-        //var enemy = Instantiate(enemyPrefab[randNum]).GetComponent<EnemyFollow>();
-        var enemy = Instantiate(enemyObject, currentSpawn.position, currentSpawn.rotation, EnemyCollection).GetComponent<EnemyFollow>();
+        //Constant spawn functionality
+        if (consistenSpawnTimer <= 0f)
+        {
+            SpawnableEnemy spawnEnemy = GetRandomEnemy();
+            Spawn(spawnEnemy.enemyPrefab);
+            consistenSpawnTimer = consistentSpawnRate + spawnEnemy.spawnCost;
+        }
+
+        //Wave spawn functionality (only spawn waves if there is no boss)
+        if (waveTimer <= 0f && currentBoss == null)
+        {
+            waveValue = (wave * 5) + 10;
+            wave++;
+            waveTimer = waveIntervals;
+            GenerateWaveEnemies();
+            StartCoroutine(SpawnWave());
+        }
+    }
+
+    IEnumerator SpawnWave()
+    {
+        while (enemiesToSpawn.Count > 0)
+        {
+            Spawn(enemiesToSpawn[0]);
+            enemiesToSpawn.RemoveAt(0);
+            yield return new WaitForSeconds(waveSpawnRate);
+        }
+    }
+
+    //Spawns enemy at random point
+    public void Spawn(GameObject enemyToSpawn)
+    {
+        //Get a random spawn point
+        int randSpawn = Random.Range(0, spawnPoints.Count);
+        Transform currentSpawn = spawnPoints[randSpawn];
+
+        //Spawn enemy at spawn point into EnemyCollection and set player as target
+        var enemy = Instantiate(enemyToSpawn, currentSpawn.position, currentSpawn.rotation, EnemyCollection).GetComponent<EnemyFollow>();
         enemy.SetTarget(player);
 
+        //Give enemy the worldClock
         Enemy e = enemy.GetComponent<Enemy>();
         e.SetWorldTime(worldClock);
+    }
+
+    private SpawnableEnemy GetRandomEnemy()
+    {
+        int safety = 1000;
+        int safetyCount = 0;
+
+        while (safetyCount++ < safety)
+        {
+            int randInd = Random.Range(0, currentEnemies.Count);
+            SpawnableEnemy enemy = currentEnemies[randInd];
+
+            int randProb = Random.Range(1, 101);
+            if (randProb <= enemy.spawnProbability) return enemy;
+        }
+        return currentEnemies[0];
+    }
+
+
+
+    private void GenerateWaveEnemies()
+    {
+        //Clear list of enemies
+        enemiesToSpawn.Clear();
+
+        //Safe guards in case loop runs too many times
+        int safety = 1000;
+        int safetyCount = 0;
+
+        //Generate enemies with given waveValue
+        while (waveValue > 0 && safetyCount++ < safety)
+        {
+            //Get a random enemy from current season's enemies
+            int randInd = Random.Range(0, currentEnemies.Count);
+            SpawnableEnemy enemy = currentEnemies[randInd];
+
+            //If enemy costs too much, skip and try again
+            if(enemy.spawnCost > waveValue) continue;
+
+            //If the random probability fails to choose enemy, skip and try again
+            int randProb = Random.Range(1, 101);
+            if(randProb > enemy.spawnProbability) continue;
+
+            //If enemy is chosen, add to list and subtract cost
+            enemiesToSpawn.Add(enemy.enemyPrefab);
+            waveValue -= enemy.spawnCost;
+        }
+    }
+
+    //Function to be called when season changes
+    public void EnemySeasonChange()
+    {
+        ResetSpawner();
+
+        switch (worldClock.CurrentSeason)
+        {
+            case SeasonPhase.Spring:
+                currentEnemies = springEnemies;
+                break;
+            case SeasonPhase.Summer:
+                currentEnemies = summerEnemies;
+                break;
+            case SeasonPhase.Fall:
+                currentEnemies = fallEnemies;
+                break;
+            case SeasonPhase.Winter:
+                currentEnemies = winterEnemies;
+                break;
+        }
+    }
+
+    private void ResetSpawner() 
+    {
+        wave = 0;
+        consistenSpawnTimer = 0f;
+        waveTimer = waveIntervals;
+        waveSpawnTimer = waveSpawnRate;
+        bossSpawned = false;
+    }
+
+    private bool CheckReference()
+    {
+        if (player == null || worldClock == null || EnemyCollection == null)
+        {
+            Debug.LogWarning("EnemySpawner: Reference is not set.");
+            return false;
+        }
+        return true;
     }
 }

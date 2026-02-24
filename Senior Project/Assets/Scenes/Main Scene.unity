@@ -12703,7 +12703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldClock
   dayLength: 180
-  nightLength: 120
+  nightLength: 60
   transitionLength: 5
   pauseTimer: 0
   _2xTickSpeed: 0
@@ -12728,6 +12728,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1041779939}
         m_TargetAssemblyTypeName: MusicScript, Assembly-CSharp
         m_MethodName: ToggleDay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1544488704}
+        m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
+        m_MethodName: EnemySeasonChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20775,9 +20787,13 @@ PrefabInstance:
       propertyPath: shop
       value: 
       objectReference: {fileID: 1014007743}
+    - target: {fileID: 5092246524528975356, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: isInvincible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCount
-      value: 10
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCountText
@@ -23086,6 +23102,37 @@ Transform:
   - {fileID: 979622734}
   m_Father: {fileID: 2070921058}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1470916649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1470916650}
+  m_Layer: 0
+  m_Name: Boss Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1470916650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470916649}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.9, y: -8.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1544488703}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1477846223
 GameObject:
   m_ObjectHideFlags: 0
@@ -23986,22 +24033,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1010887127}
     m_Modifications:
-    - target: {fileID: 3141122531353563696, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -15.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3141122531353563696, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -27.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3313700462654843166, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -36.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3313700462654843166, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -27.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: player
       value: 
@@ -24011,44 +24042,240 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 799218943}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: bossSpawnPoint
+      value: 
+      objectReference: {fileID: 1470916650}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: EnemyCollection
       value: 
       objectReference: {fileID: 1957676182}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
-      propertyPath: enemyPrefab.Array.size
+      propertyPath: bosses.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: consistentSpawnRate
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
-      propertyPath: 'enemyPrefab.Array.data[0]'
+      propertyPath: 'bosses.Array.data[0]'
+      value: 
+      objectReference: {fileID: 3758422883315622073, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: 'bosses.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3758422883315622073, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: 'bosses.Array.data[2]'
+      value: 
+      objectReference: {fileID: 4337781813295488036, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: 'bosses.Array.data[3]'
+      value: 
+      objectReference: {fileID: 4337781813295488036, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: fallEnemies.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: spawnPoints.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: springEnemies.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: summerEnemies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: 'spawnPoints.Array.data[10]'
+      value: 
+      objectReference: {fileID: 1544488708}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: 'spawnPoints.Array.data[11]'
+      value: 
+      objectReference: {fileID: 1544488707}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: 'spawnPoints.Array.data[12]'
+      value: 
+      objectReference: {fileID: 1544488706}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: 'spawnPoints.Array.data[13]'
+      value: 
+      objectReference: {fileID: 1544488705}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: fallEnemies.Array.data[0].spawnCost
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: fallEnemies.Array.data[1].spawnCost
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: fallEnemies.Array.data[2].spawnCost
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: fallEnemies.Array.data[3].spawnCost
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: fallEnemies.Array.data[0].enemyPrefab
       value: 
       objectReference: {fileID: 4919924452173266357, guid: baae0eec0eef3df4b9ed03ac81567578, type: 3}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
-      propertyPath: 'enemyPrefab.Array.data[1]'
+      propertyPath: fallEnemies.Array.data[1].enemyPrefab
       value: 
-      objectReference: {fileID: 4919924452173266357, guid: 293b12c89d3dbb54f8cc89cf86d20e18, type: 3}
-    - target: {fileID: 4660078606136300092, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 15.5
+      objectReference: {fileID: 4919924452173266357, guid: 91fff5ca627b1a0428143c2d07605a36, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: fallEnemies.Array.data[2].enemyPrefab
+      value: 
+      objectReference: {fileID: 4919924452173266357, guid: 9b99b3aa800b4564c9c0be163e30a876, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: fallEnemies.Array.data[3].enemyPrefab
+      value: 
+      objectReference: {fileID: 4919924452173266357, guid: 982c31b2ada26b14db9da6dd6e0883ab, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: springEnemies.Array.data[0].spawnCost
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4660078606136300092, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -27
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: springEnemies.Array.data[1].spawnCost
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 4762704796346312119, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 33.9
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: summerEnemies.Array.data[0].spawnCost
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4762704796346312119, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 21.8
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: summerEnemies.Array.data[1].spawnCost
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 5987092110637122437, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 35.1
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: summerEnemies.Array.data[2].spawnCost
+      value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 5987092110637122437, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.8
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.data[0].spawnCost
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.data[1].spawnCost
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.data[2].spawnCost
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.data[3].spawnCost
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.data[4].spawnCost
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: springEnemies.Array.data[0].enemyPrefab
+      value: 
+      objectReference: {fileID: 4919924452173266357, guid: baae0eec0eef3df4b9ed03ac81567578, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: springEnemies.Array.data[1].enemyPrefab
+      value: 
+      objectReference: {fileID: 4919924452173266357, guid: 91fff5ca627b1a0428143c2d07605a36, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: summerEnemies.Array.data[0].enemyPrefab
+      value: 
+      objectReference: {fileID: 4919924452173266357, guid: baae0eec0eef3df4b9ed03ac81567578, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: summerEnemies.Array.data[1].enemyPrefab
+      value: 
+      objectReference: {fileID: 4919924452173266357, guid: 91fff5ca627b1a0428143c2d07605a36, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: summerEnemies.Array.data[2].enemyPrefab
+      value: 
+      objectReference: {fileID: 4919924452173266357, guid: 9b99b3aa800b4564c9c0be163e30a876, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.data[0].enemyPrefab
+      value: 
+      objectReference: {fileID: 4919924452173266357, guid: baae0eec0eef3df4b9ed03ac81567578, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.data[1].enemyPrefab
+      value: 
+      objectReference: {fileID: 4919924452173266357, guid: 91fff5ca627b1a0428143c2d07605a36, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.data[2].enemyPrefab
+      value: 
+      objectReference: {fileID: 4919924452173266357, guid: 9b99b3aa800b4564c9c0be163e30a876, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.data[3].enemyPrefab
+      value: 
+      objectReference: {fileID: 4919924452173266357, guid: 982c31b2ada26b14db9da6dd6e0883ab, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.data[4].enemyPrefab
+      value: 
+      objectReference: {fileID: 4919924452173266357, guid: f3dbcea4ef5312c4ba5e299333c28694, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: fallEnemies.Array.data[0].spawnProbability
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: fallEnemies.Array.data[1].spawnProbability
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: fallEnemies.Array.data[2].spawnProbability
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: fallEnemies.Array.data[3].spawnProbability
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: springEnemies.Array.data[0].spawnProbability
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: springEnemies.Array.data[1].spawnProbability
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: summerEnemies.Array.data[0].spawnProbability
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: summerEnemies.Array.data[1].spawnProbability
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: summerEnemies.Array.data[2].spawnProbability
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.data[0].spawnProbability
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.data[1].spawnProbability
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.data[2].spawnProbability
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.data[3].spawnProbability
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: winterEnemies.Array.data[4].spawnProbability
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6491763862849859128, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24090,21 +24317,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8535574152005520343, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 33.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8535574152005520343, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -26.7
-      objectReference: {fileID: 0}
     - target: {fileID: 8965816294801448041, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6491763862849859128, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1470916650}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
 --- !u!4 &1544488703 stripped
@@ -24123,6 +24345,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255c53af7b42f8d40ac081a5db737207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!4 &1544488705 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7172081994652045543, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+  m_PrefabInstance: {fileID: 1544488702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1544488706 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1862973615226929130, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+  m_PrefabInstance: {fileID: 1544488702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1544488707 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5404108733655000180, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+  m_PrefabInstance: {fileID: 1544488702}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1544488708 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4141844737934234211, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+  m_PrefabInstance: {fileID: 1544488702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1553212046
 GameObject:
   m_ObjectHideFlags: 0

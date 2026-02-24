@@ -63,6 +63,12 @@ public class PlayerWallet : MonoBehaviour
 
         int stepAmount;
         float updateTime;
+
+        if(changeAmount >= 300)
+        {
+            stepAmount = 50;
+            updateTime = timeToUpdate * 3f;
+        }
         if (changeAmount >= 100)
         {
             stepAmount = 3;
