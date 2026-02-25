@@ -5435,7 +5435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Modern2D.StylizedShadowCaster2D
   _shadowData:
     shadow:
-      pivotOffset: {x: 0, y: 0}
+      pivotOffset: {x: 0.17, y: 0.27}
       shadowCaster: {fileID: 311774524}
       shadow: {fileID: 988963600}
       shadowPivot: {fileID: 1313525768}
@@ -5460,9 +5460,9 @@ MonoBehaviour:
   _shadowFalloff:
     _value: 0
   _pivotOffsetX:
-    _value: 0
+    _value: 0.17
   _pivotOffsetY:
-    _value: 0
+    _value: 0.27
   customShadowLayer:
     _value: 0
   customShadowLayerName:
@@ -13396,8 +13396,8 @@ Transform:
   m_GameObject: {fileID: 877569522}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07409984, y: 3.1915255, z: 0}
-  m_LocalScale: {x: 1, y: 1.31, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1561841641}
@@ -13451,7 +13451,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 5447814045100458580, guid: f57a067f94b440540855d50d26331534, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 7.747877, y: 7.913333}
@@ -15680,7 +15680,7 @@ Transform:
   m_GameObject: {fileID: 988963599}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.13342445, y: 1.9650401, z: 0}
+  m_LocalPosition: {x: -0.036575556, y: 1.6950401, z: 0}
   m_LocalScale: {x: 1, y: 1.31, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21238,7 +21238,7 @@ Transform:
   m_GameObject: {fileID: 1313525767}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
-  m_LocalPosition: {x: -0.13342285, y: -0.61835146, z: 0.024502}
+  m_LocalPosition: {x: 0.036575317, y: -0.348351, z: 0.024502}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21887,7 +21887,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: -7442052964665986110, guid: 9a4e847deeda892429586fc1ef25583f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.8448572, y: 1.6915386}
