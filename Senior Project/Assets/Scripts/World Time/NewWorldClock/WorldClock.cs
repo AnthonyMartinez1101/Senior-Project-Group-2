@@ -82,6 +82,8 @@ public class WorldClock : MonoBehaviour
         displayText.text = $"{minutes:0}:{seconds:00}";
 
         preciseTime -= Time.deltaTime;
+
+        Debug.Log(PercentageOfDayAndNight());
     }
 
     IEnumerator TickTime()
@@ -179,6 +181,19 @@ public class WorldClock : MonoBehaviour
     public float PercentageOfDay()
     {
         return (dayLength - preciseTime) / dayLength;
+    }
+
+    public float PercentageOfNight()
+    {
+        return (nightLength - preciseTime) / nightLength;
+    }
+
+    public float PercentageOfDayAndNight()
+    {
+        float currentTotalTime = preciseTime;
+        if(IsDay()) currentTotalTime += nightLength;
+
+        return (dayLength + nightLength - currentTotalTime) / (dayLength + nightLength);
     }
 
     public void ResetDay()
