@@ -320,6 +320,7 @@ MonoBehaviour:
   dropChance: 1
   randomItemDrop: {fileID: 11400000, guid: 7d42225e9a8f651459e31a0ae1a4bf12, type: 2}
   dropExpires: 1
+  CanBurn: 0
 --- !u!114 &5300578624398878722
 MonoBehaviour:
   m_ObjectHideFlags: 0

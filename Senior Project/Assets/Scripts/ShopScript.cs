@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 public class ShopScript : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class ShopScript : MonoBehaviour
     public GameObject player;
     private PlayerWallet playerWallet;
     private Inventory inventory;
+
+    public GameObject packagePrefab;
+    private List<Item> purchasedItems = new List<Item>();
 
     private ShopUI shopUI;
 
@@ -48,6 +52,11 @@ public class ShopScript : MonoBehaviour
         if (playerWallet == null)
         {
             Debug.LogError("ShopScript: PlayerWallet reference not set");
+        }
+
+        if(packagePrefab == null)
+        {
+            Debug.LogError("ShopScript: Package prefab reference not set");
         }
 
         shopUI = shopScreen.GetComponent<ShopUI>();
@@ -87,6 +96,7 @@ public class ShopScript : MonoBehaviour
         ShopUsedEvent.Invoke();
         shopScreen.SetActive(true);
         isShopInUse = true;
+        purchasedItems.Clear();
     }
 
     public void CloseShop()
@@ -94,6 +104,8 @@ public class ShopScript : MonoBehaviour
         inventory.ReturnShopSlotToInv();
         shopScreen.SetActive(false);
         isShopInUse = false;
+
+        CreatePackage();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -119,6 +131,17 @@ public class ShopScript : MonoBehaviour
         return isShopInUse; 
     }
 
+    private void CreatePackage()
+    {
+        if (purchasedItems.Count > 0)
+        {
+            GameObject pkg = Instantiate(packagePrefab, itemDropOff.position, Quaternion.identity);
+            var package = pkg.GetComponent<Package>();
+            if(package) package.CreatePackage(purchasedItems);
+        }
+        purchasedItems.Clear();
+    }
+
     public void BuyItem(Item item)
     {
         //Check if item is null
@@ -141,7 +164,7 @@ public class ShopScript : MonoBehaviour
         //Check if player has enough coins and spawn item if they do
         if (CheckPrice(price))
         {
-            ItemDropFactory.Instance.SpawnItem(item, 0, itemDropOff.position, expires: true);
+            purchasedItems.Add(item);
             shopAudio.PlayBuyCoin();
         }
 

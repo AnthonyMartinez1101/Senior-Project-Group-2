@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float dealDamage;
     [SerializeField] private float knockbackForce;
 
-    [Range(1, 100)]
+    [Range(0, 100)]
     [SerializeField] private int dropChance = 1;
 
     private WorldClock worldClock;
@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
 
 
 
+
     private void Start()
     {
         health = maxHealth;
@@ -44,12 +45,16 @@ public class Enemy : MonoBehaviour
         inPlayerRange = false;
 
         EnemyFollow enemyFollow = GetComponent<EnemyFollow>();
-        Transform player = enemyFollow.GetTarget();
 
-        if(player)
+        if(enemyFollow != null)
         {
-            playerHealth = player.GetComponent<PlayerHealth>();
-            playerKnockback = player.GetComponent<Knockback>();
+            Transform player = enemyFollow.GetTarget();
+
+            if (player != null)
+            {
+                playerHealth = player.GetComponent<PlayerHealth>();
+                playerKnockback = player.GetComponent<Knockback>();
+            }
         }
 
 
@@ -106,6 +111,8 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         hitCooldown -= Time.deltaTime;
+
+        if(worldClock == null) return;
 
         //If day, take damage
         if (worldClock.IsDay())
