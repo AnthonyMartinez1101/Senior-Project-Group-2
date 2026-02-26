@@ -24,7 +24,7 @@ public class ItemDropFactory : MonoBehaviour
         }
     }
 
-    public void SpawnItem(Item item, int runtimeVal, Vector3 pos, bool expires)
+    public GameObject SpawnItem(Item item, int runtimeVal, Vector3 pos, bool expires)
     {
         GameObject itemDrop = Instantiate(itemDropPrefab, pos, Quaternion.identity, GroundItemCollection);
         itemDrop.GetComponent<ItemDropScript>().CreateItemDrop(item, runtimeVal);
@@ -34,9 +34,11 @@ public class ItemDropFactory : MonoBehaviour
 
         Rigidbody2D rb = itemDrop.GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * Random.Range(1f, 4f), ForceMode2D.Impulse);
+
+        return itemDrop;
     }
 
-    public void PlayerDropItem(Item item, int runtimeVal, Vector3 pos)
+    public GameObject PlayerDropItem(Item item, int runtimeVal, Vector3 pos)
     {
         GameObject itemDrop = Instantiate(itemDropPrefab, pos, Quaternion.identity, GroundItemCollection);
         itemDrop.GetComponent<ItemDropScript>().canDespawn = (item.itemType != ItemType.WaterCan);
@@ -45,9 +47,11 @@ public class ItemDropFactory : MonoBehaviour
         Rigidbody2D rb = itemDrop.GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized * Random.Range(2f, 4f), ForceMode2D.Impulse);
         StartCoroutine(WaitToEnable(itemDrop));
+
+        return itemDrop;
     }
 
-    public void SpawnRandomItem(Item item, Vector3 pos)
+    public GameObject SpawnRandomItem(Item item, Vector3 pos)
     {
         int randIndex = Random.Range(0, randomDropItems.Length);
         GameObject itemDrop = Instantiate(itemDropPrefab, pos, Quaternion.identity, GroundItemCollection);
@@ -55,6 +59,8 @@ public class ItemDropFactory : MonoBehaviour
 
         Rigidbody2D rb = itemDrop.GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(0.5f, 1.5f)).normalized * Random.Range(2f, 5f), ForceMode2D.Impulse);
+
+        return itemDrop;
     }
 
     private IEnumerator WaitToEnable(GameObject itemDrop)

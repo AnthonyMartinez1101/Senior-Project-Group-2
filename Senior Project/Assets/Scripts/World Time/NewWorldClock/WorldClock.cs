@@ -81,9 +81,7 @@ public class WorldClock : MonoBehaviour
         int seconds = Mathf.FloorToInt(currentTime % 60f);
         displayText.text = $"{minutes:0}:{seconds:00}";
 
-        preciseTime -= Time.deltaTime;
-
-        Debug.Log(PercentageOfDayAndNight());
+        if(currentTime != 0) preciseTime -= Time.deltaTime;
     }
 
     IEnumerator TickTime()
@@ -133,6 +131,7 @@ public class WorldClock : MonoBehaviour
         {
             CurrentPhase = DayPhase.Night;
             currentTime = nightLength;
+            preciseTime = nightLength;
             lightingSystem._shadowAlpha.value = Mathf.Lerp(lightingSystem._shadowAlpha.value, 0, 0.5f);
         }
         else
