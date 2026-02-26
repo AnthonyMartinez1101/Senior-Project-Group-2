@@ -7,7 +7,9 @@ public class Package : MonoBehaviour
 
     public void CreatePackage(List<Item> items)
     {
-        packagedItems = new List<Item>(items);
+        if (items == null || items.Count == 0) return;
+
+        packagedItems.AddRange(items);
     }
 
     private void OnDestroy()

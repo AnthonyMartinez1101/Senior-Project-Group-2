@@ -22,6 +22,7 @@ public class ShopScript : MonoBehaviour
     private Inventory inventory;
 
     public GameObject packagePrefab;
+    private GameObject currentPackage;
     private List<Item> purchasedItems = new List<Item>();
 
     private ShopUI shopUI;
@@ -135,8 +136,9 @@ public class ShopScript : MonoBehaviour
     {
         if (purchasedItems.Count > 0)
         {
-            GameObject pkg = Instantiate(packagePrefab, itemDropOff.position, Quaternion.identity);
-            var package = pkg.GetComponent<Package>();
+            if(currentPackage == null) currentPackage = Instantiate(packagePrefab, itemDropOff.position, Quaternion.identity);
+
+            var package = currentPackage.GetComponent<Package>();
             if(package) package.CreatePackage(purchasedItems);
         }
         purchasedItems.Clear();
