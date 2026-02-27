@@ -15,7 +15,7 @@ public class BossData : ScriptableObject
     public string bossName;
     public Sprite bossSprite;
     public Sprite altSprite;
-    public Item itemDrop;
+    public GameObject itemDrop;
 
     [Header("Stats")]
     public float maxHealth = 300f;

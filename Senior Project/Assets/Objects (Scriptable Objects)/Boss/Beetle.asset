@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: Beetle
   m_EditorClassIdentifier: Assembly-CSharp::BossData
   bossName: 67
+  bossSprite: {fileID: 0}
+  altSprite: {fileID: 0}
+  itemDrop: {fileID: 7524075269242792640, guid: 388b7095386f7894ab1f5f76b6c48f8a, type: 3}
   maxHealth: 150
   attackRating: 11.25
   knockbackForce: 15
   hitCooldown: 2
+  isInvincible: 0
   phaseTwoThreshold: 0.5
   phaseThreeThreshold: 0
   rageMultiplier: 1.5

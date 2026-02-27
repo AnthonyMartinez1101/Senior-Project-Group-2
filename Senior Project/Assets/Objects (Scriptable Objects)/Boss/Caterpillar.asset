@@ -15,6 +15,7 @@ MonoBehaviour:
   bossName: Caterpillar
   bossSprite: {fileID: -4071051187171467467, guid: dc11c94b002f1c84c9197e7483d34762, type: 3}
   altSprite: {fileID: -20948411823446318, guid: 6e797d1cf854ddb4599b2ea644a202fd, type: 3}
+  itemDrop: {fileID: 7524075269242792640, guid: 32f9da5cd2d6128438ac0447ea98d358, type: 3}
   maxHealth: 200
   attackRating: 3.5
   knockbackForce: 15

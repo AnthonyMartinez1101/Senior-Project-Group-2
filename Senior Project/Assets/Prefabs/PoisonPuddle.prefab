@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3592623220567677724}
   - component: {fileID: 7591400308469140800}
   - component: {fileID: 7156332525929633929}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: PoisonPuddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
