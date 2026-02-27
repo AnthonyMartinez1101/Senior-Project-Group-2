@@ -10,14 +10,25 @@ public class Lunge : BossAction
     public float ptwoRage = 1.5f;
     public float backDivider = 1.5f;
     public float lungeOvershoot = 1.5f;
+    public string animTrigger = "lunge_trigger";
+
+    private Animator animator;
 
     public override void ExecuteAction(BossScript boss)
     {
+
         boss.StartCoroutine(ShortJump(boss));
     }
 
     private IEnumerator ShortJump(BossScript boss)
     {
+        yield return null; //give a second to breathe
+
+        if(animator == null)
+        {
+            animator = boss.GetComponent<Animator>(); //if its empty assign it
+        }
+
         if (boss.phaseTwoActivated)
         {
         yield return boss.StartCoroutine(Forward(boss));
@@ -28,9 +39,16 @@ public class Lunge : BossAction
         else
         {
         yield return boss.StartCoroutine(Back(boss));
+
+        if(animator != null)
+        {
+            animator.SetTrigger(animTrigger); //play the aniation
+            Debug.Log("TRIGGERED JUMP!");
+        }else Debug.LogWarning("No animator found on boss for lunge action!");
+
         yield return boss.StartCoroutine(Forward(boss));    
         }
- 
+
     }
 
     private IEnumerator Back(BossScript boss)

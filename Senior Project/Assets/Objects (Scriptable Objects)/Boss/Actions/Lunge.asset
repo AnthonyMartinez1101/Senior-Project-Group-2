@@ -19,3 +19,5 @@ MonoBehaviour:
   backDistance: 5
   ptwoRage: 1.5
   backDivider: 1.5
+  lungeOvershoot: 1.5
+  animTrigger: lunge_trigger

@@ -6,7 +6,8 @@ public class ClockUI : MonoBehaviour
 {
     public WorldClock worldClock; // Reference to the WorldClock script
 
-    public Image hand;
+    public GameObject hand;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,6 +27,6 @@ public class ClockUI : MonoBehaviour
     void Update()
     {
         float percentage = worldClock.PercentageOfDayAndNight();
-        hand.transform.rotation = Quaternion.Euler(0f, 0f, percentage * 180f);
+        hand.transform.rotation = Quaternion.Euler(0f, 0f, -percentage * 180f + 90f);
     }
 }
