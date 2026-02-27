@@ -5,15 +5,24 @@ public class Caterpillar : MonoBehaviour
     public GameObject fakePrefab;
     public FloatingHealth healthBar;
     private bool isSplit = false;
+    private GameObject fake;
 
     void Update()
     {
-        if (!isSplit && healthBar.isHalf()) Split();
+        if (!isSplit && healthBar.healthPercentage() < 0.5f) Split();
     }
 
     private void Split()
     {
         isSplit = true;
-        GameObject fake = Instantiate(fakePrefab, transform.position, Quaternion.identity);
+        fake = Instantiate(fakePrefab, transform.position, Quaternion.identity);
+    }
+
+    private void KillDupe()
+    {
+        if (healthBar.healthPercentage() <= 0.0f)
+        {
+            Destroy(fake);
+        }
     }
 }

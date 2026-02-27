@@ -5,6 +5,7 @@ public abstract class BossAction : ScriptableObject
 {
     public string actionName;
     public float actionDuration;
+    public float activationChance = 0.5f;
     public abstract void ExecuteAction(BossScript boss);
 }
 
@@ -14,6 +15,7 @@ public class BossData : ScriptableObject
     public string bossName;
     public Sprite bossSprite;
     public Sprite altSprite;
+    public Item itemDrop;
 
     [Header("Stats")]
     public float maxHealth = 300f;

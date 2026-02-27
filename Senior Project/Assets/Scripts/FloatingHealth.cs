@@ -49,8 +49,8 @@ public class FloatingHealth : MonoBehaviour
         canvasGroup.alpha = isFull ? 0f : 1f;
     }
 
-    public bool isHalf()
+    public float healthPercentage()
     {
-        return slider.value <= 0.5f;
+        return slider.value;
     }
 }

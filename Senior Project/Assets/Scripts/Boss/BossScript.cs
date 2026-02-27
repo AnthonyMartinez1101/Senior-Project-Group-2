@@ -104,9 +104,19 @@ public class BossScript : MonoBehaviour
     private void QueueAttack()
     {
         isPerformingAction = true;
-        BossAction action = actions[Random.Range(0, actions.Count)];
-        Debug.Log("Boss is performing: " + action.name);
-        StartCoroutine(PerformAction(action));
+        BossAction action;
+        int safetyCount = 0;
+        while (safetyCount < 1000)
+        {
+            action = actions[Random.Range(0, actions.Count)];
+            Debug.Log("Boss is performing: " + action.name);
+            if (Random.value <= action.activationChance)
+            {
+                StartCoroutine(PerformAction(action));
+                return;
+            }
+            safetyCount++;
+        }
     }
 
     public Vector2 GetPlayerPosition()
@@ -136,12 +146,12 @@ public class BossScript : MonoBehaviour
         if (data.altSprite != null) spriteRenderer.sprite = data.altSprite;
     }
 
-    public void TakeDamage(float damageAmount)
+    public IEnumerable TakeDamage(float damageAmount)
     {
         // If shield is active, ignore/don't apply damage to boss and log for verification
         if (isShielded | data.isInvincible)
         {
-            return;
+            yield break;
         }
 
         if (damageFlash) damageFlash.FlashOnDamage();
@@ -150,8 +160,8 @@ public class BossScript : MonoBehaviour
         if (healthBar) healthBar.UpdateHealth(currentHealth, data.maxHealth);
         if (currentHealth <= 0)
         {
-            //int randNum = Random.Range(0, 100);
-            //if (randNum <= dropChance && randomItemDrop != null) ItemDropFactory.Instance.SpawnItem(randomItemDrop, 0, transform.position, dropExpires);
+            if (data.itemDrop) ItemDropFactory.Instance.SpawnItem(data.itemDrop, 0, transform.position, false);
+            yield return new WaitForSeconds(0.5f); // for animation and other effects to finish
             Destroy(gameObject);
         }
     }
