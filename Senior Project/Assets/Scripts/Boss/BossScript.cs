@@ -50,7 +50,7 @@ public class BossScript : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        if(!player) player = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = player.GetComponent<PlayerHealth>();
         playerKnockback = player.GetComponent<Knockback>();
 
@@ -146,24 +146,29 @@ public class BossScript : MonoBehaviour
         if (data.altSprite != null) spriteRenderer.sprite = data.altSprite;
     }
 
-    public IEnumerable TakeDamage(float damageAmount)
+    public void TakeDamage(float damageAmount)
     {
         // If shield is active, ignore/don't apply damage to boss and log for verification
-        if (isShielded | data.isInvincible)
+        if (isShielded || data.isInvincible)
         {
-            yield break;
+            return;
         }
 
         if (damageFlash) damageFlash.FlashOnDamage();
         currentHealth -= damageAmount;
-        //Debug.Log("Boss Health: " + currentHealth);
+        Debug.Log("Boss Health: " + currentHealth);
         if (healthBar) healthBar.UpdateHealth(currentHealth, data.maxHealth);
         if (currentHealth <= 0)
         {
-            if (data.itemDrop) Instantiate(data.itemDrop, transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(0.5f); // for animation and other effects to finish
-            Destroy(gameObject);
+            StartCoroutine(Die());
         }
+    }
+
+    IEnumerator Die()
+    {
+        if (data.itemDrop) Instantiate(data.itemDrop, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.5f); // for animation and other effects to finish
+        Destroy(gameObject);
     }
 
     //When colliding with something...

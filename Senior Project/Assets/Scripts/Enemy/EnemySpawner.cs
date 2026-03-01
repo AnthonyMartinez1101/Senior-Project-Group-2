@@ -75,6 +75,8 @@ public class EnemySpawner : MonoBehaviour
             {
                 int bossInd = (int)worldClock.CurrentSeason;
                 currentBoss = Instantiate(bosses[bossInd], bossSpawnPoint.position, bossSpawnPoint.rotation, EnemyCollection);
+                var bossScript = currentBoss.GetComponent<BossScript>();
+                if (bossScript != null) bossScript.player = player;
                 var bossFollow = currentBoss.GetComponent<EnemyFollow>();
                 if (bossFollow != null) bossFollow.SetTarget(player);   
 
