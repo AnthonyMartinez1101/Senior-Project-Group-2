@@ -1,0 +1,309 @@
+fileFormatVersion: 2
+guid: eb1bddeeb77fedc43b95c237636d094e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -920527714704800160
+    second: clockUI (2)_0
+  - first:
+      213: 2923199636707345514
+    second: clockUI (2)_1
+  - first:
+      213: 6257146778894065789
+    second: clockUI (2)_2
+  - first:
+      213: 1044405138748094142
+    second: clockUI (2)_3
+  - first:
+      213: -5198453216012941512
+    second: clockUI (2)_4
+  - first:
+      213: -1093582961054283352
+    second: clockUI (2)_5
+  - first:
+      213: 8562219134327757839
+    second: clockUI (2)_6
+  - first:
+      213: 5235364300880174448
+    second: clockUI (2)_7
+  - first:
+      213: -4204102540576628707
+    second: clockUI (2)_8
+  - first:
+      213: 342752436977777041
+    second: clockUI (2)_9
+  - first:
+      213: 315960631752614199
+    second: clockUI (2)_10
+  - first:
+      213: 9153314741245118588
+    second: clockUI (2)_11
+  - first:
+      213: -6031921143045881171
+    second: clockUI (2)_12
+  - first:
+      213: -887443726709386705
+    second: clockUI (2)_13
+  - first:
+      213: 8219186584851141904
+    second: clockUI (2)_14
+  - first:
+      213: -8711829530334951100
+    second: clockUI (2)_15
+  - first:
+      213: -7791098120159149326
+    second: clockUI (2)_16
+  - first:
+      213: -1396030888442838169
+    second: clockUI (2)_17
+  - first:
+      213: 4628766805458979075
+    second: clockUI (2)_18
+  - first:
+      213: -1705501846689900165
+    second: clockUI (2)_19
+  - first:
+      213: 4842199790644541299
+    second: clockUI (2)_20
+  - first:
+      213: -3455798958376525720
+    second: clockUI (2)_21
+  - first:
+      213: -785743062103168881
+    second: clockUI (2)_22
+  - first:
+      213: -5374781153768392949
+    second: clockUI (2)_23
+  - first:
+      213: -3805992248150041624
+    second: clockUI (2)_24
+  - first:
+      213: -5428830673501889030
+    second: clockUI (2)_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: clockUI (2)_0
+      rect:
+        serializedVersion: 2
+        x: 2617
+        y: 3158
+        width: 1839
+        height: 972
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0664e1fabe0a933f0800000000000000
+      internalID: -920527714704800160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clockUI (2)_1
+      rect:
+        serializedVersion: 2
+        x: 2586
+        y: 1956
+        width: 1904
+        height: 983
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a640e71f49a419820800000000000000
+      internalID: 2923199636707345514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clockUI (2)_2
+      rect:
+        serializedVersion: 2
+        x: 4835
+        y: 1925
+        width: 2004
+        height: 997
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d70e577f7d9d5d650800000000000000
+      internalID: 6257146778894065789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: clockUI (2)_23
+      rect:
+        serializedVersion: 2
+        x: 3430
+        y: 777
+        width: 217
+        height: 665
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b07bb287401f865b0800000000000000
+      internalID: -5374781153768392949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 294e21bdfec465b4fab2298fa5db10f7
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      clockUI (2)_0: -920527714704800160
+      clockUI (2)_1: 2923199636707345514
+      clockUI (2)_10: 315960631752614199
+      clockUI (2)_11: 9153314741245118588
+      clockUI (2)_12: -6031921143045881171
+      clockUI (2)_13: -887443726709386705
+      clockUI (2)_14: 8219186584851141904
+      clockUI (2)_15: -8711829530334951100
+      clockUI (2)_16: -7791098120159149326
+      clockUI (2)_17: -1396030888442838169
+      clockUI (2)_18: 4628766805458979075
+      clockUI (2)_19: -1705501846689900165
+      clockUI (2)_2: 6257146778894065789
+      clockUI (2)_20: 4842199790644541299
+      clockUI (2)_21: -3455798958376525720
+      clockUI (2)_22: -785743062103168881
+      clockUI (2)_23: -5374781153768392949
+      clockUI (2)_3: 1044405138748094142
+      clockUI (2)_4: -5198453216012941512
+      clockUI (2)_5: -1093582961054283352
+      clockUI (2)_6: 8562219134327757839
+      clockUI (2)_7: 5235364300880174448
+      clockUI (2)_8: -4204102540576628707
+      clockUI (2)_9: 342752436977777041
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
