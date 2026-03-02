@@ -20816,7 +20816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCount
-      value: 1000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCountText
@@ -26814,6 +26814,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   randItem: {fileID: 11400000, guid: cfddc6c02ec43bc47809159c66ec67c9, type: 2}
+  objectsToCreate:
+  - {fileID: 5689616905070151574, guid: 61090dc8afcf4e44e96be3a296eb4425, type: 3}
+  - {fileID: 5689616905070151574, guid: f1d495c7ebcb14e4ba2a8e5488dbc3cf, type: 3}
+  - {fileID: 5689616905070151574, guid: efa487584ff287d4e86e97bf80ff3801, type: 3}
+  - {fileID: 3093272852940364067, guid: 8cb7b66176c06d847a4abc882d811ac3, type: 3}
+  - {fileID: 7524075269242792640, guid: f43cf2f70327d1647baaa6535fd0d43b, type: 3}
+  - {fileID: 7524075269242792640, guid: 32f9da5cd2d6128438ac0447ea98d358, type: 3}
+  - {fileID: 7524075269242792640, guid: 388b7095386f7894ab1f5f76b6c48f8a, type: 3}
+  - {fileID: 7524075269242792640, guid: 0337bff5bb564134686d88ae92c3e198, type: 3}
+  - {fileID: 9012221840318577508, guid: d0bf5a0bd8454d94980fe91f69ce4582, type: 3}
+  - {fileID: 8105967814657914450, guid: 7c83e28d75c813e48a8885a639ca62a3, type: 3}
 --- !u!1001 &1737325106
 PrefabInstance:
   m_ObjectHideFlags: 0
