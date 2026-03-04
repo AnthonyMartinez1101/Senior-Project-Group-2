@@ -2,15 +2,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
-    public GameObject TitleScreen;
-    public GameObject TutorialScreen;
-
     public void NewButton()
     {
         SaveScript.DeleteSave();
         GameManager.loadOnStart = false;
-        TitleScreen.SetActive(false);
-        TutorialScreen.SetActive(true);
     }
 
     public void LoadButton()
@@ -55,12 +50,5 @@ public class MainMenu : MonoBehaviour
     public void TestBossFour()
     {
         SceneManager.LoadSceneAsync(6);
-    }
-
-
-    public void BackToTitle()
-    {
-        TutorialScreen.SetActive(false);
-        TitleScreen.SetActive(true);
     }
 }

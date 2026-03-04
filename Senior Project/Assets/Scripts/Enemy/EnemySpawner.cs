@@ -66,6 +66,7 @@ public class EnemySpawner : MonoBehaviour
     private void Update()
     {
         if (!CheckReference()) return;
+        if(InTutorial) return;
 
         if (worldClock.CurrentPhase == DayPhase.Night)
         {
@@ -99,6 +100,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemies()
     {
+
+
         consistenSpawnTimer -= Time.deltaTime;
         waveTimer -= Time.deltaTime;
 
