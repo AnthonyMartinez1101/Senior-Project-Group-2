@@ -16,9 +16,13 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2737907656110861412, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
+      propertyPath: m_Speed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3758422883315622073, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
       propertyPath: m_Name
-      value: Boss Variant
+      value: Beetle
       objectReference: {fileID: 0}
     - target: {fileID: 3758422883315622073, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
       propertyPath: m_TagString

@@ -25111,6 +25111,10 @@ PrefabInstance:
       propertyPath: shop
       value: 
       objectReference: {fileID: 1014007743}
+    - target: {fileID: 5092246524528975356, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: isInvincible
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCount
       value: 10
@@ -39139,6 +39143,26 @@ PrefabInstance:
     - target: {fileID: 3937516854542665593, guid: ad2e8192090cd7442bee815f3d4729a3, type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 4671584012979632647, guid: ad2e8192090cd7442bee815f3d4729a3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.0372128
+      objectReference: {fileID: 0}
+    - target: {fileID: 4671584012979632647, guid: ad2e8192090cd7442bee815f3d4729a3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.84605396
+      objectReference: {fileID: 0}
+    - target: {fileID: 4671584012979632647, guid: ad2e8192090cd7442bee815f3d4729a3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.495385
+      objectReference: {fileID: 0}
+    - target: {fileID: 4671584012979632647, guid: ad2e8192090cd7442bee815f3d4729a3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.09951136
+      objectReference: {fileID: 0}
+    - target: {fileID: 4671584012979632647, guid: ad2e8192090cd7442bee815f3d4729a3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.16995263
       objectReference: {fileID: 0}
     - target: {fileID: 6399309510218456628, guid: ad2e8192090cd7442bee815f3d4729a3, type: 3}
       propertyPath: m_LocalPosition.x

@@ -13,6 +13,10 @@ public class Shield : BossAction
     [Tooltip("Parent the shield under the boss (recommended)")]
     public bool attachToBoss = true;
 
+    [Tooltip("Multiplier applied to the boss' movement speed while the shield is active (0.0-1.0).")]
+    [Range(0.0f, 1.0f)]
+    public float movementSpeedMultiplier = 0.5f;
+
     public override void ExecuteAction(BossScript boss)
     {
         if (boss.hasUsedShield)
@@ -44,7 +48,7 @@ public class Shield : BossAction
         ShieldAction sa = shieldGo.GetComponent<ShieldAction>();
         if (sa != null)
         {
-            sa.Initialize(boss);
+            sa.Initialize(boss, movementSpeedMultiplier);
         }
     }
 }
