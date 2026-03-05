@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3554473666372004553}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: PointB
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 887967326862825140}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: PointA
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6091198720643975438}
   - component: {fileID: 1671237266141033530}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Melee
   m_TagString: Sickle
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 2078357170775645881}
   - component: {fileID: 1738667813983982851}
   - component: {fileID: 6947063508600643050}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Slash
   m_TagString: Sickle
   m_Icon: {fileID: 0}
@@ -264,6 +264,10 @@ MonoBehaviour:
   damage: 3
   knockbackForce: 15
   weaponType: 0
+  bulletType: 0
+  explosionTimer: 2.5
+  explosionRadius: {fileID: 0}
+  bulletHitCount: 5
 --- !u!95 &6947063508600643050
 Animator:
   serializedVersion: 7
