@@ -7,6 +7,7 @@ public class ShieldAction : MonoBehaviour
     [SerializeField] private float curHealth;
 
     private BossScript owner;
+
     private float originalAgentSpeed;
     private bool speedModified = false;
     private AgentSpeedOverride speedOverride;
@@ -24,14 +25,12 @@ public class ShieldAction : MonoBehaviour
         if (owner != null)
         {
             owner.isShielded = true;
+            Debug.Log($"[Shield] Boss is now shielded.");
 
-            // Apply movement speed multiplier
             if (owner.agent != null && speedMultiplier > 0f && !Mathf.Approximately(speedMultiplier, 1f))
             {
-                // Save the current speed so we can restore later
                 originalAgentSpeed = owner.agent.speed;
 
-                // Add the override component on the boss to force the effective speed in LateUpdate
                 speedOverride = owner.GetComponent<AgentSpeedOverride>();
                 if (speedOverride == null)
                 {
@@ -40,32 +39,34 @@ public class ShieldAction : MonoBehaviour
 
                 speedOverride.Initialize(owner.agent, originalAgentSpeed, speedMultiplier);
                 speedModified = true;
+
+                Debug.Log($"[Shield] Shield is making boss slow. New speed is {originalAgentSpeed * speedMultiplier:F2}");
             }
         }
         else
         {
+            Debug.Log("[Shield] Initialized with no boss.");
         }
     }
 
-    /// Apply damage to the shield.
     public void TakeDamage(float dmg = 1f)
     {
         curHealth -= dmg;
+        Debug.Log($"[Shield] Took {dmg} damage. Remaining HP: {curHealth}");
 
         if (curHealth <= 0f)
         {
+            Debug.Log($"[Shield] Shield destroyed on boss '{(owner != null ? owner.name : "unknown")}'.");
             Destroy(gameObject);
         }
     }
 
     private void OnDestroy()
     {
-        // Clear the shield flag when the shield GameObject is destroyed
         if (owner != null)
         {
             owner.isShielded = false;
 
-            // Remove the override and restore the boss' original movement speed
             if (speedModified && owner.agent != null)
             {
                 if (speedOverride != null)
@@ -75,51 +76,18 @@ public class ShieldAction : MonoBehaviour
                 }
                 else
                 {
-                    // Fallback: restore directly if override component was not found
                     owner.agent.speed = originalAgentSpeed;
                 }
 
                 speedModified = false;
+                Debug.Log($"[Shield] Boss speed returned to normal: {owner.agent.speed:F2}.");
             }
+
+            Debug.Log($"[Shield] OnDestroy: cleared the shield.");
         }
         else
         {
-        }
-    }
-
-    // Beetle specific helper component to enforce speed modifier
-    private class AgentSpeedOverride : MonoBehaviour
-    {
-        private UnityEngine.AI.NavMeshAgent agent;
-        private float baseSpeed;
-        private float multiplier = 1f;
-        private bool active = false;
-
-        public void Initialize(UnityEngine.AI.NavMeshAgent agent, float baseSpeed, float multiplier)
-        {
-            this.agent = agent;
-            this.baseSpeed = baseSpeed;
-            this.multiplier = multiplier;
-            active = true;
-            // Ensure this component runs after other scripts where possible by leaving it as LateUpdate enforcer.
-            enabled = true;
-        }
-
-        void LateUpdate()
-        {
-            if (!active || agent == null) return;
-            // Force the agent speed each frame in LateUpdate so Update/coroutine assignments are overridden.
-            agent.speed = baseSpeed * multiplier;
-        }
-
-        public void RestoreAndRemove()
-        {
-            if (agent != null)
-            {
-                agent.speed = baseSpeed;
-            }
-            active = false;
-            Destroy(this);
+            Debug.Log("[Shield] OnDestroy: No boss.");
         }
     }
 }
