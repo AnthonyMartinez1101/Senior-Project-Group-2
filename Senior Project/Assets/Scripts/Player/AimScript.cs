@@ -27,10 +27,16 @@ public class AimScript : MonoBehaviour
         }
 
         //If mouse mode is selected (Only apply if mouse is being used)
-        if (useMouse && Mouse.current != null)
+        if (useMouse && Mouse.current != null && Camera.main != null)
         {
             //Gets mouse position on the scree and converts it to world position
             Vector3 screen = Mouse.current.position.ReadValue();
+
+            if(float.IsNaN(screen.x) || float.IsNaN(screen.y) || float.IsInfinity(screen.x) || float.IsInfinity(screen.y))
+            {
+                return; // Skip if mouse position is invalid
+            }
+
             Vector3 world = Camera.main.ScreenToWorldPoint(screen);
             world.z = aim.position.z;
 

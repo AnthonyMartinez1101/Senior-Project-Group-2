@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using WorldTime;
 using static Unity.Cinemachine.CinemachineSplineRoll;
+using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour
     InputAction pauseAction;
 
     [SerializeField] private Transform chickenHidePosition;
+
+    public Image blackBackground;
 
 
     private void Awake()
@@ -88,6 +91,17 @@ public class GameManager : MonoBehaviour
 
 
         pauseAction = InputSystem.actions.FindAction("Pause");
+
+
+        if (blackBackground == null) Debug.LogWarning("GameManager: BlackBackground reference is not set.");
+        else
+        {
+            blackBackground.gameObject.SetActive(true);
+            Color c = blackBackground.color;
+            blackBackground.color = new Color(c.r, c.g, c.b, 1f);
+
+            StartCoroutine(FadeOut(blackBackground, 3f));
+        }
     }
 
     void Update()
@@ -285,5 +299,21 @@ public class GameManager : MonoBehaviour
     public Transform GetChickenHidePosition()
     {
         return chickenHidePosition;
+    }
+
+    IEnumerator FadeOut(Image image, float duration)
+    {
+        yield return new WaitForSeconds(0.5f); // Optional delay before starting the fade
+
+        float elapsedTime = 0f;
+        Color originalColor = image.color;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Lerp(1f, 0f, elapsedTime / duration);
+            image.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            yield return null;
+        }
+        image.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f); // Ensure it's fully transparent at the end
     }
 }

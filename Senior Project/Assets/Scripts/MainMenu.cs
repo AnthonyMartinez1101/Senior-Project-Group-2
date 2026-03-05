@@ -6,13 +6,13 @@ public class MainMenu : MonoBehaviour
     {
         SaveScript.DeleteSave();
         GameManager.loadOnStart = false;
+        SceneManager.LoadSceneAsync("Cutscene");
     }
 
     public void LoadButton()
     {
         GameManager.loadOnStart = true;
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 2;
-        SceneManager.LoadSceneAsync(nextSceneIndex);
+        SceneManager.LoadSceneAsync("Cutscene");
     }   
 
     public void QuitButton()

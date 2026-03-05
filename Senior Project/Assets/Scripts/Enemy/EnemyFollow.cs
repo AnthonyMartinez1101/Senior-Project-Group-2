@@ -31,17 +31,24 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target != null)
-        {
-            if(kb.IsKnockbackActive())
-            {
-                currentSpeed = 1f;
-            }
-            agent.SetDestination(target.position);
-        }
-        agent.speed = currentSpeed;
+        if (target == null) return;
 
-        currentSpeed = Mathf.Lerp(currentSpeed, startingTopSpeed, Time.deltaTime * 1.5f);
+        if(kb.IsKnockbackActive())
+        {
+            currentSpeed = 1f;
+        }
+
+        float distanceToTarget = Vector3.Distance(transform.position, target.position);
+        if (distanceToTarget > 25)
+        {
+            agent.speed = 10f;
+        }
+        else
+        {
+            agent.speed = currentSpeed;
+            currentSpeed = Mathf.Lerp(currentSpeed, startingTopSpeed, Time.deltaTime * 1.5f);
+        }
+        agent.SetDestination(target.position);
     }
 
     IEnumerator IncreaseSpeed()
