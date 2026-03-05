@@ -75,7 +75,7 @@ public class PlayerHealth : MonoBehaviour
         {
             damageLogCount++;
             string stack = new System.Diagnostics.StackTrace(1, true).ToString();
-            Debug.Log($"PlayerHealth.TakeDamage called: amount={damageAmount:F4}\nStackTrace:\n{stack}");
+            //Debug.Log($"PlayerHealth.TakeDamage called: amount={damageAmount:F4}\nStackTrace:\n{stack}");
         }
 
         // Throttle visual effects (camera shake, damage flash, shop close) to avoid frame hiccups

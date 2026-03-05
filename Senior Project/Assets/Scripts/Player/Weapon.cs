@@ -23,6 +23,8 @@ public class Weapon : MonoBehaviour
     public int bulletHitCount = 5;
     private int bulletTotalHit = 0;
 
+    private float timeAlive = 0;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -42,16 +44,22 @@ public class Weapon : MonoBehaviour
     {
         if (bulletType == BulletType.NA) return;
 
+        timeAlive += Time.deltaTime;
+
+        //Damage over time behavior depending on gun type
         switch(bulletType)
         {
+            //Persistent damage for pistols
             case BulletType.Pistol:
                 break;
 
+            //Increasing damage for ARs (max of 6 damage)
             case BulletType.AR:
                 damage += bulletDamageChange * Time.deltaTime;
                 damage = Mathf.Min(damage, 6);
                 break;
 
+            //Decreasing damage for shotguns (min of 1 damage) 
             case BulletType.Shotgun:
                 shotgunBulletWait -= Time.deltaTime;
                 if(shotgunBulletWait <= 0)
@@ -72,6 +80,7 @@ public class Weapon : MonoBehaviour
                tag == "Shadow";
     }
 
+    //To be rewritten using an IDamagable interface
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(Avoid(collision.tag)) return;
@@ -97,7 +106,6 @@ public class Weapon : MonoBehaviour
         if (boss != null)
         {
             boss.TakeDamage(damage);
-            Debug.Log("Bullet dealt: " + damage);
             bulletTotalHit++;
             if (collision.GetComponent<Knockback>()) collision.GetComponent<Knockback>().ApplyKnockback(transform, knockbackForce);
         }
@@ -109,9 +117,10 @@ public class Weapon : MonoBehaviour
             bulletTotalHit++;
         }
 
+        //Bullet destroy condition
         if (weaponType == WeaponType.Bullet && (bulletTotalHit == 0 || bulletTotalHit == bulletHitCount))
         {
-            Debug.Log("Bullet destroyed by: " + collision.name);
+            //Debug.Log("Bullet destroyed by: " + collision.name + "\nCurrent damage: " + damage + "\nTime alive: " + timeAlive);
             Destroy(gameObject);
         }
     }
