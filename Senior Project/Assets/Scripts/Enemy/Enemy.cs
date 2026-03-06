@@ -63,8 +63,15 @@ public class Enemy : MonoBehaviour
 
     public void ApplyPoison(int ticks)
     {
-        poisonCount = ticks;
-        StartCoroutine(PoisonDamage());
+        if(poisonCount > 0)
+        {
+            poisonCount = ticks;
+        }
+        else
+        {
+            poisonCount = ticks;
+            StartCoroutine(PoisonDamage());
+        }
     }
 
     IEnumerator PoisonDamage()
