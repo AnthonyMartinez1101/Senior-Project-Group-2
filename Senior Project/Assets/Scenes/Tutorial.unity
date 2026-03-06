@@ -19706,6 +19706,10 @@ PrefabInstance:
       propertyPath: shop
       value: 
       objectReference: {fileID: 1014007743}
+    - target: {fileID: 2681577021745993116, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3676113966089671668, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: m_Radius
       value: 6
@@ -19828,6 +19832,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8100653363389709952, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9028288095968324451, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
