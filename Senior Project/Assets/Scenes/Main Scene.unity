@@ -20804,6 +20804,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1702183988}
     - target: {fileID: 5051370478408548760, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: maxStackSize
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051370478408548760, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: InventoryChangeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1158130226}
@@ -24097,15 +24101,15 @@ PrefabInstance:
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: 'bosses.Array.data[1]'
       value: 
-      objectReference: {fileID: 3758422883315622073, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
+      objectReference: {fileID: 4337781813295488036, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: 'bosses.Array.data[2]'
       value: 
-      objectReference: {fileID: 4337781813295488036, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
+      objectReference: {fileID: 3937516854542665593, guid: ad2e8192090cd7442bee815f3d4729a3, type: 3}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: 'bosses.Array.data[3]'
       value: 
-      objectReference: {fileID: 4337781813295488036, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
+      objectReference: {fileID: 3758422883315622073, guid: 346a3aa7927d55245ae54467302c321f, type: 3}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: fallEnemies.Array.size
       value: 4

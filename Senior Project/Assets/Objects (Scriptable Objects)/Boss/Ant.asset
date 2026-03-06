@@ -16,8 +16,8 @@ MonoBehaviour:
   bossSprite: {fileID: 0}
   altSprite: {fileID: 0}
   itemDrop: {fileID: 7524075269242792640, guid: f43cf2f70327d1647baaa6535fd0d43b, type: 3}
-  maxHealth: 250
-  attackRating: 4
+  maxHealth: 50
+  attackRating: 3
   knockbackForce: 15
   hitCooldown: 2
   isInvincible: 0

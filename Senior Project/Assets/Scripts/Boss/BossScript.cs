@@ -148,6 +148,9 @@ public class BossScript : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
+        //Return, already dead
+        if(currentHealth <= 0) return;
+
         // If shield is active, ignore/don't apply damage to boss and log for verification
         if (isShielded || data.isInvincible)
         {
