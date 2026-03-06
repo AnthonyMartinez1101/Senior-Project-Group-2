@@ -12672,8 +12672,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0db605fd1beebe4e8d424f6af49ff76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldClock
-  dayLength: 180
-  nightLength: 60
+  dayLength: 1
+  nightLength: 1
   transitionLength: 5
   pauseTimer: 0
   _2xTickSpeed: 0

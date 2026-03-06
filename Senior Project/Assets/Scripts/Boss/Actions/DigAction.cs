@@ -87,6 +87,7 @@ public class Dig : BossAction
         {
              bossRenderer.enabled = true;
              Debug.Log("Boss sprite renderer re-enabled");
+            GameManager.Instance.CameraShake(5f, 0.3f); //shake the camera when the boss reappears
         }
 
         if(bossColliders != null)

@@ -18,15 +18,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5933722564937909609, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.76
       objectReference: {fileID: 0}
     - target: {fileID: 5933722564937909609, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.76
       objectReference: {fileID: 0}
     - target: {fileID: 5933722564937909609, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.76
       objectReference: {fileID: 0}
     - target: {fileID: 5933722564937909609, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 68.64
       objectReference: {fileID: 0}
+    - target: {fileID: 5933722564937909609, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6788477330488068856, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
       propertyPath: healthBar
       value: 
@@ -96,6 +100,22 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 6741668889312006890}
+    - target: {fileID: 7933748669398953507, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
+      propertyPath: m_Size.x
+      value: 4.790781
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933748669398953507, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
+      propertyPath: m_Size.y
+      value: 6.6003547
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933748669398953507, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.44924873
+      objectReference: {fileID: 0}
+    - target: {fileID: 7933748669398953507, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.12604627
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6788477330488068856, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
     m_RemovedGameObjects:
