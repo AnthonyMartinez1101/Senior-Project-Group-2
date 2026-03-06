@@ -10,19 +10,15 @@ public class Caterpillar : MonoBehaviour
     void Update()
     {
         if (!isSplit && healthBar.healthPercentage() < 0.5f) Split();
+        if (healthBar.healthPercentage() <= 0.0f)
+        {
+            Destroy(fake);
+        }    
     }
 
     private void Split()
     {
         isSplit = true;
         fake = Instantiate(fakePrefab, transform.position, Quaternion.identity);
-    }
-
-    private void KillDupe()
-    {
-        if (healthBar.healthPercentage() <= 0.0f)
-        {
-            Destroy(fake);
-        }
     }
 }
