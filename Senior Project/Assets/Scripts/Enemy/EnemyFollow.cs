@@ -31,7 +31,11 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target == null) return;
+        if (target == null)
+        {
+            target = GameManager.Instance.player.transform;
+            return;
+        }
 
         if(kb.IsKnockbackActive())
         {

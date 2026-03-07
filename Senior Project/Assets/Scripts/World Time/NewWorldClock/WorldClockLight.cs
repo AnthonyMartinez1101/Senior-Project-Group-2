@@ -24,7 +24,7 @@ public class WorldClockLight : MonoBehaviour
     private void Awake()
     {
         worldLight = GetComponent<Light2D>();
-        currentGradient = springGradient;
+        currentGradient = winterGradient;
     }
 
     // Update is called once per frame

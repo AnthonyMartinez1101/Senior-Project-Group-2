@@ -119,7 +119,25 @@ public class Enemy : MonoBehaviour
     {
         hitCooldown -= Time.deltaTime;
 
-        if(worldClock == null) return;
+        if (worldClock == null)
+        {
+            worldClock = GameManager.Instance.GetWorldClock();
+            return;
+        }
+        if(playerHealth == null || playerKnockback == null)
+        {
+            EnemyFollow enemyFollow = GetComponent<EnemyFollow>();
+            if(enemyFollow != null)
+            {
+                Transform player = enemyFollow.GetTarget();
+                if (player != null)
+                {
+                    playerHealth = player.GetComponent<PlayerHealth>();
+                    playerKnockback = player.GetComponent<Knockback>();
+                }
+            }
+            return;
+        }
 
         //If day, take damage
         if (worldClock.IsDay())

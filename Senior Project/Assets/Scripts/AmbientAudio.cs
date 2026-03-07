@@ -9,7 +9,7 @@ public class AmbientAudio : MonoBehaviour
 
     private Coroutine ambientCoroutine;
 
-    bool isDaytime = true;
+    public WorldClock worldClock;
 
     [Range(0f, 2f)]
     public float ambientVolume = 1f;
@@ -31,7 +31,7 @@ public class AmbientAudio : MonoBehaviour
     {
         while (true)
         {
-            if(isDaytime) PlayRandom(dayAmbientClips, ambientVolume);
+            if(worldClock.IsDay()) PlayRandom(dayAmbientClips, ambientVolume);
             else PlayRandom(nightAmbientClips, ambientVolume);
 
             while(audioSource.isPlaying)
@@ -53,7 +53,6 @@ public class AmbientAudio : MonoBehaviour
 
     public void ToggleDay()
     {
-        isDaytime = !isDaytime;
         StartAmbiance();
     }
 }

@@ -54,10 +54,37 @@ public class WorldClock : MonoBehaviour
 
     private bool canSpawnBoss = false;
 
+
+    [SerializeField] private bool introNight = true;
+    private bool isIntroNight = false;
+    private bool introNightCompleted = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentTime = dayLength;
+        lightingSystem = LightingSystem.system;
+        shadowAlpha = lightingSystem._shadowAlpha;
+
+
+        if(introNight)
+        {
+            isIntroNight = true;
+            introNightCompleted = false;
+
+            CurrentPhase = DayPhase.Night;
+            currentTime = nightLength;
+            preciseTime = nightLength;
+
+            PauseTimer();
+            worldClockLight.nightLight();
+        }
+        else
+        {
+            CurrentPhase = DayPhase.Day;
+            currentTime = dayLength;
+            preciseTime = dayLength;
+        }
+
         StartCoroutine(TickTime());
 
         preciseTime = dayLength;
@@ -71,8 +98,7 @@ public class WorldClock : MonoBehaviour
             worldClockLight.nightLight();
         }
 
-        lightingSystem = LightingSystem.system;
-        shadowAlpha = lightingSystem._shadowAlpha;
+        
     }
 
     void Update()
@@ -81,7 +107,7 @@ public class WorldClock : MonoBehaviour
         int seconds = Mathf.FloorToInt(currentTime % 60f);
         displayText.text = $"{minutes:0}:{seconds:00}";
 
-        if(currentTime != 0) preciseTime -= Time.deltaTime;
+        if(currentTime != 0 && !pauseTimer) preciseTime -= Time.deltaTime;
     }
 
     IEnumerator TickTime()
@@ -100,7 +126,7 @@ public class WorldClock : MonoBehaviour
 
                 if (currentTime == 0f)
                 {
-                    if (CurrentPhase == DayPhase.Night)
+                    if (CurrentPhase == DayPhase.Night && !isIntroNight)
                     {
                         PauseTimer();
                         canSpawnBoss = true;
@@ -211,5 +237,39 @@ public class WorldClock : MonoBehaviour
     public bool IsNight()
     {
         return CurrentPhase == DayPhase.Night;
+    }
+
+    public bool IsIntroNight()
+    {
+        return isIntroNight;
+    }
+    public bool IsIntroNightCompleted()
+    {
+        return introNightCompleted;
+    }
+
+    public void CompleteIntroNight()
+    {
+        if(isIntroNight) StartCoroutine(EndIntroNight());
+    }
+
+    IEnumerator EndIntroNight()
+    {
+        SwitchLight();
+        yield return new WaitForSeconds(transitionLength);
+        worldClockLight.SetGradient();
+
+        CurrentPhase = DayPhase.Day;
+        currentTime = dayLength;
+        preciseTime = dayLength;
+
+        isIntroNight = false;
+        introNightCompleted = true;
+        canSpawnBoss = false;
+
+        lightingSystem._shadowAlpha.value = Mathf.Lerp(lightingSystem._shadowAlpha.value, shadowAlpha, 0.5f);
+
+        ResumeTimer();
+        DayChangeEvent.Invoke();
     }
 }

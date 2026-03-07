@@ -5,13 +5,14 @@ public class MusicScript : MonoBehaviour
 {
     private AudioSource audioSource;
 
+    public WorldClock worldClock;
+
 
     public AudioClip dayMusic;
 
     [Range(0f, 2f)]
     public float musicVolume = 1f;
 
-    bool isDayTime = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,7 +22,9 @@ public class MusicScript : MonoBehaviour
 
         audioSource.volume = musicVolume;
 
-        PlayDayMusic();
+        if(!worldClock) GameManager.Instance.GetWorldClock();
+
+        ToggleDay();
     }
 
     void PlayDayMusic()
@@ -40,7 +43,10 @@ public class MusicScript : MonoBehaviour
     public void ToggleDay()
     {
         StopAllCoroutines();
-        isDayTime = !isDayTime;
-        if (isDayTime) PlayDayMusic();
+        if (worldClock.IsDay()) PlayDayMusic();
+        else
+        {
+            //PlayNightMusic(); 
+        }
     }
 }

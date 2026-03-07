@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 3541055314121894236}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.0391138, y: 0.21621929, z: 0}
+  m_LocalScale: {x: 1, y: 1.31, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4690219708120991659}
@@ -348,6 +348,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d919ee3bebbfc344fb83edd3753aa147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpriteFlip
+  deadZone: 0.1
+  flipX: 0
 --- !u!114 &6815267652703427686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,8 +454,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8669708703548695504}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.495385, y: -0.09951136, z: 0.16995263, w: -0.84605396}
-  m_LocalPosition: {x: -0.044249855, y: -0.16425101, z: 0}
+  m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
+  m_LocalPosition: {x: -0.039113365, y: -0.16505289, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
