@@ -8,6 +8,7 @@ public class TurretShoot : MonoBehaviour
 
     public float shootCooldown = 0.5f;
 
+
     // Update is called once per frame
     void Update()
     {
@@ -20,7 +21,19 @@ public class TurretShoot : MonoBehaviour
                 return;
             }
 
-            Instantiate(turretShootPrefab, transform.position, Quaternion.identity);
+            //Instantiate(turretShootPrefab, transform.position, Quaternion.identity); removing for now sdince quartenion.identity wont rotate it
+
+            Vector2 direction = (currentTarget.position - transform.position).normalized; // angle in degrees
+
+            Vector2 spawnPosition = (Vector2)transform.position + (direction * 0.5f); // spawn position slightly in front of the turret
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; // rotaiton based on the angle
+
+            Quaternion rotation = Quaternion.Euler(0, 0, angle + 90f); //weird offset 
+
+            Instantiate(turretShootPrefab, spawnPosition, rotation);
+
+
             shootCooldown = 0.5f;
         }
     }

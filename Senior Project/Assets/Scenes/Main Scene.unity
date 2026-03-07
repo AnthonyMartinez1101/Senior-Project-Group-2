@@ -12672,8 +12672,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0db605fd1beebe4e8d424f6af49ff76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldClock
-  dayLength: 1
-  nightLength: 1
+  dayLength: 25
+  nightLength: 60
   transitionLength: 5
   pauseTimer: 0
   _2xTickSpeed: 0
@@ -18175,6 +18175,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116524111}
   m_CullTransparentMesh: 1
+--- !u!1001 &1124184206
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2592103707532962002, guid: bfdbec1641e5c9b45a4b7b4bc873f508, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592103707532962002, guid: bfdbec1641e5c9b45a4b7b4bc873f508, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729801971907865267, guid: bfdbec1641e5c9b45a4b7b4bc873f508, type: 3}
+      propertyPath: m_Name
+      value: TurretPlantActor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740605699736260126, guid: bfdbec1641e5c9b45a4b7b4bc873f508, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.5578
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740605699736260126, guid: bfdbec1641e5c9b45a4b7b4bc873f508, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.96345
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740605699736260126, guid: bfdbec1641e5c9b45a4b7b4bc873f508, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740605699736260126, guid: bfdbec1641e5c9b45a4b7b4bc873f508, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740605699736260126, guid: bfdbec1641e5c9b45a4b7b4bc873f508, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740605699736260126, guid: bfdbec1641e5c9b45a4b7b4bc873f508, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740605699736260126, guid: bfdbec1641e5c9b45a4b7b4bc873f508, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740605699736260126, guid: bfdbec1641e5c9b45a4b7b4bc873f508, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740605699736260126, guid: bfdbec1641e5c9b45a4b7b4bc873f508, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6740605699736260126, guid: bfdbec1641e5c9b45a4b7b4bc873f508, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bfdbec1641e5c9b45a4b7b4bc873f508, type: 3}
 --- !u!1 &1128700380
 GameObject:
   m_ObjectHideFlags: 0
@@ -20817,11 +20882,11 @@ PrefabInstance:
       objectReference: {fileID: 1014007743}
     - target: {fileID: 5092246524528975356, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: isInvincible
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCount
-      value: 10
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCountText
@@ -32352,3 +32417,4 @@ SceneRoots:
   - {fileID: 1919519684}
   - {fileID: 614556663}
   - {fileID: 2037612395}
+  - {fileID: 1124184206}
