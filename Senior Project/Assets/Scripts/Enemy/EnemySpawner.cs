@@ -20,6 +20,10 @@ public class SpawnableEnemy
 
 public class EnemySpawner : MonoBehaviour
 {
+    [Header("Intro zombies (if intro night is enabled)")]
+    [SerializeField] private List<GameObject> introZombies = new List<GameObject>();
+    private bool introNightEnabled = false;
+
     //All enemies spawnable during the respective season
     [Header("Set of Seasonal Enemies")]
     public List<SpawnableEnemy> springEnemies;
@@ -68,6 +72,12 @@ public class EnemySpawner : MonoBehaviour
         if (!CheckReference()) return;
         if(InTutorial) return;
 
+        if (worldClock.IsIntroNight())
+        {
+            CheckStarterZombies();
+            return;
+        }
+
         if (worldClock.CurrentPhase == DayPhase.Night)
         {
             SpawnEnemies();
@@ -89,6 +99,20 @@ public class EnemySpawner : MonoBehaviour
 
                 StartCoroutine(CheckBoss());
             }
+        }
+    }
+
+    private void CheckStarterZombies()
+    {
+        if (introNightEnabled) return;
+
+        //removes null zombies from list
+        introZombies.RemoveAll(zombie => zombie == null);
+
+        if (introZombies.Count == 0)
+        {
+            introNightEnabled = true;
+            worldClock.CompleteIntroNight();
         }
     }
 
