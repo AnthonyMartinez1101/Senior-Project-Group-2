@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             //DontDestroyOnLoad(gameObject);
-            if (canSave)
+            if (canSave && Enemies.transform.childCount == 0)
                 StartCoroutine(AutoSave());
         }
         else
@@ -195,16 +195,23 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(autoSaveTimer);
-            if (player && Enemies.transform.childCount == 0)
+            bool saveEnabled = true;
+            while (saveEnabled)
             {
-                SaveScript.SaveGame(player);
-                Debug.Log("Game auto-saved.");
+                if (Enemies != null && Enemies.transform.childCount == 0 && player != null)
+                {
+                    SaveScript.SaveGame(player);
+                    saveEnabled = false;
+                    Debug.Log("Game auto-saved.");
+                }
+                yield return new WaitForSeconds(1f);
             }
         }
     }
 
     private void BuildItemLookup()
     {
+        Debug.Log("Building item lookup...");
         Item[] items = Resources.LoadAll<Item>("Objects (Scriptable Objects)/Items");
         foreach (var item in items)
         {
@@ -237,7 +244,7 @@ public class GameManager : MonoBehaviour
             if (data.inventory != null)
             {
                 Debug.Log("clearing inventory and loading items");
-                inventorySystem.slots.Clear();
+                inventorySystem.ClearInventory();
                 foreach (var invItem in data.inventory)
                 {
                     Debug.Log($"Trying to load item: {invItem.itemName}");
@@ -257,6 +264,8 @@ public class GameManager : MonoBehaviour
                 inventorySystem.RefreshUI();
             }
 
+            if (data.coinStash > 0)
+            player.GetComponent<PlayerWallet>().ClearWallet();
             player.GetComponent<PlayerWallet>().AddCoins(data.coinStash);
 
             // load item drops
@@ -282,14 +291,15 @@ public class GameManager : MonoBehaviour
                             }
                             else
                             {
-                                Debug.LogWarning($"PlantItem '{soilPlot.plant.plantName}' not found.");
+                                //Debug.LogWarning($"PlantItem '{soilPlot.plant.plantName}' not found.");
                             }
                         }
                     }
                 }
             }
 
-            worldClock.IterateSeason(data.currentSeason);
+            if (data.currentSeason > 0)
+                worldClock.IterateSeason(data.currentSeason);
             // load specific time in day
 
             // load chicken position

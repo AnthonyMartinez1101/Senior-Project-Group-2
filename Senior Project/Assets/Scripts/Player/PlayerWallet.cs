@@ -39,6 +39,12 @@ public class PlayerWallet : MonoBehaviour
         UpdateText();
     }
 
+    public void ClearWallet()
+    {
+        coinCount = 0;
+        UpdateText();
+    }
+
     private void UpdateText()
     {
         if(currentCoroutine != null) StopCoroutine(currentCoroutine);

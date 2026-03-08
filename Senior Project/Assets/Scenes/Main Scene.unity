@@ -7636,9 +7636,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cad8e33c61db4e4f83543b99596d3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  autoSaveTimer: 310
+  autoSaveTimer: 10
   canSave: 1
   player: {fileID: 1291469836}
+  Enemies: {fileID: 1957676181}
   enemySpawner: {fileID: 1544488704}
   worldClock: {fileID: 799218943}
   noSprite: {fileID: 21300000, guid: 38933b6046d4a7442ad2d30d3fb8041c, type: 3}
@@ -13128,8 +13129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0db605fd1beebe4e8d424f6af49ff76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldClock
-  dayLength: 180
-  nightLength: 60
+  dayLength: 60
+  nightLength: 1
   transitionLength: 5
   pauseTimer: 0
   _2xTickSpeed: 0
@@ -21597,7 +21598,7 @@ PrefabInstance:
       objectReference: {fileID: 1014007743}
     - target: {fileID: 5092246524528975356, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: isInvincible
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCount

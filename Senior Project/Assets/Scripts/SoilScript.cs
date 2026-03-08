@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 public class SoilScript : MonoBehaviour
 {
     private GameObject highlighted; //Highlight child object
-    public PlantScript plantActor; //Plant Actor prefab
+    public PlantScript plantActor; //Plant Actor prefab 
 
     public PlantScript currentPlant; //Current plant instance
 

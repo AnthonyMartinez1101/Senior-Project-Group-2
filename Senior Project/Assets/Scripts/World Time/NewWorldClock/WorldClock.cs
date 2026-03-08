@@ -66,7 +66,7 @@ public class WorldClock : MonoBehaviour
         shadowAlpha = lightingSystem._shadowAlpha;
 
 
-        if(introNight)
+        if (introNight && (int) CurrentSeason == 0)
         {
             isIntroNight = true;
             introNightCompleted = false;

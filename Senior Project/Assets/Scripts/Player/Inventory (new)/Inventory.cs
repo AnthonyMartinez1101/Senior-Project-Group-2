@@ -318,6 +318,15 @@ public class Inventory : MonoBehaviour
         RefreshUI();
     }
 
+    public void ClearInventory()
+    {
+        foreach (var slot in slots)
+        {
+            slot.Clear();
+        }
+        RefreshUI();
+    }
+
     public bool CheckAndUseBullets(int amountToUse)
     {
         for (int i = 0; i < slotCount; i++)
