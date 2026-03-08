@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             //DontDestroyOnLoad(gameObject);
-            if (canSave && Enemies.transform.childCount == 0)
+            if (canSave)
                 StartCoroutine(AutoSave());
         }
         else
@@ -194,18 +194,22 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(autoSaveTimer);
-            bool saveEnabled = true;
-            while (saveEnabled)
+            if (Enemies.transform.childCount == 0 && player != null)
             {
-                if (Enemies != null && Enemies.transform.childCount == 0 && player != null)
+                yield return new WaitForSeconds(autoSaveTimer);
+                bool saveEnabled = true;
+                while (saveEnabled)
                 {
-                    SaveScript.SaveGame(player);
-                    saveEnabled = false;
-                    Debug.Log("Game auto-saved.");
+                    if (Enemies != null && Enemies.transform.childCount == 0)
+                    {
+                        SaveScript.SaveGame(player);
+                        saveEnabled = false;
+                        Debug.Log("Game auto-saved.");
+                    }
+                    yield return new WaitForSeconds(1f);
                 }
-                yield return new WaitForSeconds(1f);
             }
+            yield return new WaitForSeconds(1f);
         }
     }
 
