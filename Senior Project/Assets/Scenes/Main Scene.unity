@@ -13129,8 +13129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0db605fd1beebe4e8d424f6af49ff76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldClock
-  dayLength: 60
-  nightLength: 1
+  dayLength: 180
+  nightLength: 60
   transitionLength: 5
   pauseTimer: 0
   _2xTickSpeed: 0
@@ -15141,8 +15141,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1009094373}
   - {fileID: 674891664}
+  - {fileID: 1009094373}
   - {fileID: 377216447}
   - {fileID: 1248845643}
   - {fileID: 61537132}
@@ -17378,7 +17378,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   worldClock: {fileID: 799218943}
   dayMusic: {fileID: 8300000, guid: da7a40c424b476448b8fe480fb0f95ec, type: 3}
-  musicVolume: 0.15
+  nightMusic: {fileID: 8300000, guid: 6dc22d65b5751cd41965364adcdc5e76, type: 3}
+  bossMusic: {fileID: 8300000, guid: e287b54dbd9e42345a95aac1fa24facd, type: 3}
+  dayMusicVolume: 0.15
+  nightMusicVolume: 0.6
+  bossMusicVolume: 0.6
 --- !u!82 &1041779940
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18978,6 +18982,7 @@ MonoBehaviour:
   - {fileID: 1185765934}
   - {fileID: 2006984761}
   - {fileID: 377216446}
+  - {fileID: 674891663}
   sellingAmount: {fileID: 1042723605}
   redBox: {fileID: 1259710797}
 --- !u!1 &1163480765
@@ -30215,7 +30220,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 71c18166cb819774eaec6c668ae980e9, type: 3}
   - {fileID: 8300000, guid: 781cc11010ae4f34e9cf737334e36896, type: 3}
   - {fileID: 8300000, guid: 140c7359e2b4939499a8f12ec3210133, type: 3}
-  footstepVolume: 0.1
+  footstepVolume: 0.05
   scytheSwingVolume: 1
   munchVolume: 0.5
   wateringVolume: 0.5

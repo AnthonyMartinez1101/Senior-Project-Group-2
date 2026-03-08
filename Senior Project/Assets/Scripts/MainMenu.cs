@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     public void LoadButton()
     {
         GameManager.loadOnStart = true;
-        SceneManager.LoadSceneAsync("Cutscene");
+        SceneManager.LoadScene("Main Scene");
     }   
 
     public void QuitButton()

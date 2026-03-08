@@ -94,6 +94,8 @@ public class EnemySpawner : MonoBehaviour
                 worldClock.BossSpawned();
                 bossSpawned = true;
 
+                MusicScript.Instance.PlayBossMusic();
+
                 waveTimer = 0f;
                 enemiesToSpawn.Clear();
 
