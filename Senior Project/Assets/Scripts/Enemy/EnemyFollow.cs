@@ -33,7 +33,10 @@ public class EnemyFollow : MonoBehaviour
     {
         if (target == null)
         {
-            target = GameManager.Instance.player.transform;
+            var player = GameManager.Instance.GetPlayer();
+            if (player != null) {
+                target = player.transform;
+            }
             return;
         }
 

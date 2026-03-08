@@ -122,6 +122,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public GameObject GetPlayer()
+    {
+        return player;
+    }
+
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
