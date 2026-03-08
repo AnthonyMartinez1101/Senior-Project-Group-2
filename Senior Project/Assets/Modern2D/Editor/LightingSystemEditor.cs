@@ -217,7 +217,7 @@ namespace Modern2D
             {
                 system.extendedUpdateThisFrame = true;
                 system.OnShadowSettingsChanged();
-                system.UpdateShadows(Transform.FindObjectsOfType<StylizedShadowCaster2D>().ToDictionary(t => t.transform, t => t.shadowData.shadow));
+                system.UpdateShadows(Transform.FindObjectsByType<StylizedShadowCaster2D>(FindObjectsSortMode.None).ToDictionary(t => t.transform, t => t.shadowData.shadow));
             }
 
             SetLayers();
@@ -284,13 +284,13 @@ namespace Modern2D
 
         private void CreateAllShadows(LightingSystem system)
         {
-            foreach (var s in Transform.FindObjectsOfType<StylizedShadowCaster2D>())
+            foreach (var s in Transform.FindObjectsByType<StylizedShadowCaster2D>(FindObjectsSortMode.None))
             {
                 s.RebuildShadow();
                 system.AddShadow(s.shadowData);
                 system.extendedUpdateThisFrame = true;
                 system.OnShadowSettingsChanged();
-                system.UpdateShadows(Transform.FindObjectsOfType<StylizedShadowCaster2D>().ToDictionary(t => t.transform, t => t.shadowData.shadow));
+                system.UpdateShadows(Transform.FindObjectsByType<StylizedShadowCaster2D>(FindObjectsSortMode.None).ToDictionary(t => t.transform, t => t.shadowData.shadow));
             }
         }
 

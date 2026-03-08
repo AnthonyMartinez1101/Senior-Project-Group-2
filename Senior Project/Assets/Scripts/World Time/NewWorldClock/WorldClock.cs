@@ -169,17 +169,20 @@ public class WorldClock : MonoBehaviour
             canSpawnBoss = false;
 
             if (!inTutorialMode)
-                IterateSeason();
+                IterateSeason(1);
             lightingSystem._shadowAlpha.value = Mathf.Lerp(lightingSystem._shadowAlpha.value, shadowAlpha, 0.5f);
         }
         DayChangeEvent.Invoke();
     }
 
-    public void IterateSeason()
+    public void IterateSeason(int seasonNum)
     {
-        int nextSeason = ((int)CurrentSeason + 1) % 4;
-        CurrentSeason = (SeasonPhase)nextSeason;
-        worldClockLight.SetGradient();
+        for (int i = 0; i < seasonNum; i++)
+        {
+            int nextSeason = ((int)CurrentSeason + 1) % 4;
+            CurrentSeason = (SeasonPhase)nextSeason;
+            worldClockLight.SetGradient();
+        }
         Debug.Log("Current Season: " + CurrentSeason.ToString());
     }
 

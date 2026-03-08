@@ -8,9 +8,9 @@ public class GameData
     public float[] position;
     public float health;
     public List<InventoryItem> inventory;
+    public int coinStash;
     public List<Soil> soils;
-
-    // Todo: num days, chickens, etc
+    public int currentSeason; // 1 = spring, 2 = summer, 3 = fall, 4 = winter
 
     // Default constructor for new game
     public GameData()
@@ -42,12 +42,26 @@ public class GameData
             }
         }
 
+        coinStash = player.GetComponent<PlayerWallet>().GetCoinCount();
+
+        // item drops
+
+
         soils = new List<Soil>();
         SoilScript[] soilScripts = Object.FindObjectsByType<SoilScript>(FindObjectsSortMode.None);
         foreach (var soil in soilScripts)
         {
             soils.Add(new Soil(soil));
         }
+
+        // turret
+
+        WorldClock worldClock = Object.FindFirstObjectByType<WorldClock>();
+        currentSeason = (int)worldClock.CurrentSeason + 1;
+        // time of day
+
+        // save chicken position
+
     }
 }
 

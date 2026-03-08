@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     private Inventory inventorySystem;
 
+    [SerializeField] private GameObject Enemies;
     public EnemySpawner enemySpawner;
 
     //public GameObject environmentForEnemies;
@@ -194,7 +195,7 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(autoSaveTimer);
-            if (player)
+            if (player && Enemies.transform.childCount == 0)
             {
                 SaveScript.SaveGame(player);
                 Debug.Log("Game auto-saved.");
@@ -256,6 +257,10 @@ public class GameManager : MonoBehaviour
                 inventorySystem.RefreshUI();
             }
 
+            player.GetComponent<PlayerWallet>().AddCoins(data.coinStash);
+
+            // load item drops
+
             if (data.soils != null)
             {
                 foreach (var soilPlot in data.soils)
@@ -283,6 +288,11 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
+
+            worldClock.IterateSeason(data.currentSeason);
+            // load specific time in day
+
+            // load chicken position
         }
     }
     
