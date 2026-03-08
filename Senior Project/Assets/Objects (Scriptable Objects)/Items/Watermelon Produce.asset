@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a86dbcae4149a46be4292fd556dfb8, type: 3}
+  m_Name: Watermelon Produce
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: Watermelon Produce
+  icon: {fileID: -8770193210131082077, guid: 702be208073a37b48af7b1a7d0cc2f8a, type: 3}
+  itemType: 2
+  isConsumable: 1
+  isStackable: 1
+  sellPrice: 30
+  buyPrice: 0
+  extraItemData: {fileID: 11400000, guid: 412dc1379e2a42e42b3406d6d73b70c8, type: 2}

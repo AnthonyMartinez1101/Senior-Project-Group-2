@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18521cb7a8f5ae747902efa002e0964f, type: 3}
+  m_Name: Watermelon Plant
+  m_EditorClassIdentifier: Assembly-CSharp::PlantItem
+  plantName: Watermelon Plant
+  growthTime: 40
+  growStages:
+  - {fileID: -5038941123747931858, guid: b5d3c4cf0589d7b4ab8103b246b54937, type: 3}
+  - {fileID: -1432546915067531928, guid: b5d3c4cf0589d7b4ab8103b246b54937, type: 3}
+  - {fileID: 2456431107515866692, guid: b5d3c4cf0589d7b4ab8103b246b54937, type: 3}
+  - {fileID: -4080091997456279770, guid: b5d3c4cf0589d7b4ab8103b246b54937, type: 3}
+  produce: {fileID: 11400000, guid: be0463b85bd8a494c92247af155963fe, type: 2}
+  seed: {fileID: 11400000, guid: 6d2b0fd1e603de94bb43da8d3a070a30, type: 2}
+  minDrop: 1
+  maxDrop: 1
+  seedChance: 1
+  canDry: 1
+  objectOnHarvest: {fileID: 0}
