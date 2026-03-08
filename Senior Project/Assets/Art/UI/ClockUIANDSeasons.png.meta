@@ -1,0 +1,502 @@
+fileFormatVersion: 2
+guid: d9e750fcd8237594f92533b42ea9b2af
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5756544545048669091
+    second: ClockUIANDSeasons_0
+  - first:
+      213: -264246519675434880
+    second: ClockUIANDSeasons_1
+  - first:
+      213: 7830825115249675337
+    second: ClockUIANDSeasons_2
+  - first:
+      213: 406600164747356988
+    second: ClockUIANDSeasons_3
+  - first:
+      213: -5210159424934099205
+    second: ClockUIANDSeasons_4
+  - first:
+      213: -8194199939838643807
+    second: ClockUIANDSeasons_5
+  - first:
+      213: 5770448465779592962
+    second: ClockUIANDSeasons_6
+  - first:
+      213: -7248774342642476637
+    second: ClockUIANDSeasons_7
+  - first:
+      213: -8191080216228245817
+    second: ClockUIANDSeasons_8
+  - first:
+      213: -6115500214121958625
+    second: ClockUIANDSeasons_9
+  - first:
+      213: -7019391885175744254
+    second: ClockUIANDSeasons_10
+  - first:
+      213: 8346309368158337239
+    second: ClockUIANDSeasons_11
+  - first:
+      213: -5850830799770949878
+    second: ClockUIANDSeasons_12
+  - first:
+      213: 3751717545545875500
+    second: ClockUIANDSeasons_13
+  - first:
+      213: 4939683502311127540
+    second: ClockUIANDSeasons_14
+  - first:
+      213: -3543317993986139716
+    second: ClockUIANDSeasons_15
+  - first:
+      213: 7223748130682820331
+    second: ClockUIANDSeasons_16
+  - first:
+      213: -8192305086259595680
+    second: ClockUIANDSeasons_17
+  - first:
+      213: 2315454980072855420
+    second: ClockUIANDSeasons_18
+  - first:
+      213: -9040985096460308072
+    second: ClockUIANDSeasons_19
+  - first:
+      213: -4913521858356170386
+    second: ClockUIANDSeasons_20
+  - first:
+      213: -2213754944051385665
+    second: ClockUIANDSeasons_21
+  - first:
+      213: -3528971561158131947
+    second: ClockUIANDSeasons_22
+  - first:
+      213: 1113381782816492934
+    second: ClockUIANDSeasons_23
+  - first:
+      213: -3694111037411588694
+    second: ClockUIANDSeasons_24
+  - first:
+      213: 1304933177170012365
+    second: ClockUIANDSeasons_25
+  - first:
+      213: -889231745336672909
+    second: ClockUIANDSeasons_26
+  - first:
+      213: 2437308907520209932
+    second: ClockUIANDSeasons_27
+  - first:
+      213: -7316315019774857923
+    second: ClockUIANDSeasons_28
+  - first:
+      213: 1915717301161882909
+    second: ClockUIANDSeasons_29
+  - first:
+      213: 4833096095843011181
+    second: ClockUIANDSeasons_30
+  - first:
+      213: 4970873976017907732
+    second: ClockUIANDSeasons_31
+  - first:
+      213: -6038851557885655325
+    second: ClockUIANDSeasons_32
+  - first:
+      213: 6201189109710037390
+    second: ClockUIANDSeasons_33
+  - first:
+      213: -8217897110054303730
+    second: ClockUIANDSeasons_34
+  - first:
+      213: -4213584382027501694
+    second: ClockUIANDSeasons_35
+  - first:
+      213: -6581932087548585206
+    second: ClockUIANDSeasons_36
+  - first:
+      213: 7027132287121947909
+    second: ClockUIANDSeasons_37
+  - first:
+      213: -3834048264807575492
+    second: ClockUIANDSeasons_38
+  - first:
+      213: -8800820222723812291
+    second: ClockUIANDSeasons_39
+  - first:
+      213: -2639324154580419914
+    second: ClockUIANDSeasons_40
+  - first:
+      213: -1564494183243320356
+    second: ClockUIANDSeasons_41
+  - first:
+      213: 1598462590117145124
+    second: ClockUIANDSeasons_42
+  - first:
+      213: -4998746116226104905
+    second: ClockUIANDSeasons_43
+  - first:
+      213: 2282949113990808629
+    second: ClockUIANDSeasons_44
+  - first:
+      213: 1064196013742055399
+    second: ClockUIANDSeasons_45
+  - first:
+      213: -2032047509015097936
+    second: ClockUIANDSeasons_46
+  - first:
+      213: 3022943830943530899
+    second: ClockUIANDSeasons_47
+  - first:
+      213: 7323904119336814
+    second: ClockUIANDSeasons_48
+  - first:
+      213: -2249358727947432825
+    second: ClockUIANDSeasons_49
+  - first:
+      213: -8892271641392146917
+    second: ClockUIANDSeasons_50
+  - first:
+      213: -3494149372515062095
+    second: ClockUIANDSeasons_51
+  - first:
+      213: -8489884738350079062
+    second: ClockUIANDSeasons_52
+  - first:
+      213: 4105068831867967948
+    second: ClockUIANDSeasons_53
+  - first:
+      213: -246084684749385659
+    second: ClockUIANDSeasons_54
+  - first:
+      213: 1436012029737735815
+    second: ClockUIANDSeasons_55
+  - first:
+      213: 9010295392515237318
+    second: ClockUIANDSeasons_56
+  - first:
+      213: -1102970754989975001
+    second: ClockUIANDSeasons_57
+  - first:
+      213: 1864504271200900692
+    second: ClockUIANDSeasons_58
+  - first:
+      213: -7049173492730789319
+    second: ClockUIANDSeasons_59
+  - first:
+      213: -7330143672105992090
+    second: ClockUIANDSeasons_60
+  - first:
+      213: -5375003857090513959
+    second: ClockUIANDSeasons_61
+  - first:
+      213: -3921144651901311387
+    second: ClockUIANDSeasons_62
+  - first:
+      213: -7634880422271259429
+    second: ClockUIANDSeasons_63
+  - first:
+      213: -2330452297847815827
+    second: ClockUIANDSeasons_64
+  - first:
+      213: 636646464138432156
+    second: ClockUIANDSeasons_65
+  - first:
+      213: -8569785077344598073
+    second: ClockUIANDSeasons_66
+  - first:
+      213: -6160008047550185
+    second: ClockUIANDSeasons_67
+  - first:
+      213: 3004573476262485062
+    second: ClockUIANDSeasons_68
+  - first:
+      213: 8731510818565839905
+    second: ClockUIANDSeasons_69
+  - first:
+      213: -3103362443125981948
+    second: ClockUIANDSeasons_70
+  - first:
+      213: 3793262792174928780
+    second: ClockUIANDSeasons_71
+  - first:
+      213: 4197882543144813537
+    second: ClockUIANDSeasons_72
+  - first:
+      213: -2587900925674118353
+    second: ClockUIANDSeasons_73
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ClockUIANDSeasons_0
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 3267
+        width: 2054
+        height: 1079
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5459aa5c35ac10b0800000000000000
+      internalID: -5756544545048669091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockUIANDSeasons_1
+      rect:
+        serializedVersion: 2
+        x: 2378
+        y: 3099
+        width: 2352
+        height: 1126
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 088cc9db035355cf0800000000000000
+      internalID: -264246519675434880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockUIANDSeasons_2
+      rect:
+        serializedVersion: 2
+        x: 4704
+        y: 3267
+        width: 2122
+        height: 1069
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c0aace3fdacac60800000000000000
+      internalID: 7830825115249675337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockUIANDSeasons_3
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 2129
+        width: 2024
+        height: 1022
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3ba16112b884a500800000000000000
+      internalID: 406600164747356988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockUIANDSeasons_4
+      rect:
+        serializedVersion: 2
+        x: 2549
+        y: 1849
+        width: 1983
+        height: 1205
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf646ad8b9bc1b7b0800000000000000
+      internalID: -5210159424934099205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockUIANDSeasons_5
+      rect:
+        serializedVersion: 2
+        x: 4713
+        y: 1979
+        width: 2214
+        height: 1052
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a1f367c19a584e80800000000000000
+      internalID: -8194199939838643807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClockUIANDSeasons_6
+      rect:
+        serializedVersion: 2
+        x: 3357
+        y: 732
+        width: 361
+        height: 902
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20f8d757e40c41050800000000000000
+      internalID: 5770448465779592962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b3a7abb6287edd94db5b9f0c00e00874
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":2352.0,"y":1633.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      ClockUIANDSeasons_0: -5756544545048669091
+      ClockUIANDSeasons_1: -264246519675434880
+      ClockUIANDSeasons_2: 7830825115249675337
+      ClockUIANDSeasons_3: 406600164747356988
+      ClockUIANDSeasons_4: -5210159424934099205
+      ClockUIANDSeasons_5: -8194199939838643807
+      ClockUIANDSeasons_6: 5770448465779592962
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

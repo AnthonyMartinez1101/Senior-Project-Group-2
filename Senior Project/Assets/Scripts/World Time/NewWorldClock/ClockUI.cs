@@ -8,6 +8,13 @@ public class ClockUI : MonoBehaviour
 
     public GameObject hand;
 
+    public Image seasonalDecor;
+
+    public Sprite SpringDecor;
+    public Sprite SummerDecor;
+    public Sprite FallDecor;
+    public Sprite WintorDecor;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,5 +35,29 @@ public class ClockUI : MonoBehaviour
     {
         float percentage = worldClock.PercentageOfDayAndNight();
         hand.transform.rotation = Quaternion.Euler(0f, 0f, -percentage * 180f + 90f);
+    }
+
+    public void UpdateSeasonalDecor()
+    {
+        if (seasonalDecor == null)
+        {
+            Debug.LogError("Seasonal Decor reference is not set in ClockUI.");
+            return;
+        }
+        switch (worldClock.CurrentSeason)
+        {
+            case SeasonPhase.Spring:
+                seasonalDecor.sprite = SpringDecor;
+                break;
+            case SeasonPhase.Summer:
+                seasonalDecor.sprite = SummerDecor; 
+                break;
+            case SeasonPhase.Fall:
+                seasonalDecor.sprite = FallDecor; 
+                break;
+            case SeasonPhase.Winter:
+                seasonalDecor.sprite = WintorDecor; 
+                break;
+        }
     }
 }

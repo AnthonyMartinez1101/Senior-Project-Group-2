@@ -12974,8 +12974,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0db605fd1beebe4e8d424f6af49ff76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldClock
-  dayLength: 50
-  nightLength: 60
+  dayLength: 2
+  nightLength: 2
   transitionLength: 5
   pauseTimer: 0
   _2xTickSpeed: 0
@@ -13012,6 +13012,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1544488704}
         m_TargetAssemblyTypeName: EnemySpawner, Assembly-CSharp
         m_MethodName: EnemySeasonChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 905961254}
+        m_TargetAssemblyTypeName: ClockUI, Assembly-CSharp
+        m_MethodName: UpdateSeasonalDecor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14729,6 +14741,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   worldClock: {fileID: 799218943}
   hand: {fileID: 747214303}
+  seasonalDecor: {fileID: 1568241339}
+  SpringDecor: {fileID: -5756544545048669091, guid: d9e750fcd8237594f92533b42ea9b2af, type: 3}
+  SummerDecor: {fileID: -8194199939838643807, guid: d9e750fcd8237594f92533b42ea9b2af, type: 3}
+  FallDecor: {fileID: 7830825115249675337, guid: d9e750fcd8237594f92533b42ea9b2af, type: 3}
+  WintorDecor: {fileID: 406600164747356988, guid: d9e750fcd8237594f92533b42ea9b2af, type: 3}
 --- !u!1001 &916104059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21333,7 +21350,7 @@ PrefabInstance:
       objectReference: {fileID: 1014007743}
     - target: {fileID: 5092246524528975356, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: isInvincible
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCount
@@ -30959,7 +30976,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 380.85953, y: 196.59999}
+  m_SizeDelta: {x: 396.662, y: 241.00002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1989910537
 MonoBehaviour:
@@ -30981,7 +30998,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2923199636707345514, guid: eb1bddeeb77fedc43b95c237636d094e, type: 3}
+  m_Sprite: {fileID: -5210159424934099205, guid: d9e750fcd8237594f92533b42ea9b2af, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
