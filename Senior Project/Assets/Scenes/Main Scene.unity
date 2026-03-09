@@ -17378,8 +17378,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   worldClock: {fileID: 799218943}
   dayMusic: {fileID: 8300000, guid: da7a40c424b476448b8fe480fb0f95ec, type: 3}
-  nightMusic: {fileID: 8300000, guid: 6dc22d65b5751cd41965364adcdc5e76, type: 3}
-  bossMusic: {fileID: 8300000, guid: e287b54dbd9e42345a95aac1fa24facd, type: 3}
+  nightMusic: {fileID: 8300000, guid: 78307323244aff340aee49f97443df94, type: 3}
+  bossMusic: {fileID: 8300000, guid: d054390d86fb095458d16b181611d46a, type: 3}
   dayMusicVolume: 0.15
   nightMusicVolume: 0.6
   bossMusicVolume: 0.6
@@ -30233,7 +30233,7 @@ MonoBehaviour:
   munchVolume: 0.5
   wateringVolume: 0.5
   waterRefillVolume: 0.2
-  inventoryPopVolume: 0.5
+  inventoryPopVolume: 0.35
 --- !u!1001 &1892672692
 PrefabInstance:
   m_ObjectHideFlags: 0
