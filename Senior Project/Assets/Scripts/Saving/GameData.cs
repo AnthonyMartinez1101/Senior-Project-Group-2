@@ -17,8 +17,8 @@ public class GameData
     // Default constructor for new game
     public GameData()
     {
-        position[0] = 0f;
-        position[1] = 0f;
+        position[0] = 2f;
+        position[1] = 5f;
         position[2] = 0f;
         health = 20f;
     }

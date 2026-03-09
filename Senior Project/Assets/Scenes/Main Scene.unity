@@ -21569,6 +21569,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1864245342346135790, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1864245342346135790, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1916500946425368033, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: shop
       value: 
