@@ -5,7 +5,7 @@ public class Weapon : MonoBehaviour
 {
     public float damage = 1;
     public float knockbackForce = 5f;
-    public enum WeaponType { Melee, Bullet, Grenade }
+    public enum WeaponType { Sickle, Bullet, Grenade }
     public WeaponType weaponType;
 
     public enum BulletType { NA, Pistol, AR, Shotgun };
@@ -80,41 +80,31 @@ public class Weapon : MonoBehaviour
                tag == "Shadow";
     }
 
-    //To be rewritten using an IDamagable interface
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(Avoid(collision.tag)) return;
 
-        ShieldAction shield = collision.GetComponent<ShieldAction>() ?? collision.GetComponentInParent<ShieldAction>() ?? collision.GetComponentInChildren<ShieldAction>();
+        //Find if collided object is damageable
+        var damageable = collision.GetComponent<IDamageable>() ?? collision.GetComponentInParent<IDamageable>() ?? collision.GetComponentInChildren<IDamageable>();
 
-        if (shield != null)
+        if (damageable != null)
         {
-            shield.TakeDamage(damage);
-            bulletTotalHit++;
-        }
+            //Gets damagetype which is currently only used by plants with DamageType.Sickle (made to be modular though)
+            DamageType damageType = weaponType switch
+            {
+                WeaponType.Sickle => DamageType.Sickle,
+                WeaponType.Bullet => DamageType.Bullet,
+                WeaponType.Grenade => DamageType.Explosion,
+                _ => DamageType.Enemy
+            };
 
-        Enemy enemy = collision.GetComponent<Enemy>();
-        if(enemy != null)
-        {
-            enemy.TakeDamage(damage);
+            //Deal damage, increment bullet hit count
+            damageable.TakeDamage(damage, damageType);
             bulletTotalHit++;
 
-            if(collision.GetComponent<Knockback>()) collision.GetComponent<Knockback>().ApplyKnockback(transform, knockbackForce);
-        }
-
-        BossScript boss = collision.GetComponent<BossScript>();
-        if (boss != null)
-        {
-            boss.TakeDamage(damage);
-            bulletTotalHit++;
-            if (collision.GetComponent<Knockback>()) collision.GetComponent<Knockback>().ApplyKnockback(transform, knockbackForce);
-        }
-
-        PlantScript plantScript = collision.GetComponent<PlantScript>();
-        if (plantScript != null)
-        {
-            plantScript.TakeDamage(damage);
-            bulletTotalHit++;
+            //Apply knockback if object has knockback component
+            Knockback knockback = collision.GetComponent<Knockback>();
+            if (knockback != null) knockback.ApplyKnockback(transform, knockbackForce);
         }
 
         //Bullet destroy condition

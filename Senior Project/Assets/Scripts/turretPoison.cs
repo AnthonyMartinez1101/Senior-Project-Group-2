@@ -9,19 +9,10 @@ public class turretPoison : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Boss") || collision.CompareTag("Enemy"))
+        var poisonable = collision.GetComponent<IPoisonable>();
+        if (poisonable != null)
         {
-            var enemy = collision.GetComponent<Enemy>();
-            if (enemy)
-            {
-                enemy.ApplyPoison(5); 
-            }
-
-            var boss = collision.GetComponent<BossScript>();
-            if(boss)
-            {
-                boss.ApplyPoison(5);
-            }
+            poisonable.ApplyPoison(5);
         }
     }
 

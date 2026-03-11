@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable, IPoisonable
 {
     [SerializeField] float health, maxHealth = 5f;
     [SerializeField] float dayBurnRate = 1f;
@@ -63,30 +63,28 @@ public class Enemy : MonoBehaviour
 
     public void ApplyPoison(int ticks)
     {
-        if(poisonCount > 0)
-        {
-            poisonCount = ticks;
-        }
-        else
-        {
-            poisonCount = ticks;
-            StartCoroutine(PoisonDamage());
-        }
+        bool ifPoisoned = poisonCount > 0;
+
+        poisonCount = ticks;
+
+        if (!ifPoisoned) StartCoroutine(PoisonDamage());
     }
 
     IEnumerator PoisonDamage()
     {
         while (poisonCount > 0)
         {
-            TakeDamage(1f);
+            TakeDamage(1f, DamageType.Poison);
             poisonCount--;
             yield return new WaitForSeconds(0.75f);
         }
     }
 
 
-    public void TakeDamage(float damageAmount)
+    public void TakeDamage(float damageAmount, DamageType damageType)
     {
+        if(damageAmount <= 0) return;
+
         if(damageFlash) damageFlash.FlashOnDamage();
         health -= damageAmount;
         if(healthBar) healthBar.UpdateHealth(health, maxHealth);
@@ -172,7 +170,7 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("Plant"))
         {
             PlantScript plant = collision.GetComponent<PlantScript>();
-            plant.TakeDamage(1f);
+            plant.TakeDamage(1f, DamageType.Enemy);
         }
     }
 

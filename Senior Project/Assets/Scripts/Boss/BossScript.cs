@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.AI;
 
 
-public class BossScript : MonoBehaviour
+public class BossScript : MonoBehaviour, IDamageable, IPoisonable
 {
     public enum State
     {
@@ -87,15 +87,18 @@ public class BossScript : MonoBehaviour
 
     public void ApplyPoison(int ticks)
     {
+        bool ifPoisoned = poisonCount > 0;
+
         poisonCount = ticks;
-        StartCoroutine(PoisonDamage());
+
+        if (!ifPoisoned) StartCoroutine(PoisonDamage());
     }
 
     IEnumerator PoisonDamage()
     {
         while (poisonCount > 0)
         {
-            TakeDamage(1f);
+            TakeDamage(1f, DamageType.Poison);
             poisonCount--;
             yield return new WaitForSeconds(0.75f);
         }
@@ -146,10 +149,11 @@ public class BossScript : MonoBehaviour
         if (data.altSprite != null) spriteRenderer.sprite = data.altSprite;
     }
 
-    public void TakeDamage(float damageAmount)
+    public void TakeDamage(float damageAmount, DamageType damageType)
     {
         //Return, already dead
         if(currentHealth <= 0) return;
+        if(damageAmount <= 0) return;
 
         // If shield is active, ignore/don't apply damage to boss and log for verification
         if (isShielded || data.isInvincible)
@@ -187,7 +191,7 @@ public class BossScript : MonoBehaviour
         if (collision.CompareTag("Plant"))
         {
             PlantScript plant = collision.GetComponent<PlantScript>();
-            plant.TakeDamage(1f);
+            plant.TakeDamage(1f, DamageType.Enemy);
         }
     }
 

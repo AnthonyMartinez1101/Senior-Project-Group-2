@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Package : MonoBehaviour
+public class Package : MonoBehaviour, IDamageable
 {
-    private List<Item> packagedItems = new List<Item>();
+    [SerializeField] float health, maxHealth = 5f;
+    private FloatingHealth healthBar;
 
-    private bool isQuitting = false;
+    private List<Item> packagedItems = new List<Item>();
 
     public void CreatePackage(List<Item> items)
     {
@@ -14,14 +15,20 @@ public class Package : MonoBehaviour
         packagedItems.AddRange(items);
     }
 
-    void OnApplicationQuit()
+    public void TakeDamage(float damageAmount, DamageType weaponType)
     {
-        isQuitting = true;
+        if (damageAmount <= 0) return;
+
+        health -= damageAmount;
+        if (healthBar) healthBar.UpdateHealth(health, maxHealth);
+        if (health <= 0)
+        {
+            OpenPackage();
+        }
     }
 
-    private void OnDestroy()
+    void OpenPackage()
     {
-        if (isQuitting) return;
         if (packagedItems.Count <= 0) return;
 
         // Drop all items in the package when it is destroyed
@@ -29,5 +36,6 @@ public class Package : MonoBehaviour
         {
             ItemDropFactory.Instance.SpawnItem(item, 0, transform.position, true);
         }
+        Destroy(gameObject);
     }
 }

@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlantScript : MonoBehaviour
+public class PlantScript : MonoBehaviour, IDamageable
 {
     public PlantItem plantInfo;
 
@@ -15,7 +15,6 @@ public class PlantScript : MonoBehaviour
     public float currentHealth;
     private FloatingHealth healthBar;
 
-    private bool lastCollidedWithSickle = false;
 
     private bool tutorialMode = false;
 
@@ -93,15 +92,17 @@ public class PlantScript : MonoBehaviour
         if (healthBar) healthBar.UpdateHealth(currentHealth, plantHealth);
     }
 
-    public void TakeDamage(float damageAmount)
+    public void TakeDamage(float damageAmount, DamageType damageType)
     {
+        if (damageAmount <= 0) return;
         if (tutorialMode && !IsFullyGrown()) return;
+        
 
         currentHealth -= damageAmount * 3f;
         if (healthBar) healthBar.UpdateHealth(currentHealth, plantHealth);
         if (currentHealth <= 0)
         {
-            if (lastCollidedWithSickle)
+            if (damageType == DamageType.Sickle)
             {
                 if (IsFullyGrown())
                 {
@@ -177,18 +178,5 @@ public class PlantScript : MonoBehaviour
     public bool IsFullyGrown()
     {
         return currentGrowth >= plantInfo.growthTime;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(CheckCollision(collision)) lastCollidedWithSickle = collision.CompareTag("Sickle");
-    }
-
-    //Check collision if it doesn't interact with the following
-    private bool CheckCollision(Collider2D collision)
-    {
-        return (!collision.CompareTag("Player") 
-            && !collision.CompareTag("Interact")
-            && !collision.CompareTag("NoBulletCollision"));
     }
 }

@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class ShieldAction : MonoBehaviour
+public class ShieldAction : MonoBehaviour, IDamageable
 {
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private float curHealth;
@@ -49,14 +49,16 @@ public class ShieldAction : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float dmg = 1f)
+    public void TakeDamage(float damageDealt, DamageType damageType)
     {
-        curHealth -= dmg;
-        Debug.Log($"[Shield] Took {dmg} damage. Remaining HP: {curHealth}");
+        if(damageDealt <= 0f) return;
+
+        curHealth -= damageDealt;
+        //Debug.Log($"[Shield] Took {damageDealt} damage. Remaining HP: {curHealth}");
 
         if (curHealth <= 0f)
         {
-            Debug.Log($"[Shield] Shield destroyed on boss '{(owner != null ? owner.name : "unknown")}'.");
+            //Debug.Log($"[Shield] Shield destroyed on boss '{(owner != null ? owner.name : "unknown")}'.");
             Destroy(gameObject);
         }
     }

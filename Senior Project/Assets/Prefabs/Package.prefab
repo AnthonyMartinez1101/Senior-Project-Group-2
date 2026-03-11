@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 846178686452864408}
   - component: {fileID: 2901678659281133490}
-  - component: {fileID: 1212769677453161295}
   - component: {fileID: 1447119416676195150}
   - component: {fileID: 1050020239590854350}
   - component: {fileID: 467174232701633431}
@@ -97,27 +96,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &1212769677453161295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1261548369176768998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 558901fbdff83fc46801672276e1e040, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  health: 0
-  maxHealth: 5
-  dayBurnRate: 0
-  dayBurnDamage: 0
-  dealDamage: 0
-  knockbackForce: 0
-  dropChance: 0
-  randomItemDrop: {fileID: 0}
-  dropExpires: 1
 --- !u!50 &1447119416676195150
 Rigidbody2D:
   serializedVersion: 5
@@ -334,7 +312,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8950641429699738159}
   - component: {fileID: 4533254576941496300}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: 'Package : shadow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
