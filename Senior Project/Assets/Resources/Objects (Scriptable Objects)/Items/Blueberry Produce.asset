@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a86dbcae4149a46be4292fd556dfb8, type: 3}
+  m_Name: Blueberry Produce
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: Blueberry
+  icon: {fileID: -8682361475483410327, guid: abcdf770adc01a94997d3f71a9896bb0, type: 3}
+  itemType: 2
+  isConsumable: 1
+  isStackable: 1
+  sellPrice: 2
+  buyPrice: 0
+  extraItemData: {fileID: 11400000, guid: eab4411941fe4f848be22cc2f9711081, type: 2}
