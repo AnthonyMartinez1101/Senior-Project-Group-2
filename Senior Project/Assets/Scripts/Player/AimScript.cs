@@ -30,14 +30,14 @@ public class AimScript : MonoBehaviour
         if (useMouse && Mouse.current != null && Camera.main != null)
         {
             //Gets mouse position on the scree and converts it to world position
-            Vector3 screen = Mouse.current.position.ReadValue();
+            Vector3 mousePos = Mouse.current.position.ReadValue();
 
-            if(float.IsNaN(screen.x) || float.IsNaN(screen.y) || float.IsInfinity(screen.x) || float.IsInfinity(screen.y))
+            if(float.IsNaN(mousePos.x) || float.IsNaN(mousePos.y) || float.IsInfinity(mousePos.x) || float.IsInfinity(mousePos.y))
             {
                 return; // Skip if mouse position is invalid
             }
 
-            Vector3 world = Camera.main.ScreenToWorldPoint(screen);
+            Vector3 world = Camera.main.ScreenToWorldPoint(mousePos);
             world.z = aim.position.z;
 
             //Sets the aim's up direction to point towards the mouse position

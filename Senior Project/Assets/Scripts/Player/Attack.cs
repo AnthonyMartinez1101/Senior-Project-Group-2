@@ -32,6 +32,8 @@ public class Attack : MonoBehaviour
 
     public float shotgunSpreadAngle = 15f;
 
+    public WeaponHolder weapondHolder;
+
 
     //The script which is in the Melee child object
     private SlashMove slashMove;
@@ -85,8 +87,10 @@ public class Attack : MonoBehaviour
 
     private void ShootShotgun()
     {
-        Quaternion baseRot = aim.rotation * Quaternion.Euler(0f, 0f, -90f);
-        Vector3 bulletSpawn = aim.position + new Vector3(0f, bulletYOffset, 0f);
+        Transform aimer = weapondHolder.GetHolderTransform();
+
+        Quaternion baseRot = aimer.rotation * Quaternion.Euler(0f, 0f, -90f);
+        Vector3 bulletSpawn = aimer.position + new Vector3(0f, bulletYOffset, 0f);
 
 
         for (int i = -1; i <= 1; i++)
@@ -95,7 +99,7 @@ public class Attack : MonoBehaviour
             GameObject b = Instantiate(shotgunBullet, bulletSpawn, rot);
             Instantiate(shootFlash, bulletSpawn, rot);
 
-            Vector2 dir = -((aim.rotation * Quaternion.Euler(0f, 0f, i * shotgunSpreadAngle)) * Vector3.up);
+            Vector2 dir = -((aimer.rotation * Quaternion.Euler(0f, 0f, i * shotgunSpreadAngle)) * Vector3.up);
             b.GetComponent<Rigidbody2D>().AddForce(dir * bulletForce, ForceMode2D.Impulse);
             Destroy(b, 2.0f);
         }
@@ -104,11 +108,13 @@ public class Attack : MonoBehaviour
 
     private void Shoot(GameObject bullet)
     {
-        Quaternion rot = aim.rotation * Quaternion.Euler(0f, 0f, -90f);
-        Vector3 bulletSpawn = aim.position + new Vector3(0f, bulletYOffset, 0f);
+        Transform aimer = weapondHolder.GetHolderTransform();
+
+        Quaternion rot = aimer.rotation * Quaternion.Euler(0f, 0f, -90f);
+        Vector3 bulletSpawn = aimer.position + new Vector3(0f, bulletYOffset, 0f);
         GameObject b = Instantiate(bullet, bulletSpawn, rot);
         Instantiate(shootFlash, bulletSpawn, rot);
-        b.GetComponent<Rigidbody2D>().AddForce(-aim.up * bulletForce, ForceMode2D.Impulse);
+        b.GetComponent<Rigidbody2D>().AddForce(-aimer.up * bulletForce, ForceMode2D.Impulse);
         GameManager.Instance.CameraShake(1f, 0.1f);
         Destroy(b, 2.0f);
     }

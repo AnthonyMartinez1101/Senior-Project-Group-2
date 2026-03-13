@@ -53,6 +53,10 @@ public class Inventory : MonoBehaviour
 
     [HideInInspector] public bool HasSold;
 
+    private WeaponHolder weaponHolder;
+
+    [SerializeField] private GameObject aim;
+
 
     private void Awake()
     {
@@ -73,6 +77,10 @@ public class Inventory : MonoBehaviour
         
 
         playerAudio = GetComponent<PlayerAudio>();
+
+        weaponHolder = GetComponentInChildren<WeaponHolder>();
+
+        if(!aim) Debug.LogWarning("Inventory: Aim object not assigned in inspector");
     }
 
     private void Start()
@@ -86,6 +94,42 @@ public class Inventory : MonoBehaviour
         if (scrollAction != null) ScrollAction();
         if (Keyboard.current != null) NumberKeySelection();
         if (dropItemAction != null) DropItemCheck();
+        if (weaponHolder != null) CheckWeaponHold();
+    }
+
+    private void CheckWeaponHold()
+    {
+        if (!aim) return;
+
+        Item currentItem = GetCurrentItem();
+        if(currentItem != null && currentItem.itemType == ItemType.Weapon)
+        {
+            aim.SetActive(false);
+
+            var weaponData = currentItem.extraItemData as WeaponData;
+
+            // Set the weapon holder based on the weapon type
+            switch (weaponData.weaponType)
+            {
+                case WeaponType.Pistol:
+                    weaponHolder.SetWeaponHolder(0);
+                    break;
+                case WeaponType.AR:
+                    weaponHolder.SetWeaponHolder(1);
+                    break;
+                case WeaponType.Shotgun:
+                    weaponHolder.SetWeaponHolder(2);
+                    break;
+                default:
+                    weaponHolder.SetWeaponHolder(-1);
+                    break;
+            }
+        }
+        else
+        {
+            weaponHolder.SetWeaponHolder(-1);
+            aim.SetActive(true);
+        }
     }
 
     private void DropItemCheck()
