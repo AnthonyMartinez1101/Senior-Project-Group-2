@@ -20,7 +20,7 @@ public class PlantScript : MonoBehaviour, IDamageable
 
     private SoilScript connectedSoil;
 
-
+    private GameObject chickens;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -42,6 +42,8 @@ public class PlantScript : MonoBehaviour, IDamageable
         if (healthBar) healthBar.SetMax();
 
         if(newPlantInfo.plantName == "Tutorial Plant") tutorialMode = true;
+
+        chickens = GameObject.FindGameObjectWithTag("Chickens");
 
         StartCoroutine(TempColliderDis());
     }
@@ -111,8 +113,17 @@ public class PlantScript : MonoBehaviour, IDamageable
 
                     if(plantInfo.objectOnHarvest != null)
                     {
-                        var newObject = Instantiate(plantInfo.objectOnHarvest, transform.position, Quaternion.identity);
-
+                        GameObject newObject;
+                        switch (plantInfo.plantName)
+                        {
+                            case "Chicken Plant":
+                                newObject = Instantiate(plantInfo.objectOnHarvest, transform.position, Quaternion.identity, chickens.transform);
+                                break;
+                            // add one for turret in future
+                            default:
+                                newObject = Instantiate(plantInfo.objectOnHarvest, transform.position, Quaternion.identity);
+                                break;
+                        }
                         var newPlant = newObject.GetComponent<PlantScript>();
                         if (newPlant != null) connectedSoil.NewPlant(newPlant);
                     }

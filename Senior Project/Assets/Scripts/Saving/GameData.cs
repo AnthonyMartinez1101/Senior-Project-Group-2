@@ -13,6 +13,7 @@ public class GameData
     // item drops list
     public List<Soil> soils = new List<Soil>();
     public int currentSeason = 0; // 0 = spring, 1 = summer, 2 = fall, 3 = winter
+    public List<ChickenData> chickens = new List<ChickenData>();
 
     // Default constructor for new game
     public GameData()
@@ -56,8 +57,12 @@ public class GameData
         currentSeason = (int)worldClock.CurrentSeason;
         // time of day
 
-        // save chicken position
-
+        GameObject chickenParent = GameObject.FindGameObjectWithTag("Chickens");
+        foreach (Transform chicken in chickenParent.transform)
+        {
+            ChickenData chickenData = new ChickenData(chicken);
+            chickens.Add(chickenData);
+        }
     }
 }
 
@@ -106,5 +111,18 @@ public class PlantData
         plantName = p.plantInfo.plantName;
         growth = p.currentGrowth;
         health = p.currentHealth;
+    }
+}
+
+[System.Serializable]
+public class ChickenData
+{
+    public float[] position;
+    public ChickenData(Transform t)
+    {
+        position = new float[3];
+        position[0] = t.position.x;
+        position[1] = t.position.y;
+        position[2] = t.position.z;
     }
 }

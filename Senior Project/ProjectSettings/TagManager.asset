@@ -16,6 +16,7 @@ TagManager:
   - Boss
   - AntColli
   - TurretRange
+  - Chickens
   layers:
   - Default
   - TransparentFX

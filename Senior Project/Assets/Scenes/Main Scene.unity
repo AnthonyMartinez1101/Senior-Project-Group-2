@@ -7562,6 +7562,7 @@ MonoBehaviour:
   FollowCamera: {fileID: 157321354}
   shop: {fileID: 1014007743}
   pauseMenu: {fileID: 1846290412}
+  chickenPrefab: {fileID: 5370905403970759343, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
   chickenHidePosition: {fileID: 951613978}
   blackBackground: {fileID: 1491746770}
 --- !u!4 &404758539
@@ -18326,7 +18327,7 @@ GameObject:
   - component: {fileID: 1082222006}
   m_Layer: 0
   m_Name: Chickens
-  m_TagString: Untagged
+  m_TagString: Chickens
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

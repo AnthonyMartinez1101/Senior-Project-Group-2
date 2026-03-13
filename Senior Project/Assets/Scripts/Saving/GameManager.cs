@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     InputAction pauseAction;
 
+    public GameObject chickenPrefab;
     [SerializeField] private Transform chickenHidePosition;
 
     public Image blackBackground;
@@ -247,7 +248,7 @@ public class GameManager : MonoBehaviour
         if (player != null)
         {
             player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
-            
+
             player.GetComponent<PlayerHealth>().currentHealth = data.health;
 
             if (data.inventory != null)
@@ -274,8 +275,10 @@ public class GameManager : MonoBehaviour
             }
 
             if (data.coinStash > 0)
-            player.GetComponent<PlayerWallet>().ClearWallet();
-            player.GetComponent<PlayerWallet>().AddCoins(data.coinStash);
+            {
+                player.GetComponent<PlayerWallet>().ClearWallet();
+                player.GetComponent<PlayerWallet>().AddCoins(data.coinStash);
+            }
 
             // load item drops
 
@@ -311,7 +314,15 @@ public class GameManager : MonoBehaviour
                 worldClock.IterateSeason(data.currentSeason);
             // load specific time in day
 
-            // load chicken position
+            GameObject parent = GameObject.FindGameObjectWithTag("Chickens");
+            if (data.chickens != null && data.chickens.Count > 0)
+            {
+                foreach (var chickenData in data.chickens)
+                {
+                    Vector3 position = new Vector3(chickenData.position[0], chickenData.position[1], chickenData.position[2]);
+                    Instantiate(chickenPrefab, position, Quaternion.identity, parent.transform);
+                }
+            }
         }
     }
     

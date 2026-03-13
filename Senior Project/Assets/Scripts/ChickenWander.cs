@@ -19,8 +19,7 @@ public class ChickenWander : MonoBehaviour
     public float minWaitTime = 1f;
     public float maxWaitTime = 5f;
 
-    public SpriteRenderer chickenSprite;
-
+    private GameObject childObject;
 
 
 
@@ -34,6 +33,8 @@ public class ChickenWander : MonoBehaviour
 
         if(hidePosition == null) hidePosition = GameManager.Instance.GetChickenHidePosition();
         if(worldClock == null) worldClock = GameManager.Instance.GetWorldClock();
+
+        childObject = transform.GetChild(0).gameObject;
 
         StartCoroutine(Wander());
     }
@@ -52,9 +53,9 @@ public class ChickenWander : MonoBehaviour
 
                 yield return new WaitUntil(() => !agent.pathPending && (!hidePosition || agent.remainingDistance <= 2.5f || agent.pathStatus != NavMeshPathStatus.PathComplete));
 
-                chickenSprite.enabled = false;
+                childObject.SetActive(false);
                 yield return new WaitUntil(() => worldClock.IsDay());
-                chickenSprite.enabled = true;
+                childObject.SetActive(true);
 
                 yield return null;
                 continue;
