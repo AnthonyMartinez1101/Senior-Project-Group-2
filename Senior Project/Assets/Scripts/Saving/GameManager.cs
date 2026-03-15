@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public static GameData gameData;
     public float autoSaveTimer = 10f;
     public bool canSave = true;
+    //add ui mabober
 
     public GameObject player;
     private Inventory inventorySystem;
@@ -39,6 +40,8 @@ public class GameManager : MonoBehaviour
     InputAction pauseAction;
 
     public GameObject chickenPrefab;
+    public GameObject GameOverScreen;
+
     [SerializeField] private Transform chickenHidePosition;
 
     public Image blackBackground;
@@ -46,6 +49,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        GameOverScreen.SetActive(false);
+
         BuildItemLookup();
         gameData = new GameData();
         if (player != null)
@@ -137,7 +142,7 @@ public class GameManager : MonoBehaviour
     public void RestartButton()
     {
         ResumeGame();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //make game over screen pop up 
     }
 
     public void GoToMainMenu()
@@ -194,6 +199,19 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void GameOverScene()
+    {
+        // Load game from previous save
+        StartCoroutine(WaitOnDeath());
+    }
+
+    //Waits for 3 seconds before restarting the scene
+    IEnumerator WaitOnDeath()
+    {
+        yield return new WaitForSeconds(3f);
+        GameOverScreen.SetActive(true); 
     }
 
     private IEnumerator AutoSave()

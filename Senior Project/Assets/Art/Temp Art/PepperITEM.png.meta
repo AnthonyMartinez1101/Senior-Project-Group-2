@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: abcdf770adc01a94997d3f71a9896bb0
+guid: 7201518159554f0469cd82815069ad59
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8682361475483410327
-    second: Blubry_Chiken_Items_0
+      213: 5244768747764161078
+    second: PepperITEM_0
   - first:
-      213: -6228076351477199948
-    second: Blubry_Chiken_Items_1
+      213: -8309589240216010429
+    second: PepperITEM_1
   - first:
-      213: 3991361074815561557
-    second: Blubry_Chiken_Items_2
+      213: -6539273989661811188
+    second: PepperITEM_2
+  - first:
+      213: -291196694514864978
+    second: PepperITEM_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blubry_Chiken_Items_0
+      name: PepperITEM_0
       rect:
         serializedVersion: 2
-        x: 5315
-        y: 3813
-        width: 730
-        height: 727
+        x: 4478
+        y: 2626
+        width: 340
+        height: 973
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,19 +124,63 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 960664a3d3e028780800000000000000
-      internalID: -8682361475483410327
+      spriteID: 63a9d8b536929c840800000000000000
+      internalID: 5244768747764161078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blubry_Chiken_Items_1
+      name: PepperITEM_1
       rect:
         serializedVersion: 2
-        x: 5136
-        y: 2407
-        width: 1088
+        x: 5631
+        y: 2555
+        width: 486
+        height: 1158
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3414483bc986eac80800000000000000
+      internalID: -8309589240216010429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PepperITEM_2
+      rect:
+        serializedVersion: 2
+        x: 4126
+        y: 1219
+        width: 709
+        height: 805
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0e9145f3f4df35a0800000000000000
+      internalID: -6539273989661811188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PepperITEM_3
+      rect:
+        serializedVersion: 2
+        x: 5235
+        y: 946
+        width: 1085
         height: 1240
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -143,30 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4bbc03c5e8d6199a0800000000000000
-      internalID: -6228076351477199948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blubry_Chiken_Items_2
-      rect:
-        serializedVersion: 2
-        x: 5136
-        y: 794
-        width: 1088
-        height: 1239
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 55fe3ba10c9246730800000000000000
-      internalID: 3991361074815561557
+      spriteID: eac6caf262675fbf0800000000000000
+      internalID: -291196694514864978
       vertices: []
       indices: 
       edges: []
@@ -175,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 987cf82f93572de4abf6e0736c4b33f1
+    spriteID: 61254c9b6980c414ab1aa6e87d39fe8e
     internalID: 0
     vertices: []
     indices: 
@@ -187,9 +212,10 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Blubry_Chiken_Items_0: -8682361475483410327
-      Blubry_Chiken_Items_1: -6228076351477199948
-      Blubry_Chiken_Items_2: 3991361074815561557
+      PepperITEM_0: 5244768747764161078
+      PepperITEM_1: -8309589240216010429
+      PepperITEM_2: -6539273989661811188
+      PepperITEM_3: -291196694514864978
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

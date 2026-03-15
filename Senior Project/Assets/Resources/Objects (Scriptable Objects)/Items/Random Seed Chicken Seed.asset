@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93a86dbcae4149a46be4292fd556dfb8, type: 3}
-  m_Name: Pepper Produce
+  m_Name: Random Seed Chicken Seed
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: 'Pepper '
-  icon: {fileID: 5244768747764161078, guid: 7201518159554f0469cd82815069ad59, type: 3}
-  itemType: 2
+  itemName: Random Seed Chicken Seed
+  icon: {fileID: 3991361074815561557, guid: abcdf770adc01a94997d3f71a9896bb0, type: 3}
+  itemType: 0
   isConsumable: 1
   isStackable: 1
-  sellPrice: 0
-  buyPrice: 0
-  extraItemData: {fileID: 0}
+  sellPrice: 15
+  buyPrice: 15
+  extraItemData: {fileID: 11400000, guid: 36085b5fd3aa11246acbb2e99aaeac21, type: 2}

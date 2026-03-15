@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: abcdf770adc01a94997d3f71a9896bb0
+guid: 7bf1100de38209142800d1e1135f1450
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8682361475483410327
-    second: Blubry_Chiken_Items_0
-  - first:
-      213: -6228076351477199948
-    second: Blubry_Chiken_Items_1
-  - first:
-      213: 3991361074815561557
-    second: Blubry_Chiken_Items_2
+      213: 1987107184890158638
+    second: radnomChicken_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blubry_Chiken_Items_0
+      name: radnomChicken_0
       rect:
         serializedVersion: 2
-        x: 5315
-        y: 3813
-        width: 730
-        height: 727
+        x: 550
+        y: 0
+        width: 998
+        height: 1014
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,52 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 960664a3d3e028780800000000000000
-      internalID: -8682361475483410327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blubry_Chiken_Items_1
-      rect:
-        serializedVersion: 2
-        x: 5136
-        y: 2407
-        width: 1088
-        height: 1240
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4bbc03c5e8d6199a0800000000000000
-      internalID: -6228076351477199948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blubry_Chiken_Items_2
-      rect:
-        serializedVersion: 2
-        x: 5136
-        y: 794
-        width: 1088
-        height: 1239
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 55fe3ba10c9246730800000000000000
-      internalID: 3991361074815561557
+      spriteID: e2e110ed47f939b10800000000000000
+      internalID: 1987107184890158638
       vertices: []
       indices: 
       edges: []
@@ -175,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 987cf82f93572de4abf6e0736c4b33f1
+    spriteID: 343795b9e531b6d4ab2745586e5eab7b
     internalID: 0
     vertices: []
     indices: 
@@ -183,13 +133,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Blubry_Chiken_Items_0: -8682361475483410327
-      Blubry_Chiken_Items_1: -6228076351477199948
-      Blubry_Chiken_Items_2: 3991361074815561557
+      radnomChicken_0: 1987107184890158638
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

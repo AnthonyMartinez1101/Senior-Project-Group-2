@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: abcdf770adc01a94997d3f71a9896bb0
+guid: e1740da15add20249beaadb7afe03167
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8682361475483410327
-    second: Blubry_Chiken_Items_0
+      213: -6500734092705013581
+    second: PepperText_0
   - first:
-      213: -6228076351477199948
-    second: Blubry_Chiken_Items_1
+      213: -8808043492047328830
+    second: PepperText_1
   - first:
-      213: 3991361074815561557
-    second: Blubry_Chiken_Items_2
+      213: 2867392321453426189
+    second: PepperText_2
+  - first:
+      213: 5240912461335648769
+    second: PepperText_3
+  - first:
+      213: -3685070414812456339
+    second: PepperText_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -30,7 +36,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -52,12 +58,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,67 +112,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blubry_Chiken_Items_0
+      name: PepperText_0
       rect:
         serializedVersion: 2
-        x: 5315
-        y: 3813
-        width: 730
-        height: 727
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 111
+        y: 967
+        width: 868
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 960664a3d3e028780800000000000000
-      internalID: -8682361475483410327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blubry_Chiken_Items_1
-      rect:
-        serializedVersion: 2
-        x: 5136
-        y: 2407
-        width: 1088
-        height: 1240
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4bbc03c5e8d6199a0800000000000000
-      internalID: -6228076351477199948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blubry_Chiken_Items_2
-      rect:
-        serializedVersion: 2
-        x: 5136
-        y: 794
-        width: 1088
-        height: 1239
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 55fe3ba10c9246730800000000000000
-      internalID: 3991361074815561557
+      spriteID: 3b0eb09f8c0c8c5a0800000000000000
+      internalID: -6500734092705013581
       vertices: []
       indices: 
       edges: []
@@ -175,7 +137,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 987cf82f93572de4abf6e0736c4b33f1
+    spriteID: 6a6a3c46f5af7324abcb40956037eb5e
     internalID: 0
     vertices: []
     indices: 
@@ -183,13 +145,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      Blubry_Chiken_Items_0: -8682361475483410327
-      Blubry_Chiken_Items_1: -6228076351477199948
-      Blubry_Chiken_Items_2: 3991361074815561557
+      PepperText_0: -6500734092705013581
+      PepperText_1: -8808043492047328830
+      PepperText_2: 2867392321453426189
+      PepperText_3: 5240912461335648769
+      PepperText_4: -3685070414812456339
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

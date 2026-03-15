@@ -116,7 +116,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            GameManager.Instance.RestartScene();
+            GameManager.Instance.GameOverScene();
             Destroy(gameObject);
         }
     }

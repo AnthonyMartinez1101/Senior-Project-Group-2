@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Pepper Seed
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Pepper Seed
-  icon: {fileID: 0}
+  icon: {fileID: -291196694514864978, guid: 7201518159554f0469cd82815069ad59, type: 3}
   itemType: 0
   isConsumable: 1
   isStackable: 1
-  sellPrice: 0
-  buyPrice: 0
+  sellPrice: 15
+  buyPrice: 15
   extraItemData: {fileID: 0}

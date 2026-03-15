@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Blueberry Produce
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Blueberry
-  icon: {fileID: -8682361475483410327, guid: abcdf770adc01a94997d3f71a9896bb0, type: 3}
+  icon: {fileID: -6539273989661811188, guid: 7201518159554f0469cd82815069ad59, type: 3}
   itemType: 2
   isConsumable: 1
   isStackable: 1

@@ -15,10 +15,10 @@ MonoBehaviour:
   plantName: Pepper Plant
   growthTime: 30
   growStages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -2986607583528004699, guid: 628d9fb8181f8064a8b43667c29016b6, type: 3}
+  - {fileID: 5614007270538504881, guid: 628d9fb8181f8064a8b43667c29016b6, type: 3}
+  - {fileID: -2250597715534355069, guid: 628d9fb8181f8064a8b43667c29016b6, type: 3}
+  - {fileID: 1528698537128201476, guid: 628d9fb8181f8064a8b43667c29016b6, type: 3}
   produce: {fileID: 11400000, guid: dffd53100a71b964381bd1d1bdc4ebff, type: 2}
   seed: {fileID: 11400000, guid: 2c4bce3f713fd69499110f20a641c258, type: 2}
   minDrop: 1

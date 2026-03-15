@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 941750aabf3c4c942864677943b1a424
+guid: 628d9fb8181f8064a8b43667c29016b6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 555513701095445607
-    second: dirt_temp_0
+      213: -2986607583528004699
+    second: PepperPLANT_0
+  - first:
+      213: 5614007270538504881
+    second: PepperPLANT_1
+  - first:
+      213: -2250597715534355069
+    second: PepperPLANT_2
+  - first:
+      213: 1528698537128201476
+    second: PepperPLANT_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +81,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,23 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dirt_temp_0
+      name: PepperPLANT_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2048
-        height: 2048
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 295
+        y: 856
+        width: 602
+        height: 351
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 76418a594c495b700800000000000000
-      internalID: 555513701095445607
+      spriteID: 5a3535cf9307d86d0800000000000000
+      internalID: -2986607583528004699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PepperPLANT_1
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 794
+        width: 630
+        height: 944
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ba68e64ed5f8ed40800000000000000
+      internalID: 5614007270538504881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PepperPLANT_2
+      rect:
+        serializedVersion: 2
+        x: 2407
+        y: 794
+        width: 850
+        height: 1392
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385e4494d4544c0e0800000000000000
+      internalID: -2250597715534355069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PepperPLANT_3
+      rect:
+        serializedVersion: 2
+        x: 3561
+        y: 794
+        width: 906
+        height: 1833
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40d8f2a5837073510800000000000000
+      internalID: 1528698537128201476
       vertices: []
       indices: 
       edges: []
@@ -125,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 8c1fea362d637604097ae92900415967
     internalID: 0
     vertices: []
     indices: 
@@ -133,9 +208,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      dirt_temp_0: 555513701095445607
+      PepperPLANT_0: -2986607583528004699
+      PepperPLANT_1: 5614007270538504881
+      PepperPLANT_2: -2250597715534355069
+      PepperPLANT_3: 1528698537128201476
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
