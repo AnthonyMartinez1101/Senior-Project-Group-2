@@ -190,4 +190,9 @@ public class PlantScript : MonoBehaviour, IDamageable
     {
         return currentGrowth >= plantInfo.growthTime;
     }
+
+    public SoilScript GetConnectedSoil()
+    {
+        return connectedSoil;
+    }
 }
