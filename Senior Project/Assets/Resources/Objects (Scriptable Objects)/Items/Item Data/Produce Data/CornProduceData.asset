@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: CornProduceData
   m_EditorClassIdentifier: Assembly-CSharp::ProduceData
   healAmount: 2
+  buffType: 2

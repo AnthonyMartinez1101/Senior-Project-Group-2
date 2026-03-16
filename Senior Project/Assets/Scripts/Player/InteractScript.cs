@@ -17,6 +17,8 @@ public class InteractScript : MonoBehaviour
 
     private PlayerHealth playerHealth;
 
+    private MovementScript movementScript;
+
     private bool nearRefill;
 
     [SerializeField] private ShopScript shop;
@@ -41,6 +43,7 @@ public class InteractScript : MonoBehaviour
         interactAction = InputSystem.actions.FindAction("Interact");
         
         playerHealth = GetComponent<PlayerHealth>();
+        movementScript = GetComponent<MovementScript>();
 
         nearRefill = false; 
 
@@ -132,18 +135,40 @@ public class InteractScript : MonoBehaviour
     private void EatProduce()
     {
         if(!canEat) return;
-        if (inventorySystem.GetCurrentItemCount() > 0 && !playerHealth.IsMaxHealth())
+        if (inventorySystem.GetCurrentItemCount() > 0)
         {
             var produceData = currentItem.extraItemData as ProduceData;
             if (produceData != null)
             {
+                ProduceBuff(produceData.buffType);
                 playerHealth.Heal(produceData.healAmount);
                 inventorySystem.SubtractItem();
                 playerAudio.PlayMunch();
             }
         }
     }
-
+    private void ProduceBuff(BuffType currentBuff)
+    {
+        // Implement buff logic based on the type of buff
+            switch (currentBuff)
+            {
+                case BuffType.Speed:
+                    movementScript.SpeedBuff();
+                break;
+    
+                case BuffType.Damage:
+                    attack.AttackBuff();
+                    break;
+    
+                case BuffType.MaxHealth:
+                    playerHealth.HealthBuff();
+                break;
+    
+                default:
+                    Debug.Log("No valid buff type.");
+                    break;
+        }
+    }
     //Plant seed only if soil is highlighted and you have seeds in inventory
     private void PlantSeed()
     {

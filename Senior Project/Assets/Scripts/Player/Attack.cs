@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class Attack : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class Attack : MonoBehaviour
 
     public WeaponHolder weapondHolder;
 
+    [SerializeField] private float damageBuffPercentage = 0f;
 
     //The script which is in the Melee child object
     private SlashMove slashMove;
@@ -97,6 +99,7 @@ public class Attack : MonoBehaviour
         {
             Quaternion rot = baseRot * Quaternion.Euler(0f, 0f, i * shotgunSpreadAngle);
             GameObject b = Instantiate(shotgunBullet, bulletSpawn, rot);
+            ApplyBuff(b);
             Instantiate(shootFlash, bulletSpawn, rot);
 
             Vector2 dir = -((aimer.rotation * Quaternion.Euler(0f, 0f, i * shotgunSpreadAngle)) * Vector3.up);
@@ -113,6 +116,7 @@ public class Attack : MonoBehaviour
         Quaternion rot = aimer.rotation * Quaternion.Euler(0f, 0f, -90f);
         Vector3 bulletSpawn = aimer.position + new Vector3(0f, bulletYOffset, 0f);
         GameObject b = Instantiate(bullet, bulletSpawn, rot);
+        ApplyBuff(b);
         Instantiate(shootFlash, bulletSpawn, rot);
         b.GetComponent<Rigidbody2D>().AddForce(-aimer.up * bulletForce, ForceMode2D.Impulse);
         GameManager.Instance.CameraShake(1f, 0.1f);
@@ -128,6 +132,7 @@ public class Attack : MonoBehaviour
     {
         Quaternion rot = aim.rotation * Quaternion.Euler(0f, 0f, -90f);
         GameObject g = Instantiate(grenade, aim.position, rot);
+        ApplyBuff(g);
         Rigidbody2D rb = g.GetComponent<Rigidbody2D>();
         rb.AddForce(-aim.up * force * 20, ForceMode2D.Impulse);
         StartCoroutine(FlyingGrenade(rb));
@@ -145,6 +150,7 @@ public class Attack : MonoBehaviour
         if(currentMelee == null && meleeTimer < 0)
         {
             currentMelee = Instantiate(Melee, aim.position, aim.rotation);
+            ApplyBuff(currentMelee);
             meleeTimer = meleeCooldown;
             playerAudio.PlayScytheSwing();
         }
@@ -153,5 +159,34 @@ public class Attack : MonoBehaviour
     public bool IsMeleeing()
     {
         return currentMelee != null;
+    }
+
+    public void AttackBuff()
+    {
+        damageBuffPercentage += 0.5f; //0.5% increase
+    }
+
+    private void ApplyBuff(GameObject currentWeapon)
+    {
+        //Ensure currentWeapon is not null
+        if (currentWeapon == null) return;
+
+
+        //Get weapon script from currentWeapon
+        Weapon weapon = currentWeapon.GetComponent<Weapon>();
+
+        if(weapon == null)
+        {
+            //If weapon script is not found, check if it is in the children
+            weapon = currentWeapon.GetComponentInChildren<Weapon>();
+        }
+
+        //If weapon script is still not found, return
+        if (weapon == null) return;
+
+        //If weapon script exists, apply damage buff
+        weapon.damage = weapon.damage * (1f + damageBuffPercentage / 100);
+        weapon.knockbackForce = weapon.knockbackForce * (1f + damageBuffPercentage / 100);
+
     }
 }

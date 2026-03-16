@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.InputSystem; //New input system
 
@@ -20,6 +21,10 @@ public class MovementScript : MonoBehaviour
     private Rigidbody2D rb;
     InputAction moveAction; // Detect WASD
     InputAction dashAction; // Detect dash button
+
+    [SerializeField] private float speedBuffPercentage = 0f;
+    [SerializeField] private float actualSpeed = 0f;
+    [SerializeField] private float actualDashSpeed = 0f;
 
     private Attack attackScript;
 
@@ -67,7 +72,9 @@ public class MovementScript : MonoBehaviour
     //Called at a fixed rate (not dependent on frame rate)
     private void FixedUpdate()
     {
-        if(CheckShop()) 
+        actualSpeed = speed * (1f + speedBuffPercentage / 100);
+        actualDashSpeed = dashSpeed * (1f + speedBuffPercentage / 300);
+        if (CheckShop()) 
         {
             rb.linearVelocity = Vector2.zero;
             return; 
@@ -75,7 +82,7 @@ public class MovementScript : MonoBehaviour
 
         if (isDashing)
         {
-            rb.linearVelocity = direction * dashSpeed;
+            rb.linearVelocity = direction * actualDashSpeed;
             dashTimer -= Time.fixedDeltaTime;
             if (dashTimer <= 0f)
             {
@@ -87,8 +94,9 @@ public class MovementScript : MonoBehaviour
         {
             Vector2 moveValue = moveAction.ReadValue<Vector2>();
             direction = moveValue.normalized;
-            if (!attackScript.IsMeleeing()) rb.linearVelocity = direction * speed;
-            else rb.linearVelocity = direction * (speed / 2f);
+
+            if (!attackScript.IsMeleeing()) rb.linearVelocity = direction * actualSpeed;
+            else rb.linearVelocity = direction * (actualSpeed / 2f);
 
             if(moveValue != Vector2.zero && !isDashing)
             {
@@ -117,5 +125,10 @@ public class MovementScript : MonoBehaviour
     private bool CheckShop()
     {
         return shop != null && shop.IsShopInUse();
+    }
+
+    public void SpeedBuff()
+    {
+        speedBuffPercentage += 0.5f;
     }
 }

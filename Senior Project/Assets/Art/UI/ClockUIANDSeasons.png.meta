@@ -324,7 +324,7 @@ TextureImporter:
         serializedVersion: 2
         x: 298
         y: 3267
-        width: 2054
+        width: 2138
         height: 1079
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -368,8 +368,8 @@ TextureImporter:
         serializedVersion: 2
         x: 4704
         y: 3267
-        width: 2122
-        height: 1069
+        width: 2138
+        height: 1079
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,8 +390,8 @@ TextureImporter:
         serializedVersion: 2
         x: 286
         y: 2129
-        width: 2024
-        height: 1022
+        width: 2138
+        height: 1079
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -432,10 +432,10 @@ TextureImporter:
       name: ClockUIANDSeasons_5
       rect:
         serializedVersion: 2
-        x: 4713
+        x: 4702
         y: 1979
-        width: 2214
-        height: 1052
+        width: 2138
+        height: 1079
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

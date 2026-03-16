@@ -5,6 +5,8 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth = 20f;
     public float currentHealth;
     public float startHealth = 20f;
+    [SerializeField] private float maxHealthBuffPercentage = 0f;
+    [SerializeField] private float actualMaxHealth = 0f;
 
     private FloatingHealth healthBar;
 
@@ -34,8 +36,8 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = startHealth;
         if (!healthBar) healthBar = GetComponentInChildren<FloatingHealth>();
 
-        if (healthBar && currentHealth == maxHealth) healthBar.SetMax();
-        else if (healthBar) healthBar.UpdateHealth(currentHealth, maxHealth);
+        if (healthBar && currentHealth == actualMaxHealth) healthBar.SetMax();
+        else if (healthBar) healthBar.UpdateHealth(currentHealth, actualMaxHealth);
 
         damageFlash = GetComponent<DamageFlash>();
 
@@ -45,14 +47,24 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        actualMaxHealth = maxHealth * (1f + maxHealthBuffPercentage / 100);
+        Heal(0);
+    }
+
     public void Heal(float healAmount)
     {
         if (damageFlash) damageFlash.FlashOnHeal();
         currentHealth += healAmount;
-        if (currentHealth > maxHealth) currentHealth = maxHealth;
-        if (healthBar) healthBar.UpdateHealth(currentHealth, maxHealth);
+        if (currentHealth > actualMaxHealth) currentHealth = actualMaxHealth;
+        if (healthBar) healthBar.UpdateHealth(currentHealth, actualMaxHealth);
     }
 
+    public void HealthBuff()
+    {
+        maxHealthBuffPercentage += 0.5f;
+    }
     public void TakeDamage(float damageAmount)
     {
         // Defensive: ignore invalid/zero/negative damage
@@ -105,12 +117,12 @@ public class PlayerHealth : MonoBehaviour
         {
             if (currentHealth <= 0f)
             {
-                healthBar.UpdateHealth(currentHealth, maxHealth);
+                healthBar.UpdateHealth(currentHealth, actualMaxHealth);
             }
             else if (now - lastHealthUpdateTime >= HealthUpdateCooldown)
             {
                 lastHealthUpdateTime = now;
-                healthBar.UpdateHealth(currentHealth, maxHealth);
+                healthBar.UpdateHealth(currentHealth, actualMaxHealth);
             }
         }
 
@@ -124,18 +136,18 @@ public class PlayerHealth : MonoBehaviour
     public void SetHealth(float newHealth)
     {
         currentHealth = newHealth;
-        if (currentHealth > maxHealth) currentHealth = maxHealth;
-        if (healthBar) healthBar.UpdateHealth(currentHealth, maxHealth);
+        if (currentHealth > actualMaxHealth) currentHealth = actualMaxHealth;
+        if (healthBar) healthBar.UpdateHealth(currentHealth, actualMaxHealth);
     }
 
     public bool IsMaxHealth()
     {
-        return currentHealth >= maxHealth;
+        return currentHealth >= actualMaxHealth;
     }
 
     public void SetMaxHealth()
     {
-        currentHealth = maxHealth;
-        if (healthBar) healthBar.UpdateHealth(currentHealth, maxHealth);
+        currentHealth = actualMaxHealth;
+        if (healthBar) healthBar.UpdateHealth(currentHealth, actualMaxHealth);
     }
 }

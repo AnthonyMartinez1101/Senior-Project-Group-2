@@ -152,7 +152,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -194,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 1963479866108146782}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
-  m_LocalPosition: {x: -0.5090523, y: -0.9383297, z: 0}
+  m_LocalPosition: {x: -0.5090523, y: -0.93833447, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 3204769556961723971}
   - component: {fileID: 6678859520737167798}
   - component: {fileID: 9064906920968123813}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: SprinklerPlant Actor
   m_TagString: Plant
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5950ba0892fbf9140a3268f8c7c12f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantScript
-  plantInfo: {fileID: 11400000, guid: 11fc7ad1a22bdce49937ab845dce636f, type: 2}
+  plantInfo: {fileID: 11400000, guid: 6d4910787ac08bb46a88a07e8a52ba78, type: 2}
   currentGrowth: 0
   currentHealth: 0
 --- !u!61 &2759985065565571604
@@ -621,6 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f37515356dc7114fbf76f3484f5bfd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  cycleTime: 10
 --- !u!1 &8439195869774959516
 GameObject:
   m_ObjectHideFlags: 0

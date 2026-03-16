@@ -180,7 +180,6 @@ MonoBehaviour:
   wanderSpeed: 2
   minWaitTime: 1
   maxWaitTime: 5
-  chickenSprite: {fileID: 7342131087237646858}
 --- !u!114 &5106942599191253494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,16 +209,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75d22cf819aff9a4b800a9749acf14cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  normalDrop:
-  - {fileID: 11400000, guid: 7d42225e9a8f651459e31a0ae1a4bf12, type: 2}
-  - {fileID: 11400000, guid: 2c4bce3f713fd69499110f20a641c258, type: 2}
-  - {fileID: 11400000, guid: 6d2b0fd1e603de94bb43da8d3a070a30, type: 2}
-  rareDrop:
-  - {fileID: 11400000, guid: 87983b7867a43f14ca3aea7da29478bf, type: 2}
-  - {fileID: 11400000, guid: cfd2902bfeee56e47ac1e10f79490292, type: 2}
-  - {fileID: 11400000, guid: 0f12a64b19eedc247bc8ce8519af78bc, type: 2}
-  rareDropChance: 1
-  dropTime: 5
+  seedDrops:
+  - seedItem: {fileID: 11400000, guid: 7d42225e9a8f651459e31a0ae1a4bf12, type: 2}
+    dropChance: 100
+  - seedItem: {fileID: 11400000, guid: 2c4bce3f713fd69499110f20a641c258, type: 2}
+    dropChance: 60
+  - seedItem: {fileID: 11400000, guid: 6d2b0fd1e603de94bb43da8d3a070a30, type: 2}
+    dropChance: 30
+  - seedItem: {fileID: 11400000, guid: 183ff886e674c2445ba6ddfc7e722828, type: 2}
+    dropChance: 1
+  - seedItem: {fileID: 11400000, guid: f9b3fd37af26aa348b398ca1c35ec23a, type: 2}
+    dropChance: 1
+  - seedItem: {fileID: 11400000, guid: eb6dd083cb6c55544833b6dc70dd51a0, type: 2}
+    dropChance: 1
+  - seedItem: {fileID: 11400000, guid: cfd2902bfeee56e47ac1e10f79490292, type: 2}
+    dropChance: 5
+  - seedItem: {fileID: 11400000, guid: 0f12a64b19eedc247bc8ce8519af78bc, type: 2}
+    dropChance: 3
+  - seedItem: {fileID: 11400000, guid: 87983b7867a43f14ca3aea7da29478bf, type: 2}
+    dropChance: 1
+  - seedItem: {fileID: 11400000, guid: e82ded0d666c27d45958b9c2e70f956a, type: 2}
+    dropChance: 5
+  dropTime: 1
 --- !u!1 &6934531165574999743
 GameObject:
   m_ObjectHideFlags: 0

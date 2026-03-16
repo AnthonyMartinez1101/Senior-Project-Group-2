@@ -100,6 +100,7 @@ public class Weapon : MonoBehaviour
 
             //Deal damage, increment bullet hit count
             damageable.TakeDamage(damage, damageType);
+            Debug.Log("Damage Dealt: " + damage);
             bulletTotalHit++;
 
             //Apply knockback if object has knockback component

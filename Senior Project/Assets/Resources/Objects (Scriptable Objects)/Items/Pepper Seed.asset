@@ -19,4 +19,4 @@ MonoBehaviour:
   isStackable: 1
   sellPrice: 15
   buyPrice: 15
-  extraItemData: {fileID: 0}
+  extraItemData: {fileID: 11400000, guid: fd041b25c592b134381f1d2cb74f17ca, type: 2}

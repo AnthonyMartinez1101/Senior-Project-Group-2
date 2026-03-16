@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 3204769556961723971}
   - component: {fileID: 6678859520737167798}
   - component: {fileID: 1037615903574445207}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: TurretPlantActor
   m_TagString: Plant
   m_Icon: {fileID: 0}

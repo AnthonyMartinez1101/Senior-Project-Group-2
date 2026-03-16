@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: WatermelonProduceData
   m_EditorClassIdentifier: Assembly-CSharp::ProduceData
   healAmount: 20
+  buffType: 1

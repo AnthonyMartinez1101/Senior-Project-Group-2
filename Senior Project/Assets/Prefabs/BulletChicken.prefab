@@ -180,7 +180,6 @@ MonoBehaviour:
   wanderSpeed: 2
   minWaitTime: 1
   maxWaitTime: 5
-  chickenSprite: {fileID: 7342131087237646858}
 --- !u!114 &5106942599191253494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DropBomb
   grenadeItem: {fileID: 11400000, guid: cfddc6c02ec43bc47809159c66ec67c9, type: 2}
-  dropTime: 10
+  dropTime: 15
 --- !u!1 &6934531165574999743
 GameObject:
   m_ObjectHideFlags: 0
