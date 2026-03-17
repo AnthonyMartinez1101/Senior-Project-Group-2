@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject chickenPrefab;
     public GameObject GameOverScreen;
+    public GameObject WinGameScreen;
 
     [SerializeField] private Transform chickenHidePosition;
 
@@ -212,6 +213,19 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         GameOverScreen.SetActive(true); 
+    }
+
+    public void WinGameScene()
+    {
+        // Load game from previous save
+        StartCoroutine(WindGameCondition());
+    }
+
+    //Waits for 3 seconds before restarting the scene
+    IEnumerator WindGameCondition()
+    {
+        yield return new WaitForSeconds(3f);
+        WinGameScreen.SetActive(true);
     }
 
     private IEnumerator AutoSave()
