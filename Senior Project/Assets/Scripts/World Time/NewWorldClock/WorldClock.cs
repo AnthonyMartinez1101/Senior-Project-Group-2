@@ -59,6 +59,8 @@ public class WorldClock : MonoBehaviour
     private bool isIntroNight = false;
     private bool introNightCompleted = false;
 
+    private int currentDay = 1;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -168,8 +170,9 @@ public class WorldClock : MonoBehaviour
 
             canSpawnBoss = false;
 
-            if (!inTutorialMode)
-                IterateSeason(1);
+            if (!inTutorialMode) IterateSeason(1);
+            currentDay++;
+            Debug.Log("Current Day: " + currentDay);
             lightingSystem._shadowAlpha.value = Mathf.Lerp(lightingSystem._shadowAlpha.value, shadowAlpha, 0.5f);
         }
         DayChangeEvent.Invoke();
@@ -274,5 +277,10 @@ public class WorldClock : MonoBehaviour
 
         ResumeTimer();
         DayChangeEvent.Invoke();
+    }
+
+    public int GetCurrentDay()
+    {
+        return currentDay;
     }
 }
