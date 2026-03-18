@@ -11,18 +11,31 @@ public class DayEnemy : MonoBehaviour, IDamageable, IPoisonable
     private float hitTimer = 0f;
 
     private bool inPlantRange = false;
-    public GameObject soil;
+    private GameObject soil;
     private List<PlantScript> allPlants = new List<PlantScript>();
 
     private Transform currentTarget;
     private NavMeshAgent agent;
 
+    private float waitThreshold = 5f;
+    private float waitTimer = 0f;
+
+    private WorldClock clock;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+
+        if (agent)
+        {
+            agent.updateRotation = false;
+            agent.updateUpAxis = false;
+        }
+        waitTimer = waitThreshold;
     }
     void Update()
     {
+        //If enemy has no target, find one
         if(soil != null && currentTarget == null)
         {
             PlantScript[] plants = soil.GetComponentsInChildren<PlantScript>();
@@ -38,17 +51,36 @@ public class DayEnemy : MonoBehaviour, IDamageable, IPoisonable
             {
                 int randomIndex = Random.Range(0, allPlants.Count);
                 currentTarget = allPlants[randomIndex].transform;
+                waitTimer = waitThreshold;
+            }
+            else
+            {
+                //If no plants found within waitThreshold, destroy self (to prevent large enemy buildup)
+                waitTimer -= Time.deltaTime;
+                if(waitTimer < 0f)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
+
+        //If target is found, move towards it
         if(agent != null && currentTarget != null)
         {
             agent.SetDestination(currentTarget.position);
         }
+
+        //Hit behavior 
         hitTimer -= Time.deltaTime;
         if(hitTimer < 0f && inPlantRange)
         {
             AttackPlant();
             hitTimer = hitCooldown;
+        }
+
+        if(clock && clock.IsNight())
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -88,5 +120,10 @@ public class DayEnemy : MonoBehaviour, IDamageable, IPoisonable
     public void GiveSoil(GameObject s)
     {
         soil = s;
+    }
+
+    public void GiveClock(WorldClock c)
+    {
+        clock = c;
     }
 }

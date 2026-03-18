@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3541055314121894236}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.23519765, y: 1.8122785, z: 0}
+  m_LocalPosition: {x: -0.3265079, y: 1.3061961, z: 0}
   m_LocalScale: {x: 1, y: 1.31, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -139,7 +139,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.35
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 50
@@ -243,8 +243,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.33
+  m_Offset: {x: 0.14585444, y: 0.05221113}
+  m_Radius: 0.30700144
 --- !u!50 &-1098666403636228051
 Rigidbody2D:
   serializedVersion: 5
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpriteFlip
   deadZone: 0.1
-  flipX: 0
+  flipX: 1
 --- !u!114 &4184690976592955647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +300,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   dealDamage: 1
   hitCooldown: 1.5
-  soil: {fileID: 0}
 --- !u!114 &2355035961389534731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,7 +378,7 @@ Transform:
   m_GameObject: {fileID: 8669708703548695504}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
-  m_LocalPosition: {x: 0.23519644, y: -1.5837746, z: 0}
+  m_LocalPosition: {x: 0.3265078, y: -1.1974525, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

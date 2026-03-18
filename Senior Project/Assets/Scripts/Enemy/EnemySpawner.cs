@@ -17,12 +17,30 @@ public class SpawnableEnemy
     public int spawnProbability;
 }
 
+[System.Serializable]
+public class IntRange
+{
+    public int min;
+    public int max;
+    public int RandomRange()
+    {
+        return Random.Range(min, max + 1);
+    }
+}
+
 
 public class EnemySpawner : MonoBehaviour
 {
     [Header("Intro zombies (if intro night is enabled)")]
     [SerializeField] private List<GameObject> introZombies = new List<GameObject>();
     private bool introNightEnabled = false;
+
+    [Header("Day Enemy Data")]
+    [SerializeField] private List<GameObject> dayEnemies = new List<GameObject>();
+    [SerializeField] private GameObject soils;
+    public float daySpawnRate = 10f;
+    private float daySpawnTimer = 0f;
+    public IntRange daySpawnAmount;
 
     //All enemies spawnable during the respective season
     [Header("Set of Seasonal Enemies")]
@@ -101,6 +119,45 @@ public class EnemySpawner : MonoBehaviour
 
                 StartCoroutine(CheckBoss());
             }
+        }
+        else
+        {
+            SpawnDayEnemies();
+        }
+    }
+
+    private void SpawnDayEnemies()
+    {
+        daySpawnTimer -= Time.deltaTime;
+        if (daySpawnTimer <= 0f)
+        {
+            StartCoroutine(SpawnDays());
+            daySpawnTimer = daySpawnRate;
+        }
+    }
+
+    IEnumerator SpawnDays()
+    {
+        GameObject randomDayEnemy = dayEnemies[Random.Range(0, dayEnemies.Count)];
+        int spawnAmount = daySpawnAmount.RandomRange();
+        for (int i = 0; i < spawnAmount; i++)
+        {
+            SpawnAndSetDayEnemy(randomDayEnemy);
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    void SpawnAndSetDayEnemy(GameObject dayEnemyToSpawn)
+    {
+        int randSpawn = Random.Range(0, spawnPoints.Count);
+        Transform currentSpawn = spawnPoints[randSpawn];
+
+        //Spawn enemy at spawn point into EnemyCollection and set soil target
+        var enemy = Instantiate(dayEnemyToSpawn, currentSpawn.position, currentSpawn.rotation, EnemyCollection).GetComponent<DayEnemy>();
+        if (enemy && soils)
+        {
+            enemy.GiveSoil(soils);
+            enemy.GiveClock(worldClock);
         }
     }
 
