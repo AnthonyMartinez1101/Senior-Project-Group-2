@@ -43,7 +43,7 @@ public class WorldClock : MonoBehaviour
 
     public WorldClockLight worldClockLight;
 
-    [SerializeField] private TMP_Text displayText;
+    [SerializeField] private TMP_Text RescueCountdown;
 
     public bool inTutorialMode = false;
 
@@ -108,7 +108,6 @@ public class WorldClock : MonoBehaviour
     {
         int minutes = Mathf.FloorToInt(currentTime / 60f);
         int seconds = Mathf.FloorToInt(currentTime % 60f);
-        displayText.text = $"{minutes:0}:{seconds:00}";
 
         if(currentTime != 0 && !pauseTimer) preciseTime -= Time.deltaTime;
     }
@@ -185,6 +184,12 @@ public class WorldClock : MonoBehaviour
         if(currentDay >= dayWinCondition)
         {
             GameManager.Instance.WinGameScene();
+        }
+        int DaysLeft = dayWinCondition - currentDay;
+        if (RescueCountdown != null)
+        {
+            if (DaysLeft > 1) RescueCountdown.text = "Help arrives in " + DaysLeft + " days.";
+            else RescueCountdown.text = "Help arrives tomorrow!";
         }
     }
 
