@@ -108,7 +108,8 @@ public class PlantScript : MonoBehaviour, IDamageable
             {
                 if (IsFullyGrown())
                 {
-                    if(plantInfo.produce != null) DropProduce();
+                    StatManager.Instance.AddHarvest();
+                    if (plantInfo.produce != null) DropProduce();
                     else Debug.Log("PlantScript: PlantItem produce is null. Cannot drop produce.");
 
                     if(plantInfo.objectOnHarvest != null)

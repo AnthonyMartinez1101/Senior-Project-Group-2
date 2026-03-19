@@ -63,6 +63,7 @@ public class PlayerHealth : MonoBehaviour
 
         // Apply health change
         currentHealth -= damageAmount;
+        StatManager.Instance.AddDamageTaken(damageAmount);
 
         //Close shop if opened when taking damage
         shop.CloseShop();
