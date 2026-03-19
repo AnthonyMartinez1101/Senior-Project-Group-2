@@ -218,15 +218,15 @@ public class GameManager : MonoBehaviour
     public void WinGameScene()
     {
         // Load game from previous save
-        StartCoroutine(WindGameCondition());
-    }
-
-    //Waits for 3 seconds before restarting the scene
-    IEnumerator WindGameCondition()
-    {
-        yield return new WaitForSeconds(3f);
         WinGameScreen.SetActive(true);
     }
+
+    ////Waits for 3 seconds before restarting the scene
+    //IEnumerator WindGameCondition()
+    //{
+    //    yield return new WaitForSeconds(3f);
+    //    WinGameScreen.SetActive(true);
+    //}
 
     private IEnumerator AutoSave()
     {
