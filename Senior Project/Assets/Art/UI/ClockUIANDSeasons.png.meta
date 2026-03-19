@@ -322,10 +322,10 @@ TextureImporter:
       name: ClockUIANDSeasons_0
       rect:
         serializedVersion: 2
-        x: 298
-        y: 3267
-        width: 2138
-        height: 1079
+        x: 393
+        y: 3373
+        width: 1820
+        height: 931
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sprinkler Seed
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Sprinkler Seed
-  icon: {fileID: -761887118410055393, guid: 43fe1340b3cb7be46b9e1b12fc0c3ea8, type: 3}
+  icon: {fileID: -7910125952779885451, guid: 600c051bd603af74f9fd94f4d2be5b36, type: 3}
   itemType: 0
   isConsumable: 1
   isStackable: 1

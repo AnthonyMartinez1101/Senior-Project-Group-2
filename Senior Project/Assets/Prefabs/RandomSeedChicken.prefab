@@ -230,7 +230,7 @@ MonoBehaviour:
     dropChance: 1
   - seedItem: {fileID: 11400000, guid: e82ded0d666c27d45958b9c2e70f956a, type: 2}
     dropChance: 5
-  dropTime: 1
+  dropTime: 60
 --- !u!1 &6934531165574999743
 GameObject:
   m_ObjectHideFlags: 0
