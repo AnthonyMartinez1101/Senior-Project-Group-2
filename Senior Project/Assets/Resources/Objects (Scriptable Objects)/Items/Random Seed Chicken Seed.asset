@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Random Seed Chicken Seed
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Random Seed Chicken Seed
-  icon: {fileID: 3991361074815561557, guid: abcdf770adc01a94997d3f71a9896bb0, type: 3}
+  icon: {fileID: -4171377709648616680, guid: 600c051bd603af74f9fd94f4d2be5b36, type: 3}
   itemType: 0
   isConsumable: 1
   isStackable: 1

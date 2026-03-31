@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eafb427026f77d74aa29315e3a065a2d, type: 3}
   m_Name: BulletSeedData
   m_EditorClassIdentifier: Assembly-CSharp::SeedData
-  plant: {fileID: 11400000, guid: 78eda948fb14c7b4fa49a620a59a289a, type: 2}
+  plant: {fileID: 11400000, guid: ece0138b96f037b4284b4b8a85afd872, type: 2}

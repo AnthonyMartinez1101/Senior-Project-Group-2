@@ -6,7 +6,7 @@ using UnityEngine;
 //This is to "warm up" the item drop system, so that the first item drop doesn't cause a lag spike in the game
 public class ItemWarmUp : MonoBehaviour
 {
-    public Item randItem;
+    public Item anyItem;
     public List<GameObject> objectsToCreate = new List<GameObject>();
     private List<GameObject> objectsToDelete = new List<GameObject>();
 
@@ -22,7 +22,7 @@ public class ItemWarmUp : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         GameManager.Instance.CameraShake(0f, 0f);
 
-        GameObject spawnedItem = ItemDropFactory.Instance.SpawnItem(randItem, 0, transform.position, true);
+        GameObject spawnedItem = ItemDropFactory.Instance.SpawnItem(anyItem, 0, transform.position, true);
         foreach (GameObject item in objectsToCreate)
         {
             if (!item) continue;
