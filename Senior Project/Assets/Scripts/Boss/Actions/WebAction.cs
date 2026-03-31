@@ -3,17 +3,10 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Web", menuName = "Boss/Actions/Web")]
 
-public class WebAction : MonoBehaviour
+public class WebAction : BossAction
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void ExecuteAction(BossScript boss)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (boss.phaseTwoActivated) { }
     }
 }
