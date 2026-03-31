@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Sprinkler Plant
   m_EditorClassIdentifier: Assembly-CSharp::PlantItem
   plantName: Sprinkler Plant
-  growthTime: 1
+  growthTime: 30
   growStages:
-  - {fileID: -695627322393019253, guid: 28180e48dc40a4e4383191350c591c08, type: 3}
-  - {fileID: -4261600700735256413, guid: 28180e48dc40a4e4383191350c591c08, type: 3}
-  - {fileID: -6965432163902979444, guid: 28180e48dc40a4e4383191350c591c08, type: 3}
-  - {fileID: -5805197816499613187, guid: 28180e48dc40a4e4383191350c591c08, type: 3}
+  - {fileID: -1779141986608926329, guid: c9efe81fd4036284e8a8525b166cd218, type: 3}
+  - {fileID: -6827139358185926657, guid: c9efe81fd4036284e8a8525b166cd218, type: 3}
+  - {fileID: 8358392171196597952, guid: c9efe81fd4036284e8a8525b166cd218, type: 3}
+  - {fileID: -1877369649765570232, guid: c9efe81fd4036284e8a8525b166cd218, type: 3}
   produce: {fileID: 0}
   seed: {fileID: 11400000, guid: 0b51476ff9253fc4aa377bef6158f6f4, type: 2}
   minDrop: 1

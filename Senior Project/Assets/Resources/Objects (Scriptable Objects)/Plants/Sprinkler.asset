@@ -15,10 +15,10 @@ MonoBehaviour:
   plantName: Sprinkler
   growthTime: 9999
   growStages:
-  - {fileID: -5805197816499613187, guid: 28180e48dc40a4e4383191350c591c08, type: 3}
-  - {fileID: -5805197816499613187, guid: 28180e48dc40a4e4383191350c591c08, type: 3}
-  - {fileID: -5805197816499613187, guid: 28180e48dc40a4e4383191350c591c08, type: 3}
-  - {fileID: -5805197816499613187, guid: 28180e48dc40a4e4383191350c591c08, type: 3}
+  - {fileID: -6300948936428681506, guid: c9efe81fd4036284e8a8525b166cd218, type: 3}
+  - {fileID: -6300948936428681506, guid: c9efe81fd4036284e8a8525b166cd218, type: 3}
+  - {fileID: -6300948936428681506, guid: c9efe81fd4036284e8a8525b166cd218, type: 3}
+  - {fileID: -6300948936428681506, guid: c9efe81fd4036284e8a8525b166cd218, type: 3}
   produce: {fileID: 0}
   seed: {fileID: 0}
   minDrop: 1
