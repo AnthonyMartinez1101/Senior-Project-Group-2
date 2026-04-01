@@ -12,6 +12,10 @@ public class Package : MonoBehaviour, IDamageable
     {
         if (items == null || items.Count == 0) return;
 
+        health = maxHealth;
+        healthBar = GetComponentInChildren<FloatingHealth>();
+        if (healthBar) healthBar.UpdateHealth(health, maxHealth);
+
         packagedItems.AddRange(items);
     }
 

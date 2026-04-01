@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFaceFlip
   deadZone: 0.1
-  flipX: 1
+  flipX: 0
 --- !u!114 &3736116752491544485
 MonoBehaviour:
   m_ObjectHideFlags: 0
