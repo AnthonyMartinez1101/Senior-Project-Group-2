@@ -92,6 +92,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoisonable
         {
             int randNum = Random.Range(1, 101);
             if(randNum <= dropChance && randomItemDrop != null) ItemDropFactory.Instance.SpawnItem(randomItemDrop, 0, transform.position, dropExpires);
+            StatManager.Instance.AddZombieKill();
             Destroy(gameObject);
         }
     }

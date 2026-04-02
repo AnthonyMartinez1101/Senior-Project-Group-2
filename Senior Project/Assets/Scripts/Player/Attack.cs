@@ -164,6 +164,7 @@ public class Attack : MonoBehaviour
     public void AttackBuff()
     {
         damageBuffPercentage += 0.5f; //0.5% increase
+        StatManager.Instance.AddDmgBuff(0.5f);
     }
 
     private void ApplyBuff(GameObject currentWeapon)

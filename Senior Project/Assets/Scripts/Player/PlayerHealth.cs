@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private ShopScript shop;
 
     public bool isInvincible = false;
+    int poisonCount = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -53,6 +54,7 @@ public class PlayerHealth : MonoBehaviour
     public void HealthBuff()
     {
         maxHealthBuffPercentage += 0.5f;
+        StatManager.Instance.AddHealthBuff(0.5f);
     }
     public void TakeDamage(float damageAmount)
     {
@@ -95,5 +97,24 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = actualMaxHealth;
         if (healthBar) healthBar.UpdateHealth(currentHealth, actualMaxHealth);
+    }
+
+    public void ApplyPoison(int ticks)
+    {
+        bool ifPoisoned = poisonCount > 0;
+
+        poisonCount = ticks;
+
+        if (!ifPoisoned) StartCoroutine(PoisonDamage());
+    }
+
+    IEnumerator PoisonDamage()
+    {
+        while (poisonCount > 0)
+        {
+            TakeDamage(1f, DamageType.Poison);
+            poisonCount--;
+            yield return new WaitForSeconds(0.75f);
+        }
     }
 }
