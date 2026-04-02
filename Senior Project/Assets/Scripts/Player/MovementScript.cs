@@ -131,6 +131,7 @@ public class MovementScript : MonoBehaviour
     public void SpeedBuff()
     {
         speedBuffPercentage += 0.5f;
+        StatManager.Instance.AddSpeedBuff(0.5f);
     }
 
     public bool IsSlowed()

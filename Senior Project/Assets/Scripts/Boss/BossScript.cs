@@ -175,6 +175,7 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
     {
         if (data.itemDrop) Instantiate(data.itemDrop, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(0.5f); // for animation and other effects to finish
+        StatManager.Instance.AddBossKill();
         Destroy(gameObject);
     }
 
