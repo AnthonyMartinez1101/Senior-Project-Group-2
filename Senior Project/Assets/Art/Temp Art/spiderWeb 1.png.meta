@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: 6fd043a1036d9554e8f558526a0a3a06
+guid: ad7b5ba7afdda794d988819d2e8417a3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7761099211869614537
-    second: spiderWeb_0
+      213: -4262137399576383597
+    second: spiderWeb 1_0
   - first:
-      213: -892926175026329779
-    second: spiderWeb_1
+      213: -407704905236380756
+    second: spiderWeb 1_1
   - first:
-      213: 3626808587287650466
-    second: spiderWeb_2
+      213: -6238868204546859402
+    second: spiderWeb 1_2
+  - first:
+      213: 1196579564065594268
+    second: spiderWeb 1_3
+  - first:
+      213: 3352973375333551081
+    second: spiderWeb 1_4
+  - first:
+      213: -8093103754341438648
+    second: spiderWeb 1_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spiderWeb_0
+      name: spiderWeb 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -114,21 +123,21 @@ TextureImporter:
         width: 829
         height: 830
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9c17d06fc96f4bb60800000000000000
-      internalID: 7761099211869614537
+      spriteID: 39fa75aed98d9d4c0800000000000000
+      internalID: -4262137399576383597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spiderWeb_1
+      name: spiderWeb 1_1
       rect:
         serializedVersion: 2
         x: 958
@@ -136,27 +145,49 @@ TextureImporter:
         width: 675
         height: 676
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d4748eeef50bb93f0800000000000000
-      internalID: -892926175026329779
+      spriteID: ca3833e7c8a875af0800000000000000
+      internalID: -407704905236380756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spiderWeb_2
+      name: spiderWeb 1_2
       rect:
         serializedVersion: 2
         x: 1811
         y: 543
         width: 549
         height: 554
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67e51834c661b69a0800000000000000
+      internalID: -6238868204546859402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spiderWeb 1_3
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 231
+        width: 208
+        height: 192
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,8 +196,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2a0ed99c133055230800000000000000
-      internalID: 3626808587287650466
+      spriteID: c9b1f9516ca1b9010800000000000000
+      internalID: 1196579564065594268
       vertices: []
       indices: 
       edges: []
@@ -175,7 +206,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0165cec603cc94c43b8a867d25ec473e
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +216,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      spiderWeb_0: 7761099211869614537
-      spiderWeb_1: -892926175026329779
-      spiderWeb_2: 3626808587287650466
+      spiderWeb 1_0: -4262137399576383597
+      spiderWeb 1_1: -407704905236380756
+      spiderWeb 1_2: -6238868204546859402
+      spiderWeb 1_3: 1196579564065594268
+      spiderWeb 1_4: 3352973375333551081
+      spiderWeb 1_5: -8093103754341438648
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

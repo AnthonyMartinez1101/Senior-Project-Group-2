@@ -7,26 +7,28 @@ public class WebAction : BossAction
 {
     public GameObject webPrefab;
     public float throwSpeed = 15f;
+    public float stopDistance = 0.1f;
     public override void ExecuteAction(BossScript boss)
     {
-        boss.StartCoroutine(WebPlayer(boss));
+        Instantiate(webPrefab, boss.transform.position, Quaternion.identity);
     }
 
-    private IEnumerator WebPlayer(BossScript boss)
-    {
-        Transform player = boss.player;
-        if (player == null) yield break;
-        Vector2 playerPos = player.position;
+    //private IEnumerator WebPlayer(BossScript boss)
+    //{
+    //    Transform player = boss.player;
+    //    if (player == null) yield break;
+    //    Vector2 playerPos = player.position;
 
-        GameObject webObject = Instantiate(webPrefab, boss.transform.position, Quaternion.identity);
+    //    GameObject webObject = Instantiate(webPrefab, boss.transform.position, Quaternion.identity);
 
-        Rigidbody2D rb = webObject.GetComponent<Rigidbody2D>();
-        if(rb != null)
-        {
-            Vector2 dir = (playerPos - (Vector2)boss.transform.position).normalized;
-            rb.linearVelocity = dir * throwSpeed;
-        }
+    //    while(webObject != null)
+    //    {
+    //      webObject.transform.position = Vector2.MoveTowards(webObject.transform.position, playerPos, throwSpeed * Time.deltaTime);
 
-        yield return null;
-    }
+    //        float distToPlayer = Vector2.Distance(webObject.transform.position, playerPos);
+
+    //    }
+
+    //        yield return null;
+    //}
 }

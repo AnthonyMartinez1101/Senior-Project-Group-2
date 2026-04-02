@@ -17,6 +17,7 @@ public class MovementScript : MonoBehaviour
     private float dashTimer = 0f;
     private float dashCooldownTimer = 0f;
     private Vector2 direction;
+    private bool slowed = false;
 
     private Rigidbody2D rb;
     InputAction moveAction; // Detect WASD
@@ -130,5 +131,15 @@ public class MovementScript : MonoBehaviour
     public void SpeedBuff()
     {
         speedBuffPercentage += 0.5f;
+    }
+
+    public bool IsSlowed()
+    {
+        return slowed;
+    }
+
+    public void SetSlowed(bool flag)
+    {
+        slowed = flag;
     }
 }

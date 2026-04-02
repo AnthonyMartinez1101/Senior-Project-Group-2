@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class ThrownWeb : MonoBehaviour
 {
-
+    public float lifetime = 60f;
     public float slowMultiplier = 0.5f;
     public float slowDuration = 2f;
     public Sprite[] hitSprites; // Array of sprites for each hit level
@@ -13,28 +13,47 @@ public class ThrownWeb : MonoBehaviour
     private bool hasHit = false; // prevent multiple hits
     private int hitCounter = 0;
     private InputAction scytheAction;
-
+    private GameObject Player;
     void Start()
     {
         scytheAction = InputSystem.actions.FindAction("Scythe");
     }
 
-    private void OnTriggerStay2D(Collider2D player)
+    void Update()
+    {
+        lifetime -= Time.deltaTime;
+        if(lifetime < 0 && !hasHit)
+        {
+            Destroy(gameObject);
+        }
+        if(hasHit && Player)
+        {
+            transform.position = Player.transform.position;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collider)
     {
         if (hasHit) return; // already hit a player do nothing
-        if (player.CompareTag("Player"))
+        if (collider.CompareTag("Player"))
         {
            hasHit = true;
-           MovementScript movement = player.GetComponent<MovementScript>();
+           Player = collider.gameObject;
+           MovementScript movement = collider.GetComponent<MovementScript>();
            if(movement != null)
            {
-               StartCoroutine(ApplySlow(movement));
+                if(!movement.IsSlowed())
+                {
+                    StartCoroutine(ApplySlow(movement));
+                }
+                else
+                    Destroy(gameObject);
            } 
         }
     }
 
     private IEnumerator ApplySlow(MovementScript movement)
     {
+        movement.SetSlowed(true);
         float originalSpeed = movement.speed;
         float originalDashSpeed = movement.dashSpeed;
 
@@ -67,6 +86,7 @@ public class ThrownWeb : MonoBehaviour
         {
             movement.speed = originalSpeed;
             movement.dashSpeed = originalDashSpeed;
+            movement.SetSlowed(false);
         }
         Destroy(gameObject);
     }
