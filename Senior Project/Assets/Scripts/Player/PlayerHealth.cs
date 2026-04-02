@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -112,7 +113,7 @@ public class PlayerHealth : MonoBehaviour
     {
         while (poisonCount > 0)
         {
-            TakeDamage(1f, DamageType.Poison);
+            TakeDamage(1f);
             poisonCount--;
             yield return new WaitForSeconds(0.75f);
         }
