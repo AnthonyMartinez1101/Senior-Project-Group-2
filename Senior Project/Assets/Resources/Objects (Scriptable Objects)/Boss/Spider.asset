@@ -28,4 +28,5 @@ MonoBehaviour:
   idleTime: 0.5
   actions:
   - {fileID: 11400000, guid: 1ebd5991c4a31df418239d8220852d6c, type: 2}
-  - {fileID: 11400000, guid: 1ebd5991c4a31df418239d8220852d6c, type: 2}
+  - {fileID: 11400000, guid: 0ff53653cc2b56042b00ed4831b43858, type: 2}
+  - {fileID: 11400000, guid: 007126877f8045f49970d25a5c4b17aa, type: 2}

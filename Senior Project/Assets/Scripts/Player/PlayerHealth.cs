@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private ShopScript shop;
 
     public bool isInvincible = false;
-    int poisonCount = 0;
+    public int poisonCount = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

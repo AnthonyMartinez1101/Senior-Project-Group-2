@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9019c00da75724f87def0a36767cff, type: 3}
+  m_Name: SpikeTrap
+  m_EditorClassIdentifier: Assembly-CSharp::SpikeTrapAction
+  actionName: SpikeTrap
+  actionDuration: 10
+  activationChance: 0.5
+  airTime: 10
+  spikePrefabs:
+  - {fileID: 635032871052353645, guid: 321cc9c2dc4b8b2439b26d9c84139f3d, type: 3}
+  - {fileID: 1055726648207749573, guid: 88123a256ba594f41bb80780d5b78c72, type: 3}
+  tpPosition: {x: -999, y: -9999}

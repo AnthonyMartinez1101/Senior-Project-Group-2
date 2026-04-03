@@ -24,7 +24,7 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
 
     public Transform player;
     public NavMeshAgent agent;
-    private PlayerHealth playerHealth;
+    public PlayerHealth playerHealth;
     private Knockback playerKnockback;
     public DamageFlash damageFlash;
     private FloatingHealth healthBar;
