@@ -35,6 +35,8 @@ public class MovementScript : MonoBehaviour
 
     private PlayerAudio playerAudio;
 
+    [SerializeField] private GameObject walkDustParticles;
+
     //Called when the script is made
     private void Start()
     {
@@ -95,6 +97,17 @@ public class MovementScript : MonoBehaviour
         {
             Vector2 moveValue = moveAction.ReadValue<Vector2>();
             direction = moveValue.normalized;
+
+            //Rotate the x rotation (leaving y and z alone) of dust walk paarticles to face opposite direction of movement
+            if (walkDustParticles)
+            {
+                if (moveValue != Vector2.zero)
+                {
+                    float angle = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
+                    walkDustParticles.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+                }
+            }
+
 
             if (!attackScript.IsMeleeing()) rb.linearVelocity = direction * actualSpeed;
             else rb.linearVelocity = direction * (actualSpeed / 2f);
