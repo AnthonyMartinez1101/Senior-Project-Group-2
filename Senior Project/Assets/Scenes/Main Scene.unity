@@ -31236,6 +31236,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 657201656}
     m_Modifications:
+    - target: {fileID: 431447372046555940, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1760016382332637093, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: m_Name
       value: Player
@@ -31359,15 +31363,15 @@ PrefabInstance:
     - target: {fileID: 5658258297798676418, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: _shadowData.shadow.shadow
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1033880563}
     - target: {fileID: 5658258297798676418, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: _shadowData.shadow.shadowSr
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1033880564}
     - target: {fileID: 5658258297798676418, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: _shadowData.shadow.shadowPivot
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 829517824}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCount
       value: 10
