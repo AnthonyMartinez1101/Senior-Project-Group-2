@@ -9,12 +9,14 @@ public class CutsceneManager : MonoBehaviour
     public Image block2;
     public Image block3;
 
-    public Image background;
+    public Image blackImage;
+
+    private bool cutsceneSkipped = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if(block1 == null || block2 == null || block3 == null || background == null)
+        if(block1 == null || block2 == null || block3 == null || blackImage == null)
         {
             Debug.LogWarning("Images are not assigned in the inspector.");
         }
@@ -23,7 +25,7 @@ public class CutsceneManager : MonoBehaviour
 
     IEnumerator PlayCutscene()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
 
         // Fade in block1
         if(block1) yield return StartCoroutine(FadeOut(block1, 2f));
@@ -40,8 +42,21 @@ public class CutsceneManager : MonoBehaviour
 
         yield return new WaitForSeconds(2.5f);
 
-        if(background) yield return StartCoroutine(FadeOut(background, 4f));
+        if(blackImage) yield return StartCoroutine(FadeIn(blackImage, 4f));
 
+        SceneManager.LoadScene("Main Scene");
+    }
+
+    public void SkipCutsceneButton()
+    {
+        if (cutsceneSkipped) return;
+        cutsceneSkipped = true;
+        StartCoroutine(SkipCutscene());
+    }
+
+    IEnumerator SkipCutscene()
+    {
+        if(blackImage) yield return StartCoroutine(FadeIn(blackImage, 1f));
         SceneManager.LoadScene("Main Scene");
     }
 
@@ -57,5 +72,19 @@ public class CutsceneManager : MonoBehaviour
             yield return null;
         }
         image.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f); // Ensure it's fully transparent at the end
+    }
+
+    IEnumerator FadeIn(Image image, float duration)
+    {
+        float elapsedTime = 0f;
+        Color originalColor = image.color;
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Lerp(0f, 1f, elapsedTime / duration);
+            image.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
+            yield return null;
+        }
+        image.color = new Color(originalColor.r, originalColor.g, originalColor.b, 1f); // Ensure it's fully opaque at the end
     }
 }

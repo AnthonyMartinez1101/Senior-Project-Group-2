@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Weapon : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class Weapon : MonoBehaviour
     public int bulletHitCount = 5;
     private int bulletTotalHit = 0;
 
-    private float timeAlive = 0;
+    private HashSet<IDamageable> alreadyHit = new HashSet<IDamageable>();
 
     void Start()
     {
@@ -44,7 +45,6 @@ public class Weapon : MonoBehaviour
     {
         if (bulletType == BulletType.NA) return;
 
-        timeAlive += Time.deltaTime;
 
         //Damage over time behavior depending on gun type
         switch(bulletType)
@@ -89,6 +89,10 @@ public class Weapon : MonoBehaviour
 
         if (damageable != null)
         {
+            if(alreadyHit.Contains(damageable)) return;
+
+            alreadyHit.Add(damageable);
+
             //Gets damagetype which is currently only used by plants with DamageType.Sickle (made to be modular though)
             DamageType damageType = weaponType switch
             {
