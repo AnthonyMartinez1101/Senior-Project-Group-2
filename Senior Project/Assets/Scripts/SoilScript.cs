@@ -19,6 +19,8 @@ public class SoilScript : MonoBehaviour
     public Color dryColor;
     public Color wetColor;
 
+    //public GameObject waterSplash;
+
     //private InteractScript interactScript;
 
     private void Start()
@@ -122,6 +124,7 @@ public class SoilScript : MonoBehaviour
     {
         waterLevel = 10f;
         DarkenSoil();
+        //if (waterSplash) Instantiate(waterSplash, transform.position, Quaternion.identity);
     }
 
     public bool Plant(Item item)

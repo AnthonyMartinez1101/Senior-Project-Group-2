@@ -98,7 +98,7 @@ public class MovementScript : MonoBehaviour
             Vector2 moveValue = moveAction.ReadValue<Vector2>();
             direction = moveValue.normalized;
 
-            //Rotate the x rotation (leaving y and z alone) of dust walk paarticles to face opposite direction of movement
+            //Rotate the x rotation of dust walk paarticles to face opposite direction of movement
             if (walkDustParticles)
             {
                 if (moveValue != Vector2.zero)

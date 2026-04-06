@@ -16,6 +16,8 @@ public class EnemyFollow : MonoBehaviour
     public int speedIncreasePercentage = 5;
     public float timeToIncrease = 15f;
 
+    [SerializeField] private GameObject walkDustParticles;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -56,6 +58,17 @@ public class EnemyFollow : MonoBehaviour
             currentSpeed = Mathf.Lerp(currentSpeed, startingTopSpeed, Time.deltaTime * 1.5f);
         }
         agent.SetDestination(target.position);
+
+        if (walkDustParticles)
+        {
+            Vector2 moveDirection = agent.velocity.normalized;
+
+            if(moveDirection != Vector2.zero)
+            {
+                float angle = Mathf.Atan2(-moveDirection.y, -moveDirection.x) * Mathf.Rad2Deg;
+                walkDustParticles.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+            }
+        }
     }
 
     IEnumerator IncreaseSpeed()
