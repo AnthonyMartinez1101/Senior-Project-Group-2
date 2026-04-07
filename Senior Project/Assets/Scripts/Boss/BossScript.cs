@@ -174,6 +174,15 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
     IEnumerator Die()
     {
         if (data.itemDrop) Instantiate(data.itemDrop, transform.position, Quaternion.identity);
+
+        if (data.coin)
+        {
+            for(int i = 0; i < 10; i++)
+            {
+                ItemDropFactory.Instance.SpawnItem(data.coin, 0, transform.position, false); 
+            }
+        }
+
         yield return new WaitForSeconds(0.5f); // for animation and other effects to finish
         StatManager.Instance.AddBossKill();
         Destroy(gameObject);

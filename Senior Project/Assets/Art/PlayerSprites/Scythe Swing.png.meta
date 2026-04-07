@@ -1,22 +1,34 @@
 fileFormatVersion: 2
-guid: 5c66b3df1b8a1a84eb5729d7cadbea82
+guid: ef416a83e4a4d6846bb3b2457b4f95d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -853894587508688036
-    second: Arrow Coin Check_0
+      213: 6342879229870720106
+    second: Scythe Swing_0
   - first:
-      213: 6347821849099485803
-    second: Arrow Coin Check_1
+      213: -6507962505651483558
+    second: Scythe Swing_1
   - first:
-      213: 5858588270047284102
-    second: Arrow Coin Check_2
+      213: -5079046623381046053
+    second: Scythe Swing_2
   - first:
-      213: -1846366679292940804
-    second: Arrow Coin Check_3
+      213: -8887283994580405417
+    second: Scythe Swing_3
   - first:
-      213: -9049677492591734716
-    second: Arrow Coin Check_4
+      213: 9109205130190131667
+    second: Scythe Swing_4
+  - first:
+      213: 6655503763583385177
+    second: Scythe Swing_5
+  - first:
+      213: -3362674195638115542
+    second: Scythe Swing_6
+  - first:
+      213: -6436607713312211053
+    second: Scythe Swing_7
+  - first:
+      213: 9142016126366548415
+    second: Scythe Swing_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -36,7 +48,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -63,9 +75,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 800
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -84,10 +96,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -138,13 +150,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Arrow Coin Check_0
+      name: Scythe Swing_1
       rect:
         serializedVersion: 2
-        x: 782
-        y: 2720
-        width: 1233
-        height: 1493
+        x: 522
+        y: 1541
+        width: 229
+        height: 269
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c5b7ae3956b5624f0800000000000000
-      internalID: -853894587508688036
+      spriteID: a5c051fe4921fa5a0800000000000000
+      internalID: -6507962505651483558
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arrow Coin Check_1
+      name: Scythe Swing_3
       rect:
         serializedVersion: 2
-        x: 4119
-        y: 2756
-        width: 2078
-        height: 1929
+        x: 1714
+        y: 1400
+        width: 265
+        height: 463
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b62c90de65ef71850800000000000000
-      internalID: 6347821849099485803
+      spriteID: 75335053b460aa480800000000000000
+      internalID: -8887283994580405417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arrow Coin Check_3
+      name: Scythe Swing_5
       rect:
         serializedVersion: 2
-        x: 113
-        y: 192
-        width: 1929
-        height: 1935
+        x: 1035
+        y: 1527
+        width: 300
+        height: 268
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cfd60a3a9436066e0800000000000000
-      internalID: -1846366679292940804
+      spriteID: 95eb9ad19691d5c50800000000000000
+      internalID: 6655503763583385177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arrow Coin Check_4
+      name: Scythe Swing_6
       rect:
         serializedVersion: 2
-        x: 4050
-        y: 336
-        width: 2078
-        height: 1929
+        x: 561
+        y: 917
+        width: 383
+        height: 251
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,8 +231,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 440d83a8446196280800000000000000
-      internalID: -9049677492591734716
+      spriteID: a232e91a2a16551d0800000000000000
+      internalID: -3362674195638115542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scythe Swing_8
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 917
+        width: 247
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb188fefa37fede70800000000000000
+      internalID: 9142016126366548415
       vertices: []
       indices: 
       edges: []
@@ -229,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 484e9113962b8844f92747ddb03b5acf
+    spriteID: e3c91a061bb364b4f81f401246903b06
     internalID: 0
     vertices: []
     indices: 
@@ -239,11 +273,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Arrow Coin Check_0: -853894587508688036
-      Arrow Coin Check_1: 6347821849099485803
-      Arrow Coin Check_2: 5858588270047284102
-      Arrow Coin Check_3: -1846366679292940804
-      Arrow Coin Check_4: -9049677492591734716
+      Scythe Swing_0: 6342879229870720106
+      Scythe Swing_1: -6507962505651483558
+      Scythe Swing_2: -5079046623381046053
+      Scythe Swing_3: -8887283994580405417
+      Scythe Swing_4: 9109205130190131667
+      Scythe Swing_5: 6655503763583385177
+      Scythe Swing_6: -3362674195638115542
+      Scythe Swing_7: -6436607713312211053
+      Scythe Swing_8: 9142016126366548415
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

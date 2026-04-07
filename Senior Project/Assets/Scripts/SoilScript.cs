@@ -20,7 +20,8 @@ public class SoilScript : MonoBehaviour
     public Color dryColor;
     public Color wetColor;
 
-    //public GameObject waterSplash;
+    public GameObject waterSplash;
+
 
     //private InteractScript interactScript;
 
@@ -125,7 +126,7 @@ public class SoilScript : MonoBehaviour
     {
         waterLevel = 10f;
         DarkenSoil();
-        //if (waterSplash) Instantiate(waterSplash, transform.position, Quaternion.identity);
+        if (waterSplash) Destroy(Instantiate(waterSplash, transform.position, Quaternion.identity), 0.5f); //Spawn splash, destroy after 0.5 secs
 
         if (currentPlant == null) return;
         SpinkleWater sprinkler = currentPlant.GetComponent<SpinkleWater>();

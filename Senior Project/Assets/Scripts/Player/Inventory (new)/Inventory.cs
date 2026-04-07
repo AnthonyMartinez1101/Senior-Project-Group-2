@@ -57,6 +57,8 @@ public class Inventory : MonoBehaviour
 
     [SerializeField] private GameObject aim;
 
+    private PlayerWallet playerWallet;
+
 
     private void Awake()
     {
@@ -87,6 +89,8 @@ public class Inventory : MonoBehaviour
     {
         RefreshUI();
 
+        playerWallet = GetComponent<PlayerWallet>();
+        if(playerWallet == null) Debug.LogWarning("PlayerWallet component not found on player for Inventory");
     }
 
     void Update()
@@ -291,8 +295,14 @@ public class Inventory : MonoBehaviour
     {
         if(collectedItem == null) return;
 
-        //Try adding item to inventory
-        if (!TryToAddItem(collectedItem, runtimeData))
+        //If it's a coin, add to wallet instead of inventory
+        if (collectedItem.itemType == ItemType.Coin)
+        {
+            playerWallet.AddCoins(1);
+        }
+
+        //Else, try adding item to inventory
+        else if (!TryToAddItem(collectedItem, runtimeData))
         {
             //If inventory full, re-drop item at player's position
             ItemDropFactory.Instance.PlayerDropItem(collectedItem, runtimeData, transform.position);

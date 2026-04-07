@@ -16,6 +16,7 @@ MonoBehaviour:
   bossSprite: {fileID: 0}
   altSprite: {fileID: 0}
   itemDrop: {fileID: 7524075269242792640, guid: f43cf2f70327d1647baaa6535fd0d43b, type: 3}
+  coin: {fileID: 11400000, guid: bd6a2e2bbb3092c43934b4e95b40dda9, type: 2}
   maxHealth: 25
   attackRating: 3
   knockbackForce: 15

@@ -6,7 +6,8 @@ public enum ItemType
     Weapon,
     Produce,
     WaterCan,
-    Bullet
+    Bullet,
+    Coin
 }
 
 public abstract class ExtraItemData : ScriptableObject { }
