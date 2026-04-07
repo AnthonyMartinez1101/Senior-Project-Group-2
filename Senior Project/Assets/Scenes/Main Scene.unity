@@ -40501,6 +40501,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 799218943}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: daySpawnRate
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: bossSpawnPoint
       value: 
       objectReference: {fileID: 1470916650}
@@ -40514,11 +40518,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: daySpawnAmount.max
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: daySpawnAmount.min
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: consistentSpawnRate
