@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -125,6 +126,12 @@ public class SoilScript : MonoBehaviour
         waterLevel = 10f;
         DarkenSoil();
         //if (waterSplash) Instantiate(waterSplash, transform.position, Quaternion.identity);
+
+        if (currentPlant == null) return;
+        SpinkleWater sprinkler = currentPlant.GetComponent<SpinkleWater>();
+
+        if(sprinkler == null) return;
+        sprinkler.FillWater();
     }
 
     public bool Plant(Item item)

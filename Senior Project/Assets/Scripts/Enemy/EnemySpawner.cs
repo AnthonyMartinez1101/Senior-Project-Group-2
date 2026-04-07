@@ -199,7 +199,7 @@ public class EnemySpawner : MonoBehaviour
         //Wave spawn functionality (only spawn waves if there is no boss)
         if (waveTimer <= 0f && currentBoss == null)
         {
-            waveValue = (wave * 5) + 10;
+            waveValue = (wave * 5);
             wave++;
             waveTimer = waveIntervals;
             GenerateWaveEnemies();

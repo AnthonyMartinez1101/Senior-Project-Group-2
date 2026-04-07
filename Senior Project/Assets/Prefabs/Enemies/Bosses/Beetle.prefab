@@ -103,37 +103,25 @@ PrefabInstance:
     - target: {fileID: 7770765713227256853, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
       propertyPath: damageFlash
       value: 
-      objectReference: {fileID: 5237003571431947080}
+      objectReference: {fileID: 3850013769476842747}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3758422883315622073, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 5237003571431947080}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
 --- !u!50 &3355045252038440629 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3171595051139043701, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
   m_PrefabInstance: {fileID: 183599770266970048}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3937516854542665593 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3758422883315622073, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
+--- !u!114 &3850013769476842747 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4026702009449874235, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
   m_PrefabInstance: {fileID: 183599770266970048}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5237003571431947080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3937516854542665593}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5029656764e9b142b20c94c5261b97d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageFlash
-  damageColor: {r: 1, g: 0, b: 0, a: 1}
-  healColor: {r: 0, g: 1, b: 0, a: 1}
-  flashTime: 0.2

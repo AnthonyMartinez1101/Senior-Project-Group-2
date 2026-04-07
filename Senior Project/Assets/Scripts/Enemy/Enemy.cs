@@ -31,6 +31,8 @@ public class Enemy : MonoBehaviour, IDamageable, IPoisonable
 
     private int poisonCount = 0;
 
+    public GameObject burnParticles;
+
 
 
 
@@ -145,6 +147,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoisonable
             {
                 startBurning = true;
                 float randNum = Random.Range(0f, 1f);
+                if(burnParticles != null) burnParticles.SetActive(true);
                 StartCoroutine(DayDamage(randNum));
             }
         }

@@ -11,6 +11,8 @@ public class SpinkleWater : MonoBehaviour
 
     public float cycleTime = 5f; // Time in seconds between each sprinkle cycle
 
+    private int waterCount = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,11 +33,25 @@ public class SpinkleWater : MonoBehaviour
     {
         while (true)
         {
-            foreach (SoilScript soil in surroundingSoil)
+            if(HasWater())
             {
-                soil.Water();
+                foreach (SoilScript soil in surroundingSoil)
+                {
+                    soil.Water();
+                }
+                waterCount--;
             }
             yield return new WaitForSeconds(cycleTime);
         }
+    }
+
+    public void FillWater()
+    {
+        waterCount = 2;
+    }
+
+    private bool HasWater()
+    {
+        return waterCount > 0;
     }
 }

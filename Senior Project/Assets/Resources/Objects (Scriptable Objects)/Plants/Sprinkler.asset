@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sprinkler
   m_EditorClassIdentifier: Assembly-CSharp::PlantItem
   plantName: Sprinkler
-  growthTime: 9999
+  growthTime: 99999
   growStages:
   - {fileID: -6300948936428681506, guid: c9efe81fd4036284e8a8525b166cd218, type: 3}
   - {fileID: -6300948936428681506, guid: c9efe81fd4036284e8a8525b166cd218, type: 3}
@@ -24,5 +24,5 @@ MonoBehaviour:
   minDrop: 1
   maxDrop: 1
   seedChance: 0
-  canDry: 1
+  canDry: 0
   objectOnHarvest: {fileID: 0}

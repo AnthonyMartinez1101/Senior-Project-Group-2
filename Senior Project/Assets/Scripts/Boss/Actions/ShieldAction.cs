@@ -54,11 +54,11 @@ public class ShieldAction : MonoBehaviour, IDamageable
         if(damageDealt <= 0f) return;
 
         curHealth -= damageDealt;
-        //Debug.Log($"[Shield] Took {damageDealt} damage. Remaining HP: {curHealth}");
+        Debug.Log($"[Shield] Took {damageDealt} damage. Remaining HP: {curHealth}");
 
         if (curHealth <= 0f)
         {
-            //Debug.Log($"[Shield] Shield destroyed on boss '{(owner != null ? owner.name : "unknown")}'.");
+            Debug.Log($"[Shield] Shield destroyed on boss '{(owner != null ? owner.name : "unknown")}'.");
             Destroy(gameObject);
         }
     }

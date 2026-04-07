@@ -56,7 +56,6 @@ public class PlantScript : MonoBehaviour, IDamageable
         col.enabled = true;
     }
 
-    // Update is called once per frame
     public void TickGrowth(float dt)
     {
         if (currentHealth != plantHealth)
@@ -99,8 +98,8 @@ public class PlantScript : MonoBehaviour, IDamageable
         if (damageAmount <= 0) return;
         if (tutorialMode && !IsFullyGrown()) return;
         
-
-        currentHealth -= damageAmount * 3f;
+        if(damageType == DamageType.Sickle && !IsFullyGrown()) currentHealth -= damageAmount;
+        else currentHealth -= damageAmount * 3f;
         if (healthBar) healthBar.UpdateHealth(currentHealth, plantHealth);
         if (currentHealth <= 0)
         {
@@ -120,13 +119,21 @@ public class PlantScript : MonoBehaviour, IDamageable
                             case "Chicken Plant":
                                 newObject = Instantiate(plantInfo.objectOnHarvest, transform.position, Quaternion.identity, chickens.transform);
                                 break;
-                            // add one for turret in future
+
+                            case "Turret Plant":
+                                 newObject = Instantiate(plantInfo.objectOnHarvest, transform.position, Quaternion.identity, connectedSoil.transform);
+                                 break;
+
+                            case "Sprinkler Plant":
+                                newObject = Instantiate(plantInfo.objectOnHarvest, transform.position, Quaternion.identity, connectedSoil.transform);
+                                var newPlant = newObject.GetComponent<PlantScript>();
+                                if (newPlant != null) connectedSoil.NewPlant(newPlant);
+                                break;
+
                             default:
                                 newObject = Instantiate(plantInfo.objectOnHarvest, transform.position, Quaternion.identity);
                                 break;
                         }
-                        var newPlant = newObject.GetComponent<PlantScript>();
-                        if (newPlant != null) connectedSoil.NewPlant(newPlant);
                     }
                 }
                 else

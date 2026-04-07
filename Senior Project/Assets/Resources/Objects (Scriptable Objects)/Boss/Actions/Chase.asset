@@ -16,7 +16,7 @@ MonoBehaviour:
   actionDuration: 0
   activationChance: 0.5
   chaseSpeedMultiplier: 1.5
-  damageMultiplier: 1.25
+  damageMultiplier: 1.15
   chaseAccelerationMultiplier: 2
   burstSpeedMultiplier: 2.6
   burstDuration: 0.18

@@ -24,8 +24,8 @@ MonoBehaviour:
   phaseTwoThreshold: 0.5
   phaseThreeThreshold: 0
   rageMultiplier: 1.5
-  cooldownTime: 0.09876543
-  idleTime: 0.39506173
+  cooldownTime: 0.3
+  idleTime: 2
   actions:
   - {fileID: 11400000, guid: 1ebd5991c4a31df418239d8220852d6c, type: 2}
   - {fileID: 11400000, guid: bc35ec0310df4634c83188cd2e0127ea, type: 2}

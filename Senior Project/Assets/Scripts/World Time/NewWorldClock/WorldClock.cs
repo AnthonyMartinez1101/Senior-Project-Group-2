@@ -89,8 +89,7 @@ public class WorldClock : MonoBehaviour
         }
 
         StartCoroutine(TickTime());
-
-        preciseTime = dayLength;
+        
 
         Debug.Log("Current Season: " + CurrentSeason.ToString());
 
@@ -110,6 +109,8 @@ public class WorldClock : MonoBehaviour
         int seconds = Mathf.FloorToInt(currentTime % 60f);
 
         if(currentTime != 0 && !pauseTimer) preciseTime -= Time.deltaTime;
+
+        //Debug.Log(PercentageOfDayAndNight());
     }
 
     IEnumerator TickTime()
@@ -238,6 +239,7 @@ public class WorldClock : MonoBehaviour
     {
         float currentTotalTime = preciseTime;
         if(IsDay()) currentTotalTime += nightLength;
+
 
         return (dayLength + nightLength - currentTotalTime) / (dayLength + nightLength);
     }

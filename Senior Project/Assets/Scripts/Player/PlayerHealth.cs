@@ -55,6 +55,9 @@ public class PlayerHealth : MonoBehaviour
     public void HealthBuff()
     {
         maxHealthBuffPercentage += 0.5f;
+        actualMaxHealth = maxHealth * (1f + maxHealthBuffPercentage / 100);
+        if(healthBar) healthBar.UpdateHealth(currentHealth, actualMaxHealth);
+
         StatManager.Instance.AddHealthBuff(0.5f);
     }
     public void TakeDamage(float damageAmount)
