@@ -14098,10 +14098,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Help arrives in 4 days.
+  m_text: "Help arrives\n in 4 days"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b10f3a2ef1f0e3c4abb6e317316744e1, type: 2}
-  m_sharedMaterial: {fileID: -7548929068608203735, guid: b10f3a2ef1f0e3c4abb6e317316744e1, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 47d915faab309eb4492d5d3442698e4f, type: 2}
+  m_sharedMaterial: {fileID: -8210798623972598540, guid: 47d915faab309eb4492d5d3442698e4f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14193,7 +14193,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 747, y: 243}
+  m_AnchoredPosition: {x: 747, y: 281.4}
   m_SizeDelta: {x: 280.1136, y: 189.7606}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &698887259
@@ -15839,8 +15839,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0db605fd1beebe4e8d424f6af49ff76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldClock
-  dayLength: 180
-  nightLength: 60
+  dayLength: 1
+  nightLength: 1
   transitionLength: 5
   pauseTimer: 0
   _2xTickSpeed: 0
@@ -46881,11 +46881,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1757577315}
   - {fileID: 1158130223}
   - {fileID: 1252696800}
   - {fileID: 43524176}
   - {fileID: 383290798}
-  - {fileID: 1757577315}
   - {fileID: 1846290413}
   - {fileID: 780246424}
   - {fileID: 1863002902}

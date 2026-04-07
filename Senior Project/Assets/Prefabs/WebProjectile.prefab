@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7591400308469140800}
   - component: {fileID: 3586309648435447143}
   - component: {fileID: 6800376613486248754}
-  m_Layer: 17
+  m_Layer: 7
   m_Name: WebProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

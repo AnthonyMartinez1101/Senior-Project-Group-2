@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ThrownWeb : MonoBehaviour
+public class ThrownWeb : MonoBehaviour, IDamageable
 {
     public float lifetime = 60f;
     public float slowMultiplier = 0.5f;
@@ -12,12 +12,7 @@ public class ThrownWeb : MonoBehaviour
 
     private bool hasHit = false; // prevent multiple hits
     private int hitCounter = 0;
-    private InputAction scytheAction;
     private GameObject Player;
-    void Start()
-    {
-        scytheAction = InputSystem.actions.FindAction("Scythe");
-    }
 
     void Update()
     {
@@ -62,23 +57,6 @@ public class ThrownWeb : MonoBehaviour
 
         while (hitCounter < 3)
         {
-            if (scytheAction.WasPressedThisFrame())
-            {
-                hitCounter++;
-
-                if(hitCounter == 1)
-                {
-                    sp.sprite = hitSprites[0];
-                }
-                if(hitCounter == 2)
-                {
-                    sp.sprite = hitSprites[1];
-                }
-                if(hitCounter == 3)
-                {
-                    sp.sprite = hitSprites[2];
-                }
-            }
             yield return null;
         }
 
@@ -89,5 +67,26 @@ public class ThrownWeb : MonoBehaviour
             movement.SetSlowed(false);
         }
         Destroy(gameObject);
+    }
+
+    public void TakeDamage(float damageDealt, DamageType damageType)
+    {
+        if (damageType == DamageType.Sickle)
+        {
+            hitCounter++;
+
+            if (hitCounter == 1)
+            {
+                sp.sprite = hitSprites[0];
+            }
+            if (hitCounter == 2)
+            {
+                sp.sprite = hitSprites[1];
+            }
+            if (hitCounter == 3)
+            {
+                sp.sprite = hitSprites[2];
+            }
+        }
     }
 }
