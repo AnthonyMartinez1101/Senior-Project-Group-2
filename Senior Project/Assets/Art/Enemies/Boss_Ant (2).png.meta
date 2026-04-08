@@ -1,0 +1,389 @@
+fileFormatVersion: 2
+guid: 8ecf0573dd9927147827ba36f8374a68
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6033426074348647141
+    second: Boss_Ant (2)_0
+  - first:
+      213: 7896318240601332716
+    second: Boss_Ant (2)_1
+  - first:
+      213: 6354491237615711922
+    second: Boss_Ant (2)_2
+  - first:
+      213: -3574274288456864923
+    second: Boss_Ant (2)_3
+  - first:
+      213: 3102497093471868831
+    second: Boss_Ant (2)_4
+  - first:
+      213: 7479250175920090045
+    second: Boss_Ant (2)_5
+  - first:
+      213: 6209732159110872034
+    second: Boss_Ant (2)_6
+  - first:
+      213: -2973757990305247467
+    second: Boss_Ant (2)_7
+  - first:
+      213: -1221002880814387243
+    second: Boss_Ant (2)_8
+  - first:
+      213: -5815144929252979519
+    second: Boss_Ant (2)_9
+  - first:
+      213: 5128092268959190571
+    second: Boss_Ant (2)_10
+  - first:
+      213: -8921905711946258460
+    second: Boss_Ant (2)_11
+  - first:
+      213: 4396098910400155637
+    second: Boss_Ant (2)_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss_Ant (2)_0
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 3438
+        width: 1577
+        height: 993
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e271245c090bb350800000000000000
+      internalID: 6033426074348647141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Ant (2)_1
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 3481
+        width: 1637
+        height: 950
+      alignment: 9
+      pivot: {x: 0.5, y: 0.16223145}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cebda747a9b559d60800000000000000
+      internalID: 7896318240601332716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Ant (2)_2
+      rect:
+        serializedVersion: 2
+        x: 3643
+        y: 3438
+        width: 1455
+        height: 953
+      alignment: 9
+      pivot: {x: 0.5614613, y: 0.16329473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b6ba62fc10bf2850800000000000000
+      internalID: 6354491237615711922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Ant (2)_3
+      rect:
+        serializedVersion: 2
+        x: 5338
+        y: 3448
+        width: 1510
+        height: 1016
+      alignment: 9
+      pivot: {x: 0.5313532, y: 0.19970559}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56b67b2d870a56ec0800000000000000
+      internalID: -3574274288456864923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Ant (2)_4
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 2341
+        width: 1646
+        height: 1025
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9792153ba84e0b20800000000000000
+      internalID: 3102497093471868831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Ant (2)_5
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 1232
+        width: 1625
+        height: 942
+      alignment: 9
+      pivot: {x: 0.49352562, y: 0.1649468}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbbaef18862abc760800000000000000
+      internalID: 7479250175920090045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Ant (2)_7
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 1167
+        width: 1558
+        height: 980
+      alignment: 9
+      pivot: {x: 0.4759885, y: 0.21897222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51f40eb0dd61bb6d0800000000000000
+      internalID: -2973757990305247467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Ant (2)_9
+      rect:
+        serializedVersion: 2
+        x: 5360
+        y: 1162
+        width: 1488
+        height: 992
+      alignment: 9
+      pivot: {x: 0.48998302, y: 0.1280963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cc467e2f747c4fa0800000000000000
+      internalID: -5815144929252979519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Ant (2)_10
+      rect:
+        serializedVersion: 2
+        x: 3786
+        y: 1167
+        width: 1442
+        height: 940
+      alignment: 9
+      pivot: {x: 0.56460756, y: 0.13527352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2e4db2bfb4aa2740800000000000000
+      internalID: 5128092268959190571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Ant (2)_12
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 144
+        width: 1637
+        height: 1020
+      alignment: 9
+      pivot: {x: 0.4774856, y: 0.16677028}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ff02efdaa4120d30800000000000000
+      internalID: 4396098910400155637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c5346da2599fb004fb15eec76cf8c6bc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Boss_Ant (2)_0: 6033426074348647141
+      Boss_Ant (2)_1: 7896318240601332716
+      Boss_Ant (2)_10: 5128092268959190571
+      Boss_Ant (2)_11: -8921905711946258460
+      Boss_Ant (2)_12: 4396098910400155637
+      Boss_Ant (2)_2: 6354491237615711922
+      Boss_Ant (2)_3: -3574274288456864923
+      Boss_Ant (2)_4: 3102497093471868831
+      Boss_Ant (2)_5: 7479250175920090045
+      Boss_Ant (2)_6: 6209732159110872034
+      Boss_Ant (2)_7: -2973757990305247467
+      Boss_Ant (2)_8: -1221002880814387243
+      Boss_Ant (2)_9: -5815144929252979519
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

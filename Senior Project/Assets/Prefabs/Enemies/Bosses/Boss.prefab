@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 717704406917105351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0372133, y: 0.17797008, z: 0}
+  m_LocalPosition: {x: -1.9988407, y: 0.1333515, z: 0}
   m_LocalScale: {x: 1, y: 1.31, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -8321102221490951993, guid: 3bc0c1237a6e04c4096dc0566a3d4e9b, type: 3}
+  m_Sprite: {fileID: 7479250175920090045, guid: 8ecf0573dd9927147827ba36f8374a68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 3263000376793771080}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
-  m_LocalPosition: {x: 2.0372133, y: -0.055397034, z: 0}
+  m_LocalPosition: {x: 1.9988406, y: 0.016525745, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -332,7 +332,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -8321102221490951993, guid: 3bc0c1237a6e04c4096dc0566a3d4e9b, type: 3}
+  m_Sprite: {fileID: 7479250175920090045, guid: 8ecf0573dd9927147827ba36f8374a68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Modern2D.StylizedShadowCaster2D
   _shadowData:
     shadow:
-      pivotOffset: {x: 3.06, y: 0.34}
+      pivotOffset: {x: 3.03, y: 0.5}
       shadowCaster: {fileID: 6503951150260337140}
       shadow: {fileID: 988549393784226267}
       shadowPivot: {fileID: 4780724850443443655}
@@ -482,9 +482,9 @@ MonoBehaviour:
   _shadowFalloff:
     _value: 0
   _pivotOffsetX:
-    _value: 3.06
+    _value: 3.03
   _pivotOffsetY:
-    _value: 0.34
+    _value: 0.5
   customShadowLayer:
     _value: 0
   customShadowLayerName:
@@ -776,6 +776,10 @@ PrefabInstance:
     - target: {fileID: 2578864597940973824, guid: c640191a004defb4fb35dad3ab2e3ca4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196712463495361996, guid: c640191a004defb4fb35dad3ab2e3ca4, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3937250288482046899, guid: c640191a004defb4fb35dad3ab2e3ca4, type: 3}
       propertyPath: m_Layer
