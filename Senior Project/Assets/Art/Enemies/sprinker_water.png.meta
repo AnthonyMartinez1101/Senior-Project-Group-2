@@ -1,0 +1,923 @@
+fileFormatVersion: 2
+guid: a5a9a797a9e9072458f0f9fb2abc3323
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2813188483322020094
+    second: sprinker_water_0
+  - first:
+      213: 1826814500381913109
+    second: sprinker_water_1
+  - first:
+      213: -948632646209207744
+    second: sprinker_water_2
+  - first:
+      213: -7237046397646120998
+    second: sprinker_water_3
+  - first:
+      213: 216346991293885039
+    second: sprinker_water_4
+  - first:
+      213: 8015274845843252239
+    second: sprinker_water_5
+  - first:
+      213: 5270809201645406207
+    second: sprinker_water_6
+  - first:
+      213: -1727324189397619245
+    second: sprinker_water_7
+  - first:
+      213: 5967513404590058944
+    second: sprinker_water_8
+  - first:
+      213: -8043217325752450488
+    second: sprinker_water_9
+  - first:
+      213: 1293492253106220305
+    second: sprinker_water_10
+  - first:
+      213: -2412116007848436669
+    second: sprinker_water_11
+  - first:
+      213: 7095824104815271505
+    second: sprinker_water_12
+  - first:
+      213: -4400319129774096797
+    second: sprinker_water_13
+  - first:
+      213: 6069935916548930177
+    second: sprinker_water_14
+  - first:
+      213: 4696086675170071194
+    second: sprinker_water_15
+  - first:
+      213: 1162488861854660662
+    second: sprinker_water_16
+  - first:
+      213: -802602084765746434
+    second: sprinker_water_17
+  - first:
+      213: 4144342934443740949
+    second: sprinker_water_18
+  - first:
+      213: 8050381943004718561
+    second: sprinker_water_19
+  - first:
+      213: -572889450093655713
+    second: sprinker_water_20
+  - first:
+      213: 8619527757806446340
+    second: sprinker_water_21
+  - first:
+      213: -6614807552314724843
+    second: sprinker_water_22
+  - first:
+      213: 8253445439762509323
+    second: sprinker_water_23
+  - first:
+      213: -2605786406422413437
+    second: sprinker_water_24
+  - first:
+      213: 8905551290728880139
+    second: sprinker_water_25
+  - first:
+      213: 4893189429207589714
+    second: sprinker_water_26
+  - first:
+      213: 6822727536794837154
+    second: sprinker_water_27
+  - first:
+      213: -5752003612652268452
+    second: sprinker_water_28
+  - first:
+      213: 5912661144850416444
+    second: sprinker_water_29
+  - first:
+      213: 2031091761934673333
+    second: sprinker_water_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sprinker_water_0
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 1646
+        width: 45
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef001aa45047a0720800000000000000
+      internalID: 2813188483322020094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_1
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 1617
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 510fbc5fb162a5910800000000000000
+      internalID: 1826814500381913109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_2
+      rect:
+        serializedVersion: 2
+        x: 1701
+        y: 1599
+        width: 63
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0428c5462a7c5d2f0800000000000000
+      internalID: -948632646209207744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_3
+      rect:
+        serializedVersion: 2
+        x: 2443
+        y: 1614
+        width: 62
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad7584515a8d09b90800000000000000
+      internalID: -7237046397646120998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_4
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1557
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6aeb4c317e900300800000000000000
+      internalID: 216346991293885039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_5
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1557
+        width: 58
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f046c9b610afb3f60800000000000000
+      internalID: 8015274845843252239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_6
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 1540
+        width: 76
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff74feefa0da52940800000000000000
+      internalID: 5270809201645406207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_7
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 1540
+        width: 84
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dde30f2dcf4708e0800000000000000
+      internalID: -1727324189397619245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_8
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 1522
+        width: 111
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cde8f003ddd0d250800000000000000
+      internalID: 5967513404590058944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_9
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 1522
+        width: 122
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 842024ff470c06090800000000000000
+      internalID: -8043217325752450488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_10
+      rect:
+        serializedVersion: 2
+        x: 2230
+        y: 1523
+        width: 137
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11dad1ad95863f110800000000000000
+      internalID: 1293492253106220305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_11
+      rect:
+        serializedVersion: 2
+        x: 2581
+        y: 1522
+        width: 137
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34c19235541768ed0800000000000000
+      internalID: -2412116007848436669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_12
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 1267
+        width: 45
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15e1b249d6e697260800000000000000
+      internalID: 7095824104815271505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_13
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1282
+        width: 32
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36e757bb01deee2c0800000000000000
+      internalID: -4400319129774096797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_14
+      rect:
+        serializedVersion: 2
+        x: 2140
+        y: 1127
+        width: 47
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18ab8436e8ebc3450800000000000000
+      internalID: 6069935916548930177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_15
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 1126
+        width: 45
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9215fb33f9db2140800000000000000
+      internalID: 4696086675170071194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_16
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1150
+        width: 85
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638f132f57df12010800000000000000
+      internalID: 1162488861854660662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_17
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 1150
+        width: 111
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efabc8108a59cd4f0800000000000000
+      internalID: -802602084765746434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_18
+      rect:
+        serializedVersion: 2
+        x: 1085
+        y: 1103
+        width: 78
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51f4be2f0f9a38930800000000000000
+      internalID: 4144342934443740949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_19
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 1182
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e5e30379b3b8bf60800000000000000
+      internalID: 8050381943004718561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_20
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 1103
+        width: 90
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5949979410bc08f0800000000000000
+      internalID: -572889450093655713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_21
+      rect:
+        serializedVersion: 2
+        x: 2674
+        y: 1186
+        width: 31
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4072ca7d3d6be9770800000000000000
+      internalID: 8619527757806446340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_22
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 731
+        width: 131
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51ea5b2f39b7334a0800000000000000
+      internalID: -6614807552314724843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_23
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 731
+        width: 162
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0eac1a16e02a8270800000000000000
+      internalID: 8253445439762509323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_24
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 808
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38f76a4c11366dbd0800000000000000
+      internalID: -2605786406422413437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_25
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 755
+        width: 101
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b089aec17bfd69b70800000000000000
+      internalID: 8905551290728880139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_26
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 755
+        width: 108
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2536d925cd918e340800000000000000
+      internalID: 4893189429207589714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_27
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 222
+        width: 155
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a0aeeddb823fae50800000000000000
+      internalID: 6822727536794837154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_28
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 222
+        width: 156
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5419119037cc20b0800000000000000
+      internalID: -5752003612652268452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_29
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 244
+        width: 180
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3340101cfdfd0250800000000000000
+      internalID: 5912661144850416444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_water_30
+      rect:
+        serializedVersion: 2
+        x: 1962
+        y: 244
+        width: 180
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b5a6504233ef2c10800000000000000
+      internalID: 2031091761934673333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      sprinker_water_0: 2813188483322020094
+      sprinker_water_1: 1826814500381913109
+      sprinker_water_10: 1293492253106220305
+      sprinker_water_11: -2412116007848436669
+      sprinker_water_12: 7095824104815271505
+      sprinker_water_13: -4400319129774096797
+      sprinker_water_14: 6069935916548930177
+      sprinker_water_15: 4696086675170071194
+      sprinker_water_16: 1162488861854660662
+      sprinker_water_17: -802602084765746434
+      sprinker_water_18: 4144342934443740949
+      sprinker_water_19: 8050381943004718561
+      sprinker_water_2: -948632646209207744
+      sprinker_water_20: -572889450093655713
+      sprinker_water_21: 8619527757806446340
+      sprinker_water_22: -6614807552314724843
+      sprinker_water_23: 8253445439762509323
+      sprinker_water_24: -2605786406422413437
+      sprinker_water_25: 8905551290728880139
+      sprinker_water_26: 4893189429207589714
+      sprinker_water_27: 6822727536794837154
+      sprinker_water_28: -5752003612652268452
+      sprinker_water_29: 5912661144850416444
+      sprinker_water_3: -7237046397646120998
+      sprinker_water_30: 2031091761934673333
+      sprinker_water_4: 216346991293885039
+      sprinker_water_5: 8015274845843252239
+      sprinker_water_6: 5270809201645406207
+      sprinker_water_7: -1727324189397619245
+      sprinker_water_8: 5967513404590058944
+      sprinker_water_9: -8043217325752450488
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

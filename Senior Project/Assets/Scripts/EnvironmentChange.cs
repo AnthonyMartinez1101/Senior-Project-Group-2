@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnviornmentChange : MonoBehaviour
+public class EnvironmentChange: MonoBehaviour
 {
     public WorldClock time;
 
