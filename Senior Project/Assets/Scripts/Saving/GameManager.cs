@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     InputAction pauseAction;
 
+    public GameObject settings;
+
     public GameObject chickenPrefab;
     public GameObject GameOverScreen;
     public GameObject WinGameScreen;
@@ -126,6 +128,10 @@ public class GameManager : MonoBehaviour
                 pauseMenu.SetActive(true);
                 Time.timeScale = 0f; // Pause game
             }
+            if(settings.activeSelf)
+            {
+                settings.SetActive(false);
+            }
         }
     }
 
@@ -152,6 +158,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void SettingsButton()
+    {
+        settings.SetActive(true);
+    }
+
+    public void ReturnToPause()
+    {
+        settings.SetActive(false);
+    }
 
     public void QuitGame()
     {
