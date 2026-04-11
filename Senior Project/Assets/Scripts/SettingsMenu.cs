@@ -44,6 +44,10 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public void FullScreen(bool isFullScreen)
+    {
+        Screen.fullScreen = isFullScreen;
+    }
     private float LinearToDb(float v)
     {
         if(v <= 0.0001f) return -80f; // Minimum dB value for silence

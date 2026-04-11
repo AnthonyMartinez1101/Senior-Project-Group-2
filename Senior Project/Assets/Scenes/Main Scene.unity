@@ -4069,8 +4069,8 @@ Transform:
   m_GameObject: {fileID: 173553304}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.13233437, y: -0.02550065, z: 0}
+  m_LocalScale: {x: 1, y: 1.31, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 460175025}
@@ -4124,7 +4124,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 1299045342668554553, guid: 32afdb301fb1e1d4bb55714a857d1ecc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.0266666, y: 1.59}
@@ -8153,8 +8153,8 @@ Transform:
   m_GameObject: {fileID: 380882072}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.13233437, y: -0.02550065, z: 0}
+  m_LocalScale: {x: 1, y: 1.31, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1323019933}
@@ -8208,7 +8208,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 1299045342668554553, guid: 32afdb301fb1e1d4bb55714a857d1ecc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.0266666, y: 1.59}
@@ -9155,7 +9155,7 @@ Transform:
   m_GameObject: {fileID: 460175024}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
-  m_LocalPosition: {x: -0.039113842, y: -0.16505241, z: 0}
+  m_LocalPosition: {x: 0.1323344, y: 0.0194664, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19710,7 +19710,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 38933b6046d4a7442ad2d30d3fb8041c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.6, y: 1.6}
@@ -32302,7 +32302,7 @@ Transform:
   m_GameObject: {fileID: 1323019932}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
-  m_LocalPosition: {x: -0.039113365, y: -0.16505289, z: 0}
+  m_LocalPosition: {x: 0.1323344, y: 0.019466083, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33810,7 +33810,7 @@ Transform:
   m_GameObject: {fileID: 1409414607}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
-  m_LocalPosition: {x: -0.039113365, y: -0.16505305, z: 0}
+  m_LocalPosition: {x: 0.1323344, y: 0.0194664, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43230,8 +43230,8 @@ Transform:
   m_GameObject: {fileID: 1680026187}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.13233437, y: -0.02550065, z: 0}
+  m_LocalScale: {x: 1, y: 1.31, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1409414608}
@@ -43285,7 +43285,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 1299045342668554553, guid: 32afdb301fb1e1d4bb55714a857d1ecc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.0266666, y: 1.59}
@@ -49748,6 +49748,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings Options
       objectReference: {fileID: 0}
+    - target: {fileID: 1812700904413247575, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2457615633400961950, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -49791,6 +49795,26 @@ PrefabInstance:
     - target: {fileID: 8196370729778125865, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327213087612632684, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327213087612632684, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1383424142}
+    - target: {fileID: 8327213087612632684, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FullScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327213087612632684, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8327213087612632684, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8503577070951960677, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
       propertyPath: m_Pivot.x
