@@ -291,7 +291,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -343,12 +343,12 @@ TextureImporter:
       name: all_zombies_0
       rect:
         serializedVersion: 2
-        x: 87
-        y: 5328
-        width: 323
-        height: 532
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 69
+        y: 5327
+        width: 341
+        height: 535
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -365,12 +365,12 @@ TextureImporter:
       name: all_zombies_1
       rect:
         serializedVersion: 2
-        x: 514
-        y: 5328
-        width: 280
-        height: 532
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 513
+        y: 5327
+        width: 282
+        height: 535
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -387,12 +387,12 @@ TextureImporter:
       name: all_zombies_2
       rect:
         serializedVersion: 2
-        x: 854
+        x: 836
         y: 5330
-        width: 323
-        height: 530
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 342
+        height: 532
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -409,12 +409,12 @@ TextureImporter:
       name: all_zombies_3
       rect:
         serializedVersion: 2
-        x: 1256
-        y: 5431
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1254
+        y: 5430
+        width: 23
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -431,12 +431,12 @@ TextureImporter:
       name: all_zombies_4
       rect:
         serializedVersion: 2
-        x: 1271
-        y: 5331
-        width: 279
-        height: 529
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1269
+        y: 5330
+        width: 283
+        height: 532
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -454,11 +454,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1657
-        y: 5331
-        width: 279
-        height: 529
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 5330
+        width: 280
+        height: 532
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -476,11 +476,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1931
-        y: 5431
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 5430
+        width: 21
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -497,12 +497,12 @@ TextureImporter:
       name: all_zombies_7
       rect:
         serializedVersion: 2
-        x: 2030
+        x: 2028
         y: 5330
-        width: 323
-        height: 530
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 326
+        height: 532
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -519,12 +519,12 @@ TextureImporter:
       name: all_zombies_8
       rect:
         serializedVersion: 2
-        x: 2413
-        y: 5328
-        width: 280
-        height: 532
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2352
+        y: 5409
+        width: 20
+        height: 21
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -541,12 +541,12 @@ TextureImporter:
       name: all_zombies_9
       rect:
         serializedVersion: 2
-        x: 2797
-        y: 5328
-        width: 323
-        height: 532
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2413
+        y: 5327
+        width: 280
+        height: 535
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -563,12 +563,12 @@ TextureImporter:
       name: all_zombies_10
       rect:
         serializedVersion: 2
-        x: 69
-        y: 5408
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2795
+        y: 5327
+        width: 345
+        height: 535
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -585,12 +585,12 @@ TextureImporter:
       name: all_zombies_11
       rect:
         serializedVersion: 2
-        x: 836
-        y: 5408
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 475
+        y: 4624
+        width: 280
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -607,12 +607,12 @@ TextureImporter:
       name: all_zombies_12
       rect:
         serializedVersion: 2
-        x: 2351
-        y: 5408
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 863
+        y: 4624
+        width: 280
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -629,12 +629,12 @@ TextureImporter:
       name: all_zombies_13
       rect:
         serializedVersion: 2
-        x: 3118
-        y: 5408
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1884
+        y: 4624
+        width: 281
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -651,12 +651,12 @@ TextureImporter:
       name: all_zombies_14
       rect:
         serializedVersion: 2
-        x: 476
+        x: 2273
         y: 4624
-        width: 278
-        height: 532
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 280
+        height: 531
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -673,12 +673,12 @@ TextureImporter:
       name: all_zombies_15
       rect:
         serializedVersion: 2
-        x: 865
-        y: 4624
-        width: 278
-        height: 532
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 72
+        y: 3865
+        width: 341
+        height: 557
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -695,12 +695,12 @@ TextureImporter:
       name: all_zombies_16
       rect:
         serializedVersion: 2
-        x: 1886
-        y: 4624
-        width: 278
-        height: 532
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 518
+        y: 3865
+        width: 280
+        height: 557
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -717,12 +717,12 @@ TextureImporter:
       name: all_zombies_17
       rect:
         serializedVersion: 2
-        x: 2275
-        y: 4624
-        width: 278
-        height: 532
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 837
+        y: 3867
+        width: 344
+        height: 555
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -739,12 +739,12 @@ TextureImporter:
       name: all_zombies_18
       rect:
         serializedVersion: 2
-        x: 90
-        y: 3865
-        width: 323
-        height: 555
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1257
+        y: 3967
+        width: 23
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -761,12 +761,12 @@ TextureImporter:
       name: all_zombies_19
       rect:
         serializedVersion: 2
-        x: 517
-        y: 3865
-        width: 280
-        height: 556
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1272
+        y: 3867
+        width: 282
+        height: 552
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -783,12 +783,12 @@ TextureImporter:
       name: all_zombies_20
       rect:
         serializedVersion: 2
-        x: 857
+        x: 1660
         y: 3867
-        width: 323
-        height: 554
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 280
+        height: 555
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -805,12 +805,12 @@ TextureImporter:
       name: all_zombies_21
       rect:
         serializedVersion: 2
-        x: 1259
-        y: 3968
+        x: 1934
+        y: 3967
         width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 23
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -827,12 +827,12 @@ TextureImporter:
       name: all_zombies_22
       rect:
         serializedVersion: 2
-        x: 1274
-        y: 3868
-        width: 279
-        height: 552
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2033
+        y: 3867
+        width: 342
+        height: 555
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -849,12 +849,12 @@ TextureImporter:
       name: all_zombies_23
       rect:
         serializedVersion: 2
-        x: 1660
-        y: 3868
-        width: 279
-        height: 552
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2416
+        y: 3865
+        width: 280
+        height: 557
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -871,12 +871,12 @@ TextureImporter:
       name: all_zombies_24
       rect:
         serializedVersion: 2
-        x: 1934
-        y: 3968
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2798
+        y: 3865
+        width: 345
+        height: 557
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -893,12 +893,12 @@ TextureImporter:
       name: all_zombies_25
       rect:
         serializedVersion: 2
-        x: 2033
-        y: 3867
-        width: 323
-        height: 554
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 451
+        y: 3161
+        width: 336
+        height: 549
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -915,12 +915,12 @@ TextureImporter:
       name: all_zombies_26
       rect:
         serializedVersion: 2
-        x: 2416
-        y: 3865
-        width: 280
-        height: 556
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 839
+        y: 3161
+        width: 333
+        height: 549
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -937,12 +937,12 @@ TextureImporter:
       name: all_zombies_27
       rect:
         serializedVersion: 2
-        x: 2800
-        y: 3865
-        width: 323
-        height: 555
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1864
+        y: 3161
+        width: 333
+        height: 549
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -959,12 +959,12 @@ TextureImporter:
       name: all_zombies_28
       rect:
         serializedVersion: 2
-        x: 72
-        y: 3945
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2249
+        y: 3161
+        width: 333
+        height: 549
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -981,12 +981,12 @@ TextureImporter:
       name: all_zombies_29
       rect:
         serializedVersion: 2
-        x: 839
-        y: 3945
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 74
+        y: 2448
+        width: 412
+        height: 619
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1003,12 +1003,12 @@ TextureImporter:
       name: all_zombies_30
       rect:
         serializedVersion: 2
-        x: 2354
-        y: 3945
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 565
+        y: 2434
+        width: 397
+        height: 619
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1025,12 +1025,12 @@ TextureImporter:
       name: all_zombies_31
       rect:
         serializedVersion: 2
-        x: 3121
-        y: 3945
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1041
+        y: 2434
+        width: 411
+        height: 619
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1047,12 +1047,12 @@ TextureImporter:
       name: all_zombies_32
       rect:
         serializedVersion: 2
-        x: 453
-        y: 3161
-        width: 333
-        height: 549
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1508
+        y: 2437
+        width: 397
+        height: 616
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1069,12 +1069,12 @@ TextureImporter:
       name: all_zombies_33
       rect:
         serializedVersion: 2
-        x: 839
-        y: 3161
-        width: 333
-        height: 549
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2022
+        y: 2437
+        width: 397
+        height: 616
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1091,12 +1091,12 @@ TextureImporter:
       name: all_zombies_34
       rect:
         serializedVersion: 2
-        x: 1863
-        y: 3161
-        width: 333
-        height: 549
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2495
+        y: 2437
+        width: 411
+        height: 616
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1113,12 +1113,12 @@ TextureImporter:
       name: all_zombies_35
       rect:
         serializedVersion: 2
-        x: 2249
-        y: 3161
-        width: 333
-        height: 549
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3064
+        y: 2434
+        width: 395
+        height: 619
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1135,12 +1135,12 @@ TextureImporter:
       name: all_zombies_36
       rect:
         serializedVersion: 2
-        x: 75
-        y: 2530
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3607
+        y: 2434
+        width: 409
+        height: 619
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1157,12 +1157,12 @@ TextureImporter:
       name: all_zombies_37
       rect:
         serializedVersion: 2
-        x: 90
-        y: 2450
-        width: 396
-        height: 616
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 492
+        y: 1730
+        width: 429
+        height: 628
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1179,12 +1179,12 @@ TextureImporter:
       name: all_zombies_38
       rect:
         serializedVersion: 2
-        x: 565
-        y: 2434
-        width: 396
-        height: 617
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 985
+        y: 1730
+        width: 432
+        height: 628
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1201,12 +1201,12 @@ TextureImporter:
       name: all_zombies_39
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 2514
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2349
+        y: 1730
+        width: 432
+        height: 628
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1223,12 +1223,12 @@ TextureImporter:
       name: all_zombies_40
       rect:
         serializedVersion: 2
-        x: 1056
-        y: 2436
-        width: 396
-        height: 616
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2915
+        y: 1730
+        width: 432
+        height: 628
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1245,12 +1245,12 @@ TextureImporter:
       name: all_zombies_41
       rect:
         serializedVersion: 2
-        x: 1508
-        y: 2437
-        width: 396
-        height: 616
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 77
+        y: 959
+        width: 342
+        height: 590
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1267,12 +1267,12 @@ TextureImporter:
       name: all_zombies_42
       rect:
         serializedVersion: 2
-        x: 2021
-        y: 2437
-        width: 396
-        height: 616
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 522
+        y: 962
+        width: 282
+        height: 587
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1289,12 +1289,12 @@ TextureImporter:
       name: all_zombies_43
       rect:
         serializedVersion: 2
-        x: 2495
-        y: 2436
-        width: 396
-        height: 616
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 845
+        y: 962
+        width: 345
+        height: 587
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1311,12 +1311,12 @@ TextureImporter:
       name: all_zombies_44
       rect:
         serializedVersion: 2
-        x: 2886
-        y: 2514
+        x: 1266
+        y: 1064
         width: 20
         height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1333,12 +1333,12 @@ TextureImporter:
       name: all_zombies_45
       rect:
         serializedVersion: 2
-        x: 3062
-        y: 2434
-        width: 396
-        height: 617
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1280
+        y: 965
+        width: 292
+        height: 584
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1355,12 +1355,12 @@ TextureImporter:
       name: all_zombies_46
       rect:
         serializedVersion: 2
-        x: 3607
-        y: 2434
-        width: 396
-        height: 617
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1654
+        y: 962
+        width: 292
+        height: 587
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1377,12 +1377,12 @@ TextureImporter:
       name: all_zombies_47
       rect:
         serializedVersion: 2
-        x: 3995
-        y: 2514
+        x: 1940
+        y: 1064
         width: 20
         height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1399,12 +1399,12 @@ TextureImporter:
       name: all_zombies_48
       rect:
         serializedVersion: 2
-        x: 492
-        y: 1730
-        width: 431
-        height: 627
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2036
+        y: 962
+        width: 345
+        height: 587
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1421,12 +1421,12 @@ TextureImporter:
       name: all_zombies_49
       rect:
         serializedVersion: 2
-        x: 986
-        y: 1730
-        width: 431
-        height: 627
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2422
+        y: 962
+        width: 280
+        height: 587
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1443,12 +1443,12 @@ TextureImporter:
       name: all_zombies_50
       rect:
         serializedVersion: 2
-        x: 2348
-        y: 1730
-        width: 431
-        height: 627
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2807
+        y: 959
+        width: 341
+        height: 590
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1465,12 +1465,12 @@ TextureImporter:
       name: all_zombies_51
       rect:
         serializedVersion: 2
-        x: 2916
-        y: 1730
-        width: 431
-        height: 627
+        x: 3430
+        y: 352
+        width: 628
+        height: 1045
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1487,12 +1487,12 @@ TextureImporter:
       name: all_zombies_52
       rect:
         serializedVersion: 2
-        x: 96
-        y: 961
-        width: 323
-        height: 589
+        x: 4166
+        y: 558
+        width: 855
+        height: 855
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1509,12 +1509,12 @@ TextureImporter:
       name: all_zombies_53
       rect:
         serializedVersion: 2
-        x: 523
-        y: 961
-        width: 280
-        height: 589
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 480
+        y: 483
+        width: 38
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1531,12 +1531,12 @@ TextureImporter:
       name: all_zombies_54
       rect:
         serializedVersion: 2
-        x: 863
-        y: 963
-        width: 326
-        height: 587
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 486
+        y: 256
+        width: 277
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1553,12 +1553,12 @@ TextureImporter:
       name: all_zombies_55
       rect:
         serializedVersion: 2
-        x: 1265
-        y: 1064
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 731
+        y: 475
+        width: 38
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1575,12 +1575,12 @@ TextureImporter:
       name: all_zombies_56
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 964
-        width: 291
-        height: 586
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 871
+        y: 483
+        width: 38
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1597,12 +1597,12 @@ TextureImporter:
       name: all_zombies_57
       rect:
         serializedVersion: 2
-        x: 1655
-        y: 964
-        width: 290
-        height: 586
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 872
+        y: 256
+        width: 280
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1619,12 +1619,12 @@ TextureImporter:
       name: all_zombies_58
       rect:
         serializedVersion: 2
-        x: 1940
-        y: 1064
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1123
+        y: 475
+        width: 37
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1641,12 +1641,12 @@ TextureImporter:
       name: all_zombies_59
       rect:
         serializedVersion: 2
-        x: 2037
-        y: 963
-        width: 325
-        height: 587
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1887
+        y: 475
+        width: 38
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1663,12 +1663,12 @@ TextureImporter:
       name: all_zombies_60
       rect:
         serializedVersion: 2
-        x: 2422
-        y: 961
+        x: 1893
+        y: 256
         width: 280
-        height: 589
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1685,12 +1685,12 @@ TextureImporter:
       name: all_zombies_61
       rect:
         serializedVersion: 2
-        x: 2806
-        y: 961
-        width: 323
-        height: 589
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2138
+        y: 483
+        width: 41
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1707,12 +1707,12 @@ TextureImporter:
       name: all_zombies_62
       rect:
         serializedVersion: 2
-        x: 3423
-        y: 354
-        width: 638
-        height: 1042
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2279
+        y: 475
+        width: 37
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1729,12 +1729,12 @@ TextureImporter:
       name: all_zombies_63
       rect:
         serializedVersion: 2
-        x: 4162
-        y: 552
-        width: 866
-        height: 866
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2284
+        y: 256
+        width: 278
+        height: 604
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1751,12 +1751,12 @@ TextureImporter:
       name: all_zombies_64
       rect:
         serializedVersion: 2
-        x: 78
-        y: 1041
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2530
+        y: 483
+        width: 40
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1769,363 +1769,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: all_zombies_65
-      rect:
-        serializedVersion: 2
-        x: 845
-        y: 1041
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3d27f7a04e99b3d50800000000000000
-      internalID: 6718132473860944595
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all_zombies_66
-      rect:
-        serializedVersion: 2
-        x: 2360
-        y: 1041
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bcb56e14dcb452250800000000000000
-      internalID: 5919220630194379723
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all_zombies_67
-      rect:
-        serializedVersion: 2
-        x: 3127
-        y: 1041
-        width: 20
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2bf423b759720aa90800000000000000
-      internalID: -7304795072624439374
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all_zombies_68
-      rect:
-        serializedVersion: 2
-        x: 485
-        y: 257
-        width: 278
-        height: 602
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 162b004e4b54d6e00800000000000000
-      internalID: 1039563732214133345
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all_zombies_69
-      rect:
-        serializedVersion: 2
-        x: 874
-        y: 257
-        width: 278
-        height: 603
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4c74ac44eb29b3b90800000000000000
-      internalID: -7261048628309243964
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all_zombies_70
-      rect:
-        serializedVersion: 2
-        x: 1895
-        y: 257
-        width: 278
-        height: 603
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ef84bae03ee36a4d0800000000000000
-      internalID: -3123740146610255618
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all_zombies_71
-      rect:
-        serializedVersion: 2
-        x: 2284
-        y: 257
-        width: 278
-        height: 602
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5b0a3f72ac1fccdf0800000000000000
-      internalID: -158486036308844363
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all_zombies_72
-      rect:
-        serializedVersion: 2
-        x: 4643
-        y: 553
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 835af1411ce46f7d0800000000000000
-      internalID: -2885031920110951112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all_zombies_73
-      rect:
-        serializedVersion: 2
-        x: 479
-        y: 483
-        width: 38
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d50e92578dd1ae720800000000000000
-      internalID: 2876144127545303133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all_zombies_74
-      rect:
-        serializedVersion: 2
-        x: 732
-        y: 475
-        width: 38
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 190a2c63bd73b2fa0800000000000000
-      internalID: -5824500278417514351
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all_zombies_75
-      rect:
-        serializedVersion: 2
-        x: 871
-        y: 484
-        width: 38
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9bfcce5021032b7a0800000000000000
-      internalID: -6362970469554139207
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all_zombies_76
-      rect:
-        serializedVersion: 2
-        x: 1124
-        y: 476
-        width: 38
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b628dacacf31e9380800000000000000
-      internalID: -8962704232470969749
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all_zombies_77
-      rect:
-        serializedVersion: 2
-        x: 1887
-        y: 476
-        width: 38
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9d89b56d604873920800000000000000
-      internalID: 2969987644175128793
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all_zombies_78
-      rect:
-        serializedVersion: 2
-        x: 2140
-        y: 484
-        width: 38
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 522ee0f8bb644eda0800000000000000
-      internalID: -5916526239085043163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all_zombies_79
-      rect:
-        serializedVersion: 2
-        x: 2279
-        y: 475
-        width: 38
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bddf426c00668a100800000000000000
-      internalID: 119457543635664347
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all_zombies_80
-      rect:
-        serializedVersion: 2
-        x: 2532
-        y: 483
-        width: 38
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ea9a9cfa3ea817290800000000000000
-      internalID: -7894375961292330578
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 173384c4df15f92439beda9001f6564b
     internalID: 0
     vertices: []
     indices: 
@@ -2133,7 +1781,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       all_zombies_0: 1299045342668554553
       all_zombies_1: 6487396007643389724
@@ -2197,24 +1847,8 @@ TextureImporter:
       all_zombies_62: -3704287174049518630
       all_zombies_63: 6189639891138986784
       all_zombies_64: 4082129452937564567
-      all_zombies_65: 6718132473860944595
-      all_zombies_66: 5919220630194379723
-      all_zombies_67: -7304795072624439374
-      all_zombies_68: 1039563732214133345
-      all_zombies_69: -7261048628309243964
       all_zombies_7: 1207263476691835775
-      all_zombies_70: -3123740146610255618
-      all_zombies_71: -158486036308844363
-      all_zombies_72: -2885031920110951112
-      all_zombies_73: 2876144127545303133
-      all_zombies_74: -5824500278417514351
-      all_zombies_75: -6362970469554139207
-      all_zombies_76: -8962704232470969749
-      all_zombies_77: 2969987644175128793
-      all_zombies_78: -5916526239085043163
-      all_zombies_79: 119457543635664347
       all_zombies_8: -7436596707122406920
-      all_zombies_80: -7894375961292330578
       all_zombies_9: 4983000936098301159
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
