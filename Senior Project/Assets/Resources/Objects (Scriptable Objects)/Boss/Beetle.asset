@@ -24,7 +24,7 @@ MonoBehaviour:
   isInvincible: 0
   phaseTwoThreshold: 0.5
   phaseThreeThreshold: 0
-  rageMultiplier: 1.5
+  rageMultiplier: 1.2
   cooldownTime: 0.3
   idleTime: 2
   actions:
