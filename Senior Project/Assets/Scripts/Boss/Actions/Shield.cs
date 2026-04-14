@@ -19,13 +19,13 @@ public class Shield : BossAction
 
     public override void ExecuteAction(BossScript boss)
     {
-        if (boss.hasUsedShield)
-        {
-            actionDuration = 0f;
-            return;
-        }
+        //if (boss.hasUsedShield)
+        //{
+        //    actionDuration = 0f;
+        //    return;
+        //}
 
-        boss.hasUsedShield = true;
+        //boss.hasUsedShield = true;
 
         actionDuration = 3f;
         boss.StartCoroutine(SpawnShieldCoroutine(boss));
