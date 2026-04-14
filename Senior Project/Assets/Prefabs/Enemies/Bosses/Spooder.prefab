@@ -116,7 +116,7 @@ Transform:
   m_GameObject: {fileID: 3263000376793771080}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
-  m_LocalPosition: {x: 1.9421688, y: -1.2886939, z: 0}
+  m_LocalPosition: {x: 1.942169, y: -1.2886939, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 7349921054251946686}
   - component: {fileID: 4900337350073920050}
   - component: {fileID: 3736116752491544485}
+  - component: {fileID: 1685756520376028637}
   m_Layer: 7
   m_Name: Spooder
   m_TagString: Boss
@@ -217,6 +218,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 2423913854918513234}
   player: {fileID: 0}
   agent: {fileID: 2737907656110861412}
+  playerHealth: {fileID: 0}
   damageFlash: {fileID: 4026702009449874235}
   phaseTwoActivated: 0
   isShielded: 0
@@ -295,7 +297,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -3136571061043821517, guid: 0c58463b639cd5e4097593bb73b10423, type: 3}
+  m_Sprite: {fileID: 9002227266079527662, guid: b1c3e950b8db6a9418b3a154c01c3a8b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -458,6 +460,28 @@ MonoBehaviour:
   customPivot: 0
   customPivotTransform: {fileID: 0}
   rebuildShadowsBF_2_0_1_v: 0
+--- !u!95 &1685756520376028637
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3758422883315622073}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d7931ba9ab1a64748b4781bda4bf7707, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5390489356214575120
 PrefabInstance:
   m_ObjectHideFlags: 0

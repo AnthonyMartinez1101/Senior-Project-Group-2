@@ -1,12 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using TMPro;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider ambientSlider;
+    [SerializeField] private TMP_Dropdown resolutionDropdown;
 
     private const string MusicVolumeKey = "MusicVolume";
     private const string AmbientVolumeKey = "AmbientVolume";
@@ -14,6 +18,29 @@ public class SettingsMenu : MonoBehaviour
     private const string MusicVolumeParam = "MusicVolume";
     private const string AmbientVolumeParam = "AmbientVolume";
 
+    private Resolution[] resolutions;
+
+
+    public void Start()
+    {
+        resolutions = Screen.resolutions;
+
+        List<string> options = new List<string>();
+        int currentResolutionIndex = 0;
+
+        for(int i = 0; i < resolutions.Length; i++)
+        {
+            options.Add(resolutions[i].width + " x " + resolutions[i].height);
+
+            if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height) 
+            {
+                currentResolutionIndex = i;
+            }
+        }
+        resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
+    }
     private void OnEnable()
     {
         float musicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, 1f);
@@ -52,6 +79,12 @@ public class SettingsMenu : MonoBehaviour
     {
         if(v <= 0.0001f) return -80f; // Minimum dB value for silence
         return Mathf.Log10(v) * 20f;
+    }
+
+    public void SetResolution(int resolutionIndex) 
+    {
+        Resolution resolution = resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 }
 
