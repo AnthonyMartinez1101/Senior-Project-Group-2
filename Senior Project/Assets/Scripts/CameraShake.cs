@@ -18,6 +18,8 @@ public class CameraShake : MonoBehaviour
 
     public void ShakeCamera(float intensity, float duration)
     {
+        if(!enabled) return; //makes sure it doesnt shake if setting is off
+
         noise.AmplitudeGain = intensity;
         StartCoroutine(ShakeCoroutine(duration));
     }

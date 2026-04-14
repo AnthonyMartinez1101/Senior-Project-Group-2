@@ -12,6 +12,9 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private Slider ambientSlider;
     [SerializeField] private TMP_Dropdown resolutionDropdown;
 
+    public CameraShake cameraShake;
+    private const string ShakeKey = "Shake";
+
     private const string MusicVolumeKey = "MusicVolume";
     private const string AmbientVolumeKey = "AmbientVolume";
 
@@ -46,7 +49,10 @@ public class SettingsMenu : MonoBehaviour
         float musicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, 1f);
         float ambientVolume = PlayerPrefs.GetFloat(AmbientVolumeKey, 1f);
 
-        if(musicSlider != null)
+        bool on = PlayerPrefs.GetInt(ShakeKey, 1) == 1;
+        CameraShake(on);
+
+        if (musicSlider != null)
         {
             musicSlider.SetValueWithoutNotify(musicVolume);
         }
@@ -86,6 +92,22 @@ public class SettingsMenu : MonoBehaviour
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
+
+    public void SetCameraShake(bool on)
+    {
+        CameraShake(on);
+        PlayerPrefs.SetInt(ShakeKey, on ? 1 : 0); //shake 
+        PlayerPrefs.Save();
+    }
+
+    private void CameraShake(bool on) 
+    {
+        if (cameraShake != null)
+        {
+            cameraShake.enabled = on;
+        }
+    }
+       
 }
 
 // updates the sliders when the menu is opened

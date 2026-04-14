@@ -33121,6 +33121,7 @@ MonoBehaviour:
   musicSlider: {fileID: 1277932736}
   ambientSlider: {fileID: 1461888082}
   resolutionDropdown: {fileID: 1170470728}
+  cameraShake: {fileID: 157321354}
 --- !u!1 &1387028227
 GameObject:
   m_ObjectHideFlags: 0
@@ -49797,6 +49798,26 @@ PrefabInstance:
     - target: {fileID: 5938696729651524398, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204559084956767648, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204559084956767648, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1383424142}
+    - target: {fileID: 6204559084956767648, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetCameraShake
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204559084956767648, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204559084956767648, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8150030647726370893, guid: 32be4b6e5ed5a7a499154e5df569efb1, type: 3}
       propertyPath: m_AnchorMax.y

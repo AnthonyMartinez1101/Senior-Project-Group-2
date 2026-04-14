@@ -175,6 +175,8 @@ public class GameManager : MonoBehaviour
 
     public void CameraShake(float intensity, float duration)
     {
+        if(!enabled) return; //makes sure it doesnt shake if setting is off
+
         FollowCamera.ShakeCamera(intensity, duration);
     }
 
