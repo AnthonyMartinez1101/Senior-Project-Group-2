@@ -7,9 +7,12 @@ public class CameraShake : MonoBehaviour
     private CinemachineCamera virtualCam;
     private CinemachineBasicMultiChannelPerlin noise;
 
+    private const string ShakeKey = "settings.shake"; // PlayerPrefs key for camera shake setting
 
     private void Awake()
     {
+        enabled = PlayerPrefs.GetInt(ShakeKey, 1) == 1; // Enable or disable based on saved setting
+
         virtualCam = GetComponent<CinemachineCamera>();
         noise = virtualCam.GetCinemachineComponent(CinemachineCore.Stage.Noise) as CinemachineBasicMultiChannelPerlin;
         ResetIntensity();

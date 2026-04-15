@@ -11,9 +11,9 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider ambientSlider;
     [SerializeField] private TMP_Dropdown resolutionDropdown;
-
-    public CameraShake cameraShake;
-    private const string ShakeKey = "Shake";
+    [SerializeField] private Toggle cameraToggle;
+    
+    private const string ShakeKey = "settings.shake";
 
     private const string MusicVolumeKey = "MusicVolume";
     private const string AmbientVolumeKey = "AmbientVolume";
@@ -49,8 +49,9 @@ public class SettingsMenu : MonoBehaviour
         float musicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, 1f);
         float ambientVolume = PlayerPrefs.GetFloat(AmbientVolumeKey, 1f);
 
+        if (cameraToggle == null) return;
         bool on = PlayerPrefs.GetInt(ShakeKey, 1) == 1;
-        CameraShake(on);
+        cameraToggle.SetIsOnWithoutNotify(on);
 
         if (musicSlider != null)
         {
@@ -95,18 +96,24 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetCameraShake(bool on)
     {
-        CameraShake(on);
-        PlayerPrefs.SetInt(ShakeKey, on ? 1 : 0); //shake 
+        //CameraShake(on);
+        PlayerPrefs.SetInt(ShakeKey, on ? 1 : 0); //shake on is 1, off is 0
         PlayerPrefs.Save();
-    }
 
-    private void CameraShake(bool on) 
-    {
-        if (cameraShake != null)
+        var shake = FindAnyObjectByType<CameraShake>();
+        if (shake != null)
         {
-            cameraShake.enabled = on;
+            shake.enabled = on;
         }
     }
+
+    //private void CameraShake(bool on) 
+    //{
+    //    if (cameraShake != null)
+    //    {
+    //        cameraShake.enabled = on;
+    //    }
+    //}
        
 }
 
