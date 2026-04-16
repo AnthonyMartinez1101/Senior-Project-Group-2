@@ -26,7 +26,7 @@ public class ThrownWeb : MonoBehaviour, IDamageable
             transform.position = Player.transform.position;
         }
     }
-    private void OnTriggerStay2D(Collider2D collider)
+    private void OnTriggerStay2D(Collider2D collider) 
     {
         if (hasHit) return; // already hit a player do nothing
         if (collider.CompareTag("Player"))

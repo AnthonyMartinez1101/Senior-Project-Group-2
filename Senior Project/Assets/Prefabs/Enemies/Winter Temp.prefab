@@ -90,6 +90,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3878357690427934611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9010077224670399326}
+  m_Layer: 7
+  m_Name: Icicle Point
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9010077224670399326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3878357690427934611}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.023, y: 0.902, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1038906810405869249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4240388298311810958
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +173,7 @@ GameObject:
   - component: {fileID: 6815267652703427686}
   - component: {fileID: 5958624832879524155}
   - component: {fileID: 2355035961389534731}
+  - component: {fileID: 3621275221628866076}
   m_Layer: 7
   m_Name: Winter Temp
   m_TagString: Enemy
@@ -165,6 +197,7 @@ Transform:
   - {fileID: 5487947660378447814}
   - {fileID: 6066058637631993105}
   - {fileID: 4690219708120991659}
+  - {fileID: 9010077224670399326}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &2626675716937913172
@@ -353,6 +386,7 @@ MonoBehaviour:
   dropChance: 1
   randomItemDrop: {fileID: 11400000, guid: 7d42225e9a8f651459e31a0ae1a4bf12, type: 2}
   dropExpires: 1
+  burnParticles: {fileID: 0}
 --- !u!114 &5300578624398878722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,6 +497,23 @@ MonoBehaviour:
   customPivot: 0
   customPivotTransform: {fileID: 0}
   rebuildShadowsBF_2_0_1_v: 0
+--- !u!114 &3621275221628866076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919924452173266357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb1782837be0d264f86c87db85be2dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  detectionRange: 8
+  fireCooldown: 2
+  projectileSpeed: 10
+  iciclePrefab: {fileID: 7934824104303171599, guid: 5da7b75649f69f94b9c16afa1c9afac0, type: 3}
+  firePoint: {fileID: 9010077224670399326}
 --- !u!1 &8669708703548695504
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,7 +540,7 @@ Transform:
   m_GameObject: {fileID: 8669708703548695504}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
-  m_LocalPosition: {x: -0.039113842, y: -0.16505305, z: 0}
+  m_LocalPosition: {x: -0.039113842, y: -0.16505289, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
