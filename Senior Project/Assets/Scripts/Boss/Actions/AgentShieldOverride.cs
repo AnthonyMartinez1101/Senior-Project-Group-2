@@ -13,7 +13,6 @@ public class AgentSpeedOverride : MonoBehaviour
         this.baseSpeed = baseSpeed;
         this.multiplier = multiplier;
         active = true;
-        enabled = true;
     }
 
     void LateUpdate()
@@ -29,6 +28,6 @@ public class AgentSpeedOverride : MonoBehaviour
             agent.speed = baseSpeed;
         }
         active = false;
-        Destroy(this);
+        enabled = false;
     }
 }

@@ -22,3 +22,6 @@ MonoBehaviour:
   burstDuration: 0.18
   burstInterval: 0.9
   chaseTint: {r: 1, g: 0, b: 0, a: 1}
+  rageIcon: {fileID: -2891273373120762599, guid: 3a009f56fac71a94783749d5a6688b85, type: 3}
+  rageIconOffset: {x: 0, y: 2, z: 0}
+  rageIconSortingOrder: 5

@@ -26,6 +26,13 @@ public class Chase : BossAction
     [Tooltip("Chase tint color")]
     public Color chaseTint = Color.red;
 
+    public Sprite rageIcon;
+
+    [Tooltip("Icon offset")]
+    public Vector3 rageIconOffset = new Vector3(0f, 1.2f, 0f);
+
+    public int rageIconSortingOrder = 4;
+
     public override void ExecuteAction(BossScript boss)
     {
         if (boss == null) return;
@@ -43,7 +50,7 @@ public class Chase : BossAction
     {
         if (boss.agent == null)
         {
-            //Debug.LogWarning("[Chase] Boss has no NavMeshAgent. Aborting Chase action.");
+            Debug.LogWarning("[Chase] Boss has no NavMeshAgent. Aborting Chase action.");
             yield break;
         }
 
@@ -60,6 +67,17 @@ public class Chase : BossAction
         {
             originalColor = boss.spriteRenderer.color;
             boss.spriteRenderer.color = chaseTint;
+        }
+
+        GameObject rageIconObj = null;
+        if (rageIcon != null)
+        {
+            rageIconObj = new GameObject("ChaseRageIcon");
+            rageIconObj.transform.SetParent(boss.transform, false);
+            rageIconObj.transform.localPosition = rageIconOffset;
+            SpriteRenderer rageSr = rageIconObj.AddComponent<SpriteRenderer>();
+            rageSr.sprite = rageIcon;
+            rageSr.sortingOrder = rageIconSortingOrder;
         }
 
         AgentSpeedOverride speedOverride = boss.GetComponent<AgentSpeedOverride>();
@@ -115,6 +133,12 @@ public class Chase : BossAction
                 speedOverride.Initialize(agent, originalAgentSpeed, chaseSpeedMultiplier);
             }
             yield return null;
+        }
+
+        // Remove rage sprite indicator
+        if (rageIconObj != null)
+        {
+            Object.Destroy(rageIconObj);
         }
 
         // Restore attack value, performs check for the stat field
