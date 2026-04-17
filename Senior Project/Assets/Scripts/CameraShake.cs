@@ -9,6 +9,8 @@ public class CameraShake : MonoBehaviour
 
     private const string ShakeKey = "settings.shake"; // PlayerPrefs key for camera shake setting
 
+    Coroutine shakeCoroutine;
+
     private void Awake()
     {
         enabled = PlayerPrefs.GetInt(ShakeKey, 1) == 1; // Enable or disable based on saved setting
@@ -24,12 +26,22 @@ public class CameraShake : MonoBehaviour
         if(!enabled) return; //makes sure it doesnt shake if setting is off
 
         noise.AmplitudeGain = intensity;
-        StartCoroutine(ShakeCoroutine(duration));
+        if (shakeCoroutine != null) StopCoroutine(shakeCoroutine);
+        shakeCoroutine = StartCoroutine(ShakeCoroutine(intensity, duration));
     }
 
-    private IEnumerator ShakeCoroutine(float shakeTime)
+    private IEnumerator ShakeCoroutine(float intensity, float shakeTime)
     {
-        yield return new WaitForSeconds(shakeTime);
+        float elapsed = 0f;
+
+        while (elapsed < shakeTime)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / shakeTime;
+            noise.AmplitudeGain = Mathf.Lerp(intensity, 0f, t);
+            yield return null;
+        }
+
         ResetIntensity();
     }
 

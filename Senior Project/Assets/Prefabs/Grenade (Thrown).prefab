@@ -136,8 +136,11 @@ MonoBehaviour:
   damage: 10
   knockbackForce: 15
   weaponType: 2
+  explosionEffect: {fileID: 8588785223345138722, guid: a9653aa7153bed04d9662c0a4cbdf498, type: 3}
+  bulletType: 0
   explosionTimer: 2.5
   explosionRadius: {fileID: 7627049528568633562}
+  bulletHitCount: 5
 --- !u!58 &7627049528568633562
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -172,8 +175,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.53586787, y: -0.6843478}
-  m_Radius: 6.301639
+  m_Offset: {x: -0.40855888, y: -0.6843472}
+  m_Radius: 28.017813
 --- !u!95 &3062013699414006728
 Animator:
   serializedVersion: 7
@@ -182,7 +185,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3093272852940364067}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 91da2593bb5509d46b2308f708d75ecf, type: 2}
   m_CullingMode: 0

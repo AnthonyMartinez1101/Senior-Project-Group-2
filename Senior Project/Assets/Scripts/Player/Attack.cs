@@ -106,7 +106,7 @@ public class Attack : MonoBehaviour
             b.GetComponent<Rigidbody2D>().AddForce(dir * bulletForce, ForceMode2D.Impulse);
             Destroy(b, 2.0f);
         }
-        GameManager.Instance.CameraShake(1.5f, 0.1f);
+        GameManager.Instance.CameraShake(2f, 0.2f);
     }
 
     private void Shoot(GameObject bullet)
@@ -119,7 +119,7 @@ public class Attack : MonoBehaviour
         ApplyBuff(b);
         Instantiate(shootFlash, bulletSpawn, rot);
         b.GetComponent<Rigidbody2D>().AddForce(-aimer.up * bulletForce, ForceMode2D.Impulse);
-        GameManager.Instance.CameraShake(1f, 0.1f);
+        GameManager.Instance.CameraShake(2f, 0.2f);
         Destroy(b, 2.0f);
     }
 

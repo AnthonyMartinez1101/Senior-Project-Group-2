@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
     public float knockbackForce = 5f;
     public enum WeaponType { Sickle, Bullet, Grenade }
     public WeaponType weaponType;
+    public GameObject explosionEffect;
 
     public enum BulletType { NA, Pistol, AR, Shotgun };
     public BulletType bulletType;
@@ -125,6 +126,8 @@ public class Weapon : MonoBehaviour
         //This was throwing a warning and it doesn't seem to do anything so I'm commenting it out
         //animator.Play("Boom");
         yield return new WaitForSeconds(delay);
+        if(explosionEffect) Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        GameManager.Instance.CameraShake(20f, 0.5f);
         explosionRadius.enabled = true;
         Destroy(gameObject, 0.1f);
     }

@@ -18738,7 +18738,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1061423778832810906, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
       propertyPath: dropTime
-      value: 60
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3381215710479223797, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
       propertyPath: m_LocalPosition.x
