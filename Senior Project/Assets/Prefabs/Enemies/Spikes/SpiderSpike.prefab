@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5083341604691507956}
   - component: {fileID: 4157327669807794876}
   - component: {fileID: 2745406748396598409}
-  - component: {fileID: 7313414320396951466}
+  - component: {fileID: 601109803216764634}
   m_Layer: 0
   m_Name: SpiderSpike
   m_TagString: Untagged
@@ -159,8 +159,8 @@ MonoBehaviour:
   customPivot: 0
   customPivotTransform: {fileID: 0}
   rebuildShadowsBF_2_0_1_v: 0
---- !u!68 &7313414320396951466
-EdgeCollider2D:
+--- !u!58 &601109803216764634
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -189,21 +189,12 @@ EdgeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 1.6335747, y: 0.09847736}
-  - {x: -0.026002258, y: 6.03034}
-  - {x: -1.7200001, y: 0.08796215}
-  - {x: 1.6464106, y: 0.09847736}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_Offset: {x: 0.014522786, y: -2.6372678}
+  m_Radius: 1.7355431
 --- !u!1 &5018775079264908871
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1813564428869883493}
   - component: {fileID: 4569419395182991326}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 'SpiderSpike : shadow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +221,7 @@ Transform:
   m_GameObject: {fileID: 5018775079264908871}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.39, y: 4.4039736, z: 0}
+  m_LocalPosition: {x: -0.07575208, y: 6.340956, z: 0}
   m_LocalScale: {x: 1, y: 1.31, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -320,7 +311,7 @@ Transform:
   m_GameObject: {fileID: 7878613353241641925}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
-  m_LocalPosition: {x: -1.2313741, y: -1.4534143, z: 0}
+  m_LocalPosition: {x: 0.07575196, y: -4.840426, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

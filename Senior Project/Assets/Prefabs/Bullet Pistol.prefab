@@ -234,7 +234,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.000000059604638, w: 1}
   m_LocalPosition: {x: 6.30521, y: -2.36375, z: 0}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8954783173017588823}
@@ -529,6 +529,7 @@ MonoBehaviour:
   damage: 3
   knockbackForce: 7
   weaponType: 1
+  explosionEffect: {fileID: 0}
   bulletType: 1
   explosionTimer: 2.5
   explosionRadius: {fileID: 0}

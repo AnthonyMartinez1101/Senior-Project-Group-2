@@ -34,7 +34,8 @@ public class ItemDropScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         if (canDespawn)
         {
-            StartCoroutine(ItemTimer());
+            //***REMOVING DESPAWNING ENTIRELY FOR DEMO***
+            //StartCoroutine(ItemTimer());
         }
 
         // Initialize item if itemInfo is set in inspector

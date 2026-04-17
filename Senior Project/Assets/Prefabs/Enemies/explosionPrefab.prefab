@@ -86,8 +86,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.4601431, y: 0}
-  m_Radius: 7.2536917
+  m_Offset: {x: 0.3778019, y: 0}
+  m_Radius: 8.461374
 --- !u!1 &4610667566122625506
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,12 +215,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 3074532165325251152}
     m_Modifications:
     - target: {fileID: 245417904933838539, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 245417904933838539, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 245417904933838539, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 245417904933838539, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.57713
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 245417904933838539, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.35879993
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 245417904933838539, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -254,9 +266,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 245417904933838539, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 618118730546879331, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
       propertyPath: m_Name
       value: Burn Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578872758032461912, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578872758032461912, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578872758032461912, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578872758032461912, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784457693250023928, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784457693250023928, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784457693250023928, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2784457693250023928, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
