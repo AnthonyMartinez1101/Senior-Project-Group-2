@@ -15,10 +15,10 @@ MonoBehaviour:
   plantName: Watermelon Plant
   growthTime: 40
   growStages:
-  - {fileID: -5038941123747931858, guid: b5d3c4cf0589d7b4ab8103b246b54937, type: 3}
-  - {fileID: -1432546915067531928, guid: b5d3c4cf0589d7b4ab8103b246b54937, type: 3}
-  - {fileID: 2456431107515866692, guid: b5d3c4cf0589d7b4ab8103b246b54937, type: 3}
-  - {fileID: -4080091997456279770, guid: b5d3c4cf0589d7b4ab8103b246b54937, type: 3}
+  - {fileID: 604864042, guid: a597982d6271e084bbfaf4c905f876e2, type: 3}
+  - {fileID: 2049812915, guid: a597982d6271e084bbfaf4c905f876e2, type: 3}
+  - {fileID: 1616575074, guid: a597982d6271e084bbfaf4c905f876e2, type: 3}
+  - {fileID: 1528652043, guid: a597982d6271e084bbfaf4c905f876e2, type: 3}
   produce: {fileID: 11400000, guid: be0463b85bd8a494c92247af155963fe, type: 2}
   seed: {fileID: 11400000, guid: 6d2b0fd1e603de94bb43da8d3a070a30, type: 2}
   minDrop: 1
