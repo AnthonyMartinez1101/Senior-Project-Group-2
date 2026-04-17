@@ -41071,6 +41071,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4919924452173266357, guid: f6b46195427f35c4ba3526a7b9ab0ab9, type: 3}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: 'dayEnemies.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4919924452173266357, guid: f6b46195427f35c4ba3526a7b9ab0ab9, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: springEnemies.Array.size
       value: 2
       objectReference: {fileID: 0}
