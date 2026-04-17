@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour, IDamageable, IPoisonable
 
     [Range(0, 100)]
     [SerializeField] private int dropChance = 1;
+    [SerializeField] private GameObject explosionPrefab;
 
     private WorldClock worldClock;
 
@@ -95,6 +96,8 @@ public class Enemy : MonoBehaviour, IDamageable, IPoisonable
             int randNum = Random.Range(1, 101);
             if(randNum <= dropChance && randomItemDrop != null) ItemDropFactory.Instance.SpawnItem(randomItemDrop, 0, transform.position, dropExpires);
             StatManager.Instance.AddZombieKill();
+            if(explosionPrefab != null) 
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
@@ -109,6 +112,8 @@ public class Enemy : MonoBehaviour, IDamageable, IPoisonable
             if (healthBar) healthBar.UpdateHealth(health, maxHealth);
             if (health <= 0)
             {
+                if (explosionPrefab != null)
+                    Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
             yield return new WaitForSeconds(dayBurnRate);

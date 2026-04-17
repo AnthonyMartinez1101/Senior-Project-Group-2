@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 3541055314121894236}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0391138, y: 0.21621928, z: 0}
+  m_LocalPosition: {x: -0.0042443173, y: -0.025500651, z: 0}
   m_LocalScale: {x: 1, y: 1.31, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -282,8 +282,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.33
+  m_Offset: {x: -0.27471876, y: 0.06320575}
+  m_Radius: 0.31785518
 --- !u!50 &-1098666403636228051
 Rigidbody2D:
   serializedVersion: 5
@@ -330,6 +330,7 @@ MonoBehaviour:
   dealDamage: 0.5
   knockbackForce: 15
   dropChance: 1
+  explosionPrefab: {fileID: 582535923089990646, guid: af729700c6f174046a2ed8383bbb21d4, type: 3}
   randomItemDrop: {fileID: 11400000, guid: 7d42225e9a8f651459e31a0ae1a4bf12, type: 2}
   dropExpires: 1
   burnParticles: {fileID: 2269481695263921349}
@@ -491,7 +492,7 @@ Transform:
   m_GameObject: {fileID: 8669708703548695504}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
-  m_LocalPosition: {x: -0.039113812, y: -0.16505294, z: 0}
+  m_LocalPosition: {x: 0.0042443927, y: 0.019466199, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
