@@ -9,7 +9,7 @@ public class SummerExplodes : MonoBehaviour
     [SerializeField] private float delay = 1f;
 
     private CircleCollider2D col;
-    private bool hitPlayer;
+    public GameObject explosionEffect;
 
     private void Awake()
     {
@@ -29,27 +29,18 @@ public class SummerExplodes : MonoBehaviour
         if(col != null) col.enabled = true;
         yield return new WaitForSeconds(lifetime);
 
+        if (explosionEffect) Instantiate(explosionEffect, transform.position, transform.rotation);
+        GameManager.Instance.CameraShake(15f, 0.5f);
         Destroy(gameObject);
     }
 
-    //void Start()
-    //{
-    //    Destroy(gameObject, lifetime);
-    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(hitPlayer) return;
-        if(!collision.CompareTag("Player")) return;
-
-        hitPlayer = true;
-
-        var health = collision.GetComponent<PlayerHealth>();
-        if(health != null)
+        var damageable = collision.GetComponent<IDamageable>();
+        if(damageable != null)
         {
-            health.TakeDamage(damage);
+            damageable.TakeDamage(damage, DamageType.Explosion);
         }
-
-        Destroy(gameObject);
     }
 }
