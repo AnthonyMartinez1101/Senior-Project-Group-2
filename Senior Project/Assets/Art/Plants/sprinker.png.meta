@@ -1,0 +1,483 @@
+fileFormatVersion: 2
+guid: 2d821d53c3b528748bd03e01f359ed4a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 959495080729322448
+    second: sprinker_0
+  - first:
+      213: 100794485982764738
+    second: sprinker_1
+  - first:
+      213: 7460718057537387758
+    second: sprinker_2
+  - first:
+      213: 7128491769142242750
+    second: sprinker_3
+  - first:
+      213: -6989332343745175029
+    second: sprinker_4
+  - first:
+      213: -7129359570749383245
+    second: sprinker_5
+  - first:
+      213: -8743366499383534373
+    second: sprinker_6
+  - first:
+      213: -8336372193198380078
+    second: sprinker_7
+  - first:
+      213: 1377227596202847446
+    second: sprinker_8
+  - first:
+      213: -1172131656603099370
+    second: sprinker_9
+  - first:
+      213: 8805613374895960864
+    second: sprinker_10
+  - first:
+      213: 175376584755798206
+    second: sprinker_11
+  - first:
+      213: 4612611137730685482
+    second: sprinker_12
+  - first:
+      213: -5950715546117483775
+    second: sprinker_13
+  - first:
+      213: -1153439594749620797
+    second: sprinker_14
+  - first:
+      213: -6917363759265889155
+    second: sprinker_15
+  - first:
+      213: -959867309699004815
+    second: sprinker_16
+  - first:
+      213: 1784419636878006931
+    second: sprinker_17
+  - first:
+      213: 417408053776722266
+    second: sprinker_18
+  - first:
+      213: -4339965645383625761
+    second: sprinker_19
+  - first:
+      213: 6110076826503736587
+    second: sprinker_20
+  - first:
+      213: -6192455386081417661
+    second: sprinker_21
+  - first:
+      213: -9071549697759039279
+    second: sprinker_22
+  - first:
+      213: -3493843489396386111
+    second: sprinker_23
+  - first:
+      213: 4821826910701414512
+    second: sprinker_24
+  - first:
+      213: -5678824442905099430
+    second: sprinker_25
+  - first:
+      213: -7512536878684226836
+    second: sprinker_26
+  - first:
+      213: -8584817315894450106
+    second: sprinker_27
+  - first:
+      213: 8167569979482441488
+    second: sprinker_28
+  - first:
+      213: 5336628413155322970
+    second: sprinker_29
+  - first:
+      213: 7813282423696075566
+    second: sprinker_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sprinker_0
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 220
+        width: 771
+        height: 103
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d32b9a31bfc05d00800000000000000
+      internalID: 959495080729322448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 727
+        width: 720
+        height: 139
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ce125c0d08166100800000000000000
+      internalID: 100794485982764738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_2
+      rect:
+        serializedVersion: 2
+        x: 1399
+        y: 235
+        width: 766
+        height: 94
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eecbbd47b8bc98760800000000000000
+      internalID: 7460718057537387758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_3
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 746
+        width: 683
+        height: 126
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebde404ee7d7de260800000000000000
+      internalID: 7128491769142242750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_4
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 1015
+        width: 609
+        height: 342
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b02abe1b347e00f90800000000000000
+      internalID: -6989332343745175029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_5
+      rect:
+        serializedVersion: 2
+        x: 2127
+        y: 1032
+        width: 639
+        height: 327
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bd937d4e3d6f0d90800000000000000
+      internalID: -7129359570749383245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_6
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 1081
+        width: 583
+        height: 312
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdc913f3e7259a680800000000000000
+      internalID: -8743366499383534373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_7
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 1513
+        width: 375
+        height: 208
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2db67f488a14f4c80800000000000000
+      internalID: -8336372193198380078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_8
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 1528
+        width: 376
+        height: 172
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dc298ea335ec1310800000000000000
+      internalID: 1377227596202847446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_9
+      rect:
+        serializedVersion: 2
+        x: 1497
+        y: 1502
+        width: 485
+        height: 207
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61f9e22f770cbbfe0800000000000000
+      internalID: -1172131656603099370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprinker_10
+      rect:
+        serializedVersion: 2
+        x: 2191
+        y: 1498
+        width: 564
+        height: 208
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0233a18d5b2d33a70800000000000000
+      internalID: 8805613374895960864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5202c2f3a27892b409c591987cfa7205
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      sprinker_0: 959495080729322448
+      sprinker_1: 100794485982764738
+      sprinker_10: 8805613374895960864
+      sprinker_11: 175376584755798206
+      sprinker_12: 4612611137730685482
+      sprinker_13: -5950715546117483775
+      sprinker_14: -1153439594749620797
+      sprinker_15: -6917363759265889155
+      sprinker_16: -959867309699004815
+      sprinker_17: 1784419636878006931
+      sprinker_18: 417408053776722266
+      sprinker_19: -4339965645383625761
+      sprinker_2: 7460718057537387758
+      sprinker_20: 6110076826503736587
+      sprinker_21: -6192455386081417661
+      sprinker_22: -9071549697759039279
+      sprinker_23: -3493843489396386111
+      sprinker_24: 4821826910701414512
+      sprinker_25: -5678824442905099430
+      sprinker_26: -7512536878684226836
+      sprinker_27: -8584817315894450106
+      sprinker_28: 8167569979482441488
+      sprinker_29: 5336628413155322970
+      sprinker_3: 7128491769142242750
+      sprinker_30: 7813282423696075566
+      sprinker_4: -6989332343745175029
+      sprinker_5: -7129359570749383245
+      sprinker_6: -8743366499383534373
+      sprinker_7: -8336372193198380078
+      sprinker_8: 1377227596202847446
+      sprinker_9: -1172131656603099370
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
