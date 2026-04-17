@@ -354,6 +354,7 @@ MonoBehaviour:
   plantInfo: {fileID: 11400000, guid: 6d4910787ac08bb46a88a07e8a52ba78, type: 2}
   currentGrowth: 0
   currentHealth: 0
+  BugsCanTarget: 0
 --- !u!61 &2759985065565571604
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -42,7 +42,7 @@ public class DayEnemy : MonoBehaviour, IDamageable, IPoisonable
             allPlants.Clear();
             foreach(PlantScript plant in plants)
             {
-                if(plant != null)
+                if(plant != null && plant.BugsCanTarget)
                 {
                     allPlants.Add(plant);
                 }

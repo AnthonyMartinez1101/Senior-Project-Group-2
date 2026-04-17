@@ -22,6 +22,8 @@ public class PlantScript : MonoBehaviour, IDamageable
 
     private GameObject chickens;
 
+    public bool BugsCanTarget = true;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Create(PlantItem newPlantInfo, SoilScript newSoil)
