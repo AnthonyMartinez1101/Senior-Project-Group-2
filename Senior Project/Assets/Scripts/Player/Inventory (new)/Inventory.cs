@@ -42,6 +42,8 @@ public class Inventory : MonoBehaviour
 
     //Detect scrolling
     InputAction scrollAction;
+    InputAction leftScroll;
+    InputAction rightScroll;
     InputAction dropItemAction;
 
     //UI controller for hotbar
@@ -73,6 +75,12 @@ public class Inventory : MonoBehaviour
         scrollAction = InputSystem.actions.FindAction("Scroll");
         if(scrollAction == null) Debug.LogWarning("Scroll action not found in Input System");
 
+        leftScroll = InputSystem.actions.FindAction("Left Bumper Scroll");
+        if (leftScroll == null) Debug.LogWarning("Left Bumper Scroll action not found in Input System");
+
+        rightScroll = InputSystem.actions.FindAction("Right Bumper Scroll");
+        if (rightScroll == null) Debug.LogWarning("Right Bumper Scroll action not found in Input System");
+
         dropItemAction = InputSystem.actions.FindAction("Drop Item");
         if (dropItemAction == null) Debug.LogWarning("Drop Item action not found in Input System");
 
@@ -96,6 +104,8 @@ public class Inventory : MonoBehaviour
     void Update()
     {
         if (scrollAction != null) ScrollAction();
+        if (leftScroll != null) LeftScrollAction();
+        if (rightScroll != null) RightScrollAction();
         if (Keyboard.current != null) NumberKeySelection();
         if (dropItemAction != null) DropItemCheck();
         if (weaponHolder != null) CheckWeaponHold();
@@ -246,6 +256,24 @@ public class Inventory : MonoBehaviour
             updated = true;
         }
         if(updated) RefreshUI();
+    }
+
+    private void LeftScrollAction()
+    {
+        if (leftScroll.WasPerformedThisFrame())
+        {
+            currentSlotIndex = (currentSlotIndex - 1 + slotCount) % slotCount;
+            RefreshUI();
+        }
+    }
+
+    private void RightScrollAction()
+    {
+        if (rightScroll.WasPerformedThisFrame())
+        {
+            currentSlotIndex = (currentSlotIndex + 1) % slotCount;
+            RefreshUI();
+        }
     }
 
     private void NumberKeySelection()

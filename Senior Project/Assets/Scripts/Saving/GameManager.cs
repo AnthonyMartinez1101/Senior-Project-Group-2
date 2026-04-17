@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject pauseMenu;
     InputAction pauseAction;
+    InputAction cancelAction;
 
     public GameObject settings;
 
@@ -99,8 +100,8 @@ public class GameManager : MonoBehaviour
             Debug.LogWarning("GameManager: Main Camera reference is not set.");
         }
 
-
         pauseAction = InputSystem.actions.FindAction("Pause");
+        cancelAction = InputSystem.actions.FindAction("Cancel");
 
 
         if (blackBackground == null) Debug.LogWarning("GameManager: BlackBackground reference is not set.");
@@ -115,8 +116,26 @@ public class GameManager : MonoBehaviour
     }
 
     void Update()
-    { 
-        if(pauseAction.WasPressedThisFrame() && !shop.IsShopInUse())
+    {
+        // if ui is open
+        if (UIopen())
+        {
+            if (cancelAction != null) AttemptCancelAction();
+        }
+        else
+        {
+            if (pauseAction != null) AttemptPauseAction();
+        }
+    }
+
+    private bool UIopen()
+    {
+        return pauseMenu.activeSelf || settings.activeSelf || shop.IsShopInUse();
+    }
+
+    private void AttemptPauseAction()
+    {
+        if (pauseAction.WasPressedThisFrame())
         {
             if (pauseMenu.activeSelf)
             {
@@ -128,9 +147,32 @@ public class GameManager : MonoBehaviour
                 pauseMenu.SetActive(true);
                 Time.timeScale = 0f; // Pause game
             }
-            if(settings.activeSelf)
+            if (settings.activeSelf)
             {
                 settings.SetActive(false);
+            }
+        }
+    }
+
+    private void AttemptCancelAction()
+    {
+        if (cancelAction.WasPressedThisFrame())
+        {
+            if (settings.activeSelf)
+            {
+                settings.SetActive(false);
+                return;
+            }
+            if (pauseMenu.activeSelf)
+            {
+                pauseMenu.SetActive(false);
+                Time.timeScale = 1f;
+                return;
+            }
+            if (shop.IsShopInUse())
+            {
+                shop.CloseShop();
+                return;
             }
         }
     }
