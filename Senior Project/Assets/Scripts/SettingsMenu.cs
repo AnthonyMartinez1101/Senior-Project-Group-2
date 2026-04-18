@@ -21,28 +21,17 @@ public class SettingsMenu : MonoBehaviour
     private const string MusicVolumeParam = "MusicVolume";
     private const string AmbientVolumeParam = "AmbientVolume";
 
-    private Resolution[] resolutions;
+    private readonly List<Vector2Int> resolutions = new()
+    {
+        new Vector2Int(1920, 1080),
+        new Vector2Int(2560, 1440),
+        new Vector2Int(3840, 2160)
 
+    };
 
     public void Start()
     {
-        resolutions = Screen.resolutions;
-
-        List<string> options = new List<string>();
-        int currentResolutionIndex = 0;
-
-        for(int i = 0; i < resolutions.Length; i++)
-        {
-            options.Add(resolutions[i].width + " x " + resolutions[i].height);
-
-            if(resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height) 
-            {
-                currentResolutionIndex = i;
-            }
-        }
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
+        AddResolution();
     }
     private void OnEnable()
     {
@@ -88,10 +77,33 @@ public class SettingsMenu : MonoBehaviour
         return Mathf.Log10(v) * 20f;
     }
 
-    public void SetResolution(int resolutionIndex) 
+    private void AddResolution()
     {
-        Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        resolutionDropdown.ClearOptions();
+
+        var options = new List<string>();
+        int curr = 0;
+
+        for(int index = 0; index < resolutions.Count; index++)
+        {
+            var res = resolutions[index];
+            options.Add($"{res.x} x {res.y}");
+
+            if(Screen.width == res.x && Screen.height == res.y)
+            {
+                curr = index;
+            }
+
+
+        }
+        resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = curr;
+        resolutionDropdown.RefreshShownValue();
+    }
+    public void SetResolution(int index) 
+    {
+        Vector2Int r = resolutions[index];
+        Screen.SetResolution(r.x, r.y, Screen.fullScreen);
     }
 
     public void SetCameraShake(bool on)
@@ -107,14 +119,6 @@ public class SettingsMenu : MonoBehaviour
         }
     }
 
-    //private void CameraShake(bool on) 
-    //{
-    //    if (cameraShake != null)
-    //    {
-    //        cameraShake.enabled = on;
-    //    }
-    //}
-       
 }
 
 // updates the sliders when the menu is opened
