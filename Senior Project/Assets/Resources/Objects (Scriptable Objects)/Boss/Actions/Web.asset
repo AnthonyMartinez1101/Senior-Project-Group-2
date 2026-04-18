@@ -18,3 +18,4 @@ MonoBehaviour:
   webPrefab: {fileID: 7934824104303171599, guid: 596cb01d3045daf449989c3c13121a81, type: 3}
   throwSpeed: 15
   stopDistance: 0.1
+  animTrigger: SpawnWeb
