@@ -43,53 +43,70 @@ public class SoilScript : MonoBehaviour
     }
     private void Update()
     {
-        if(worldClock.IsDay())
-        {
-            if (currentPlant != null)
-            {
-                if (!currentPlant.IsFullyGrown())
-                {
-                    //Growing logic
-                    if (waterLevel > 0f)
-                    {
-                        currentPlant.TickGrowth(Time.deltaTime);
-                    }
-                    else if (waterLevel < 0f)
-                    {
-                        currentPlant.TakeWaterDamage(Time.deltaTime);
-                    }
+        //Water logic
+        LightenSoil();
+        waterLevel -= Time.deltaTime;
 
-                    //Water droplet logic
-                    if (waterLevel > 4f)
-                    {
-                        waterDroplet.SetActive(false);
-                    }
-                    else if (waterLevel > 0f)
-                    {
-                        waterDroplet.SetActive(true);
-                        DropletFullAlpha();
-                    }
-                    else
-                    {
-                        waterDroplet.SetActive(true);
-                        BlinkDroplet();
-                    }
-                }
-                else 
-                {                  
-                    waterDroplet.SetActive(false);
-                }
-            }
-            else
+        bool isDay = worldClock.IsDay();
+
+        //Growth logic
+        GrowthLogic(isDay);
+
+        //Water droplet Logic
+        WaterDropletLogic(isDay);
+    }
+
+    private void GrowthLogic(bool isDay)
+    {
+        if (!currentPlant) return;
+
+        
+        if (isWatered())
+        {
+            currentPlant.TickGrowth(Time.deltaTime, isDay);
+        }
+        else if (isDay)
+        {
+            currentPlant.TakeWaterDamage(Time.deltaTime);
+        }
+    }
+
+    private void WaterDropletLogic(bool isDay)
+    {
+        if (!currentPlant || currentPlant.IsFullyGrown())
+        {
+            waterDroplet.SetActive(false);
+            return;
+        }
+
+        if (currentPlant.CanDry() && isDay)
+        {
+            if (waterLevel > 4f)
             {
                 waterDroplet.SetActive(false);
             }
-            LightenSoil();
-            waterLevel -= Time.deltaTime;
+            else if (waterLevel > 0f)
+            {
+                waterDroplet.SetActive(true);
+                DropletFullAlpha();
+            }
+            else
+            {
+                waterDroplet.SetActive(true);
+                BlinkDroplet();
+            }
         }
         else
         {
-            waterDroplet.SetActive(false);
+            if (isWatered())
+            {
+                waterDroplet.SetActive(false);
+            }
+            else if (currentPlant.IsDamaged())
+            {
+                waterDroplet.SetActive(true);
+                BlinkDroplet();
+            }
         }
     }
 

@@ -42,5 +42,11 @@ public class SummerExplodes : MonoBehaviour
         {
             damageable.TakeDamage(damage, DamageType.Explosion);
         }
+
+        var knockback = collision.GetComponent<Knockback>();
+        if(knockback != null)
+        {
+            knockback.ApplyKnockback(transform, 20f);
+        }
     }
 }

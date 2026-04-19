@@ -33,7 +33,7 @@ public class SpinkleWater : MonoBehaviour
     {
         while (true)
         {
-            if(HasWater())
+            if(HasWater() && currentSoil.worldClock.IsDay())
             {
                 foreach (SoilScript soil in surroundingSoil)
                 {

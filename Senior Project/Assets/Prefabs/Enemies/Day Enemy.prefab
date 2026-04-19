@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   dealDamage: 1
-  hitCooldown: 1.5
+  hitCooldown: 2
 --- !u!114 &2355035961389534731
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -75,7 +75,6 @@ public class Weapon : MonoBehaviour
     {
         //Strings of colliders to avoid if it sneaks past the layer mask
         return tag == "Bullet" ||
-               tag == "Player" ||
                tag == "NoBulletCollision" ||
                tag == "Interact" ||
                tag == "Shadow";
@@ -126,7 +125,11 @@ public class Weapon : MonoBehaviour
         //This was throwing a warning and it doesn't seem to do anything so I'm commenting it out
         //animator.Play("Boom");
         yield return new WaitForSeconds(delay);
-        if(explosionEffect) Instantiate(explosionEffect, transform.position, Quaternion.identity);
+        if (explosionEffect)
+        {
+            GameObject particles = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            Destroy(particles, 10f);
+        }
         GameManager.Instance.CameraShake(20f, 0.5f);
         explosionRadius.enabled = true;
         Destroy(gameObject, 0.1f);

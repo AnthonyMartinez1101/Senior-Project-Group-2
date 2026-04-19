@@ -136,6 +136,7 @@ public class Inventory : MonoBehaviour
                     break;
                 default:
                     weaponHolder.SetWeaponHolder(-1);
+                    aim.SetActive(true);
                     break;
             }
         }

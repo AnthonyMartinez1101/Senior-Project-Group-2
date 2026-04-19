@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
     public float maxHealth = 20f;
     public float currentHealth;
@@ -60,6 +60,14 @@ public class PlayerHealth : MonoBehaviour
 
         StatManager.Instance.AddHealthBuff(0.5f);
     }
+
+    //Interface logic
+    public void TakeDamage(float damageDealt, DamageType damageType)
+    {
+        TakeDamage(damageDealt);
+    }
+
+    //Unique player logic (differentiated by number of parameters)
     public void TakeDamage(float damageAmount)
     {
         // Defensive: ignore invalid/zero/negative damage
@@ -121,4 +129,6 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(0.75f);
         }
     }
+
+    
 }

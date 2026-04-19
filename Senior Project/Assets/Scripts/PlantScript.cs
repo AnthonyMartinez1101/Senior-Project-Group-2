@@ -54,17 +54,22 @@ public class PlantScript : MonoBehaviour, IDamageable
     { 
         var col = GetComponent<Collider2D>();
         col.enabled = false;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.5f);
         col.enabled = true;
     }
 
-    public void TickGrowth(float dt)
+    public void TickGrowth(float dt, bool canGrow)
     {
+        if (IsFullyGrown())
+        {
+            return;
+        }
+
         if (currentHealth != plantHealth)
         {
             Heal(dt);
         }
-        else
+        else if(canGrow)
         {
             currentGrowth += dt;
 
@@ -116,6 +121,7 @@ public class PlantScript : MonoBehaviour, IDamageable
                     if(plantInfo.objectOnHarvest != null)
                     {
                         GameObject newObject;
+                        PlantScript newPlant;
                         switch (plantInfo.plantName)
                         {
                             case "Chicken Plant":
@@ -124,12 +130,14 @@ public class PlantScript : MonoBehaviour, IDamageable
 
                             case "Turret Plant":
                                  newObject = Instantiate(plantInfo.objectOnHarvest, transform.position, Quaternion.identity, connectedSoil.transform);
+                                newPlant = newObject.GetComponent<PlantScript>();
+                                if (newPlant) connectedSoil.NewPlant(newPlant);
                                  break;
 
                             case "Sprinkler Plant":
                                 newObject = Instantiate(plantInfo.objectOnHarvest, transform.position, Quaternion.identity, connectedSoil.transform);
-                                var newPlant = newObject.GetComponent<PlantScript>();
-                                if (newPlant != null) connectedSoil.NewPlant(newPlant);
+                                newPlant = newObject.GetComponent<PlantScript>();
+                                if (newPlant) connectedSoil.NewPlant(newPlant);
                                 break;
 
                             default:
@@ -185,7 +193,7 @@ public class PlantScript : MonoBehaviour, IDamageable
 
     public void TakeWaterDamage(float damageAmount)
     {
-        if (plantInfo.canDry)
+        if (CanDry() && !IsFullyGrown())
         {
             currentHealth -= damageAmount;
             if (healthBar) healthBar.UpdateHealth(currentHealth, plantHealth);
@@ -194,6 +202,16 @@ public class PlantScript : MonoBehaviour, IDamageable
                 Destroy(gameObject);
             }
         }
+    }
+
+    public bool CanDry()
+    {
+        return plantInfo.canDry;
+    }
+
+    public bool IsDamaged()
+    {
+        return currentHealth < plantHealth;
     }
 
     public bool IsFullyGrown()
