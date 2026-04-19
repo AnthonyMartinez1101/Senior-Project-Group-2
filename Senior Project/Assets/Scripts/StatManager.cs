@@ -14,6 +14,9 @@ public class PlayerStatBlock
     public float dmgBuff = 0;
     public float maxHealthBuff = 0;
     public float speedBuff = 0;
+
+    // Jenna's funny new stats
+    public int totalMoneyEarned = 0;
 }
 
 public class StatManager : MonoBehaviour
@@ -37,7 +40,7 @@ public class StatManager : MonoBehaviour
 
     private void UpdateStatText()
     {
-        StatsText.text = $"Zombies Killed: {playerStats.numZombiesKilled}\nBosses Killed: {playerStats.numBossesKilled}\nHarvested: {playerStats.numHarvested}\nDamage Taken: {playerStats.totalDamageTaken}\nDamage Buffed: {playerStats.dmgBuff}\nHealth Buffed: {playerStats.maxHealthBuff}\nSpeed Buffed: {playerStats.speedBuff}";
+        StatsText.text = $"Zombies Killed: {playerStats.numZombiesKilled}\nBosses Killed: {playerStats.numBossesKilled}\nTotal Money Earned: {playerStats.totalMoneyEarned}\nCrops Harvested: {playerStats.numHarvested}\nDamage Taken: {playerStats.totalDamageTaken}\n\nDamage Buffed: {playerStats.dmgBuff}\nHealth Buffed: {playerStats.maxHealthBuff}\nSpeed Buffed: {playerStats.speedBuff}";
     }
 
     public void AddZombieKill()
@@ -79,6 +82,12 @@ public class StatManager : MonoBehaviour
     public void AddSpeedBuff(float buffAmount)
     {
         playerStats.speedBuff += buffAmount;
+        UpdateStatText();
+    }
+
+    public void AddMoneyEarned(int amount)
+    {
+        playerStats.totalMoneyEarned += amount;
         UpdateStatText();
     }
 }

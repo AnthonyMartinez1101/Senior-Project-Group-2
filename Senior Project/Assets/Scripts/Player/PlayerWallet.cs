@@ -30,6 +30,7 @@ public class PlayerWallet : MonoBehaviour
     public void AddCoins(int amount)
     {
         coinCount += amount;
+        StatManager.Instance.AddMoneyEarned(amount);
         UpdateText();
     }
 
