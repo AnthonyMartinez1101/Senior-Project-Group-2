@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Watermelon Seed
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Watermelon
-  icon: {fileID: 9196615797923452584, guid: 702be208073a37b48af7b1a7d0cc2f8a, type: 3}
+  icon: {fileID: 7859155590173068871, guid: 209c32dada29e3042a979b53e01e770d, type: 3}
   itemType: 0
   isConsumable: 1
   isStackable: 1

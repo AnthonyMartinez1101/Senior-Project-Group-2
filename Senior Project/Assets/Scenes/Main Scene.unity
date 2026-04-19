@@ -41269,7 +41269,7 @@ PrefabInstance:
       objectReference: {fileID: 1544488705}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: fallEnemies.Array.data[0].spawnCost
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: fallEnemies.Array.data[1].spawnCost
@@ -41281,7 +41281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: fallEnemies.Array.data[3].spawnCost
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: fallEnemies.Array.data[0].enemyPrefab
@@ -41337,7 +41337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: winterEnemies.Array.data[3].spawnCost
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: winterEnemies.Array.data[4].spawnCost
@@ -41389,7 +41389,7 @@ PrefabInstance:
       objectReference: {fileID: 4919924452173266357, guid: f3dbcea4ef5312c4ba5e299333c28694, type: 3}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: fallEnemies.Array.data[0].spawnProbability
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: fallEnemies.Array.data[1].spawnProbability
@@ -41401,7 +41401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: fallEnemies.Array.data[3].spawnProbability
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: springEnemies.Array.data[0].spawnProbability
@@ -41429,7 +41429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: winterEnemies.Array.data[0].spawnProbability
-      value: 70
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: winterEnemies.Array.data[1].spawnProbability
@@ -41441,7 +41441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: winterEnemies.Array.data[3].spawnProbability
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: winterEnemies.Array.data[4].spawnProbability
