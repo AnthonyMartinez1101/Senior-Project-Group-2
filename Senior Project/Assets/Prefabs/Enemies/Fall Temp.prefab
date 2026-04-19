@@ -326,7 +326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   health: 0
-  maxHealth: 5
+  maxHealth: 2
   dayBurnRate: 0.5
   dayBurnDamage: 0.5
   dealDamage: 0.5
