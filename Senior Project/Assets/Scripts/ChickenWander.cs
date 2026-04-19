@@ -21,6 +21,9 @@ public class ChickenWander : MonoBehaviour
 
     private GameObject childObject;
 
+    private float fleeDuration = 3f;
+    private float fleeTimer = 0f;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,6 +40,15 @@ public class ChickenWander : MonoBehaviour
         childObject = transform.GetChild(0).gameObject;
 
         StartCoroutine(Wander());
+    }
+
+    void Update()
+    {
+        if (IsFleeing())
+        {
+            fleeTimer -= Time.deltaTime;
+            agent.speed = wanderSpeed * 15f;
+        }
     }
 
     IEnumerator Wander()
@@ -65,7 +77,7 @@ public class ChickenWander : MonoBehaviour
             if(TryGetRandomPoint(transform.position, minWanderRadius, maxWanderRadius, agent.areaMask, out var dest))
             {
                 agent.SetDestination(dest);
-                agent.speed = wanderSpeed;
+                if(!IsFleeing()) agent.speed = wanderSpeed;
             }
             yield return new WaitUntil(() => worldClock.IsNight() || (!agent.pathPending && (agent.remainingDistance <= 0.25f || agent.pathStatus != NavMeshPathStatus.PathComplete)));
             yield return WaitWhileDay(Random.Range(minWaitTime, maxWaitTime));
@@ -75,11 +87,21 @@ public class ChickenWander : MonoBehaviour
     IEnumerator WaitWhileDay(float waitTime)
     {
         float time = 0f;
-        while(time < waitTime && worldClock.IsDay())
+        while((time < waitTime && worldClock.IsDay()) && !IsFleeing())
         {
             time += Time.deltaTime;
             yield return null;
         }
+    }
+
+    private bool IsFleeing()
+    {
+        return fleeTimer > 0f;
+    }
+
+    public void StartFleeing()
+    {
+        fleeTimer = fleeDuration;
     }
 
     //*Made with help from ChatGPT*

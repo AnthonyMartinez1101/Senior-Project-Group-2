@@ -18784,6 +18784,10 @@ PrefabInstance:
       propertyPath: dropTime
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 1976292392880717916, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 3381215710479223797, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.095021
@@ -18832,17 +18836,29 @@ PrefabInstance:
       propertyPath: hidePosition
       value: 
       objectReference: {fileID: 951613978}
+    - target: {fileID: 4628297988092426297, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628297988092426297, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4963144934533871957, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.24157047
       objectReference: {fileID: 0}
     - target: {fileID: 4963144934533871957, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8377903
+      value: -0.8377905
       objectReference: {fileID: 0}
     - target: {fileID: 5370905403970759343, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
       propertyPath: m_Name
       value: chicken
+      objectReference: {fileID: 0}
+    - target: {fileID: 5370905403970759343, guid: 916f6e295b8800b44a7b1082770769ed, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29022,8 +29038,8 @@ Camera:
   m_GameObject: {fileID: 1182845946}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.36078432, g: 0.58431375, b: 0.30588236, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -31887,7 +31903,7 @@ PrefabInstance:
       objectReference: {fileID: 829517824}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCount
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6456442887413956636, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: coinCountText
