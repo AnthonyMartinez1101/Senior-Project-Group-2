@@ -9,11 +9,8 @@ public class WebAction : BossAction
     public GameObject webPrefab;
     public float throwSpeed = 15f;
     public float stopDistance = 0.1f;
-    public string animTrigger = "SpawnWeb";
 
     private float actionTimer = 0f;
-
-    private Animator animator;
 
     public override void ExecuteAction(BossScript boss)
     {
@@ -25,11 +22,6 @@ public class WebAction : BossAction
         // Reset timer each time the action starts so repeated uses behave correctly
         actionTimer = 0f;
 
-        if (animator == null)
-        {
-            animator = boss.GetComponent<Animator>(); //if its empty assign it
-        }
-
         //boss.agent.isStopped = true; // Stop the boss from moving while performing the action
 
         while (actionTimer < actionDuration)
@@ -38,9 +30,6 @@ public class WebAction : BossAction
 
             if (TryGetRandomPoint(boss.transform.position, 15f, 30f, NavMesh.AllAreas, out Vector3 targetPoint))
             {
-                yield return null;
-                continue;
-            }
             boss.agent.SetDestination(targetPoint);
 
             float randTime = Random.Range(3f, 5f);
@@ -51,15 +40,9 @@ public class WebAction : BossAction
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
-            Instantiate(webPrefab, boss.transform.position, Quaternion.identity);
-            if (animator != null)
-            {
-                animator.SetTrigger(animTrigger);
-                Debug.Log("web!");
+             Instantiate(webPrefab, boss.transform.position, Quaternion.identity);
+             yield return null;
             }
-
-            Debug.Log($"{actionTimer}, {actionDuration}");
-            yield return null;
         }
     }
 

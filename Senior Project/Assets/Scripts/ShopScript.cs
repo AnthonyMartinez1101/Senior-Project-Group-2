@@ -30,6 +30,9 @@ public class ShopScript : MonoBehaviour
     public bool interactable = true;
 
     public UnityEvent ShopUsedEvent;
+    public UnityEvent OnAnyPurchase;
+    public UnityEvent OnShopClosed;
+
 
     private ShopAudio shopAudio;
 
@@ -107,6 +110,8 @@ public class ShopScript : MonoBehaviour
         isShopInUse = false;
 
         CreatePackage();
+
+        OnShopClosed?.Invoke(); // Invoke the shop closed event for any listeners
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -168,6 +173,8 @@ public class ShopScript : MonoBehaviour
         {
             purchasedItems.Add(item);
             shopAudio.PlayBuyCoin();
+
+            OnAnyPurchase?.Invoke(); // Invoke the purchase event for any listeners
         }
 
 
