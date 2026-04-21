@@ -11,7 +11,7 @@ public class WebAction : BossAction
     public float stopDistance = 0.1f;
 
     private float actionTimer = 0f;
-
+    private Animator anim;
     public override void ExecuteAction(BossScript boss)
     {
         boss.StartCoroutine(DoWebAction(boss));
@@ -22,6 +22,10 @@ public class WebAction : BossAction
         // Reset timer each time the action starts so repeated uses behave correctly
         actionTimer = 0f;
 
+        if(anim == null)
+        {
+            anim = boss.GetComponent<Animator>();
+        }
         //boss.agent.isStopped = true; // Stop the boss from moving while performing the action
 
         while (actionTimer < actionDuration)
@@ -40,7 +44,13 @@ public class WebAction : BossAction
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
-             Instantiate(webPrefab, boss.transform.position, Quaternion.identity);
+            Instantiate(webPrefab, boss.transform.position, Quaternion.identity);
+
+            if(anim  != null)
+            {
+             anim.SetTrigger("SpawnWeb");   
+            }
+
              yield return null;
             }
         }

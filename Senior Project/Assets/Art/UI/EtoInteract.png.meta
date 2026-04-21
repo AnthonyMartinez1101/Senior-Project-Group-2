@@ -1,16 +1,46 @@
 fileFormatVersion: 2
-guid: 289927e2d20a9f144aeb2d602d6a0de5
+guid: d7c3888eabb2ba44db335f3573d4c9f0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6964939622544783672
-    second: purple puddle_0
+      213: -1555293449720789603
+    second: EtoInteract_0
   - first:
-      213: 3461129711615410769
-    second: purple puddle_1
+      213: 8697884947537079464
+    second: EtoInteract_1
   - first:
-      213: -6974819083567303378
-    second: purple puddle_2
+      213: -488350551966732294
+    second: EtoInteract_2
+  - first:
+      213: 4132990455427887845
+    second: EtoInteract_3
+  - first:
+      213: -3512470886743150605
+    second: EtoInteract_4
+  - first:
+      213: -5552017737996331805
+    second: EtoInteract_5
+  - first:
+      213: -7054218513867671194
+    second: EtoInteract_6
+  - first:
+      213: 6419202903420274567
+    second: EtoInteract_7
+  - first:
+      213: 9142790965278811764
+    second: EtoInteract_8
+  - first:
+      213: -7300559201722393758
+    second: EtoInteract_9
+  - first:
+      213: 1211177860339281197
+    second: EtoInteract_10
+  - first:
+      213: 7525152230224492494
+    second: EtoInteract_11
+  - first:
+      213: -3579705342231936270
+    second: EtoInteract_12
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -30,7 +60,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -57,7 +87,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 650
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: purple puddle_0
+      name: EtoInteract_0
       rect:
         serializedVersion: 2
-        x: 77
-        y: 620
-        width: 755
-        height: 416
+        x: 1638
+        y: 2790
+        width: 2150
+        height: 419
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,52 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83933d35faf68a060800000000000000
-      internalID: 6964939622544783672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purple puddle_1
-      rect:
-        serializedVersion: 2
-        x: 858
-        y: 671
-        width: 646
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 15203668227680030800000000000000
-      internalID: 3461129711615410769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purple puddle_2
-      rect:
-        serializedVersion: 2
-        x: 1557
-        y: 621
-        width: 755
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e25fa576ff6743f90800000000000000
-      internalID: -6974819083567303378
+      spriteID: d9586e709dc7a6ae0800000000000000
+      internalID: -1555293449720789603
       vertices: []
       indices: 
       edges: []
@@ -175,7 +161,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 27a00c59e4e8a7940aad4f213915b2ff
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +171,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      purple puddle_0: 6964939622544783672
-      purple puddle_1: 3461129711615410769
-      purple puddle_2: -6974819083567303378
+      EtoInteract_0: -1555293449720789603
+      EtoInteract_1: 8697884947537079464
+      EtoInteract_10: 1211177860339281197
+      EtoInteract_11: 7525152230224492494
+      EtoInteract_12: -3579705342231936270
+      EtoInteract_2: -488350551966732294
+      EtoInteract_3: 4132990455427887845
+      EtoInteract_4: -3512470886743150605
+      EtoInteract_5: -5552017737996331805
+      EtoInteract_6: -7054218513867671194
+      EtoInteract_7: 6419202903420274567
+      EtoInteract_8: 9142790965278811764
+      EtoInteract_9: -7300559201722393758
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

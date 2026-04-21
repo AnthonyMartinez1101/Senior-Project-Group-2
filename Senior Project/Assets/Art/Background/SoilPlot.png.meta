@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 289927e2d20a9f144aeb2d602d6a0de5
+guid: f29150340c568054cbca4f734c2da4cb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6964939622544783672
-    second: purple puddle_0
+      213: -6130375615021250383
+    second: SoilPlot_0
   - first:
-      213: 3461129711615410769
-    second: purple puddle_1
-  - first:
-      213: -6974819083567303378
-    second: purple puddle_2
+      213: -4540464379076533056
+    second: SoilPlot_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -30,7 +27,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -57,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 115
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +75,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -106,67 +103,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: purple puddle_0
+      name: SoilPlot_1
       rect:
         serializedVersion: 2
-        x: 77
-        y: 620
-        width: 755
-        height: 416
+        x: 0
+        y: 0
+        width: 7056
+        height: 4900
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83933d35faf68a060800000000000000
-      internalID: 6964939622544783672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purple puddle_1
-      rect:
-        serializedVersion: 2
-        x: 858
-        y: 671
-        width: 646
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 15203668227680030800000000000000
-      internalID: 3461129711615410769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purple puddle_2
-      rect:
-        serializedVersion: 2
-        x: 1557
-        y: 621
-        width: 755
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e25fa576ff6743f90800000000000000
-      internalID: -6974819083567303378
+      spriteID: 0c424d124b70df0c0800000000000000
+      internalID: -4540464379076533056
       vertices: []
       indices: 
       edges: []
@@ -175,7 +128,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 068b0193b24566f43800f04166140e68
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +138,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      purple puddle_0: 6964939622544783672
-      purple puddle_1: 3461129711615410769
-      purple puddle_2: -6974819083567303378
+      SoilPlot_0: -6130375615021250383
+      SoilPlot_1: -4540464379076533056
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

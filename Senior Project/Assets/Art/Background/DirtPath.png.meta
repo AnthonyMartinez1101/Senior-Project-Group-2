@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 289927e2d20a9f144aeb2d602d6a0de5
+guid: d7b2cb19dd0848a4c8f90f9ff2772894
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6964939622544783672
-    second: purple puddle_0
-  - first:
-      213: 3461129711615410769
-    second: purple puddle_1
-  - first:
-      213: -6974819083567303378
-    second: purple puddle_2
+      213: -6979526703458878391
+    second: DirtPath_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -30,7 +24,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -57,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 110
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: purple puddle_0
+      name: DirtPath_0
       rect:
         serializedVersion: 2
-        x: 77
-        y: 620
-        width: 755
-        height: 416
+        x: 892
+        y: 687
+        width: 5269
+        height: 2713
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,52 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83933d35faf68a060800000000000000
-      internalID: 6964939622544783672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purple puddle_1
-      rect:
-        serializedVersion: 2
-        x: 858
-        y: 671
-        width: 646
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 15203668227680030800000000000000
-      internalID: 3461129711615410769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purple puddle_2
-      rect:
-        serializedVersion: 2
-        x: 1557
-        y: 621
-        width: 755
-        height: 416
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e25fa576ff6743f90800000000000000
-      internalID: -6974819083567303378
+      spriteID: 94cfafb317db32f90800000000000000
+      internalID: -6979526703458878391
       vertices: []
       indices: 
       edges: []
@@ -185,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      purple puddle_0: 6964939622544783672
-      purple puddle_1: 3461129711615410769
-      purple puddle_2: -6974819083567303378
+      DirtPath_0: -6979526703458878391
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

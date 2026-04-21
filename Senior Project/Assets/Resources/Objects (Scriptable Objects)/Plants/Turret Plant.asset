@@ -16,8 +16,8 @@ MonoBehaviour:
   growthTime: 3
   growStages:
   - {fileID: 8869333566321768476, guid: e010b2a601e219e449cc489d02eff256, type: 3}
-  - {fileID: 8869333566321768476, guid: e010b2a601e219e449cc489d02eff256, type: 3}
   - {fileID: -1087180783188662667, guid: e010b2a601e219e449cc489d02eff256, type: 3}
+  - {fileID: -5191083763835307536, guid: e010b2a601e219e449cc489d02eff256, type: 3}
   - {fileID: -5191083763835307536, guid: e010b2a601e219e449cc489d02eff256, type: 3}
   produce: {fileID: 0}
   seed: {fileID: 11400000, guid: e82ded0d666c27d45958b9c2e70f956a, type: 2}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Random Seed Chicken
   m_EditorClassIdentifier: Assembly-CSharp::PlantItem
   plantName: Random Seed Chicken Plant
-  growthTime: 2
+  growthTime: 70
   growStages:
   - {fileID: 537005394983725443, guid: 7fefc83c47ab8b84ab30e532a1fd3c93, type: 3}
   - {fileID: -3589969567348064759, guid: 7fefc83c47ab8b84ab30e532a1fd3c93, type: 3}
