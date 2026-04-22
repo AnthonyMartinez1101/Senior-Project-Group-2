@@ -3,7 +3,7 @@ using UnityEngine;
 public class ElectricLink : MonoBehaviour
 {
     [SerializeField] private float thickness = 0.1f;
-    [SerializeField] private int dps = 1;
+    [SerializeField] private float dps = 0.1f;
     [SerializeField] private float tickInt = 0.5f;
 
     public Transform A { get; private set; }

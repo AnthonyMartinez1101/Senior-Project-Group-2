@@ -24,6 +24,17 @@ public class PlantScript : MonoBehaviour, IDamageable
 
     public bool BugsCanTarget = true;
 
+    private bool stage1 = false;
+    private bool stage2 = false;
+    private bool stage3 = false;
+
+    private BobSize bobSize;
+
+
+    void Start()
+    {
+        bobSize = GetComponent<BobSize>();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Create(PlantItem newPlantInfo, SoilScript newSoil)
@@ -75,21 +86,34 @@ public class PlantScript : MonoBehaviour, IDamageable
 
             float growthPercent = currentGrowth / plantInfo.growthTime;
 
-            if (growthPercent >= 1f)
+            if (growthPercent >= 1f && !stage3)
             {
-                spriteRenderer.sprite = plantInfo.growStages[3];
+                stage3 = true;
+                StartCoroutine(NextStage(plantInfo.growStages[3]));
                 sparkles.SetActive(true);
+                
             }
-            else if (growthPercent >= 0.66f)
+            else if (growthPercent >= 0.66f && !stage2)
             {
-                spriteRenderer.sprite = plantInfo.growStages[2];
+                stage2 = true;
+                StartCoroutine(NextStage(plantInfo.growStages[2]));
             }
-            else if (growthPercent >= 0.33f)
+            else if (growthPercent >= 0.33f && !stage1)
             {
-                spriteRenderer.sprite = plantInfo.growStages[1];
+                stage1 = true;
+                StartCoroutine(NextStage(plantInfo.growStages[1]));
             }
         }
     }
+
+    IEnumerator NextStage(Sprite newSprite)
+    {
+        if(!bobSize) yield break;
+        yield return StartCoroutine(bobSize.BobOne());
+        spriteRenderer.sprite = newSprite;
+        yield return StartCoroutine(bobSize.BobTwo());
+    }
+
 
 
     private void Heal(float dt)

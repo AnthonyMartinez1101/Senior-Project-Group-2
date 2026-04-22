@@ -231,5 +231,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElectricLink
   thickness: 0.1
-  dps: 1
+  dps: 0.1
   tickInt: 15

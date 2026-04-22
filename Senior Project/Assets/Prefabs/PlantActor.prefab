@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 2906679135578592827}
   - component: {fileID: 3204769556961723971}
   - component: {fileID: 6678859520737167798}
+  - component: {fileID: 6499044657230489557}
+  - component: {fileID: 8124517401872545567}
   m_Layer: 15
   m_Name: PlantActor
   m_TagString: Plant
@@ -115,6 +117,7 @@ MonoBehaviour:
   plantInfo: {fileID: 0}
   currentGrowth: 0
   currentHealth: 0
+  BugsCanTarget: 1
 --- !u!61 &2759985065565571604
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -370,6 +373,37 @@ MonoBehaviour:
   customPivot: 0
   customPivotTransform: {fileID: 0}
   rebuildShadowsBF_2_0_1_v: 0
+--- !u!114 &6499044657230489557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3729801971907865267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b720c44ec5fc9074f89dfb34123fff8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sway
+  swaySpeed: 2
+  swayAmount: 2
+--- !u!114 &8124517401872545567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3729801971907865267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532060d643b6b37489b2abe402a2e1dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  shrinkMultiplier: 0.9
+  growMultiplier: 1.2
+  shrinkTime: 0.05
+  growTime: 0.08
+  returnTime: 0.08
 --- !u!1 &5019264840372792336
 GameObject:
   m_ObjectHideFlags: 0
