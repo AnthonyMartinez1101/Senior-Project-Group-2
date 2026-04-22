@@ -41367,7 +41367,7 @@ PrefabInstance:
       objectReference: {fileID: 3758422883315622073, guid: 346a3aa7927d55245ae54467302c321f, type: 3}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: dayEnemies.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: fallEnemies.Array.size
@@ -41388,7 +41388,15 @@ PrefabInstance:
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: 'dayEnemies.Array.data[1]'
       value: 
-      objectReference: {fileID: 4919924452173266357, guid: f6b46195427f35c4ba3526a7b9ab0ab9, type: 3}
+      objectReference: {fileID: 468165074406571295, guid: fc15e6ba38906674c9638f774c81002a, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: 'dayEnemies.Array.data[2]'
+      value: 
+      objectReference: {fileID: 468165074406571295, guid: 807482f365c4fef4ebb7f1f76e126a2a, type: 3}
+    - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
+      propertyPath: 'dayEnemies.Array.data[3]'
+      value: 
+      objectReference: {fileID: 468165074406571295, guid: bd0ac35dcb5143b488cd2179c04dc28f, type: 3}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: springEnemies.Array.size
       value: 2
@@ -41443,7 +41451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: fallEnemies.Array.data[3].spawnCost
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4127038490221216561, guid: 64543886e2d7a8d4d9fc38776ff2610e, type: 3}
       propertyPath: fallEnemies.Array.data[0].enemyPrefab
