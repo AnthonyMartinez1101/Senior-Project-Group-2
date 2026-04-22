@@ -61,6 +61,8 @@ public class Inventory : MonoBehaviour
 
     private PlayerWallet playerWallet;
 
+    public bool canSwap = true;
+
 
     private void Awake()
     {
@@ -103,12 +105,15 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (scrollAction != null) ScrollAction();
-        if (leftScroll != null) LeftScrollAction();
-        if (rightScroll != null) RightScrollAction();
-        if (Keyboard.current != null) NumberKeySelection();
-        if (dropItemAction != null) DropItemCheck();
-        if (weaponHolder != null) CheckWeaponHold();
+        if (canSwap)
+        {
+            if (scrollAction != null) ScrollAction();
+            if (leftScroll != null) LeftScrollAction();
+            if (rightScroll != null) RightScrollAction();
+            if (Keyboard.current != null) NumberKeySelection();
+            if (dropItemAction != null) DropItemCheck();
+            if (weaponHolder != null) CheckWeaponHold();
+        }
     }
 
     private void CheckWeaponHold()

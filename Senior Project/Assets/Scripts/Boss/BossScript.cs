@@ -66,6 +66,12 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
 
     private void Update()
     {
+        if (!player)
+        {
+            StopAllCoroutines();
+            return;
+        }
+
         hitCooldown -= Time.deltaTime;
 
         if (state == State.Idle && !isPerformingAction)
@@ -173,6 +179,7 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
 
     IEnumerator Die()
     {
+        StopAllCoroutines();
         if (data.itemDrop) Instantiate(data.itemDrop, transform.position, Quaternion.identity);
 
         if (data.coin)
@@ -186,6 +193,7 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
         yield return new WaitForSeconds(0.5f); // for animation and other effects to finish
         StatManager.Instance.AddBossKill();
         Destroy(gameObject);
+
     }
 
     //When colliding with something...

@@ -141,11 +141,13 @@ public class GameManager : MonoBehaviour
             {
                 pauseMenu.SetActive(false);
                 Time.timeScale = 1f; // Resume game
+                inventorySystem.canSwap = true;
             }
             else
             {
                 pauseMenu.SetActive(true);
                 Time.timeScale = 0f; // Pause game
+                inventorySystem.canSwap = false;
             }
             if (settings.activeSelf)
             {
@@ -167,6 +169,7 @@ public class GameManager : MonoBehaviour
             {
                 pauseMenu.SetActive(false);
                 Time.timeScale = 1f;
+                inventorySystem.canSwap = true;
                 return;
             }
             if (shop.IsShopInUse())
