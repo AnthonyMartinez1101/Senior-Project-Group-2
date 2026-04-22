@@ -32199,7 +32199,7 @@ PrefabInstance:
       objectReference: {fileID: 1014007743}
     - target: {fileID: 5092246524528975356, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: isInvincible
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5658258297798676418, guid: 601cfc80fc44cd54d87e7f871acf622b, type: 3}
       propertyPath: _shadowData.shadow.shadow
