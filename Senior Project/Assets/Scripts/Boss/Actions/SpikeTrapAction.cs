@@ -35,7 +35,7 @@ public class SpikeTrapAction : BossAction
             yield return null;
         }
 
-        boss.transform.position = boss.player.position;
+        if(boss.player != null) boss.transform.position = boss.player.position;
         GameManager.Instance.CameraShake(5f, 0.3f); //shake the camera when the boss re-appears
 
         Destroy(spikes);
