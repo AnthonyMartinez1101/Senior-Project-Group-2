@@ -18,6 +18,7 @@ public class ChickenExplosion : MonoBehaviour
         Destroy(particles, 10f);
         yield return new WaitForSeconds(0.2f); // Wait for 0.2 seconds before exploding
         Destroy(gameObject);
+        GameManager.Instance.CameraShake(20f, 0.5f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

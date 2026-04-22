@@ -21,8 +21,8 @@ MonoBehaviour:
   - {fileID: 1528698537128201476, guid: 628d9fb8181f8064a8b43667c29016b6, type: 3}
   produce: {fileID: 11400000, guid: dffd53100a71b964381bd1d1bdc4ebff, type: 2}
   seed: {fileID: 11400000, guid: 2c4bce3f713fd69499110f20a641c258, type: 2}
-  minDrop: 1
-  maxDrop: 1
+  minDrop: 3
+  maxDrop: 5
   seedChance: 0
   canDry: 1
   objectOnHarvest: {fileID: 0}

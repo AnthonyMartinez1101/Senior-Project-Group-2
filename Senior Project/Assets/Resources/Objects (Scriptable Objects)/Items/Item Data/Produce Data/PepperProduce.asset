@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce0c8a3d01504446bed7861616fdf9b, type: 3}
   m_Name: PepperProduce
   m_EditorClassIdentifier: Assembly-CSharp::ProduceData
-  healAmount: 3
+  healAmount: 1
   buffType: 0
