@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: -9138899320092202058}
   - component: {fileID: 4184690976592955647}
   - component: {fileID: 2355035961389534731}
+  - component: {fileID: 597464894721672770}
   m_Layer: 7
   m_Name: Day Enemy
   m_TagString: Enemy
@@ -352,6 +353,28 @@ MonoBehaviour:
   customPivot: 0
   customPivotTransform: {fileID: 0}
   rebuildShadowsBF_2_0_1_v: 0
+--- !u!95 &597464894721672770
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919924452173266357}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5a9d9f9f5acaa24faab0b7763bfbc68, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8669708703548695504
 GameObject:
   m_ObjectHideFlags: 0
