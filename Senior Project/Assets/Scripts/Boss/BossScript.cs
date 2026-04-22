@@ -173,13 +173,13 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
         if (healthBar) healthBar.UpdateHealth(currentHealth, data.maxHealth);
         if (currentHealth <= 0)
         {
+            StopAllCoroutines();
             StartCoroutine(Die());
         }
     }
 
     IEnumerator Die()
     {
-        StopAllCoroutines();
         if (data.itemDrop) Instantiate(data.itemDrop, transform.position, Quaternion.identity);
 
         if (data.coin)
