@@ -18,8 +18,8 @@ MonoBehaviour:
   itemDrop: {fileID: 7524075269242792640, guid: 32f9da5cd2d6128438ac0447ea98d358, type: 3}
   coin: {fileID: 11400000, guid: bd6a2e2bbb3092c43934b4e95b40dda9, type: 2}
   maxHealth: 75
-  attackRating: 3.5
-  knockbackForce: 15
+  attackRating: 2.5
+  knockbackForce: 20
   hitCooldown: 2
   isInvincible: 0
   phaseTwoThreshold: 0.5

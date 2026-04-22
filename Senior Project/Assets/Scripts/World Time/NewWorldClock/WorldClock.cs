@@ -62,6 +62,8 @@ public class WorldClock : MonoBehaviour
     private int currentDay = 1;
     public int dayWinCondition = 5;
 
+    public GameObject snowParticles;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -191,6 +193,10 @@ public class WorldClock : MonoBehaviour
         {
             if (DaysLeft > 1) RescueCountdown.text = "Help arrives in " + DaysLeft + " days.";
             else RescueCountdown.text = "Help arrives tomorrow!";
+        }
+        if(currentDay == 4)
+        {
+            if(snowParticles) snowParticles.SetActive(true);
         }
     }
 

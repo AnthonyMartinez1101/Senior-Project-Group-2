@@ -29400,6 +29400,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 229539789444296364}
+  - component: {fileID: 2912781564401235873}
   m_Layer: 0
   m_Name: Explosion Particles
   m_TagString: Untagged
@@ -29429,6 +29430,18 @@ Transform:
   - {fileID: 4264615686825237078}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2912781564401235873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8588785223345138722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b538cdd1eda42842b8da73f5823db20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &8601421107047563246
 GameObject:
   m_ObjectHideFlags: 0

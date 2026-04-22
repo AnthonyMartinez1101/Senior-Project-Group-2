@@ -281,6 +281,7 @@ public class GameManager : MonoBehaviour
     {
         // Load game from previous save
         WinGameScreen.SetActive(true);
+        player.SetActive(false);
     }
 
     ////Waits for 3 seconds before restarting the scene
