@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 2147313369}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &470404591
@@ -884,6 +884,7 @@ MonoBehaviour:
   block2: {fileID: 411899735}
   block3: {fileID: 1079146853}
   blackImage: {fileID: 1518120634}
+  skipButton: {fileID: 0}
 --- !u!4 &1809293625
 Transform:
   m_ObjectHideFlags: 0
