@@ -16134,8 +16134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0db605fd1beebe4e8d424f6af49ff76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WorldClock
-  dayLength: 180
-  nightLength: 60
+  dayLength: 2
+  nightLength: 2
   transitionLength: 5
   pauseTimer: 0
   _2xTickSpeed: 0
@@ -20417,15 +20417,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2077052678}
-        m_TargetAssemblyTypeName: changeIcon, Assembly-CSharp
-        m_MethodName: SetFullCart
+      - m_Target: {fileID: 2077052681}
+        m_TargetAssemblyTypeName: NotifBlink, Assembly-CSharp
+        m_MethodName: EnableNotif
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -20444,9 +20444,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2077052678}
-        m_TargetAssemblyTypeName: changeIcon, Assembly-CSharp
-        m_MethodName: SetEmptyCart
+      - m_Target: {fileID: 2077052681}
+        m_TargetAssemblyTypeName: NotifBlink, Assembly-CSharp
+        m_MethodName: DisableNotif
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50480,7 +50480,7 @@ GameObject:
   - component: {fileID: 2077052677}
   - component: {fileID: 2077052680}
   - component: {fileID: 2077052679}
-  - component: {fileID: 2077052678}
+  - component: {fileID: 2077052681}
   m_Layer: 5
   m_Name: Order Placed Image
   m_TagString: Untagged
@@ -50497,30 +50497,16 @@ RectTransform:
   m_GameObject: {fileID: 2077052676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4951, y: 1.4951, z: 1.4951}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1158130223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 57, y: 333}
+  m_AnchoredPosition: {x: 106, y: 343}
   m_SizeDelta: {x: 270.76923, y: 50.769234}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2077052678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2077052676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74f837132c3d80848ac202c508e788a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::changeIcon
-  emptyCart: {fileID: -7674964874891975437, guid: ef80a0ebcf3ea654cb1f728570965d47, type: 3}
-  fullCart: {fileID: 7580929019458045025, guid: 66cde054a84df934b8f20d23b8d77a34, type: 3}
 --- !u!114 &2077052679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50528,7 +50514,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077052676}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -50541,7 +50527,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7674964874891975437, guid: ef80a0ebcf3ea654cb1f728570965d47, type: 3}
+  m_Sprite: {fileID: 7580929019458045025, guid: 66cde054a84df934b8f20d23b8d77a34, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -50559,6 +50545,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077052676}
   m_CullTransparentMesh: 1
+--- !u!114 &2077052681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077052676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e073972ce884a4fbd5ab8674872dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  img: {fileID: 2077052679}
+  notif: {fileID: 7580929019458045025, guid: 66cde054a84df934b8f20d23b8d77a34, type: 3}
+  interval: 0.2
 --- !u!1001 &2085540465
 PrefabInstance:
   m_ObjectHideFlags: 0
