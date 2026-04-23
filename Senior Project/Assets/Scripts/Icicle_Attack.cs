@@ -7,7 +7,7 @@ public class Icicle_Attack : MonoBehaviour
     public float projectileSpeed = 10f;
 
     public GameObject iciclePrefab;
-    public Transform firePoint; //where the icicle will come from
+    public Transform firePoint;
 
     float fireTimer = 2f;
     Transform Player;
@@ -26,12 +26,17 @@ public class Icicle_Attack : MonoBehaviour
         if (Vector2.Distance(transform.position, Player.position) < detectionRange)
             ShootAtPlayer();
     }
+
     void ShootAtPlayer()
     {
         if (fireTimer > 0f) return;
         Vector3 spawnPos = (firePoint != null) ? firePoint.position : transform.position;
         Vector2 dir = ((Vector2)Player.position - (Vector2)spawnPos).normalized;
-        GameObject proj = Instantiate(iciclePrefab, spawnPos, Quaternion.identity);
+
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
+
+        GameObject proj = Instantiate(iciclePrefab, spawnPos, rotation);
         Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
