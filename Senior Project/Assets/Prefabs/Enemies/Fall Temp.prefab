@@ -348,10 +348,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7bde87b5752e264a9792c1736ba512a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  startingTopSpeed: 3.5
+  startingTopSpeed: 3
   maxTopSpeed: 8
   speedIncreasePercentage: 2
-  timeToIncrease: 1.5
+  timeToIncrease: 1
   walkDustParticles: {fileID: 3063948931794545191}
 --- !u!114 &-9138899320092202058
 MonoBehaviour:

@@ -362,6 +362,7 @@ MonoBehaviour:
   dealDamage: 1
   knockbackForce: 15
   dropChance: 1
+  explosionPrefab: {fileID: 0}
   randomItemDrop: {fileID: 11400000, guid: 7d42225e9a8f651459e31a0ae1a4bf12, type: 2}
   dropExpires: 1
   burnParticles: {fileID: 0}
@@ -377,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7bde87b5752e264a9792c1736ba512a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  startingTopSpeed: 3.5
+  startingTopSpeed: 1
   maxTopSpeed: 8
   speedIncreasePercentage: 2
   timeToIncrease: 1.5
