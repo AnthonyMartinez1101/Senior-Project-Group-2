@@ -20,3 +20,7 @@ MonoBehaviour:
   - {fileID: 635032871052353645, guid: 321cc9c2dc4b8b2439b26d9c84139f3d, type: 3}
   - {fileID: 1055726648207749573, guid: 88123a256ba594f41bb80780d5b78c72, type: 3}
   tpPosition: {x: -999, y: -9999}
+  warning: {fileID: 21300000, guid: 24f01d96b15135e45bf6aaa1ae2fee81, type: 3}
+  disappearDuration: 1
+  flashDuration: 0.8
+  flashCount: 3
