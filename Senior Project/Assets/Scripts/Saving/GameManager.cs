@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public static GameData gameData;
     public float autoSaveTimer = 10f;
     public bool canSave = true;
+    private bool nightFightDone = false;
     //add ui mabober
 
     public GameObject player;
@@ -63,10 +64,12 @@ public class GameManager : MonoBehaviour
         }
         if (loadOnStart)
         {
+            nightFightDone = true;
             gameData = SaveScript.LoadGame();
             if (gameData == null)
             {
                 Debug.Log("No save data found. Starting new game.");
+                nightFightDone = false;
                 gameData = new GameData();
             }
         }
@@ -189,12 +192,14 @@ public class GameManager : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f; 
+        inventorySystem.canSwap = true;
     }
 
     public void RestartButton()
     {
+        loadOnStart = true;
         ResumeGame();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); //make game over screen pop up 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void GoToMainMenu()
@@ -297,17 +302,22 @@ public class GameManager : MonoBehaviour
         {
             if (Enemies.transform.childCount == 0 && player != null)
             {
-                yield return new WaitForSeconds(autoSaveTimer);
-                bool saveEnabled = true;
-                while (saveEnabled)
+                if (!nightFightDone)
                 {
+                    // Save immediately after night 0
+                    SaveScript.SaveGame(player);
+                    nightFightDone = true;
+                    Debug.Log("Night 0 finished, saved game.");
+                }
+                else
+                {
+                    // Save after every night
+                    yield return new WaitForSeconds(autoSaveTimer);
                     if (Enemies != null && Enemies.transform.childCount == 0)
                     {
                         SaveScript.SaveGame(player);
-                        saveEnabled = false;
                         Debug.Log("Game auto-saved.");
                     }
-                    yield return new WaitForSeconds(1f);
                 }
             }
             yield return new WaitForSeconds(1f);
