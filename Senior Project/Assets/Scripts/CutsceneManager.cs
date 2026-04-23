@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class CutsceneManager : MonoBehaviour
@@ -11,7 +12,14 @@ public class CutsceneManager : MonoBehaviour
 
     public Image blackImage;
 
+    public Button skipButton;
+    private GameObject lastSelected;
     private bool cutsceneSkipped = false;
+
+    void OnEnable()
+    {
+        EventSystem.current.SetSelectedGameObject(skipButton.gameObject);
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +29,20 @@ public class CutsceneManager : MonoBehaviour
             Debug.LogWarning("Images are not assigned in the inspector.");
         }
         StartCoroutine(PlayCutscene());
+    }
+
+    // Re-enables keyboard navigation
+    void Update()
+    {
+        if (EventSystem.current.currentSelectedGameObject == null && lastSelected != null)
+        {
+            // Restore last selected UI element for keyboard navigation
+            EventSystem.current.SetSelectedGameObject(lastSelected);
+        }
+        else
+        {
+            lastSelected = EventSystem.current.currentSelectedGameObject;
+        }
     }
 
     IEnumerator PlayCutscene()
