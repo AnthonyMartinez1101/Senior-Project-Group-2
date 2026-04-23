@@ -40,7 +40,7 @@ public class StatManager : MonoBehaviour
 
     private void UpdateStatText()
     {
-        StatsText.text = $"Zombies Killed: {playerStats.numZombiesKilled}\nBosses Killed: {playerStats.numBossesKilled}\nTotal Money Earned: {playerStats.totalMoneyEarned}\nCrops Harvested: {playerStats.numHarvested}\nDamage Taken: {playerStats.totalDamageTaken}\n\nDamage Buffed: {playerStats.dmgBuff}\nHealth Buffed: {playerStats.maxHealthBuff}\nSpeed Buffed: {playerStats.speedBuff}";
+        StatsText.text = $"Zombies Killed: {playerStats.numZombiesKilled}\nBosses Killed: {playerStats.numBossesKilled}\nTotal Money Earned: {playerStats.totalMoneyEarned}\nCrops Harvested: {playerStats.numHarvested}\nDamage Taken: {playerStats.totalDamageTaken.ToString("F2")}\n\nDamage Buffed: {playerStats.dmgBuff}\nHealth Buffed: {playerStats.maxHealthBuff}\nSpeed Buffed: {playerStats.speedBuff}";
     }
 
     public void AddZombieKill()

@@ -34,7 +34,7 @@ public class Icicle_Attack : MonoBehaviour
         Vector2 dir = ((Vector2)Player.position - (Vector2)spawnPos).normalized;
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
+        Quaternion rotation = Quaternion.Euler(0f, 0f, angle + 180);
 
         GameObject proj = Instantiate(iciclePrefab, spawnPos, rotation);
         Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
