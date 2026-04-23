@@ -19,10 +19,11 @@ public class ChickenWander : MonoBehaviour
     public float minWaitTime = 1f;
     public float maxWaitTime = 5f;
 
-    private GameObject childObject;
 
     private float fleeDuration = 3f;
     private float fleeTimer = 0f;
+
+    private bool isHiding = false;
 
 
 
@@ -36,9 +37,10 @@ public class ChickenWander : MonoBehaviour
 
         if(hidePosition == null) hidePosition = GameManager.Instance.GetChickenHidePosition();
         if(worldClock == null) worldClock = GameManager.Instance.GetWorldClock();
+    }
 
-        childObject = transform.GetChild(0).gameObject;
-
+    void OnEnable()
+    {
         StartCoroutine(Wander());
     }
 
@@ -58,6 +60,8 @@ public class ChickenWander : MonoBehaviour
             //Night hide
             if(worldClock != null && worldClock.IsNight())
             {
+                isHiding = true;
+
                 agent.ResetPath();
 
                 if(hidePosition != null) agent.SetDestination(hidePosition.position);
@@ -65,9 +69,7 @@ public class ChickenWander : MonoBehaviour
 
                 yield return new WaitUntil(() => !agent.pathPending && (!hidePosition || agent.remainingDistance <= 2.5f || agent.pathStatus != NavMeshPathStatus.PathComplete));
 
-                childObject.SetActive(false);
                 yield return new WaitUntil(() => worldClock.IsDay());
-                childObject.SetActive(true);
 
                 yield return null;
                 continue;
@@ -79,7 +81,7 @@ public class ChickenWander : MonoBehaviour
                 agent.SetDestination(dest);
                 if(!IsFleeing()) agent.speed = wanderSpeed;
             }
-            yield return new WaitUntil(() => worldClock.IsNight() || (!agent.pathPending && (agent.remainingDistance <= 0.25f || agent.pathStatus != NavMeshPathStatus.PathComplete)));
+            yield return new WaitUntil(() => worldClock.IsNight() || (!agent.pathPending && (agent.remainingDistance <= 0.5f || agent.pathStatus != NavMeshPathStatus.PathComplete)));
             yield return WaitWhileDay(Random.Range(minWaitTime, maxWaitTime));
         }
     }
@@ -92,6 +94,16 @@ public class ChickenWander : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
+    }
+
+    public bool IsHiding()
+    {
+        return isHiding;
+    }
+
+    public void StopHiding()
+    {
+        isHiding = false;
     }
 
     private bool IsFleeing()
