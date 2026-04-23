@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5033254811656718843}
   - component: {fileID: -2266414113092378235}
-  - component: {fileID: 1187029817645598876}
+  - component: {fileID: 8351082404766527549}
   m_Layer: 0
   m_Name: burnInTheSun
   m_TagString: Untagged
@@ -91,7 +91,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1187029817645598876
+--- !u!95 &8351082404766527549
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ Animator:
   m_GameObject: {fileID: 7868077233551710313}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 14594a02d2ed51e44a7b65706be5672b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1b2e240874a9f104ba68485c80433aa2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
