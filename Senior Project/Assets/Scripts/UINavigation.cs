@@ -31,5 +31,28 @@ public class UINavigation : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(shopButton.gameObject);
     }
 
+    public void pauseOpened()
+    {
+        EventSystem.current.SetSelectedGameObject(pauseButton.gameObject);
+    }
 
+    public void settingsOpened()
+    {
+        EventSystem.current.SetSelectedGameObject(settingsButton.gameObject);
+    }
+
+    public void gameOverOpened()
+    {
+        EventSystem.current.SetSelectedGameObject(gameOverButton.gameObject);
+    }
+
+    public void winOpened()
+    {
+        EventSystem.current.SetSelectedGameObject(winButton.gameObject);
+    }
+
+    public void statsOpened()
+    {
+        EventSystem.current.SetSelectedGameObject(statsButton.gameObject);
+    }
 }
