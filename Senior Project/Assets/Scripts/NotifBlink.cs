@@ -48,8 +48,6 @@ public class NotifBlink : MonoBehaviour
             yield return new WaitForSeconds(interval);
             img.enabled = img.enabled;
             yield return new WaitForSeconds(0.4f);
-            img.enabled = !img.enabled;
-            yield return new WaitForSeconds(interval);
         }
     }
 }

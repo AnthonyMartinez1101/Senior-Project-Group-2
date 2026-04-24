@@ -195,6 +195,13 @@ public class GameManager : MonoBehaviour
         inventorySystem.canSwap = true;
     }
 
+    public void NewGame()
+    {
+        loadOnStart = false;
+        ResumeGame();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void RestartButton()
     {
         loadOnStart = true;
@@ -305,9 +312,7 @@ public class GameManager : MonoBehaviour
                 if (!nightFightDone)
                 {
                     // Save immediately after night 0
-                    SaveScript.SaveGame(player);
                     nightFightDone = true;
-                    Debug.Log("Night 0 finished, saved game.");
                 }
                 else
                 {
