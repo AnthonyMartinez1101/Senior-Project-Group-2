@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class InteractScript : MonoBehaviour
+public class InteractScript : MonoBehaviour, ICheat
 {
     private Inventory inventorySystem;
     private Attack attack;
@@ -33,6 +33,8 @@ public class InteractScript : MonoBehaviour
     public bool canEat = true;
 
     private PlayerAudio playerAudio;
+
+    private bool cheatMode = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -97,6 +99,11 @@ public class InteractScript : MonoBehaviour
         }
     }
 
+    public void SetCheats()
+    {
+        cheatMode = true;
+    }
+
     public void SetSoil(SoilScript newSoil)
     {
         currentSoil = newSoil;
@@ -142,7 +149,7 @@ public class InteractScript : MonoBehaviour
             {
                 ProduceBuff(produceData.buffType);
                 playerHealth.Heal(produceData.healAmount);
-                inventorySystem.SubtractItem();
+                if(!cheatMode) inventorySystem.SubtractItem();
                 playerAudio.PlayMunch();
             }
         }
@@ -237,6 +244,12 @@ public class InteractScript : MonoBehaviour
 
     private void ShootPistol()
     {
+        if(cheatMode)
+        {
+            attack.OnShoot();
+            return;
+        }
+
         if (attack.CanShoot())
         {
             if (inventorySystem.CheckAndUseBullets(1))
@@ -248,6 +261,12 @@ public class InteractScript : MonoBehaviour
 
     private void ShootAR()
     {
+        if(cheatMode)
+        {
+            attack.OnShootBurst();
+            return;
+        }
+
         if (attack.CanShoot())
         {
             if (inventorySystem.CheckAndUseBullets(3))
@@ -259,6 +278,12 @@ public class InteractScript : MonoBehaviour
 
     private void ShootShotGun()
     {
+        if(cheatMode)
+        {
+            attack.OnShootShotgun();
+            return;
+        }
+
         if (attack.CanShoot())
         {
             if (inventorySystem.CheckAndUseBullets(3))

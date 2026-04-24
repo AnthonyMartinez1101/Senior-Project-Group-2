@@ -24,7 +24,7 @@ public class Slot
     }
 }
 
-public class Inventory : MonoBehaviour
+public class Inventory : MonoBehaviour, ICheat
 {
     //Inventory settings
     public int maxStackSize = 32;
@@ -62,6 +62,8 @@ public class Inventory : MonoBehaviour
     private PlayerWallet playerWallet;
 
     public bool canSwap = true;
+
+    private bool cheatMode = false;
 
 
     private void Awake()
@@ -114,6 +116,11 @@ public class Inventory : MonoBehaviour
             if (dropItemAction != null) DropItemCheck();
             if (weaponHolder != null) CheckWeaponHold();
         }
+    }
+
+    public void SetCheats()
+    {
+        cheatMode = true;
     }
 
     private void CheckWeaponHold()
@@ -398,6 +405,8 @@ public class Inventory : MonoBehaviour
     //Remove item and clear if amount reaches 0
     public void SubtractItem()
     {
+        if (cheatMode) return;
+
         slots[currentSlotIndex].amount--;
         if (slots[currentSlotIndex].amount <= 0)
         {
@@ -417,6 +426,8 @@ public class Inventory : MonoBehaviour
 
     public bool CheckAndUseBullets(int amountToUse)
     {
+        if (cheatMode) return true;
+
         for (int i = 0; i < slotCount; i++)
         {
             if (!slots[i].IsEmpty() && slots[i].item.itemType == ItemType.Bullet)
@@ -452,6 +463,8 @@ public class Inventory : MonoBehaviour
     //Use water from watering can
     public void UseWater()
     {
+        if (cheatMode) return;
+
         if (slots[currentSlotIndex].runtimeAmount > 0)
         {
             slots[currentSlotIndex].runtimeAmount--;

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
-public class SoilScript : MonoBehaviour
+public class SoilScript : MonoBehaviour, ICheat
 {
     private GameObject highlighted; //Highlight child object
     public PlantScript plantActor; //Plant Actor prefab 
@@ -21,6 +21,8 @@ public class SoilScript : MonoBehaviour
     public Color wetColor;
 
     public GameObject waterSplash;
+
+    private bool cheatMode = false;
 
 
     //private InteractScript interactScript;
@@ -56,9 +58,20 @@ public class SoilScript : MonoBehaviour
         WaterDropletLogic(isDay);
     }
 
+    public void SetCheats()
+    {
+        cheatMode = true;
+    }
+
     private void GrowthLogic(bool isDay)
     {
         if (!currentPlant) return;
+
+        if (cheatMode)
+        {
+            currentPlant.TickGrowth(Time.deltaTime * 60, true);
+            return;
+        }
 
         
         if (isWatered())

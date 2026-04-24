@@ -26,7 +26,6 @@ public class PlantScript : MonoBehaviour, IDamageable
 
     private bool stage1 = false;
     private bool stage2 = false;
-    private bool stage3 = false;
 
     private BobSize bobSize;
 
@@ -86,12 +85,10 @@ public class PlantScript : MonoBehaviour, IDamageable
 
             float growthPercent = currentGrowth / plantInfo.growthTime;
 
-            if (growthPercent >= 1f && !stage3)
+            if (growthPercent >= 1f)
             {
-                stage3 = true;
                 StartCoroutine(NextStage(plantInfo.growStages[3]));
                 sparkles.SetActive(true);
-                
             }
             else if (growthPercent >= 0.66f && !stage2)
             {

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerHealth : MonoBehaviour, IDamageable
+public class PlayerHealth : MonoBehaviour, IDamageable, ICheat
 {
     public float maxHealth = 20f;
     public float currentHealth;
@@ -65,6 +65,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public void TakeDamage(float damageDealt, DamageType damageType)
     {
         TakeDamage(damageDealt);
+    }
+
+    public void SetCheats()
+    {
+        isInvincible = true;
+        SetMaxHealth();
     }
 
     //Unique player logic (differentiated by number of parameters)

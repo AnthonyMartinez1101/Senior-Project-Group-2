@@ -3,7 +3,7 @@ using TMPro;
 using System.Collections;
 
 
-public class PlayerWallet : MonoBehaviour
+public class PlayerWallet : MonoBehaviour, ICheat
 {
     [SerializeField] private int coinCount = 0;
     [SerializeField] private TMP_Text coinCountText;
@@ -52,9 +52,15 @@ public class PlayerWallet : MonoBehaviour
         currentCoroutine = StartCoroutine(ChangeCoinCount());
     }
 
+    public void SetCheats()
+    {
+        coinCount = 9999;
+        UpdateText();
+    }
 
 
-    IEnumerator ChangeCoinCount()
+
+IEnumerator ChangeCoinCount()
     {
         int changeAmount = Mathf.Abs(coinCount - displayedCoinCount);
         int direction;
