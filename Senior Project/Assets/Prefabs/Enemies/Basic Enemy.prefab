@@ -763,6 +763,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3196712463495361996, guid: c640191a004defb4fb35dad3ab2e3ca4, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3937250288482046899, guid: c640191a004defb4fb35dad3ab2e3ca4, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -854,6 +858,14 @@ PrefabInstance:
     - target: {fileID: 4650680659613107702, guid: c640191a004defb4fb35dad3ab2e3ca4, type: 3}
       propertyPath: offset.y
       value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367617452555847534, guid: c640191a004defb4fb35dad3ab2e3ca4, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367617452555847534, guid: c640191a004defb4fb35dad3ab2e3ca4, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

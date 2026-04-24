@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     public ShopScript shop;
 
+    public UINavigation uiScript;
     public GameObject pauseMenu;
     InputAction pauseAction;
     InputAction cancelAction;
@@ -151,10 +152,12 @@ public class GameManager : MonoBehaviour
                 pauseMenu.SetActive(true);
                 Time.timeScale = 0f; // Pause game
                 inventorySystem.canSwap = false;
+                uiScript.pauseOpened();
             }
             if (settings.activeSelf)
             {
                 settings.SetActive(false);
+                uiScript.pauseOpened();  
             }
         }
     }
@@ -166,6 +169,7 @@ public class GameManager : MonoBehaviour
             if (settings.activeSelf)
             {
                 settings.SetActive(false);
+                uiScript.pauseOpened();
                 return;
             }
             if (pauseMenu.activeSelf)

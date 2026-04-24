@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class UINavigation : MonoBehaviour
 {
     public Button shopButton;
     public Button pauseButton;
-    public Toggle settingsButton;
+    public TMP_Dropdown settingsButton;
     public Button gameOverButton;
     public Button winButton;
     public Button statsButton;
