@@ -18,4 +18,4 @@ MonoBehaviour:
   shieldPrefab: {fileID: 7079163651037654673, guid: de5fcae32be57a3499b3aa64533a3f94, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   attachToBoss: 1
-  movementSpeedMultiplier: 0.5
+  movementSpeedMultiplier: 0.9

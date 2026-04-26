@@ -406,6 +406,7 @@ MonoBehaviour:
   maxShadowScale: 1.1
   minShadowAlpha: 0.3
   maxShadowAlpha: 0.6
+  dropParticles: {fileID: 4497399008981151711, guid: f847befa56b78bb488c26c93f5e2b6ea, type: 3}
 --- !u!114 &5631521263454681435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,7 +562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3014806603482957823}
   - component: {fileID: 4105372439693089705}
-  m_Layer: 16
+  m_Layer: 13
   m_Name: 'Sprite : shadow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +633,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 38933b6046d4a7442ad2d30d3fb8041c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.6, y: 1.6}

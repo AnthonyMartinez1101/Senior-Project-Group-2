@@ -68,29 +68,31 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadSceneAsync(nextSceneIndex);
     }
 
+    public void BossOneButton()
+    {
+        SceneManager.LoadSceneAsync("Boss 1");
+    }
+    public void BossTwoButton()
+    {
+        SceneManager.LoadSceneAsync("Boss 2");
+    }
+    public void BossThreeButton()
+    {
+        SceneManager.LoadSceneAsync("Boss 3");
+    }
+    public void BossFourButton()
+    {
+        SceneManager.LoadSceneAsync("Boss 4");
+    }
+    public void BossArenaButton()
+    {
+        SceneManager.LoadSceneAsync("Boss Arena");
+    }
+
+
     public void SkipTutorial()
     {
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 2;
         SceneManager.LoadSceneAsync(nextSceneIndex);
-    }
-
-    public void TestBossOne()
-    {
-        SceneManager.LoadSceneAsync(3);
-    }
-
-    public void TestBossTwo()
-    {
-        SceneManager.LoadSceneAsync(4);
-    }
-
-    public void TestBossThree()
-    {
-        SceneManager.LoadSceneAsync(5);
-    }
-
-    public void TestBossFour()
-    {
-        SceneManager.LoadSceneAsync(6);
     }
 }

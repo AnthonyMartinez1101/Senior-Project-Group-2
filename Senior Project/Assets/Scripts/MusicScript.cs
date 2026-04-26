@@ -23,6 +23,8 @@ public class MusicScript : MonoBehaviour
     [Range(0f, 2f)]
     public float bossMusicVolume = 1f;
 
+    public bool playBossMusic = false;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -45,7 +47,8 @@ public class MusicScript : MonoBehaviour
 
         if(!worldClock) GameManager.Instance.GetWorldClock();
 
-        ToggleDay();
+        if(playBossMusic) PlayBossMusic();
+        else ToggleDay();
     }
 
     IEnumerator WaitFive()

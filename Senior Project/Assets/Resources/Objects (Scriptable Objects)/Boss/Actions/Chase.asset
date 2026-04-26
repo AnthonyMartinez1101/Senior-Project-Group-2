@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Chase
   actionName: Chase
   actionDuration: 0
-  activationChance: 0.8
+  activationChance: 1
   chaseSpeedMultiplier: 1.5
   damageMultiplier: 1.15
   chaseAccelerationMultiplier: 2

@@ -18,6 +18,8 @@ public class HopWhileMoving : MonoBehaviour
     private float baseSpriteY;
     private Vector3 baseShadowScale;
 
+    public GameObject particles;
+
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -57,6 +59,8 @@ public class HopWhileMoving : MonoBehaviour
 
                         // If we're still moving, immediately hop again (smooth loop)
                         if (moving)StartHop();
+
+                        if(particles) Instantiate(particles, transform.position, Quaternion.identity);
                     });
             });
     }

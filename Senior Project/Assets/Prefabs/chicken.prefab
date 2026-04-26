@@ -201,6 +201,7 @@ MonoBehaviour:
   hopDuration: 0.22
   moveStartThreshold: 0.02
   moveStopThreshold: 0.02
+  particles: {fileID: 0}
 --- !u!114 &1061423778832810906
 MonoBehaviour:
   m_ObjectHideFlags: 0

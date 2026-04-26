@@ -18,6 +18,7 @@ public class Attack : MonoBehaviour
     public GameObject pistolBullet;
     public GameObject ARBullet;
     public GameObject shotgunBullet;
+    public GameObject ashParticles;
     public float bulletForce = 10f;
     public float bulletYOffset = 0.0f;
     float shootTimer = 0.5f;
@@ -99,6 +100,8 @@ public class Attack : MonoBehaviour
         {
             Quaternion rot = baseRot * Quaternion.Euler(0f, 0f, i * shotgunSpreadAngle);
             GameObject b = Instantiate(shotgunBullet, bulletSpawn, rot);
+            GameObject ash = Instantiate(ashParticles, bulletSpawn, rot);
+            Destroy(ash, 5f);
             ApplyBuff(b);
             Instantiate(shootFlash, bulletSpawn, rot);
 
@@ -116,6 +119,8 @@ public class Attack : MonoBehaviour
         Quaternion rot = aimer.rotation * Quaternion.Euler(0f, 0f, -90f);
         Vector3 bulletSpawn = aimer.position + new Vector3(0f, bulletYOffset, 0f);
         GameObject b = Instantiate(bullet, bulletSpawn, rot);
+        GameObject ash = Instantiate(ashParticles, bulletSpawn, rot);
+        Destroy(ash, 5f);
         ApplyBuff(b);
         Instantiate(shootFlash, bulletSpawn, rot);
         b.GetComponent<Rigidbody2D>().AddForce(-aimer.up * bulletForce, ForceMode2D.Impulse);
@@ -163,8 +168,8 @@ public class Attack : MonoBehaviour
 
     public void AttackBuff()
     {
-        damageBuffPercentage += 0.5f; //0.5% increase
-        StatManager.Instance.AddDmgBuff(0.5f);
+        damageBuffPercentage += 2.5f;
+        StatManager.Instance.AddDmgBuff(2.5f);
     }
 
     private void ApplyBuff(GameObject currentWeapon)

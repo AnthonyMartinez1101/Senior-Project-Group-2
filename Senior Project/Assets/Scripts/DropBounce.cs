@@ -19,7 +19,11 @@ public class DropBounce : MonoBehaviour
     [SerializeField] float minShadowScale = 0.9f; 
     [SerializeField] float maxShadowScale = 1.1f; 
     [SerializeField] float minShadowAlpha = 0.3f; 
-    [SerializeField] float maxShadowAlpha = 0.8f; 
+    [SerializeField] float maxShadowAlpha = 0.8f;
+
+    [Header("Particles")]
+    public GameObject dropParticles;
+    private int particleSpawnAmount = 0;
 
     Vector3 mainBaseLocalPos;
     Vector3 shadowBaseLocalPos;
@@ -64,6 +68,11 @@ public class DropBounce : MonoBehaviour
                 y = 0f;
 
                 dropAudio.PlayDropSound();
+                if(particleSpawnAmount < 3)
+                {
+                    Instantiate(dropParticles, transform.position, transform.rotation);
+                    particleSpawnAmount++;
+                }
 
                 v = -v * restitution;
             }

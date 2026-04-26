@@ -54,11 +54,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable, ICheat
 
     public void HealthBuff()
     {
-        maxHealthBuffPercentage += 0.5f;
+        maxHealthBuffPercentage += 1f;
         actualMaxHealth = maxHealth * (1f + maxHealthBuffPercentage / 100);
         if(healthBar) healthBar.UpdateHealth(currentHealth, actualMaxHealth);
 
-        StatManager.Instance.AddHealthBuff(0.5f);
+        StatManager.Instance.AddHealthBuff(1f);
     }
 
     //Interface logic
