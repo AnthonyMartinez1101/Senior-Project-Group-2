@@ -8,6 +8,8 @@ public class Package : MonoBehaviour, IDamageable
 
     private List<Item> packagedItems = new List<Item>();
 
+    private bool isOpen = false;
+
     public void CreatePackage(List<Item> items)
     {
         if (items == null || items.Count == 0) return;
@@ -33,6 +35,9 @@ public class Package : MonoBehaviour, IDamageable
 
     void OpenPackage()
     {
+        if (isOpen) return;
+        isOpen = true;
+
         if (packagedItems.Count <= 0) return;
 
         // Drop all items in the package when it is destroyed

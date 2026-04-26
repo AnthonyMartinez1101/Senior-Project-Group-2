@@ -16165,7 +16165,7 @@ Transform:
   m_GameObject: {fileID: 799218941}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.17, y: -3.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16246,6 +16246,7 @@ MonoBehaviour:
   introNight: 1
   dayWinCondition: 5
   snowParticles: {fileID: 685693591}
+  bossSpawnParticles: {fileID: 1095303093711428345, guid: 157486e618f5b204cbb508c3fa2e2eb5, type: 3}
 --- !u!4 &812834936 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 951365163498361168, guid: 69925a4421cb23d44ac9f3257024dd19, type: 3}
@@ -21278,6 +21279,7 @@ MonoBehaviour:
   dayMusicVolume: 0.15
   nightMusicVolume: 0.6
   bossMusicVolume: 0.6
+  playBossMusic: 0
 --- !u!82 &1041779940
 AudioSource:
   m_ObjectHideFlags: 0
@@ -45037,6 +45039,28 @@ MonoBehaviour:
   - {fileID: 4337781813295488036, guid: 3237adbf876061a4aa8a398c30f0dff5, type: 3}
   - {fileID: 5189511671736197121, guid: 36d6190808d419a4585ab55febfbf8b8, type: 3}
   - {fileID: 3758422883315622073, guid: 346a3aa7927d55245ae54467302c321f, type: 3}
+  - {fileID: 1969374275572328122, guid: a26382f2d64d05248adc0f590dd788e8, type: 3}
+  - {fileID: 1095303093711428345, guid: 157486e618f5b204cbb508c3fa2e2eb5, type: 3}
+  - {fileID: 4002374679368279265, guid: 284dabf10a466ed409789fd6b8992349, type: 3}
+  - {fileID: 4002374679368279265, guid: 71879ca0a32cb884fa2d6f5f8c62833f, type: 3}
+  - {fileID: 4002374679368279265, guid: 6ac03321e15695f418b36ef4820d016d, type: 3}
+  - {fileID: 618118730546879331, guid: be0d2865b887779478fc1ca9389d0e6b, type: 3}
+  - {fileID: 7145051324563734888, guid: 402e8e99e8f0d484e91290692e29964d, type: 3}
+  - {fileID: 9175627401722355487, guid: 29d65b792906947458de0dfc60d2af93, type: 3}
+  - {fileID: 8588785223345138722, guid: a9653aa7153bed04d9662c0a4cbdf498, type: 3}
+  - {fileID: 493636687948179516, guid: 8d6f55f92980f2347ac1cfcb407efb02, type: 3}
+  - {fileID: 3920530889117334310, guid: 89ee8ab06fd2d3d42a63d21aa75a7c3d, type: 3}
+  - {fileID: 4497399008981151711, guid: f847befa56b78bb488c26c93f5e2b6ea, type: 3}
+  - {fileID: 4497399008981151711, guid: e9cc24993765e5245968b60fa3027c8c, type: 3}
+  - {fileID: 5926082741006594302, guid: 3f0d745bb52da034f9e41162676dde34, type: 3}
+  - {fileID: 6708618665907053951, guid: 1a7d00f57fb437c469b41b7595246eb5, type: 3}
+  - {fileID: 7128661652687678279, guid: e17d0eb274be2d84b8f3e64308b27416, type: 3}
+  - {fileID: 7128661652687678279, guid: 6cc07c35ad0a0b44c9b5a907a6ce26d8, type: 3}
+  - {fileID: 468165074406571295, guid: 807482f365c4fef4ebb7f1f76e126a2a, type: 3}
+  - {fileID: 468165074406571295, guid: fc15e6ba38906674c9638f774c81002a, type: 3}
+  - {fileID: 4919924452173266357, guid: f6b46195427f35c4ba3526a7b9ab0ab9, type: 3}
+  - {fileID: 468165074406571295, guid: bd0ac35dcb5143b488cd2179c04dc28f, type: 3}
+  - {fileID: 4919924452173266357, guid: f3dbcea4ef5312c4ba5e299333c28694, type: 3}
 --- !u!1001 &1737325106
 PrefabInstance:
   m_ObjectHideFlags: 0

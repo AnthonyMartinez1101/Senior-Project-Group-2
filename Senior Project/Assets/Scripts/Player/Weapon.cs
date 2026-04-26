@@ -27,6 +27,9 @@ public class Weapon : MonoBehaviour
 
     private HashSet<IDamageable> alreadyHit = new HashSet<IDamageable>();
 
+    public GameObject hitFlash;
+    public GameObject Debris;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -84,6 +87,8 @@ public class Weapon : MonoBehaviour
     {
         if(Avoid(collision.tag)) return;
 
+        if (hitFlash) Instantiate(hitFlash, transform.position, transform.rotation);
+
         //Find if collided object is damageable
         var damageable = collision.GetComponent<IDamageable>() ?? collision.GetComponentInParent<IDamageable>() ?? collision.GetComponentInChildren<IDamageable>();
 
@@ -107,6 +112,8 @@ public class Weapon : MonoBehaviour
             Debug.Log("Damage Dealt: " + damage);
             bulletTotalHit++;
 
+            
+
             //Apply knockback if object has knockback component
             Knockback knockback = collision.GetComponent<Knockback>();
             if (knockback != null) knockback.ApplyKnockback(transform, knockbackForce);
@@ -117,6 +124,7 @@ public class Weapon : MonoBehaviour
         {
             //Debug.Log("Bullet destroyed by: " + collision.name + "\nCurrent damage: " + damage + "\nTime alive: " + timeAlive);
             Destroy(gameObject);
+            if(Debris) Instantiate(Debris, transform.position, transform.rotation);
         }
     }
 

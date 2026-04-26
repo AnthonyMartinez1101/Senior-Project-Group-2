@@ -63,6 +63,9 @@ public class WorldClock : MonoBehaviour
     public int dayWinCondition = 5;
 
     public GameObject snowParticles;
+    public GameObject bossSpawnParticles;
+
+    private bool BossParticlesSpawned = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -113,6 +116,14 @@ public class WorldClock : MonoBehaviour
         if(currentTime != 0 && !pauseTimer) preciseTime -= Time.deltaTime;
 
         //Debug.Log(PercentageOfDayAndNight());
+
+        //Debug.Log(TimeLeftOfNight());
+        if (IsNight() && TimeLeftOfNight() >= 55f && !isIntroNight && !BossParticlesSpawned)
+        {
+            if (bossSpawnParticles) Instantiate(bossSpawnParticles);
+            GameManager.Instance.CameraShake(5f, 5f);
+            BossParticlesSpawned = true;
+        }
     }
 
     IEnumerator TickTime()
@@ -172,6 +183,7 @@ public class WorldClock : MonoBehaviour
             preciseTime = dayLength;
 
             canSpawnBoss = false;
+            BossParticlesSpawned = false;
 
             if (!inTutorialMode) IterateSeason(1);
             interateDay();
@@ -275,6 +287,11 @@ public class WorldClock : MonoBehaviour
     public bool IsIntroNightCompleted()
     {
         return introNightCompleted;
+    }
+
+    private float TimeLeftOfNight()
+    {
+        return (nightLength - preciseTime);
     }
 
     public void CompleteIntroNight()

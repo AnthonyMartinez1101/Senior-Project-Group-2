@@ -269,6 +269,7 @@ MonoBehaviour:
   explosionTimer: 2.5
   explosionRadius: {fileID: 0}
   bulletHitCount: 5
+  hitFlash: {fileID: 0}
 --- !u!95 &6947063508600643050
 Animator:
   serializedVersion: 7
