@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public Button titleButton;
     public Button playButton;
     public Toggle settingsButton;
+    public Button testBossesButton;
     private GameObject lastSelected;
 
     void OnEnable()
@@ -42,6 +43,11 @@ public class MainMenu : MonoBehaviour
     public void BackToMainMenu()
     {
         EventSystem.current.SetSelectedGameObject(titleButton.gameObject);
+    }
+
+    public void EnableTestBossesScreen()
+    {
+        EventSystem.current.SetSelectedGameObject(testBossesButton.gameObject);
     }
 
     public void NewButton()
