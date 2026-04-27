@@ -33,6 +33,8 @@ public class TutorialScript : MonoBehaviour
 
     public GameObject tutoritalEnemy;
 
+    public GameObject dayEnemies;
+
     InputAction toggleInput;
     InputAction rightStick;
     private bool controllerConnected = false;
@@ -272,9 +274,10 @@ public class TutorialScript : MonoBehaviour
     {
         ui.UpdateUI("Bugs are eating your crops! Defeat them with your scythe!", false);
         bool enemiesDefeated = false;
+        dayEnemies.SetActive(true);
         while (!enemiesDefeated)
         {
-            if (EnemyCollection.childCount == 0 && spawner.spawnedDayEnemies >= 3)
+            if (dayEnemies.transform.childCount == 0)
             {
                 enemiesDefeated = true;
             }

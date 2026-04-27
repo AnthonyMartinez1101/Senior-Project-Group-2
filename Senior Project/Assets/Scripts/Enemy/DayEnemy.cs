@@ -11,7 +11,7 @@ public class DayEnemy : MonoBehaviour, IDamageable, IPoisonable
     private float hitTimer = 0f;
 
     private bool inPlantRange = false;
-    private GameObject soil;
+    public GameObject soil;
     private List<PlantScript> allPlants = new List<PlantScript>();
 
     private Transform currentTarget;

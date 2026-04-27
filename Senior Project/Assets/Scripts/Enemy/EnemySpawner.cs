@@ -91,7 +91,7 @@ public class EnemySpawner : MonoBehaviour, IGoCrazy
 
     private void Update()
     {
-        if (!CheckReference()) return;
+        if (!CheckReference() || InTutorial) return;
 
         if (worldClock.IsIntroNight())
         {
