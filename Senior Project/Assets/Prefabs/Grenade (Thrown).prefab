@@ -142,6 +142,10 @@ MonoBehaviour:
   explosionTimer: 2.5
   explosionRadius: {fileID: 7627049528568633562}
   bulletHitCount: 5
+  hitFlash: {fileID: 0}
+  Debris: {fileID: 0}
+  explosionSound: {fileID: 8300000, guid: 395e9cc970f059a4db11de064ff8d75d, type: 3}
+  explosionVolume: 1
 --- !u!58 &7627049528568633562
 CircleCollider2D:
   m_ObjectHideFlags: 0

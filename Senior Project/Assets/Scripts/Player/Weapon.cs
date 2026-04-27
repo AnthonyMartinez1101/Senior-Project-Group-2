@@ -30,6 +30,8 @@ public class Weapon : MonoBehaviour
     public GameObject hitFlash;
     public GameObject Debris;
 
+    
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -42,7 +44,7 @@ public class Weapon : MonoBehaviour
         {
             damage *= 3;
         }
-
+        
     }
 
     void Update()
