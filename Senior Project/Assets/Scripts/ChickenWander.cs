@@ -81,7 +81,7 @@ public class ChickenWander : MonoBehaviour
                 agent.SetDestination(dest);
                 if(!IsFleeing()) agent.speed = wanderSpeed;
             }
-            yield return new WaitUntil(() => worldClock.IsNight() || (!agent.pathPending && (agent.remainingDistance <= 0.5f || agent.pathStatus != NavMeshPathStatus.PathComplete)));
+            yield return new WaitUntil(() => worldClock.IsNight() || (!agent.pathPending && (agent.remainingDistance <= 1f || agent.pathStatus != NavMeshPathStatus.PathComplete)));
             yield return WaitWhileDay(Random.Range(minWaitTime, maxWaitTime));
         }
     }

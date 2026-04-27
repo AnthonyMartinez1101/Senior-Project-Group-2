@@ -57,6 +57,7 @@ public class DropPackageSprite : MonoBehaviour
             if (sr) sr.sortingOrder = 4;
             if (col) col.enabled = true;
             if (particles) Instantiate(particles, targetPosition, Quaternion.identity);
+            GameManager.Instance.CameraShake(0.2f, 0.3f);
             return;
         }
 
