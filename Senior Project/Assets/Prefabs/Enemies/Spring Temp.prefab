@@ -354,7 +354,7 @@ MonoBehaviour:
   dropChance: 1
   explosionPrefab: {fileID: 0}
   randomItemDrop: {fileID: 11400000, guid: 7d42225e9a8f651459e31a0ae1a4bf12, type: 2}
-  dropExpires: 1
+  dropExpires: 0
   burnParticles: {fileID: 3385743381017119280}
 --- !u!114 &5300578624398878722
 MonoBehaviour:
@@ -703,6 +703,10 @@ PrefabInstance:
     - target: {fileID: 2578864597940973824, guid: c640191a004defb4fb35dad3ab2e3ca4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196712463495361996, guid: c640191a004defb4fb35dad3ab2e3ca4, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3937250288482046899, guid: c640191a004defb4fb35dad3ab2e3ca4, type: 3}
       propertyPath: m_Layer

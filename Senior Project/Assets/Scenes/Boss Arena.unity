@@ -9801,7 +9801,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   autoSaveTimer: 10
-  canSave: 1
+  canSave: 0
+  nightFightDone: 1
   player: {fileID: 1291469836}
   Enemies: {fileID: 1957676181}
   enemySpawner: {fileID: 1544488704}
@@ -19009,6 +19010,7 @@ MonoBehaviour:
   introNight: 0
   dayWinCondition: 5
   snowParticles: {fileID: 685693591}
+  bossSpawnParticles: {fileID: 0}
 --- !u!4 &804264728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2392322832669498339, guid: e0556535634fb9b478f368e7c15f748c, type: 3}
