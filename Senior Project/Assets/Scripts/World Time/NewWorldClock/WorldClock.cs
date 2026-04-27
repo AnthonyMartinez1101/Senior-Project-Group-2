@@ -20,7 +20,7 @@ public enum SeasonPhase
 }
 
 
-public class WorldClock : MonoBehaviour
+public class WorldClock : MonoBehaviour, IGoCrazy
 {
     [Header("Phase display lengths (seconds)")]
     [SerializeField] private float dayLength = 180f;   // 3:00 shown
@@ -322,5 +322,12 @@ public class WorldClock : MonoBehaviour
     public int GetCurrentDay()
     {
         return currentDay;
+    }
+
+    public void GoCrazy()
+    {
+        var particles = snowParticles.GetComponent<ParticleSystem>();
+        var main = particles.main;
+        main.startColor = Color.red;
     }
 }

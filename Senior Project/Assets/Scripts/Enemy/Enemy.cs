@@ -64,6 +64,11 @@ public class Enemy : MonoBehaviour, IDamageable, IPoisonable
         damageFlash = GetComponent<DamageFlash>();
     }
 
+    public void ApplyDifficulty(int difficulty)
+    {
+        dealDamage *= difficulty;
+    }
+
     public void ApplyPoison(int ticks)
     {
         bool ifPoisoned = poisonCount > 0;

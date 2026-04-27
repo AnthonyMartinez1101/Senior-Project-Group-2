@@ -323,7 +323,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 0}
   randomItemDrop: {fileID: 11400000, guid: 7d42225e9a8f651459e31a0ae1a4bf12, type: 2}
   dropExpires: 1
-  burnParticles: {fileID: 2802695807179764376, guid: 5e920954815b1aa46806e8a89b6b6aef, type: 3}
+  burnParticles: {fileID: 2477598581550484268}
 --- !u!114 &5300578624398878722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,6 +596,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e920954815b1aa46806e8a89b6b6aef, type: 3}
+--- !u!1 &2477598581550484268 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2802695807179764376, guid: 5e920954815b1aa46806e8a89b6b6aef, type: 3}
+  m_PrefabInstance: {fileID: 326262709735209396}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5766176590930182619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6089584933446629487, guid: 5e920954815b1aa46806e8a89b6b6aef, type: 3}

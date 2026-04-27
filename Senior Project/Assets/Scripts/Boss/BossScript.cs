@@ -42,6 +42,8 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
 
     private int poisonCount = 0;
 
+    private int defence = 1;
+
     private void Start()
     {
         currentHealth = data.maxHealth;
@@ -89,6 +91,11 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
             playerKnockback.ApplyKnockback(transform, data.knockbackForce);
             hitCooldown = data.hitCooldown;
         }
+    }
+
+    public void ApplyDifficulty(int difficulty)
+    {
+        defence *= difficulty;
     }
 
     public void ApplyPoison(int ticks)
@@ -168,7 +175,7 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
         }
 
         if (damageFlash) damageFlash.FlashOnDamage();
-        currentHealth -= damageAmount;
+        currentHealth -= (damageAmount / defence);
         //Debug.Log("Boss Health: " + currentHealth);
         if (healthBar) healthBar.UpdateHealth(currentHealth, data.maxHealth);
         if (currentHealth <= 0)

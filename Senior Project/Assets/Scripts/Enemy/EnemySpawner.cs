@@ -29,7 +29,7 @@ public class IntRange
 }
 
 
-public class EnemySpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour, IGoCrazy
 {
     [Header("Intro zombies (if intro night is enabled)")]
     [SerializeField] private List<GameObject> introZombies = new List<GameObject>();
@@ -83,6 +83,9 @@ public class EnemySpawner : MonoBehaviour
     private int wave = 0;
 
 
+    private int difficulty = 1;
+
+
     public bool InTutorial = false; //Tutorial mode, disabling spawning
 
     private void Update()
@@ -106,7 +109,11 @@ public class EnemySpawner : MonoBehaviour
                 currentBoss = Instantiate(bosses[bossInd], bossSpawnPoint.position, bossSpawnPoint.rotation, EnemyCollection);
                 GameManager.Instance.CameraShake(20f, 0.5f);
                 var bossScript = currentBoss.GetComponent<BossScript>();
-                if (bossScript != null) bossScript.player = player;
+                if (bossScript != null)
+                {
+                    bossScript.player = player;
+                    bossScript.ApplyDifficulty(difficulty + 1);
+                }
                 var bossFollow = currentBoss.GetComponent<EnemyFollow>();
                 if (bossFollow != null) bossFollow.SetTarget(player);   
 
@@ -127,9 +134,11 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    
+
     private void SpawnDayEnemies()
     {
-        daySpawnTimer -= Time.deltaTime;
+        daySpawnTimer -= Time.deltaTime * difficulty;
         if (daySpawnTimer <= 0f)
         {
             StartCoroutine(SpawnDays());
@@ -140,7 +149,7 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator SpawnDays()
     {
         GameObject randomDayEnemy = dayEnemies[Random.Range(0, dayEnemies.Count)];
-        int spawnAmount = daySpawnAmount.RandomRange();
+        int spawnAmount = daySpawnAmount.RandomRange() * difficulty;
         for (int i = 0; i < spawnAmount; i++)
         {
             SpawnAndSetDayEnemy(randomDayEnemy);
@@ -186,8 +195,8 @@ public class EnemySpawner : MonoBehaviour
     {
 
 
-        consistenSpawnTimer -= Time.deltaTime;
-        waveTimer -= Time.deltaTime;
+        consistenSpawnTimer -= Time.deltaTime * difficulty;
+        waveTimer -= Time.deltaTime * difficulty;
 
         //Constant spawn functionality
         if (consistenSpawnTimer <= 0f)
@@ -200,7 +209,7 @@ public class EnemySpawner : MonoBehaviour
         //Wave spawn functionality (only spawn waves if there is no boss)
         if (waveTimer <= 0f && currentBoss == null)
         {
-            waveValue = (wave * 5);
+            waveValue = (wave * 5) * difficulty;
             wave++;
             waveTimer = waveIntervals;
             GenerateWaveEnemies();
@@ -232,6 +241,7 @@ public class EnemySpawner : MonoBehaviour
         //Give enemy the worldClock
         Enemy e = enemy.GetComponent<Enemy>();
         e.SetWorldTime(worldClock);
+        e.ApplyDifficulty(difficulty);
     }
 
     private SpawnableEnemy GetRandomEnemy()
@@ -320,5 +330,10 @@ public class EnemySpawner : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    public void GoCrazy()
+    {
+        difficulty = 2;
     }
 }
