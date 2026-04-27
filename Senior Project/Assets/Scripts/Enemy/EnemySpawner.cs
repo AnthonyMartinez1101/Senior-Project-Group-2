@@ -87,11 +87,11 @@ public class EnemySpawner : MonoBehaviour, IGoCrazy
 
 
     public bool InTutorial = false; //Tutorial mode, disabling spawning
+    private int spawnedDayEnemies = 0;
 
     private void Update()
     {
         if (!CheckReference()) return;
-        if(InTutorial) return;
 
         if (worldClock.IsIntroNight())
         {
@@ -159,6 +159,8 @@ public class EnemySpawner : MonoBehaviour, IGoCrazy
 
     void SpawnAndSetDayEnemy(GameObject dayEnemyToSpawn)
     {
+        if (InTutorial && spawnedDayEnemies >= 3) return; //In tutorial, only spawn 3 day enemies
+        spawnedDayEnemies++;
         int randSpawn = Random.Range(0, spawnPoints.Count);
         Transform currentSpawn = spawnPoints[randSpawn];
 

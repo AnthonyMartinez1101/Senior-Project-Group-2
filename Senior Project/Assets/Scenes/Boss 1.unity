@@ -9853,7 +9853,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   autoSaveTimer: 10
-  canSave: 1
+  canSave: 0
+  nightFightDone: 1
   player: {fileID: 1291469836}
   Enemies: {fileID: 1957676181}
   enemySpawner: {fileID: 1544488704}

@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public static GameData gameData;
     public float autoSaveTimer = 10f;
     public bool canSave = true;
-    private bool nightFightDone = false;
+    public bool nightFightDone = false;
     //add ui mabober
 
     public GameObject player;
@@ -65,13 +65,17 @@ public class GameManager : MonoBehaviour
         }
         if (loadOnStart)
         {
-            nightFightDone = true;
             gameData = SaveScript.LoadGame();
             if (gameData == null)
             {
                 Debug.Log("No save data found. Starting new game.");
                 nightFightDone = false;
                 gameData = new GameData();
+            }
+            else
+            {
+                nightFightDone = true;
+                DeleteAllItems();
             }
         }
         LoadData(gameData);
@@ -290,7 +294,8 @@ public class GameManager : MonoBehaviour
     IEnumerator WaitOnDeath()
     {
         yield return new WaitForSeconds(3f);
-        GameOverScreen.SetActive(true); 
+        GameOverScreen.SetActive(true);
+        uiScript.gameOverOpened();
     }
 
     public void WinGameScene()
@@ -298,6 +303,7 @@ public class GameManager : MonoBehaviour
         // Load game from previous save
         WinGameScreen.SetActive(true);
         player.SetActive(false);
+        uiScript.winOpened();
     }
 
     ////Waits for 3 seconds before restarting the scene
@@ -388,11 +394,11 @@ public class GameManager : MonoBehaviour
                 inventorySystem.RefreshUI();
             }
 
-            if (data.coinStash > 0)
-            {
-                player.GetComponent<PlayerWallet>().ClearWallet();
-                player.GetComponent<PlayerWallet>().AddCoins(data.coinStash);
-            }
+            //if (data.coinStash > 0)
+            //{
+            //    player.GetComponent<PlayerWallet>().ClearWallet();
+            //    player.GetComponent<PlayerWallet>().AddCoins(data.coinStash);
+            //}
 
             // load item drops
 
@@ -469,5 +475,13 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         image.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f); // Ensure it's fully transparent at the end
+    }
+
+    void DeleteAllItems()
+    {
+        foreach (var item in FindObjectsByType<ItemDropScript>(FindObjectsSortMode.None))
+        {
+            Destroy(item.gameObject);
+        }
     }
 }
