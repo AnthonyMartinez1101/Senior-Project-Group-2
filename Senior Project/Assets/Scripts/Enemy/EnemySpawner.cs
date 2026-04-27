@@ -87,7 +87,7 @@ public class EnemySpawner : MonoBehaviour, IGoCrazy
 
 
     public bool InTutorial = false; //Tutorial mode, disabling spawning
-    private int spawnedDayEnemies = 0;
+    public int spawnedDayEnemies = 0;
 
     private void Update()
     {

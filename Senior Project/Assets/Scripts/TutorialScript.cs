@@ -111,7 +111,7 @@ public class TutorialScript : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
         // Tutorial complete, swap scenes (use fade to black?)
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadSceneAsync(0);
     }
 
     // Wait for WASD and Space to be pressed
@@ -274,7 +274,7 @@ public class TutorialScript : MonoBehaviour
         bool enemiesDefeated = false;
         while (!enemiesDefeated)
         {
-            if (EnemyCollection.childCount == 0)
+            if (EnemyCollection.childCount == 0 && spawner.spawnedDayEnemies >= 3)
             {
                 enemiesDefeated = true;
             }
@@ -333,7 +333,7 @@ public class TutorialScript : MonoBehaviour
             {
                 player.GetComponent<PlayerHealth>().SetMaxHealth();
                 foodEaten = true;
-                player.GetComponent<InteractScript>().canEat = true;
+                player.GetComponent<InteractScript>().canEat = false;
             }
             yield return null;
         }
