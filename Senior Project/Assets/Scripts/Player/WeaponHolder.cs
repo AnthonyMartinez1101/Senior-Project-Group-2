@@ -46,16 +46,16 @@ public class WeaponHolder : MonoBehaviour
         // Scan for type of input and update controllerConnected
         ScanInputType();
 
-        if (controllerConnected)
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
+        //if (controllerConnected)
+        //{
+        //    Cursor.visible = false;
+        //    Cursor.lockState = CursorLockMode.Locked;
+        //}
+        //else
+        //{
+        //    Cursor.visible = true;
+        //    Cursor.lockState = CursorLockMode.None;
+        //}
 
         //If twinstick controls are enabled
         if (canAim && Mouse.current != null && Camera.main != null)

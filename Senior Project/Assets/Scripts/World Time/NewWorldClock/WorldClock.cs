@@ -67,6 +67,7 @@ public class WorldClock : MonoBehaviour, IGoCrazy
 
     private bool BossParticlesSpawned = false;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -110,6 +111,7 @@ public class WorldClock : MonoBehaviour, IGoCrazy
 
     void Update()
     {
+
         int minutes = Mathf.FloorToInt(currentTime / 60f);
         int seconds = Mathf.FloorToInt(currentTime % 60f);
 
@@ -140,7 +142,7 @@ public class WorldClock : MonoBehaviour, IGoCrazy
                 else yield return new WaitForSeconds(1f);
                 currentTime -= 1f;
 
-                if (currentTime == 0f)
+                if (currentTime <= 0f)
                 {
                     if (CurrentPhase == DayPhase.Night && !isIntroNight)
                     {
@@ -152,6 +154,14 @@ public class WorldClock : MonoBehaviour, IGoCrazy
                     yield return StartCoroutine(TimeChange());
                 }
             }
+        }
+    }
+
+    public void SkipDay()
+    {
+        if (IsDay())
+        {
+            currentTime = 0f;
         }
     }
 

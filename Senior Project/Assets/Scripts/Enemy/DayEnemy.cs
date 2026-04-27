@@ -22,6 +22,8 @@ public class DayEnemy : MonoBehaviour, IDamageable, IPoisonable
 
     private WorldClock clock;
 
+    public GameObject parts;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -113,6 +115,7 @@ public class DayEnemy : MonoBehaviour, IDamageable, IPoisonable
 
     public void TakeDamage(float damageDealt, DamageType damageType)
     {
+        if(parts) Instantiate(parts, transform.position, transform.rotation);
         Destroy(gameObject);
 
     }

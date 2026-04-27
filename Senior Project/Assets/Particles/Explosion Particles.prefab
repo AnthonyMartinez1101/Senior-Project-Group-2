@@ -29943,7 +29943,7 @@ ParticleSystem:
     startRotation:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 6.283185
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -30063,7 +30063,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0, y: 1, z: 0}
+    m_Scale: {x: 0, y: 1.0222563e-14, z: 0}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -30945,7 +30945,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -6069886507234829160, guid: 9b076e2448ea24b4998564df95984116, type: 3}
+    - sprite: {fileID: -3164608582777933237, guid: 767bca7ecd36bd44db97aae2d1a11ff0, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
