@@ -26,6 +26,8 @@ public class ItemDropScript : MonoBehaviour
 
     public int runtimeAmount = 0;
 
+    private bool isCollected = false;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -100,9 +102,10 @@ public class ItemDropScript : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!canBeCollected) return;
+        if (!canBeCollected || isCollected) return;
         if (collision.CompareTag("Player"))
         {
+            isCollected = true;
             GameManager.Instance.AddToInventory(item, runtimeAmount);
             Destroy(gameObject);
         }

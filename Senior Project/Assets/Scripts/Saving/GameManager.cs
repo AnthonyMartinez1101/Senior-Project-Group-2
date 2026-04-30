@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
     public Image blackBackground;
 
 
+
     private void Awake()
     {
         GameOverScreen.SetActive(false);
@@ -79,6 +80,7 @@ public class GameManager : MonoBehaviour
             }
         }
         LoadData(gameData);
+
 
         if (Instance == null)
         {
@@ -121,6 +123,7 @@ public class GameManager : MonoBehaviour
 
             StartCoroutine(FadeOut(blackBackground, 3f));
         }
+
     }
 
     void Update()
@@ -243,6 +246,13 @@ public class GameManager : MonoBehaviour
         if(!enabled) return; //makes sure it doesnt shake if setting is off
 
         FollowCamera.ShakeCamera(intensity, duration);
+    }
+
+    public void ConstantCameraShake(float intensity, float duration)
+    {
+        if(!enabled) return;
+
+        FollowCamera.ConstantShakeCamera(intensity, duration);
     }
 
     public bool IsDay() 

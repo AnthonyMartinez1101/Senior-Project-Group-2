@@ -123,9 +123,16 @@ public class WorldClock : MonoBehaviour, IGoCrazy
         if (IsNight() && TimeLeftOfNight() >= 55f && !isIntroNight && !BossParticlesSpawned)
         {
             if (bossSpawnParticles) Instantiate(bossSpawnParticles);
-            GameManager.Instance.CameraShake(5f, 5f);
+            StartCoroutine(BossCameraShake());
             BossParticlesSpawned = true;
         }
+    }
+
+    IEnumerator BossCameraShake()
+    {
+        GameManager.Instance.ConstantCameraShake(5f, 5f);
+        yield return new WaitForSeconds(5f);
+        GameManager.Instance.CameraShake(10f, 2f);
     }
 
     IEnumerator TickTime()

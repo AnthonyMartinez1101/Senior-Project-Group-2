@@ -61,7 +61,7 @@ public class DayEnemy : MonoBehaviour, IDamageable, IPoisonable
                 waitTimer -= Time.deltaTime;
                 if(waitTimer < 0f)
                 {
-                    Destroy(gameObject);
+                    Die();
                 }
             }
         }
@@ -82,7 +82,7 @@ public class DayEnemy : MonoBehaviour, IDamageable, IPoisonable
 
         if(clock && clock.IsNight())
         {
-            Destroy(gameObject);
+            Die();
         }
     }
 
@@ -110,14 +110,12 @@ public class DayEnemy : MonoBehaviour, IDamageable, IPoisonable
 
     public void ApplyPoison(int ticks)
     {
-        Destroy(gameObject);
+        Die();
     }
 
     public void TakeDamage(float damageDealt, DamageType damageType)
     {
-        if(parts) Instantiate(parts, transform.position, transform.rotation);
-        Destroy(gameObject);
-
+        Die();
     }
 
     public void GiveSoil(GameObject s)
@@ -128,5 +126,11 @@ public class DayEnemy : MonoBehaviour, IDamageable, IPoisonable
     public void GiveClock(WorldClock c)
     {
         clock = c;
+    }
+
+    private void Die()
+    {
+        if (parts) Instantiate(parts, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }

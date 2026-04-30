@@ -8562,6 +8562,7 @@ MonoBehaviour:
   WinGameScreen: {fileID: 1863002901}
   chickenHidePosition: {fileID: 951613978}
   blackBackground: {fileID: 1491746770}
+  musicScript: {fileID: 1041779939}
 --- !u!4 &404758539
 Transform:
   m_ObjectHideFlags: 0
@@ -36768,7 +36769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

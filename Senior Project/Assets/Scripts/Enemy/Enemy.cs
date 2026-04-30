@@ -34,6 +34,8 @@ public class Enemy : MonoBehaviour, IDamageable, IPoisonable
 
     public GameObject burnParticles;
 
+    private bool died = false;
+
 
 
 
@@ -91,13 +93,14 @@ public class Enemy : MonoBehaviour, IDamageable, IPoisonable
 
     public void TakeDamage(float damageAmount, DamageType damageType)
     {
-        if(damageAmount <= 0) return;
+        if(damageAmount <= 0 || died) return;
 
         if(damageFlash) damageFlash.FlashOnDamage();
         health -= damageAmount;
         if(healthBar) healthBar.UpdateHealth(health, maxHealth);
         if (health <= 0)
         {
+            died = true;
             int randNum = Random.Range(1, 101);
             if(randNum <= dropChance && randomItemDrop != null) ItemDropFactory.Instance.SpawnItem(randomItemDrop, 0, transform.position, dropExpires);
             StatManager.Instance.AddZombieKill();
