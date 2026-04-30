@@ -22,7 +22,7 @@ MonoBehaviour:
   knockbackForce: 15
   hitCooldown: 2
   isInvincible: 0
-  phaseTwoThreshold: 0.5
+  phaseTwoThreshold: 1
   phaseThreeThreshold: 0
   rageMultiplier: 1.2
   cooldownTime: 0.3
