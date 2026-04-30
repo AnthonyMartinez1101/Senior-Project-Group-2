@@ -36,6 +36,11 @@ public class Enemy : MonoBehaviour, IDamageable, IPoisonable
 
     private bool died = false;
 
+    public GameObject damageParticles;
+    public GameObject deathParticles;
+    public GameObject burnDeathParticles;
+    public GameObject burnDeathHeadParticles;
+
 
 
 
@@ -95,7 +100,9 @@ public class Enemy : MonoBehaviour, IDamageable, IPoisonable
     {
         if(damageAmount <= 0 || died) return;
 
-        if(damageFlash) damageFlash.FlashOnDamage();
+        if(damageParticles) Instantiate(damageParticles, transform.position, Quaternion.identity);
+
+        if (damageFlash) damageFlash.FlashOnDamage();
         health -= damageAmount;
         if(healthBar) healthBar.UpdateHealth(health, maxHealth);
         if (health <= 0)
@@ -104,8 +111,8 @@ public class Enemy : MonoBehaviour, IDamageable, IPoisonable
             int randNum = Random.Range(1, 101);
             if(randNum <= dropChance && randomItemDrop != null) ItemDropFactory.Instance.SpawnItem(randomItemDrop, 0, transform.position, dropExpires);
             StatManager.Instance.AddZombieKill();
-            if(explosionPrefab != null) 
-                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            if(explosionPrefab != null) Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            if(deathParticles) Instantiate(deathParticles, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
@@ -122,6 +129,8 @@ public class Enemy : MonoBehaviour, IDamageable, IPoisonable
             {
                 if (explosionPrefab != null)
                     Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                if(burnDeathParticles) Instantiate(burnDeathParticles, transform.position, Quaternion.identity);
+                if(burnDeathHeadParticles) Instantiate(burnDeathHeadParticles, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
             yield return new WaitForSeconds(dayBurnRate);

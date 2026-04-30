@@ -336,6 +336,10 @@ MonoBehaviour:
   randomItemDrop: {fileID: 11400000, guid: 7d42225e9a8f651459e31a0ae1a4bf12, type: 2}
   dropExpires: 1
   burnParticles: {fileID: 7752126625681337584}
+  damageParticles: {fileID: 5207351545759514891, guid: 23741f0b0615eec43b2ce13e74bf3624, type: 3}
+  deathParticles: {fileID: 3300415560506350389, guid: cf5c2237294314846a7bf66bf3f524ee, type: 3}
+  burnDeathParticles: {fileID: 5207351545759514891, guid: f41370141345a2a428920105c9669598, type: 3}
+  burnDeathHeadParticles: {fileID: 3300415560506350389, guid: 5e04837f9ddb5cd42ac4374cb9f6977f, type: 3}
 --- !u!114 &5300578624398878722
 MonoBehaviour:
   m_ObjectHideFlags: 0

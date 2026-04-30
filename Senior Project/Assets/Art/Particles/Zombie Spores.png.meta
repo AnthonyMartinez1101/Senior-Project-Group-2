@@ -1,0 +1,867 @@
+fileFormatVersion: 2
+guid: 904f53374558f894da9fda6da5b0e724
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7240602748049121687
+    second: Zombie Spores_0
+  - first:
+      213: 4117957414955381803
+    second: Zombie Spores_1
+  - first:
+      213: -6940892357237460887
+    second: Zombie Spores_2
+  - first:
+      213: 836143347054711799
+    second: Zombie Spores_3
+  - first:
+      213: 8906350362377656855
+    second: Zombie Spores_4
+  - first:
+      213: 3040060196704884818
+    second: Zombie Spores_5
+  - first:
+      213: 1335445629657725991
+    second: Zombie Spores_6
+  - first:
+      213: -1739139012193459624
+    second: Zombie Spores_7
+  - first:
+      213: 3838475745359974502
+    second: Zombie Spores_8
+  - first:
+      213: 7846396899069550672
+    second: Zombie Spores_9
+  - first:
+      213: 7284226705533455866
+    second: Zombie Spores_10
+  - first:
+      213: -6191995369898965188
+    second: Zombie Spores_11
+  - first:
+      213: 5506073863971699529
+    second: Zombie Spores_12
+  - first:
+      213: 8889010901252868430
+    second: Zombie Spores_13
+  - first:
+      213: -4114167818492033802
+    second: Zombie Spores_14
+  - first:
+      213: 8174446079816052978
+    second: Zombie Spores_15
+  - first:
+      213: 3555670175865752903
+    second: Zombie Spores_16
+  - first:
+      213: 6115271404853645941
+    second: Zombie Spores_17
+  - first:
+      213: 3733425584374341219
+    second: Zombie Spores_18
+  - first:
+      213: 2771533927828904551
+    second: Zombie Spores_19
+  - first:
+      213: 887518952574960422
+    second: Zombie Spores_20
+  - first:
+      213: -7578606436029627787
+    second: Zombie Spores_21
+  - first:
+      213: 4461618294820253278
+    second: Zombie Spores_22
+  - first:
+      213: -8123193392240617870
+    second: Zombie Spores_23
+  - first:
+      213: -8331117758418052210
+    second: Zombie Spores_24
+  - first:
+      213: 9157760543625882412
+    second: Zombie Spores_25
+  - first:
+      213: -4960915285940721885
+    second: Zombie Spores_26
+  - first:
+      213: 4195742058462863035
+    second: Zombie Spores_27
+  - first:
+      213: 7077928155222842655
+    second: Zombie Spores_28
+  - first:
+      213: 883667625319515014
+    second: Zombie Spores_29
+  - first:
+      213: -7781996719221326137
+    second: Zombie Spores_30
+  - first:
+      213: 9126775366561066881
+    second: Zombie Spores_31
+  - first:
+      213: -8019341316494486849
+    second: Zombie Spores_32
+  - first:
+      213: -6051741406581852074
+    second: Zombie Spores_33
+  - first:
+      213: 8845779277289317811
+    second: Zombie Spores_34
+  - first:
+      213: -7468088811548396661
+    second: Zombie Spores_35
+  - first:
+      213: -6664269911845707473
+    second: Zombie Spores_36
+  - first:
+      213: 7209277581608609886
+    second: Zombie Spores_37
+  - first:
+      213: 5504170076738113164
+    second: Zombie Spores_38
+  - first:
+      213: 248218109772625240
+    second: Zombie Spores_39
+  - first:
+      213: -4295831389120657097
+    second: Zombie Spores_40
+  - first:
+      213: 405608093047733456
+    second: Zombie Spores_41
+  - first:
+      213: 8014372023055064763
+    second: Zombie Spores_42
+  - first:
+      213: -3166470369341534793
+    second: Zombie Spores_43
+  - first:
+      213: -2210076262756153602
+    second: Zombie Spores_44
+  - first:
+      213: -2496267601649833627
+    second: Zombie Spores_45
+  - first:
+      213: -4019455972092587096
+    second: Zombie Spores_46
+  - first:
+      213: -8888479666227965859
+    second: Zombie Spores_47
+  - first:
+      213: 774549920276553225
+    second: Zombie Spores_48
+  - first:
+      213: 3523496380922217288
+    second: Zombie Spores_49
+  - first:
+      213: 1260348760840691432
+    second: Zombie Spores_50
+  - first:
+      213: 8197636474952188313
+    second: Zombie Spores_51
+  - first:
+      213: -5393423256532299771
+    second: Zombie Spores_52
+  - first:
+      213: 7030740540443800158
+    second: Zombie Spores_53
+  - first:
+      213: -4612739212278658914
+    second: Zombie Spores_54
+  - first:
+      213: -720278843743559283
+    second: Zombie Spores_55
+  - first:
+      213: -862581841721484059
+    second: Zombie Spores_56
+  - first:
+      213: -5210840501559485780
+    second: Zombie Spores_57
+  - first:
+      213: 4108321504846801617
+    second: Zombie Spores_58
+  - first:
+      213: 986566066748258058
+    second: Zombie Spores_59
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zombie Spores_0
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 977
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96e90dab926348b90800000000000000
+      internalID: -7240602748049121687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_4
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 960
+        width: 83
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71a11ba7776b99b70800000000000000
+      internalID: 8906350362377656855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_5
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 977
+        width: 40
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 258166854a6703a20800000000000000
+      internalID: 3040060196704884818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_7
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 960
+        width: 83
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8526f2368465dd7e0800000000000000
+      internalID: -1739139012193459624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_8
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 978
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66052217a51054530800000000000000
+      internalID: 3838475745359974502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_10
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 969
+        width: 69
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afd4cbe5895c61560800000000000000
+      internalID: 7284226705533455866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_11
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 978
+        width: 44
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c370f46840d911aa0800000000000000
+      internalID: -6191995369898965188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_13
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 960
+        width: 70
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4980c5915c1c5b70800000000000000
+      internalID: 8889010901252868430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_20
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 846
+        width: 53
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62348abf8c9115c00800000000000000
+      internalID: 887518952574960422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_21
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 846
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57207ff799163d690800000000000000
+      internalID: -7578606436029627787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_22
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 846
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5e2522533adaed30800000000000000
+      internalID: 4461618294820253278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_23
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 846
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27692b5f5ae944f80800000000000000
+      internalID: -8123193392240617870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_24
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 735
+        width: 48
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8b1b83f98ce16c80800000000000000
+      internalID: -8331117758418052210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_27
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 732
+        width: 48
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbe58d31c254a3a30800000000000000
+      internalID: 4195742058462863035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_30
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 735
+        width: 48
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cebe83f63bc00490800000000000000
+      internalID: -7781996719221326137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_33
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 734
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6587a241145e30ca0800000000000000
+      internalID: -6051741406581852074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_42
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 611
+        width: 35
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbe960c94e4c83f60800000000000000
+      internalID: 8014372023055064763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_43
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 580
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bd099bc9ff6e04d0800000000000000
+      internalID: -3166470369341534793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_44
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 566
+        width: 47
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef685e7395b3451e0800000000000000
+      internalID: -2210076262756153602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_45
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 564
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 569685397d97b5dd0800000000000000
+      internalID: -2496267601649833627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_50
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 459
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ee53073588ad7110800000000000000
+      internalID: 1260348760840691432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie Spores_52
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 435
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500df0faf16b625b0800000000000000
+      internalID: -5393423256532299771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bce522856068a934185ec6ef0bec25b9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Zombie Spores_0: -7240602748049121687
+      Zombie Spores_1: 4117957414955381803
+      Zombie Spores_10: 7284226705533455866
+      Zombie Spores_11: -6191995369898965188
+      Zombie Spores_12: 5506073863971699529
+      Zombie Spores_13: 8889010901252868430
+      Zombie Spores_14: -4114167818492033802
+      Zombie Spores_15: 8174446079816052978
+      Zombie Spores_16: 3555670175865752903
+      Zombie Spores_17: 6115271404853645941
+      Zombie Spores_18: 3733425584374341219
+      Zombie Spores_19: 2771533927828904551
+      Zombie Spores_2: -6940892357237460887
+      Zombie Spores_20: 887518952574960422
+      Zombie Spores_21: -7578606436029627787
+      Zombie Spores_22: 4461618294820253278
+      Zombie Spores_23: -8123193392240617870
+      Zombie Spores_24: -8331117758418052210
+      Zombie Spores_25: 9157760543625882412
+      Zombie Spores_26: -4960915285940721885
+      Zombie Spores_27: 4195742058462863035
+      Zombie Spores_28: 7077928155222842655
+      Zombie Spores_29: 883667625319515014
+      Zombie Spores_3: 836143347054711799
+      Zombie Spores_30: -7781996719221326137
+      Zombie Spores_31: 9126775366561066881
+      Zombie Spores_32: -8019341316494486849
+      Zombie Spores_33: -6051741406581852074
+      Zombie Spores_34: 8845779277289317811
+      Zombie Spores_35: -7468088811548396661
+      Zombie Spores_36: -6664269911845707473
+      Zombie Spores_37: 7209277581608609886
+      Zombie Spores_38: 5504170076738113164
+      Zombie Spores_39: 248218109772625240
+      Zombie Spores_4: 8906350362377656855
+      Zombie Spores_40: -4295831389120657097
+      Zombie Spores_41: 405608093047733456
+      Zombie Spores_42: 8014372023055064763
+      Zombie Spores_43: -3166470369341534793
+      Zombie Spores_44: -2210076262756153602
+      Zombie Spores_45: -2496267601649833627
+      Zombie Spores_46: -4019455972092587096
+      Zombie Spores_47: -8888479666227965859
+      Zombie Spores_48: 774549920276553225
+      Zombie Spores_49: 3523496380922217288
+      Zombie Spores_5: 3040060196704884818
+      Zombie Spores_50: 1260348760840691432
+      Zombie Spores_51: 8197636474952188313
+      Zombie Spores_52: -5393423256532299771
+      Zombie Spores_53: 7030740540443800158
+      Zombie Spores_54: -4612739212278658914
+      Zombie Spores_55: -720278843743559283
+      Zombie Spores_56: -862581841721484059
+      Zombie Spores_57: -5210840501559485780
+      Zombie Spores_58: 4108321504846801617
+      Zombie Spores_59: 986566066748258058
+      Zombie Spores_6: 1335445629657725991
+      Zombie Spores_7: -1739139012193459624
+      Zombie Spores_8: 3838475745359974502
+      Zombie Spores_9: 7846396899069550672
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

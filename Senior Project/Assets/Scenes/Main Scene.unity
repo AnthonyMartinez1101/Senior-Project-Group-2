@@ -8562,7 +8562,6 @@ MonoBehaviour:
   WinGameScreen: {fileID: 1863002901}
   chickenHidePosition: {fileID: 951613978}
   blackBackground: {fileID: 1491746770}
-  musicScript: {fileID: 1041779939}
 --- !u!4 &404758539
 Transform:
   m_ObjectHideFlags: 0
@@ -45224,6 +45223,17 @@ MonoBehaviour:
   - {fileID: 4919924452173266357, guid: f6b46195427f35c4ba3526a7b9ab0ab9, type: 3}
   - {fileID: 468165074406571295, guid: bd0ac35dcb5143b488cd2179c04dc28f, type: 3}
   - {fileID: 4919924452173266357, guid: f3dbcea4ef5312c4ba5e299333c28694, type: 3}
+  - {fileID: 3300415560506350389, guid: 75d172b89b7df7143be6bb25f05b761d, type: 3}
+  - {fileID: 5207351545759514891, guid: 8542896afa10f93498b64ac2203d67fb, type: 3}
+  - {fileID: 5207351545759514891, guid: c7f4efa63e3007745bfc467a2d93e824, type: 3}
+  - {fileID: 3300415560506350389, guid: 4c12019603229b545bb85fb200a44d18, type: 3}
+  - {fileID: 5207351545759514891, guid: b0b64af1bcbaf864ebbf00f7da360890, type: 3}
+  - {fileID: 3300415560506350389, guid: 1ae42c90baac64a4ca32adbb1ae36e89, type: 3}
+  - {fileID: 5207351545759514891, guid: d072d4938b28a1a4e9eb4e404ba33341, type: 3}
+  - {fileID: 3300415560506350389, guid: 5e04837f9ddb5cd42ac4374cb9f6977f, type: 3}
+  - {fileID: 5207351545759514891, guid: f41370141345a2a428920105c9669598, type: 3}
+  - {fileID: 5207351545759514891, guid: 23741f0b0615eec43b2ce13e74bf3624, type: 3}
+  - {fileID: 3300415560506350389, guid: cf5c2237294314846a7bf66bf3f524ee, type: 3}
 --- !u!1001 &1737325106
 PrefabInstance:
   m_ObjectHideFlags: 0

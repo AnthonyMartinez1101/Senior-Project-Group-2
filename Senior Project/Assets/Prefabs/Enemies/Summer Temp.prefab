@@ -334,6 +334,10 @@ MonoBehaviour:
   randomItemDrop: {fileID: 11400000, guid: 7d42225e9a8f651459e31a0ae1a4bf12, type: 2}
   dropExpires: 1
   burnParticles: {fileID: 1865078077266583246}
+  damageParticles: {fileID: 5207351545759514891, guid: d072d4938b28a1a4e9eb4e404ba33341, type: 3}
+  deathParticles: {fileID: 0}
+  burnDeathParticles: {fileID: 0}
+  burnDeathHeadParticles: {fileID: 0}
 --- !u!114 &5300578624398878722
 MonoBehaviour:
   m_ObjectHideFlags: 0

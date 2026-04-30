@@ -52,6 +52,7 @@ MonoBehaviour:
   lifetime: 0.1
   delay: 2
   explosionEffect: {fileID: 8588785223345138722, guid: a9653aa7153bed04d9662c0a4cbdf498, type: 3}
+  headParticles: {fileID: 3300415560506350389, guid: 1ae42c90baac64a4ca32adbb1ae36e89, type: 3}
 --- !u!58 &1105435531978995232
 CircleCollider2D:
   m_ObjectHideFlags: 0

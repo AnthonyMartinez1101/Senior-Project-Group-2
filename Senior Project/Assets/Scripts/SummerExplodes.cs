@@ -10,6 +10,7 @@ public class SummerExplodes : MonoBehaviour
 
     private CircleCollider2D col;
     public GameObject explosionEffect;
+    public GameObject headParticles;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class SummerExplodes : MonoBehaviour
         yield return new WaitForSeconds(lifetime);
 
         if (explosionEffect) Instantiate(explosionEffect, transform.position, transform.rotation);
+        if (headParticles) Instantiate(headParticles, transform.position, transform.rotation);
         GameManager.Instance.CameraShake(15f, 0.5f);
         Destroy(gameObject);
     }
