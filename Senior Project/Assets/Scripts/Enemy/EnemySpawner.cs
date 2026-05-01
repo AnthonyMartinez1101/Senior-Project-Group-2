@@ -336,6 +336,6 @@ public class EnemySpawner : MonoBehaviour, IGoCrazy
 
     public void GoCrazy()
     {
-        difficulty = 2;
+        difficulty += 1;
     }
 }

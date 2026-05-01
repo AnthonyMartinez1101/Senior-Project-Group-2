@@ -61,6 +61,7 @@ public class WorldClock : MonoBehaviour, IGoCrazy
 
     private int currentDay = 1;
     public int dayWinCondition = 5;
+    public bool endlessMode = false;
 
     public GameObject snowParticles;
     public GameObject bossSpawnParticles;
@@ -213,7 +214,7 @@ public class WorldClock : MonoBehaviour, IGoCrazy
     private void interateDay()
     {
         currentDay++;
-        if(currentDay >= dayWinCondition)
+        if(currentDay >= dayWinCondition && !endlessMode)
         {
             GameManager.Instance.WinGameScene();
         }
@@ -223,9 +224,11 @@ public class WorldClock : MonoBehaviour, IGoCrazy
             if (DaysLeft > 1) RescueCountdown.text = "Help arrives in " + DaysLeft + " days.";
             else RescueCountdown.text = "Help arrives tomorrow!";
         }
-        if(currentDay == 4)
+        if(snowParticles) snowParticles.SetActive(currentDay == 4);
+
+        if (currentDay % 4 == 0)
         {
-            if(snowParticles) snowParticles.SetActive(true);
+            GameManager.Instance.enemySpawner.GoCrazy();
         }
     }
 

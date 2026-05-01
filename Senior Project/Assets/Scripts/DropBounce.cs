@@ -34,8 +34,8 @@ public class DropBounce : MonoBehaviour
 
     void Awake()
     {
-        if (!mainSprite) mainSprite = transform.GetChild(0);
-        if (!shadowSprite) shadowSprite = transform.GetChild(1);
+        //if (!mainSprite) mainSprite = transform.GetChild(0);
+        //if (!shadowSprite) shadowSprite = transform.GetChild(1);
 
         mainBaseLocalPos = mainSprite.localPosition;
         shadowBaseLocalPos = shadowSprite.localPosition;
