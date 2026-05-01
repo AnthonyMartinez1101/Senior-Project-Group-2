@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 3263000376793771080}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
-  m_LocalPosition: {x: 1.9988406, y: 0.016525745, z: 0}
+  m_LocalPosition: {x: 1.9988403, y: 0.016525269, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -258,6 +258,7 @@ MonoBehaviour:
   phaseTwoActivated: 0
   isShielded: 0
   hasUsedShield: 0
+  deathParticles: {fileID: 4311298535190362313, guid: 3f390b906eb485942a5228aca5593a23, type: 3}
 --- !u!114 &9103856716093881941
 MonoBehaviour:
   m_ObjectHideFlags: 0

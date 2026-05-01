@@ -180,6 +180,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7770765713227256853, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
+      propertyPath: deathParticles
+      value: 
+      objectReference: {fileID: 6859092456094450153, guid: 9d4cab08c1e76484596dcc1287ec1309, type: 3}
     - target: {fileID: 8965877153438069667, guid: 5c7da42839d5b774c8c12fdb07c582dd, type: 3}
       propertyPath: m_Layer
       value: 5

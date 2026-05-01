@@ -33532,7 +33532,7 @@ GameObject:
   - component: {fileID: 1362468920}
   - component: {fileID: 1362468922}
   - component: {fileID: 1362468921}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Coop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50471,7 +50471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2052558613}
   - component: {fileID: 2052558614}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: 'Coop : shadowPivot'
   m_TagString: Shadow
   m_Icon: {fileID: 0}

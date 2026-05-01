@@ -44,6 +44,10 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
 
     private int defence = 1;
 
+    public GameObject deathParticles;
+
+    private bool isDead = false;
+
     private void Start()
     {
         currentHealth = data.maxHealth;
@@ -68,6 +72,8 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
 
     private void Update()
     {
+        if (isDead) return;
+
         if (!player)
         {
             StopAllCoroutines();
@@ -111,6 +117,7 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
     {
         while (poisonCount > 0)
         {
+            if (isDead) yield break;
             TakeDamage(1f, DamageType.Poison);
             poisonCount--;
             yield return new WaitForSeconds(0.75f);
@@ -119,11 +126,14 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
 
     private void QueueAttack()
     {
+        if (isDead) return;
+
         isPerformingAction = true;
         BossAction action;
         int safetyCount = 0;
         while (safetyCount < 1000)
         {
+            if (isDead) return;
             action = actions[Random.Range(0, actions.Count)];
             Debug.Log("Boss is performing: " + action.name);
             if (Random.value <= action.activationChance)
@@ -143,12 +153,16 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
 
     private IEnumerator PerformAction(BossAction action)
     {
+        if (isDead) yield break;
         yield return new WaitForSeconds(idleAmount);
+        if (isDead) yield break;
         state = State.Attacking;
         action.ExecuteAction(this);
         yield return new WaitForSeconds(action.actionDuration);
+        if (isDead) yield break;
         state = State.Cooldown;
         yield return new WaitForSeconds(cooldownAmount);
+        if (isDead) yield break;
         state = State.Idle;
         isPerformingAction = false;
     }
@@ -165,7 +179,8 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
     public void TakeDamage(float damageAmount, DamageType damageType)
     {
         //Return, already dead
-        if(currentHealth <= 0) return;
+        if (isDead) return;
+        if (currentHealth <= 0) return;
         if(damageAmount <= 0) return;
 
         // If shield is active, ignore/don't apply damage to boss and log for verification
@@ -181,12 +196,14 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
         if (currentHealth <= 0)
         {
             StopAllCoroutines();
-            StartCoroutine(Die());
+            Die();
         }
     }
 
-    IEnumerator Die()
+    private void Die()
     {
+        if(isDead) return;
+        isDead = true;
         if (data.itemDrop) Instantiate(data.itemDrop, transform.position, Quaternion.identity);
 
         if (data.coin)
@@ -197,8 +214,8 @@ public class BossScript : MonoBehaviour, IDamageable, IPoisonable
             }
         }
 
-        yield return new WaitForSeconds(0.5f); // for animation and other effects to finish
         StatManager.Instance.AddBossKill();
+        if (deathParticles) Instantiate(deathParticles, transform.position, transform.rotation);
         Destroy(gameObject);
 
     }
