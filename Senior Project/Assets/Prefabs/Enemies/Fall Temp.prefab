@@ -111,7 +111,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 4957691242565531015, guid: 32afdb301fb1e1d4bb55714a857d1ecc, type: 3}
+  m_Sprite: {fileID: 230706584262960622, guid: 32afdb301fb1e1d4bb55714a857d1ecc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 2355035961389534731}
   - component: {fileID: 8768581072242099835}
   - component: {fileID: 2175308010972165070}
+  - component: {fileID: 8303773329203322274}
   m_Layer: 7
   m_Name: Fall Temp
   m_TagString: Enemy
@@ -239,7 +240,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 4957691242565531015, guid: 32afdb301fb1e1d4bb55714a857d1ecc, type: 3}
+  m_Sprite: {fileID: 230706584262960622, guid: 32afdb301fb1e1d4bb55714a857d1ecc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -489,6 +490,18 @@ MonoBehaviour:
   refreshInt: 1
   linkPrefab: {fileID: 7920180488359259179, guid: 1fd477788cac43448a448023e73ac531, type: 3}
   links: []
+--- !u!114 &8303773329203322274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919924452173266357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb274325003745949a26b6facf1c58f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySprites
 --- !u!1 &8669708703548695504
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +528,7 @@ Transform:
   m_GameObject: {fileID: 8669708703548695504}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
-  m_LocalPosition: {x: 0.23536336, y: -0.11861036, z: 0}
+  m_LocalPosition: {x: 0.2353634, y: -0.11861036, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
