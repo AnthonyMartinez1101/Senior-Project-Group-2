@@ -139,6 +139,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SetEndless()
+    {
+        worldClock.endlessMode = true;
+    }
     private bool UIopen()
     {
         return pauseMenu.activeSelf || settings.activeSelf || shop.IsShopInUse();

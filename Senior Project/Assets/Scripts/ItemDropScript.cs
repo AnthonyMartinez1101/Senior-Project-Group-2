@@ -28,6 +28,8 @@ public class ItemDropScript : MonoBehaviour
 
     private bool isCollected = false;
 
+    private float maxPullSpeed = 20f; // Maximum allowed pull speed
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -129,6 +131,7 @@ public class ItemDropScript : MonoBehaviour
                 Vector2 targetDir = ((Vector2)targetPos.position - rb.position).normalized;
                 rb.linearVelocity = targetDir * pullSpeed;
                 pullSpeed += pullSpeed * accelerationRate; // Accelerate pull speed
+                pullSpeed = Mathf.Min(pullSpeed, maxPullSpeed); // Clamp to max
             }
         }
     }

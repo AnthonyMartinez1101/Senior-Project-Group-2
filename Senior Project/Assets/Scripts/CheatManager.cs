@@ -16,11 +16,12 @@ public class CheatManager : MonoBehaviour
         goCrazyScripts = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IGoCrazy>().ToArray();
         StartCoroutine(CheckForCheats());
         StartCoroutine(CheckForCrazy());
+        StartCoroutine(SetEndlessMode());
     }
 
     public void EnableCheats()
     {
-        foreach(ICheat cheat in cheatScripts)
+        foreach (ICheat cheat in cheatScripts)
         {
             cheat.SetCheats();
         }
@@ -34,6 +35,19 @@ public class CheatManager : MonoBehaviour
             goCrazy.GoCrazy();
         }
         Debug.Log("GO CRAZY ACTIVATED");
+    }
+
+    IEnumerator SetEndlessMode()
+    {
+        yield return new WaitUntil(() => Keyboard.current.eKey.wasPressedThisFrame);
+        yield return new WaitUntil(() => Keyboard.current.nKey.wasPressedThisFrame);
+        yield return new WaitUntil(() => Keyboard.current.dKey.wasPressedThisFrame);
+        yield return new WaitUntil(() => Keyboard.current.lKey.wasPressedThisFrame);
+        yield return new WaitUntil(() => Keyboard.current.eKey.wasPressedThisFrame);
+        yield return new WaitUntil(() => Keyboard.current.sKey.wasPressedThisFrame);
+        yield return new WaitUntil(() => Keyboard.current.sKey.wasPressedThisFrame);
+        GameManager.Instance.SetEndless();
+        Debug.Log("Endless Mode Activated");
     }
 
     IEnumerator CheckForCheats()

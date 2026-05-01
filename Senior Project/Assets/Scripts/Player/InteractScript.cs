@@ -24,7 +24,7 @@ public class InteractScript : MonoBehaviour, ICheat
     [SerializeField] private ShopScript shop;
 
     private bool isThrowing = false;
-    private float maxChargeTime = 2.0f;
+    private float maxChargeTime = 1.0f;
     private float chargeTime = 0.0f;
     public Slider grenadeSlider;
 
