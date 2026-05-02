@@ -91,6 +91,8 @@ public class EnemySpawner : MonoBehaviour, IGoCrazy
 
     private void Update()
     {
+        //Debug.Log("Current Difficulty: " + difficulty);
+
         if (!CheckReference() || InTutorial) return;
 
         if (worldClock.IsIntroNight())
@@ -112,7 +114,7 @@ public class EnemySpawner : MonoBehaviour, IGoCrazy
                 if (bossScript != null)
                 {
                     bossScript.player = player;
-                    bossScript.ApplyDifficulty(difficulty + 1);
+                    bossScript.ApplyDifficulty(difficulty);
                 }
                 var bossFollow = currentBoss.GetComponent<EnemyFollow>();
                 if (bossFollow != null) bossFollow.SetTarget(player);   
@@ -337,5 +339,6 @@ public class EnemySpawner : MonoBehaviour, IGoCrazy
     public void GoCrazy()
     {
         difficulty += 1;
+        Debug.Log("GO CRAZY CALLED WITH DIFFICULTY:  " + difficulty);
     }
 }

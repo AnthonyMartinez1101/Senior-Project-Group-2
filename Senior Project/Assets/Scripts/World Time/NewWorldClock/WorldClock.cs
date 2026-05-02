@@ -224,9 +224,9 @@ public class WorldClock : MonoBehaviour, IGoCrazy
             if (DaysLeft > 1) RescueCountdown.text = "Help arrives in " + DaysLeft + " days.";
             else RescueCountdown.text = "Help arrives tomorrow!";
         }
-        if(snowParticles) snowParticles.SetActive(currentDay == 4);
+        if(snowParticles) snowParticles.SetActive(currentDay % 4 == 0);
 
-        if (currentDay % 4 == 0)
+        if (endlessMode && currentDay >= 5 && (currentDay - 5) % 4 == 0)
         {
             GameManager.Instance.enemySpawner.GoCrazy();
         }
@@ -338,7 +338,7 @@ public class WorldClock : MonoBehaviour, IGoCrazy
         ResumeTimer();
         DayChangeEvent.Invoke();
     }
-
+        
     public int GetCurrentDay()
     {
         return currentDay;
