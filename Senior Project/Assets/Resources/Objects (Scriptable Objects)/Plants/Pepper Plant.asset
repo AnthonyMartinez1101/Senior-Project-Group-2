@@ -23,6 +23,6 @@ MonoBehaviour:
   seed: {fileID: 11400000, guid: 2c4bce3f713fd69499110f20a641c258, type: 2}
   minDrop: 3
   maxDrop: 5
-  seedChance: 0
+  seedChance: 5
   canDry: 1
   objectOnHarvest: {fileID: 0}
