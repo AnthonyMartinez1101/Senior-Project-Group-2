@@ -127,8 +127,8 @@ public class Enemy : MonoBehaviour, IDamageable, IPoisonable
             if (healthBar) healthBar.UpdateHealth(health, maxHealth);
             if (health <= 0)
             {
-                if (explosionPrefab != null)
-                    Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                //if (explosionPrefab != null)
+                //    Instantiate(explosionPrefab, transform.position, Quaternion.identity);
                 if(burnDeathParticles) Instantiate(burnDeathParticles, transform.position, Quaternion.identity);
                 if(burnDeathHeadParticles) Instantiate(burnDeathHeadParticles, transform.position, Quaternion.identity);
                 Destroy(gameObject);

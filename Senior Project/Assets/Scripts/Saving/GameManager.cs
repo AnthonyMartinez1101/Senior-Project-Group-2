@@ -219,7 +219,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartButton()
     {
-        loadOnStart = true;
+        loadOnStart = false;
         ResumeGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

@@ -197,6 +197,42 @@ public class ShopScript : MonoBehaviour
         }
     }
 
+    public void Buy10Items(Item item)
+    {
+        BuyXItems(item, 10);
+    }
+
+    public void BuyXItems(Item item, int quantity)
+    {
+        if(item == null)
+        {
+            Debug.LogWarning("BuyXItems: item is null");
+            return;
+        }
+
+        int price = item.buyPrice * quantity;
+
+        if(price <= 0)
+        {
+            Debug.LogWarning("Item cannot be sold: " + item.itemName);
+            return;
+        }
+
+        if(CheckPrice(price))
+        {
+            for(int i = 0; i < quantity; i++)
+            {
+                purchasedItems.Add(item);
+            }
+            shopAudio.PlayBuyCoin();
+            OnAnyPurchase?.Invoke(); // Invoke the purchase event for any listeners
+        }
+
+        ShopUsedEvent.Invoke();
+    }
+
+    
+
     public void SellItem()
     {
         Slot slot = inventory.GetSellSlot();

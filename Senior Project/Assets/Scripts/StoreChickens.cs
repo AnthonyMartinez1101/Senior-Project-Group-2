@@ -23,25 +23,33 @@ public class StoreChickens : MonoBehaviour
 
     IEnumerator ReleaseChickens()
     {
-        foreach (var chicken in chickens)
+        while(chickens.Count > 0 && clock.IsDay())
         {
+            GameObject chicken = chickens[0];
+            chickens.RemoveAt(0);
+
             var wander = chicken.GetComponent<ChickenWander>();
-            if (wander) wander.StopHiding();
-            chicken.SetActive(true);
+
+            if(wander)
+            {
+                wander.StopHiding();
+                chicken.SetActive(true);
+            }
+
             yield return new WaitForSeconds(0.5f);
         }
-        chickens.Clear();
+
         releasingChickens = null;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         var chicken = other.GetComponent<ChickenWander>();
         if (!chicken) return;
 
         if (chicken.IsHiding())
         {
-            chickens.Add(other.gameObject);
+            if(!chickens.Contains(other.gameObject)) chickens.Add(other.gameObject);
             other.gameObject.SetActive(false);
         }
     }

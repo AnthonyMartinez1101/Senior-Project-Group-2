@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1976292392880717916}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31332812, y: 0.20516032, z: 0}
+  m_LocalPosition: {x: -0.22380581, y: 0.14654307, z: 0}
   m_LocalScale: {x: 1, y: 1.31, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -201,6 +201,7 @@ MonoBehaviour:
   hopDuration: 0.22
   moveStartThreshold: 0.02
   moveStopThreshold: 0.02
+  particles: {fileID: 0}
 --- !u!114 &1061423778832810906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610eb436970694546bfd731dd01061c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  maxHealth: 15
+  maxHealth: 100
   chickenExplosion: {fileID: 4060300370120239275, guid: 9860e79017a731d469f5292061cc3351, type: 3}
 --- !u!50 &8248237246722443010
 Rigidbody2D:
@@ -318,7 +319,7 @@ Transform:
   m_GameObject: {fileID: 6934531165574999743}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
-  m_LocalPosition: {x: 0.3133278, y: -0.15661097, z: 0}
+  m_LocalPosition: {x: 0.22380638, y: -0.11186504, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

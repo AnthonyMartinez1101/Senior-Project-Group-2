@@ -337,8 +337,8 @@ MonoBehaviour:
   burnParticles: {fileID: 1865078077266583246}
   damageParticles: {fileID: 5207351545759514891, guid: d072d4938b28a1a4e9eb4e404ba33341, type: 3}
   deathParticles: {fileID: 0}
-  burnDeathParticles: {fileID: 0}
-  burnDeathHeadParticles: {fileID: 0}
+  burnDeathParticles: {fileID: 3300415560506350389, guid: 5e04837f9ddb5cd42ac4374cb9f6977f, type: 3}
+  burnDeathHeadParticles: {fileID: 3300415560506350389, guid: 1ae42c90baac64a4ca32adbb1ae36e89, type: 3}
 --- !u!114 &5300578624398878722
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class EnemyFollow : MonoBehaviour
     [SerializeField] private GameObject walkDustParticles;
 
 
-    private float updateIteration = 0.5f;
+    private float updateIteration = 0.1f;
     private float updateTimer = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -51,12 +51,6 @@ public class EnemyFollow : MonoBehaviour
             currentSpeed = 1f;
         }
 
-        //if(updateTimer < updateIteration)
-        //{
-        //    updateTimer += Time.deltaTime;
-        //    return;
-        //}
-        //updateTimer = 0f;
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
         if (distanceToTarget > 25)
         {
@@ -67,7 +61,15 @@ public class EnemyFollow : MonoBehaviour
             agent.speed = currentSpeed;
             currentSpeed = Mathf.Lerp(currentSpeed, startingTopSpeed, Time.deltaTime * 1.5f);
         }
-        agent.SetDestination(target.position);
+
+        updateTimer += Time.deltaTime;
+        if(updateTimer >= updateIteration)
+        {
+            updateTimer = 0f;
+            agent.SetDestination(target.position);
+        }
+
+        
 
         if (walkDustParticles)
         {

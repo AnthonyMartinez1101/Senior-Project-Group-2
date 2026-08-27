@@ -2,11 +2,16 @@ using UnityEngine;
 using System.Linq;
 using System.Collections;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class CheatManager : MonoBehaviour
 {
     private ICheat[] cheatScripts;
     private IGoCrazy[] goCrazyScripts;
+
+    [SerializeField] TMP_Text cheatText;
+
+    private Coroutine flashTextCoroutine;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,6 +30,7 @@ public class CheatManager : MonoBehaviour
         {
             cheat.SetCheats();
         }
+        FlashAndAddText("iCheat Activated", Color.green);
         Debug.Log("CHEATS ACTIVATED");
     }
 
@@ -34,6 +40,7 @@ public class CheatManager : MonoBehaviour
         {
             goCrazy.GoCrazy();
         }
+        FlashAndAddText("GoCrazy Activated", Color.red);
         Debug.Log("GO CRAZY ACTIVATED");
     }
 
@@ -47,6 +54,7 @@ public class CheatManager : MonoBehaviour
         yield return new WaitUntil(() => Keyboard.current.sKey.wasPressedThisFrame);
         yield return new WaitUntil(() => Keyboard.current.sKey.wasPressedThisFrame);
         GameManager.Instance.SetEndless();
+        FlashAndAddText("Endless Activated", Color.red);
         Debug.Log("Endless Mode Activated");
     }
 
@@ -71,5 +79,39 @@ public class CheatManager : MonoBehaviour
         yield return new WaitUntil(() => Keyboard.current.zKey.wasPressedThisFrame);
         yield return new WaitUntil(() => Keyboard.current.yKey.wasPressedThisFrame);
         EnableGoCrazy();
+    }
+
+
+    private void FlashAndAddText(string text, Color clr)
+    {
+        if (cheatText)
+        {
+            cheatText.text += text + "\n";
+            if (flashTextCoroutine != null)
+            {
+                StopCoroutine(flashTextCoroutine);
+            }
+            flashTextCoroutine = StartCoroutine(FlashText(clr));
+        }
+    }
+
+    private IEnumerator FlashText(Color clr)
+    {
+        cheatText.color = clr;
+
+        float duration = 1f;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            cheatText.color = Color.Lerp(clr, Color.white, elapsedTime / duration);
+
+            yield return null;
+        }
+
+        cheatText.color = Color.white;
+        flashTextCoroutine = null;
     }
 }

@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610eb436970694546bfd731dd01061c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChickenHealth
-  maxHealth: 15
+  maxHealth: 100
   chickenExplosion: {fileID: 4060300370120239275, guid: 9860e79017a731d469f5292061cc3351, type: 3}
 --- !u!1 &6934531165574999743
 GameObject:
