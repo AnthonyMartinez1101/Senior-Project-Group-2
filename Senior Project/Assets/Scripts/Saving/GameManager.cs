@@ -219,7 +219,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartButton()
     {
-        loadOnStart = false;
+        loadOnStart = false; //Made this false for now (while saving is still iffy)
         ResumeGame();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

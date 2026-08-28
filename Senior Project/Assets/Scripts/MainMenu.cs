@@ -59,7 +59,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadButton()
     {
-        GameManager.loadOnStart = true;
+        GameManager.loadOnStart = false; //Made this false for now (while saving is still iffy)
         SceneManager.LoadScene("Main Scene");
     }   
 
