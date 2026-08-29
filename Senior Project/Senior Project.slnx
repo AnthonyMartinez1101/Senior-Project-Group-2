@@ -85,6 +85,7 @@
   <Project Path="Unity.AI.Toolkit.Async.csproj" />
   <Project Path="Unity.VisualScripting.Shared.Editor.csproj" />
   <Project Path="Unity.AI.Toolkit.Compliance.csproj" />
+  <Project Path="Unity.Toolchain.Win-x86_64-Linux-x86_64.csproj" />
   <Project Path="Unity.2D.Enhancers.Editor.AIBridge.csproj" />
   <Project Path="Unity.AppUI.Undo.csproj" />
   <Project Path="Unity.AI.Generators.Contexts.csproj" />
@@ -94,11 +95,13 @@
   <Project Path="Unity.AI.Assistant.Bridge.Editor.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Unity.AI.Toolkit.Asset.csproj" />
+  <Project Path="Unity.SysrootPackage.Editor.csproj" />
   <Project Path="Unity.Serialization.Editor.csproj" />
   <Project Path="Unity.AI.Assistant.AvatarHelper.Editor.csproj" />
   <Project Path="Unity.AI.Animate.Motion.Runtime.csproj" />
   <Project Path="Unity.InputSystem.DocCodeSamples.csproj" />
   <Project Path="ScriptablePacker.csproj" />
+  <Project Path="Unity.Sysroot.Linux_x86_64.csproj" />
   <Project Path="Unity.InferenceEngine.MacBLAS.csproj" />
   <Project Path="Unity.AppUI.InternalAPIBridge.csproj" />
   <Project Path="Unity.AI.Toolkit.GenerationObjectPicker.csproj" />
