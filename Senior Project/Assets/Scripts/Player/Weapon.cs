@@ -30,11 +30,18 @@ public class Weapon : MonoBehaviour
     public GameObject hitFlash;
     public GameObject Debris;
 
-    
+    bool damageDealt = false;
+
 
     void Start()
     {
         animator = GetComponent<Animator>();
+
+        if (weaponType == WeaponType.Bullet)
+        {
+            Destroy(gameObject, 5f);
+        }
+
         if (weaponType == WeaponType.Grenade)
         {
             StartCoroutine(Explode(explosionTimer));
@@ -44,7 +51,6 @@ public class Weapon : MonoBehaviour
         {
             damage *= 3;
         }
-        
     }
 
     void Update()
@@ -87,7 +93,9 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(Avoid(collision.tag)) return;
+        damageDealt = false;
+
+        if (Avoid(collision.tag)) return;
 
         if (hitFlash) Instantiate(hitFlash, transform.position, transform.rotation);
 
@@ -113,8 +121,9 @@ public class Weapon : MonoBehaviour
             damageable.TakeDamage(damage, damageType);
             Debug.Log("Damage Dealt: " + damage);
             bulletTotalHit++;
+            damageDealt = true;
 
-            
+
 
             //Apply knockback if object has knockback component
             Knockback knockback = collision.GetComponent<Knockback>();
@@ -122,7 +131,7 @@ public class Weapon : MonoBehaviour
         }
 
         //Bullet destroy condition
-        if (weaponType == WeaponType.Bullet && (bulletTotalHit == 0 || bulletTotalHit == bulletHitCount))
+        if (weaponType == WeaponType.Bullet && (!damageDealt || (bulletTotalHit == bulletHitCount && bulletType != BulletType.Pistol)))
         {
             //Debug.Log("Bullet destroyed by: " + collision.name + "\nCurrent damage: " + damage + "\nTime alive: " + timeAlive);
             Destroy(gameObject);

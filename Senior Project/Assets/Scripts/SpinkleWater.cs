@@ -35,19 +35,25 @@ public class SpinkleWater : MonoBehaviour
         {
             if(HasWater() && currentSoil.worldClock.IsDay())
             {
-                foreach (SoilScript soil in surroundingSoil)
-                {
-                    soil.Water();
-                }
+                WaterSoils();
                 waterCount--;
+                yield return new WaitForSeconds(cycleTime);
             }
-            yield return new WaitForSeconds(cycleTime);
+            yield return null;
         }
     }
 
     public void FillWater()
     {
         waterCount = 2;
+    }
+
+    private void WaterSoils()
+    {
+        foreach (SoilScript soil in surroundingSoil)
+        {
+            soil.Water();
+        }
     }
 
     private bool HasWater()
