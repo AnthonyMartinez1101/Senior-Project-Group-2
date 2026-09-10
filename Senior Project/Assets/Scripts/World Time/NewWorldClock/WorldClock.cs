@@ -211,6 +211,12 @@ public class WorldClock : MonoBehaviour, IGoCrazy
         DayChangeEvent.Invoke();
     }
 
+    public void SetEndlessMode()
+    {
+        endlessMode = true;
+        RescueCountdown.text = "Days Survived: " + (currentDay - 1);
+    }
+
     private void interateDay()
     {
         currentDay++;
@@ -221,8 +227,15 @@ public class WorldClock : MonoBehaviour, IGoCrazy
         int DaysLeft = dayWinCondition - currentDay;
         if (RescueCountdown != null)
         {
-            if (DaysLeft > 1) RescueCountdown.text = "Help arrives in " + DaysLeft + " days.";
-            else RescueCountdown.text = "Help arrives tomorrow!";
+            if(endlessMode)
+            {
+                RescueCountdown.text = "Days Survived: " + (currentDay - 1);
+            }
+            else
+            {
+                if (DaysLeft > 1) RescueCountdown.text = "Help arrives in " + DaysLeft + " days.";
+                else RescueCountdown.text = "Help arrives tomorrow!";
+            }
         }
         if(snowParticles) snowParticles.SetActive(currentDay % 4 == 0);
 

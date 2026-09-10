@@ -332,7 +332,7 @@ MonoBehaviour:
   knockbackForce: 15
   dropChance: 1
   explosionPrefab: {fileID: 582535923089990646, guid: af729700c6f174046a2ed8383bbb21d4, type: 3}
-  randomItemDrop: {fileID: 11400000, guid: 7d42225e9a8f651459e31a0ae1a4bf12, type: 2}
+  randomItemDrop: {fileID: 11400000, guid: dffd53100a71b964381bd1d1bdc4ebff, type: 2}
   dropExpires: 1
   burnParticles: {fileID: 1865078077266583246}
   damageParticles: {fileID: 5207351545759514891, guid: d072d4938b28a1a4e9eb4e404ba33341, type: 3}

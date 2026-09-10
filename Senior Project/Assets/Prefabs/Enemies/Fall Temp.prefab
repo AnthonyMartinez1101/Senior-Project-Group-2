@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 3541055314121894236}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.23536338, y: 0.1553794, z: 0}
+  m_LocalPosition: {x: 0.14641756, y: 0.13723244, z: 0}
   m_LocalScale: {x: 1, y: 1.31, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -334,7 +334,7 @@ MonoBehaviour:
   knockbackForce: 15
   dropChance: 1
   explosionPrefab: {fileID: 0}
-  randomItemDrop: {fileID: 11400000, guid: 7d42225e9a8f651459e31a0ae1a4bf12, type: 2}
+  randomItemDrop: {fileID: 11400000, guid: cfddc6c02ec43bc47809159c66ec67c9, type: 2}
   dropExpires: 1
   burnParticles: {fileID: 7752126625681337584}
   damageParticles: {fileID: 5207351545759514891, guid: 23741f0b0615eec43b2ce13e74bf3624, type: 3}
@@ -528,7 +528,7 @@ Transform:
   m_GameObject: {fileID: 8669708703548695504}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4861414, y: -0.13775094, z: 0.23526092, w: -0.83026713}
-  m_LocalPosition: {x: 0.2353634, y: -0.11861036, z: 0}
+  m_LocalPosition: {x: -0.14641763, y: -0.10475765, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

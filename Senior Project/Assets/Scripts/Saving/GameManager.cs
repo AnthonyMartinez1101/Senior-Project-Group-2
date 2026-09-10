@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour
 
     public void SetEndless()
     {
-        worldClock.endlessMode = true;
+        worldClock.SetEndlessMode();
     }
     private bool UIopen()
     {

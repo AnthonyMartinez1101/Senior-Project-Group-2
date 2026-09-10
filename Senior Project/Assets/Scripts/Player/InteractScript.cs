@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using TMPro;
 
 public class InteractScript : MonoBehaviour, ICheat
 {
@@ -35,6 +36,10 @@ public class InteractScript : MonoBehaviour, ICheat
     private PlayerAudio playerAudio;
 
     private bool cheatMode = false;
+
+    public TMP_Text buffText;
+    private Coroutine buffTextCoroutine;
+    private Coroutine flashTextCorutine;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -161,14 +166,17 @@ public class InteractScript : MonoBehaviour, ICheat
             {
                 case BuffType.Speed:
                     movementScript.SpeedBuff();
+                    ShowBuffMessage("+ WALKING SPEED");
                 break;
     
                 case BuffType.Damage:
                     attack.AttackBuff();
-                    break;
+                    ShowBuffMessage("+ ATTACK DAMAGE");
+                break;
     
                 case BuffType.MaxHealth:
                     playerHealth.HealthBuff();
+                    ShowBuffMessage("+ MAX HEALTH");
                 break;
     
                 default:
@@ -176,6 +184,74 @@ public class InteractScript : MonoBehaviour, ICheat
                     break;
         }
     }
+
+    private void ShowBuffMessage(string message)
+    {
+        if (buffText != null)
+        {
+            buffText.text = message;
+
+            if(buffTextCoroutine != null)
+                StopCoroutine(buffTextCoroutine);
+            
+
+            if(flashTextCorutine != null)
+                StopCoroutine(flashTextCorutine);
+
+            buffTextCoroutine = StartCoroutine(BuffCoroutine());
+            flashTextCorutine = StartCoroutine(FlashColor());
+        }
+    }
+
+    IEnumerator BuffCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+
+        float fadeDuration = 1f;
+        float elapsedTime = 0f;
+
+        // Start fully visible
+        Color color = buffText.color;
+        color.a = 1f;
+        buffText.color = color;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            color.a = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
+            buffText.color = color;
+
+            yield return null;
+        }
+
+        // Make sure it ends completely invisible
+        color.a = 0f;
+        buffText.color = color;
+    }
+
+    private IEnumerator FlashColor()
+    {
+        buffText.color = Color.green;
+
+        float duration = 1f;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            buffText.color = Color.Lerp(Color.green, Color.white, elapsedTime / duration);
+
+            yield return null;
+        }
+
+        buffText.color = Color.white;
+        flashTextCorutine = null;
+    }
+
+
+
     //Plant seed only if soil is highlighted and you have seeds in inventory
     private void PlantSeed()
     {
