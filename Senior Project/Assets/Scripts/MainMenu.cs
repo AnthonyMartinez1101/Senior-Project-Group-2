@@ -17,6 +17,12 @@ public class MainMenu : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(titleButton.gameObject);
     }
 
+    private void Awake()
+    {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 120;
+    }
+
     private void Update()
     {
         if (EventSystem.current.currentSelectedGameObject == null && lastSelected != null)
