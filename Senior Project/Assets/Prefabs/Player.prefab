@@ -572,7 +572,7 @@ MonoBehaviour:
   wateringVolume: 0.5
   waterRefillVolume: 0.2
   inventoryPopVolume: 0.35
-  gunShotVolume: 0.2
+  gunShotVolume: 0.06
 --- !u!212 &431447372046555940
 SpriteRenderer:
   m_ObjectHideFlags: 0

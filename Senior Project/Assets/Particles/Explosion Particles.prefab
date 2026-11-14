@@ -34365,7 +34365,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c0540dbb48c5af449b2f0579188c2daa, type: 3}
   - {fileID: 8300000, guid: 09c5267877638d6419a25eba387e2219, type: 3}
   - {fileID: 8300000, guid: 9f70f2e70bf1bee48846cdd56fc3ae86, type: 3}
-  explosionVolume: 1.5
+  explosionVolume: 0.9
 --- !u!82 &3479129619570552870
 AudioSource:
   m_ObjectHideFlags: 0
