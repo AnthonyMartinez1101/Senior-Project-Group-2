@@ -12,6 +12,8 @@ public class PlayerAudio : MonoBehaviour
     public AudioClip[] waterRefillClips;
     public AudioClip[] inventoryPopClips;
 
+    public AudioClip[] gunShotClips;
+
     [Header("Volume")]
     [Range(0f, 2f)]
     public float footstepVolume = 1f;
@@ -30,6 +32,9 @@ public class PlayerAudio : MonoBehaviour
 
     [Range(0f, 2f)]
     public float inventoryPopVolume = 1f;
+
+    [Range(0f, 2f)]
+    public float gunShotVolume = 1f;
 
 
 
@@ -67,6 +72,11 @@ public class PlayerAudio : MonoBehaviour
     public void PlayInventoryPop()
     {
         PlayRandom(inventoryPopClips, inventoryPopVolume, true);
+    }
+
+    public void PlayGunShot()
+    {
+        PlayRandom(gunShotClips, gunShotVolume, false);
     }
 
     private void PlayRandom(AudioClip[] clips, float volume, bool randomPitch)

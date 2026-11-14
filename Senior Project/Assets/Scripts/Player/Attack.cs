@@ -100,6 +100,7 @@ public class Attack : MonoBehaviour
         {
             Quaternion rot = baseRot * Quaternion.Euler(0f, 0f, i * shotgunSpreadAngle);
             GameObject b = Instantiate(shotgunBullet, bulletSpawn, rot);
+            playerAudio.PlayGunShot();
             GameObject ash = Instantiate(ashParticles, bulletSpawn, rot);
             Destroy(ash, 5f);
             ApplyBuff(b);
@@ -120,6 +121,7 @@ public class Attack : MonoBehaviour
         Vector3 bulletSpawn = aimer.position + new Vector3(0f, bulletYOffset, 0f);
         GameObject b = Instantiate(bullet, bulletSpawn, rot);
         GameObject ash = Instantiate(ashParticles, bulletSpawn, rot);
+        playerAudio.PlayGunShot();
         Destroy(ash, 5f);
         ApplyBuff(b);
         Instantiate(shootFlash, bulletSpawn, rot);

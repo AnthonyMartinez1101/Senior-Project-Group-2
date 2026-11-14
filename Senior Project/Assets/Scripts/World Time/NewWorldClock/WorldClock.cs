@@ -68,12 +68,18 @@ public class WorldClock : MonoBehaviour, IGoCrazy
 
     private bool BossParticlesSpawned = false;
 
+    private AudioSource audioSource;
+    public AudioClip bossIntroSound;
+    public AudioClip bossRumbleSound;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         lightingSystem = LightingSystem.system;
         shadowAlpha = lightingSystem._shadowAlpha;
+
+        audioSource = GetComponent<AudioSource>();
 
 
         if (introNight && (int) CurrentSeason == 0)
@@ -131,9 +137,13 @@ public class WorldClock : MonoBehaviour, IGoCrazy
 
     IEnumerator BossCameraShake()
     {
+        if(bossRumbleSound && audioSource) audioSource.PlayOneShot(bossRumbleSound, 2.5f);
         GameManager.Instance.ConstantCameraShake(5f, 5f);
         yield return new WaitForSeconds(5f);
         GameManager.Instance.CameraShake(10f, 2f);
+
+        yield return new WaitForSeconds(0.5f);
+        if (bossIntroSound && audioSource) audioSource.PlayOneShot(bossIntroSound, 2f); 
     }
 
     IEnumerator TickTime()

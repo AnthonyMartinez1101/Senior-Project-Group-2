@@ -34361,7 +34361,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0174d77cb59c15449a24d3cf71578c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  explosionSound: {fileID: 8300000, guid: 395e9cc970f059a4db11de064ff8d75d, type: 3}
+  explosionSounds:
+  - {fileID: 8300000, guid: c0540dbb48c5af449b2f0579188c2daa, type: 3}
+  - {fileID: 8300000, guid: 09c5267877638d6419a25eba387e2219, type: 3}
+  - {fileID: 8300000, guid: 9f70f2e70bf1bee48846cdd56fc3ae86, type: 3}
   explosionVolume: 1.5
 --- !u!82 &3479129619570552870
 AudioSource:

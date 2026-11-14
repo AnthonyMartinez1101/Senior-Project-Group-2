@@ -3,7 +3,7 @@ using UnityEngine;
 public class ExplosionAudio : MonoBehaviour
 {
     private AudioSource audioSource;
-    public AudioClip explosionSound;
+    public AudioClip[] explosionSounds;
 
     public float explosionVolume = 1.0f;
 
@@ -11,8 +11,9 @@ public class ExplosionAudio : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        if (!audioSource) return;
-        audioSource.pitch = Random.Range(0.5f, 1.5f);
-        audioSource.PlayOneShot(explosionSound, explosionVolume);
+        if (!audioSource || explosionSounds == null || explosionSounds.Length == 0) return;
+
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
+        audioSource.PlayOneShot(explosionSounds[Random.Range(0, explosionSounds.Length)], explosionVolume);
     }
 }

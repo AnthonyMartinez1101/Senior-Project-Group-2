@@ -523,11 +523,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   footstepClips:
-  - {fileID: 8300000, guid: dcc5310bdb8129b499170b5666228439, type: 3}
-  - {fileID: 8300000, guid: 4f9b2609f9200964ea807971c0edf1f1, type: 3}
-  - {fileID: 8300000, guid: 67304bd958f55834bbbd6e1499cefecc, type: 3}
-  - {fileID: 8300000, guid: 04171ae4d9ce9fe4587a537a56f8ad6e, type: 3}
-  - {fileID: 8300000, guid: b0629e98f047cbf4e9eaaabe174cf283, type: 3}
+  - {fileID: 8300000, guid: 5fdf6ce0f7861e74d9789c9d677b00a1, type: 3}
+  - {fileID: 8300000, guid: 3174f65b4bc60184f84639dd595f0bb9, type: 3}
+  - {fileID: 8300000, guid: 9b34c58d7d4cdf748a43957f10d47f0d, type: 3}
+  - {fileID: 8300000, guid: e02ecd41af30b06489271c0e18475e46, type: 3}
+  - {fileID: 8300000, guid: f48f49f1e7b33b943939f0eea8ad6852, type: 3}
+  - {fileID: 8300000, guid: e02ecd41af30b06489271c0e18475e46, type: 3}
+  - {fileID: 8300000, guid: e02ecd41af30b06489271c0e18475e46, type: 3}
+  - {fileID: 8300000, guid: 3174f65b4bc60184f84639dd595f0bb9, type: 3}
   scytheSwingClips:
   - {fileID: 8300000, guid: b5ce60ff6758d3c4f89d4924293194ba, type: 3}
   - {fileID: 8300000, guid: 4cdf63a3f687bc947ab401c7d3fa29f3, type: 3}
@@ -560,12 +563,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 71c18166cb819774eaec6c668ae980e9, type: 3}
   - {fileID: 8300000, guid: 781cc11010ae4f34e9cf737334e36896, type: 3}
   - {fileID: 8300000, guid: 140c7359e2b4939499a8f12ec3210133, type: 3}
-  footstepVolume: 0.05
+  gunShotClips:
+  - {fileID: 8300000, guid: 25b8b401e026102489f635ebdef21bff, type: 3}
+  - {fileID: 8300000, guid: f84c922dc4a43794d8e6ae44d5b3efb0, type: 3}
+  footstepVolume: 0.45
   scytheSwingVolume: 1
   munchVolume: 0.5
   wateringVolume: 0.5
   waterRefillVolume: 0.2
   inventoryPopVolume: 0.35
+  gunShotVolume: 0.2
 --- !u!212 &431447372046555940
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -873,6 +880,7 @@ MonoBehaviour:
   canPlant: 1
   canWater: 1
   canEat: 1
+  buffText: {fileID: 0}
 --- !u!114 &6493144471492509595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2102,6 +2110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3136080ca07e0fb46a4b913eeb26e502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  playerRB: {fileID: 0}
 --- !u!1001 &6026584725319094144
 PrefabInstance:
   m_ObjectHideFlags: 0
